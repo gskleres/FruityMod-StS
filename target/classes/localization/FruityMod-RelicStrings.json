@@ -1,0 +1,23 @@
+{
+  "RabbitsFoot": {
+    "NAME": "Rabbit's Foot",
+    "FLAVOR": "fiiiiilth",
+    "DESCRIPTIONS": [
+      "Whenever you would receive 6 or more unblocked attacked damage, reduce the damage received by 1."
+    ]
+  },
+  "Homunculus": {
+    "NAME": "Homunculus",
+    "FLAVOR": "fiiiiilth",
+    "DESCRIPTIONS": [
+      "HP loss from cards is reduced to 0."
+    ]
+  },
+  "BerserkerAxe": {
+    "NAME": "Berserker Axe",
+    "FLAVOR": "fiiiiilth",
+    "DESCRIPTIONS": [
+      "Whenever you take damage from an enemy, gain 1 Strength until the end of your next turn."
+    ]
+  }
+}
