@@ -12,7 +12,7 @@ import fruitymod.patches.AbstractCardEnum;
 
 public class EtherBarrier extends CustomCard {
 	public static final String ID = "EtherBarrier";
-	public static final String NAME = "Ether Barrierd";
+	public static final String NAME = "Ether Barrier";
 	public static final String DESCRIPTION = "Gain !B! Block for every Ethereal card in your hand.";
 	private static final int COST = 1;
 	private static final int BLOCK_AMT = 5;

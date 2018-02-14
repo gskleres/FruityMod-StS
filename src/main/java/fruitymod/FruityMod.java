@@ -36,7 +36,9 @@ import fruitymod.cards.PowerSpike;
 import fruitymod.cards.Pulsar;
 import fruitymod.cards.Shimmer;
 import fruitymod.cards.SpiritLance;
+import fruitymod.cards.Starfall;
 import fruitymod.cards.Strike_Purple;
+import fruitymod.cards.Surge;
 import fruitymod.cards.UmbralWave;
 import fruitymod.cards.VoidBarrier;
 import fruitymod.cards.VoidBolt;
@@ -220,6 +222,8 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new Pulsar());
 		BaseMod.addCard(new Shimmer());
 		BaseMod.addCard(new SpiritLance());
+		BaseMod.addCard(new Starfall());
+		BaseMod.addCard(new Surge());
 		BaseMod.addCard(new Retrograde());
 		BaseMod.addCard(new UmbralWave());
 		BaseMod.addCard(new VoidBarrier());
