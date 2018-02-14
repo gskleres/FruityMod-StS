@@ -28,7 +28,6 @@ Fruity Mod for Slay The Spire
 ## Progress ##
 Cards are up to date through FluxBolt (alphabetical order); i.e. from FluxShield onward things aren't up to date yet. Exceptions are that  VoidBolt, VoidBarrier, UmbralWave, Shimmer, Power Spike, and VoidRipple **ARE** up to date.
 
-Still need to add Surge and Starfall for common cards
 Most uncommons have to be added and all rares
 
 Until rares are added we crash on elite fights, shops, or boss fights
