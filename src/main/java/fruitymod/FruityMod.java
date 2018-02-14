@@ -37,6 +37,9 @@ import fruitymod.cards.Pulsar;
 import fruitymod.cards.Shimmer;
 import fruitymod.cards.SpiritLance;
 import fruitymod.cards.Strike_Purple;
+import fruitymod.cards.UmbralWave;
+import fruitymod.cards.VoidBarrier;
+import fruitymod.cards.VoidBolt;
 import fruitymod.cards.Retrograde;
 import fruitymod.cards.VoidRipple;
 import fruitymod.characters.TheSeeker;
@@ -70,16 +73,25 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String ARCANE_VOLLEY = "cards/arcane_volley.png";
     public static final String ASTRAL_HAZE = "cards/astral_haze.png";
     public static final String DEFLECTION_WARD = "cards/deflection_ward.png";
-    public static final String ESSENCE_MIRROR = "card/essence_mirror.png";
-    public static final String ESSENCE_SPIKE = "card/essence_spike.png";
-    public static final String ETHER_BARRIER = "card/ether_barrier.png";
-    public static final String ETHER_BOLT = "card/ether_bolt.png";
-    public static final String FLUX_BLAST = "card/flux_blast.png";
-    public static final String FLUX_BOLT = "card/flux_bolt.png";
+    public static final String ESSENCE_MIRROR = "cards/essence_mirror.png";
+    public static final String ESSENCE_SPIKE = "cards/essence_spike.png";
+    public static final String ETHER_BARRIER = "cards/ether_barrier.png";
+    public static final String ETHER_BOLT = "cards/ether_bolt.png";
+    public static final String FLUX_BLAST = "cards/flux_blast.png";
+    public static final String FLUX_BOLT = "cards/flux_bolt.png";
+    public static final String POWER_SPIKE = "cards/power_spike.png";
+    public static final String SHIMMER = "cards/shimmer.png";
+    public static final String STARFALL = "cards/starfall.png";
+    public static final String SURGE = "cards/surge.png";
+    public static final String UMBRAL_WAVE = "cards/umbral_wave.png";
+    public static final String VOID_BARRIER = "cards/void_barrier.png";
+    public static final String VOID_BOLT = "cards/void_bolt.png";
+    public static final String VOID_RIPPLE = "cards/void_ripple.png";
     
     // power images
     public static final String ASTRAL_HAZE_POWER = "powers/astral_haze.png";
     public static final String ESSENCE_MIRROR_POWER = "powers/essence_mirror.png";
+    public static final String ETHEREALIZE_POWER = "powers/essence_mirror.png";
     
     // seeker assets
     private static final String SEEKER_BUTTON = "charSelect/seekerButton.png";
@@ -92,6 +104,10 @@ public class FruityMod implements PostInitializeSubscriber,
     
     public static Texture getEssenceMirrorPowerTexture() {
     	return new Texture(makePath(ESSENCE_MIRROR_POWER));
+    }
+    
+    public static Texture getEtherealizePowerTexture() {
+    	return new Texture(makePath(ETHEREALIZE_POWER));
     }
     
     /**
@@ -205,6 +221,9 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new Shimmer());
 		BaseMod.addCard(new SpiritLance());
 		BaseMod.addCard(new Retrograde());
+		BaseMod.addCard(new UmbralWave());
+		BaseMod.addCard(new VoidBarrier());
+		BaseMod.addCard(new VoidBolt());
 		BaseMod.addCard(new VoidRipple());
 		
 		logger.info("done editting cards");
