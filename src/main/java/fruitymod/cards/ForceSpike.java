@@ -32,13 +32,13 @@ public class ForceSpike extends CustomCard {
 	 public ForceSpike() {
 		 super(ID, NAME, "images/cards/locked_attack.png", COST, DESCRIPTION, AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY, POOL);
 	        this.damage=this.baseDamage = ATTACK_DMG;
-	        this.baseMagicNumber = FRAIL_AMT;
+	        this.magicNumber = this.baseMagicNumber = FRAIL_AMT;
 	    }
 	 
 	    @Override
 	    public void use(AbstractPlayer p, AbstractMonster m) {
 	        AbstractDungeon.actionManager.addToBottom(new DamageAction((AbstractCreature)m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
-	        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FrailPower(p, this.magicNumber, false), 1, true, AbstractGameAction.AttackEffect.NONE));
+	        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FrailPower(p, this.magicNumber, false), this.magicNumber, true));
 	    }
 	   	 
 
