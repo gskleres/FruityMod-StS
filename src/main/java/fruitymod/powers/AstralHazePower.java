@@ -14,7 +14,7 @@ import fruitymod.FruityMod;
 
 public class AstralHazePower extends AbstractPower {
 	public static final String POWER_ID = "AstralHazePower";
-	public static final String NAME = "Astral Plane";
+	public static final String NAME = "Astral Barrier";
 	public static final String[] DESCRIPTIONS = new String[] {
 			"When you are attacked this turn apply ",
 			" Vulnerable and ",
@@ -22,7 +22,6 @@ public class AstralHazePower extends AbstractPower {
 	};
 	private boolean justApplied = false;
 
-	// TODO: Add icon and description for power.
 	public AstralHazePower(AbstractCreature owner, int amount) {
 		this.name = NAME;
 		this.ID = POWER_ID;

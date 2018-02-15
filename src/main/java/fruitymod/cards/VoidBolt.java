@@ -32,6 +32,7 @@ public class VoidBolt extends CustomCard {
     			AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY, POOL);
     	this.baseDamage = ATTACK_DMG;
     	this.baseMagicNumber = DRAW;
+    	this.magicNumber = DRAW;
     	this.isEthereal = true;
     }
     

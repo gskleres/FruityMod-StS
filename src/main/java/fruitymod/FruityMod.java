@@ -17,7 +17,10 @@ import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditCharactersSubscriber;
 import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
+
 import fruitymod.cards.*;
+import fruitymod.cards.rare.*;
+
 import fruitymod.characters.TheSeeker;
 import fruitymod.patches.AbstractCardEnum;
 import fruitymod.patches.TheSeekerEnum;
@@ -42,6 +45,8 @@ public class FruityMod implements PostInitializeSubscriber,
     private static final String ENERGY_ORB_PURPLE = "512/card_purple_orb.png";
     
     // card images
+    
+    // common + uncommon
     public static final String STRIKE_PURPLE = "cards/strike_purple.png";
     public static final String DEFEND_PURPLE = "cards/defend_purple.png";
     public static final String ARCANE_BARRAGE = "cards/arcane_barrage.png";
@@ -59,15 +64,21 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String STARFALL = "cards/starfall.png";
     public static final String SURGE = "cards/surge.png";
     public static final String UMBRAL_WAVE = "cards/umbral_wave.png";
-    public static final String VACUUM = "cards/Vacuum.png";
+    public static final String VACUUM = "cards/vacuum.png";
     public static final String VOID_BARRIER = "cards/void_barrier.png";
     public static final String VOID_BOLT = "cards/void_bolt.png";
     public static final String VOID_RIPPLE = "cards/void_ripple.png";
+    
+    // rare
+    public static final String CHANNEL = "cards/channel.png";
+    public static final String IMPLOSION = "cards/implosion.png";
+    public static final String ASTRAL_FORM = "cards/astral_form.png";
     
     // power images
     public static final String ASTRAL_HAZE_POWER = "powers/astral_haze.png";
     public static final String ESSENCE_MIRROR_POWER = "powers/essence_mirror.png";
     public static final String ETHEREALIZE_POWER = "powers/essence_mirror.png";
+    public static final String ASTRAL_FORM_POWER = "powers/astral_form.png";
     
     // seeker assets
     private static final String SEEKER_BUTTON = "charSelect/seekerButton.png";
@@ -84,6 +95,10 @@ public class FruityMod implements PostInitializeSubscriber,
     
     public static Texture getEtherealizePowerTexture() {
     	return new Texture(makePath(ETHEREALIZE_POWER));
+    }
+    
+    public static Texture getAstralFormPowerTexture() {
+    	return new Texture(makePath(ASTRAL_FORM_POWER));
     }
     
     /**
@@ -202,6 +217,10 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new VoidBarrier());
 		BaseMod.addCard(new VoidBolt());
 		BaseMod.addCard(new VoidRipple());
+		
+		BaseMod.addCard(new Channel());
+		BaseMod.addCard(new Implosion());
+		BaseMod.addCard(new AstralForm());
 		
 		logger.info("done editting cards");
 	}
