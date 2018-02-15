@@ -60,6 +60,7 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String FLUX_BLAST = "cards/flux_blast.png";
     public static final String FLUX_BOLT = "cards/flux_bolt.png";
     public static final String POWER_SPIKE = "cards/power_spike.png";
+    public static final String METEOR_SHOWER = "cards/meteor_shower.png";
     public static final String SHIMMER = "cards/shimmer.png";
     public static final String STARFALL = "cards/starfall.png";
     public static final String SURGE = "cards/surge.png";
