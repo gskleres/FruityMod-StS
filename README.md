@@ -20,6 +20,11 @@ Fruity Mod for Slay The Spire
 3. Decompile `desktop-1.0.jar` with `java -jar "cfr_0_124.jar" --comments false --showversion false --caseinsensitivefs true --outputdir "decompiled" --jarfilter com.megacrit.cardcrawl.* "desktop-1.0.jar"`
 4. Run `mvn package` to make the jar `FruityMod.jar` in the `targets` directory
 
+### Building in Eclipse ###
+1. Right click on the project in eclipse then go to `configure` and `convert to maven project`
+2. Then to build the project use `Run as` and select `Maven build` and specify `package` as the `Goal` for the build
+3. If you get an error about lacking a compiler change the default `jre` for Eclipse to point to a `jdk` instead. The Eclipse Maven plugin is weird like that.
+
 ## Installation ##
 1. Copy `BaseMod.jar` to your **ModTheSpire** `mods` directory.
 2. Make a directory `fruity_mod_assets` in your `mods` directory.
