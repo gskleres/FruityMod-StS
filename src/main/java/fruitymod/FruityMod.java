@@ -188,6 +188,7 @@ public class FruityMod implements PostInitializeSubscriber,
         // Add relics
         RelicLibrary.add(new Homunculus());
         RelicLibrary.add(new RabbitsFoot());
+        RelicLibrary.add(new Arcanosphere());
         
         logger.info("done editting relics");
 	}

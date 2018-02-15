@@ -1,6 +1,5 @@
 package fruitymod.cards;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -11,7 +10,6 @@ import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
 import fruitymod.actions.EtherealizeAction;
 import fruitymod.patches.AbstractCardEnum;
-import fruitymod.powers.EtherealizePower;
 
 public class Shimmer extends CustomCard {
 	public static final String ID = "Shimmer";
@@ -35,7 +33,6 @@ public class Shimmer extends CustomCard {
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(this.magicNumber));
 		AbstractDungeon.actionManager.addToBottom(new EtherealizeAction());
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new EtherealizePower(p, 1), 1));
 	}
 
 	@Override

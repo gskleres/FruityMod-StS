@@ -39,7 +39,7 @@ public class TheSeeker extends AbstractPlayer {
 		}
 		// make sure that cards that get changed to ethereal are
 		// always exhausted
-		AbstractDungeon.actionManager.addToTop(new ExhaustAllEtherealAction());
+		AbstractDungeon.actionManager.addToBottom(new ExhaustAllEtherealAction());
 	}
 
 	public static ArrayList<String> getStartingDeck() {
@@ -59,8 +59,8 @@ public class TheSeeker extends AbstractPlayer {
 	
 	public static ArrayList<String> getStartingRelics() {
 		ArrayList<String> retVal = new ArrayList<>();
-		retVal.add("Black Blood");
-		UnlockTracker.markRelicAsSeen("Black Blood");
+		retVal.add("Arcanosphere");
+		UnlockTracker.markRelicAsSeen("Arcanosphere");
 		return retVal;
 	}
 	

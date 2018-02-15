@@ -19,7 +19,7 @@ public class ArcanosphereAction extends AbstractGameAction {
 
 	@Override
 	public void update() {
-		if (this.duration == this.DEFAULT_DURATION) {
+		if (this.duration == 0.5f) {
 			AbstractDungeon.handCardSelectScreen.open(TEXT[0], this.amount, false, true, false, false, true);
 			AbstractDungeon.actionManager.addToBottom(new WaitAction(0.25F));
 			tickDuration();
@@ -30,11 +30,11 @@ public class ArcanosphereAction extends AbstractGameAction {
 				if (!c.isEthereal) {
 					// retain non-ethereal
 					c.retain = true;
+					AbstractDungeon.player.hand.addToTop(c);
 				} else {
 					// put ethereal on top of deck
 					AbstractDungeon.player.hand.moveToDeck(c, false);
 				}
-				AbstractDungeon.player.hand.addToTop(c);
 			}
 			AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
 		}
