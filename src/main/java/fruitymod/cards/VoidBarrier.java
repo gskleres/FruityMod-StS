@@ -29,6 +29,7 @@ public class VoidBarrier extends CustomCard {
     			AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY, POOL);
     	this.baseBlock = BLOCK_AMT;
     	this.baseMagicNumber = DRAW;
+    	this.magicNumber = DRAW;
     	this.isEthereal = true;
     }
     

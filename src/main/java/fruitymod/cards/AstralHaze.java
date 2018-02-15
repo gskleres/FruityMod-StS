@@ -16,7 +16,7 @@ public class AstralHaze
 extends CustomCard {
     public static final String ID = "AstralHaze";
     public static final String NAME = "Astral Haze";
-    public static final String DESCRIPTION = "Gain !B! Block. Gain !M! Astral Plane.";
+    public static final String DESCRIPTION = "Gain !B! Block. Gain !M! Astral Barrier.";
     private static final int COST = 1;
     private static final int BLOCK_AMT = 6;
     private static final int UPGRADE_PLUS_BLOCK = 3;
