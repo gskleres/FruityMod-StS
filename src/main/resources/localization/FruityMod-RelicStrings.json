@@ -19,5 +19,14 @@
     "DESCRIPTIONS": [
       "Whenever you take damage from an enemy, gain 1 Strength until the end of your next turn."
     ]
+  },
+  "Arcanosphere": {
+    "NAME": "Arcanosphere",
+    "FLAVOR": "test447",
+    "DESCRIPTIONS": [
+      "At the end of your turn you may chose a card in your hand. ",
+      "If it is Ethereal, put it on top of your draw pile. ",
+      "Otherwise, retain it."
+    ]
   }
 }

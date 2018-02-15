@@ -81,6 +81,9 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String ETHEREALIZE_POWER = "powers/essence_mirror.png";
     public static final String ASTRAL_FORM_POWER = "powers/astral_form.png";
     
+    // relic images
+    public static final String ARCANOSPHERE_RELIC = "relics/arcanosphere.png";
+    
     // seeker assets
     private static final String SEEKER_BUTTON = "charSelect/seekerButton.png";
     private static final String SEEKER_PORTRAIT = "charSelect/seekerPortrait.jpg";
@@ -100,6 +103,10 @@ public class FruityMod implements PostInitializeSubscriber,
     
     public static Texture getAstralFormPowerTexture() {
     	return new Texture(makePath(ASTRAL_FORM_POWER));
+    }
+    
+    public static Texture getArcanoSphereTexture() {
+    	return new Texture(makePath(ARCANOSPHERE_RELIC));
     }
     
     /**
