@@ -77,12 +77,12 @@
 	},
 	"Hypothesis": {
 		"NAME": "Hypothesis",
-		"DESCRIPTION": "Draw a card. If it is Ethereal, draw !M! more card."
+		"DESCRIPTION": "Draw a card. If it is Ethereal, draw !M! more card.",
 		"UPGRADED_DESCRIPTION": "Draw a card. If it is Ethereal, draw !M! more cards."
 	},
 	"UmbralWave": {
 		"NAME": "Umbral Wave",
-		"DESCRIPTION": "Ethereal. Gain !M! Block. Deal !D! damage. Next turn gain [R]."
+		"DESCRIPTION": "Ethereal. Gain !M! Block. Deal !D! damage. Next turn gain [R].",
 		"UPGRADED_DESCRIPTION": "Ethereal. Gain !M! Block. Deal !D! damage. Next turn gain [R] [R]."
 	},
 	"VoidBarrier": {
@@ -159,7 +159,7 @@
 	},
 	"VoidShackles": {
 		"NAME": "Void Shackles",
-		"DESCRIPTION": "Whenever you apply Vulnerable or Weak to an enemy, apply !M! additional stack."
+		"DESCRIPTION": "Whenever you apply Vulnerable or Weak to an enemy, apply !M! additional stack.",
 		"UPGRADED_DESCRIPTION": "Whenever you apply Vulnerable or Weak to an enemy, apply !M! additional stacks."
 	},
 	"Vortex": {
@@ -295,7 +295,7 @@
 	},
 	"Eureka": {
 		"NAME": "Eureka!",
-		"DESCRIPTION": "Shuffle !M! Dazed into your draw pile. Draw !M! cards. Gain [R] [R]. Exhaust."
+		"DESCRIPTION": "Shuffle !M! Dazed into your draw pile. Draw !M! cards. Gain [R] [R]. Exhaust.",
 		"UPGRADED_DESCRIPTION": "Shuffle !M! Dazed into your draw pile. Draw !M! cards. Gain [R] [R] [R]. Exhaust."
 	},
 	"Nova": {
