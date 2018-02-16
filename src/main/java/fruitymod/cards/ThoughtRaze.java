@@ -30,7 +30,7 @@ extends CustomCard {
     private static final int POOL = 1;
 
     public ThoughtRaze() {
-        super(ID, NAME, FruityMod.makePath(FruityMod.ARCANE_VOLLEY), COST, DESCRIPTION,
+        super(ID, NAME, FruityMod.makePath(FruityMod.THOUGHT_RAZE), COST, DESCRIPTION,
         		AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE,
         		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL_ENEMY, POOL);
         this.isMultiDamage = true;

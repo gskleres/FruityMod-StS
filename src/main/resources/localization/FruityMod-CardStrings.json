@@ -22,5 +22,9 @@
 	"DeflectionWard": {
 		"NAME": "Deflection Ward",
 		"DESCRIPTION": "Gain !B! Block."
+	},
+	"UmbralBolt": {
+		"NAME": "Umbral Bolt",
+		"DESCRIPTION": "Deal !D! damage. If you are Frail, gain [G] and draw a card."
 	}
 }
