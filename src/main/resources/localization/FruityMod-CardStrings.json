@@ -1,0 +1,26 @@
+{
+	"ArcaneBarrage": {
+		"NAME": "Arcane Barrage",
+		"DESCRIPTION": "Deal !D! damage and apply !M! Vulnerable to ALL enemies."
+	},
+	"ArcaneTempest": {
+		"NAME": "Arcane Tempest",
+		"DESCRIPTION": "Deal !D! damage and apply !M! Weak and !M! Vulnerable to ALL enemies."
+	},
+	"ArcaneVolley": {
+		"NAME": "Arcane Volley",
+		"DESCRIPTION": "Deal !D! damage and apply !M! Weak to ALL enemies."
+	},
+	"AstralHaze": {
+		"NAME": "Astral Haze",
+		"DESCRIPTION": "Gain !B! Block. Gain !M! Astral Barrier."
+	},
+	"Defend_P": {
+		"NAME": "Defend",
+		"DESCRIPTION": "Gain !B! Block."
+	},
+	"DeflectionWard": {
+		"NAME": "Deflection Ward",
+		"DESCRIPTION": "Gain !B! Block."
+	}
+}

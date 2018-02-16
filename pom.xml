@@ -23,6 +23,13 @@
             <scope>system</scope>
             <systemPath>${basedir}/../_lib/BaseMod.jar</systemPath>
         </dependency>
+        <dependency>
+            <groupId>basemod</groupId>
+            <artifactId>basemod</artifactId>
+            <version>1.5.2</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/../_lib/ModTheSpire.jar</systemPath>
+        </dependency>
     </dependencies>
 
     <build>
