@@ -47,27 +47,61 @@ public class FruityMod implements PostInitializeSubscriber,
     // card images
     
     // common + uncommon
-    public static final String STRIKE_PURPLE = "cards/strike_purple.png";
-    public static final String DEFEND_PURPLE = "cards/defend_purple.png";
-    public static final String ARCANE_BARRAGE = "cards/arcane_barrage.png";
-    public static final String ARCANE_VOLLEY = "cards/arcane_volley.png";
-    public static final String ASTRAL_HAZE = "cards/astral_haze.png";
-    public static final String DEFLECTION_WARD = "cards/deflection_ward.png";
-    public static final String ESSENCE_MIRROR = "cards/essence_mirror.png";
-    public static final String ESSENCE_SPIKE = "cards/essence_spike.png";
-    public static final String ETHER_BARRIER = "cards/ether_barrier.png";
-    public static final String ETHER_BOLT = "cards/ether_bolt.png";
-    public static final String FLUX_BLAST = "cards/flux_blast.png";
-    public static final String FLUX_BOLT = "cards/flux_bolt.png";
-    public static final String POWER_SPIKE = "cards/power_spike.png";
-    public static final String SHIMMER = "cards/shimmer.png";
-    public static final String STARFALL = "cards/starfall.png";
-    public static final String SURGE = "cards/surge.png";
-    public static final String UMBRAL_WAVE = "cards/umbral_wave.png";
-    public static final String VACUUM = "cards/vacuum.png";
-    public static final String VOID_BARRIER = "cards/void_barrier.png";
-    public static final String VOID_BOLT = "cards/void_bolt.png";
-    public static final String VOID_RIPPLE = "cards/void_ripple.png";
+	public static final String STRIKE_PURPLE = "cards/strike_purple.png";
+	public static final String DEFEND_PURPLE = "cards/defend_purple.png";
+	public static final String ARCANE_BARRAGE = "cards/arcane_barrage.png";
+	public static final String ARCANE_TEMPEST = "cards/arcane_tempest.png";
+	public static final String ARCANE_VOLLEY = "cards/arcane_volley.png";
+	public static final String ARCHIVES = "cards/archives.png";
+	public static final String ASTRAL_HAZE = "cards/astral_haze.png";
+	public static final String BRAINSTORM = "cards/brainstorm.png";
+	public static final String BRILLIANCE = "cards/brilliance.png";
+	public static final String CORONA = "cards/corona.png";
+	public static final String DEFLECTION_WARD = "cards/deflection_ward.png";
+	public static final String ENTROPY = "cards/entropy.png";
+	public static final String EQUINOX = "cards/equinox.png";
+	public static final String ESSENCE_DART = "cards/essence_dart.png";
+	public static final String ESSENCE_MIRROR = "cards/essence_mirror.png";
+	public static final String ESSENCE_SHRED = "cards/essence_shred.png";
+	public static final String ESSENCE_SPIKE = "cards/essence_spike.png";
+	public static final String ETHER_BARRIER = "cards/ether_barrier.png";
+	public static final String ETHER_BLAST = "cards/ether_blast.png";
+	public static final String ETHER_BOLT = "cards/ether_bolt.png";
+	public static final String EXPERIMENT = "cards/experiment.png";
+	public static final String FLARE = "cards/flare.png";
+	public static final String FLOW = "cards/flow.png";
+	public static final String FLUX_BLAST = "cards/flux_blast.png";
+	public static final String FLUX_BOLT = "cards/flux_bolt.png";
+	public static final String FORCE_SPIKE = "cards/force_spike.png";
+	public static final String GRAVITY_WELL = "cards/gravity_well.png";
+	public static final String ILLUMINATE = "cards/illuminate.png";
+	public static final String MIND_OVER_MATTER = "cards/mind_over_matter.png";
+	public static final String NEBULOUS_BLAST = "cards/nebulous_blast.png";
+	public static final String NEXUS = "cards/nexus.png";
+	public static final String PERIAPT_OF_CELERITY = "cards/periapt_of_celerity.png";
+	public static final String PERIAPT_OF_POTENCY = "cards/periapt_of_potency.png";
+	public static final String POWER_OVERWHELMING = "cards/power_overwhelming.png";
+	public static final String POWER_SPIKE = "cards/power_spike.png";
+	public static final String PROTECTION_WARD = "cards/protection_ward.png";
+	public static final String SHIMMER = "cards/shimmer.png";
+	public static final String SIPHON_MAGIC = "cards/siphon_magic.png";
+	public static final String SIPHON_POWER = "cards/siphon_power.png";
+	public static final String SIPHON_SPEED = "cards/siphon_speed.png";
+	public static final String STARFALL = "cards/starfall.png";
+	public static final String STROKE_OF_GENIUS = "cards/stroke_of_genius.png";
+	public static final String SURGE = "cards/surge.png";
+	public static final String SYZYGY = "cards/syzygy.png";
+	public static final String THOUGHT_RAZE = "cards/thought_raze.png";
+	public static final String TRANSFERENCE = "cards/transference.png";
+	public static final String UMBRAL_BOLT = "cards/umbral_bolt.png";
+	public static final String UMBRAL_WAVE = "cards/umbral_wave.png";
+	public static final String VACUUM = "cards/vacuum.png";
+	public static final String VOID_BARRIER = "cards/void_barrier.png";
+	public static final String VOID_BOLT = "cards/void_bolt.png";
+	public static final String VOID_RIPPLE = "cards/void_ripple.png";
+	public static final String VOID_SHACKLES = "cards/void_shackles.png";
+	public static final String VORTEX = "cards/vortex.png";
+
     
     // rare
     public static final String CHANNEL = "cards/channel.png";
@@ -195,17 +229,24 @@ public class FruityMod implements PostInitializeSubscriber,
 		
 		BaseMod.addCard(new ArcaneBarrage());
 		BaseMod.addCard(new ArcaneVolley());
+		BaseMod.addCard(new ArcaneTempest());
 		BaseMod.addCard(new AstralHaze());
 		BaseMod.addCard(new DeflectionWard());
+		BaseMod.addCard(new Entropy());
+		BaseMod.addCard(new EssenceDart());		
 		BaseMod.addCard(new EssenceMirror());
+		BaseMod.addCard(new EssenceShred());		
 		BaseMod.addCard(new EssenceSpike());
 		BaseMod.addCard(new EtherBarrier());
+		BaseMod.addCard(new EtherBlast());
+		BaseMod.addCard(new Flare());		
 		BaseMod.addCard(new FluxBlast());
 		BaseMod.addCard(new FluxBolt());
 		BaseMod.addCard(new FluxShield());
 		BaseMod.addCard(new ForceSpike());
 		BaseMod.addCard(new Hypothesis());
 		BaseMod.addCard(new MagicMissile());
+		BaseMod.addCard(new NebulousBlast());
 		BaseMod.addCard(new EtherBolt());
 		BaseMod.addCard(new PowerSpike());
 		BaseMod.addCard(new Pulsar());
@@ -213,7 +254,6 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new SpiritLance());
 		BaseMod.addCard(new Retrograde());
 		BaseMod.addCard(new UmbralWave());
-		BaseMod.addCard(new Vacuum());
 		BaseMod.addCard(new VoidBarrier());
 		BaseMod.addCard(new VoidBolt());
 		BaseMod.addCard(new VoidRipple());
@@ -221,6 +261,7 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new Channel());
 		BaseMod.addCard(new Implosion());
 		BaseMod.addCard(new AstralForm());
+		BaseMod.addCard(new Vacuum());
 		
 		logger.info("done editting cards");
 	}
