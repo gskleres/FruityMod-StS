@@ -1,6 +1,16 @@
 # FruityMod-StS
 Fruity Mod for Slay The Spire
 
+## Content/Gameplay ##
+Fruity Mod for Slay The Spire adds an entirely new character class, The Seeker, and a new set of 75 cards to along with it. The Seeker is a purple colored combination mage/astronomer that uses power from the Astral Plane to cast his spells upon himself and his enemies.
+
+The Seeker focuses on utilizing Ethereal cards and new cards in his deck that combine with the Ethereal keyword to make powerful effects. He also can gain strong ablities by debuffing himself or his enemies.
+
+The Seeker is an entirely new playable character. He does not overwrite The Ironclad or The Silent. This mod makes no changes to the base game other than adding The Seeker.
+
+## Current State/Roadmap ##
+Currently the Seeker is in a playable state but is also missing a lot of core gameplay content. Not all of the cards have been implemented yet and we are lacking custom art for The Seeker. Before the release of v1.0 we **will** have completed implementing all of the cards and gameplay content however we aren't going to make any guarantees about **art** yet. We're still looking for an artist so if you want to do that make a `Github Issue` so we can talk to you about it.
+
 ## Requirements ##
 #### General Use ####
 * BaseMod v.1.5.2+ (https://github.com/t-larson/BaseMod/releases)

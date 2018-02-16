@@ -75,6 +75,7 @@ public class FruityMod implements PostInitializeSubscriber,
 	public static final String FORCE_SPIKE = "cards/force_spike.png";
 	public static final String GRAVITY_WELL = "cards/gravity_well.png";
 	public static final String ILLUMINATE = "cards/illuminate.png";
+	public static final String METEOR_SHOWER = "cards/meteor_shower.png";
 	public static final String MIND_OVER_MATTER = "cards/mind_over_matter.png";
 	public static final String NEBULOUS_BLAST = "cards/nebulous_blast.png";
 	public static final String NEXUS = "cards/nexus.png";
@@ -102,6 +103,8 @@ public class FruityMod implements PostInitializeSubscriber,
 	public static final String VOID_SHACKLES = "cards/void_shackles.png";
 	public static final String VORTEX = "cards/vortex.png";
 
+
+    
     
     // rare
     public static final String CHANNEL = "cards/channel.png";
@@ -113,6 +116,9 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String ESSENCE_MIRROR_POWER = "powers/essence_mirror.png";
     public static final String ETHEREALIZE_POWER = "powers/essence_mirror.png";
     public static final String ASTRAL_FORM_POWER = "powers/astral_form.png";
+    
+    // relic images
+    public static final String ARCANOSPHERE_RELIC = "relics/arcanosphere.png";
     
     // seeker assets
     private static final String SEEKER_BUTTON = "charSelect/seekerButton.png";
@@ -133,6 +139,10 @@ public class FruityMod implements PostInitializeSubscriber,
     
     public static Texture getAstralFormPowerTexture() {
     	return new Texture(makePath(ASTRAL_FORM_POWER));
+    }
+    
+    public static Texture getArcanoSphereTexture() {
+    	return new Texture(makePath(ARCANOSPHERE_RELIC));
     }
     
     /**
@@ -214,6 +224,7 @@ public class FruityMod implements PostInitializeSubscriber,
         // Add relics
         RelicLibrary.add(new Homunculus());
         RelicLibrary.add(new RabbitsFoot());
+        RelicLibrary.add(new Arcanosphere());
         
         logger.info("done editting relics");
 	}

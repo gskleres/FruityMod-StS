@@ -14,14 +14,14 @@
             <artifactId>slaythespire</artifactId>
             <version>014</version>
             <scope>system</scope>
-            <systemPath>C:/Program Files (x86)/Steam/steamapps/common/SlayTheSpire/desktop-1.0.jar</systemPath>
+            <systemPath>${basedir}/../_lib/desktop-1.0.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>basemod</groupId>
             <artifactId>basemod</artifactId>
-            <version>1.4.3</version>
+            <version>1.5.2</version>
             <scope>system</scope>
-            <systemPath>C:/Program Files (x86)/Steam/steamapps/common/SlayTheSpire/mods/BaseMod.jar</systemPath>
+            <systemPath>${basedir}/../_lib/BaseMod.jar</systemPath>
         </dependency>
     </dependencies>
 

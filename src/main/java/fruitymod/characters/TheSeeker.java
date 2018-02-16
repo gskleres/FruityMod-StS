@@ -4,9 +4,12 @@ import java.util.ArrayList;
 
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
+import com.megacrit.cardcrawl.actions.utility.ExhaustAllEtherealAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
@@ -28,6 +31,16 @@ public class TheSeeker extends AbstractPlayer {
 		AnimationState.TrackEntry e = this.state.setAnimation(0, "animation", true);
 		e.setTime(e.getEndTime() * MathUtils.random());
 	}
+	
+	@Override
+	public void applyEndOfTurnTriggers() {
+		for (AbstractPower p : this.powers) {
+			p.atEndOfTurn(true);
+		}
+		// make sure that cards that get changed to ethereal are
+		// always exhausted
+		AbstractDungeon.actionManager.addToBottom(new ExhaustAllEtherealAction());
+	}
 
 	public static ArrayList<String> getStartingDeck() {
 		ArrayList<String> retVal = new ArrayList<>();
@@ -46,8 +59,8 @@ public class TheSeeker extends AbstractPlayer {
 	
 	public static ArrayList<String> getStartingRelics() {
 		ArrayList<String> retVal = new ArrayList<>();
-		retVal.add("Black Blood");
-		UnlockTracker.markRelicAsSeen("Black Blood");
+		retVal.add("Arcanosphere");
+		UnlockTracker.markRelicAsSeen("Arcanosphere");
 		return retVal;
 	}
 	

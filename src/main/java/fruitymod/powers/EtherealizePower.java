@@ -1,7 +1,9 @@
+
 package fruitymod.powers;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.ExhaustAllEtherealAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -37,6 +39,7 @@ public class EtherealizePower extends AbstractPower {
     	if(isPlayer) {
     		AbstractDungeon.actionManager.addToTop(new ExhaustAllEtherealAction());
     	}
+    	AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, "EtherealizePower"));
     }
     @Override
     public void renderIcons(SpriteBatch sb, float x, float y, Color c) {
