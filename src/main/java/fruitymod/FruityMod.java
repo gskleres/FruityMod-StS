@@ -8,14 +8,18 @@ import org.apache.logging.log4j.Logger;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.RelicLibrary;
+import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.localization.RelicStrings;
 
 import basemod.BaseMod;
 import basemod.ModPanel;
 import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditCharactersSubscriber;
 import basemod.interfaces.EditRelicsSubscriber;
+import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 
 import fruitymod.cards.*;
@@ -26,8 +30,10 @@ import fruitymod.patches.AbstractCardEnum;
 import fruitymod.patches.TheSeekerEnum;
 import fruitymod.relics.*;
 
+@SpireInitializer
 public class FruityMod implements PostInitializeSubscriber,
-	EditCardsSubscriber, EditRelicsSubscriber, EditCharactersSubscriber {
+	EditCardsSubscriber, EditRelicsSubscriber, EditCharactersSubscriber,
+	EditStringsSubscriber {
 	public static final Logger logger = LogManager.getLogger(FruityMod.class.getName());
 	
     private static final String MODNAME = "FruityMod";
@@ -167,6 +173,9 @@ public class FruityMod implements PostInitializeSubscriber,
         logger.info("subscribing to editCards event");
         BaseMod.subscribeToEditCards(this);
 
+        logger.info("subscribing to editStrings event");
+        BaseMod.subscribeToEditStrings(this);
+        
         /*
          * Note that for now when installing FruityMod, in the `mods/` folder another folder named
          * the value of FRUITY_MOD_ASSETS_FOLDER must be created into which all the contents of the
@@ -211,15 +220,9 @@ public class FruityMod implements PostInitializeSubscriber,
 	}
 
 	
-	@SuppressWarnings("deprecation")
 	@Override
 	public void receiveEditRelics() {
 		logger.info("begin editting relics");
-		
-        // RelicStrings
-        String jsonString = Gdx.files.internal("localization/FruityMod-RelicStrings.json").readString(
-        		String.valueOf(StandardCharsets.UTF_8));
-        BaseMod.loadCustomRelicStrings(jsonString);
         
         // Add relics
         RelicLibrary.add(new Homunculus());
@@ -275,5 +278,21 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new Vacuum());
 		
 		logger.info("done editting cards");
+	}
+
+	@Override
+	public void receiveEditStrings() {
+		logger.info("begin editting strings");
+		
+        // RelicStrings
+        String relicStrings = Gdx.files.internal("localization/FruityMod-RelicStrings.json").readString(
+        		String.valueOf(StandardCharsets.UTF_8));
+        BaseMod.loadCustomStrings(RelicStrings.class, relicStrings);
+        // CardStrings
+        String cardStrings = Gdx.files.internal("localization/FruityMod-CardStrings.json").readString(
+        		String.valueOf(StandardCharsets.UTF_8));
+        BaseMod.loadCustomStrings(CardStrings.class, cardStrings);
+		
+		logger.info("done editting strings");
 	}
 }
