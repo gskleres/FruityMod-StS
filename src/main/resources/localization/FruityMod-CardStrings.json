@@ -300,7 +300,8 @@
 	},
 	"Nova": {
 		"NAME": "Nova",
-		"DESCRIPTION": "Ethereal. Stun an enemy. Shuffle !M! Dazed into your draw pile."
+		"DESCRIPTION": "Ethereal. Stun an enemy. Shuffle !M! Dazed into your draw pile.",
+		"UPGRADED_DESCRIPTION": "Ethereal. Stun ALL enemies. Shuffle !M! Dazed into your draw pile."
 	},
 	"ReflectionWard": {
 		"NAME": "Reflection Ward",
