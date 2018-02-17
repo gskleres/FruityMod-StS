@@ -34,6 +34,11 @@ public class AstralFormPower extends AbstractPower implements PostDrawSubscriber
 	}
 	
 	@Override
+	public void atEndOfRound() {
+		BaseMod.unsubscribeFromPostDraw(this);
+	}
+	
+	@Override
 	public void updateDescription() {
 		this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
 	}
