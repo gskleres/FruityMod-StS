@@ -47,6 +47,7 @@ public class AstralFormPower extends AbstractPower implements PostDrawSubscriber
 	public void receivePostDraw(AbstractCard c) {
 		AbstractPlayer player = (AbstractPlayer) owner;
 		if (c.isEthereal) {
+			this.flash();
 			AbstractDungeon.actionManager.addToBottom(new SwordBoomerangAction(
 					AbstractDungeon.getMonsters().getRandomMonster(true),
 					new DamageInfo(player, this.amount), 1));
