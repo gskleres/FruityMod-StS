@@ -1,4 +1,4 @@
-package fruitymod.cards;
+	package fruitymod.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -42,10 +42,6 @@ public class VoidBolt extends CustomCard {
         if (AbstractDungeon.player.drawPile.isEmpty()) {
             AbstractDungeon.actionManager.addToBottom(new EmptyDeckShuffleAction());
         }
-        AbstractCard card = AbstractDungeon.player.drawPile.getTopCard();
-        
-        if (card == null) return;
-        
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));
     }
     

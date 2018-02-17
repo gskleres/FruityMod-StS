@@ -38,11 +38,7 @@ public class VoidBarrier extends CustomCard {
     	AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
         if (AbstractDungeon.player.drawPile.isEmpty()) {
             AbstractDungeon.actionManager.addToBottom(new EmptyDeckShuffleAction());
-        }
-        AbstractCard card = AbstractDungeon.player.drawPile.getTopCard();
-        
-        if(card == null) return;
-        
+        }   
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));
     }
     
