@@ -196,8 +196,8 @@
 	},
 	"Illuminate": {
 		"NAME": "Illuminate",
-		"DESCRIPTION": "Create !M! copy of an Ethereal card in your hand."
-		"DESCRIPTION": "Create !M! copies of an Ethereal card in your hand."
+		"DESCRIPTION": "Create !M! copy of an Ethereal card in your hand.",
+		"UPGRADED_DESCRIPTION": "Create !M! copies of an Ethereal card in your hand."
 	},
 	"MindOverMatter": {
 		"NAME": "Mind Over Matter",
@@ -226,8 +226,8 @@
 	},
 	"StrokeofGenius": {
 		"NAME": "Stroke of Genius",
-		"DESCRIPTION": "Add a random Power to your hand. Exhaust."
-		"DESCRIPTION": "Add a random Power to your hand. It costs 0 this turn. Exhaust."
+		"DESCRIPTION": "Add a random Power to your hand. Exhaust.",
+		"UPGRADED_DESCRIPTION": "Add a random Power to your hand. It costs 0 this turn. Exhaust."
 	},
 	"Transference": {
 		"NAME": "Transference",
@@ -235,8 +235,8 @@
 	},
 	"Channel": {
 		"NAME": "Channel",
-		"DESCRIPTION": "Discard a card. Deal !D! damage if it is Ethereal."
-		"DESCRIPTION": "Discard 1 or 2 cards. Deal !D! damage for each that is Ethereal."
+		"DESCRIPTION": "Discard a card. Deal !D! damage if it is Ethereal.",
+		"UPGRADED_DESCRIPTION": "Discard 1 or 2 cards. Deal !D! damage for each that is Ethereal."
 	},
 	"Feedback": {
 		"NAME": "Feedback",
@@ -281,22 +281,22 @@
 	},
 	"AstralShift": {
 		"NAME": "Astral Shift",
-		"DESCRIPTION": "Ethereal. Gain !M! Intangible. Exhaust."
-		"DESCRIPTION": "Ethereal. Gain !M! Intangible."
+		"DESCRIPTION": "Ethereal. Gain !M! Intangible. Exhaust.",
+		"UPGRADED_DESCRIPTION": "Ethereal. Gain !M! Intangible."
 	},
 	"Echo": {
 		"NAME": "Echo",
-		"DESCRIPTION": "Play the next Ethereal card twice."
-		"DESCRIPTION": "Play the next 2 Ethereal cards twice."
+		"DESCRIPTION": "Play the next Ethereal card twice.",
+		"UPGRADED_DESCRIPTION": "Play the next 2 Ethereal cards twice."
 	},
 	"Eclipse": {
 		"NAME": "Eclipse",
-		"DESCRIPTION": "Ethereal. Choose an Exhausted Ethereal card. Play a 0-cost copy of it."
+		"DESCRIPTION": "Ethereal. Choose an Exhausted Ethereal card. Duplicate its effects. Exhaust."
 	},
 	"Eureka": {
 		"NAME": "Eureka!",
-		"DESCRIPTION": "Shuffle !M! Dazed into your draw pile. Draw !M! cards. Gain [R] [R]. Exhaust.",
-		"UPGRADED_DESCRIPTION": "Shuffle !M! Dazed into your draw pile. Draw !M! cards. Gain [R] [R] [R]. Exhaust."
+		"DESCRIPTION": "Shuffle 1 Dazed into your draw pile. Draw !M! cards. Gain [R] [R]. Exhaust.",
+		"UPGRADED_DESCRIPTION": "Shuffle 1 Dazed into your draw pile. Draw !M! cards. Gain [R] [R] [R]. Exhaust."
 	},
 	"Nova": {
 		"NAME": "Nova",

@@ -116,7 +116,9 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String CHANNEL = "cards/channel.png";
     public static final String IMPLOSION = "cards/implosion.png";
     public static final String ASTRAL_FORM = "cards/astral_form.png";
-    
+	public static final String ECLIPSE = "cards/locked_skill.png";
+	public static final String EUREKA = "cards/locked_skill.png";
+	
     // power images
     public static final String ASTRAL_HAZE_POWER = "powers/astral_haze.png";
     public static final String ESSENCE_MIRROR_POWER = "powers/essence_mirror.png";
@@ -245,6 +247,7 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new ArcaneVolley());
 		BaseMod.addCard(new ArcaneTempest());
 		BaseMod.addCard(new AstralHaze());
+		BaseMod.addCard(new Brainstorm());
 		BaseMod.addCard(new DeflectionWard());
 		BaseMod.addCard(new Entropy());
 		BaseMod.addCard(new EssenceDart());		
@@ -279,6 +282,8 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new Implosion());
 		BaseMod.addCard(new AstralForm());
 		BaseMod.addCard(new Vacuum());
+		BaseMod.addCard(new Eureka());
+		BaseMod.addCard(new Eclipse());
 		
 		logger.info("done editting cards");
 	}

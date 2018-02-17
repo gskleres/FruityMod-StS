@@ -47,6 +47,7 @@ public class PowerSpike extends CustomCard {
 			this.upgradeName();
 			this.upgradeMagicNumber(UPGRADE_ENERGY_AMT);
 			this.rawDescription = "Gain [G][G]. NL Gain 2 Frail." + (this.isEthereal ? " NL Etherial." : "");
+			this.initializeDescription();
 		}
 	}
 }
