@@ -13,11 +13,6 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
-import basemod.BaseMod;
-import fruitymod.cards.Echo;
-import fruitymod.cards.EventHorizon;
-import fruitymod.cards.ReflectionWard;
-import fruitymod.cards.Zenith;
 import fruitymod.patches.TheSeekerEnum;
 
 public class TheSeeker extends AbstractPlayer {
@@ -49,7 +44,6 @@ public class TheSeeker extends AbstractPlayer {
 
 	public static ArrayList<String> getStartingDeck() {
 		ArrayList<String> retVal = new ArrayList<>();
-		retVal.add("Strike_P");
 		retVal.add("Strike_P");
 		retVal.add("Strike_P");
 		retVal.add("Strike_P");
