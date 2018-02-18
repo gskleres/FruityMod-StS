@@ -49,9 +49,9 @@ public class AstralHazePower extends AbstractPower {
 				&& info.owner != null && info.owner != this.owner) {
 			this.flash();
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(info.owner, this.owner,
-					new WeakPower(info.owner, this.amount + 1, false), 1, true, AbstractGameAction.AttackEffect.NONE));
+					new WeakPower(info.owner, this.amount + 1, false), this.amount, true, AbstractGameAction.AttackEffect.NONE));
 			AbstractDungeon.actionManager.addToBottom(
-					new ApplyPowerAction(info.owner, this.owner, new VulnerablePower(info.owner, this.amount + 1, false), 1,
+					new ApplyPowerAction(info.owner, this.owner, new VulnerablePower(info.owner, this.amount + 1, false), this.amount,
 							true, AbstractGameAction.AttackEffect.NONE));
 		}
 		return damageAmount;

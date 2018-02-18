@@ -306,7 +306,7 @@
 	},
 	"ReflectionWard": {
 		"NAME": "Reflection Ward",
-		"DESCRIPTION": "Whenever you are attacked this turn, deal !D! damage to ALL enemies."
+		"DESCRIPTION": "Gain !B! Block. Whenever you are attacked this turn, deal !M! damage to ALL enemies."
 	},
 	"Zenith": {
 		"NAME": "Zenith",
