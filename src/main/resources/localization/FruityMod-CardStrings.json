@@ -235,8 +235,8 @@
 	},
 	"Channel": {
 		"NAME": "Channel",
-		"DESCRIPTION": "Discard a card. Deal !D! damage if it is Ethereal.",
-		"UPGRADED_DESCRIPTION": "Discard 1 or 2 cards. Deal !D! damage for each that is Ethereal."
+		"DESCRIPTION": "Deal !D! damage. Discard a card. If it is Ethereal deal !D! damage again.",
+		"UPGRADED_DESCRIPTION": "Deal !D! damage. Discard !M! cards. For each card that is Ethereal deal !D! damage again."
 	},
 	"Feedback": {
 		"NAME": "Feedback",
