@@ -1,9 +1,6 @@
 package fruitymod.powers;
 
-import com.megacrit.cardcrawl.actions.unique.SwordBoomerangAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -12,15 +9,15 @@ import basemod.BaseMod;
 import basemod.interfaces.PostDrawSubscriber;
 import fruitymod.FruityMod;
 
-public class AstralFormPower extends AbstractPower implements PostDrawSubscriber {
-	public static final String POWER_ID = "AstralFormPower";
-	public static final String NAME = "Astral Form";
+public class VigorPower extends AbstractPower implements PostDrawSubscriber {
+	public static final String POWER_ID = "VigorPower";
+	public static final String NAME = "Vigor";
 	public static final String[] DESCRIPTIONS = new String[] {
-			"Whenever you draw an Ethereal card deal ",
-			" damage to a random enemy."
+			"Ethereal cards cost ",
+			" less energy."
 	};
 	
-	public AstralFormPower(AbstractCreature owner, int amount) {
+	public VigorPower(AbstractCreature owner, int amount) {
 		this.name = NAME;
 		this.ID = POWER_ID;
 		this.owner = owner;
@@ -29,10 +26,10 @@ public class AstralFormPower extends AbstractPower implements PostDrawSubscriber
 		this.type = AbstractPower.PowerType.BUFF;
 		this.isTurnBased = false;
 		this.priority = 90;
-		this.img = FruityMod.getAstralFormPowerTexture();
+		this.img = FruityMod.getVigorPowerTexture();
 		BaseMod.subscribeToPostDraw(this);
 	}
-	
+
 	@Override
 	public void onRemove() {
 		BaseMod.unsubscribeFromPostDraw(this);
@@ -42,17 +39,27 @@ public class AstralFormPower extends AbstractPower implements PostDrawSubscriber
 	public void updateDescription() {
 		this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
 	}
-
+	
+	@Override
+	public void onInitialApplication() {
+		for (AbstractCard c: AbstractDungeon.player.hand.group) {
+			updateCardCost(c, true);
+		}
+	}
+	
 	@Override
 	public void receivePostDraw(AbstractCard c) {
-		AbstractPlayer player = (AbstractPlayer) owner;
-		if (c.isEthereal) {
-			this.flash();
-			AbstractDungeon.actionManager.addToBottom(new SwordBoomerangAction(
-					AbstractDungeon.getMonsters().getRandomMonster(true),
-					new DamageInfo(player, this.amount), 1));
+		updateCardCost(c, false);
+	}
+	
+	private void updateCardCost(AbstractCard c, boolean forceUpdate) {
+		if (c.isEthereal && (AbstractDungeon.player.hasPower("VigorPower") || forceUpdate)) {
+			if (c.isCostModifiedForTurn) {
+				c.setCostForTurn(c.costForTurn - this.amount);
+			} else {
+				c.setCostForTurn(c.cost - this.amount);
+			}
 		}
-		
 	}
 	
 }
