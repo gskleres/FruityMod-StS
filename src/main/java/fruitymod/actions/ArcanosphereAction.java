@@ -27,14 +27,7 @@ public class ArcanosphereAction extends AbstractGameAction {
 		}
 		if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
 			for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
-				if (!c.isEthereal) {
-					// retain non-ethereal
-					c.retain = true;
-					AbstractDungeon.player.hand.addToTop(c);
-				} else {
-					// put ethereal on top of deck
-					AbstractDungeon.player.hand.moveToDeck(c, false);
-				}
+				AbstractDungeon.player.hand.moveToDeck(c, false);
 			}
 			AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
 		}
