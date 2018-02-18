@@ -41,8 +41,7 @@ public class FruityMod implements PostInitializeSubscriber,
     private static final String DESCRIPTION = "v0.2.0";
     
     private static final Color PURPLE = CardHelper.getColor(139.0f, 0.0f, 139.0f);
-    private static final String FRUITY_MOD_ASSETS_FOLDER = "fruity_mod_assets";
-    private static final String MOD_FOLDER = "mods";
+    private static final String FRUITY_MOD_ASSETS_FOLDER = "img";
     
     // card backgrounds
     private static final String ATTACK_PURPLE = "512/bg_attack_purple.png";
@@ -174,7 +173,7 @@ public class FruityMod implements PostInitializeSubscriber,
      * @return the full path
      */
     public static final String makePath(String resource) {
-    	return MOD_FOLDER + "/" + FRUITY_MOD_ASSETS_FOLDER + "/" + resource;
+    	return FRUITY_MOD_ASSETS_FOLDER + "/" + resource;
     }
     
     public FruityMod() {
