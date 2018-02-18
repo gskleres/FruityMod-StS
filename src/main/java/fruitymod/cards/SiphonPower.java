@@ -66,7 +66,7 @@ public class SiphonPower extends CustomCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeDamage(ATTACK_UPGRADE);
-            this.upgradeDamage(BUFF_DEBUFF_UPGRADE_AMT);
+            this.upgradeMagicNumber(BUFF_DEBUFF_UPGRADE_AMT);
         }
     }
 	

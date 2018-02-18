@@ -120,6 +120,8 @@ public class FruityMod implements PostInitializeSubscriber,
 	public static final String EVENT_HORIZON = "cards/locked_power.png";
 	public static final String ZENITH = "cards/locked_skill.png";
 	public static final String REFLECTION_WARD = "cards/locked_skill.png";
+	public static final String CREATIVITY = "cards/locked_power.png";
+	
 
 	
     // power images
@@ -307,6 +309,11 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new EventHorizon());
 		BaseMod.addCard(new Zenith());
 		BaseMod.addCard(new ReflectionWard());
+		BaseMod.addCard(new Creativity());
+		BaseMod.addCard(new Transference());
+		BaseMod.addCard(new StrokeOfGenius());
+		BaseMod.addCard(new SiphonSpeed());
+		BaseMod.addCard(new SiphonMagic());
 		
 		logger.info("done editting cards");
 	}

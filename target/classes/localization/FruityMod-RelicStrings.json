@@ -24,9 +24,7 @@
     "NAME": "Arcanosphere",
     "FLAVOR": "test447",
     "DESCRIPTIONS": [
-      "At the end of your turn you may chose a card in your hand. ",
-      "If it is Ethereal, put it on top of your draw pile. ",
-      "Otherwise, Retain it."
+      "At the end of your turn you may put a card in your hand on top of your draw pile."
     ]
   }
 }

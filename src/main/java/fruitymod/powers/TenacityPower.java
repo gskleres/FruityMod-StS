@@ -50,8 +50,10 @@ public class TenacityPower extends AbstractPower {
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
 				this.owner, this.owner,
 				new DexterityPower(this.owner, this.amount), this.amount));
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-				this.owner, this.owner,
-				new ArtifactPower(this.owner, this.amount), this.amount));
+		if(this.upgraded) {
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
+					this.owner, this.owner,
+					new ArtifactPower(this.owner, this.amount), this.amount));
+		}
 	}
 }

@@ -28,8 +28,7 @@ public class Arcanosphere extends CustomRelic {
 	
 	@Override
 	public String getUpdatedDescription() {
-		return DESCRIPTIONS[0] + DESCRIPTIONS[1] +
-				DESCRIPTIONS[2];
+		return DESCRIPTIONS[0];
 	}
 	
 	@Override

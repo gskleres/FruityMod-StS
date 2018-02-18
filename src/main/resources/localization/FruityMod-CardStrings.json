@@ -218,20 +218,22 @@
 	"SiphonMagic": {
 		"NAME": "Siphon Magic",
 		"DESCRIPTION": "Transfer all Artifact from ALL enemies to you. Exhaust.",
-		"UPGRADED_DESCRIPTION": "Innate. Transfer all Artifact from ALL enemies to you. Exhaust."
+		"UPGRADED_DESCRIPTION": "Innate. Transfer all Artifact from ALL enemies to you. Exhaust.",
+		"EXTENDED_DESCRIPTION": [ "There are no enemies with Artifact."]
 	},
 	"SiphonSpeed": {
 		"NAME": "Siphon Speed",
-		"DESCRIPTION": "If an enemy intends to attack, gain !B! Block and !M! Dexterity."
+		"DESCRIPTION": "Gain !B! Block. NL Apply !M! Vulnerable. NL Gain !M! Dexterity."
 	},
-	"StrokeofGenius": {
+	"StrokeOfGenius": {
 		"NAME": "Stroke of Genius",
 		"DESCRIPTION": "Add a random Power to your hand. Exhaust.",
 		"UPGRADED_DESCRIPTION": "Add a random Power to your hand. It costs 0 this turn. Exhaust."
 	},
 	"Transference": {
 		"NAME": "Transference",
-		"DESCRIPTION": "Transfer all of your Weak and Vulnerable to an enemy."
+		"DESCRIPTION": "Transfer all of your Weak and Vulnerable to an enemy.",
+		"EXTENDED_DESCRIPTION": [ "I am not Weak or Vulnerable."]
 	},
 	"Channel": {
 		"NAME": "Channel",
