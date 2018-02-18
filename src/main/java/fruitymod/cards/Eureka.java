@@ -23,7 +23,7 @@ public class Eureka extends CustomCard {
 	private static final int COST = 0;
 	private static final int DRAW = 2;
 	private static final int DRAW_UPDRAGE = 1;
-	private static final int DAZED_COUNT = 1;
+	private static final int DAZED_COUNT = 2;
 	private static final int POOL = 1;
 
 	public Eureka() {
