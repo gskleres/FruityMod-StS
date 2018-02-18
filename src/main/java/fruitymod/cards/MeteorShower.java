@@ -6,7 +6,9 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.MindblastEffect;
 
@@ -16,10 +18,11 @@ import fruitymod.patches.AbstractCardEnum;
 
 public class MeteorShower extends CustomCard {
 	public static final String ID = "MeteorShower";
-	public static final String NAME = "Meteor Shower";
-	public static final String DESCRIPTION = "Deal damage to ALL enemies equal to the number of cards in your draw pile.";
-	public static final String UPGRADE_DESCRIPTION = "Innate. NL Deal damage to ALL enmies equal to the number of cards in your draw pile.";
-	public static final String EXTENDED_DESCRIPTION = "NL (Deals !D! damage)";
+	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+	public static final String NAME = cardStrings.NAME;
+	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+	public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+	public static final String EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION[0];
 	private static final int COST = 1;
 	private static final int ATTACK_DMG_PER_CARD = 1;
 	private static final int POOL = 1;
@@ -28,6 +31,7 @@ public class MeteorShower extends CustomCard {
 		super(ID, NAME, FruityMod.makePath(FruityMod.METEOR_SHOWER), COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
 				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ALL_ENEMY, POOL);
 		this.baseDamage = 0;
+		this.exhaust = true;
 	}
 
 	@Override
