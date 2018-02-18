@@ -23,7 +23,6 @@ import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 
 import fruitymod.cards.*;
-import fruitymod.cards.rare.*;
 
 import fruitymod.characters.TheSeeker;
 import fruitymod.patches.AbstractCardEnum;
