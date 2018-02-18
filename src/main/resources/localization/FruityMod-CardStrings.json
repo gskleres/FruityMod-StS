@@ -292,12 +292,12 @@
 	},
 	"Eclipse": {
 		"NAME": "Eclipse",
-		"DESCRIPTION": "Ethereal. Choose an Exhausted Ethereal card. Play a 0-cost copy of it."
+		"DESCRIPTION": "Ethereal. Choose an Exhausted Ethereal card. Duplicate its effects. Exhaust."
 	},
 	"Eureka": {
 		"NAME": "Eureka!",
-		"DESCRIPTION": "Shuffle !M! Dazed into your draw pile. Draw !M! cards. Gain [R] [R]. Exhaust.",
-		"UPGRADED_DESCRIPTION": "Shuffle !M! Dazed into your draw pile. Draw !M! cards. Gain [R] [R] [R]. Exhaust."
+		"DESCRIPTION": "Shuffle 1 Dazed into your draw pile. Draw !M! cards. Gain [R] [R]. Exhaust.",
+		"UPGRADED_DESCRIPTION": "Shuffle 1 Dazed into your draw pile. Draw !M! cards. Gain [R] [R] [R]. Exhaust."
 	},
 	"Nova": {
 		"NAME": "Nova",

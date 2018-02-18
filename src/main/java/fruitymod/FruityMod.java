@@ -107,10 +107,7 @@ public class FruityMod implements PostInitializeSubscriber,
 	public static final String VOID_BOLT = "cards/void_bolt.png";
 	public static final String VOID_RIPPLE = "cards/void_ripple.png";
 	public static final String VOID_SHACKLES = "cards/void_shackles.png";
-	public static final String VORTEX = "cards/vortex.png";
-
-
-    
+	public static final String VORTEX = "cards/vortex.png";    
     
     // rare
     public static final String CHANNEL = "cards/channel.png";
@@ -119,7 +116,9 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String ASTRAL_SHIFT = "cards/astral_shift.png";
     public static final String PERIAPT_OF_VIGOR = "cards/periapt_of_vigor.png";
     public static final String PERIAPT_OF_TENACITY = "cards/periapt_of_tenacity.png";
-    
+	public static final String ECLIPSE = "cards/locked_skill.png";
+	public static final String EUREKA = "cards/locked_skill.png";
+
     // power images
     public static final String ASTRAL_HAZE_POWER = "powers/astral_haze.png";
     public static final String ESSENCE_MIRROR_POWER = "powers/essence_mirror.png";
@@ -263,6 +262,7 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new ArcaneVolley());
 		BaseMod.addCard(new ArcaneTempest());
 		BaseMod.addCard(new AstralHaze());
+		BaseMod.addCard(new Brainstorm());
 		BaseMod.addCard(new DeflectionWard());
 		BaseMod.addCard(new Entropy());
 		BaseMod.addCard(new EssenceDart());		
@@ -292,7 +292,6 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new VoidBarrier());
 		BaseMod.addCard(new VoidBolt());
 		BaseMod.addCard(new VoidRipple());
-		
 		BaseMod.addCard(new Channel());
 		BaseMod.addCard(new Implosion());
 		BaseMod.addCard(new AstralForm());
@@ -300,6 +299,8 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new AstralShift());
 		BaseMod.addCard(new PeriaptOfVigor());
 		BaseMod.addCard(new PeriaptOfTenacity());
+		BaseMod.addCard(new Eureka());
+		BaseMod.addCard(new Eclipse());
 		
 		logger.info("done editting cards");
 	}

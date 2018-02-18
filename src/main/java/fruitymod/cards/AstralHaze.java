@@ -36,6 +36,7 @@ extends CustomCard {
         this.baseMagicNumber = WEAK_VUL_AMT;
         this.magicNumber = WEAK_VUL_AMT;
         this.baseBlock = BLOCK_AMT;
+        this.isEthereal = true;
     }
 
     @Override
