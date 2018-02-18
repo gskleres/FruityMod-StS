@@ -22,9 +22,10 @@ public class Brainstorm extends CustomCard {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    private static final int COST = 0;
+    private static final int COST = 1;
+    private static final int COST_UPGRADED = 0;
     private static final int DRAW = 2;
-    private static final int DRAW_UPGRADE = 1;
+    private static final int DRAW_UPGRADE = 0;
     private static final int DAZED_COUNT = 1;
     private static final int POOL = 1;
     
@@ -53,6 +54,7 @@ public class Brainstorm extends CustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            this.upgradeBaseCost(COST_UPGRADED);
             this.upgradeMagicNumber(DRAW_UPGRADE);
         }
     }

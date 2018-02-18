@@ -118,6 +118,11 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String ASTRAL_FORM = "cards/astral_form.png";
 	public static final String ECLIPSE = "cards/locked_skill.png";
 	public static final String EUREKA = "cards/locked_skill.png";
+	public static final String ECHO = "cards/locked_skill.png";
+	public static final String EVENT_HORIZON = "cards/locked_power.png";
+	public static final String ZENITH = "cards/locked_skill.png";
+	public static final String REFLECTION_WARD = "cards/locked_skill.png";
+	
 	
     // power images
     public static final String ASTRAL_HAZE_POWER = "powers/astral_haze.png";
@@ -284,6 +289,10 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new Vacuum());
 		BaseMod.addCard(new Eureka());
 		BaseMod.addCard(new Eclipse());
+		BaseMod.addCard(new Echo());
+		BaseMod.addCard(new EventHorizon());
+		BaseMod.addCard(new Zenith());
+		BaseMod.addCard(new ReflectionWard());
 		
 		logger.info("done editting cards");
 	}

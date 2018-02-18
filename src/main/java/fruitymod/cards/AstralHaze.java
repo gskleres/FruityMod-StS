@@ -41,7 +41,7 @@ extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
    	 	AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new AstralHazePower(p, this.magicNumber), 1));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new AstralHazePower(p, this.magicNumber), this.magicNumber));
     }
 
     @Override

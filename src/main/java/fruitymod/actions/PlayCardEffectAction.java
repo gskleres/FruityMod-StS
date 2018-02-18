@@ -35,5 +35,6 @@ public class PlayCardEffectAction extends AbstractGameAction {
 		}
 		tmp.purgeOnUse = true;
 		AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(tmp, (AbstractMonster)this.target, card.energyOnUse));
+		this.isDone = true;
 	}
 }
