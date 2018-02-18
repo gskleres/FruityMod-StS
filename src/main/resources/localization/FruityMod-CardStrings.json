@@ -123,7 +123,7 @@
 	},
 	"SiphonPower": {
 		"NAME": "Siphon Power",
-		"DESCRIPTION": "If an enemy intends to attack, deal !D! damage and gain !M! Strength."
+		"DESCRIPTION": "Deal !D! damage. Apply !M! Weak. Gain !M! Strength."
 	},
 	"Syzygy": {
 		"NAME": "Syzygy",
