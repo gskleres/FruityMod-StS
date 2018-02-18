@@ -1,7 +1,5 @@
 package fruitymod.cards;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.unique.SwordBoomerangAction;
 import com.megacrit.cardcrawl.actions.utility.ExhaustAllEtherealAction;
@@ -9,21 +7,21 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
-import com.megacrit.cardcrawl.localization.LocalizedStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
+import fruitymod.FruityMod;
 import fruitymod.patches.AbstractCardEnum;
 
-public class Pulsar
+public class Syzygy
 extends CustomCard {
-    public static final String ID = "Pulsar";
-    public static final String NAME = "Syzygy"; // TODO: Rename class
-    public static final String DESCRIPTION = "Ethereal. Deal !D! damage to a random enemy !M! times. Shuffle a Dazed into your Draw pile.";
+    public static final String ID = "Syzygy";
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final int COST = 1;
     private static final int ATTACK_DMG = 5;
     private static final int ATTACK_UPGRADE = 2;
@@ -31,11 +29,14 @@ extends CustomCard {
     private static final int NUM_ATTACKS_UPGRADE = 0;
     private static final int POOL = 1;
 
-    public Pulsar() {
-        super(ID, NAME, "images/cards/locked_attack.png", COST, DESCRIPTION, AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL_ENEMY, POOL);
+    public Syzygy() {
+        super(ID, NAME, FruityMod.makePath(FruityMod.SYZYGY), COST, DESCRIPTION,
+        		AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE,
+        		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL_ENEMY, POOL);
         this.damage = this.baseDamage = ATTACK_DMG;
         this.magicNumber = this.baseMagicNumber = NUM_ATTACKS;
         this.isEthereal = true;
+        this.exhaust = true;
     }
 
     @Override
@@ -52,7 +53,7 @@ extends CustomCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new Pulsar();
+        return new Syzygy();
     }
 
     @Override
