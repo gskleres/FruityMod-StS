@@ -9,7 +9,9 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.MindblastEffect;
 
@@ -19,11 +21,13 @@ import fruitymod.patches.AbstractCardEnum;
 
 public class Implosion extends CustomCard {
 	public static final String ID = "Implosion";
-	public static final String NAME = "Implosion";
-	public static final String DESCRIPTION = "Deal !D! damage. Shuffle 1 Dazed into your Draw pile.";
+	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+	public static final String NAME = cardStrings.NAME;
+	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 3;
 	private static final int ATTACK_DMG = 38;
 	private static final int UPGRADE_DMG_AMT = 12;
+	private static final int DAZED_AMT = 2;
 	private static final int POOL = 1;
 	
 	public Implosion() {
@@ -37,7 +41,7 @@ public class Implosion extends CustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new VFXAction(new MindblastEffect(p.dialogX, p.dialogY)));
         AbstractDungeon.actionManager.addToBottom(new DamageAction((AbstractCreature)m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(p, p, new Dazed(), 1, true, true));
+        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(p, p, new Dazed(), DAZED_AMT, true, true));
     }
 
     @Override
