@@ -1,4 +1,4 @@
-package fruitymod.cards.rare;
+package fruitymod.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
