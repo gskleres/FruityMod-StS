@@ -1,26 +1,19 @@
 package fruitymod.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.LocalizedStrings;
-import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.screens.select.GridCardSelectScreen;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Iterator;
 
 public class EclipseAction
 extends AbstractGameAction {
     private AbstractPlayer p;
-    private ArrayList<AbstractCard> invalidCards = new ArrayList();
+	private ArrayList<AbstractCard> invalidCards = new ArrayList<>();
 
     public EclipseAction(AbstractMonster target) {
         this.p = AbstractDungeon.player;
@@ -76,7 +69,7 @@ extends AbstractGameAction {
         }
         if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
             for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards) {
-            	AbstractDungeon.actionManager.addToBottom(new PlayCardEffectAction(c, (AbstractMonster)this.target));
+            	this.p.hand.addToHand(c);
                 this.p.exhaustPile.removeCard(c);                
             }
             AbstractDungeon.gridSelectScreen.selectedCards.clear();

@@ -292,7 +292,7 @@
 	},
 	"Eclipse": {
 		"NAME": "Eclipse",
-		"DESCRIPTION": "Ethereal. Choose an Exhausted Ethereal card. Duplicate its effects. Exhaust."
+		"DESCRIPTION": "Ethereal. Choose an Exhausted Ethereal card and put it in your hand. Exhaust."
 	},
 	"Eureka": {
 		"NAME": "Eureka!",

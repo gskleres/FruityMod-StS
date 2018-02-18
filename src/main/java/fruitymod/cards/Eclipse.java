@@ -1,5 +1,6 @@
 package fruitymod.cards;
 
+import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -24,7 +25,7 @@ public class Eclipse extends CustomCard {
 	public Eclipse() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.ECLIPSE), COST, DESCRIPTION,
     			AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE,
-    			AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ENEMY, POOL);
+    			AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF, POOL);
 		this.exhaust = true;
 		this.isEthereal = true;
 	}
@@ -39,6 +40,12 @@ public class Eclipse extends CustomCard {
 		return new Eclipse();
 	}
 	
+    @Override
+    public void triggerOnEndOfPlayerTurn() {
+    	AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
+    }
+	
+    @Override
 	public boolean canUse(AbstractPlayer p, AbstractMonster m) {
 		boolean canUse = super.canUse(p, m);
 		if (!canUse) {
