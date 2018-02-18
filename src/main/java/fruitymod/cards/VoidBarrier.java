@@ -26,7 +26,7 @@ public class VoidBarrier extends CustomCard {
     public VoidBarrier() {
     	super(ID, NAME, FruityMod.makePath(FruityMod.VOID_BARRIER), COST, DESCRIPTION,
     			AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE,
-    			AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY, POOL);
+    			AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF, POOL);
     	this.baseBlock = BLOCK_AMT;
     	this.baseMagicNumber = DRAW;
     	this.magicNumber = DRAW;
@@ -38,11 +38,7 @@ public class VoidBarrier extends CustomCard {
     	AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
         if (AbstractDungeon.player.drawPile.isEmpty()) {
             AbstractDungeon.actionManager.addToBottom(new EmptyDeckShuffleAction());
-        }
-        AbstractCard card = AbstractDungeon.player.drawPile.getTopCard();
-        
-        if(card == null) return;
-        
+        }   
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));
     }
     

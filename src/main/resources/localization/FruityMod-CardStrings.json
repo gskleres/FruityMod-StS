@@ -273,7 +273,8 @@
 	},
 	"PeriaptofTenacity": {
 		"NAME": "Periapt of Tenacity",
-		"DESCRIPTION": "At the start of your turn, gain !M! Strength and !M! Dexterity."
+		"DESCRIPTION": "At the start of your turn, gain !M! Strength and !M! Dexterity.",
+		"UPGRADED_DESCRIPTION": "At the start of your turn, gain !M! Strength, !M! Dexterity, and !M! Artifact"
 	},
 	"PeriaptofVigor": {
 		"NAME": "Periapt of Vigor",

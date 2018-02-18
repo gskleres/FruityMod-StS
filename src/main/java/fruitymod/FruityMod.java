@@ -107,28 +107,31 @@ public class FruityMod implements PostInitializeSubscriber,
 	public static final String VOID_BOLT = "cards/void_bolt.png";
 	public static final String VOID_RIPPLE = "cards/void_ripple.png";
 	public static final String VOID_SHACKLES = "cards/void_shackles.png";
-	public static final String VORTEX = "cards/vortex.png";
-
-
-    
+	public static final String VORTEX = "cards/vortex.png";    
     
     // rare
     public static final String CHANNEL = "cards/channel.png";
     public static final String IMPLOSION = "cards/implosion.png";
     public static final String ASTRAL_FORM = "cards/astral_form.png";
+    public static final String ASTRAL_SHIFT = "cards/astral_shift.png";
+    public static final String PERIAPT_OF_VIGOR = "cards/periapt_of_vigor.png";
+    public static final String PERIAPT_OF_TENACITY = "cards/periapt_of_tenacity.png";
 	public static final String ECLIPSE = "cards/locked_skill.png";
 	public static final String EUREKA = "cards/locked_skill.png";
 	public static final String ECHO = "cards/locked_skill.png";
 	public static final String EVENT_HORIZON = "cards/locked_power.png";
 	public static final String ZENITH = "cards/locked_skill.png";
 	public static final String REFLECTION_WARD = "cards/locked_skill.png";
-	
+
 	
     // power images
     public static final String ASTRAL_HAZE_POWER = "powers/astral_haze.png";
     public static final String ESSENCE_MIRROR_POWER = "powers/essence_mirror.png";
     public static final String ETHEREALIZE_POWER = "powers/essence_mirror.png";
     public static final String ASTRAL_FORM_POWER = "powers/astral_form.png";
+    public static final String VIGOR_POWER = "powers/vigor.png";
+    public static final String ASTRAL_SHIFT_POWER = "powers/astral_shift.png";
+    public static final String TENACITY_POWER = "powers/tenacity.png";
     
     // relic images
     public static final String ARCANOSPHERE_RELIC = "relics/arcanosphere.png";
@@ -152,6 +155,18 @@ public class FruityMod implements PostInitializeSubscriber,
     
     public static Texture getAstralFormPowerTexture() {
     	return new Texture(makePath(ASTRAL_FORM_POWER));
+    }
+    
+    public static Texture getVigorPowerTexture() {
+    	return new Texture(makePath(VIGOR_POWER));
+    }
+    
+    public static Texture getAstralShiftTexture() {
+    	return new Texture(makePath(ASTRAL_SHIFT_POWER));
+    }
+    
+    public static Texture getTenacityPowerTexture() {
+    	return new Texture(makePath(TENACITY_POWER));
     }
     
     public static Texture getArcanoSphereTexture() {
@@ -282,11 +297,13 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new VoidBarrier());
 		BaseMod.addCard(new VoidBolt());
 		BaseMod.addCard(new VoidRipple());
-		
 		BaseMod.addCard(new Channel());
 		BaseMod.addCard(new Implosion());
 		BaseMod.addCard(new AstralForm());
 		BaseMod.addCard(new Vacuum());
+		BaseMod.addCard(new AstralShift());
+		BaseMod.addCard(new PeriaptOfVigor());
+		BaseMod.addCard(new PeriaptOfTenacity());
 		BaseMod.addCard(new Eureka());
 		BaseMod.addCard(new Eclipse());
 		BaseMod.addCard(new Echo());

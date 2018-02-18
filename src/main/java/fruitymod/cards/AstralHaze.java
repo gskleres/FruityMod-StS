@@ -1,6 +1,7 @@
 package fruitymod.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -31,7 +32,7 @@ extends CustomCard {
         super(ID, NAME, FruityMod.makePath(FruityMod.ASTRAL_HAZE), COST, DESCRIPTION,
         		AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE,
         		AbstractCard.CardRarity.BASIC, AbstractCard.CardTarget.SELF, POOL);
-        
+        this.isEthereal = true;
         this.baseMagicNumber = WEAK_VUL_AMT;
         this.magicNumber = WEAK_VUL_AMT;
         this.baseBlock = BLOCK_AMT;
@@ -42,6 +43,11 @@ extends CustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
    	 	AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new AstralHazePower(p, this.magicNumber), this.magicNumber));
+    }
+    
+    @Override
+    public void triggerOnEndOfPlayerTurn() {
+    	AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
     }
 
     @Override
