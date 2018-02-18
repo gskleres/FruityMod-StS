@@ -249,8 +249,7 @@
 	"MeteorShower": {
 		"NAME": "Meteor Shower",
 		"DESCRIPTION": "Deal !D! damage to ALL enemies for each card in your draw pile. Exhaust",
-		"UPGRADED_DESCRIPTION": "Innate. NL Deal !D! damage to ALL enemies for each card in your draw pile. Exhaust",
-		"EXTENDED_DESCRIPTION": "NL (Deals !D! damage)"
+		"UPGRADED_DESCRIPTION": "Innate. NL Deal !D! damage to ALL enemies for each card in your draw pile. Exhaust"
 	},
 	"Vacuum": {
 		"NAME": "Vacuum",
