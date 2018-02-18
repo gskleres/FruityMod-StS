@@ -22,7 +22,7 @@ public class MeteorShower extends CustomCard {
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-	public static final String EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION[0];
+	public static final String EXTENDED_DESCRIPTION = "NL (Deals !D! damage)";
 	private static final int COST = 1;
 	private static final int ATTACK_DMG_PER_CARD = 1;
 	private static final int POOL = 1;
