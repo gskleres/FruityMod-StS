@@ -11,7 +11,7 @@ public class GravityPower extends AbstractPower {
 	public static final String NAME = "Gravity";
 	public static final String[] DESCRIPTIONS = new String[] {
 			"While Weak, this creature is losing ",
-			"Strength"
+			" Strength"
 	};
 	
 	public GravityPower(AbstractCreature owner, int amount) {
@@ -28,7 +28,7 @@ public class GravityPower extends AbstractPower {
 	
 	@Override
 	public float atDamageGive(float damage, DamageInfo.DamageType type) {
-		if (type == DamageInfo.DamageType.NORMAL) {
+		if (type == DamageInfo.DamageType.NORMAL && this.owner.hasPower("Weakened")) {
 			return damage - this.amount;
 		}
 		return damage;
