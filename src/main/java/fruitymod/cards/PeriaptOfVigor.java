@@ -33,7 +33,7 @@ public class PeriaptOfVigor extends CustomCard {
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
-				new VigorPower(p, this.magicNumber), 1));
+				new VigorPower(p, this.magicNumber), this.magicNumber));
 	}
 	
 	@Override
