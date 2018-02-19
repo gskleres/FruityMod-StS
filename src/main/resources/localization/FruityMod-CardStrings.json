@@ -317,6 +317,6 @@
 	},
 	"Coalescence": {
 		"NAME": "Coalescence",
-		"DESCRIPTION": At the end of your turn gain 1 Weak and !M! Block."
+		"DESCRIPTION": "At the end of your turn gain 1 Weak and !M! Block."
 	}
 }
