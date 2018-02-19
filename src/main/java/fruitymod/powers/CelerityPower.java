@@ -20,7 +20,7 @@ public class CelerityPower extends AbstractPower implements PostExhaustSubscribe
 	};
 	
 	public CelerityPower(AbstractCreature owner, int amount) {
-		this.amount = amount;
+		this.name = NAME;
 		this.ID = POWER_ID;
 		this.owner = owner;
 		this.amount = amount;
