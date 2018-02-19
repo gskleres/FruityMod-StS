@@ -18,6 +18,7 @@ public class CoalescencePower extends AbstractPower {
 	public CoalescencePower(AbstractCreature owner, int amount) {
 		this.name = NAME;
 		this.ID = POWER_ID;
+		this.owner = owner;
 		this.amount = amount;
 		updateDescription();
 		this.type = AbstractPower.PowerType.BUFF;
