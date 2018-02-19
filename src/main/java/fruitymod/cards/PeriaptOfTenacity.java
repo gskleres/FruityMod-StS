@@ -20,13 +20,13 @@ public class PeriaptOfTenacity extends CustomCard {
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	public static final String UPGRADED_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	private static final int POWER_UP_AMT = 1;
-	private static final int COST = 3;
-	private static final int UPGRADED_COST = 2;
+	private static final int COST = 2;
+	private static final int UPGRADED_COST = 1;
 	private static final int POOL = 1;
 
 	public PeriaptOfTenacity() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.PERIAPT_OF_TENACITY), COST, DESCRIPTION,
-				AbstractCard.CardType.POWER, AbstractCardEnum.PURPLE, AbstractCard.CardRarity.RARE,
+				AbstractCard.CardType.POWER, AbstractCardEnum.PURPLE, AbstractCard.CardRarity.UNCOMMON,
 				AbstractCard.CardTarget.SELF, POOL);
 		this.magicNumber = this.baseMagicNumber = POWER_UP_AMT;
 	}
@@ -46,8 +46,6 @@ public class PeriaptOfTenacity extends CustomCard {
 	public void upgrade() {
 		if (!this.upgraded) {
 			this.upgradeName();
-			this.rawDescription = UPGRADED_DESCRIPTION;
-			this.initializeDescription();
 			this.upgradeBaseCost(UPGRADED_COST);
 		}
 	}

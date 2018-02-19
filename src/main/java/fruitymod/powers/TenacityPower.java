@@ -5,8 +5,6 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
-import com.megacrit.cardcrawl.powers.DexterityPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import fruitymod.FruityMod;
 
@@ -46,14 +44,6 @@ public class TenacityPower extends AbstractPower {
 		flash();
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
 				this.owner, this.owner,
-				new StrengthPower(this.owner, this.amount), this.amount));
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-				this.owner, this.owner,
-				new DexterityPower(this.owner, this.amount), this.amount));
-		if(this.upgraded) {
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-					this.owner, this.owner,
-					new ArtifactPower(this.owner, this.amount), this.amount));
-		}
+				new ArtifactPower(this.owner, this.amount), this.amount));
 	}
 }
