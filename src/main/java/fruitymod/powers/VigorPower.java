@@ -4,12 +4,14 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import basemod.BaseMod;
+import basemod.interfaces.PostBattleSubscriber;
 import basemod.interfaces.PostDrawSubscriber;
 import fruitymod.FruityMod;
 
-public class VigorPower extends AbstractPower implements PostDrawSubscriber {
+public class VigorPower extends AbstractPower implements PostDrawSubscriber, PostBattleSubscriber {
 	public static final String POWER_ID = "VigorPower";
 	public static final String NAME = "Vigor";
 	public static final String[] DESCRIPTIONS = new String[] {
@@ -28,6 +30,7 @@ public class VigorPower extends AbstractPower implements PostDrawSubscriber {
 		this.priority = 90;
 		this.img = FruityMod.getVigorPowerTexture();
 		BaseMod.subscribeToPostDraw(this);
+		BaseMod.subscribeToPostBattle(this);
 	}
 
 	@Override
@@ -60,6 +63,12 @@ public class VigorPower extends AbstractPower implements PostDrawSubscriber {
 				c.setCostForTurn(c.cost - this.amount);
 			}
 		}
+	}
+	
+	@Override
+	public void receivePostBattle(AbstractRoom arg0) {
+		BaseMod.unsubscribeFromPostDraw(this);
+		BaseMod.unsubscribeFromPostBattle(this);
 	}
 	
 }

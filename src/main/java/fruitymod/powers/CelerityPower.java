@@ -6,12 +6,14 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import basemod.BaseMod;
+import basemod.interfaces.PostBattleSubscriber;
 import basemod.interfaces.PostExhaustSubscriber;
 import fruitymod.FruityMod;
 
-public class CelerityPower extends AbstractPower implements PostExhaustSubscriber {
+public class CelerityPower extends AbstractPower implements PostExhaustSubscriber, PostBattleSubscriber {
 	public static final String POWER_ID = "CelerityPower";
 	public static final String NAME = "Celerity";
 	public static final String[] DESCRIPTIONS = new String[] {
@@ -30,11 +32,12 @@ public class CelerityPower extends AbstractPower implements PostExhaustSubscribe
 		this.priority = 90;
 		this.img = FruityMod.getCelerityPowerTexture();
 		BaseMod.subscribeToPostExhaust(this);
+		BaseMod.subscribeToPostBattle(this);
 	}
 	
 	@Override
 	public void onRemove() {
-		BaseMod.unsubscribeFromPostExhaust(this);
+		
 	}
 	
 	@Override
@@ -50,6 +53,12 @@ public class CelerityPower extends AbstractPower implements PostExhaustSubscribe
 					this.owner, this.owner,
 					new DexterityPower(this.owner, this.amount), this.amount));
 		}
+	}
+
+	@Override
+	public void receivePostBattle(AbstractRoom battleRoom) {
+		BaseMod.unsubscribeFromPostExhaust(this);
+		BaseMod.unsubscribeFromPostBattle(this);
 	}
 	
 }

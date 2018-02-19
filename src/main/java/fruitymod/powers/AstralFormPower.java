@@ -7,12 +7,14 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import basemod.BaseMod;
+import basemod.interfaces.PostBattleSubscriber;
 import basemod.interfaces.PostDrawSubscriber;
 import fruitymod.FruityMod;
 
-public class AstralFormPower extends AbstractPower implements PostDrawSubscriber {
+public class AstralFormPower extends AbstractPower implements PostDrawSubscriber, PostBattleSubscriber {
 	public static final String POWER_ID = "AstralFormPower";
 	public static final String NAME = "Astral Form";
 	public static final String[] DESCRIPTIONS = new String[] {
@@ -31,11 +33,7 @@ public class AstralFormPower extends AbstractPower implements PostDrawSubscriber
 		this.priority = 90;
 		this.img = FruityMod.getAstralFormPowerTexture();
 		BaseMod.subscribeToPostDraw(this);
-	}
-	
-	@Override
-	public void onRemove() {
-		BaseMod.unsubscribeFromPostDraw(this);
+		BaseMod.subscribeToPostBattle(this);
 	}
 	
 	@Override
@@ -53,6 +51,12 @@ public class AstralFormPower extends AbstractPower implements PostDrawSubscriber
 					new DamageInfo(player, this.amount), 1));
 		}
 		
+	}
+
+	@Override
+	public void receivePostBattle(AbstractRoom arg0) {
+		BaseMod.unsubscribeFromPostDraw(this);
+		BaseMod.unsubscribeFromPostBattle(this);
 	}
 	
 }

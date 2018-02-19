@@ -6,12 +6,14 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import basemod.BaseMod;
+import basemod.interfaces.PostBattleSubscriber;
 import basemod.interfaces.PostExhaustSubscriber;
 import fruitymod.FruityMod;
 
-public class PotencyPower extends AbstractPower implements PostExhaustSubscriber {
+public class PotencyPower extends AbstractPower implements PostExhaustSubscriber, PostBattleSubscriber {
 	public static final String POWER_ID = "PotencyPower";
 	public static final String NAME = "Potency";
 	public static final String[] DESCRIPTIONS = new String[] {
@@ -30,11 +32,7 @@ public class PotencyPower extends AbstractPower implements PostExhaustSubscriber
 		this.priority = 90;
 		this.img = FruityMod.getPotencyPowerTexture();
 		BaseMod.subscribeToPostExhaust(this);
-	}
-	
-	@Override
-	public void onRemove() {
-		BaseMod.unsubscribeFromPostExhaust(this);
+		BaseMod.subscribeToPostBattle(this);
 	}
 	
 	@Override
@@ -50,6 +48,12 @@ public class PotencyPower extends AbstractPower implements PostExhaustSubscriber
 					this.owner, this.owner,
 					new StrengthPower(this.owner, this.amount), this.amount));
 		}
+	}
+
+	@Override
+	public void receivePostBattle(AbstractRoom battleRoom) {
+		BaseMod.unsubscribeFromPostExhaust(this);
+		BaseMod.unsubscribeFromPostBattle(this);
 	}
 	
 }
