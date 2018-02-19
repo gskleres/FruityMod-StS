@@ -54,7 +54,7 @@
 						<phase>package</phase>
 						<configuration>
 							<target>
-								<copy file="target/FruityMod.jar" tofile="../_ModTheSpire/mods/FruityModMod.jar" />
+								<copy file="target/FruityMod.jar" tofile="../_ModTheSpire/mods/FruityMod.jar" />
 							</target>
 						</configuration>
 						<goals>
