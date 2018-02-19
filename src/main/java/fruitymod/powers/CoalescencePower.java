@@ -42,6 +42,6 @@ public class CoalescencePower extends AbstractPower {
 		AbstractDungeon.actionManager.addToTop(
 				new GainBlockAction(this.owner, this.owner, this.amount));
 		AbstractDungeon.actionManager.addToTop(
-				new ApplyPowerAction(this.owner, this.owner, new WeakPower(this.owner, this.amount, false), WEAK_AMT));
+				new ApplyPowerAction(this.owner, this.owner, new WeakPower(this.owner, WEAK_AMT, false), WEAK_AMT));
 	}
 }
