@@ -314,5 +314,9 @@
 		"NAME": "Zenith",
 		"DESCRIPTION": "Double your [R]. Exhaust.",
 		"UPGRADED_DESCRIPTION": "Double your [R]."
+	},
+	"Coalescence": {
+		"NAME": "Coalescence",
+		"DESCRIPTION": At the end of your turn gain 1 Weak and !M! Block."
 	}
 }

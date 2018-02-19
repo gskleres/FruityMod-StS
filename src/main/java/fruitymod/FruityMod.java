@@ -121,6 +121,7 @@ public class FruityMod implements PostInitializeSubscriber,
 	public static final String ZENITH = "cards/locked_skill.png";
 	public static final String REFLECTION_WARD = "cards/locked_skill.png";
 	public static final String CREATIVITY = "cards/locked_power.png";
+	public static final String COALESCENCE = "cards/locked_power.png";
 	
 
 	
@@ -133,8 +134,9 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String ASTRAL_SHIFT_POWER = "powers/astral_shift.png";
     public static final String TENACITY_POWER = "powers/tenacity.png";
     public static final String GRAVITY_POWER = "powers/gravity.png";
-    public static final String CELERITY_POWER = "powers/celerity.png"; 
+    public static final String CELERITY_POWER = "powers/celerity.png";
     public static final String POTENCY_POWER = "powers/potency.png";
+    public static final String COALESCENCE_POWER = "powers/coalescence.png";
     
     // relic images
     public static final String ARCANOSPHERE_RELIC = "relics/arcanosphere.png";
@@ -182,6 +184,10 @@ public class FruityMod implements PostInitializeSubscriber,
     
     public static Texture getPotencyPowerTexture() {
     	return new Texture(makePath(POTENCY_POWER));
+    }
+    
+    public static Texture getCoalescencePowerTexture() {
+    	return new Texture(makePath(COALESCENCE_POWER));
     }
     
     public static Texture getArcanoSphereTexture() {
