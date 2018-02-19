@@ -53,7 +53,28 @@ public class PotencyPower extends AbstractPower implements PostExhaustSubscriber
 	@Override
 	public void receivePostBattle(AbstractRoom battleRoom) {
 		BaseMod.unsubscribeFromPostExhaust(this);
-		BaseMod.unsubscribeFromPostBattle(this);
+		/*
+		 *  calling unsubscribeFromPostBattle inside the callback
+		 *  for receivePostBattle means that when we're calling it
+		 *  there is currently an iterator going over the list
+		 *  of subscribers and calling receivePostBattle on each of
+		 *  them therefore if we immediately try to remove the this
+		 *  callback from the post battle subscriber list it will
+		 *  throw a concurrent modification exception in the iterator
+		 *  
+		 *  for now we just add a delay - yes this is an atrocious solution
+		 *  PLEASE someone with a better idea replace it
+		 */
+		Thread delayed = new Thread(() -> {
+			try {
+				Thread.sleep(200);
+			} catch (Exception e) {
+				System.out.println("could not delay unsubscribe to avoid ConcurrentModificationException");
+				e.printStackTrace();
+			}
+			BaseMod.unsubscribeFromPostBattle(this);
+		});
+		delayed.start();
 	}
 	
 }
