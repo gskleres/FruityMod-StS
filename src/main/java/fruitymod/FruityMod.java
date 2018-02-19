@@ -133,6 +133,7 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String ASTRAL_SHIFT_POWER = "powers/astral_shift.png";
     public static final String TENACITY_POWER = "powers/tenacity.png";
     public static final String GRAVITY_POWER = "powers/gravity.png";
+    public static final String CELERITY_POWER = "powers/celerity.png";
     
     // relic images
     public static final String ARCANOSPHERE_RELIC = "relics/arcanosphere.png";
@@ -172,6 +173,10 @@ public class FruityMod implements PostInitializeSubscriber,
     
     public static Texture getGravityPowerTexture() {
     	return new Texture(makePath(GRAVITY_POWER));
+    }
+    
+    public static Texture getCelerityPowerTexture() {
+    	return new Texture(makePath(CELERITY_POWER));
     }
     
     public static Texture getArcanoSphereTexture() {
