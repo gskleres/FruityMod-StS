@@ -17,7 +17,7 @@ import fruitymod.FruityMod;
 import fruitymod.patches.AbstractCardEnum;
 
 public class Starfall extends CustomCard {
-	private static final String ID = "Starfall";
+	private static final String ID = "MagicMissile";
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
