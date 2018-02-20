@@ -77,7 +77,7 @@
 	},
 	"Hypothesis": {
 		"NAME": "Hypothesis",
-		"DESCRIPTION": "Draw a card. If it is Ethereal, draw !M! more card.",
+		"DESCRIPTION": "Draw a card. If it is Ethereal, draw another card.",
 		"UPGRADE_DESCRIPTION": "Draw a card. If it is Ethereal, draw !M! more cards."
 	},
 	"UmbralWave": {
