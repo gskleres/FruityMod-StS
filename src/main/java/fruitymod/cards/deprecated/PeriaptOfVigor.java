@@ -1,4 +1,4 @@
-package fruitymod.cards;
+package fruitymod.cards.deprecated;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
