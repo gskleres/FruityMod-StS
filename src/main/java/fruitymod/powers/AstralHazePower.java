@@ -20,7 +20,6 @@ public class AstralHazePower extends AbstractPower {
 			" Vulnerable and ",
 			" Weak to the attacker."
 	};
-	private boolean justApplied = false;
 
 	public AstralHazePower(AbstractCreature owner, int amount) {
 		this.name = NAME;
@@ -36,10 +35,6 @@ public class AstralHazePower extends AbstractPower {
 
 	@Override
 	public void atEndOfRound() {
-		if (this.justApplied) {
-			this.justApplied = false;
-			return;
-		}
 		AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, "AstralHazePower"));
 	}
 
