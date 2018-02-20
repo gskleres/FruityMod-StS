@@ -356,6 +356,8 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new PeriaptOfPotency());
 		BaseMod.addCard(new MeteorShower());
 		BaseMod.addCard(new PowerOverwhelming());
+		BaseMod.addCard(new MindOverMatter());
+		BaseMod.addCard(new ProtectionWard());
 		
 		logger.info("done editting cards");
 	}

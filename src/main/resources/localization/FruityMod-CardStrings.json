@@ -201,7 +201,8 @@
 	},
 	"MindOverMatter": {
 		"NAME": "Mind Over Matter",
-		"DESCRIPTION": "Gain !M! Strength for each Frail you have. Remove all Frail."
+		"DESCRIPTION": "Gain !M! Block for each Frail you have. Remove all Frail.",
+		"EXTENDED_DESCRIPTION": [ "I am not Frail."]
 	},
 	"PowerSpike": {
 		"NAME": "Power Spike",
