@@ -28,7 +28,7 @@ public class FluxBlast extends CustomCard {
 	public FluxBlast() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.FLUX_BLAST), COST, DESCRIPTION,
 				AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE,
-				AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ALL_ENEMY, POOL);
+				AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL_ENEMY, POOL);
 		this.isMultiDamage = true;
 		this.baseDamage = ATTACK_DMG;
 	}
