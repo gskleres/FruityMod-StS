@@ -16,7 +16,7 @@ public class PowerOverwhelmingPower extends AbstractPower {
 	public static final String NAME = "Power Overwhelming";
 	public static final String[] DESCRIPTIONS = new String[] {
 			"At the start of your turn gain ",
-			" Vulnerable and deal ",
+			" Vulnerable. At the end of your turn deal ",
 			" damage to ALL enemies."
 	};
 	
@@ -27,11 +27,11 @@ public class PowerOverwhelmingPower extends AbstractPower {
 		this.ID = POWER_ID;
 		this.owner = owner;
 		this.amount = amount;
-		updateDescription();
 		this.type = AbstractPower.PowerType.BUFF;
 		this.isTurnBased = false;
 		this.priority = 90;
 		this.vulnerableAmount = vulnerableAmount;
+		updateDescription();
 		this.img = FruityMod.getPowerOverwhelmingPowerTexture();
 	}
 	
@@ -51,11 +51,18 @@ public class PowerOverwhelmingPower extends AbstractPower {
 	@Override
 	public void atStartOfTurn() {
 		this.flash();
-		AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(null, 
-				DamageInfo.createDamageMatrix(this.amount, true),
-				DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
 		AbstractDungeon.actionManager.addToBottom(
 				new ApplyPowerAction(this.owner, this.owner,
 						new VulnerablePower(this.owner, this.vulnerableAmount, false), this.vulnerableAmount));
+	}
+	
+	@Override
+	public void atEndOfTurn(boolean isPlayer) {
+		if (isPlayer) {
+			this.flash();
+			AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(null, 
+					DamageInfo.createDamageMatrix(this.amount, true),
+					DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
+		}
 	}
 }

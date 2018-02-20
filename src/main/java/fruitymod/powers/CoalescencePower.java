@@ -14,7 +14,7 @@ public class CoalescencePower extends AbstractPower {
 	public static final String NAME = "Coalescence";
 	public static final String[] DESCRIPTIONS = new String[] {
 			"At the start of your turn gain ",
-			" Weak and ",
+			" Weak. At the end of your turn gain ",
 			" Block."
 	};
 	
@@ -25,11 +25,11 @@ public class CoalescencePower extends AbstractPower {
 		this.ID = POWER_ID;
 		this.owner = owner;
 		this.amount = amount;
-		updateDescription();
 		this.type = AbstractPower.PowerType.BUFF;
 		this.isTurnBased = false;
 		this.priority = 90;
 		this.weakAmount = weakAmount;
+		updateDescription();
 		this.img = FruityMod.getCoalescencePowerTexture();
 	}
 	
@@ -50,9 +50,17 @@ public class CoalescencePower extends AbstractPower {
 	public void atStartOfTurn() {
 		this.flash();
 		AbstractDungeon.actionManager.addToTop(
-				new GainBlockAction(this.owner, this.owner, this.amount));
-		AbstractDungeon.actionManager.addToTop(
 				new ApplyPowerAction(this.owner, this.owner,
 						new WeakPower(this.owner, this.weakAmount, false), this.weakAmount));
 	}
+	
+	@Override
+	public void atEndOfTurn(boolean isPlayer) {
+		if (isPlayer) {
+			this.flash();
+			AbstractDungeon.actionManager.addToTop(
+					new GainBlockAction(this.owner, this.owner, this.amount));
+		}
+	}
+	
 }
