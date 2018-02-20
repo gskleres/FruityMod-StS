@@ -37,7 +37,7 @@ public class CoalescencePower extends AbstractPower {
 	}
 	
 	@Override
-	public void atEndOfTurn(boolean isPlayer) {
+	public void atStartOfTurn() {
 		this.flash();
 		AbstractDungeon.actionManager.addToTop(
 				new GainBlockAction(this.owner, this.owner, this.amount));
