@@ -21,6 +21,7 @@ public class PowerOverwhelming extends CustomCard {
 	private static final int COST = 1;
 	private static final int DMG_AMT = 4;
 	private static final int UPGRADED_DMG_AMT = 2;
+	private static final int STARTING_VULNERABLE_AMT = 1;
 	private static final int POOL = 1;
 	
 	public PowerOverwhelming() {
@@ -34,7 +35,7 @@ public class PowerOverwhelming extends CustomCard {
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		AbstractDungeon.actionManager.addToBottom(
 				new ApplyPowerAction(p, p,
-						new PowerOverwhelmingPower(p, this.magicNumber), this.magicNumber));
+						new PowerOverwhelmingPower(p, STARTING_VULNERABLE_AMT, this.magicNumber), this.magicNumber));
 	}
 	
 	@Override

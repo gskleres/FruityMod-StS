@@ -15,7 +15,7 @@ public class PowerOverwhelmingPower extends AbstractPower {
 	public static final String POWER_ID = "PowerOverwhelmingPower";
 	public static final String NAME = "Power Overwhelming";
 	public static final String[] DESCRIPTIONS = new String[] {
-			"At the start of your turn gain",
+			"At the start of your turn gain ",
 			" Vulnerable and deal ",
 			" damage to ALL enemies."
 	};
