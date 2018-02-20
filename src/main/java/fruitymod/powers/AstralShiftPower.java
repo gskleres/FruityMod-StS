@@ -11,7 +11,7 @@ public class AstralShiftPower extends AbstractPower {
 	public static final String POWER_ID = "AstralShiftPower";
 	public static final String NAME = "Intangible";
 	public static final String[] DESCRIPTIONS = new String[] { "Reduce ALL damage taken and HP loss to 1 this turn." };
-
+	
 	public AstralShiftPower(AbstractCreature owner, int turns) {
 		this.name = NAME;
 		this.ID = POWER_ID;
@@ -33,7 +33,7 @@ public class AstralShiftPower extends AbstractPower {
 		this.description = DESCRIPTIONS[0];
 	}
 
-	public void atEndOfTurn(boolean isPlayer) {
+	public void atEndOfRound() {
 		if (this.amount == 0) {
 			AbstractDungeon.actionManager
 					.addToBottom(new com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction(this.owner,
