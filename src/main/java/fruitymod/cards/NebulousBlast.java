@@ -43,7 +43,7 @@ extends CustomCard {
         ArrayList<AbstractCard> nonEtherialCards = new ArrayList<AbstractCard>();
         
         for(AbstractCard card : p.hand.group) {
-        	if(card.isEthereal) continue;
+        	if(card.isEthereal || card == this) continue;
         	nonEtherialCards.add(card);
         }
         
