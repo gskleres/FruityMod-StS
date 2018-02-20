@@ -137,6 +137,7 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String CELERITY_POWER = "powers/celerity.png";
     public static final String POTENCY_POWER = "powers/potency.png";
     public static final String COALESCENCE_POWER = "powers/coalescence.png";
+    public static final String CREATIVITY_POWER = "powers/creativity.png";
     
     // relic images
     public static final String ARCANOSPHERE_RELIC = "relics/arcanosphere.png";
@@ -188,6 +189,10 @@ public class FruityMod implements PostInitializeSubscriber,
     
     public static Texture getCoalescencePowerTexture() {
     	return new Texture(makePath(COALESCENCE_POWER));
+    }
+    
+    public static Texture getCreativityPowerTexture() {
+    	return new Texture(makePath(CREATIVITY_POWER));
     }
     
     public static Texture getArcanoSphereTexture() {

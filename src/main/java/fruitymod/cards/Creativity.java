@@ -1,13 +1,7 @@
 package fruitymod.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
-import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
-import com.megacrit.cardcrawl.actions.common.ShuffleAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -27,7 +21,6 @@ public class Creativity extends CustomCard {
     private static final int COST = 1;
     private static final int COST_UPGRADED = 0;
     private static final int DRAW = 1;
-    private static final int DRAW_UPGRADE = 0;
     private static final int POOL = 1;
     
     public Creativity() {
@@ -35,7 +28,6 @@ public class Creativity extends CustomCard {
     			AbstractCard.CardType.POWER, AbstractCardEnum.PURPLE,
     			AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF, POOL);
     	this.magicNumber = this.baseMagicNumber = DRAW;
-    	
     }
     
     
@@ -55,7 +47,6 @@ public class Creativity extends CustomCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeBaseCost(COST_UPGRADED);
-            this.upgradeMagicNumber(DRAW_UPGRADE);
         }
     }
 }
