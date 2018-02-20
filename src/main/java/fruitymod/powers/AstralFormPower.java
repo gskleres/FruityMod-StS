@@ -32,6 +32,10 @@ public class AstralFormPower extends AbstractPower implements PostDrawSubscriber
 		this.isTurnBased = false;
 		this.priority = 90;
 		this.img = FruityMod.getAstralFormPowerTexture();
+	}
+	
+	@Override
+	public void onInitialApplication() {
 		BaseMod.subscribeToPostDraw(this);
 		BaseMod.subscribeToPostBattle(this);
 	}

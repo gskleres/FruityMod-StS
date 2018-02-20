@@ -29,13 +29,6 @@ public class VigorPower extends AbstractPower implements PostDrawSubscriber, Pos
 		this.isTurnBased = false;
 		this.priority = 90;
 		this.img = FruityMod.getVigorPowerTexture();
-		BaseMod.subscribeToPostDraw(this);
-		BaseMod.subscribeToPostBattle(this);
-	}
-
-	@Override
-	public void onRemove() {
-		BaseMod.unsubscribeFromPostDraw(this);
 	}
 	
 	@Override
@@ -45,6 +38,8 @@ public class VigorPower extends AbstractPower implements PostDrawSubscriber, Pos
 	
 	@Override
 	public void onInitialApplication() {
+		BaseMod.subscribeToPostDraw(this);
+		BaseMod.subscribeToPostBattle(this);
 		for (AbstractCard c: AbstractDungeon.player.hand.group) {
 			updateCardCost(c, true);
 		}

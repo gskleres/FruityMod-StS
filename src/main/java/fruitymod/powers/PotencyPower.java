@@ -31,6 +31,10 @@ public class PotencyPower extends AbstractPower implements PostExhaustSubscriber
 		this.isTurnBased = false;
 		this.priority = 90;
 		this.img = FruityMod.getPotencyPowerTexture();
+	}
+	
+	@Override
+	public void onInitialApplication() {
 		BaseMod.subscribeToPostExhaust(this);
 		BaseMod.subscribeToPostBattle(this);
 	}

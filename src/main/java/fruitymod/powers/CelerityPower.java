@@ -31,13 +31,12 @@ public class CelerityPower extends AbstractPower implements PostExhaustSubscribe
 		this.isTurnBased = false;
 		this.priority = 90;
 		this.img = FruityMod.getCelerityPowerTexture();
-		BaseMod.subscribeToPostExhaust(this);
-		BaseMod.subscribeToPostBattle(this);
 	}
 	
 	@Override
-	public void onRemove() {
-		
+	public void onInitialApplication() {
+		BaseMod.subscribeToPostExhaust(this);
+		BaseMod.subscribeToPostBattle(this);
 	}
 	
 	@Override
