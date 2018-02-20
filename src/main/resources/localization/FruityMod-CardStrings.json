@@ -72,7 +72,7 @@
 	},
 	"FluxShield": {
 		"NAME": "Flux Shield",
-		"DESCRIPTION": "Gain !B! Block. Shuffle a Dazed into your draw pile."
+		"DESCRIPTION": "Gain !B! Block. NL Shuffle a Dazed into your draw pile."
 	},
 	"Hypothesis": {
 		"NAME": "Hypothesis",
@@ -86,7 +86,7 @@
 	},
 	"VoidBarrier": {
 		"NAME": "Void Barrier",
-		"DESCRIPTION": "Ethereal. Gain !B! Block. Draw !M! cards."
+		"DESCRIPTION": "Ethereal. NL Gain !B! Block. NL Draw !M! cards."
 	},
 	"ArcaneTempest": {
 		"NAME": "Arcane Tempest",
@@ -212,7 +212,7 @@
 	},
 	"Shimmer": {
 		"NAME": "Shimmer",
-		"DESCRIPTION": "Gain [R] [R]. All cards in hand become Ethereal. Exhaust."
+		"DESCRIPTION": "Gain [R] [R]. All cards in hand become Ethereal. NL Exhaust."
 	},
 	"SiphonMagic": {
 		"NAME": "Siphon Magic",
