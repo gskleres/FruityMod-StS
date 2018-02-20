@@ -45,7 +45,7 @@ public class PowerOverwhelmingPower extends AbstractPower {
 			AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(null, 
 					DamageInfo.createDamageMatrix(this.amount, true),
 					DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
-			AbstractDungeon.actionManager.addToTop(
+			AbstractDungeon.actionManager.addToBottom(
 					new ApplyPowerAction(this.owner, this.owner, new VulnerablePower(this.owner, VULNERABLE_AMT, false), VULNERABLE_AMT));
 		}
 	}
