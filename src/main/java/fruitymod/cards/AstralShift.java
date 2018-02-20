@@ -35,7 +35,7 @@ public class AstralShift extends CustomCard {
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, 
-				new AstralShiftPower(p, this.magicNumber)));
+				new AstralShiftPower(p, this.magicNumber), this.magicNumber));
 	}
 	
 	@Override
