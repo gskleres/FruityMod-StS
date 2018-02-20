@@ -1,9 +1,7 @@
 package fruitymod.cards;
 
-import com.badlogic.gdx.graphics.Color;
+
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
@@ -15,8 +13,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.FrailPower;
-import com.megacrit.cardcrawl.vfx.combat.VerticalAuraEffect;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
@@ -37,7 +33,8 @@ public class UmbralBolt extends CustomCard {
 	 public UmbralBolt() {
 		 super(ID, NAME, FruityMod.makePath(FruityMod.UMBRAL_BOLT), COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
 				 AbstractCardEnum.PURPLE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY, POOL);
-	        this.damage=this.baseDamage = ATTACK_DMG;
+	        this.damage = this.baseDamage = ATTACK_DMG;
+	        
 	    }
 	 
 	    @Override

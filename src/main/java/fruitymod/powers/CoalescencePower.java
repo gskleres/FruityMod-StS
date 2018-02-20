@@ -13,35 +13,54 @@ public class CoalescencePower extends AbstractPower {
 	public static final String POWER_ID = "CoalescencePower";
 	public static final String NAME = "Coalescence";
 	public static final String[] DESCRIPTIONS = new String[] {
-			"At the end of your turn gain 1 Weak and ",
+			"At the start of your turn gain ",
+			" Weak. At the end of your turn gain ",
 			" Block."
 	};
 	
-	private static final int WEAK_AMT = 1;
+	private int weakAmount;
 	
-	public CoalescencePower(AbstractCreature owner, int amount) {
+	public CoalescencePower(AbstractCreature owner, int weakAmount, int amount) {
 		this.name = NAME;
 		this.ID = POWER_ID;
 		this.owner = owner;
 		this.amount = amount;
-		updateDescription();
 		this.type = AbstractPower.PowerType.BUFF;
 		this.isTurnBased = false;
 		this.priority = 90;
+		this.weakAmount = weakAmount;
+		updateDescription();
 		this.img = FruityMod.getCoalescencePowerTexture();
 	}
 	
 	@Override
 	public void updateDescription() {
-		this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+		this.description = DESCRIPTIONS[0] + this.weakAmount +
+				DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2];
+	}
+	
+	@Override
+	public void stackPower(int stackAmount) {
+		this.fontScale = 8.0f;
+		this.amount += stackAmount;
+		this.weakAmount += 1;
 	}
 	
 	@Override
 	public void atStartOfTurn() {
 		this.flash();
-		AbstractDungeon.actionManager.addToTop(
-				new GainBlockAction(this.owner, this.owner, this.amount));
-		AbstractDungeon.actionManager.addToTop(
-				new ApplyPowerAction(this.owner, this.owner, new WeakPower(this.owner, WEAK_AMT, false), WEAK_AMT));
+		AbstractDungeon.actionManager.addToBottom(
+				new ApplyPowerAction(this.owner, this.owner,
+						new WeakPower(this.owner, this.weakAmount, false), this.weakAmount));
 	}
+	
+	@Override
+	public void atEndOfTurn(boolean isPlayer) {
+		if (isPlayer) {
+			this.flash();
+			AbstractDungeon.actionManager.addToBottom(
+					new GainBlockAction(this.owner, this.owner, this.amount));
+		}
+	}
+	
 }

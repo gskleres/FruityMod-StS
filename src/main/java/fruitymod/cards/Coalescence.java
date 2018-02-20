@@ -21,6 +21,7 @@ public class Coalescence extends CustomCard {
 	private static final int COST = 1;
 	private static final int BLOCK_AMT = 4;
 	private static final int UPGRADED_BLOCK_AMT = 2;
+	private static final int STARTING_WEAK_AMT = 1;
 	private static final int POOL = 1;
 	
 	public Coalescence() {
@@ -34,7 +35,7 @@ public class Coalescence extends CustomCard {
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		AbstractDungeon.actionManager.addToBottom(
 				new ApplyPowerAction(p, p,
-						new CoalescencePower(p, this.magicNumber), this.magicNumber));
+						new CoalescencePower(p, STARTING_WEAK_AMT, this.magicNumber), this.magicNumber));
 	}
 	
 	@Override

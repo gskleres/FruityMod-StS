@@ -13,8 +13,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
-import fruitymod.actions.DiscardWithCallbackAction;
-import fruitymod.actions.IDiscardCallback;
+import fruitymod.actions.common.DiscardWithCallbackAction;
+import fruitymod.actions.common.IDiscardCallback;
 import fruitymod.patches.AbstractCardEnum;
 
 public class Channel extends CustomCard {

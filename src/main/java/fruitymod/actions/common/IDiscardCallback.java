@@ -1,4 +1,4 @@
-package fruitymod.actions;
+package fruitymod.actions.common;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 

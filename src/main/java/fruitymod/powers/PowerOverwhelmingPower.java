@@ -13,38 +13,56 @@ import fruitymod.FruityMod;
 
 public class PowerOverwhelmingPower extends AbstractPower {
 	public static final String POWER_ID = "PowerOverwhelmingPower";
-	public static final String NAME = "PowerOverwhelming";
+	public static final String NAME = "Power Overwhelming";
 	public static final String[] DESCRIPTIONS = new String[] {
-			"At the end of your turn gain 1 Vulnerable and deal ",
+			"At the start of your turn gain ",
+			" Vulnerable. At the end of your turn deal ",
 			" damage to ALL enemies."
 	};
 	
-	private static final int VULNERABLE_AMT = 1;
+	private int vulnerableAmount;
 	
-	public PowerOverwhelmingPower(AbstractCreature owner, int amount) {
+	public PowerOverwhelmingPower(AbstractCreature owner, int vulnerableAmount, int amount) {
 		this.name = NAME;
 		this.ID = POWER_ID;
 		this.owner = owner;
 		this.amount = amount;
-		updateDescription();
 		this.type = AbstractPower.PowerType.BUFF;
 		this.isTurnBased = false;
 		this.priority = 90;
+		this.vulnerableAmount = vulnerableAmount;
+		updateDescription();
 		this.img = FruityMod.getPowerOverwhelmingPowerTexture();
 	}
 	
 	@Override
 	public void updateDescription() {
-		this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+		this.description = DESCRIPTIONS[0] + this.vulnerableAmount +
+				DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2];
+	}
+	
+	@Override
+	public void stackPower(int stackAmount) {
+		this.fontScale = 8.0f;
+		this.amount += stackAmount;
+		this.vulnerableAmount += 1;
 	}
 	
 	@Override
 	public void atStartOfTurn() {
 		this.flash();
-		AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(null, 
-				DamageInfo.createDamageMatrix(this.amount, true),
-				DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
-		AbstractDungeon.actionManager.addToTop(
-				new ApplyPowerAction(this.owner, this.owner, new VulnerablePower(this.owner, VULNERABLE_AMT, false), VULNERABLE_AMT));
+		AbstractDungeon.actionManager.addToBottom(
+				new ApplyPowerAction(this.owner, this.owner,
+						new VulnerablePower(this.owner, this.vulnerableAmount, false), this.vulnerableAmount));
+	}
+	
+	@Override
+	public void atEndOfTurn(boolean isPlayer) {
+		if (isPlayer) {
+			this.flash();
+			AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(null, 
+					DamageInfo.createDamageMatrix(this.amount, true),
+					DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
+		}
 	}
 }
