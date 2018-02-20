@@ -31,7 +31,7 @@ public class AstralForm extends CustomCard {
 	
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new AstralFormPower(p, this.magicNumber), 1));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new AstralFormPower(p, this.magicNumber), this.magicNumber));
 	}
 	
 	@Override
