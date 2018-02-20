@@ -61,7 +61,7 @@
 	},
 	"EssenceMirror": {
 		"NAME": "Essence Mirror",
-		"DESCRIPTION": "Frail, Weak, and Vulnerable have the opposite effect on you for !M! turn."
+		"DESCRIPTION": "Reverse the effects of Frail, Weak, and Vulnerable on you for !M! turn."
 	},
 	"EssenceSpike": {
 		"NAME": "Essence Spike",
