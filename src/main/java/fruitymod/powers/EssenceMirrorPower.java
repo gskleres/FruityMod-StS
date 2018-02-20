@@ -13,7 +13,7 @@ public class EssenceMirrorPower extends AbstractPower {
 	public static final String POWER_ID = "EssenceMirror";
 	public static final String NAME = "Essence Mirror";
 	public static final String[] DESCRIPTIONS = new String[] {
-			"Weak, Frail, and Vulnerable have the opposite effect" };
+			"Weak, Frail, and Vulnerable have the opposite effect on you." };
 	private boolean justApplied = false;
 
 	public EssenceMirrorPower(AbstractCreature owner, int amount) {
