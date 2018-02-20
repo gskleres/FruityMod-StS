@@ -87,7 +87,7 @@
 	},
 	"VoidBarrier": {
 		"NAME": "Void Barrier",
-		"DESCRIPTION": "Ethereal. Gain !B! Block. Draw !M! cards."
+		"DESCRIPTION": "Ethereal. NL Gain !B! Block. NL Draw !M! cards."
 	},
 	"ArcaneTempest": {
 		"NAME": "Arcane Tempest",
