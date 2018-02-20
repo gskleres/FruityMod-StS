@@ -332,6 +332,7 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new ReflectionWard());
 		BaseMod.addCard(new Creativity());
 		BaseMod.addCard(new Transference());
+		BaseMod.addCard(new Surge());
 		BaseMod.addCard(new StrokeOfGenius());
 		BaseMod.addCard(new SiphonSpeed());
 		BaseMod.addCard(new SiphonMagic());
