@@ -9,7 +9,7 @@
 	},
 	"AstralHaze": {
 		"NAME": "Astral Haze",
-		"DESCRIPTION": "Ethereal. Gain !B! Block. Apply !M! Vulnerable and !M! Weak to ALL attackers."
+		"DESCRIPTION": "Ethereal. NL Gain !B! Block. Apply !M! Vulnerable and !M! Weak to ALL attackers this turn."
 	},
 	"ArcaneBarrage": {
 		"NAME": "Arcane Barrage",
