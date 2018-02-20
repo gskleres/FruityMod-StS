@@ -39,12 +39,14 @@ public class PowerOverwhelmingPower extends AbstractPower {
 	}
 	
 	@Override
-	public void atStartOfTurn() {
-		this.flash();
-		AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(null, 
-				DamageInfo.createDamageMatrix(this.amount, true),
-				DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
-		AbstractDungeon.actionManager.addToTop(
-				new ApplyPowerAction(this.owner, this.owner, new VulnerablePower(this.owner, VULNERABLE_AMT, false), VULNERABLE_AMT));
+	public void atEndOfTurn(boolean isPlayer) {
+		if (isPlayer) {
+			this.flash();
+			AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(null, 
+					DamageInfo.createDamageMatrix(this.amount, true),
+					DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
+			AbstractDungeon.actionManager.addToTop(
+					new ApplyPowerAction(this.owner, this.owner, new VulnerablePower(this.owner, VULNERABLE_AMT, false), VULNERABLE_AMT));
+		}
 	}
 }
