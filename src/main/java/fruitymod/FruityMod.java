@@ -138,6 +138,8 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String POTENCY_POWER = "powers/potency.png";
     public static final String COALESCENCE_POWER = "powers/coalescence.png";
     public static final String CREATIVITY_POWER = "powers/creativity.png";
+    public static final String POWER_OVERWHELMING_POWER = "powers/power_overwhelming.png";
+    public static final String EVENT_HORIZON_POWER = "powers/event_horizon.png";
     
     // relic images
     public static final String ARCANOSPHERE_RELIC = "relics/arcanosphere.png";
@@ -193,6 +195,14 @@ public class FruityMod implements PostInitializeSubscriber,
     
     public static Texture getCreativityPowerTexture() {
     	return new Texture(makePath(CREATIVITY_POWER));
+    }
+    
+    public static Texture getPowerOverwhelmingPowerTexture() {
+    	return new Texture(makePath(POWER_OVERWHELMING_POWER));
+    }
+    
+    public static Texture getEventHorizonPowerTexture() {
+    	return new Texture(makePath(EVENT_HORIZON_POWER));
     }
     
     public static Texture getArcanoSphereTexture() {
@@ -345,6 +355,7 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new PeriaptOfCelerity());
 		BaseMod.addCard(new PeriaptOfPotency());
 		BaseMod.addCard(new MeteorShower());
+		BaseMod.addCard(new PowerOverwhelming());
 		
 		logger.info("done editting cards");
 	}

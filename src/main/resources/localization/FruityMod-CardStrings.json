@@ -155,7 +155,7 @@
 	},
 	"PowerOverwhelming": {
 		"NAME": "Power Overwhelming",
-		"DESCRIPTION": "At the end of your turn, gain !M! Vulnerable and deal !D! damage to ALL enemies."
+		"DESCRIPTION": "At the end of your turn, gain 1 Vulnerable and deal !M! damage to ALL enemies."
 	},
 	"VoidShackles": {
 		"NAME": "Void Shackles",
