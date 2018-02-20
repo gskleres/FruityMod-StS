@@ -46,7 +46,7 @@ public class Coalescence extends CustomCard {
 	public void upgrade() {
 		if (!this.upgraded) {
 			this.upgradeName();
-			this.upgradeBlock(UPGRADED_BLOCK_AMT);
+			this.upgradeMagicNumber(UPGRADED_BLOCK_AMT);
 		}
 	}
 }
