@@ -29,6 +29,7 @@
 	},
 	"FluxBolt": {
 		"NAME": "Flux Bolt",
+		"DESCRIPTION": "Shuffle a Dazed into your draw pile. Deal !D! damage."
 	},
 	"MagicMissile": {
 		"NAME": "Magic Missile",
