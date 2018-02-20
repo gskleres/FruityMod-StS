@@ -32,7 +32,7 @@
 		"DESCRIPTION": "Shuffle a Dazed into your draw pile. Deal !D! damage."
 	},
 	"MagicMissile": {
-		"NAME": "Magic Missile",
+		"NAME": "Comet",
 		"DESCRIPTION": "Deal !D! damage."
 	},
 	"Retrograde": {
