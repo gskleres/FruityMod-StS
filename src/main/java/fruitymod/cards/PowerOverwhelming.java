@@ -39,7 +39,7 @@ public class PowerOverwhelming extends CustomCard {
 	
 	@Override
 	public AbstractCard makeCopy() {
-		return new Coalescence();
+		return new PowerOverwhelming();
 	}
 	
 	@Override
