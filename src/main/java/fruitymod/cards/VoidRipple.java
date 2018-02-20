@@ -24,9 +24,9 @@ public class VoidRipple extends CustomCard {
 	public static final String DESCRIPTION = "Ethereal. Gain !B! Block. Deal !D! damage.";
 	private static final int COST = 1;
 	private static final int ATTACK_DMG = 6;
-	private static final int UPGRADE_DMG_AMT = 3;
+	private static final int UPGRADE_DMG_AMT = 2;
 	private static final int BLOCK_AMT = 6;
-	private static final int UPGRADE_BLOCK_AMT = 3;
+	private static final int UPGRADE_BLOCK_AMT = 2;
 	private static final int POOL = 1;
 
 	public VoidRipple() {
