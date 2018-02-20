@@ -13,7 +13,7 @@ import fruitymod.FruityMod;
 
 public class PowerOverwhelmingPower extends AbstractPower {
 	public static final String POWER_ID = "PowerOverwhelmingPower";
-	public static final String NAME = "PowerOverwhelming";
+	public static final String NAME = "Power Overwhelming";
 	public static final String[] DESCRIPTIONS = new String[] {
 			"At the end of your turn gain 1 Vulnerable and deal ",
 			" damage to ALL enemies."
