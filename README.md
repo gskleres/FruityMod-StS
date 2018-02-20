@@ -13,7 +13,7 @@ Currently the Seeker is in a playable state but is also missing a lot of core ga
 
 ## Requirements ##
 #### General Use ####
-* BaseMod v.1.5.2+ (https://github.com/t-larson/BaseMod/releases)
+* BaseMod v.1.5.2+ (https://github.com/t-larson/BaseMod/releases) for now use (https://github.com/daviscook477/BaseMod)
 * ModTheSpire v2.2.1+ (https://github.com/kiooeht/ModTheSpire/releases)
 
 #### Development ####
