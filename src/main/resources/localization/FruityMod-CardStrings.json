@@ -29,7 +29,6 @@
 	},
 	"FluxBolt": {
 		"NAME": "Flux Bolt",
-		"DESCRIPTION": "Shuffle a Dazed into your draw pile. Deal !D! damage."
 	},
 	"MagicMissile": {
 		"NAME": "Magic Missile",
@@ -297,8 +296,8 @@
 	},
 	"Eureka": {
 		"NAME": "Eureka!",
-		"DESCRIPTION": "Shuffle 1 Dazed into your draw pile. Draw !M! cards. Gain [R] [R]. Exhaust.",
-		"UPGRADE_DESCRIPTION": "Shuffle 1 Dazed into your draw pile. Draw !M! cards. Gain [R] [R] [R]. Exhaust."
+		"DESCRIPTION": "Shuffle 2 Dazed into your draw pile. Draw !M! cards. Gain [R] [R]. Exhaust.",
+		"UPGRADE_DESCRIPTION": "Shuffle 2 Dazed into your draw pile. Draw !M! cards. NL Gain [R] [R] [R]. Exhaust."
 	},
 	"Nova": {
 		"NAME": "Nova",
