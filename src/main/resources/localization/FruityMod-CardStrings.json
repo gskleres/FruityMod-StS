@@ -135,7 +135,7 @@
 	},
 	"UmbralBolt": {
 		"NAME": "Umbral Bolt",
-		"DESCRIPTION": "Deal !D! damage. If you are Frail, gain [R] and draw !M! card."
+		"DESCRIPTION": "Deal !D! damage. If you are Frail, gain [R] and draw a card."
 	},
 	"GravityWell": {
 		"NAME": "Gravity Well",
