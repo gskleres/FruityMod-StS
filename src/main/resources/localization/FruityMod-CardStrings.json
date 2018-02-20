@@ -78,12 +78,12 @@
 	"Hypothesis": {
 		"NAME": "Hypothesis",
 		"DESCRIPTION": "Draw a card. If it is Ethereal, draw !M! more card.",
-		"UPGRADED_DESCRIPTION": "Draw a card. If it is Ethereal, draw !M! more cards."
+		"UPGRADE_DESCRIPTION": "Draw a card. If it is Ethereal, draw !M! more cards."
 	},
 	"UmbralWave": {
 		"NAME": "Umbral Wave",
 		"DESCRIPTION": "Ethereal. Gain !M! Block. Deal !D! damage. Next turn gain [R].",
-		"UPGRADED_DESCRIPTION": "Ethereal. Gain !M! Block. Deal !D! damage. Next turn gain [R] [R]."
+		"UPGRADE_DESCRIPTION": "Ethereal. Gain !M! Block. Deal !D! damage. Next turn gain [R] [R]."
 	},
 	"VoidBarrier": {
 		"NAME": "Void Barrier",
@@ -160,7 +160,7 @@
 	"VoidShackles": {
 		"NAME": "Void Shackles",
 		"DESCRIPTION": "Whenever you apply Vulnerable or Weak to an enemy, apply !M! additional stack.",
-		"UPGRADED_DESCRIPTION": "Whenever you apply Vulnerable or Weak to an enemy, apply !M! additional stacks."
+		"UPGRADE_DESCRIPTION": "Whenever you apply Vulnerable or Weak to an enemy, apply !M! additional stacks."
 	},
 	"Vortex": {
 		"NAME": "Vortex",
@@ -197,7 +197,7 @@
 	"Illuminate": {
 		"NAME": "Illuminate",
 		"DESCRIPTION": "Create !M! copy of an Ethereal card in your hand.",
-		"UPGRADED_DESCRIPTION": "Create !M! copies of an Ethereal card in your hand."
+		"UPGRADE_DESCRIPTION": "Create !M! copies of an Ethereal card in your hand."
 	},
 	"MindOverMatter": {
 		"NAME": "Mind Over Matter",
@@ -218,7 +218,7 @@
 	"SiphonMagic": {
 		"NAME": "Siphon Magic",
 		"DESCRIPTION": "Transfer all Artifact from ALL enemies to you. Exhaust.",
-		"UPGRADED_DESCRIPTION": "Innate. Transfer all Artifact from ALL enemies to you. Exhaust.",
+		"UPGRADE_DESCRIPTION": "Innate. Transfer all Artifact from ALL enemies to you. Exhaust.",
 		"EXTENDED_DESCRIPTION": [ "There are no enemies with Artifact."]
 	},
 	"SiphonSpeed": {
@@ -228,7 +228,7 @@
 	"StrokeOfGenius": {
 		"NAME": "Stroke of Genius",
 		"DESCRIPTION": "Add a random Power to your hand. Exhaust.",
-		"UPGRADED_DESCRIPTION": "Add a random Power to your hand. It costs 0 this turn. Exhaust."
+		"UPGRADE_DESCRIPTION": "Add a random Power to your hand. It costs 0 this turn. Exhaust."
 	},
 	"Transference": {
 		"NAME": "Transference",
@@ -238,7 +238,7 @@
 	"Channel": {
 		"NAME": "Channel",
 		"DESCRIPTION": "Deal !D! damage. Discard a card. If it is Ethereal deal !D! damage again.",
-		"UPGRADED_DESCRIPTION": "Deal !D! damage. Discard !M! cards. For each card that is Ethereal deal !D! damage again."
+		"UPGRADE_DESCRIPTION": "Deal !D! damage. Discard !M! cards. For each card that is Ethereal deal !D! damage again."
 	},
 	"Feedback": {
 		"NAME": "Feedback",
@@ -251,7 +251,7 @@
 	"MeteorShower": {
 		"NAME": "Meteor Shower",
 		"DESCRIPTION": "Deal !D! damage to ALL enemies for each card in your draw pile. Exhaust",
-		"UPGRADED_DESCRIPTION": "Innate. NL Deal !D! damage to ALL enemies for each card in your draw pile. Exhaust"
+		"UPGRADE_DESCRIPTION": "Innate. NL Deal !D! damage to ALL enemies for each card in your draw pile. Exhaust"
 	},
 	"Vacuum": {
 		"NAME": "Vacuum",
@@ -284,12 +284,12 @@
 	"AstralShift": {
 		"NAME": "Astral Shift",
 		"DESCRIPTION": "Ethereal. Gain !M! Intangible. Exhaust.",
-		"UPGRADED_DESCRIPTION": "Ethereal. Gain !M! Intangible."
+		"UPGRADE_DESCRIPTION": "Ethereal. Gain !M! Intangible."
 	},
 	"Echo": {
 		"NAME": "Echo",
 		"DESCRIPTION": "Play the next Ethereal card twice.",
-		"UPGRADED_DESCRIPTION": "Play the next 2 Ethereal cards twice."
+		"UPGRADE_DESCRIPTION": "Play the next 2 Ethereal cards twice."
 	},
 	"Eclipse": {
 		"NAME": "Eclipse",
@@ -298,12 +298,12 @@
 	"Eureka": {
 		"NAME": "Eureka!",
 		"DESCRIPTION": "Shuffle 1 Dazed into your draw pile. Draw !M! cards. Gain [R] [R]. Exhaust.",
-		"UPGRADED_DESCRIPTION": "Shuffle 1 Dazed into your draw pile. Draw !M! cards. Gain [R] [R] [R]. Exhaust."
+		"UPGRADE_DESCRIPTION": "Shuffle 1 Dazed into your draw pile. Draw !M! cards. Gain [R] [R] [R]. Exhaust."
 	},
 	"Nova": {
 		"NAME": "Nova",
 		"DESCRIPTION": "Ethereal. Stun an enemy. Shuffle !M! Dazed into your draw pile.",
-		"UPGRADED_DESCRIPTION": "Ethereal. Stun ALL enemies. Shuffle !M! Dazed into your draw pile."
+		"UPGRADE_DESCRIPTION": "Ethereal. Stun ALL enemies. Shuffle !M! Dazed into your draw pile."
 	},
 	"ReflectionWard": {
 		"NAME": "Reflection Ward",
