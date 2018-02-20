@@ -344,6 +344,7 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new Coalescence());
 		BaseMod.addCard(new PeriaptOfCelerity());
 		BaseMod.addCard(new PeriaptOfPotency());
+		BaseMod.addCard(new MeteorShower());
 		
 		logger.info("done editting cards");
 	}
