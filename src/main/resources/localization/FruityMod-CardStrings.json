@@ -31,7 +31,7 @@
 		"NAME": "Flux Bolt",
 		"DESCRIPTION": "Shuffle a Dazed into your draw pile. Deal !D! damage."
 	},
-	"MagicMissile": {
+	"Comet": {
 		"NAME": "Comet",
 		"DESCRIPTION": "Deal !D! damage."
 	},
@@ -39,7 +39,7 @@
 		"NAME": "Retrograde",
 		"DESCRIPTION": "Deal !D! damage. Shuffle a copy of this card into your draw pile."
 	},
-	"Starfall": {
+	"MagicMissile": {
 		"NAME": "Magic Missile",
 		"DESCRIPTION": "Ethereal. Deal !D! damage !M! times. Exhaust."
 	},
