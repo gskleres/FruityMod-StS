@@ -61,7 +61,7 @@
 	},
 	"EssenceMirror": {
 		"NAME": "Essence Mirror",
-		"DESCRIPTION": "Frail, Weak, and Vulnerable have the opposite effect on you for !M! turn."
+		"DESCRIPTION": "Reverse the effects of Frail, Weak, and Vulnerable on you for !M! turn."
 	},
 	"EssenceSpike": {
 		"NAME": "Essence Spike",
@@ -250,8 +250,8 @@
 	},
 	"MeteorShower": {
 		"NAME": "Meteor Shower",
-		"DESCRIPTION": "Deal 1 damage to ALL enemies for each card in your draw pile. Exhaust",
-		"UPGRADE_DESCRIPTION": "Innate. NL Deal 1 damage to ALL enemies for each card in your draw pile. Exhaust"
+		"DESCRIPTION": "Deal 1 damage to ALL enemies for each card in your draw pile. Exhaust.",
+		"UPGRADE_DESCRIPTION": "Innate. NL Deal 1 damage to ALL enemies for each card in your draw pile. Exhaust."
 	},
 	"Vacuum": {
 		"NAME": "Vacuum",
