@@ -15,7 +15,7 @@ public class EtherBarrier extends CustomCard {
 	public static final String NAME = "Ether Barrier";
 	public static final String DESCRIPTION = "Gain !B! Block for every Ethereal card in your hand.";
 	private static final int COST = 1;
-	private static final int BLOCK_AMT = 5;
+	private static final int BLOCK_AMT = 4;
 	private static final int UPGRADE_BLOCK_AMT = 3;
 	private static final int POOL = 1;
 
