@@ -40,7 +40,7 @@
 		"DESCRIPTION": "Deal !D! damage. Shuffle a copy of this card into your draw pile."
 	},
 	"Starfall": {
-		"NAME": "Starfall",
+		"NAME": "Magic Missile",
 		"DESCRIPTION": "Ethereal. Deal !D! damage !M! times. Exhaust."
 	},
 	"Surge": {
