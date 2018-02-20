@@ -1,4 +1,4 @@
-package fruitymod.actions;
+package fruitymod.actions.common;
 
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;

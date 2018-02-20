@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import basemod.abstracts.CustomRelic;
 import fruitymod.FruityMod;
-import fruitymod.actions.ArcanosphereAction;
+import fruitymod.actions.unique.ArcanosphereAction;
 
 public class Arcanosphere extends CustomRelic {
 	private static final String ID = "Arcanosphere";

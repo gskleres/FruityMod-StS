@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
-import fruitymod.actions.EclipseAction;
+import fruitymod.actions.unique.EclipseAction;
 import fruitymod.patches.AbstractCardEnum;
 
 public class Eclipse extends CustomCard {
