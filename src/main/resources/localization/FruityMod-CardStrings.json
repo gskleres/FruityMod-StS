@@ -111,7 +111,7 @@
 	},
 	"Flare": {
 		"NAME": "Flare",
-		"DESCRIPTION": "Deal !D! damage. Apply !M! Vulnerable. Shuffle a Dazed into your draw pile."
+		"DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable."
 	},
 	"ForceSpike": {
 		"NAME": "Force Spike",
@@ -323,6 +323,6 @@
 	},
 	"Magnetize": {
 		"NAME": "Magnetize",
-		"DESCRIPTION": "Gain !B! Block. Apply !M! Weak."
+		"DESCRIPTION": "Gain !B! Block. NL Apply !M! Weak."
 	}	
 }
