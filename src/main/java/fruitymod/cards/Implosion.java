@@ -35,13 +35,14 @@ public class Implosion extends CustomCard {
         		AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE,
         		AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ENEMY, POOL);
         this.baseDamage = ATTACK_DMG;
+        this.magicNumber = this.baseMagicNumber = DAZED_AMT;
     }
 	
 	@Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new VFXAction(new MindblastEffect(p.dialogX, p.dialogY)));
         AbstractDungeon.actionManager.addToBottom(new DamageAction((AbstractCreature)m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(p, p, new Dazed(), DAZED_AMT, true, true));
+        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(p, p, new Dazed(), this.magicNumber, true, true));
     }
 
     @Override
