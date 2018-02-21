@@ -24,10 +24,9 @@ extends CustomCard {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    private static final int COST = 1;
-    private static final int UPGRADED_COST = 2;
+    private static final int COST = 2;
+    private static final int UPGRADED_COST = 1;
     private static final int ATTACK_DMG = 0;
-    private static final int ATTACK_UPGRADE = 0;
     private static final int STACK_BONUS = 4;
     private static final int POOL = 1;
 
@@ -35,7 +34,7 @@ extends CustomCard {
         super(ID, NAME, FruityMod.makePath(FruityMod.VACUUM), COST, DESCRIPTION, 
         		AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE, 
         		AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ENEMY, POOL);
-        this.damage=this.baseDamage = ATTACK_DMG;
+        this.damage = this.baseDamage = ATTACK_DMG;
         this.magicNumber = this.baseMagicNumber = STACK_BONUS;
     }
 
@@ -45,7 +44,7 @@ extends CustomCard {
     	int debuffCount = GetAllDebuffCount(p);
     	
 
-        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "Weak"));
+        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "Weakened"));
         AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "Frail"));
         AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "Vulnerable"));
 
@@ -88,7 +87,6 @@ extends CustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(ATTACK_UPGRADE);
             this.upgradeBaseCost(UPGRADED_COST);
         }
     }
