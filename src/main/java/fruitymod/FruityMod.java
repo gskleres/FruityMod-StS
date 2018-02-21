@@ -148,6 +148,11 @@ public class FruityMod implements PostInitializeSubscriber,
     // seeker assets
     private static final String SEEKER_BUTTON = "charSelect/seekerButton.png";
     private static final String SEEKER_PORTRAIT = "charSelect/seekerPortrait.jpg";
+    public static final String SEEKER_SHOULDER_1 = "char/seeker/shoulder.png";
+    public static final String SEEKER_SHOULDER_2 = "char/seeker/shoulder2.png";
+    public static final String SEEKER_CORPSE = "char/seeker/corpse.png";
+    public static final String SEEKER_SKELETON_ATLAS = "char/seeker/skeleton.atlas";
+    public static final String SEEKER_SKELETON_JSON = "char/seeker/skeleton.json";
     
     // texture loaders
     public static Texture getAstralHazePowerTexture() {

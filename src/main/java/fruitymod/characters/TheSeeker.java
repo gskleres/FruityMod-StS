@@ -13,21 +13,26 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
-import basemod.BaseMod;
+import fruitymod.FruityMod;
 import fruitymod.patches.TheSeekerEnum;
 
 public class TheSeeker extends AbstractPlayer {
-
+	public static final int ENERGY_PER_TURN = 3;
+	
+	
 	public TheSeeker(String name, PlayerClass setClass) {
 		super(name, setClass);
 		
 		this.dialogX = (this.drawX + 0.0F * Settings.scale);
 		this.dialogY = (this.drawY + 220.0F * Settings.scale);
 		
-		initializeClass(null, "images/characters/ironclad/shoulder2.png", "images/characters/ironclad/shoulder.png", "images/characters/ironclad/corpse.png", 
-				getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(3));
+		initializeClass(null, FruityMod.makePath(FruityMod.SEEKER_SHOULDER_2),
+				FruityMod.makePath(FruityMod.SEEKER_SHOULDER_1),
+				FruityMod.makePath(FruityMod.SEEKER_CORPSE), 
+				getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN));
 		
-		loadAnimation("images/characters/ironclad/idle/skeleton.atlas", "images/characters/ironclad/idle/skeleton.json", 1.0F);
+		loadAnimation(FruityMod.makePath(FruityMod.SEEKER_SKELETON_ATLAS),
+				FruityMod.makePath(FruityMod.SEEKER_SKELETON_JSON), 1.0F);
 		
 		AnimationState.TrackEntry e = this.state.setAnimation(0, "animation", true);
 		e.setTime(e.getEndTime() * MathUtils.random());
