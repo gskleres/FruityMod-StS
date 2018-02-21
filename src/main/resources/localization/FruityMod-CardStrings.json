@@ -208,7 +208,7 @@
 	},
 	"PowerSpike": {
 		"NAME": "Power Spike",
-		"DESCRIPTION": "Gain [R] [R]. Gain !M! Frail."
+		"DESCRIPTION": "Gain [R] [R]. NL Gain !M! Frail."
 	},
 	"ProtectionWard": {
 		"NAME": "Protection Ward",
