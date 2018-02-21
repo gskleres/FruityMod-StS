@@ -34,14 +34,10 @@ public class EtherBlast extends CustomCard {
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		for (AbstractCard c : AbstractDungeon.player.hand.group) {
-			if (c.isEthereal) {
-				AbstractDungeon.actionManager.addToTop(
-						new DamageAction(m,
-								new DamageInfo(p, this.damage, this.damageTypeForTurn), true));
-				AbstractDungeon.actionManager.addToTop(new VFXAction(new ThrowDaggerEffect(m.hb.cX, m.hb.cY)));
-			}
-		}
+		AbstractDungeon.actionManager.addToTop(
+				new DamageAction(m,
+						new DamageInfo(p, this.damage, this.damageTypeForTurn), true));
+		AbstractDungeon.actionManager.addToTop(new VFXAction(new ThrowDaggerEffect(m.hb.cX, m.hb.cY)));
 		this.rawDescription = DESCRIPTION;
 		initializeDescription();
 	}
