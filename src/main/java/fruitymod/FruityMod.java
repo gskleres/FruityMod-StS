@@ -60,7 +60,7 @@ public class FruityMod implements PostInitializeSubscriber,
 	public static final String ASTRAL_HAZE = "cards/astral_haze.png";
 	public static final String BRAINSTORM = "cards/brainstorm.png";
 	public static final String BRILLIANCE = "cards/brilliance.png";
-	public static final String CORONA = "cards/corona.png";
+	public static final String CORONA = "cards/locked_skill.png";
 	public static final String DEFLECTION_WARD = "cards/deflection_ward.png";
 	public static final String ENTROPY = "cards/entropy.png";
 	public static final String EQUINOX = "cards/equinox.png";
@@ -362,6 +362,9 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new Magnetize());
 		BaseMod.addCard(new Illuminate());
 		BaseMod.addCard(new Flow());
+		BaseMod.addCard(new Equinox());
+		BaseMod.addCard(new Corona());
+		BaseMod.addCard(new Archives());
 		
 		logger.info("done editting cards");
 	}

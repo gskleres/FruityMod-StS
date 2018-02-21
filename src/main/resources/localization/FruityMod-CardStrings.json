@@ -180,11 +180,13 @@
 	},
 	"Corona": {
 		"NAME": "Corona",
-		"DESCRIPTION": "A random Ethereal card in your hand costs 0 this turn."
+		"DESCRIPTION": "A random Ethereal card in your hand costs 0 this turn.",
+		"EXTENDED_DESCRIPTION": ["There are no Ethereal cards in my hand."]
 	},
 	"Equinox": {
 		"NAME": "Equinox",
-		"DESCRIPTION": "Ethereal. If you are Frail, gain !M! Strength and !M! Dexterity."
+		"DESCRIPTION": "Can only be played if your discard pile is empty or your draw pile is empty. Deal !D! damage.",
+		"EXTENDED_DESCRIPTION": [ "My discard pile or my draw pile must be empty."]
 	},
 	"Experiment": {
 		"NAME": "Experiment",

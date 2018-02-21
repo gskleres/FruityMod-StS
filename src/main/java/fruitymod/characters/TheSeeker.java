@@ -14,11 +14,6 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import basemod.BaseMod;
-import fruitymod.cards.Creativity;
-import fruitymod.cards.SiphonMagic;
-import fruitymod.cards.SiphonSpeed;
-import fruitymod.cards.StrokeOfGenius;
-import fruitymod.cards.Transference;
 import fruitymod.patches.TheSeekerEnum;
 
 public class TheSeeker extends AbstractPlayer {

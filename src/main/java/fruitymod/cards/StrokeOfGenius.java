@@ -35,9 +35,7 @@ extends CustomCard {
         }
 
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new EventHorizonPower(p, this.magicNumber), this.magicNumber));
-        
+    public void use(AbstractPlayer p, AbstractMonster m) {        
         ArrayList<AbstractCard> list = new ArrayList<AbstractCard>();
         for (AbstractCard c : AbstractDungeon.srcUncommonCardPool.group) {
             if (c.type == AbstractCard.CardType.POWER) list.add(c);

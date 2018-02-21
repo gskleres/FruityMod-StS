@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -47,7 +48,8 @@ public class FlowPower extends AbstractPower {
     	AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(energyRetained));
         --this.amount;
         this.energyRetained=0;
-        if(this.amount == 0) {
+        if(this.amount == 0 && ((AbstractPlayer)this.owner).getRelic("Ice Cream") == null) {
+        	this.flash();
         	AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, "Flow"));
         }        
         
