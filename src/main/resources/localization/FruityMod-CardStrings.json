@@ -254,7 +254,7 @@
 	"MeteorShower": {
 		"NAME": "Meteor Shower",
 		"DESCRIPTION": "Deal 1 damage to ALL enemies for each card in your draw pile. Exhaust.",
-		"UPGRADE_DESCRIPTION": "Innate. NL Deal 1 damage to ALL enemies for each card in your draw pile. Exhaust."
+		"UPGRADE_DESCRIPTION": "Innate. Deal 1 damage to ALL enemies for each card in your draw pile. Exhaust."
 	},
 	"Vacuum": {
 		"NAME": "Vacuum",
