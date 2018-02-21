@@ -13,15 +13,18 @@ import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import basemod.BaseMod;
 import basemod.ModPanel;
+import basemod.abstracts.CustomUnlock;
+import basemod.abstracts.CustomUnlockBundle;
 import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditCharactersSubscriber;
 import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
-
+import basemod.interfaces.SetUnlocksSubscriber;
 import fruitymod.cards.*;
 
 import fruitymod.characters.TheSeeker;
@@ -32,7 +35,7 @@ import fruitymod.relics.*;
 @SpireInitializer
 public class FruityMod implements PostInitializeSubscriber,
 	EditCardsSubscriber, EditRelicsSubscriber, EditCharactersSubscriber,
-	EditStringsSubscriber {
+	EditStringsSubscriber, SetUnlocksSubscriber {
 	public static final Logger logger = LogManager.getLogger(FruityMod.class.getName());
 	
     private static final String MODNAME = "FruityMod";
@@ -389,5 +392,42 @@ public class FruityMod implements PostInitializeSubscriber,
         BaseMod.loadCustomStrings(CardStrings.class, cardStrings);
 		
 		logger.info("done editting strings");
+	}
+
+	@Override
+	public void receiveSetUnlocks() {
+		// seeker unlock 1
+		BaseMod.addUnlockBundle(new CustomUnlockBundle(
+				new CustomUnlock("Brainstorm"), new CustomUnlock("FluxBolt"), new CustomUnlock("Creativity")
+				), TheSeekerEnum.THE_SEEKER, 1);
+		UnlockTracker.addCard("Brainstorm");
+		UnlockTracker.addCard("FluxBolt");
+		UnlockTracker.addCard("Creativity");
+		
+		// seeker unlock 2
+		BaseMod.addUnlockBundle(new CustomUnlockBundle(
+				new CustomUnlock("Shimmer"), new CustomUnlock("EtherBolt"), new CustomUnlock("AstralForm")
+				), TheSeekerEnum.THE_SEEKER, 1);
+		UnlockTracker.addCard("Shimmer");
+		UnlockTracker.addCard("FluxBolt");
+		UnlockTracker.addCard("Creativity");
+		
+		// seeker unlock 3 (Vacuum tmp in place of Feedback)
+		BaseMod.addUnlockBundle(new CustomUnlockBundle(
+				new CustomUnlock("Transference"), /*new CustomUnlock("Feedback"), */
+				new CustomUnlock("Vacuum"), new CustomUnlock("EssenceMirror")
+				), TheSeekerEnum.THE_SEEKER, 1);
+		UnlockTracker.addCard("Transference");
+		/*UnlockTracker.addCard("Feedback");*/
+		UnlockTracker.addCard("Vacuum");
+		UnlockTracker.addCard("EssenceMirror");
+		
+		// seeker unlock 4
+		BaseMod.addUnlockBundle(new CustomUnlockBundle(
+				new CustomUnlock("Zenith"), new CustomUnlock("UmbralWave"), new CustomUnlock("Flow")
+				), TheSeekerEnum.THE_SEEKER, 1);
+		UnlockTracker.addCard("Zenith");
+		UnlockTracker.addCard("UmbralWave");
+		UnlockTracker.addCard("Flow");
 	}
 }
