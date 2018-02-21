@@ -24,7 +24,7 @@ public class Starfall extends CustomCard {
 	private static final int COST = 1;
 	private static final int ATTACK_DMG = 3;
 	private static final int TIMES = 4;
-	private static final int UPGRADE_TIMES_AMT = 4;
+	private static final int UPGRADE_TIMES_AMT = 1;
 	private static final int POOL = 1;
 	
 	public Starfall() {
