@@ -1,9 +1,11 @@
 package fruitymod.cards;
 
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
@@ -13,25 +15,23 @@ import fruitymod.patches.AbstractCardEnum;
 
 public class Shimmer extends CustomCard {
 	public static final String ID = "Shimmer";
-	public static final String NAME = "Shimmer";
-	public static final String DESCRIPTION = "All cards in hand become Ethereal. Gain [G].";
-	public static final String UPGRADE_DESCRIPTION = "All cards in hand become Ethereal. Gain [G][G].";
-	private static final int COST = 0;
-	private static final int ENERGY_GAIN = 1;
-	private static final int UPGRADE_ENERGY_AMT = 1;
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+	private static final int COST = 1;
+	private static final int BLOCK_AMT = 15;
+	private static final int UPGRADE_BLOCK_AMT = 5;
 	private static final int POOL = 1;
 
 	public Shimmer() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.SHIMMER), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
 				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF, POOL);
-		this.baseMagicNumber = ENERGY_GAIN;
-		// required to avoid 1st turn bug
-		this.magicNumber = ENERGY_GAIN;
+		this.baseBlock = BLOCK_AMT;
 	}
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(this.magicNumber));
+		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.magicNumber));
 		AbstractDungeon.actionManager.addToBottom(new EtherealizeAction());
 	}
 
@@ -44,9 +44,7 @@ public class Shimmer extends CustomCard {
 	public void upgrade() {
 		if (!this.upgraded) {
 			this.upgradeName();
-			this.upgradeMagicNumber(UPGRADE_ENERGY_AMT);
-			this.rawDescription = UPGRADE_DESCRIPTION;
-			this.initializeDescription();
+			this.upgradeBlock(UPGRADE_BLOCK_AMT);
 		}
 	}
 }
