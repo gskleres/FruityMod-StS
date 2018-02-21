@@ -2,9 +2,8 @@ package fruitymod.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -22,7 +21,7 @@ public class MeteorShower extends CustomCard {
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-	public static final String EXTENDED_DESCRIPTION = "NL (Deals !D! damage)";
+	public static final String EXTENDED_DESCRIPTION = " NL (Deals !D! damage)";
 	private static final int COST = 1;
 	private static final int ATTACK_DMG_PER_CARD = 1;
 	private static final int POOL = 1;
@@ -37,8 +36,7 @@ public class MeteorShower extends CustomCard {
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		AbstractDungeon.actionManager.addToBottom(new VFXAction(new MindblastEffect(p.dialogX, p.dialogY)));
-		AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
-				new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));
+		AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
 		if (!this.upgraded) {
 			this.rawDescription = DESCRIPTION;
 		} else {
