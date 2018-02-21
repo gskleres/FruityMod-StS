@@ -76,7 +76,7 @@ public class EtherBlast extends CustomCard {
 	public void upgrade() {
 		if (!this.upgraded) {
 			this.upgradeName();
-			this.upgradeDamage(ATTACK_UPGRADE);
+			this.upgradeMagicNumber(ATTACK_UPGRADE);
 		}
 	}
 }
