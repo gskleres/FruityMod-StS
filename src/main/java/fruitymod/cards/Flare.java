@@ -1,19 +1,14 @@
 package fruitymod.cards;
 
+
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
-import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
-import com.megacrit.cardcrawl.vfx.combat.LightningEffect;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
@@ -25,11 +20,10 @@ extends CustomCard {
     public static final String NAME = "Flare";
     public static final String DESCRIPTION = "Deal !D! damage. Apply !M! Vulnerable. Shuffle a Dazed into your draw pile.";
     private static final int COST = 0;
-    private static final int ATTACK_DMG = 5;
-    private static final int UPGRADE_PLUS_DMG = 1;
+    private static final int ATTACK_DMG = 3;
+    private static final int UPGRADE_PLUS_DMG = 3;
     private static final int VULNERABLE_AMT = 1;
     private static final int UPGRADE_PLUS_VULNERABLE = 1;
-    private static final int DAZED_COUNT = 1;
     private static final int POOL = 1;
 
     public Flare() {
@@ -46,7 +40,6 @@ extends CustomCard {
 				new DamageInfo(p, this.damage, this.damageTypeForTurn),
 				AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
     	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, this.magicNumber, false), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(p, p, new Dazed(), DAZED_COUNT, true, true));
     }
 
     @Override
