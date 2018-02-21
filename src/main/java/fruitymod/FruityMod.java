@@ -365,6 +365,7 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new Equinox());
 		BaseMod.addCard(new Corona());
 		BaseMod.addCard(new Archives());
+		BaseMod.addCard(new Starfall());
 		
 		logger.info("done editting cards");
 	}
