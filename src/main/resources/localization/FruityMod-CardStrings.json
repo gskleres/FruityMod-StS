@@ -315,7 +315,7 @@
 	"Zenith": {
 		"NAME": "Zenith",
 		"DESCRIPTION": "Double your [R]. Exhaust.",
-		"UPGRADED_DESCRIPTION": "Double your [R]."
+		"UPGRADE_DESCRIPTION": "Double your [R]."
 	},
 	"Coalescence": {
 		"NAME": "Coalescence",
