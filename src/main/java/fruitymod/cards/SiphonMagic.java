@@ -1,9 +1,9 @@
 package fruitymod.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -30,6 +30,7 @@ public class SiphonMagic extends CustomCard {
 				 AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE,
 				 AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL_ENEMY, POOL);
 	 		this.exhaust = true;
+	 		this.isEthereal = true;
 	    }
 	 
 	    @Override
@@ -46,6 +47,11 @@ public class SiphonMagic extends CustomCard {
 	    	if(totalPowerCount > 0) {
 	            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ArtifactPower(p, totalPowerCount), totalPowerCount));
 	    	}
+	    }
+	    
+		@Override
+	    public void triggerOnEndOfPlayerTurn() {
+	    	AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
 	    }
 	    
 	    @Override
