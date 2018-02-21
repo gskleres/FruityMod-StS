@@ -106,7 +106,8 @@ public class FruityMod implements PostInitializeSubscriber,
 	public static final String VOID_RIPPLE = "cards/void_ripple.png";
 	public static final String VOID_SHACKLES = "cards/void_shackles.png";
 	public static final String VORTEX = "cards/vortex.png";    
-    
+	public static final String MAGNETIZE = "cards/locked_skill.png";
+	
     // rare
     public static final String CHANNEL = "cards/channel.png";
     public static final String IMPLOSION = "cards/implosion.png";
@@ -358,6 +359,9 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new PowerOverwhelming());
 		BaseMod.addCard(new MindOverMatter());
 		BaseMod.addCard(new ProtectionWard());
+		BaseMod.addCard(new Magnetize());
+		BaseMod.addCard(new Illuminate());
+		BaseMod.addCard(new Flow());
 		
 		logger.info("done editting cards");
 	}
