@@ -19,7 +19,7 @@ import fruitymod.patches.AbstractCardEnum;
 public class VoidBolt extends CustomCard {
 	public static final String ID = "VoidBolt";
     public static final String NAME = "Void Bolt";
-    public static final String DESCRIPTION = "Ethereal. Deal !D! damage. Draw !M! cards.";
+    public static final String DESCRIPTION = "Ethereal. Deal !D! damage. NL Draw !M! cards.";
     private static final int COST = 1;
     private static final int ATTACK_DMG = 7;
     private static final int UPGRADE_DMG_AMT = 4;

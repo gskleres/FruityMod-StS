@@ -223,7 +223,7 @@
 	},
 	"SiphonMagic": {
 		"NAME": "Siphon Magic",
-		"DESCRIPTION": "Transfer all Artifact from ALL enemies to you. Exhaust.",
+		"DESCRIPTION": "Transfer all Artifact from ALL enemies to you. NL Exhaust.",
 		"UPGRADE_DESCRIPTION": "Innate. Transfer all Artifact from ALL enemies to you. NL Exhaust.",
 		"EXTENDED_DESCRIPTION": [ "There are no enemies with Artifact."]
 	},

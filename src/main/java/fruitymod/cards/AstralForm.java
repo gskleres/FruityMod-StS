@@ -14,7 +14,7 @@ import fruitymod.powers.AstralFormPower;
 public class AstralForm extends CustomCard {
 	public static final String ID = "AstralForm";
 	public static final String NAME = "Astral Form";
-	public static final String DESCRIPTION = "Whenever you draw an Ethereal card,"
+	public static final String DESCRIPTION = "Whenever you draw an Ethereal card, "
 			+ "deal !M! damage to a random enemy.";
 	private static final int COST = 3;
 	private static final int DMG = 3;

@@ -21,7 +21,7 @@ import fruitymod.patches.AbstractCardEnum;
 public class VoidRipple extends CustomCard {
 	public static final String ID = "VoidRipple";
 	public static final String NAME = "Void Ripple";
-	public static final String DESCRIPTION = "Ethereal. Gain !B! Block. Deal !D! damage.";
+	public static final String DESCRIPTION = "Ethereal. Gain !B! Block. NL Deal !D! damage.";
 	private static final int COST = 1;
 	private static final int ATTACK_DMG = 6;
 	private static final int UPGRADE_DMG_AMT = 2;
