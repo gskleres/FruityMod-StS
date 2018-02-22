@@ -111,7 +111,7 @@
 	},
 	"Flare": {
 		"NAME": "Flare",
-		"DESCRIPTION": "Deal !D! damage. Apply !M! Vulnerable. Shuffle a Dazed into your draw pile."
+		"DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable."
 	},
 	"ForceSpike": {
 		"NAME": "Force Spike",
@@ -208,7 +208,7 @@
 	},
 	"PowerSpike": {
 		"NAME": "Power Spike",
-		"DESCRIPTION": "Gain [R] [R]. Gain !M! Frail."
+		"DESCRIPTION": "Gain [R] [R]. NL Gain !M! Frail."
 	},
 	"ProtectionWard": {
 		"NAME": "Protection Ward",
@@ -255,7 +255,7 @@
 	"MeteorShower": {
 		"NAME": "Meteor Shower",
 		"DESCRIPTION": "Deal 1 damage to ALL enemies for each card in your draw pile. Exhaust.",
-		"UPGRADE_DESCRIPTION": "Innate. NL Deal 1 damage to ALL enemies for each card in your draw pile. Exhaust."
+		"UPGRADE_DESCRIPTION": "Innate. Deal 1 damage to ALL enemies for each card in your draw pile. Exhaust."
 	},
 	"Vacuum": {
 		"NAME": "Vacuum",
@@ -315,7 +315,7 @@
 	},
 	"Zenith": {
 		"NAME": "Zenith",
-		"DESCRIPTION": "Double your [R]. Exhaust.",
+		"DESCRIPTION": "After paying this card's cost, double your remaining [R]. NL Exhaust.",
 		"UPGRADE_DESCRIPTION": "Double your [R]."
 	},
 	"Coalescence": {
@@ -324,6 +324,6 @@
 	},
 	"Magnetize": {
 		"NAME": "Magnetize",
-		"DESCRIPTION": "Gain !B! Block. Apply !M! Weak."
+		"DESCRIPTION": "Gain !B! Block. NL Apply !M! Weak."
 	}	
 }
