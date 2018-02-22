@@ -99,7 +99,7 @@
 	},
 	"EssenceDart": {
 		"NAME": "Essence Dart",
-		"DESCRIPTION": "Costs !M! less [R] for each Ethereal card in hand. Deal !D! damage."
+		"DESCRIPTION": "Costs 1 less [R] for each Ethereal card in hand. Deal !D! damage."
 	},
 	"EssenceShred": {
 		"NAME": "Essence Shred",
@@ -157,8 +157,8 @@
 		"NAME": "Power Overwhelming",
 		"DESCRIPTION": "At the start of your turn, gain 1 Vulnerable. NL At the end of your turn deal !M! damage to ALL enemies."
 	},
-	"VoidShackles": {
-		"NAME": "Void Shackles",
+	"Anomaly": {
+		"NAME": "Anomaly",
 		"DESCRIPTION": "Whenever you apply Vulnerable or Weak to an enemy, apply !M! additional stack.",
 		"UPGRADE_DESCRIPTION": "Whenever you apply Vulnerable or Weak to an enemy, apply !M! additional stacks."
 	},

@@ -110,6 +110,7 @@ public class FruityMod implements PostInitializeSubscriber,
 	public static final String VOID_SHACKLES = "cards/void_shackles.png";
 	public static final String VORTEX = "cards/vortex.png";    
 	public static final String MAGNETIZE = "cards/locked_skill.png";
+	public static final String ANOMALY = "cards/locked_power.png";
 	
     // rare
     public static final String CHANNEL = "cards/channel.png";
@@ -146,6 +147,7 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String POWER_OVERWHELMING_POWER = "powers/power_overwhelming.png";
     public static final String EVENT_HORIZON_POWER = "powers/event_horizon.png";
     public static final String BRILLIANCE_POWER = "powers/brilliance.png";
+    public static final String ANOMALY_POWER = "powers/anomaly.png";
     
     // relic images
     public static final String ARCANOSPHERE_RELIC = "relics/arcanosphere.png";
@@ -223,6 +225,10 @@ public class FruityMod implements PostInitializeSubscriber,
     public static Texture getBrillancePowerTexture() {
     	return new Texture(makePath(BRILLIANCE_POWER));
     }
+    public static Texture getAnomalyPowerTexture() {
+    	return new Texture(makePath(BRILLIANCE_POWER));
+    }
+    
     
     /**
      * Makes a full path for a resource path
@@ -382,6 +388,7 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new Starfall());
 		BaseMod.addCard(new Feedback());
 		BaseMod.addCard(new Brilliance());
+		BaseMod.addCard(new Anomaly());
 		
 		logger.info("done editting cards");
 	}

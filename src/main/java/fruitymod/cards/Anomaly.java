@@ -12,43 +12,42 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
 import fruitymod.patches.AbstractCardEnum;
-import fruitymod.powers.BrilliancePower;
+import fruitymod.powers.AnomalyPower;
 
-public class Brilliance extends CustomCard {
-	public static final String ID = "Brilliance";
+public class Anomaly extends CustomCard {
+	public static final String ID = "Anomaly";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 1;
-	private static final int UPGRADE_COST = 0;
+	private static final int STACK_BONUS = 1;
+	private static final int STACK_UPGRADE = 1;
+	
 	private static final int POOL = 1;
 
-	public Brilliance() {
-		super(ID, NAME, FruityMod.makePath(FruityMod.BRILLIANCE), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
+	public Anomaly() {
+		super(ID, NAME, FruityMod.makePath(FruityMod.ANOMALY), COST, DESCRIPTION, AbstractCard.CardType.POWER,
 				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF, POOL);
-		this.isEthereal = true;		
+		this.magicNumber = this.baseMagicNumber = STACK_BONUS;
 	}
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BrilliancePower(p, 1), 1));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new AnomalyPower(p, this.magicNumber), this.magicNumber));
 	}
-	
-	@Override
-    public void triggerOnEndOfPlayerTurn() {
-    	AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
-    }
 
 	@Override
 	public AbstractCard makeCopy() {
-		return new Brilliance();
+		return new Anomaly();
 	}
 
 	@Override
 	public void upgrade() {
 		if (!this.upgraded) {
 			this.upgradeName();
-			this.upgradeBaseCost(UPGRADE_COST);
+			this.upgradeMagicNumber(STACK_UPGRADE);
+			this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+			this.initializeDescription();
 		}
 	}
 }
