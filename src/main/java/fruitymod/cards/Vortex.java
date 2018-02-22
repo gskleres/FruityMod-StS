@@ -1,7 +1,9 @@
 package fruitymod.cards;
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.actions.utility.LoseBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -10,6 +12,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
+import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import fruitymod.FruityMod;
 import fruitymod.patches.AbstractCardEnum;
 
@@ -30,8 +33,8 @@ extends CustomCard {
     }
 
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {    	
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(m, p, m.currentBlock));
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.actionManager.addToBottom(new LoseBlockAction(m, p, m.currentBlock));
         if(this.upgraded) {
         	AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(m, p, "Strength"));
         }
