@@ -126,6 +126,7 @@ public class FruityMod implements PostInitializeSubscriber,
 	public static final String REFLECTION_WARD = "cards/locked_skill.png";
 	public static final String CREATIVITY = "cards/locked_power.png";
 	public static final String COALESCENCE = "cards/locked_power.png";
+	public static final String FEEDBACK = "cards/locked_attack.png";
 	
 
 	
@@ -374,6 +375,7 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new Corona());
 		BaseMod.addCard(new Archives());
 		BaseMod.addCard(new Starfall());
+		BaseMod.addCard(new Feedback());
 		
 		logger.info("done editting cards");
 	}

@@ -245,7 +245,8 @@
 	},
 	"Feedback": {
 		"NAME": "Feedback",
-		"DESCRIPTION": "Remove all Weak and Vulnerable from an Enemy. Deal !D! damage per stack removed."
+		"DESCRIPTION": "Remove all Weak and Vulnerable from an Enemy. Deal !M! damage per stack removed.",
+		"EXTENDED_DESCRIPTION": [ " NL (Deals !D! damage)"]		
 	},
 	"Implosion": {
 		"NAME": "Implosion",
