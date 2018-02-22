@@ -36,24 +36,13 @@ public class Feedback extends CustomCard {
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+		int debuffCount = GetPowerCount(m, "Weakened") + GetPowerCount(m, "Vulnerable");
 		AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(m, p, "Weakened"));
 		AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(m, p, "Vulnerable"));
-	}
-	
-	@Override
-	public void applyPowers() {
-		super.applyPowers();
-		this.rawDescription = DESCRIPTION;
-		initializeDescription();
-	}
-	
-	@Override
-	public void calculateCardDamage(AbstractMonster mo) {
-		this.baseDamage = this.magicNumber * (GetPowerCount(mo, "Weakened") + GetPowerCount(mo, "Vulnerable"));
-		super.calculateCardDamage(mo);
-		this.rawDescription = DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
-		initializeDescription();
+		this.baseDamage = this.magicNumber * debuffCount;
+		this.calculateCardDamage(m);
+		AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+
 	}
 	
     private int GetPowerCount(AbstractCreature c, String powerId) {

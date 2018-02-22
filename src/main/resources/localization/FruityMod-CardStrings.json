@@ -103,7 +103,8 @@
 	},
 	"EssenceShred": {
 		"NAME": "Essence Shred",
-		"DESCRIPTION": "Spend all [R]. Deal !D! damage to ALL Weak or Vulnerable enemies X times."
+		"DESCRIPTION": "Spend all [R]. Deal !D! damage to ALL Weak or Vulnerable enemies X times.",
+		"EXTENDED_DESCRIPTION": ["There are no Weak or Vulnerable enemies."]
 	},
 	"EtherBlast": {
 		"NAME": "Ether Blast",
