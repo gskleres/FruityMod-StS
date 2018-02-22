@@ -408,6 +408,7 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new Brilliance());
 		BaseMod.addCard(new Anomaly());
 		BaseMod.addCard(new Nova());
+		BaseMod.addCard(new Vortex());
 		
 		logger.info("done editting cards");
 	}

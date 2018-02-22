@@ -165,7 +165,9 @@
 	},
 	"Vortex": {
 		"NAME": "Vortex",
-		"DESCRIPTION": "Enemies who are Vulnerable or Weak cannot gain Block."
+		"DESCRIPTION": "If the enemy is Weak or Vulnerable, reduce its Block to 0. Exhaust.",
+		"UPGRADE_DESCRIPTION": "If the enemy is Weak or Vulnerable, reduce its Block and Strength to 0. Exhaust.",
+		"EXTENDED_DESCRIPTION": [ "Enemy must be Weak or Vulnerable."]
 	},
 	"Archives": {
 		"NAME": "Archives",
