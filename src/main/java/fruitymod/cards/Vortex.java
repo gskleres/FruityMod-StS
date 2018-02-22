@@ -39,7 +39,10 @@ extends CustomCard {
     
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-    	if(m.hasPower("Weakened") || m.hasPower("Vulnerable")) {
+        if (!super.canUse(p, m)) {
+            return false;
+        }
+    	if(m != null && (m.hasPower("Weakened") || m.hasPower("Vulnerable"))) {
 			return true;
 		}
 		this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
