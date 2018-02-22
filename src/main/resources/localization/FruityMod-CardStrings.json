@@ -99,11 +99,12 @@
 	},
 	"EssenceDart": {
 		"NAME": "Essence Dart",
-		"DESCRIPTION": "Costs !M! less [R] for each Ethereal card in hand. Deal !D! damage."
+		"DESCRIPTION": "Costs 1 less [R] for each Ethereal card in hand. Deal !D! damage."
 	},
 	"EssenceShred": {
 		"NAME": "Essence Shred",
-		"DESCRIPTION": "Spend all [R]. Deal !D! damage to ALL Weak or Vulnerable enemies X times."
+		"DESCRIPTION": "Spend all [R]. Deal !D! damage to ALL Weak or Vulnerable enemies X times.",
+		"EXTENDED_DESCRIPTION": ["There are no Weak or Vulnerable enemies."]
 	},
 	"EtherBlast": {
 		"NAME": "Ether Blast",
@@ -111,7 +112,7 @@
 	},
 	"Flare": {
 		"NAME": "Flare",
-		"DESCRIPTION": "Deal !D! damage. Apply !M! Vulnerable. Shuffle a Dazed into your draw pile."
+		"DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable."
 	},
 	"ForceSpike": {
 		"NAME": "Force Spike",
@@ -157,8 +158,8 @@
 		"NAME": "Power Overwhelming",
 		"DESCRIPTION": "At the start of your turn, gain 1 Vulnerable. NL At the end of your turn deal !M! damage to ALL enemies."
 	},
-	"VoidShackles": {
-		"NAME": "Void Shackles",
+	"Anomaly": {
+		"NAME": "Anomaly",
 		"DESCRIPTION": "Whenever you apply Vulnerable or Weak to an enemy, apply !M! additional stack.",
 		"UPGRADE_DESCRIPTION": "Whenever you apply Vulnerable or Weak to an enemy, apply !M! additional stacks."
 	},
@@ -208,7 +209,7 @@
 	},
 	"PowerSpike": {
 		"NAME": "Power Spike",
-		"DESCRIPTION": "Gain [R] [R]. Gain !M! Frail."
+		"DESCRIPTION": "Gain [R] [R]. NL Gain !M! Frail."
 	},
 	"ProtectionWard": {
 		"NAME": "Protection Ward",
@@ -245,7 +246,8 @@
 	},
 	"Feedback": {
 		"NAME": "Feedback",
-		"DESCRIPTION": "Remove all Weak and Vulnerable from an Enemy. Deal !D! damage per stack removed."
+		"DESCRIPTION": "Remove all Weak and Vulnerable from an Enemy. Deal !M! damage per stack removed.",
+		"EXTENDED_DESCRIPTION": [ " NL (Deals !D! damage)"]		
 	},
 	"Implosion": {
 		"NAME": "Implosion",
@@ -254,7 +256,7 @@
 	"MeteorShower": {
 		"NAME": "Meteor Shower",
 		"DESCRIPTION": "Deal 1 damage to ALL enemies for each card in your draw pile. Exhaust.",
-		"UPGRADE_DESCRIPTION": "Innate. NL Deal 1 damage to ALL enemies for each card in your draw pile. Exhaust."
+		"UPGRADE_DESCRIPTION": "Innate. Deal 1 damage to ALL enemies for each card in your draw pile. Exhaust."
 	},
 	"Vacuum": {
 		"NAME": "Vacuum",
@@ -314,7 +316,7 @@
 	},
 	"Zenith": {
 		"NAME": "Zenith",
-		"DESCRIPTION": "Double your [R]. Exhaust.",
+		"DESCRIPTION": "After paying this card's cost, double your remaining [R]. NL Exhaust.",
 		"UPGRADE_DESCRIPTION": "Double your [R]."
 	},
 	"Coalescence": {
@@ -323,6 +325,6 @@
 	},
 	"Magnetize": {
 		"NAME": "Magnetize",
-		"DESCRIPTION": "Gain !B! Block. Apply !M! Weak."
+		"DESCRIPTION": "Gain !B! Block. NL Apply !M! Weak."
 	}	
 }

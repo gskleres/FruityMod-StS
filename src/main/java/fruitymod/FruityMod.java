@@ -33,6 +33,7 @@ import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.OnCardUseSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import basemod.interfaces.SetUnlocksSubscriber;
+import fruitymod.cards.Anomaly;
 import fruitymod.cards.ArcaneBarrage;
 import fruitymod.cards.ArcaneTempest;
 import fruitymod.cards.ArcaneVolley;
@@ -41,6 +42,7 @@ import fruitymod.cards.AstralForm;
 import fruitymod.cards.AstralHaze;
 import fruitymod.cards.AstralShift;
 import fruitymod.cards.Brainstorm;
+import fruitymod.cards.Brilliance;
 import fruitymod.cards.Channel;
 import fruitymod.cards.Coalescence;
 import fruitymod.cards.Corona;
@@ -61,6 +63,7 @@ import fruitymod.cards.EtherBlast;
 import fruitymod.cards.EtherBolt;
 import fruitymod.cards.Eureka;
 import fruitymod.cards.EventHorizon;
+import fruitymod.cards.Feedback;
 import fruitymod.cards.Flare;
 import fruitymod.cards.Flow;
 import fruitymod.cards.FluxBlast;
@@ -187,6 +190,7 @@ public class FruityMod implements PostInitializeSubscriber,
 	public static final String VOID_SHACKLES = "cards/void_shackles.png";
 	public static final String VORTEX = "cards/vortex.png";    
 	public static final String MAGNETIZE = "cards/locked_skill.png";
+	public static final String ANOMALY = "cards/locked_power.png";
 	
     // rare
     public static final String CHANNEL = "cards/channel.png";
@@ -204,7 +208,7 @@ public class FruityMod implements PostInitializeSubscriber,
 	public static final String CREATIVITY = "cards/locked_power.png";
 	public static final String COALESCENCE = "cards/locked_power.png";
 	public static final String ENIGMA = "cards/locked_power.png";
-
+	public static final String FEEDBACK = "cards/locked_attack.png";
 	
     // power images
     public static final String ASTRAL_HAZE_POWER = "powers/astral_haze.png";
@@ -222,7 +226,9 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String POWER_OVERWHELMING_POWER = "powers/power_overwhelming.png";
     public static final String EVENT_HORIZON_POWER = "powers/event_horizon.png";
     public static final String ENIGMA_POWER = "powers/enigma.png";
-    
+    public static final String BRILLIANCE_POWER = "powers/brilliance.png";
+    public static final String ANOMALY_POWER = "powers/anomaly.png";
+
     // relic images
     public static final String ARCANOSPHERE_RELIC = "relics/arcanosphere.png";
     
@@ -299,6 +305,14 @@ public class FruityMod implements PostInitializeSubscriber,
     public static Texture getArcanoSphereTexture() {
     	return new Texture(makePath(ARCANOSPHERE_RELIC));
     }
+    
+    public static Texture getBrillancePowerTexture() {
+    	return new Texture(makePath(BRILLIANCE_POWER));
+    }
+    public static Texture getAnomalyPowerTexture() {
+    	return new Texture(makePath(BRILLIANCE_POWER));
+    }
+    
     
     /**
      * Makes a full path for a resource path
@@ -460,6 +474,9 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new Archives());
 		BaseMod.addCard(new Starfall());
 		BaseMod.addCard(new Enigma());
+		BaseMod.addCard(new Feedback());
+		BaseMod.addCard(new Brilliance());
+		BaseMod.addCard(new Anomaly());
 		
 		logger.info("done editting cards");
 	}

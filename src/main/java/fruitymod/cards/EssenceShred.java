@@ -1,5 +1,7 @@
 package fruitymod.cards;
 
+import java.util.ArrayList;
+
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -33,7 +35,19 @@ public class EssenceShred extends CustomCard {
 	    @Override
 	    public void use(AbstractPlayer p, AbstractMonster m) {
 	    	AbstractDungeon.actionManager.addToBottom(new EssenceShredAction(p, this.multiDamage, this.damageTypeForTurn, this.freeToPlayOnce, this.energyOnUse));   
-	    }	   	 
+	    }
+	    
+	    @Override
+	    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+			ArrayList<AbstractMonster> monsters = AbstractDungeon.getCurrRoom().monsters.monsters;
+			for (AbstractMonster mo : monsters) {
+				if(mo.hasPower("Weakened") || mo.hasPower("Vulnerable")) {
+					return true;
+				}
+			}
+			this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
+			return false;
+	    }
 
 	    @Override
 	    public AbstractCard makeCopy() {
