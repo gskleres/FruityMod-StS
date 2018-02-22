@@ -270,7 +270,7 @@
 	},
 	"Enigma": {
 		"NAME": "Enigma",
-		"DESCRIPTION": "Dazed can now be played to gain !B! Block and deal !D! damage to ALL enemies."
+		"DESCRIPTION": "Dazed can now be played to gain !M! Block and deal !M! damage to ALL enemies."
 	},
 	"EventHorizon": {
 		"NAME": "Event Horizon",

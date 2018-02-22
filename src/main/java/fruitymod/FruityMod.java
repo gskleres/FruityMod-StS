@@ -9,6 +9,13 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -23,19 +30,89 @@ import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditCharactersSubscriber;
 import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
+import basemod.interfaces.OnCardUseSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import basemod.interfaces.SetUnlocksSubscriber;
-import fruitymod.cards.*;
-
+import fruitymod.cards.ArcaneBarrage;
+import fruitymod.cards.ArcaneTempest;
+import fruitymod.cards.ArcaneVolley;
+import fruitymod.cards.Archives;
+import fruitymod.cards.AstralForm;
+import fruitymod.cards.AstralHaze;
+import fruitymod.cards.AstralShift;
+import fruitymod.cards.Brainstorm;
+import fruitymod.cards.Channel;
+import fruitymod.cards.Coalescence;
+import fruitymod.cards.Corona;
+import fruitymod.cards.Creativity;
+import fruitymod.cards.Defend_Purple;
+import fruitymod.cards.DeflectionWard;
+import fruitymod.cards.Echo;
+import fruitymod.cards.Eclipse;
+import fruitymod.cards.Enigma;
+import fruitymod.cards.Entropy;
+import fruitymod.cards.Equinox;
+import fruitymod.cards.EssenceDart;
+import fruitymod.cards.EssenceMirror;
+import fruitymod.cards.EssenceShred;
+import fruitymod.cards.EssenceSpike;
+import fruitymod.cards.EtherBarrier;
+import fruitymod.cards.EtherBlast;
+import fruitymod.cards.EtherBolt;
+import fruitymod.cards.Eureka;
+import fruitymod.cards.EventHorizon;
+import fruitymod.cards.Flare;
+import fruitymod.cards.Flow;
+import fruitymod.cards.FluxBlast;
+import fruitymod.cards.FluxBolt;
+import fruitymod.cards.FluxShield;
+import fruitymod.cards.ForceSpike;
+import fruitymod.cards.GravityWell;
+import fruitymod.cards.Hypothesis;
+import fruitymod.cards.Illuminate;
+import fruitymod.cards.Implosion;
+import fruitymod.cards.MagicMissile;
+import fruitymod.cards.Magnetize;
+import fruitymod.cards.MeteorShower;
+import fruitymod.cards.MindOverMatter;
+import fruitymod.cards.NebulousBlast;
+import fruitymod.cards.PeriaptOfCelerity;
+import fruitymod.cards.PeriaptOfPotency;
+import fruitymod.cards.PeriaptOfTenacity;
+import fruitymod.cards.PowerOverwhelming;
+import fruitymod.cards.PowerSpike;
+import fruitymod.cards.ProtectionWard;
+import fruitymod.cards.ReflectionWard;
+import fruitymod.cards.Retrograde;
+import fruitymod.cards.Shimmer;
+import fruitymod.cards.SiphonMagic;
+import fruitymod.cards.SiphonPower;
+import fruitymod.cards.SiphonSpeed;
+import fruitymod.cards.Starfall;
+import fruitymod.cards.Strike_Purple;
+import fruitymod.cards.StrokeOfGenius;
+import fruitymod.cards.Surge;
+import fruitymod.cards.Syzygy;
+import fruitymod.cards.ThoughtRaze;
+import fruitymod.cards.Transference;
+import fruitymod.cards.UmbralBolt;
+import fruitymod.cards.UmbralWave;
+import fruitymod.cards.Vacuum;
+import fruitymod.cards.VoidBarrier;
+import fruitymod.cards.VoidBolt;
+import fruitymod.cards.VoidRipple;
+import fruitymod.cards.Zenith;
 import fruitymod.characters.TheSeeker;
 import fruitymod.patches.AbstractCardEnum;
 import fruitymod.patches.TheSeekerEnum;
-import fruitymod.relics.*;
+import fruitymod.relics.Arcanosphere;
+import fruitymod.relics.Homunculus;
+import fruitymod.relics.RabbitsFoot;
 
 @SpireInitializer
 public class FruityMod implements PostInitializeSubscriber,
 	EditCardsSubscriber, EditRelicsSubscriber, EditCharactersSubscriber,
-	EditStringsSubscriber, SetUnlocksSubscriber {
+	EditStringsSubscriber, SetUnlocksSubscriber, OnCardUseSubscriber {
 	public static final Logger logger = LogManager.getLogger(FruityMod.class.getName());
 	
     private static final String MODNAME = "FruityMod";
@@ -126,7 +203,7 @@ public class FruityMod implements PostInitializeSubscriber,
 	public static final String REFLECTION_WARD = "cards/locked_skill.png";
 	public static final String CREATIVITY = "cards/locked_power.png";
 	public static final String COALESCENCE = "cards/locked_power.png";
-	
+	public static final String ENIGMA = "cards/locked_power.png";
 
 	
     // power images
@@ -144,6 +221,7 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String CREATIVITY_POWER = "powers/creativity.png";
     public static final String POWER_OVERWHELMING_POWER = "powers/power_overwhelming.png";
     public static final String EVENT_HORIZON_POWER = "powers/event_horizon.png";
+    public static final String ENIGMA_POWER = "powers/enigma.png";
     
     // relic images
     public static final String ARCANOSPHERE_RELIC = "relics/arcanosphere.png";
@@ -214,6 +292,10 @@ public class FruityMod implements PostInitializeSubscriber,
     	return new Texture(makePath(EVENT_HORIZON_POWER));
     }
     
+    public static Texture getEnigmaPowerTexture() {
+    	return new Texture(makePath(ENIGMA_POWER));
+    }
+    
     public static Texture getArcanoSphereTexture() {
     	return new Texture(makePath(ARCANOSPHERE_RELIC));
     }
@@ -242,6 +324,9 @@ public class FruityMod implements PostInitializeSubscriber,
 
         logger.info("subscribing to editStrings event");
         BaseMod.subscribeToEditStrings(this);
+        
+        logger.info("subscribing to onCardUse event");
+        BaseMod.subscribeToOnCardUse(this);
         
         /*
          * Note that for now when installing FruityMod, in the `mods/` folder another folder named
@@ -374,6 +459,7 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new Corona());
 		BaseMod.addCard(new Archives());
 		BaseMod.addCard(new Starfall());
+		BaseMod.addCard(new Enigma());
 		
 		logger.info("done editting cards");
 	}
@@ -429,5 +515,30 @@ public class FruityMod implements PostInitializeSubscriber,
 		UnlockTracker.addCard("Zenith");
 		UnlockTracker.addCard("UmbralWave");
 		UnlockTracker.addCard("Flow");
+	}
+	
+	// used by fruitymod.patches.com.megacrit.cards.AbstractCard.CanUsedDazed
+	public static boolean hasRelicCustom(String relicID, AbstractCard card) {
+		System.out.println("I was checked!");
+		// if it's checking for relicID.equals("Medical Kit") then we know we're in the block where
+		// we are saying if we can use a status card so also check if we have enigma and the card is Dazed
+		if (relicID.equals("Medical Kit") && AbstractDungeon.player.hasPower("EnigmaPower") && card.cardID.equals("Dazed")) {
+			return true;
+		} else {
+			// otherwise leave normal behavior intact
+			return AbstractDungeon.player.hasRelic(relicID);
+		}
+	}
+
+	@Override
+	public void receiveCardUsed(AbstractCard c) {
+		AbstractPlayer p = AbstractDungeon.player;
+		if (p.hasPower("EnigmaPower")) {
+			int stacks = p.getPower("EnigmaPower").amount;
+			AbstractDungeon.actionManager.addToTop(new GainBlockAction(p, p, stacks));
+			AbstractDungeon.actionManager.addToTop(new DamageAllEnemiesAction(null, 
+					DamageInfo.createDamageMatrix(stacks, true),
+					DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
+		}
 	}
 }
