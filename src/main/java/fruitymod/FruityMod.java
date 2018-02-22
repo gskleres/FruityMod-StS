@@ -24,7 +24,6 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import basemod.BaseMod;
 import basemod.ModPanel;
-import basemod.abstracts.CustomUnlock;
 import basemod.abstracts.CustomUnlockBundle;
 import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditCharactersSubscriber;
@@ -339,6 +338,9 @@ public class FruityMod implements PostInitializeSubscriber,
         logger.info("subscribing to editStrings event");
         BaseMod.subscribeToEditStrings(this);
         
+        logger.info("subscribing to setUnlocks event");
+        BaseMod.subscribeToSetUnlocks(this);
+        
         logger.info("subscribing to onCardUse event");
         BaseMod.subscribeToOnCardUse(this);
         
@@ -499,27 +501,27 @@ public class FruityMod implements PostInitializeSubscriber,
 
 	@Override
 	public void receiveSetUnlocks() {
-		// seeker unlock 1
-		BaseMod.addUnlockBundle(new CustomUnlockBundle(
-				new CustomUnlock("Brainstorm"), new CustomUnlock("FluxBolt"), new CustomUnlock("Creativity")
-				), TheSeekerEnum.THE_SEEKER, 1);
 		UnlockTracker.addCard("Brainstorm");
 		UnlockTracker.addCard("FluxBolt");
 		UnlockTracker.addCard("Creativity");
+		// seeker unlock 1
+		BaseMod.addUnlockBundle(new CustomUnlockBundle(
+				"Brainstorm", "FluxBolt", "Creativity"
+				), TheSeekerEnum.THE_SEEKER, 1);
 		
 		// seeker unlock 2
 		BaseMod.addUnlockBundle(new CustomUnlockBundle(
-				new CustomUnlock("Shimmer"), new CustomUnlock("EtherBolt"), new CustomUnlock("AstralForm")
-				), TheSeekerEnum.THE_SEEKER, 1);
+				"Shimmer", "EtherBolt", "AstralForm"
+				), TheSeekerEnum.THE_SEEKER, 2);
 		UnlockTracker.addCard("Shimmer");
 		UnlockTracker.addCard("FluxBolt");
 		UnlockTracker.addCard("Creativity");
 		
 		// seeker unlock 3 (Vacuum tmp in place of Feedback)
 		BaseMod.addUnlockBundle(new CustomUnlockBundle(
-				new CustomUnlock("Transference"), /*new CustomUnlock("Feedback"), */
-				new CustomUnlock("Vacuum"), new CustomUnlock("EssenceMirror")
-				), TheSeekerEnum.THE_SEEKER, 1);
+				"Transference", /*"Feedback", */
+				"Vacuum", "EssenceMirror"
+				), TheSeekerEnum.THE_SEEKER, 3);
 		UnlockTracker.addCard("Transference");
 		/*UnlockTracker.addCard("Feedback");*/
 		UnlockTracker.addCard("Vacuum");
@@ -527,8 +529,8 @@ public class FruityMod implements PostInitializeSubscriber,
 		
 		// seeker unlock 4
 		BaseMod.addUnlockBundle(new CustomUnlockBundle(
-				new CustomUnlock("Zenith"), new CustomUnlock("UmbralWave"), new CustomUnlock("Flow")
-				), TheSeekerEnum.THE_SEEKER, 1);
+				"Zenith", "UmbralWave", "Flow"
+				), TheSeekerEnum.THE_SEEKER, 4);
 		UnlockTracker.addCard("Zenith");
 		UnlockTracker.addCard("UmbralWave");
 		UnlockTracker.addCard("Flow");
