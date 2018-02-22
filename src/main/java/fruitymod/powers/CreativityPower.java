@@ -36,6 +36,7 @@ extends AbstractPower {
 
     @Override
     public void atStartOfTurn() {
+    	this.flash();
         AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(this.owner, this.owner, new Dazed(), this.amount, true, true));
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(this.owner, this.amount));
     }
