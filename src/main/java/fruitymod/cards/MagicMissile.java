@@ -1,8 +1,8 @@
 package fruitymod.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -11,46 +11,56 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.MindblastEffect;
 
 import basemod.abstracts.CustomCard;
+import fruitymod.FruityMod;
 import fruitymod.patches.AbstractCardEnum;
 
-public class MagicMissile
-extends CustomCard {
-    public static final String ID = "Comet";
+public class MagicMissile extends CustomCard {
+	private static final String ID = "MagicMissile";
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    private static final int COST = 2;
-    private static final int ATTACK_DMG = 16;
-    private static final int UPGRADE_DMG_AMT = 6;
-    private static final int POOL = 1;
-
-    public MagicMissile() {
-        super(ID, NAME, "images/cards/locked_attack.png", COST, DESCRIPTION,
-        		AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE,
-        		AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY, POOL);
-        this.damage = this.baseDamage = ATTACK_DMG;
-    }
-
+	private static final int COST = 1;
+	private static final int ATTACK_DMG = 3;
+	private static final int TIMES = 4;
+	private static final int UPGRADE_TIMES_AMT = 1;
+	private static final int POOL = 1;
+	
+	public MagicMissile() {
+		super (ID, NAME, FruityMod.makePath(FruityMod.STARFALL), COST, DESCRIPTION,
+				AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE,
+				AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY, POOL);
+		this.baseDamage = ATTACK_DMG;
+		this.baseMagicNumber = UPGRADE_TIMES_AMT;
+		this.magicNumber = this.baseMagicNumber = TIMES;
+		this.isEthereal = true;
+		this.exhaust = true;
+	}
+	
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new VFXAction(new MindblastEffect(p.dialogX, p.dialogY)));
-        AbstractDungeon.actionManager.addToBottom(new DamageAction((AbstractCreature)m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));
+        for (int i = 0; i < this.magicNumber; i++) {
+        	AbstractDungeon.actionManager.addToBottom(new DamageAction((AbstractCreature)m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+        }
     }
-
-    @Override
+	
+	@Override
+    public void triggerOnEndOfPlayerTurn() {
+    	AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
+    }
+	
+	@Override
     public AbstractCard makeCopy() {
         return new MagicMissile();
     }
-
+    
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(UPGRADE_DMG_AMT);
+            this.upgradeMagicNumber(UPGRADE_TIMES_AMT);
         }
     }
+	
 }
-

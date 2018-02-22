@@ -45,7 +45,7 @@
 	},
 	"Surge": {
 		"NAME": "Surge",
-		"DESCRIPTION": "Deal !D! damage. If you are Frail or Vulnerable, deal !D! damage again."
+		"DESCRIPTION": "Deal !D! damage. NL If you are Frail or Vulnerable, deal !D! damage again."
 	},
 	"VoidBolt": {
 		"NAME": "Void Bolt",
@@ -65,7 +65,7 @@
 	},
 	"EssenceSpike": {
 		"NAME": "Essence Spike",
-		"DESCRIPTION": "Gain !B! Block. Gain !M! Frail."
+		"DESCRIPTION": "Gain !B! Block. NL Gain !M! Frail."
 	},
 	"EtherBarrier": {
 		"NAME": "Ether Barrier",
@@ -103,7 +103,7 @@
 	},
 	"EssenceShred": {
 		"NAME": "Essence Shred",
-		"DESCRIPTION": "Spend all [R]. Deal !D! damage to ALL Weak or Vulnerable enemies X times.",
+		"DESCRIPTION": "Spend all [R]. NL Deal !D! damage to ALL Weak or Vulnerable enemies X times.",
 		"EXTENDED_DESCRIPTION": ["There are no Weak or Vulnerable enemies."]
 	},
 	"EtherBlast": {
@@ -124,7 +124,7 @@
 	},
 	"SiphonPower": {
 		"NAME": "Siphon Power",
-		"DESCRIPTION": "Deal !D! damage. Apply !M! Weak. Gain !M! Strength."
+		"DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak. NL Gain !M! Strength."
 	},
 	"Syzygy": {
 		"NAME": "Syzygy",
@@ -173,7 +173,7 @@
 	},
 	"Brainstorm": {
 		"NAME": "Brainstorm",
-		"DESCRIPTION": "Shuffle your discard pile and a Dazed into your draw pile. Draw !M! cards."
+		"DESCRIPTION": "Shuffle your discard pile and a Dazed into your draw pile. NL Draw !M! cards."
 	},
 	"Brilliance": {
 		"NAME": "Brilliance",
@@ -195,7 +195,7 @@
 	},
 	"Flow": {
 		"NAME": "Flow",
-		"DESCRIPTION": "Ethereal. Retain all excess Energy at the end of turn."
+		"DESCRIPTION": "Ethereal. NL Retain all excess Energy at the end of turn."
 	},
 	"Illuminate": {
 		"NAME": "Illuminate",
@@ -255,8 +255,8 @@
 	},
 	"MeteorShower": {
 		"NAME": "Meteor Shower",
-		"DESCRIPTION": "Deal 1 damage to ALL enemies for each card in your draw pile. Exhaust.",
-		"UPGRADE_DESCRIPTION": "Innate. Deal 1 damage to ALL enemies for each card in your draw pile. Exhaust."
+		"DESCRIPTION": "Deal 1 damage to ALL enemies for each card in your draw pile.NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Innate. Deal 1 damage to ALL enemies for each card in your draw pile.NL Exhaust."
 	},
 	"Vacuum": {
 		"NAME": "Vacuum",
@@ -305,11 +305,6 @@
 		"DESCRIPTION": "Shuffle 2 Dazed into your draw pile. Draw !M! cards. Gain [R] [R]. Exhaust.",
 		"UPGRADE_DESCRIPTION": "Shuffle 2 Dazed into your draw pile. Draw !M! cards. NL Gain [R] [R] [R]. Exhaust."
 	},
-	"Nova": {
-		"NAME": "Nova",
-		"DESCRIPTION": "Ethereal. Stun an enemy. Shuffle !M! Dazed into your draw pile.",
-		"UPGRADE_DESCRIPTION": "Ethereal. Stun ALL enemies. Shuffle !M! Dazed into your draw pile."
-	},
 	"ReflectionWard": {
 		"NAME": "Reflection Ward",
 		"DESCRIPTION": "Gain !B! Block. Whenever you are attacked this turn, deal !M! damage to ALL enemies."
@@ -326,5 +321,9 @@
 	"Magnetize": {
 		"NAME": "Magnetize",
 		"DESCRIPTION": "Gain !B! Block. NL Apply !M! Weak."
-	}	
+	},
+	"Nova": {
+		"NAME": "Nova",
+		"DESCRIPTION": "Deal !D! damage to ALL enemies. NL Shuffle 2 Dazed into your Draw pile."
+	}
 }

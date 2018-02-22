@@ -2,6 +2,7 @@ package fruitymod;
 
 import java.nio.charset.StandardCharsets;
 
+import fruitymod.cards.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -33,78 +34,6 @@ import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.OnCardUseSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import basemod.interfaces.SetUnlocksSubscriber;
-import fruitymod.cards.Anomaly;
-import fruitymod.cards.ArcaneBarrage;
-import fruitymod.cards.ArcaneTempest;
-import fruitymod.cards.ArcaneVolley;
-import fruitymod.cards.Archives;
-import fruitymod.cards.AstralForm;
-import fruitymod.cards.AstralHaze;
-import fruitymod.cards.AstralShift;
-import fruitymod.cards.Brainstorm;
-import fruitymod.cards.Brilliance;
-import fruitymod.cards.Channel;
-import fruitymod.cards.Coalescence;
-import fruitymod.cards.Corona;
-import fruitymod.cards.Creativity;
-import fruitymod.cards.Defend_Purple;
-import fruitymod.cards.DeflectionWard;
-import fruitymod.cards.Echo;
-import fruitymod.cards.Eclipse;
-import fruitymod.cards.Enigma;
-import fruitymod.cards.Entropy;
-import fruitymod.cards.Equinox;
-import fruitymod.cards.EssenceDart;
-import fruitymod.cards.EssenceMirror;
-import fruitymod.cards.EssenceShred;
-import fruitymod.cards.EssenceSpike;
-import fruitymod.cards.EtherBarrier;
-import fruitymod.cards.EtherBlast;
-import fruitymod.cards.EtherBolt;
-import fruitymod.cards.Eureka;
-import fruitymod.cards.EventHorizon;
-import fruitymod.cards.Feedback;
-import fruitymod.cards.Flare;
-import fruitymod.cards.Flow;
-import fruitymod.cards.FluxBlast;
-import fruitymod.cards.FluxBolt;
-import fruitymod.cards.FluxShield;
-import fruitymod.cards.ForceSpike;
-import fruitymod.cards.GravityWell;
-import fruitymod.cards.Hypothesis;
-import fruitymod.cards.Illuminate;
-import fruitymod.cards.Implosion;
-import fruitymod.cards.MagicMissile;
-import fruitymod.cards.Magnetize;
-import fruitymod.cards.MeteorShower;
-import fruitymod.cards.MindOverMatter;
-import fruitymod.cards.NebulousBlast;
-import fruitymod.cards.PeriaptOfCelerity;
-import fruitymod.cards.PeriaptOfPotency;
-import fruitymod.cards.PeriaptOfTenacity;
-import fruitymod.cards.PowerOverwhelming;
-import fruitymod.cards.PowerSpike;
-import fruitymod.cards.ProtectionWard;
-import fruitymod.cards.ReflectionWard;
-import fruitymod.cards.Retrograde;
-import fruitymod.cards.Shimmer;
-import fruitymod.cards.SiphonMagic;
-import fruitymod.cards.SiphonPower;
-import fruitymod.cards.SiphonSpeed;
-import fruitymod.cards.Starfall;
-import fruitymod.cards.Strike_Purple;
-import fruitymod.cards.StrokeOfGenius;
-import fruitymod.cards.Surge;
-import fruitymod.cards.Syzygy;
-import fruitymod.cards.ThoughtRaze;
-import fruitymod.cards.Transference;
-import fruitymod.cards.UmbralBolt;
-import fruitymod.cards.UmbralWave;
-import fruitymod.cards.Vacuum;
-import fruitymod.cards.VoidBarrier;
-import fruitymod.cards.VoidBolt;
-import fruitymod.cards.VoidRipple;
-import fruitymod.cards.Zenith;
 import fruitymod.characters.TheSeeker;
 import fruitymod.patches.AbstractCardEnum;
 import fruitymod.patches.TheSeekerEnum;
@@ -209,6 +138,7 @@ public class FruityMod implements PostInitializeSubscriber,
 	public static final String COALESCENCE = "cards/locked_power.png";
 	public static final String ENIGMA = "cards/locked_power.png";
 	public static final String FEEDBACK = "cards/locked_attack.png";
+	public static final String NOVA = "cards/locked_attack.png";
 	
     // power images
     public static final String ASTRAL_HAZE_POWER = "powers/astral_haze.png";
@@ -426,7 +356,7 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new FluxShield());
 		BaseMod.addCard(new ForceSpike());
 		BaseMod.addCard(new Hypothesis());
-		BaseMod.addCard(new MagicMissile());
+		BaseMod.addCard(new Comet());
 		BaseMod.addCard(new NebulousBlast());
 		BaseMod.addCard(new EtherBolt());
 		BaseMod.addCard(new PowerSpike());
@@ -472,11 +402,12 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new Equinox());
 		BaseMod.addCard(new Corona());
 		BaseMod.addCard(new Archives());
-		BaseMod.addCard(new Starfall());
+		BaseMod.addCard(new MagicMissile());
 		BaseMod.addCard(new Enigma());
 		BaseMod.addCard(new Feedback());
 		BaseMod.addCard(new Brilliance());
 		BaseMod.addCard(new Anomaly());
+		BaseMod.addCard(new Nova());
 		
 		logger.info("done editting cards");
 	}
@@ -550,7 +481,7 @@ public class FruityMod implements PostInitializeSubscriber,
 	@Override
 	public void receiveCardUsed(AbstractCard c) {
 		AbstractPlayer p = AbstractDungeon.player;
-		if (p.hasPower("EnigmaPower")) {
+		if (p.hasPower("EnigmaPower") && c.cardID.equals("Dazed")) {
 			int stacks = p.getPower("EnigmaPower").amount;
 			AbstractDungeon.actionManager.addToTop(new GainBlockAction(p, p, stacks));
 			AbstractDungeon.actionManager.addToTop(new DamageAllEnemiesAction(null, 
