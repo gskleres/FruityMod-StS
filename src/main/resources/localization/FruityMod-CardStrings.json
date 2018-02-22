@@ -146,11 +146,11 @@
 		"NAME": "Nexus",
 		"DESCRIPTION": "Whenever you play an attack, gain !B! Block."
 	},
-	"PeriaptofCelerity": {
+	"PeriaptOfCelerity": {
 		"NAME": "Periapt of Celerity",
 		"DESCRIPTION": "Whenever an Ethereal card is Exhausted, gain !M! Dexterity."
 	},
-	"PeriaptofPotency": {
+	"PeriaptOfPotency": {
 		"NAME": "Periapt of Potency",
 		"DESCRIPTION": "Whenever an Ethereal card is Exhausted, gain !M! Strength."
 	},
@@ -280,11 +280,11 @@
 		"NAME": "Event Horizon",
 		"DESCRIPTION": "Each enemy loses HP equal to the amount of Weak and Vulnerable it has at the start of its turn."
 	},
-	"PeriaptofTenacity": {
+	"PeriaptOfTenacity": {
 		"NAME": "Periapt of Tenacity",
 		"DESCRIPTION": "At the start of your turn, gain !M! Artifact."
 	},
-	"PeriaptofVigor": {
+	"PeriaptOfVigor": {
 		"NAME": "Periapt of Vigor",
 		"DESCRIPTION": "Ethereal cards cost !M! less [R]."
 	},
