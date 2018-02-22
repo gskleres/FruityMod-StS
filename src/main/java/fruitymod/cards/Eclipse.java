@@ -18,8 +18,8 @@ public class Eclipse extends CustomCard {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-	private static final int COST = 2;
-	private static final int UPGRADE_COST = 1;
+	private static final int COST = 1;
+	private static final int UPGRADE_COST = 0;
 	private static final int POOL = 1;
 
 	public Eclipse() {
@@ -27,7 +27,6 @@ public class Eclipse extends CustomCard {
     			AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE,
     			AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF, POOL);
 		this.exhaust = true;
-		this.isEthereal = true;
 	}
 
 	@Override
@@ -39,11 +38,6 @@ public class Eclipse extends CustomCard {
 	public AbstractCard makeCopy() {
 		return new Eclipse();
 	}
-	
-    @Override
-    public void triggerOnEndOfPlayerTurn() {
-    	AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
-    }
 	
     @Override
 	public boolean canUse(AbstractPlayer p, AbstractMonster m) {
@@ -58,7 +52,7 @@ public class Eclipse extends CustomCard {
 			canUse = true;
 			break;
 		}
-		this.cantUseMessage = "No Ethereal cards have been Exhausted.";
+		this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
 		return canUse;
 	}
 

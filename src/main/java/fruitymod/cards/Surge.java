@@ -16,7 +16,7 @@ import fruitymod.patches.AbstractCardEnum;
 public class Surge extends CustomCard {
 	public static final String ID = "Surge";
 	public static final String NAME = "Surge";
-	public static final String DESCRIPTION = "Deal !D! damage. If you are Frail or Vulnerable, deal !D! damage again.";
+	public static final String DESCRIPTION = "Deal !D! damage. NL If you are Frail or Vulnerable, deal !D! damage again.";
 	private static final int COST = 1;
 	private static final int ATTACK_DMG = 7;
 	private static final int UPGRADE_DMG_AMT = 3;

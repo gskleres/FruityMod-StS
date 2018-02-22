@@ -21,11 +21,11 @@
 	},
 	"EtherBolt": {
 		"NAME": "Ether Bolt",
-		"DESCRIPTION": "Can only be played if all other cards in your hand are Ethereal. Deal !D! damage."
+		"DESCRIPTION": "Can only be played if all other cards in your hand are Ethereal. NL Deal !D! damage."
 	},
 	"FluxBlast": {
 		"NAME": "Flux Blast",
-		"DESCRIPTION": "Shuffle a Dazed into your draw pile. Deal !D! damage to ALL enemies."
+		"DESCRIPTION": "Shuffle a Dazed into your draw pile. NL Deal !D! damage to ALL enemies."
 	},
 	"FluxBolt": {
 		"NAME": "Flux Bolt",
@@ -41,19 +41,19 @@
 	},
 	"MagicMissile": {
 		"NAME": "Magic Missile",
-		"DESCRIPTION": "Ethereal. Deal !D! damage !M! times. Exhaust."
+		"DESCRIPTION": "Ethereal. NL Deal !D! damage !M! times. NL Exhaust."
 	},
 	"Surge": {
 		"NAME": "Surge",
-		"DESCRIPTION": "Deal !D! damage. If you are Frail or Vulnerable, deal !D! damage again."
+		"DESCRIPTION": "Deal !D! damage. NL If you are Frail or Vulnerable, deal !D! damage again."
 	},
 	"VoidBolt": {
 		"NAME": "Void Bolt",
-		"DESCRIPTION": "Ethereal. Deal !D! damage. Draw !M! cards."
+		"DESCRIPTION": "Ethereal. NL Deal !D! damage. NL Draw !M! cards."
 	},
 	"VoidRipple": {
 		"NAME": "Void Ripple",
-		"DESCRIPTION": "Ethereal. Gain !B! Block. Deal !D! damage."
+		"DESCRIPTION": "Ethereal. NL Gain !B! Block. NL Deal !D! damage."
 	},
 	"DeflectionWard": {
 		"NAME": "Deflection Ward",
@@ -65,7 +65,7 @@
 	},
 	"EssenceSpike": {
 		"NAME": "Essence Spike",
-		"DESCRIPTION": "Gain !B! Block. Gain !M! Frail."
+		"DESCRIPTION": "Gain !B! Block. NL Gain !M! Frail."
 	},
 	"EtherBarrier": {
 		"NAME": "Ether Barrier",
@@ -77,8 +77,8 @@
 	},
 	"Hypothesis": {
 		"NAME": "Hypothesis",
-		"DESCRIPTION": "Draw a card. If it is Ethereal, draw another card.",
-		"UPGRADE_DESCRIPTION": "Draw a card. If it is Ethereal, draw !M! more cards."
+		"DESCRIPTION": "Draw a card. NL If it is Ethereal, draw another card.",
+		"UPGRADE_DESCRIPTION": "Draw a card. NL If it is Ethereal, draw !M! more cards."
 	},
 	"UmbralWave": {
 		"NAME": "Umbral Wave",
@@ -95,15 +95,15 @@
 	},
 	"Entropy": {
 		"NAME": "Entropy",
-		"DESCRIPTION": "Ethereal. Deal !D! damage. Enemy loses !M! Strength."
+		"DESCRIPTION": "Ethereal. NL Deal !D! damage. NL Enemy loses !M! Strength."
 	},
 	"EssenceDart": {
 		"NAME": "Essence Dart",
-		"DESCRIPTION": "Costs 1 less [R] for each Ethereal card in hand. Deal !D! damage."
+		"DESCRIPTION": "Costs 1 less [R] for each Ethereal card in hand. NL Deal !D! damage."
 	},
 	"EssenceShred": {
 		"NAME": "Essence Shred",
-		"DESCRIPTION": "Spend all [R]. Deal !D! damage to ALL Weak or Vulnerable enemies X times.",
+		"DESCRIPTION": "Spend all [R]. NL Deal !D! damage to ALL Weak or Vulnerable enemies X times.",
 		"EXTENDED_DESCRIPTION": ["There are no Weak or Vulnerable enemies."]
 	},
 	"EtherBlast": {
@@ -116,15 +116,15 @@
 	},
 	"ForceSpike": {
 		"NAME": "Force Spike",
-		"DESCRIPTION": "Deal !D! damage. Gain !M! Frail."
+		"DESCRIPTION": "Deal !D! damage. NL Gain !M! Frail."
 	},
 	"NebulousBlast": {
 		"NAME": "Nebulous Blast",
-		"DESCRIPTION": "Deal !D! damage. Shuffle all non-Ethereal cards into your draw pile."
+		"DESCRIPTION": "Deal !D! damage. NL Shuffle all non-Ethereal cards into your draw pile."
 	},
 	"SiphonPower": {
 		"NAME": "Siphon Power",
-		"DESCRIPTION": "Deal !D! damage. Apply !M! Weak. Gain !M! Strength."
+		"DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak. NL Gain !M! Strength."
 	},
 	"Syzygy": {
 		"NAME": "Syzygy",
@@ -132,11 +132,11 @@
 	},
 	"ThoughtRaze": {
 		"NAME": "Thought Raze",
-		"DESCRIPTION": "Deal !D! damage to ALL enemies. Shuffle a card from your hand into your draw pile."
+		"DESCRIPTION": "Deal !D! damage to ALL enemies. NL Shuffle a card from your hand into your draw pile."
 	},
 	"UmbralBolt": {
 		"NAME": "Umbral Bolt",
-		"DESCRIPTION": "Deal !D! damage. If you are Frail, gain [R] and draw a card."
+		"DESCRIPTION": "Deal !D! damage. NL If you are Frail, gain [R] and draw a card."
 	},
 	"GravityWell": {
 		"NAME": "Gravity Well",
@@ -165,7 +165,9 @@
 	},
 	"Vortex": {
 		"NAME": "Vortex",
-		"DESCRIPTION": "Enemies who are Vulnerable or Weak cannot gain Block."
+		"DESCRIPTION": "If the enemy is Weak or Vulnerable, reduce its Block to 0. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "If the enemy is Weak or Vulnerable, reduce its Block and Strength to 0. NL Exhaust.",
+		"EXTENDED_DESCRIPTION": [ "Enemy must be Weak or Vulnerable."]
 	},
 	"Archives": {
 		"NAME": "Archives",
@@ -173,11 +175,11 @@
 	},
 	"Brainstorm": {
 		"NAME": "Brainstorm",
-		"DESCRIPTION": "Shuffle your discard pile and a Dazed into your draw pile. Draw !M! cards."
+		"DESCRIPTION": "Shuffle your discard pile and a Dazed into your draw pile. NL Draw !M! cards."
 	},
 	"Brilliance": {
 		"NAME": "Brilliance",
-		"DESCRIPTION": "Ethereal. Add your Dexterity as bonus damage to each attack this turn."
+		"DESCRIPTION": "Ethereal. NL Add your Dexterity as bonus damage to each attack this turn."
 	},
 	"Corona": {
 		"NAME": "Corona",
@@ -186,7 +188,7 @@
 	},
 	"Equinox": {
 		"NAME": "Equinox",
-		"DESCRIPTION": "Can only be played if your discard pile is empty or your draw pile is empty. Deal !D! damage.",
+		"DESCRIPTION": "Can only be played if your discard pile is empty or your draw pile is empty. NL Deal !D! damage.",
 		"EXTENDED_DESCRIPTION": [ "My discard pile or my draw pile must be empty."]
 	},
 	"Experiment": {
@@ -195,7 +197,7 @@
 	},
 	"Flow": {
 		"NAME": "Flow",
-		"DESCRIPTION": "Ethereal. Retain all excess Energy at the end of turn."
+		"DESCRIPTION": "Ethereal. NL Retain all excess Energy at the end of turn."
 	},
 	"Illuminate": {
 		"NAME": "Illuminate",
@@ -217,12 +219,12 @@
 	},
 	"Shimmer": {
 		"NAME": "Shimmer",
-		"DESCRIPTION": "Gain !B! Block. All cards in hand become Ethereal. NL Exhaust."
+		"DESCRIPTION": "Gain !B! Block. NL All cards in hand become Ethereal. NL Exhaust."
 	},
 	"SiphonMagic": {
 		"NAME": "Siphon Magic",
 		"DESCRIPTION": "Transfer all Artifact from ALL enemies to you. Exhaust.",
-		"UPGRADE_DESCRIPTION": "Innate. Transfer all Artifact from ALL enemies to you. Exhaust.",
+		"UPGRADE_DESCRIPTION": "Innate. Transfer all Artifact from ALL enemies to you. NL Exhaust.",
 		"EXTENDED_DESCRIPTION": [ "There are no enemies with Artifact."]
 	},
 	"SiphonSpeed": {
@@ -231,8 +233,8 @@
 	},
 	"StrokeOfGenius": {
 		"NAME": "Stroke of Genius",
-		"DESCRIPTION": "Add a random Power to your hand. Exhaust.",
-		"UPGRADE_DESCRIPTION": "Add a random Power to your hand. It costs 0 this turn. Exhaust."
+		"DESCRIPTION": "Add a random Power to your hand. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Add a random Power to your hand. NL It costs 0 this turn. NL Exhaust."
 	},
 	"Transference": {
 		"NAME": "Transference",
@@ -241,12 +243,12 @@
 	},
 	"Channel": {
 		"NAME": "Channel",
-		"DESCRIPTION": "Deal !D! damage. Discard a card. If it is Ethereal deal !D! damage again.",
-		"UPGRADE_DESCRIPTION": "Deal !D! damage. Discard !M! cards. For each card that is Ethereal deal !D! damage again."
+		"DESCRIPTION": "Deal !D! damage. NL Discard a card. NL If it is Ethereal, deal !D! damage again.",
+		"UPGRADE_DESCRIPTION": "Deal !D! damage. NL Discard !M! cards. NL For each card that is Ethereal, deal !D! damage again."
 	},
 	"Feedback": {
 		"NAME": "Feedback",
-		"DESCRIPTION": "Remove all Weak and Vulnerable from an Enemy. Deal !M! damage per stack removed.",
+		"DESCRIPTION": "Remove all Weak and Vulnerable from an Enemy. NL Deal !M! damage per stack removed.",
 		"EXTENDED_DESCRIPTION": [ " NL (Deals !D! damage)"]		
 	},
 	"Implosion": {
@@ -255,12 +257,12 @@
 	},
 	"MeteorShower": {
 		"NAME": "Meteor Shower",
-		"DESCRIPTION": "Deal 1 damage to ALL enemies for each card in your draw pile. Exhaust.",
-		"UPGRADE_DESCRIPTION": "Innate. Deal 1 damage to ALL enemies for each card in your draw pile. Exhaust."
+		"DESCRIPTION": "Deal 1 damage to ALL enemies for each card in your draw pile. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Innate. Deal 1 damage to ALL enemies for each card in your draw pile. NL Exhaust."
 	},
 	"Vacuum": {
 		"NAME": "Vacuum",
-		"DESCRIPTION": "Remove all of your Weak, Frail, and Vulnerable. Deal !M! damage for each stack removed."
+		"DESCRIPTION": "Remove all of your Weak, Frail, and Vulnerable. NL Deal !M! damage for each stack removed."
 	},
 	"AstralForm": {
 		"NAME": "Astral Form",
@@ -288,8 +290,8 @@
 	},
 	"AstralShift": {
 		"NAME": "Astral Shift",
-		"DESCRIPTION": "Ethereal. Gain !M! Intangible. Exhaust.",
-		"UPGRADE_DESCRIPTION": "Ethereal. Gain !M! Intangible."
+		"DESCRIPTION": "Ethereal. NL Gain !M! Intangible. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Ethereal. NL Gain !M! Intangible."
 	},
 	"Echo": {
 		"NAME": "Echo",
@@ -298,17 +300,13 @@
 	},
 	"Eclipse": {
 		"NAME": "Eclipse",
-		"DESCRIPTION": "Ethereal. Choose an Exhausted Ethereal card and put it in your hand. Exhaust."
+		"DESCRIPTION": "Choose an Exhausted Ethereal card. NL Put it on top of your draw pile. NL Exhaust.",
+		"EXTENDED_DESCRIPTION": [ "I don't have any Exhausted Ethereal cards."]
 	},
 	"Eureka": {
 		"NAME": "Eureka!",
-		"DESCRIPTION": "Shuffle 2 Dazed into your draw pile. Draw !M! cards. Gain [R] [R]. Exhaust.",
-		"UPGRADE_DESCRIPTION": "Shuffle 2 Dazed into your draw pile. Draw !M! cards. NL Gain [R] [R] [R]. Exhaust."
-	},
-	"Nova": {
-		"NAME": "Nova",
-		"DESCRIPTION": "Ethereal. Stun an enemy. Shuffle !M! Dazed into your draw pile.",
-		"UPGRADE_DESCRIPTION": "Ethereal. Stun ALL enemies. Shuffle !M! Dazed into your draw pile."
+		"DESCRIPTION": "Shuffle 2 Dazed into your draw pile. NL Draw !M! cards. NL Gain [R] [R]. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Shuffle 2 Dazed into your draw pile. NL Draw !M! cards. NL Gain [R] [R] [R]. NL Exhaust."
 	},
 	"ReflectionWard": {
 		"NAME": "Reflection Ward",
@@ -326,5 +324,9 @@
 	"Magnetize": {
 		"NAME": "Magnetize",
 		"DESCRIPTION": "Gain !B! Block. NL Apply !M! Weak."
-	}	
+	},
+	"Nova": {
+		"NAME": "Nova",
+		"DESCRIPTION": "Deal !D! damage to ALL enemies. NL Shuffle 2 Dazed into your Draw pile."
+	}
 }

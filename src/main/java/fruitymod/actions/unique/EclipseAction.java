@@ -63,14 +63,13 @@ extends AbstractGameAction {
                 this.isDone = true;
                 return;
             }
-            AbstractDungeon.gridSelectScreen.open(this.p.exhaustPile, 1, "Select a card to play", false);
+            AbstractDungeon.gridSelectScreen.open(this.p.exhaustPile, 1, "Select a card to place on top of your draw pile.", false);
             this.tickDuration();
             return;
         }
         if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
             for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards) {
-            	this.p.hand.addToHand(c);
-                this.p.exhaustPile.removeCard(c);                
+                this.p.exhaustPile.moveToDeck(c, false);                
             }
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
             this.p.hand.refreshHandLayout();

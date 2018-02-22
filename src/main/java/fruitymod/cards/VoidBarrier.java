@@ -16,7 +16,7 @@ import fruitymod.patches.AbstractCardEnum;
 public class VoidBarrier extends CustomCard {
 	public static final String ID = "VoidBarrier";
     public static final String NAME = "Void Barrier";
-    public static final String DESCRIPTION = "Ethereal. Gain !B! Block. Draw !M! cards.";
+    public static final String DESCRIPTION = "Ethereal. NL Gain !B! Block. NL Draw !M! cards.";
     private static final int COST = 1;
     private static final int BLOCK_AMT = 6;
     private static final int UPGRADE_BLOCK_AMT = 3;

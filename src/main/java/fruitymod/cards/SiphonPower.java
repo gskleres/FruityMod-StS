@@ -44,17 +44,6 @@ public class SiphonPower extends CustomCard {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber, false), this.magicNumber));
     }
-    
-	public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-		boolean canUse = super.canUse(p, m);
-		if (!canUse) {
-			return false;
-		}
-		canUse = m != null && (m.intent == AbstractMonster.Intent.ATTACK || m.intent == AbstractMonster.Intent.ATTACK_BUFF 
-					|| m.intent == AbstractMonster.Intent.ATTACK_DEBUFF || m.intent == AbstractMonster.Intent.ATTACK_DEFEND);
-		this.cantUseMessage = "That enemy does not intend to attack!";
-		return canUse;
-	}
 	
 	@Override
     public AbstractCard makeCopy() {

@@ -18,7 +18,7 @@ public class Flare
 extends CustomCard {
     public static final String ID = "Flare";
     public static final String NAME = "Flare";
-    public static final String DESCRIPTION = "Deal !D! damage. Apply !M! Vulnerable. Shuffle a Dazed into your draw pile.";
+    public static final String DESCRIPTION = "Deal !D! damage. Apply !M! Vulnerable.";
     private static final int COST = 0;
     private static final int ATTACK_DMG = 3;
     private static final int UPGRADE_PLUS_DMG = 3;
