@@ -19,7 +19,6 @@ public class Zenith extends CustomCard {
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-	public static final String EXTENDED_DESCRIPTION = " NL (Will have !M! [R] after use)";
 	private static final int COST = 1;
 	private static final int POOL = 1;
 
@@ -32,26 +31,23 @@ public class Zenith extends CustomCard {
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(EnergyPanel.totalCount - 1));
-		if (!this.upgraded) {
-			this.rawDescription = DESCRIPTION;
-		} else {
-			this.rawDescription = UPGRADE_DESCRIPTION;
-		}
-		initializeDescription();
+		AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(EnergyPanel.totalCount - this.costForTurn));
+		this.setDescription(false);
 	}
 	
 	@Override
 	public void applyPowers() {
-		this.magicNumber = this.baseMagicNumber = (EnergyPanel.totalCount - 1) * 2;
+		this.magicNumber = this.baseMagicNumber = (EnergyPanel.totalCount - this.costForTurn) * 2;
 		super.applyPowers();
-		if (!this.upgraded) {
-			this.rawDescription = DESCRIPTION;
-		} else {
-			this.rawDescription = UPGRADE_DESCRIPTION;
+		this.setDescription(true);
+	}
+	
+	private void setDescription(boolean addExtended) {
+		this.rawDescription = (this.isEthereal ? "Ethereal." : "") + (!this.upgraded? DESCRIPTION : UPGRADE_DESCRIPTION);
+		if(addExtended) {
+			this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[0];
 		}
-		this.rawDescription += EXTENDED_DESCRIPTION;
-		initializeDescription();
+		this.initializeDescription();
 	}
 
 	@Override
@@ -64,8 +60,7 @@ public class Zenith extends CustomCard {
 		if (!this.upgraded) {
 			this.upgradeName();
 			this.exhaust = false;
-			this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-			this.initializeDescription();
+			this.setDescription(false);
 		}
 	}
 }

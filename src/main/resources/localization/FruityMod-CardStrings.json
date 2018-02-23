@@ -82,8 +82,8 @@
 	},
 	"UmbralWave": {
 		"NAME": "Umbral Wave",
-		"DESCRIPTION": "Ethereal. Gain !M! Block. Deal !D! damage. Next turn gain [R].",
-		"UPGRADE_DESCRIPTION": "Ethereal. Gain !M! Block. Deal !D! damage. Next turn gain [R] [R]."
+		"DESCRIPTION": "Ethereal. Gain !B! Block. Deal !D! damage. Next turn gain [R].",
+		"UPGRADE_DESCRIPTION": "Ethereal. Gain !B! Block. Deal !D! damage. Next turn gain [R] [R]."
 	},
 	"VoidBarrier": {
 		"NAME": "Void Barrier",
@@ -144,13 +144,13 @@
 	},
 	"Nexus": {
 		"NAME": "Nexus",
-		"DESCRIPTION": "Whenever you play an attack, gain !B! Block."
+		"DESCRIPTION": "Whenever you draw an Ethereal card, gain !M! Block."
 	},
-	"PeriaptofCelerity": {
+	"PeriaptOfCelerity": {
 		"NAME": "Periapt of Celerity",
 		"DESCRIPTION": "Whenever an Ethereal card is Exhausted, gain !M! Dexterity."
 	},
-	"PeriaptofPotency": {
+	"PeriaptOfPotency": {
 		"NAME": "Periapt of Potency",
 		"DESCRIPTION": "Whenever an Ethereal card is Exhausted, gain !M! Strength."
 	},
@@ -223,7 +223,7 @@
 	},
 	"SiphonMagic": {
 		"NAME": "Siphon Magic",
-		"DESCRIPTION": "Transfer all Artifact from ALL enemies to you. Exhaust.",
+		"DESCRIPTION": "Transfer all Artifact from ALL enemies to you. NL Exhaust.",
 		"UPGRADE_DESCRIPTION": "Innate. Transfer all Artifact from ALL enemies to you. NL Exhaust.",
 		"EXTENDED_DESCRIPTION": [ "There are no enemies with Artifact."]
 	},
@@ -280,11 +280,11 @@
 		"NAME": "Event Horizon",
 		"DESCRIPTION": "Each enemy loses HP equal to the amount of Weak and Vulnerable it has at the start of its turn."
 	},
-	"PeriaptofTenacity": {
+	"PeriaptOfTenacity": {
 		"NAME": "Periapt of Tenacity",
 		"DESCRIPTION": "At the start of your turn, gain !M! Artifact."
 	},
-	"PeriaptofVigor": {
+	"PeriaptOfVigor": {
 		"NAME": "Periapt of Vigor",
 		"DESCRIPTION": "Ethereal cards cost !M! less [R]."
 	},
@@ -315,7 +315,8 @@
 	"Zenith": {
 		"NAME": "Zenith",
 		"DESCRIPTION": "After paying this card's cost, double your remaining [R]. NL Exhaust.",
-		"UPGRADE_DESCRIPTION": "Double your [R]."
+		"UPGRADE_DESCRIPTION": "Double your [R].",
+		"EXTENDED_DESCRIPTION": [ " NL (Will have !M! [R] after use)"]
 	},
 	"Coalescence": {
 		"NAME": "Coalescence",

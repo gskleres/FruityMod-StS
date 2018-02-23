@@ -14,7 +14,7 @@ import fruitymod.patches.AbstractCardEnum;
 import fruitymod.powers.TenacityPower;
 
 public class PeriaptOfTenacity extends CustomCard {
-	public static final String ID = "PeriaptofTenacity";
+	public static final String ID = "PeriaptOfTenacity";
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;

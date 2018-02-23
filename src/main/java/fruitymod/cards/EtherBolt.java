@@ -16,7 +16,7 @@ import fruitymod.patches.AbstractCardEnum;
 public class EtherBolt extends CustomCard {
 	public static final String ID = "EtherBolt";
 	public static final String NAME = "Ether Bolt";
-	public static final String DESCRIPTION = "Can only be played if all other cards in your hand are Ethereal. Deal !D! damage.";
+	public static final String DESCRIPTION = "Can only be played if all other cards in your hand are Ethereal. NL Deal !D! damage.";
 	private static final int COST = 0;
 	private static final int ATTACK_DMG = 15;
 	private static final int UPGRADE_DMG_AMT = 5;

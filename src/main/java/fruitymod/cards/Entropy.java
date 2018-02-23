@@ -21,7 +21,7 @@ import fruitymod.patches.AbstractCardEnum;
 public class Entropy extends CustomCard {
 	private static final String ID = "Entropy";
 	private static final String NAME = "Entropy";
-	private static final String DESCRIPTION = "Ethereal. Deal !D! damage. NL Enemy loses !M! Strength.";
+	private static final String DESCRIPTION = "Ethereal. NL Deal !D! damage. NL Enemy loses !M! Strength.";
 	private static final int COST = 2;
 	private static final int COST_UPGRADE = 1;
 	private static final int ATTACK_DMG = 5;
