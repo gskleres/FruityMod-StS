@@ -124,20 +124,20 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String CHANNEL = "cards/channel.png";
     public static final String IMPLOSION = "cards/implosion.png";
     public static final String ASTRAL_FORM = "cards/astral_form.png";
-    public static final String ASTRAL_SHIFT = "cards/astral_shift.png";
+    public static final String ASTRAL_SHIFT = "cards/dimension_door.png";
     public static final String PERIAPT_OF_VIGOR = "cards/periapt_of_vigor.png";
     public static final String PERIAPT_OF_TENACITY = "cards/periapt_of_tenacity.png";
-	public static final String ECLIPSE = "cards/locked_skill.png";
-	public static final String EUREKA = "cards/locked_skill.png";
-	public static final String ECHO = "cards/locked_skill.png";
-	public static final String EVENT_HORIZON = "cards/locked_power.png";
-	public static final String ZENITH = "cards/locked_skill.png";
-	public static final String REFLECTION_WARD = "cards/locked_skill.png";
+	public static final String ECLIPSE = "cards/eclipse.png";
+	public static final String EUREKA = "cards/eureka.png";
+	public static final String ECHO = "cards/echo.png";
+	public static final String EVENT_HORIZON = "cards/event_horizon.png";
+	public static final String ZENITH = "cards/zenith.png";
+	public static final String REFLECTION_WARD = "cards/reflection_ward.png";
 	public static final String CREATIVITY = "cards/locked_power.png";
 	public static final String COALESCENCE = "cards/locked_power.png";
 	public static final String ENIGMA = "cards/locked_power.png";
 	public static final String FEEDBACK = "cards/locked_attack.png";
-	public static final String NOVA = "cards/locked_attack.png";
+	public static final String NOVA = "cards/nova.png";
 	
     // power images
     public static final String ASTRAL_HAZE_POWER = "powers/astral_haze.png";
