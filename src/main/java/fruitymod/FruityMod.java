@@ -494,6 +494,7 @@ public class FruityMod implements PostInitializeSubscriber,
 			AbstractDungeon.actionManager.addToTop(new DamageAllEnemiesAction(null, 
 					DamageInfo.createDamageMatrix(stacks, true),
 					DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
+			c.exhaustOnUseOnce = true;
 		}
 	}
 }
