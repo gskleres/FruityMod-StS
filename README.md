@@ -28,8 +28,8 @@ Card list: [click here](https://drive.google.com/file/d/1aojRAKPQCbDW7mSW6Co6XTK
 
 ## Requirements ##
 #### General Use ####
-* BaseMod v.1.7.0+ (https://github.com/t-larson/BaseMod/releases) for now use (https://github.com/daviscook477/BaseMod/releases)
-* ModTheSpire v2.2.1+ (https://github.com/kiooeht/ModTheSpire/releases)
+* BaseMod v.1.7.1+ (https://github.com/t-larson/BaseMod/releases) for now use (https://github.com/daviscook477/BaseMod/releases)
+* ModTheSpire v2.3.0+ (https://github.com/kiooeht/ModTheSpire/releases)
 
 ## Installation ##
 1. Copy `BaseMod.jar` to your **ModTheSpire** `mods` directory.
