@@ -24,8 +24,8 @@
 			<systemPath>${basedir}/../_lib/BaseMod.jar</systemPath>
 		</dependency>
 		<dependency>
-			<groupId>basemod</groupId>
-			<artifactId>basemod</artifactId>
+			<groupId>modthespire</groupId>
+			<artifactId>modthespire</artifactId>
 			<version>1.5.2</version>
 			<scope>system</scope>
 			<systemPath>${basedir}/../_lib/ModTheSpire.jar</systemPath>
