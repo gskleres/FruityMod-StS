@@ -62,7 +62,7 @@ public class FruityMod implements PostInitializeSubscriber,
     
     // card images
     
-    public static final String ANOMALY = "cards/locked_power.png";
+    public static final String ANOMALY = "cards/anomaly.png";
     public static final String ARCANE_BARRAGE = "cards/starburst.png";
     public static final String ARCANE_TEMPEST = "cards/arcane_tempest.png";
     public static final String ARCANE_VOLLEY = "cards/irradiate.png";
@@ -73,9 +73,9 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String BRAINSTORM = "cards/brainstorm.png";
     public static final String BRILLIANCE = "cards/brilliance.png";
     public static final String CHANNEL = "cards/channel.png";
-    public static final String COALESCENCE = "cards/locked_power.png";
+    public static final String COALESCENCE = "cards/coalescence.png";
     public static final String COMET = "cards/comet.png";
-    public static final String CORONA = "cards/locked_skill.png";
+    public static final String CORONA = "cards/corona.png";
     public static final String CREATIVITY = "cards/creativity.png";
     public static final String DEFEND_PURPLE = "cards/defend_purple.png";
     public static final String DEFLECTION_WARD = "cards/arcane_armor.png";
@@ -106,7 +106,7 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String ILLUMINATE = "cards/illuminate.png";
     public static final String IMPLOSION = "cards/implosion.png";
     public static final String MAGIC_MISSILE = "cards/magic_missile.png";
-    public static final String MAGNETIZE = "cards/locked_skill.png";
+    public static final String MAGNETIZE = "cards/magnetize.png";
     public static final String METEOR_SHOWER = "cards/meteor_shower.png";
     public static final String MIND_OVER_MATTER = "cards/mind_over_matter.png";
     public static final String NEBULOUS_BLAST = "cards/force_ripple.png";
@@ -117,12 +117,12 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String PERIAPT_OF_TENACITY = "cards/runic_binding.png";
     public static final String PERIAPT_OF_VIGOR = "cards/periapt_of_vigor.png";
     public static final String POWER_OVERWHELMING = "cards/power_overwhelming.png";
-    public static final String POWER_SPIKE = "cards/power_spike.png";
-    public static final String PROTECTION_WARD = "cards/protection_ward.png";
+    public static final String POWER_SPIKE = "cards/overload.png";
+    public static final String PROTECTION_WARD = "cards/disperse.png";
     public static final String REFLECTION_WARD = "cards/reflection_ward.png";
     public static final String RETROGRADE = "cards/retrograde.png";
     public static final String SHIMMER = "cards/shimmer.png";
-    public static final String SIPHON_MAGIC = "cards/siphon_magic.png";
+    public static final String SIPHON_MAGIC = "cards/convergence.png";
     public static final String SIPHON_POWER = "cards/siphon_power.png";
     public static final String SIPHON_SPEED = "cards/siphon_speed.png";
     public static final String STRIKE_PURPLE = "cards/strike_purple.png";
