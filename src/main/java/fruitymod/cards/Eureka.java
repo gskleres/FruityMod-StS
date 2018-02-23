@@ -51,7 +51,7 @@ public class Eureka extends CustomCard {
 		if (!this.upgraded) {
 			this.upgradeName();
 			this.upgradeMagicNumber(DRAW_UPDRAGE);
-			this.rawDescription = cardStrings.UPGRADE_DESCRIPTION + (this.isEthereal ? " NL Etherial." : "");
+			this.rawDescription = (this.isEthereal ? "Ethereal." : "") + cardStrings.UPGRADE_DESCRIPTION;
 			this.initializeDescription();
 		}
 	}

@@ -38,7 +38,7 @@ public class EtherBlast extends CustomCard {
 				new DamageAction(m,
 						new DamageInfo(p, this.damage, this.damageTypeForTurn), true));
 		AbstractDungeon.actionManager.addToTop(new VFXAction(new ThrowDaggerEffect(m.hb.cX, m.hb.cY)));
-		this.rawDescription = DESCRIPTION;
+		this.rawDescription = (this.isEthereal ? "Ethereal." : "") + DESCRIPTION;
 		initializeDescription();
 	}
 	
@@ -52,14 +52,14 @@ public class EtherBlast extends CustomCard {
 		}
 		this.baseDamage = count * this.magicNumber;
 		super.applyPowers();
-		this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION;
+		this.rawDescription = (this.isEthereal ? "Ethereal." : "") + DESCRIPTION + EXTENDED_DESCRIPTION;
 		initializeDescription();
 	}
 	
 	@Override
 	public void calculateCardDamage(AbstractMonster mo) {
 		super.calculateCardDamage(mo);
-		this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION;
+		this.rawDescription = (this.isEthereal ? "Ethereal." : "") + DESCRIPTION + EXTENDED_DESCRIPTION;
 		initializeDescription();
 	}
 

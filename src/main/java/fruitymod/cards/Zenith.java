@@ -32,25 +32,22 @@ public class Zenith extends CustomCard {
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(EnergyPanel.totalCount - this.costForTurn));
-		if (!this.upgraded) {
-			this.rawDescription = DESCRIPTION;
-		} else {
-			this.rawDescription = UPGRADE_DESCRIPTION;
-		}
-		initializeDescription();
+		this.setDescription(false);
 	}
 	
 	@Override
 	public void applyPowers() {
 		this.magicNumber = this.baseMagicNumber = (EnergyPanel.totalCount - this.costForTurn) * 2;
 		super.applyPowers();
-		if (!this.upgraded) {
-			this.rawDescription = DESCRIPTION;
-		} else {
-			this.rawDescription = UPGRADE_DESCRIPTION;
+		this.setDescription(true);
+	}
+	
+	private void setDescription(boolean addExtended) {
+		this.rawDescription = (this.isEthereal ? "Ethereal." : "") + (!this.upgraded? DESCRIPTION : UPGRADE_DESCRIPTION);
+		if(addExtended) {
+			this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[0];
 		}
-		this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[0];
-		initializeDescription();
+		this.initializeDescription();
 	}
 
 	@Override
@@ -63,8 +60,7 @@ public class Zenith extends CustomCard {
 		if (!this.upgraded) {
 			this.upgradeName();
 			this.exhaust = false;
-			this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-			this.initializeDescription();
+			this.setDescription(false);
 		}
 	}
 }

@@ -37,37 +37,28 @@ public class MeteorShower extends CustomCard {
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		AbstractDungeon.actionManager.addToBottom(new VFXAction(new MindblastEffect(p.dialogX, p.dialogY)));
 		AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
-		if (!this.upgraded) {
-			this.rawDescription = DESCRIPTION;
-		} else {
-			this.rawDescription = UPGRADE_DESCRIPTION;
-		}
-		initializeDescription();
+		this.setDescription(true);
 	}
 
 	@Override
 	public void applyPowers() {
 		this.baseDamage = AbstractDungeon.player.drawPile.size() * ATTACK_DMG_PER_CARD;
-		super.applyPowers();
-		if (!this.upgraded) {
-			this.rawDescription = DESCRIPTION;
-		} else {
-			this.rawDescription = UPGRADE_DESCRIPTION;
-		}
-		this.rawDescription += EXTENDED_DESCRIPTION;
-		initializeDescription();
+		super.applyPowers();		
+		this.setDescription(false);
 	}
 
 	@Override
 	public void calculateCardDamage(AbstractMonster mo) {
-		super.calculateCardDamage(mo);
-		if (!this.upgraded) {
-			this.rawDescription = DESCRIPTION;
-		} else {
-			this.rawDescription = UPGRADE_DESCRIPTION;
+		super.calculateCardDamage(mo);		
+		this.setDescription(true);
+	}
+	
+	private void setDescription(boolean addExtended) {
+		this.rawDescription = (this.isEthereal ? "Ethereal." : "") + (!this.upgraded ? DESCRIPTION : UPGRADE_DESCRIPTION);
+		if(addExtended) {
+			this.rawDescription += EXTENDED_DESCRIPTION;
 		}
-		this.rawDescription += EXTENDED_DESCRIPTION;
-		initializeDescription();
+		this.initializeDescription();
 	}
 
 	@Override
@@ -79,9 +70,8 @@ public class MeteorShower extends CustomCard {
 	public void upgrade() {
 		if (!this.upgraded) {
 			this.upgradeName();
-			this.isInnate = true;
-			this.rawDescription = UPGRADE_DESCRIPTION;
-			initializeDescription();
+			this.isInnate = true;			
+			this.setDescription(false);
 		}
 	}
 }

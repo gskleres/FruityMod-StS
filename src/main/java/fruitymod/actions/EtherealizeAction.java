@@ -24,9 +24,8 @@ extends AbstractGameAction {
         for (AbstractCard c : this.p.hand.group) {
             if (c.isEthereal) continue;
             c.isEthereal = true;
-            c.rawDescription = c.rawDescription + " NL Ethereal.";
+            c.rawDescription = "Ethereal." + c.rawDescription;
             c.initializeDescription();
-            //c.description.add(new DescriptionLine("Ethereal.", 50.0f));
             c.superFlash();
         }
         this.isDone = true;

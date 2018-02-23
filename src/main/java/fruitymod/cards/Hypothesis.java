@@ -47,7 +47,7 @@ extends CustomCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeMagicNumber(BONUS_DRAW_UPGRADE);
-            this.rawDescription = UPGRADE_DESCRIPTION;
+            this.rawDescription = (this.isEthereal ? "Ethereal." : "") + UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
     }

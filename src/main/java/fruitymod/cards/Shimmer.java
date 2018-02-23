@@ -27,6 +27,7 @@ public class Shimmer extends CustomCard {
 		super(ID, NAME, FruityMod.makePath(FruityMod.SHIMMER), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
 				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF, POOL);
 		this.baseBlock = BLOCK_AMT;
+		this.exhaust = true;
 	}
 
 	@Override
