@@ -93,7 +93,6 @@ public class FruityMod implements PostInitializeSubscriber,
 	public static final String METEOR_SHOWER = "cards/meteor_shower.png";
 	public static final String MIND_OVER_MATTER = "cards/mind_over_matter.png";
 	public static final String NEBULOUS_BLAST = "cards/nebulous_blast.png";
-	public static final String NEXUS = "cards/nexus.png";
 	public static final String PERIAPT_OF_CELERITY = "cards/periapt_of_celerity.png";
 	public static final String PERIAPT_OF_POTENCY = "cards/periapt_of_potency.png";
 	public static final String POWER_OVERWHELMING = "cards/power_overwhelming.png";
@@ -138,6 +137,7 @@ public class FruityMod implements PostInitializeSubscriber,
 	public static final String ENIGMA = "cards/locked_power.png";
 	public static final String FEEDBACK = "cards/locked_attack.png";
 	public static final String NOVA = "cards/locked_attack.png";
+	public static final String NEXUS = "cards/nexus.png";
 	
     // power images
     public static final String ASTRAL_HAZE_POWER = "powers/astral_haze.png";
