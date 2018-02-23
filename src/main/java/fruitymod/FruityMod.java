@@ -350,7 +350,6 @@ public class FruityMod implements PostInitializeSubscriber,
 		
 		BaseMod.addCard(new ArcaneBarrage());
 		BaseMod.addCard(new ArcaneVolley());
-		BaseMod.addCard(new ArcaneTempest());
 		BaseMod.addCard(new AstralHaze());
 		BaseMod.addCard(new Brainstorm());
 		BaseMod.addCard(new DeflectionWard());
