@@ -44,7 +44,7 @@ public class EtherBolt extends CustomCard {
 			if (c.isEthereal || c.cardID == ID)
 				continue;
 			canUse = false;
-			this.cantUseMessage = "Can only be played if all other cards in your hand are Ethereal.";
+			this.cantUseMessage = "I have cards in my hand that are not Ethereal.";
 		}
 		return canUse;
 	}
