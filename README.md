@@ -48,7 +48,7 @@ Card list: [click here](https://drive.google.com/file/d/1aojRAKPQCbDW7mSW6Co6XTK
 2. ColdRain451 (https://github.com/dvalldejuli) for a ton of card implementations and getting the code base started
 3. test447 (https://github.com/daviscook477) for card implementations and adding lots of needed API hooks to BaseMod 
 4. fiiiiilth (https://github.com/fiiiiilth) for testing, bug fixes and card updates
-5. Pal (https://github.com/Paltorz) for testing, bug fixes and card updates
+5. Pal (https://github.com/Paltorz) for testing
 
 ## Special Thanks ##
 1. Thanks to the [devs](https://www.megacrit.com/) of **SlayTheSpire** for making such and awesome game, allowing us to mod it, and allowing us to use recolored versions of their art assets in our mod
