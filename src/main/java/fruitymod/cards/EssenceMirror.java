@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
+import fruitymod.FruityMod;
 import fruitymod.patches.AbstractCardEnum;
 import fruitymod.powers.EssenceMirrorPower;
 
@@ -19,7 +20,7 @@ public class EssenceMirror extends CustomCard {
 	private static final int POOL = 1;
 
 	public EssenceMirror() {
-		super(ID, NAME, "images/cards/locked_skill.png", COST, DESCRIPTION, AbstractCard.CardType.SKILL,
+		super(ID, NAME, FruityMod.makePath(FruityMod.ESSENCE_MIRROR), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
 				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF, POOL);
 	}
 
