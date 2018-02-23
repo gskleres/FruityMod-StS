@@ -25,7 +25,7 @@ public class VoidBarrier extends CustomCard {
     
     public VoidBarrier() {
     	super(ID, NAME, FruityMod.makePath(FruityMod.VOID_BARRIER), COST, DESCRIPTION,
-    			AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE,
+    			AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE,
     			AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF, POOL);
     	this.baseBlock = BLOCK_AMT;
     	this.baseMagicNumber = DRAW;
