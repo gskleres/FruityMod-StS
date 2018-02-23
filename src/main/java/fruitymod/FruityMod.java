@@ -157,6 +157,7 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String ENIGMA_POWER = "powers/enigma.png";
     public static final String BRILLIANCE_POWER = "powers/brilliance.png";
     public static final String ANOMALY_POWER = "powers/anomaly.png";
+    public static final String NEXUS_POWER = "powers/nexus.png";
 
     // relic images
     public static final String ARCANOSPHERE_RELIC = "relics/arcanosphere.png";
@@ -241,7 +242,9 @@ public class FruityMod implements PostInitializeSubscriber,
     public static Texture getAnomalyPowerTexture() {
     	return new Texture(makePath(BRILLIANCE_POWER));
     }
-    
+    public static Texture getNexusPowerTexture() {
+    	return new Texture(makePath(VIGOR_POWER));
+    }
     
     /**
      * Makes a full path for a resource path
@@ -411,6 +414,7 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new Anomaly());
 		BaseMod.addCard(new Nova());
 		BaseMod.addCard(new Vortex());
+		BaseMod.addCard(new Nexus());
 		
 		logger.info("done editting cards");
 	}

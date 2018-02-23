@@ -144,7 +144,7 @@
 	},
 	"Nexus": {
 		"NAME": "Nexus",
-		"DESCRIPTION": "Whenever you play an attack, gain !B! Block."
+		"DESCRIPTION": "Whenever you draw an Ethereal card, gain !M! Block."
 	},
 	"PeriaptOfCelerity": {
 		"NAME": "Periapt of Celerity",
