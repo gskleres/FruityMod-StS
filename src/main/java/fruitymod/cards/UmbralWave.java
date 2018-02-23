@@ -11,7 +11,9 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.EnergizedPower;
 import com.megacrit.cardcrawl.vfx.combat.IronWaveEffect;
@@ -22,8 +24,9 @@ import fruitymod.patches.AbstractCardEnum;
 
 public class UmbralWave extends CustomCard {
 	public static final String ID = "UmbralWave";
-    public static final String NAME = "Umbral Wave";
-    public static final String DESCRIPTION = "Ethereal. Gain !B! Block. Deal !D! damage. Next turn gain !M! Energy";
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final int COST = 3;
     private static final int ATTACK_DMG = 12;
     private static final int UPGRADE_DMG_AMT = 3;
@@ -35,11 +38,11 @@ public class UmbralWave extends CustomCard {
     
     public UmbralWave() {
     	super(ID, NAME, FruityMod.makePath(FruityMod.UMBRAL_WAVE), COST, DESCRIPTION,
-    			AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE,
+    			AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE,
     			AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY, POOL);
     	this.baseDamage = ATTACK_DMG;
     	this.baseBlock = BLOCK_AMT;
-    	this.baseMagicNumber = ENERGY_GAIN;
+    	this.baseMagicNumber = this.magicNumber = ENERGY_GAIN;
     	this.isEthereal = true;
     }
     
@@ -70,6 +73,8 @@ public class UmbralWave extends CustomCard {
             this.upgradeDamage(UPGRADE_DMG_AMT);
             this.upgradeBlock(UPGRADE_BLOCK_AMT);
             this.upgradeMagicNumber(UPGRADE_ENERGY_AMT);
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            this.initializeDescription();
         }
     }
 }

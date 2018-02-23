@@ -82,8 +82,8 @@
 	},
 	"UmbralWave": {
 		"NAME": "Umbral Wave",
-		"DESCRIPTION": "Ethereal. Gain !M! Block. Deal !D! damage. Next turn gain [R].",
-		"UPGRADE_DESCRIPTION": "Ethereal. Gain !M! Block. Deal !D! damage. Next turn gain [R] [R]."
+		"DESCRIPTION": "Ethereal. Gain !B! Block. Deal !D! damage. Next turn gain [R].",
+		"UPGRADE_DESCRIPTION": "Ethereal. Gain !B! Block. Deal !D! damage. Next turn gain [R] [R]."
 	},
 	"VoidBarrier": {
 		"NAME": "Void Barrier",
