@@ -44,14 +44,17 @@ Card list: [click here](https://drive.google.com/file/d/1aojRAKPQCbDW7mSW6Co6XTK
 * ModTheSpireLib (whatever version is associated with your version of ModTheSpire)
 
 ## Credits / Acknowledgements ##
-1. FruitStrike (https://github.com/gskleres) for **everything** design, preliminary art assets, and spreading the word
-2. ColdRain451 (https://github.com/dvalldejuli) for **so** many card implementations and getting the code base started
-3. test447 (https://github.com/daviscook477) for card implementations and adding lots of needed **API hooks** to BaseMod 
-4. fiiiiilth (https://github.com/fiiiiilth) for bug fixes and updating cards
+1. Fruitstrike (https://github.com/gskleres) for game design, project management, and being a hype train
+2. ColdRain451 (https://github.com/dvalldejuli) for a ton of card implementations and getting the code base started
+3. test447 (https://github.com/daviscook477) for card implementations and adding lots of needed API hooks to BaseMod 
+4. fiiiiilth (https://github.com/fiiiiilth) for testing, bug fixes and card updates
+5. Pal (https://github.com/Paltorz) for testing, bug fixes and card updates
 
 ## Special Thanks ##
 1. Thanks to the [devs](https://www.megacrit.com/) of **SlayTheSpire** for making such and awesome game, allowing us to mod it, and allowing us to use recolored versions of their art assets in our mod
-2. Thanks to all the people who have contributed bug reports or feedback on Discord or through the Github tracker. Without your help we couldn't make **The Seeker** as well-polished!
+2. Thanks to t-larson (https://github.com/t-larson) for BaseMod!!
+3. Thanks to kiooeht (https://github.com/kiooeht) for ModTheSpire!!
+4. Thanks to all the people who have contributed bug reports or feedback on Discord or through the Github tracker. Without your help we couldn't make **The Seeker** as well-polished!
 
 ## Notes For Contributors ##
 
