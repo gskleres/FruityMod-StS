@@ -12,23 +12,23 @@
 		"DESCRIPTION": "Ethereal. NL Apply !M! Vulnerable and !M! Weak to ALL attackers."
 	},
 	"ArcaneBarrage": {
-		"NAME": "Arcane Barrage",
+		"NAME": "Starburst",
 		"DESCRIPTION": "Deal !D! damage and apply !M! Vulnerable to ALL enemies."
 	},
 	"ArcaneVolley": {
-		"NAME": "Arcane Volley",
+		"NAME": "Irradiate",
 		"DESCRIPTION": "Deal !D! damage and apply !M! Weak to ALL enemies."
 	},
 	"EtherBolt": {
-		"NAME": "Ether Bolt",
+		"NAME": "Essence Dart",
 		"DESCRIPTION": "Can only be played if all other cards in your hand are Ethereal. NL Deal !D! damage."
 	},
 	"FluxBlast": {
-		"NAME": "Flux Blast",
+		"NAME": "Null Storm",
 		"DESCRIPTION": "Shuffle a Dazed into your draw pile. NL Deal !D! damage to ALL enemies."
 	},
 	"FluxBolt": {
-		"NAME": "Flux Bolt",
+		"NAME": "Void Ray",
 		"DESCRIPTION": "Shuffle a Dazed into your draw pile. Deal !D! damage."
 	},
 	"Comet": {
@@ -48,31 +48,31 @@
 		"DESCRIPTION": "Deal !D! damage. NL If you are Frail or Vulnerable, deal !D! damage again."
 	},
 	"VoidBolt": {
-		"NAME": "Void Bolt",
+		"NAME": "Prismatic Sphere",
 		"DESCRIPTION": "Ethereal. NL Deal !D! damage. NL Draw !M! cards."
 	},
 	"VoidRipple": {
-		"NAME": "Void Ripple",
+		"NAME": "Flux",
 		"DESCRIPTION": "Ethereal. NL Gain !B! Block. NL Deal !D! damage."
 	},
 	"DeflectionWard": {
-		"NAME": "Deflection Ward",
+		"NAME": "Arcane Armor",
 		"DESCRIPTION": "Gain !B! Block."
 	},
 	"EssenceMirror": {
-		"NAME": "Essence Mirror",
+		"NAME": "Flicker",
 		"DESCRIPTION": "Reverse the effects of Frail, Weak, and Vulnerable on you for !M! turn."
 	},
 	"EssenceSpike": {
-		"NAME": "Essence Spike",
+		"NAME": "Pulse Barrier",
 		"DESCRIPTION": "Gain !B! Block. NL Gain !M! Frail."
 	},
 	"EtherBarrier": {
-		"NAME": "Ether Barrier",
+		"NAME": "Nebula",
 		"DESCRIPTION": "Gain !B! Block for every Ethereal card in your hand."
 	},
 	"FluxShield": {
-		"NAME": "Flux Shield",
+		"NAME": "Disruption Field",
 		"DESCRIPTION": "Gain !B! Block. NL Shuffle a Dazed into your draw pile."
 	},
 	"Hypothesis": {
@@ -81,12 +81,12 @@
 		"UPGRADE_DESCRIPTION": "Draw a card. NL If it is Ethereal, draw !M! more cards."
 	},
 	"UmbralWave": {
-		"NAME": "Umbral Wave",
+		"NAME": "Singularity",
 		"DESCRIPTION": "Ethereal. Gain !B! Block. Deal !D! damage. Next turn gain [R].",
 		"UPGRADE_DESCRIPTION": "Ethereal. Gain !B! Block. Deal !D! damage. Next turn gain [R] [R]."
 	},
 	"VoidBarrier": {
-		"NAME": "Void Barrier",
+		"NAME": "Genesis",
 		"DESCRIPTION": "Ethereal. NL Gain !B! Block. NL Draw !M! cards."
 	},
 	"ArcaneTempest": {
@@ -98,11 +98,11 @@
 		"DESCRIPTION": "Ethereal. NL Deal !D! damage. NL Enemy loses !M! Strength."
 	},
 	"EssenceDart": {
-		"NAME": "Essence Dart",
+		"NAME": "Phase Coil",
 		"DESCRIPTION": "Costs 1 less [R] for each Ethereal card in hand. NL Deal !D! damage."
 	},
 	"EssenceShred": {
-		"NAME": "Essence Shred",
+		"NAME": "Plasma Wave",
 		"DESCRIPTION": "Spend all [R]. NL Deal !D! damage to ALL Weak or Vulnerable enemies X times.",
 		"EXTENDED_DESCRIPTION": ["There are no Weak or Vulnerable enemies."]
 	},
@@ -115,11 +115,11 @@
 		"DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable."
 	},
 	"ForceSpike": {
-		"NAME": "Force Spike",
+		"NAME": "Unstable Orb",
 		"DESCRIPTION": "Deal !D! damage. NL Gain !M! Frail."
 	},
 	"NebulousBlast": {
-		"NAME": "Nebulous Blast",
+		"NAME": "Force Ripple",
 		"DESCRIPTION": "Deal !D! damage. NL Shuffle all non-Ethereal cards into your draw pile."
 	},
 	"SiphonPower": {
@@ -210,11 +210,11 @@
 		"EXTENDED_DESCRIPTION": [ "I am not Frail."]
 	},
 	"PowerSpike": {
-		"NAME": "Power Spike",
+		"NAME": "Overload",
 		"DESCRIPTION": "Gain [R] [R]. NL Gain !M! Frail."
 	},
 	"ProtectionWard": {
-		"NAME": "Protection Ward",
+		"NAME": "Disperse",
 		"DESCRIPTION": "Gain !B! Block. Gain !M! Artifact."
 	},
 	"Shimmer": {
@@ -265,7 +265,7 @@
 		"DESCRIPTION": "Remove all of your Weak, Frail, and Vulnerable. NL Deal !M! damage for each stack removed."
 	},
 	"AstralForm": {
-		"NAME": "Astral Form",
+		"NAME": "Chaos Form",
 		"DESCRIPTION": "Whenever you draw an Ethereal card, deal !D! damage to a random enemy."
 	},
 	"Creativity": {
@@ -281,7 +281,7 @@
 		"DESCRIPTION": "Each enemy loses HP equal to the amount of Weak and Vulnerable it has at the start of its turn."
 	},
 	"PeriaptOfTenacity": {
-		"NAME": "Periapt of Tenacity",
+		"NAME": "Runic Binding",
 		"DESCRIPTION": "At the start of your turn, gain !M! Artifact."
 	},
 	"PeriaptOfVigor": {
@@ -289,7 +289,7 @@
 		"DESCRIPTION": "Ethereal cards cost !M! less [R]."
 	},
 	"AstralShift": {
-		"NAME": "Astral Shift",
+		"NAME": "Dimension Door",
 		"DESCRIPTION": "Ethereal. NL Gain !M! Intangible. NL Exhaust.",
 		"UPGRADE_DESCRIPTION": "Ethereal. NL Gain !M! Intangible."
 	},

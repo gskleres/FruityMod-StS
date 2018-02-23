@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.MindblastEffect;
 
 import basemod.abstracts.CustomCard;
+import fruitymod.FruityMod;
 import fruitymod.patches.AbstractCardEnum;
 
 public class Comet
@@ -28,7 +29,7 @@ extends CustomCard {
     private static final int POOL = 1;
 
     public Comet() {
-        super(ID, NAME, "images/cards/locked_attack.png", COST, DESCRIPTION,
+        super(ID, NAME, FruityMod.makePath(FruityMod.COMET), COST, DESCRIPTION,
         		AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE,
         		AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY, POOL);
         this.damage = this.baseDamage = ATTACK_DMG;

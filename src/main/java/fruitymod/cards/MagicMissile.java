@@ -28,7 +28,7 @@ public class MagicMissile extends CustomCard {
 	private static final int POOL = 1;
 	
 	public MagicMissile() {
-		super (ID, NAME, FruityMod.makePath(FruityMod.STARFALL), COST, DESCRIPTION,
+		super (ID, NAME, FruityMod.makePath(FruityMod.MAGIC_MISSILE), COST, DESCRIPTION,
 				AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE,
 				AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY, POOL);
 		this.baseDamage = ATTACK_DMG;

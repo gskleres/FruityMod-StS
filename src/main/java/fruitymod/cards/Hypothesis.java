@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
+import fruitymod.FruityMod;
 import fruitymod.actions.unique.HypothesisAction;
 import fruitymod.patches.AbstractCardEnum;
 
@@ -25,7 +26,7 @@ extends CustomCard {
     private static final int POOL = 1;
 
     public Hypothesis() {
-        super(ID, NAME, "images/cards/locked_skill.png", COST, DESCRIPTION,
+        super(ID, NAME, FruityMod.makePath(FruityMod.HYPOTHESIS), COST, DESCRIPTION,
         		AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE,
         		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF, POOL);
         this.magicNumber = this.baseMagicNumber = BONUS_DRAW;

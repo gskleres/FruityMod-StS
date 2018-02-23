@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
+import fruitymod.FruityMod;
 import fruitymod.patches.AbstractCardEnum;
 
 public class FluxShield
@@ -26,7 +27,9 @@ extends CustomCard {
     private static final int POOL = 1;
 
     public FluxShield() {
-        super(ID, NAME, "images/cards/locked_skill.png", COST, DESCRIPTION, AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF, POOL);
+        super(ID, NAME, FruityMod.makePath(FruityMod.FLUX_SHIELD), COST, DESCRIPTION, 
+        		AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE, 
+        		AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF, POOL);
         this.block = this.baseBlock = BLOCK;
         
     }

@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.VerticalAuraEffect;
 
 import basemod.abstracts.CustomCard;
+import fruitymod.FruityMod;
 import fruitymod.patches.AbstractCardEnum;
 
 public class Retrograde extends CustomCard {
@@ -25,8 +26,10 @@ public class Retrograde extends CustomCard {
 	private static final int POOL = 1;
 
 	public Retrograde() {
-		super(ID, NAME, "images/cards/locked_attack.png", COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
-				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY, POOL);
+		super(ID, NAME, FruityMod.makePath(FruityMod.RETROGRADE) , COST, DESCRIPTION,
+				AbstractCard.CardType.ATTACK,
+				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.COMMON,
+				AbstractCard.CardTarget.ENEMY, POOL);
 		this.damage = this.baseDamage = ATTACK_DMG;
 	}
 
