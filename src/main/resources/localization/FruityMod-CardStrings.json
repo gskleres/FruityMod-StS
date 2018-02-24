@@ -315,7 +315,7 @@
 	"Zenith": {
 		"NAME": "Zenith",
 		"DESCRIPTION": "After paying this card's cost, double your remaining [R]. NL Exhaust.",
-		"UPGRADE_DESCRIPTION": "Double your [R].",
+		"UPGRADE_DESCRIPTION": "After paying this card's cost, double your remaining [R].",
 		"EXTENDED_DESCRIPTION": [ " NL (Will have !M! [R] after use)"]
 	},
 	"Coalescence": {
