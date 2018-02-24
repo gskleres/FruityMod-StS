@@ -37,7 +37,7 @@ public class Magnetize extends CustomCard {
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(p, this.magicNumber, false), this.magicNumber));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber, false), this.magicNumber));
 	}
 
 	@Override
