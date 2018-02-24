@@ -13,9 +13,9 @@ import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
 import fruitymod.patches.AbstractCardEnum;
 
-public class VoidBarrier extends CustomCard {
-	public static final String ID = "VoidBarrier";
-    public static final String NAME = "Void Barrier";
+public class Genesis extends CustomCard {
+	public static final String ID = "Genesis";
+    public static final String NAME = "Genesis";
     public static final String DESCRIPTION = "Ethereal. NL Gain !B! Block. NL Draw !M! cards.";
     private static final int COST = 1;
     private static final int BLOCK_AMT = 6;
@@ -23,7 +23,7 @@ public class VoidBarrier extends CustomCard {
     private static final int DRAW = 2;
     private static final int POOL = 1;
     
-    public VoidBarrier() {
+    public Genesis() {
     	super(ID, NAME, FruityMod.makePath(FruityMod.VOID_BARRIER), COST, DESCRIPTION,
     			AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE,
     			AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF, POOL);
@@ -49,7 +49,7 @@ public class VoidBarrier extends CustomCard {
     
     @Override
     public AbstractCard makeCopy() {
-        return new VoidBarrier();
+        return new Genesis();
     }
     
     @Override

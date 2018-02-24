@@ -9,14 +9,14 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import fruitymod.FruityMod;
 
-public class EssenceMirrorPower extends AbstractPower {
-	public static final String POWER_ID = "EssenceMirror";
-	public static final String NAME = "Essence Mirror";
+public class FlickerPower extends AbstractPower {
+	public static final String POWER_ID = "Flicker";
+	public static final String NAME = "Flicker";
 	public static final String[] DESCRIPTIONS = new String[] {
 			"Weak, Frail, and Vulnerable have the opposite effect on you." };
 	private boolean justApplied = false;
 
-	public EssenceMirrorPower(AbstractCreature owner, int amount) {
+	public FlickerPower(AbstractCreature owner, int amount) {
 		this.name = NAME;
 		this.ID = POWER_ID;
 		this.owner = owner;
@@ -36,10 +36,10 @@ public class EssenceMirrorPower extends AbstractPower {
 		}
 		if (this.amount == 0) {
 			AbstractDungeon.actionManager
-					.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, "EssenceMirror"));
+					.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, "Flicker"));
 		} else {
 			AbstractDungeon.actionManager
-					.addToBottom(new ReducePowerAction(this.owner, this.owner, "EssenceMirror", 1));
+					.addToBottom(new ReducePowerAction(this.owner, this.owner, "Flicker", 1));
 		}
 	}
 

@@ -357,9 +357,9 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new DeflectionWard());
 		BaseMod.addCard(new Entropy());
 		BaseMod.addCard(new EssenceDart());		
-		BaseMod.addCard(new EssenceMirror());
+		BaseMod.addCard(new Flicker());
 		BaseMod.addCard(new EssenceShred());		
-		BaseMod.addCard(new EssenceSpike());
+		BaseMod.addCard(new PulseBarrier());
 		BaseMod.addCard(new EtherBarrier());
 		BaseMod.addCard(new EtherBlast());
 		BaseMod.addCard(new Flare());		
@@ -379,7 +379,7 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new Retrograde());
 		BaseMod.addCard(new UmbralWave());
 		BaseMod.addCard(new UmbralBolt());
-		BaseMod.addCard(new VoidBarrier());
+		BaseMod.addCard(new Genesis());
 		BaseMod.addCard(new PrismaticSphere());
 		BaseMod.addCard(new Flux());
 		BaseMod.addCard(new Channel());
@@ -463,12 +463,12 @@ public class FruityMod implements PostInitializeSubscriber,
 		// seeker unlock 3 (Vacuum tmp in place of Feedback)
 		BaseMod.addUnlockBundle(new CustomUnlockBundle(
 				"Transference", /*"Feedback", */
-				"Vacuum", "EssenceMirror"
+				"Vacuum", "Flicker"
 				), TheSeekerEnum.THE_SEEKER, 3);
 		UnlockTracker.addCard("Transference");
 		/*UnlockTracker.addCard("Feedback");*/
 		UnlockTracker.addCard("Vacuum");
-		UnlockTracker.addCard("EssenceMirror");
+		UnlockTracker.addCard("Flicker");
 		
 		// seeker unlock 4
 		BaseMod.addUnlockBundle(new CustomUnlockBundle(
