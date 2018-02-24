@@ -384,7 +384,7 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new Flux());
 		BaseMod.addCard(new Channel());
 		BaseMod.addCard(new Implosion());
-		BaseMod.addCard(new AstralForm());
+		BaseMod.addCard(new ChaosForm());
 		BaseMod.addCard(new Vacuum());
 		BaseMod.addCard(new AstralShift());
 		BaseMod.addCard(new RunicBinding());
@@ -454,7 +454,7 @@ public class FruityMod implements PostInitializeSubscriber,
 		
 		// seeker unlock 2
 		BaseMod.addUnlockBundle(new CustomUnlockBundle(
-				"Shimmer", "EtherBolt", "AstralForm"
+				"Shimmer", "EtherBolt", "ChaosForm"
 				), TheSeekerEnum.THE_SEEKER, 2);
 		UnlockTracker.addCard("Shimmer");
 		UnlockTracker.addCard("FluxBolt");
