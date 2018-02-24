@@ -52,7 +52,7 @@
 		"NAME": "Prismatic Sphere",
 		"DESCRIPTION": "Ethereal. NL Deal !D! damage. NL Draw !M! cards."
 	},
-	"VoidRipple": {
+	"Flux": {
 		"NAME": "Flux",
 		"DESCRIPTION": "Ethereal. NL Gain !B! Block. NL Deal !D! damage."
 	},
@@ -60,11 +60,11 @@
 		"NAME": "Arcane Armor",
 		"DESCRIPTION": "Gain !B! Block."
 	},
-	"EssenceMirror": {
+	"Flicker": {
 		"NAME": "Flicker",
 		"DESCRIPTION": "Reverse the effects of Frail, Weak, and Vulnerable on you for !M! turn."
 	},
-	"EssenceSpike": {
+	"PulseBarrier": {
 		"NAME": "Pulse Barrier",
 		"DESCRIPTION": "Gain !B! Block. NL Gain !M! Frail."
 	},
@@ -86,7 +86,7 @@
 		"DESCRIPTION": "Ethereal. Gain !B! Block. Deal !D! damage. Next turn gain [R].",
 		"UPGRADE_DESCRIPTION": "Ethereal. Gain !B! Block. Deal !D! damage. Next turn gain [R] [R]."
 	},
-	"VoidBarrier": {
+	"Genesis": {
 		"NAME": "Genesis",
 		"DESCRIPTION": "Ethereal. NL Gain !B! Block. NL Draw !M! cards."
 	},
@@ -280,7 +280,7 @@
 		"NAME": "Event Horizon",
 		"DESCRIPTION": "Each enemy loses HP equal to the amount of Weak and Vulnerable it has at the start of its turn."
 	},
-	"PeriaptOfTenacity": {
+	"RunicBinding": {
 		"NAME": "Runic Binding",
 		"DESCRIPTION": "At the start of your turn, gain !M! Artifact."
 	},

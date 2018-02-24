@@ -8,16 +8,14 @@ import com.megacrit.cardcrawl.powers.ArtifactPower;
 
 import fruitymod.FruityMod;
 
-public class TenacityPower extends AbstractPower {
-	public static final String POWER_ID = "TenacityPower";
-	public static final String NAME = "Tenacity";
-	public static final String[] DESCRIPTIONS = new String[] { "At the start of your turn, gain ", " Strength and ",
-			" Dexterity." };
-	public static final String[] UPGRADED_DESCRIPTIONS = new String[] { "At the start of your turn, gain ", " Strength, ",
-	" Dexterity, and ", " Artifact" };
+public class RunicBindingPower extends AbstractPower {
+	public static final String POWER_ID = "RunicBindingPower";
+	public static final String NAME = "Runic Binding";
+	public static final String[] DESCRIPTIONS = new String[] { "At the start of your turn, gain ", " Artifact."};
+	public static final String[] UPGRADED_DESCRIPTIONS = new String[] { "At the start of your turn, gain ", " Artifact."};
 	private boolean upgraded;
 
-	public TenacityPower(AbstractCreature owner, int amount, boolean upgraded) {
+	public RunicBindingPower(AbstractCreature owner, int amount, boolean upgraded) {
 		this.name = NAME;
 		this.ID = POWER_ID;
 		this.owner = owner;
@@ -31,11 +29,9 @@ public class TenacityPower extends AbstractPower {
 	public void updateDescription() {
 		if (this.upgraded) {
 			this.description = UPGRADED_DESCRIPTIONS[0] + this.amount +
-					UPGRADED_DESCRIPTIONS[1] + this.amount +
-					UPGRADED_DESCRIPTIONS[2] + this.amount + UPGRADED_DESCRIPTIONS[3];
+					UPGRADED_DESCRIPTIONS[1];
 		} else {
-			this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1] +
-					this.amount + DESCRIPTIONS[2];
+			this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
 		}
 	}
 	

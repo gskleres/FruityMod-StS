@@ -9,29 +9,29 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
 import fruitymod.patches.AbstractCardEnum;
-import fruitymod.powers.EssenceMirrorPower;
+import fruitymod.powers.FlickerPower;
 
-public class EssenceMirror extends CustomCard {
-	public static final String ID = "EssenceMirror";
-	public static final String NAME = "Essence Mirror";
+public class Flicker extends CustomCard {
+	public static final String ID = "Flicker";
+	public static final String NAME = "Flicker";
 	public static final String DESCRIPTION = "Frail, Weak, and Vulnerable have the opposite effect on you for 1 turn.";
 	private static final int COST = 1;
 	private static final int UPGRADE_COST = 0;
 	private static final int POOL = 1;
 
-	public EssenceMirror() {
+	public Flicker() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.ESSENCE_MIRROR), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
 				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF, POOL);
 	}
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new EssenceMirrorPower(p, 1), 1));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FlickerPower(p, 1), 1));
 	}
 
 	@Override
 	public AbstractCard makeCopy() {
-		return new EssenceMirror();
+		return new Flicker();
 	}
 
 	@Override

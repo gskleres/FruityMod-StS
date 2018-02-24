@@ -12,9 +12,9 @@ import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
 import fruitymod.patches.AbstractCardEnum;
 
-public class EssenceSpike extends CustomCard {
-	public static final String ID = "EssenceSpike";
-	public static final String NAME = "Essence Spike";
+public class PulseBarrier extends CustomCard {
+	public static final String ID = "PulseBarrier";
+	public static final String NAME = "Pulse Barrier";
 	public static final String DESCRIPTION = "Gain !B! Block. Gain 2 Frail.";
 	private static final int COST = 1;
 	private static final int BLOCK_AMT = 11;
@@ -22,7 +22,7 @@ public class EssenceSpike extends CustomCard {
 	private static final int FRAIL_AMT = 2;
 	private static final int POOL = 1;
 
-	public EssenceSpike() {
+	public PulseBarrier() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.ESSENCE_SPIKE), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
 				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF, POOL);
 
@@ -38,7 +38,7 @@ public class EssenceSpike extends CustomCard {
 
 	@Override
 	public AbstractCard makeCopy() {
-		return new EssenceSpike();
+		return new PulseBarrier();
 	}
 
 	@Override
