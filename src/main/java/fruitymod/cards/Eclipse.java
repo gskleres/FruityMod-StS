@@ -1,6 +1,5 @@
 package fruitymod.cards;
 
-import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -47,10 +46,9 @@ public class Eclipse extends CustomCard {
 		}
 		canUse = false;
 		for (AbstractCard c : p.exhaustPile.group) {
-			if (c.isEthereal)
-				continue;
-			canUse = true;
-			break;
+			if (c.isEthereal) {
+				canUse = true;
+			}
 		}
 		this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
 		return canUse;
