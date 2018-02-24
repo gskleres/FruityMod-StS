@@ -74,8 +74,6 @@ public class Convergence extends CustomCard {
 	        if (!this.upgraded) {
 	        	this.upgradeName();
 	        	this.upgradeBaseCost(UPGRADED_COST);
-	        	this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-	        	this.initializeDescription();
 	        }
 	    }
 }

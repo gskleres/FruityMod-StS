@@ -46,7 +46,7 @@
 	},
 	"Surge": {
 		"NAME": "Surge",
-		"DESCRIPTION": "Deal !D! damage. NL If you are Frail or Vulnerable, deal !D! damage again."
+		"DESCRIPTION": "Deal !D! damage. NL If you are Weak, Frail, or Vulnerable, deal !D! damage again."
 	},
 	"PrismaticSphere": {
 		"NAME": "Prismatic Sphere",
