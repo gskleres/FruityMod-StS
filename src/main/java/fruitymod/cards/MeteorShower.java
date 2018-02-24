@@ -28,7 +28,7 @@ public class MeteorShower extends CustomCard {
 
 	public MeteorShower() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.METEOR_SHOWER), COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
-				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ALL_ENEMY, POOL);
+				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ALL_ENEMY, POOL);
 		this.baseDamage = 0;
 		this.exhaust = true;
 	}

@@ -32,7 +32,7 @@ public class Channel extends CustomCard {
 	public Channel() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.CHANNEL), COST, DESCRIPTION,
 				AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE,
-				AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY, POOL);
+				CardRarity.RARE, AbstractCard.CardTarget.ENEMY, POOL);
 		this.baseDamage = ATTACK_DMG;
 		this.baseMagicNumber = DISCARD_AMT;
 		this.magicNumber = DISCARD_AMT;
