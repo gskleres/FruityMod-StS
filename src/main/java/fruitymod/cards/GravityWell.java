@@ -45,7 +45,7 @@ public class GravityWell extends CustomCard {
 		if (!canUse) {
 			return false;
 		}
-		if (m.hasPower("Weakened")) {
+		if (m != null && m.hasPower("Weakened")) {
 			return true;
 		} else {
 			this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
