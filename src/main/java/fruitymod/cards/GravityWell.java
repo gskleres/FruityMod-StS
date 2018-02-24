@@ -41,6 +41,10 @@ public class GravityWell extends CustomCard {
 	
 	@Override
 	public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+		boolean canUse = super.canUse(p, m);
+		if (!canUse) {
+			return false;
+		}
 		if (m.hasPower("Weakened")) {
 			return true;
 		} else {
