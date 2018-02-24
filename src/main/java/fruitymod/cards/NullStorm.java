@@ -16,16 +16,16 @@ import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
 import fruitymod.patches.AbstractCardEnum;
 
-public class FluxBlast extends CustomCard {
-	public static final String ID = "FluxBlast";
-	public static final String NAME = "Flux Blast";
+public class NullStorm extends CustomCard {
+	public static final String ID = "NullStorm";
+	public static final String NAME = "Null Storm";
 	public static final String DESCRIPTION = "Deal !D! damage to ALL enemies. Shuffle a Dazed into your Draw pile.";
 	private static final int COST = 1;
 	private static final int ATTACK_DMG = 8;
 	private static final int UPGRADE_DMG_AMT = 3;
 	private static final int POOL = 1;
 
-	public FluxBlast() {
+	public NullStorm() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.FLUX_BLAST), COST, DESCRIPTION,
 				AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE,
 				AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL_ENEMY, POOL);
@@ -48,7 +48,7 @@ public class FluxBlast extends CustomCard {
 
 	@Override
 	public AbstractCard makeCopy() {
-		return new FluxBlast();
+		return new NullStorm();
 	}
 
 	@Override

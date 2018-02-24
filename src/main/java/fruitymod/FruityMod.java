@@ -360,11 +360,11 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new Flicker());
 		BaseMod.addCard(new EssenceShred());		
 		BaseMod.addCard(new PulseBarrier());
-		BaseMod.addCard(new EtherBarrier());
+		BaseMod.addCard(new Nebula());
 		BaseMod.addCard(new EtherBlast());
 		BaseMod.addCard(new Flare());		
-		BaseMod.addCard(new FluxBlast());
-		BaseMod.addCard(new FluxBolt());
+		BaseMod.addCard(new NullStorm());
+		BaseMod.addCard(new VoidRay());
 		BaseMod.addCard(new FluxShield());
 		BaseMod.addCard(new ForceSpike());
 		BaseMod.addCard(new Hypothesis());
@@ -445,11 +445,11 @@ public class FruityMod implements PostInitializeSubscriber,
 	@Override
 	public void receiveSetUnlocks() {
 		UnlockTracker.addCard("Brainstorm");
-		UnlockTracker.addCard("FluxBolt");
+		UnlockTracker.addCard("VoidRay");
 		UnlockTracker.addCard("Creativity");
 		// seeker unlock 1
 		BaseMod.addUnlockBundle(new CustomUnlockBundle(
-				"Brainstorm", "FluxBolt", "Creativity"
+				"Brainstorm", "VoidRay", "Creativity"
 				), TheSeekerEnum.THE_SEEKER, 1);
 		
 		// seeker unlock 2
@@ -457,7 +457,7 @@ public class FruityMod implements PostInitializeSubscriber,
 				"Shimmer", "EtherBolt", "ChaosForm"
 				), TheSeekerEnum.THE_SEEKER, 2);
 		UnlockTracker.addCard("Shimmer");
-		UnlockTracker.addCard("FluxBolt");
+		UnlockTracker.addCard("VoidRay");
 		UnlockTracker.addCard("Creativity");
 		
 		// seeker unlock 3 (Vacuum tmp in place of Feedback)

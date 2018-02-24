@@ -24,11 +24,11 @@
 		"DESCRIPTION": "Can only be played if all other cards in your hand are Ethereal. NL Deal !D! damage.",
 		"EXTENDED_DESCRIPTION": ["I have cards in my hand that are not Ethereal."]
 	},
-	"FluxBlast": {
+	"NullStorm": {
 		"NAME": "Null Storm",
 		"DESCRIPTION": "Shuffle a Dazed into your draw pile. NL Deal !D! damage to ALL enemies."
 	},
-	"FluxBolt": {
+	"VoidRay": {
 		"NAME": "Void Ray",
 		"DESCRIPTION": "Shuffle a Dazed into your draw pile. Deal !D! damage."
 	},
@@ -68,7 +68,7 @@
 		"NAME": "Pulse Barrier",
 		"DESCRIPTION": "Gain !B! Block. NL Gain !M! Frail."
 	},
-	"EtherBarrier": {
+	"Nebula": {
 		"NAME": "Nebula",
 		"DESCRIPTION": "Gain !B! Block for every Ethereal card in your hand."
 	},
