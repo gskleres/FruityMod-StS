@@ -44,8 +44,9 @@ public class EssenceDart extends CustomCard {
 			return false;
 		}
 		for (AbstractCard c : p.hand.group) {
-			if (c.isEthereal || c.cardID == ID)
+			if (c.isEthereal) {
 				return true;
+			}
 		}
 		this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
 		return false;

@@ -40,6 +40,16 @@ public class GravityWell extends CustomCard {
 	}
 	
 	@Override
+	public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+		if (m.hasPower("Weakened")) {
+			return true;
+		} else {
+			this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
+			return false;
+		}
+	}
+	
+	@Override
 	public AbstractCard makeCopy() {
 		return new GravityWell();
 	}
