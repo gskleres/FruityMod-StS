@@ -16,9 +16,9 @@ import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
 import fruitymod.patches.AbstractCardEnum;
 
-public class VoidBolt extends CustomCard {
-	public static final String ID = "VoidBolt";
-    public static final String NAME = "Void Bolt";
+public class PrismaticSphere extends CustomCard {
+	public static final String ID = "PrismaticSphere";
+    public static final String NAME = "Prismatic Sphere";
     public static final String DESCRIPTION = "Ethereal. Deal !D! damage. NL Draw !M! cards.";
     private static final int COST = 1;
     private static final int ATTACK_DMG = 7;
@@ -26,7 +26,7 @@ public class VoidBolt extends CustomCard {
     private static final int DRAW = 2;
     private static final int POOL = 1;
     
-    public VoidBolt() {
+    public PrismaticSphere() {
     	super(ID, NAME, FruityMod.makePath(FruityMod.VOID_BOLT), COST, DESCRIPTION,
     			AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE,
     			AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY, POOL);
@@ -52,7 +52,7 @@ public class VoidBolt extends CustomCard {
     
     @Override
     public AbstractCard makeCopy() {
-        return new VoidBolt();
+        return new PrismaticSphere();
     }
     
     @Override
