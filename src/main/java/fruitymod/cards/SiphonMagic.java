@@ -23,14 +23,16 @@ public class SiphonMagic extends CustomCard {
 	    public static final String NAME = cardStrings.NAME;
 	    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	    private static final int COST = 2;
+	    private static final int UPGRADED_COST = 1;
+	    private static final int ARTIFACT_AMT = 1;
 	    private static final int POOL = 1;
 	    
 	 public SiphonMagic() {
 		 super(ID, NAME,  FruityMod.makePath(FruityMod.TRANSFERENCE), COST, DESCRIPTION,
 				 AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE,
 				 AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL_ENEMY, POOL);
-	 		this.exhaust = true;
 	 		this.isEthereal = true;
+        	this.isInnate = true;
 	    }
 	 
 	    @Override
@@ -43,6 +45,8 @@ public class SiphonMagic extends CustomCard {
 	    		totalPowerCount += powerCount;
 	    		AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(mo, p, "Artifact"));
 	    	}
+	    	
+	    	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ArtifactPower(p, ARTIFACT_AMT), ARTIFACT_AMT));
 	    	
 	    	if(totalPowerCount > 0) {
 	            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ArtifactPower(p, totalPowerCount), totalPowerCount));
@@ -79,8 +83,9 @@ public class SiphonMagic extends CustomCard {
 	    @Override
 	    public void upgrade() {
 	        if (!this.upgraded) {
-	        	this.isInnate = true;
-	        	this.rawDescription = cardStrings.UPGRADE_DESCRIPTION + (this.isEthereal ? " NL Ethereal." : "");
+	        	this.upgradeName();
+	        	this.updateCost(UPGRADED_COST);
+	        	this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
 	        	this.initializeDescription();
 	        }
 	    }
