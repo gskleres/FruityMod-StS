@@ -384,7 +384,7 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new VoidRipple());
 		BaseMod.addCard(new Channel());
 		BaseMod.addCard(new Implosion());
-		BaseMod.addCard(new AstralForm());
+		BaseMod.addCard(new ChaosForm());
 		BaseMod.addCard(new Vacuum());
 		BaseMod.addCard(new AstralShift());
 		BaseMod.addCard(new PeriaptOfTenacity());

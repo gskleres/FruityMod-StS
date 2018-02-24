@@ -264,9 +264,9 @@
 		"NAME": "Vacuum",
 		"DESCRIPTION": "Remove all of your Weak, Frail, and Vulnerable. NL Deal !M! damage for each stack removed."
 	},
-	"AstralForm": {
+	"ChaosForm": {
 		"NAME": "Chaos Form",
-		"DESCRIPTION": "Whenever you draw an Ethereal card, deal !D! damage to a random enemy."
+		"DESCRIPTION": "Whenever you draw an Ethereal card, deal !M! damage to a random enemy."
 	},
 	"Creativity": {
 		"NAME": "Creativity",

@@ -1,6 +1,7 @@
 package fruitymod.powers;
 
-import com.megacrit.cardcrawl.actions.unique.SwordBoomerangAction;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -14,15 +15,15 @@ import basemod.interfaces.PostBattleSubscriber;
 import basemod.interfaces.PostDrawSubscriber;
 import fruitymod.FruityMod;
 
-public class AstralFormPower extends AbstractPower implements PostDrawSubscriber, PostBattleSubscriber {
-	public static final String POWER_ID = "AstralFormPower";
-	public static final String NAME = "Astral Form";
+public class ChaosFormPower extends AbstractPower implements PostDrawSubscriber, PostBattleSubscriber {
+	public static final String POWER_ID = "ChaosFormPower";
+	public static final String NAME = "Chaos Form";
 	public static final String[] DESCRIPTIONS = new String[] {
 			"Whenever you draw an Ethereal card deal ",
 			" damage to a random enemy."
 	};
 	
-	public AstralFormPower(AbstractCreature owner, int amount) {
+	public ChaosFormPower(AbstractCreature owner, int amount) {
 		this.name = NAME;
 		this.ID = POWER_ID;
 		this.owner = owner;
@@ -50,9 +51,10 @@ public class AstralFormPower extends AbstractPower implements PostDrawSubscriber
 		AbstractPlayer player = (AbstractPlayer) owner;
 		if (c.isEthereal) {
 			this.flash();
-			AbstractDungeon.actionManager.addToBottom(new SwordBoomerangAction(
+			
+			AbstractDungeon.actionManager.addToBottom(new DamageAction(
 					AbstractDungeon.getMonsters().getRandomMonster(true),
-					new DamageInfo(player, this.amount), 1));
+					new DamageInfo(player, this.amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
 		}
 		
 	}
