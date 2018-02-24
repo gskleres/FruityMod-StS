@@ -274,8 +274,9 @@ public class FruityMod implements PostInitializeSubscriber,
         logger.info("subscribing to editStrings event");
         BaseMod.subscribeToEditStrings(this);
         
-        logger.info("subscribing to setUnlocks event");
-        BaseMod.subscribeToSetUnlocks(this);
+        /* Disable this during playtesting for being counterproductive */
+//        logger.info("subscribing to setUnlocks event");
+//        BaseMod.subscribeToSetUnlocks(this);
         
         logger.info("subscribing to onCardUse event");
         BaseMod.subscribeToOnCardUse(this);
