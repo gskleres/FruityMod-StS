@@ -243,8 +243,8 @@
 	},
 	"Channel": {
 		"NAME": "Channel",
-		"DESCRIPTION": "Deal !D! damage. NL Discard a card. NL If it is Ethereal, deal !D! damage again.",
-		"UPGRADE_DESCRIPTION": "Deal !D! damage. NL Discard !M! cards. NL For each card that is Ethereal, deal !D! damage again."
+		"DESCRIPTION": "Deal !D! damage. NL Discard a card. NL If it is Ethereal, deal !D! more damage.",
+		"UPGRADE_DESCRIPTION": "Deal !D! damage. NL Discard a card. NL If it is Ethereal, deal !D! more damage."
 	},
 	"Feedback": {
 		"NAME": "Feedback",
