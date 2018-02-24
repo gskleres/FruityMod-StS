@@ -9,11 +9,11 @@
 **The Seeker** is an entirely new playable character. He does not overwrite The Ironclad or The Silent. This mod makes no changes to the base game other than adding **The Seeker**.
 
 ## Current State ##
-Currently **The Seeker** is completely playable (if you don't mind a few bugs). We currently have very little art but are working on getting some art for all the cards (likely to be colorized versions of base game assets until we find someone who'd be willing to do art for this project). Before the release of v1.0 we **will** have completed implementing all of the cards and fixed all bugs we personally have found, however we aren't going to make any guarantees about **art** yet. We're still looking for an artist so if you want to do that make a `Github Issue` so we can talk to you about it. Also we are well aware that **The Seeker** is not fully balanced yet. We are doing our best to balance him in line with The Ironclad and The Silent.
+Currently **The Seeker** is completely playable. We have art for all the cards but it is currently just color adjusted versions of base game assets until we can find an artists). We're still looking for an artist so if you want to do that make a `Github Issue` so we can talk to you about it. Also we are well aware that **The Seeker** is not fully balanced yet. We are doing our best to balance him in line with The Ironclad and The Silent.
 
 ## Roadmap ##
-1. Finish fixes all the bugs related to **The Seeker** and finish art for **The Seeker**
-2. Possibly add some new relics to use as unlocks for **The Seeker** since right now there are only card unlocks
+1. Make necessary balance changes to **The Seeker**, fix any bugs discovered for the cards used by **The Seeker** and finish art for **The Seeker**
+2. Add some new relics to use as unlocks for **The Seeker** and add some new relics specific to **The Seeker**
 3. Maybe another character... maybe more potions... maybe more events... (we're not really sure about where we're going after **The Seeker** is done)
 
 ## The Seeker
@@ -28,20 +28,27 @@ Card list: [click here](https://drive.google.com/file/d/1aojRAKPQCbDW7mSW6Co6XTK
 
 ## Requirements ##
 #### General Use ####
-* BaseMod v.1.7.1+ (https://github.com/t-larson/BaseMod/releases) for now use (https://github.com/daviscook477/BaseMod/releases)
+* BaseMod v.1.7.3+ (https://github.com/t-larson/BaseMod/releases) for now use (https://github.com/daviscook477/BaseMod/releases)
 * ModTheSpire v2.3.0+ (https://github.com/kiooeht/ModTheSpire/releases)
 
 ## Installation ##
-1. Copy `BaseMod.jar` to your **ModTheSpire** `mods` directory.
-2. Copy `FruityMod.jar` to your **ModTheSpire** `mods` directory.
+1. If you have `ModTheSpire` already installed you can skip to step 5. Otherwise continue with step 2:
+2. Download `ModTheSpire.jar` from the latest release (https://github.com/kiooeht/ModTheSpire/releases)
+3. Move `ModTheSpire.jar` into your **Slay The Spire** directory. This directory is likely to be found under `C:\Program Files (x86)\Steam\steamapps\common\SlayTheSpire`. Place `ModTheSpire.jar` in that directory so it looks like `C:\Program Files (x86)\Steam\steamapps\common\SlayTheSpire\ModTheSpire.jar`
+4. Create a `mods` folder in your **Slay The Spire** directory so it looks like `C:\Program Files (x86)\Steam\steamapps\common\SlayTheSpire\mods`
+5. Download `BaseMod.jar` from the latest release (https://github.com/daviscook477/BaseMod/releases)
+6. Move `BaseMod.jar` into the `mods` folder you created in step 4
+7. Download `FruityMod.jar` from the latest release (https://github.com/gskleres/FruityMod-StS/releases)
+8. Move `FruityMod.jar` into the `mods` folder you created in step 4
+9. Your modded version of **Slay The Spire** can now be launched by double-clicking on `ModTheSpire.jar`
+10. This will open a mod select menu where you need to make sure that both `BaseMod` and `FruityMod` are checked before clicking **play**
 
-#### Development ####
-* Java 8
-* Maven
-* CFR 124 (run this with Java 8, doesn't work well with 9)
-* BaseMod v.1.7.0+
-* ModTheSpire v2.2.1+
-* ModTheSpireLib (whatever version is associated with your version of ModTheSpire)
+## Known Issues ##
+1. Pandora's box won't work
+2. The Vampirism event and Scaling the City event do not remove/upgrade the strikes or defends
+3. Inspecting cards in the card library does not show correct visuals
+4. Some powers **may** not properly wear off at the end of fights (if you encounter this one please make an issue with as much information as you can about what happened - we're having trouble tracking this one down)
+5. Character select is off-center
 
 ## Credits / Acknowledgements ##
 1. Fruitstrike (https://github.com/gskleres) for game design, project management, and being a hype train
@@ -52,11 +59,19 @@ Card list: [click here](https://drive.google.com/file/d/1aojRAKPQCbDW7mSW6Co6XTK
 
 ## Special Thanks ##
 1. Thanks to the [devs](https://www.megacrit.com/) of **SlayTheSpire** for making such and awesome game, allowing us to mod it, and allowing us to use recolored versions of their art assets in our mod
-2. Thanks to t-larson (https://github.com/t-larson) for BaseMod!!
-3. Thanks to kiooeht (https://github.com/kiooeht) for ModTheSpire!!
+2. Thanks to t-larson and contributors (https://github.com/t-larson) for BaseMod!!
+3. Thanks to kiooeht and contributors (https://github.com/kiooeht) for ModTheSpire!!
 4. Thanks to all the people who have contributed bug reports or feedback on Discord or through the Github tracker. Without your help we couldn't make **The Seeker** as well-polished!
 
 ## Notes For Contributors ##
+
+#### Development ####
+* Java 8
+* Maven
+* CFR 124 (run this with Java 8, doesn't work well with 9)
+* BaseMod v.1.7.0+
+* ModTheSpire v2.2.1+
+* ModTheSpireLib (whatever version is associated with your version of ModTheSpire)
 
 ### Building ##
 1. Modify `pom.xml` to point to the location you've placed the dependencies
