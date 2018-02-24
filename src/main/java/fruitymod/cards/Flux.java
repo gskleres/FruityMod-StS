@@ -18,10 +18,10 @@ import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
 import fruitymod.patches.AbstractCardEnum;
 
-public class VoidRipple extends CustomCard {
-	public static final String ID = "VoidRipple";
-	public static final String NAME = "Void Ripple";
-	public static final String DESCRIPTION = "Ethereal. Gain !B! Block. NL Deal !D! damage.";
+public class Flux extends CustomCard {
+	public static final String ID = "Flux";
+	public static final String NAME = "Flux";
+	public static final String DESCRIPTION = "Ethereal. NL Gain !B! Block. NL Deal !D! damage.";
 	private static final int COST = 1;
 	private static final int ATTACK_DMG = 6;
 	private static final int UPGRADE_DMG_AMT = 2;
@@ -29,7 +29,7 @@ public class VoidRipple extends CustomCard {
 	private static final int UPGRADE_BLOCK_AMT = 2;
 	private static final int POOL = 1;
 
-	public VoidRipple() {
+	public Flux() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.VOID_RIPPLE), COST, DESCRIPTION,
 				AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE,
 				AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY, POOL);
@@ -58,7 +58,7 @@ public class VoidRipple extends CustomCard {
 
 	@Override
 	public AbstractCard makeCopy() {
-		return new VoidRipple();
+		return new Flux();
 	}
 
 	@Override
