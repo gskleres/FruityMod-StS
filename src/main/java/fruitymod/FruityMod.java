@@ -387,7 +387,7 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new AstralForm());
 		BaseMod.addCard(new Vacuum());
 		BaseMod.addCard(new AstralShift());
-		BaseMod.addCard(new PeriaptOfTenacity());
+		BaseMod.addCard(new RunicBinding());
 		BaseMod.addCard(new Eureka());
 		BaseMod.addCard(new Eclipse());
 		BaseMod.addCard(new Echo());
