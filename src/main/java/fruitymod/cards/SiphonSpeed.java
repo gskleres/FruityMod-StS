@@ -1,12 +1,9 @@
 package fruitymod.cards;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -24,10 +21,11 @@ public class SiphonSpeed extends CustomCard {
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 2;
-	private static final int BLOCK = 7;
-	private static final int BLOCK_UPGRADE = 2;
+	private static final int BLOCK = 5;
+	private static final int BLOCK_UPGRADE = 3;
 	private static final int BUFF_DEBUFF_AMT = 1;
 	private static final int BUFF_DEBUFF_UPGRADE_AMT = 1;
+	private static final int DEX_GAIN_AMT = 1;
 	private static final int POOL = 1;
 	
 	public SiphonSpeed() {
@@ -41,7 +39,7 @@ public class SiphonSpeed extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
     	AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, DEX_GAIN_AMT), DEX_GAIN_AMT));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, this.magicNumber, false), this.magicNumber));
     }
 	
