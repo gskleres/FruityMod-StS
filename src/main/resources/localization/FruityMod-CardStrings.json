@@ -48,7 +48,7 @@
 		"NAME": "Surge",
 		"DESCRIPTION": "Deal !D! damage. NL If you are Frail or Vulnerable, deal !D! damage again."
 	},
-	"VoidBolt": {
+	"PrismaticSphere": {
 		"NAME": "Prismatic Sphere",
 		"DESCRIPTION": "Ethereal. NL Deal !D! damage. NL Draw !M! cards."
 	},
