@@ -1,10 +1,9 @@
 package fruitymod.powers;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
+
 import fruitymod.FruityMod;
 
 public class AnomalyPower extends AbstractPower {
@@ -33,8 +32,12 @@ public class AnomalyPower extends AbstractPower {
 	
 	@Override
 	public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-		if(target != this.owner && source==this.owner && (power.ID == "Weakened" || power.ID == "Vulnerable")) {
-			power.amount += this.amount;						
+		if(target != this.owner && source==this.owner && (power.ID.equals("Weakened") || power.ID.equals("Vulnerable"))) {
+			power.amount += this.amount;
+			
+			// when powers stack for some bizzare reason it uses the amount on the ApplyPowerAction
+			// instead of the amount on the power being applied
+			AbstractDungeon.actionManager.currentAction.amount += this.amount;
 		}
 	}	
 }
