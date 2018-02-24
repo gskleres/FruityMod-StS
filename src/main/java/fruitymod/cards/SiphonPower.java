@@ -24,10 +24,11 @@ public class SiphonPower extends CustomCard {
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 2;
-	private static final int ATTACK_DMG = 10;
-	private static final int ATTACK_UPGRADE = 3;
+	private static final int ATTACK_DMG = 8;
+	private static final int ATTACK_UPGRADE = 2;
 	private static final int BUFF_DEBUFF_AMT = 1;
 	private static final int BUFF_DEBUFF_UPGRADE_AMT = 1;
+	private static final int STRENGTH_GAIN_AMT = 1;
 	private static final int POOL = 1;
 	
 	public SiphonPower() {
@@ -41,7 +42,7 @@ public class SiphonPower extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
     	AbstractDungeon.actionManager.addToBottom(new DamageAction((AbstractCreature)m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, STRENGTH_GAIN_AMT), STRENGTH_GAIN_AMT));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber, false), this.magicNumber));
     }
 	
