@@ -226,7 +226,6 @@
 		"NAME": "Convergence",
 		"DESCRIPTION": "Innate. Gain 1 Artifact. Transfer all Artifact from ALL enemies to you.",
 		"UPGRADE_DESCRIPTION": "Innate. Gain 1 Artifact. Transfer all Artifact from ALL enemies to you.",
-		"EXTENDED_DESCRIPTION": [ "There are no enemies with Artifact."]
 	},
 	"SiphonSpeed": {
 		"NAME": "Siphon Speed",

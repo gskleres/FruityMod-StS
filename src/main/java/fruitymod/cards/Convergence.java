@@ -58,17 +58,6 @@ public class Convergence extends CustomCard {
 	    	AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
 	    }
 	    
-	    @Override
-	    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-	    	int totalPowerCount = 0;
-	    	for(AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {	    		
-	    		totalPowerCount += GetPowerCount(mo, "Artifact");
-	    	}
-	    	
-	    	this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION == null ? "EXTENDED_DESCRIPTION is null!" : cardStrings.EXTENDED_DESCRIPTION[0];
-	        return totalPowerCount > 0;
-	    }
-	    
 	    private int GetPowerCount(AbstractCreature c, String powerId) {
 	    	AbstractPower power =  c.getPower(powerId);    	
 	    	return power != null ? power.amount : 0;
