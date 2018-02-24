@@ -19,9 +19,10 @@
 		"NAME": "Irradiate",
 		"DESCRIPTION": "Deal !D! damage and apply !M! Weak to ALL enemies."
 	},
-	"EtherBolt": {
+	"EssenceDart": {
 		"NAME": "Essence Dart",
-		"DESCRIPTION": "Can only be played if all other cards in your hand are Ethereal. NL Deal !D! damage."
+		"DESCRIPTION": "Can only be played if all other cards in your hand are Ethereal. NL Deal !D! damage.",
+		"EXTENDED_DESCRIPTION": ["I have cards in my hand that are not Ethereal."]
 	},
 	"FluxBlast": {
 		"NAME": "Null Storm",
@@ -97,7 +98,7 @@
 		"NAME": "Entropy",
 		"DESCRIPTION": "Ethereal. NL Deal !D! damage. NL Enemy loses !M! Strength."
 	},
-	"EssenceDart": {
+	"PhaseCoil": {
 		"NAME": "Phase Coil",
 		"DESCRIPTION": "Costs 1 less [R] for each Ethereal card in hand. NL Deal !D! damage."
 	},

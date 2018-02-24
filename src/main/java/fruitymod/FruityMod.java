@@ -140,7 +140,8 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String VOID_SHACKLES = "cards/void_shackles.png";
     public static final String VORTEX = "cards/vortex.png";
     public static final String ZENITH = "cards/zenith.png";
-	
+    public static final String PHASE_COIL = "cards/phase_coil.png";
+    
     // power images
     public static final String ASTRAL_HAZE_POWER = "powers/astral_haze.png";
     public static final String ESSENCE_MIRROR_POWER = "powers/essence_mirror.png";
@@ -368,7 +369,7 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new Hypothesis());
 		BaseMod.addCard(new Comet());
 		BaseMod.addCard(new NebulousBlast());
-		BaseMod.addCard(new EtherBolt());
+		BaseMod.addCard(new PhaseCoil());
 		BaseMod.addCard(new PowerSpike());
 		BaseMod.addCard(new Syzygy());
 		BaseMod.addCard(new SiphonPower());
