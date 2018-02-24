@@ -399,7 +399,7 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new Surge());
 		BaseMod.addCard(new StrokeOfGenius());
 		BaseMod.addCard(new SiphonSpeed());
-		BaseMod.addCard(new SiphonMagic());
+		BaseMod.addCard(new Convergence());
 		BaseMod.addCard(new GravityWell());
 		BaseMod.addCard(new Coalescence());
 		BaseMod.addCard(new PeriaptOfCelerity());

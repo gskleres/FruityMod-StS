@@ -17,8 +17,8 @@ import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
 import fruitymod.patches.AbstractCardEnum;
 
-public class SiphonMagic extends CustomCard {
-	 public static final String ID = "SiphonMagic";
+public class Convergence extends CustomCard {
+	 public static final String ID = "Convergence";
 	    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	    public static final String NAME = cardStrings.NAME;
 	    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
@@ -27,7 +27,7 @@ public class SiphonMagic extends CustomCard {
 	    private static final int ARTIFACT_AMT = 1;
 	    private static final int POOL = 1;
 	    
-	 public SiphonMagic() {
+	 public Convergence() {
 		 super(ID, NAME,  FruityMod.makePath(FruityMod.TRANSFERENCE), COST, DESCRIPTION,
 				 AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE,
 				 AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL_ENEMY, POOL);
@@ -77,14 +77,14 @@ public class SiphonMagic extends CustomCard {
 
 	    @Override
 	    public AbstractCard makeCopy() {
-	        return new SiphonMagic();
+	        return new Convergence();
 	    }
 
 	    @Override
 	    public void upgrade() {
 	        if (!this.upgraded) {
 	        	this.upgradeName();
-	        	this.updateCost(UPGRADED_COST);
+	        	this.upgradeBaseCost(UPGRADED_COST);
 	        	this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
 	        	this.initializeDescription();
 	        }
