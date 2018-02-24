@@ -125,7 +125,7 @@
 	},
 	"SiphonPower": {
 		"NAME": "Siphon Power",
-		"DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak. NL Gain !M! Strength."
+		"DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak. NL Gain 1 Strength."
 	},
 	"Syzygy": {
 		"NAME": "Syzygy",
@@ -230,7 +230,7 @@
 	},
 	"SiphonSpeed": {
 		"NAME": "Siphon Speed",
-		"DESCRIPTION": "Gain !B! Block. NL Apply !M! Vulnerable. NL Gain !M! Dexterity."
+		"DESCRIPTION": "Gain !B! Block. NL Apply !M! Vulnerable. NL Gain 1 Dexterity."
 	},
 	"StrokeOfGenius": {
 		"NAME": "Stroke of Genius",
