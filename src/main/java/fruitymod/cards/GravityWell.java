@@ -35,7 +35,7 @@ public class GravityWell extends CustomCard {
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		if (m.hasPower("Weakened")) {
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-					m, p, new StrengthPower(m, -1 * this.magicNumber), this.magicNumber, true));
+					m, p, new StrengthPower(m, -1 * this.magicNumber), -1 * this.magicNumber, true));
 		}
 	}
 	
