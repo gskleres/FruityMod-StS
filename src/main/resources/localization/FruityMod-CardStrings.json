@@ -141,7 +141,7 @@
 	},
 	"GravityWell": {
 		"NAME": "Gravity Well",
-		"DESCRIPTION": "Enemies lose !M! Strength while Weak."
+		"DESCRIPTION": "If the enemy is Weak, it loses !M! Strength."
 	},
 	"Nexus": {
 		"NAME": "Nexus",

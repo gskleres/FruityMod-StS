@@ -150,7 +150,6 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String VIGOR_POWER = "powers/vigor.png";
     public static final String ASTRAL_SHIFT_POWER = "powers/astral_shift.png";
     public static final String TENACITY_POWER = "powers/tenacity.png";
-    public static final String GRAVITY_POWER = "powers/gravity.png";
     public static final String CELERITY_POWER = "powers/celerity.png";
     public static final String POTENCY_POWER = "powers/potency.png";
     public static final String COALESCENCE_POWER = "powers/coalescence.png";
@@ -201,10 +200,6 @@ public class FruityMod implements PostInitializeSubscriber,
     
     public static Texture getTenacityPowerTexture() {
     	return new Texture(makePath(TENACITY_POWER));
-    }
-    
-    public static Texture getGravityPowerTexture() {
-    	return new Texture(makePath(GRAVITY_POWER));
     }
     
     public static Texture getCelerityPowerTexture() {

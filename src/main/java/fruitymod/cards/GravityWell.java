@@ -7,11 +7,11 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
 import fruitymod.patches.AbstractCardEnum;
-import fruitymod.powers.GravityPower;
 
 public class GravityWell extends CustomCard {
 	public static final String ID = "GravityWell";
@@ -19,7 +19,7 @@ public class GravityWell extends CustomCard {
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 1;
-	private static final int LOST_STRENGTH = 1;
+	private static final int LOST_STRENGTH = 3;
 	private static final int UPGRADE_LOST_STRENGTH_AMT = 1;
 	private static final int POOL = 1;
 	
@@ -27,17 +27,15 @@ public class GravityWell extends CustomCard {
 		super(ID, NAME, FruityMod.makePath(FruityMod.GRAVITY_WELL), COST, DESCRIPTION,
 				AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE,
 				AbstractCard.CardRarity.UNCOMMON
-				, AbstractCard.CardTarget.ALL_ENEMY, POOL);
+				, AbstractCard.CardTarget.ENEMY, POOL);
 		this.magicNumber = this.baseMagicNumber = LOST_STRENGTH;
 	}
 	
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-			AbstractDungeon.actionManager
-					.addToBottom(new ApplyPowerAction(mo, p,
-							new GravityPower(mo, this.magicNumber),
-							this.magicNumber, true));
+		if (m.hasPower("Weakened")) {
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
+					m, p, new StrengthPower(m, -1 * this.magicNumber), this.magicNumber, true));
 		}
 	}
 	
