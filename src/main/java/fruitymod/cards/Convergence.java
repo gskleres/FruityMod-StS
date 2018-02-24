@@ -37,7 +37,7 @@ public class Convergence extends CustomCard {
 	 
 	    @Override
 	    public void use(AbstractPlayer p, AbstractMonster m) {
-	    	int totalPowerCount = GetPowerCount(p, "Artifact");
+	    	int totalPowerCount = 0;
 	    	
 	    	for(AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {	    		
 	    		int powerCount = GetPowerCount(mo, "Artifact");
