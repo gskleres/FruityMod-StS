@@ -21,8 +21,8 @@
 	},
 	"EssenceDart": {
 		"NAME": "Essence Dart",
-		"DESCRIPTION": "Can only be played if all other cards in your hand are Ethereal. NL Deal !D! damage.",
-		"EXTENDED_DESCRIPTION": ["I have cards in my hand that are not Ethereal."]
+		"DESCRIPTION": "Can only be played if you have an Ethereal card in your hand. NL Deal !D! damage.",
+		"EXTENDED_DESCRIPTION": ["I do not have an Ethereal card in my hand."]
 	},
 	"NullStorm": {
 		"NAME": "Null Storm",

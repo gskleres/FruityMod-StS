@@ -20,9 +20,9 @@ public class EssenceDart extends CustomCard {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-	private static final int COST = 0;
-	private static final int ATTACK_DMG = 15;
-	private static final int UPGRADE_DMG_AMT = 5;
+	private static final int COST = 1;
+	private static final int ATTACK_DMG = 12;
+	private static final int UPGRADE_DMG_AMT = 4;
 	private static final int POOL = 1;
 
 	public EssenceDart() {
@@ -45,11 +45,10 @@ public class EssenceDart extends CustomCard {
 		}
 		for (AbstractCard c : p.hand.group) {
 			if (c.isEthereal || c.cardID == ID)
-				continue;
-			canUse = false;
-			this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
+				return true;
 		}
-		return canUse;
+		this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
+		return false;
 	}
 
 	@Override
