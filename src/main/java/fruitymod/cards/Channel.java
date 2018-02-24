@@ -25,8 +25,8 @@ public class Channel extends CustomCard {
 	public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	private static final int COST = 1;
 	private static final int ATTACK_DMG = 7;
+	private static final int UPGRADED_DMG_AMT = 6;
 	private static final int DISCARD_AMT = 1;
-	private static final int UPGRADE_DISCARD_AMT = 1;
 	private static final int POOL = 1;
 	
 	public Channel() {
@@ -34,8 +34,7 @@ public class Channel extends CustomCard {
 				AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE,
 				CardRarity.RARE, AbstractCard.CardTarget.ENEMY, POOL);
 		this.baseDamage = ATTACK_DMG;
-		this.baseMagicNumber = DISCARD_AMT;
-		this.magicNumber = DISCARD_AMT;
+		this.magicNumber = this.baseMagicNumber = ATTACK_DMG;
 	}
 	
 	@Override
@@ -44,12 +43,12 @@ public class Channel extends CustomCard {
 				new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY)));
 		Channel that = this; // funny little naming convention for providing this to inner class
 		AbstractDungeon.actionManager.addToBottom(new DiscardWithCallbackAction(
-				p, p, this.magicNumber, false, false, false, false, new IDiscardCallback() {
+				p, p, DISCARD_AMT, false, false, false, false, new IDiscardCallback() {
 					@Override
 					public void processCard(AbstractCard c) {
 						if (c.isEthereal) {
 							AbstractDungeon.actionManager.addToBottom(new DamageAction((AbstractCreature) m,
-									new DamageInfo(p, that.damage, that.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
+									new DamageInfo(p, that.magicNumber, that.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
 						}
 					}
 				}));
@@ -64,9 +63,7 @@ public class Channel extends CustomCard {
 	public void upgrade() {
 		if (!this.upgraded) {
 			this.upgradeName();
-			this.upgradeMagicNumber(UPGRADE_DISCARD_AMT);
-			this.rawDescription = (this.isEthereal ? "Ethereal." : "") + UPGRADE_DESCRIPTION;
-			this.initializeDescription();
+			this.upgradeMagicNumber(UPGRADED_DMG_AMT);
 		}
 	}
 }

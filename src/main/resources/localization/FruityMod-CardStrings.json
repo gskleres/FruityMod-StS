@@ -244,8 +244,7 @@
 	},
 	"Channel": {
 		"NAME": "Channel",
-		"DESCRIPTION": "Deal !D! damage. NL Discard a card. NL If it is Ethereal, deal !D! more damage.",
-		"UPGRADE_DESCRIPTION": "Deal !D! damage. NL Discard a card. NL If it is Ethereal, deal !D! more damage."
+		"DESCRIPTION": "Deal !D! damage. NL Discard a card. NL If it is Ethereal, deal !M! more damage."
 	},
 	"Feedback": {
 		"NAME": "Feedback",
