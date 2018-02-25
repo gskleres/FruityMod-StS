@@ -38,8 +38,6 @@ import fruitymod.characters.TheSeeker;
 import fruitymod.patches.AbstractCardEnum;
 import fruitymod.patches.TheSeekerEnum;
 import fruitymod.relics.Arcanosphere;
-import fruitymod.relics.Homunculus;
-import fruitymod.relics.RabbitsFoot;
 
 @SpireInitializer
 public class FruityMod implements PostInitializeSubscriber,
@@ -339,8 +337,6 @@ public class FruityMod implements PostInitializeSubscriber,
 		logger.info("begin editting relics");
         
         // Add relics
-        RelicLibrary.add(new Homunculus());
-        RelicLibrary.add(new RabbitsFoot());
         RelicLibrary.add(new Arcanosphere());
         
         logger.info("done editting relics");

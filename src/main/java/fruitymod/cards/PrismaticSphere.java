@@ -19,7 +19,7 @@ import fruitymod.patches.AbstractCardEnum;
 public class PrismaticSphere extends CustomCard {
 	public static final String ID = "PrismaticSphere";
     public static final String NAME = "Prismatic Sphere";
-    public static final String DESCRIPTION = "Ethereal. Deal !D! damage. NL Draw !M! cards.";
+    public static final String DESCRIPTION = "Ethereal. NL Deal !D! damage. NL Draw !M! cards.";
     private static final int COST = 1;
     private static final int ATTACK_DMG = 7;
     private static final int UPGRADE_DMG_AMT = 4;
