@@ -31,8 +31,8 @@ public class Convergence extends CustomCard {
 		 super(ID, NAME,  FruityMod.makePath(FruityMod.TRANSFERENCE), COST, DESCRIPTION,
 				 AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE,
 				 AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL_ENEMY, POOL);
-	 		this.isEthereal = true;
         	this.isInnate = true;
+        	this.exhaust = true;
 	    }
 	 
 	    @Override

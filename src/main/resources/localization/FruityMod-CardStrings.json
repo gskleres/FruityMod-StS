@@ -225,7 +225,7 @@
 	},
 	"Convergence": {
 		"NAME": "Convergence",
-		"DESCRIPTION": "Innate. NL Ethereal. NL Gain 1 Artifact. Transfer all Artifact from ALL enemies to you."
+		"DESCRIPTION": "Innate. NL Gain 1 Artifact. Transfer all Artifact from ALL enemies to you. NL Exhaust."
 	},
 	"SiphonSpeed": {
 		"NAME": "Siphon Speed",
