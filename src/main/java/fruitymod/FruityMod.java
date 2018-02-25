@@ -48,8 +48,8 @@ public class FruityMod implements PostInitializeSubscriber,
 	public static final Logger logger = LogManager.getLogger(FruityMod.class.getName());
 	
     private static final String MODNAME = "FruityMod";
-    private static final String AUTHOR = "Fruitstrike & fiiiiilth & Test447";
-    private static final String DESCRIPTION = "v0.2.0";
+    private static final String AUTHOR = "Fruitstrike, ColdRain451, test447, fiiiiilth, & Pal";
+    private static final String DESCRIPTION = "v0.4.3\n Adds The Seeker as a playable third character";
     
     private static final Color PURPLE = CardHelper.getColor(139.0f, 0.0f, 139.0f);
     private static final String FRUITY_MOD_ASSETS_FOLDER = "img";
@@ -59,6 +59,11 @@ public class FruityMod implements PostInitializeSubscriber,
     private static final String SKILL_PURPLE = "512/bg_attack_purple.png";
     private static final String POWER_PURPLE = "512/bg_attack_purple.png";
     private static final String ENERGY_ORB_PURPLE = "512/card_purple_orb.png";
+    
+    private static final String ATTACK_PURPLE_PORTRAIT = "1024/bg_attack_purple.png";
+    private static final String SKILL_PURPLE_PORTRAIT = "1024/bg_attack_purple.png";
+    private static final String POWER_PURPLE_PORTRAIT = "1024/bg_attack_purple.png";
+    private static final String ENERGY_ORB_PURPLE_PORTRAIT = "1024/card_purple_orb.png";
     
     // card images
     
@@ -173,6 +178,9 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String SEEKER_SKELETON_ATLAS = "char/seeker/skeleton.atlas";
     public static final String SEEKER_SKELETON_JSON = "char/seeker/skeleton.json";
     
+    // badge
+    public static final String BADGE_IMG = "FRelicBadge.png";
+    
     // texture loaders
     public static Texture getAstralHazePowerTexture() {
     	return new Texture(makePath(ASTRAL_HAZE_POWER));
@@ -285,7 +293,9 @@ public class FruityMod implements PostInitializeSubscriber,
         BaseMod.addColor(AbstractCardEnum.PURPLE.toString(),
         		PURPLE, PURPLE, PURPLE, PURPLE, PURPLE, PURPLE, PURPLE,
         		makePath(ATTACK_PURPLE), makePath(SKILL_PURPLE),
-        		makePath(POWER_PURPLE), makePath(ENERGY_ORB_PURPLE));
+        		makePath(POWER_PURPLE), makePath(ENERGY_ORB_PURPLE),
+        		makePath(ATTACK_PURPLE_PORTRAIT), makePath(SKILL_PURPLE_PORTRAIT),
+        		makePath(POWER_PURPLE_PORTRAIT), makePath(ENERGY_ORB_PURPLE_PORTRAIT));
     }
 
     public static void initialize() {
@@ -300,9 +310,9 @@ public class FruityMod implements PostInitializeSubscriber,
     @Override
     public void receivePostInitialize() {
         // Mod badge
-        Texture badgeTexture = new Texture(Gdx.files.internal("img/FRelicBadge.png"));
+        Texture badgeTexture = new Texture(makePath(BADGE_IMG));
         ModPanel settingsPanel = new ModPanel();
-        settingsPanel.addLabel("This mod does not have any settings (yet)", 400.0f, 700.0f, (me) -> {});
+        settingsPanel.addLabel("FruityMod does not have any settings (yet)!", 400.0f, 700.0f, (me) -> {});
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
         
         Settings.isDailyRun = false;
