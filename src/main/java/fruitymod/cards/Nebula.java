@@ -1,6 +1,7 @@
 package fruitymod.cards;
 
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.utility.ExhaustAllEtherealAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -13,17 +14,18 @@ import fruitymod.patches.AbstractCardEnum;
 public class Nebula extends CustomCard {
 	public static final String ID = "Nebula";
 	public static final String NAME = "Nebula";
-	public static final String DESCRIPTION = "Gain !B! Block for every Ethereal card in your hand.";
+	public static final String DESCRIPTION = "Ethereal. NL Gain !B! Block for every Ethereal card in your hand.";
 	private static final int COST = 1;
 	private static final int BLOCK_AMT = 4;
 	private static final int UPGRADE_BLOCK_AMT = 3;
 	private static final int POOL = 1;
 
 	public Nebula() {
-		super(ID, NAME, FruityMod.makePath(FruityMod.ETHER_BARRIER), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
+		super(ID, NAME, FruityMod.makePath(FruityMod.NEBULA), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
 				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF, POOL);
 
 		this.baseBlock = BLOCK_AMT;
+		this.isEthereal = true;
 	}
 
 	@Override
@@ -52,6 +54,11 @@ public class Nebula extends CustomCard {
 		}
 		this.cantUseMessage = "No Ethereal cards in hand.";
 		return canUse;
+	}
+
+	@Override
+	public void triggerOnEndOfPlayerTurn() {
+		AbstractDungeon.actionManager.addToTop(new ExhaustAllEtherealAction());
 	}
 
 	@Override

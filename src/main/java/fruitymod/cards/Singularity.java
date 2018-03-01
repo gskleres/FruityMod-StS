@@ -22,8 +22,8 @@ import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
 import fruitymod.patches.AbstractCardEnum;
 
-public class UmbralWave extends CustomCard {
-	public static final String ID = "UmbralWave";
+public class Singularity extends CustomCard {
+	public static final String ID = "Singularity";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
@@ -33,13 +33,12 @@ public class UmbralWave extends CustomCard {
     private static final int BLOCK_AMT = 12;
     private static final int UPGRADE_BLOCK_AMT = 3;
     private static final int ENERGY_GAIN = 1;
-    private static final int UPGRADE_ENERGY_AMT = 1;
     private static final int POOL = 1;
     
-    public UmbralWave() {
-    	super(ID, NAME, FruityMod.makePath(FruityMod.UMBRAL_WAVE), COST, DESCRIPTION,
+    public Singularity() {
+    	super(ID, NAME, FruityMod.makePath(FruityMod.SINGULARITY), COST, DESCRIPTION,
     			AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE,
-    			AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY, POOL);
+    			CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY, POOL);
     	this.baseDamage = ATTACK_DMG;
     	this.baseBlock = BLOCK_AMT;
     	this.baseMagicNumber = this.magicNumber = ENERGY_GAIN;
@@ -63,7 +62,7 @@ public class UmbralWave extends CustomCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new UmbralWave();
+        return new Singularity();
     }
     
     @Override
@@ -72,7 +71,6 @@ public class UmbralWave extends CustomCard {
             this.upgradeName();
             this.upgradeDamage(UPGRADE_DMG_AMT);
             this.upgradeBlock(UPGRADE_BLOCK_AMT);
-            this.upgradeMagicNumber(UPGRADE_ENERGY_AMT);
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }

@@ -24,7 +24,7 @@ extends CustomCard {
     public static final String DESCRIPTION = "Deal !D! damage. NL Shuffle 1 Dazed into your Draw pile.";
     private static final int COST = 1;
     private static final int ATTACK_DMG = 10;
-    private static final int UPGRADE_DMG_AMT = 3;
+    private static final int UPGRADE_DMG_AMT = 4;
     private static final int POOL = 1;
 
     public VoidRay() {

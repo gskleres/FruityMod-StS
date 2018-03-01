@@ -15,9 +15,9 @@
 		"NAME": "Starburst",
 		"DESCRIPTION": "Deal !D! damage and apply !M! Vulnerable to ALL enemies."
 	},
-	"ArcaneVolley": {
+	"Irradiate": {
 		"NAME": "Irradiate",
-		"DESCRIPTION": "Deal !D! damage and apply !M! Weak to ALL enemies."
+		"DESCRIPTION": "Deal !D! damage and apply !M! Weak AND Vulnerable to ALL enemies."
 	},
 	"EssenceDart": {
 		"NAME": "Essence Dart",
@@ -56,9 +56,9 @@
 		"NAME": "Flux",
 		"DESCRIPTION": "Ethereal. NL Gain !B! Block. NL Deal !D! damage."
 	},
-	"DeflectionWard": {
+	"ArcaneArmor": {
 		"NAME": "Arcane Armor",
-		"DESCRIPTION": "Gain !B! Block."
+		"DESCRIPTION": "Gain !B! Block. NL Every time you draw this card, increase its Block by !M! for this combat."
 	},
 	"Flicker": {
 		"NAME": "Flicker",
@@ -78,13 +78,13 @@
 	},
 	"Hypothesis": {
 		"NAME": "Hypothesis",
-		"DESCRIPTION": "Draw a card. NL If it is Ethereal, draw another card.",
-		"UPGRADE_DESCRIPTION": "Draw a card. NL If it is Ethereal, draw !M! more cards."
+		"DESCRIPTION": "Draw a card. NL If it is Ethereal, add a Dazed to your hand and draw another card.",
+		"UPGRADE_DESCRIPTION": "Draw a card. NL If it is Ethereal, add a Dazed to your hand and draw !M! more cards."
 	},
-	"UmbralWave": {
+	"Singularity": {
 		"NAME": "Singularity",
 		"DESCRIPTION": "Ethereal. Gain !B! Block. Deal !D! damage. Next turn gain [R].",
-		"UPGRADE_DESCRIPTION": "Ethereal. Gain !B! Block. Deal !D! damage. Next turn gain [R] [R]."
+		"UPGRADE_DESCRIPTION": "Ethereal. Gain !B! Block. Deal !D! damage. Next turn gain [R]."
 	},
 	"Genesis": {
 		"NAME": "Genesis",
