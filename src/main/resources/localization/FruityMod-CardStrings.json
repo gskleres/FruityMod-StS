@@ -309,13 +309,13 @@
 	},
 	"ReflectionWard": {
 		"NAME": "Reflection Ward",
-		"DESCRIPTION": "Gain !B! Block. Whenever you are attacked this turn, deal !M! damage to ALL enemies."
+		"DESCRIPTION": "Gain !B! Block and !M! Reflect per !M! cards in your draw pile."
 	},
 	"Zenith": {
 		"NAME": "Zenith",
 		"DESCRIPTION": "After paying this card's cost, double your remaining [R]. NL Exhaust.",
 		"UPGRADE_DESCRIPTION": "After paying this card's cost, double your remaining [R].",
-		"EXTENDED_DESCRIPTION": [ " NL (Will have !M! [R] after use)"]
+		"EXTENDED_DESCRIPTION": [ " NL (Will have !M! [R] after use.)"]
 	},
 	"Coalescence": {
 		"NAME": "Coalescence",
