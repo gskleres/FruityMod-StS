@@ -17,7 +17,7 @@
 	},
 	"Irradiate": {
 		"NAME": "Irradiate",
-		"DESCRIPTION": "Deal !D! damage and apply !M! Weak and !M! Vulnerable to ALL enemies."
+		"DESCRIPTION": "Deal !D! damage,  apply !M! Weak, and apply !M! Vulnerable to ALL enemies."
 	},
 	"EssenceDart": {
 		"NAME": "Essence Dart",
