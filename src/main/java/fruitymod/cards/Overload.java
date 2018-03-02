@@ -14,8 +14,8 @@ import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
 import fruitymod.patches.AbstractCardEnum;
 
-public class PowerSpike extends CustomCard {
-	public static final String ID = "PowerSpike";
+public class Overload extends CustomCard {
+	public static final String ID = "Overload";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
@@ -26,7 +26,7 @@ public class PowerSpike extends CustomCard {
 	private static final int POOL = 1;
 	private static final int FRAIL_AMT = 2;
 
-	public PowerSpike() {
+	public Overload() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.POWER_SPIKE), COST, DESCRIPTION,
 				AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE,
 				AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF, POOL);
@@ -42,7 +42,7 @@ public class PowerSpike extends CustomCard {
 
 	@Override
 	public AbstractCard makeCopy() {
-		return new PowerSpike();
+		return new Overload();
 	}
 
 	@Override

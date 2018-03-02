@@ -29,6 +29,7 @@ public class GravityWell extends CustomCard {
 				AbstractCard.CardRarity.UNCOMMON
 				, AbstractCard.CardTarget.ENEMY, POOL);
 		this.magicNumber = this.baseMagicNumber = LOST_STRENGTH;
+		this.exhaust = true;
 	}
 	
 	@Override

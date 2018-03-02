@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
+import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 import fruitymod.FruityMod;
 import fruitymod.patches.AbstractCardEnum;
 import fruitymod.powers.FlowPower;
@@ -34,6 +35,7 @@ extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FlowPower(p, 1), 1));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DrawCardNextTurnPower(p, 1), 1));
     }
     
     @Override

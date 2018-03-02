@@ -1,5 +1,6 @@
 package fruitymod.cards;
 
+import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -40,9 +41,7 @@ public class Feedback extends CustomCard {
 		AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(m, p, "Weakened"));
 		AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(m, p, "Vulnerable"));
 		this.baseDamage = this.magicNumber * debuffCount;
-		this.calculateCardDamage(m);
-		AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-
+		AbstractDungeon.actionManager.addToTop(new LoseHPAction(m, m, this.baseDamage));
 	}
 	
     private int GetPowerCount(AbstractCreature c, String powerId) {

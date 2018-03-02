@@ -1,30 +1,9 @@
 {
-  "RabbitsFoot": {
-    "NAME": "Rabbit's Foot",
-    "FLAVOR": "fiiiiilth",
-    "DESCRIPTIONS": [
-      "Whenever you would receive 6 or more unblocked attacked damage, reduce the damage received by 1."
-    ]
-  },
-  "Homunculus": {
-    "NAME": "Homunculus",
-    "FLAVOR": "fiiiiilth",
-    "DESCRIPTIONS": [
-      "HP loss from cards is reduced to 0."
-    ]
-  },
-  "BerserkerAxe": {
-    "NAME": "Berserker Axe",
-    "FLAVOR": "fiiiiilth",
-    "DESCRIPTIONS": [
-      "Whenever you take damage from an enemy, gain 1 Strength until the end of your next turn."
-    ]
-  },
   "Arcanosphere": {
     "NAME": "Arcanosphere",
     "FLAVOR": "test447",
     "DESCRIPTIONS": [
-      "At the end of your turn you may put a card in your hand on top of your draw pile."
+      "At the end of your turn, you may put a card back on top of your draw pile."
     ]
   }
 }

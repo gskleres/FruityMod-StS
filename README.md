@@ -28,7 +28,8 @@ Card list: [click here](https://drive.google.com/file/d/1aojRAKPQCbDW7mSW6Co6XTK
 
 ## Requirements ##
 #### General Use ####
-* BaseMod v.1.7.3+ (https://github.com/t-larson/BaseMod/releases) for now use (https://github.com/daviscook477/BaseMod/releases)
+* Java 8 (JRE). Currently only Java 8 should be used, issues with Java 9 are being looked into.
+* BaseMod v.1.8.0+ (https://github.com/daviscook477/BaseMod/releases)
 * ModTheSpire v2.3.0+ (https://github.com/kiooeht/ModTheSpire/releases)
 
 ## Installation ##

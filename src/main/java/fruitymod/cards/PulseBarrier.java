@@ -18,7 +18,7 @@ public class PulseBarrier extends CustomCard {
 	public static final String DESCRIPTION = "Gain !B! Block. Gain 2 Frail.";
 	private static final int COST = 1;
 	private static final int BLOCK_AMT = 11;
-	private static final int UPGRADE_BLOCK_AMT = 3;
+	private static final int UPGRADE_BLOCK_AMT = 4;
 	private static final int FRAIL_AMT = 2;
 	private static final int POOL = 1;
 

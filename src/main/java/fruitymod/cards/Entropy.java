@@ -21,12 +21,12 @@ import fruitymod.patches.AbstractCardEnum;
 public class Entropy extends CustomCard {
 	private static final String ID = "Entropy";
 	private static final String NAME = "Entropy";
-	private static final String DESCRIPTION = "Ethereal. NL Deal !D! damage. NL Enemy loses !M! Strength.";
-	private static final int COST = 2;
-	private static final int COST_UPGRADE = 1;
+	private static final String DESCRIPTION = "Ethereal. NL Deal !D! damage. NL Enemy loses !M! Strength. NL Increase this cards values by 1 until the end of combat.";
+	private static final int COST = 1;
 	private static final int ATTACK_DMG = 5;
-	private static final int ATTACK_UPGRADE = 1;
+	private static final int ATTACK_UPGRADE = 3;
 	private static final int STR_LOSS = 1;
+	private static final int STR_LOSS_UPGRADE = 1;
 	private static final int POOL = 1;
 	
 	public Entropy() {
@@ -42,6 +42,8 @@ public class Entropy extends CustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
     	AbstractDungeon.actionManager.addToBottom(new DamageAction((AbstractCreature)m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new StrengthPower(m, - this.magicNumber), - this.magicNumber));
+        ++ this.baseDamage;
+        ++ this.baseMagicNumber;
     }
 	
 	@Override
@@ -59,7 +61,7 @@ public class Entropy extends CustomCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeDamage(ATTACK_UPGRADE);
-            this.upgradeBaseCost(COST_UPGRADE);
+            this.upgradeMagicNumber(STR_LOSS_UPGRADE);
         }
     }
 	

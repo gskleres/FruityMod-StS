@@ -9,15 +9,15 @@
 	},
 	"AstralHaze": {
 		"NAME": "Astral Haze",
-		"DESCRIPTION": "Ethereal. NL Apply !M! Vulnerable and !M! Weak to ALL attackers this turn."
+		"DESCRIPTION": "Ethereal. The first time each enemy attacks you this turn, apply !M! Weak and !M! Vulnerable to it."
 	},
 	"ArcaneBarrage": {
 		"NAME": "Starburst",
 		"DESCRIPTION": "Deal !D! damage and apply !M! Vulnerable to ALL enemies."
 	},
-	"ArcaneVolley": {
+	"Irradiate": {
 		"NAME": "Irradiate",
-		"DESCRIPTION": "Deal !D! damage and apply !M! Weak to ALL enemies."
+		"DESCRIPTION": "Deal !D! damage,  apply !M! Weak, and apply !M! Vulnerable to ALL enemies."
 	},
 	"EssenceDart": {
 		"NAME": "Essence Dart",
@@ -38,7 +38,7 @@
 	},
 	"Retrograde": {
 		"NAME": "Retrograde",
-		"DESCRIPTION": "Deal !D! damage. Shuffle a copy of this card into your draw pile."
+		"DESCRIPTION": "Deal !D! damage. At the end of the turn, shuffle a copy of this card into your draw pile."
 	},
 	"MagicMissile": {
 		"NAME": "Magic Missile",
@@ -56,9 +56,9 @@
 		"NAME": "Flux",
 		"DESCRIPTION": "Ethereal. NL Gain !B! Block. NL Deal !D! damage."
 	},
-	"DeflectionWard": {
+	"ArcaneArmor": {
 		"NAME": "Arcane Armor",
-		"DESCRIPTION": "Gain !B! Block."
+		"DESCRIPTION": "Gain !B! Block. NL Every time you draw this card, increase its Block by !M! for this combat."
 	},
 	"Flicker": {
 		"NAME": "Flicker",
@@ -78,13 +78,13 @@
 	},
 	"Hypothesis": {
 		"NAME": "Hypothesis",
-		"DESCRIPTION": "Draw a card. NL If it is Ethereal, draw another card.",
-		"UPGRADE_DESCRIPTION": "Draw a card. NL If it is Ethereal, draw !M! more cards."
+		"DESCRIPTION": "Draw a card. NL If it is Ethereal, add a Dazed to your hand and draw another card.",
+		"UPGRADE_DESCRIPTION": "Draw a card. NL If it is Ethereal, add a Dazed to your hand and draw !M! more cards."
 	},
-	"UmbralWave": {
+	"Singularity": {
 		"NAME": "Singularity",
 		"DESCRIPTION": "Ethereal. Gain !B! Block. Deal !D! damage. Next turn gain [R].",
-		"UPGRADE_DESCRIPTION": "Ethereal. Gain !B! Block. Deal !D! damage. Next turn gain [R] [R]."
+		"UPGRADE_DESCRIPTION": "Ethereal. Gain !B! Block. Deal !D! damage. Next turn gain [R]."
 	},
 	"Genesis": {
 		"NAME": "Genesis",
@@ -96,7 +96,7 @@
 	},
 	"Entropy": {
 		"NAME": "Entropy",
-		"DESCRIPTION": "Ethereal. NL Deal !D! damage. NL Enemy loses !M! Strength."
+		"DESCRIPTION": "Ethereal. NL Deal !D! damage. NL Enemy loses !M! Strength. NL Increase this cards values by 1 until the end of combat."
 	},
 	"PhaseCoil": {
 		"NAME": "Phase Coil",
@@ -115,17 +115,17 @@
 		"NAME": "Flare",
 		"DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable."
 	},
-	"ForceSpike": {
+	"UnstableOrb": {
 		"NAME": "Unstable Orb",
-		"DESCRIPTION": "Deal !D! damage. NL Gain !M! Frail."
+		"DESCRIPTION": "Deal !D! damage. NL Gain !M! Weak."
 	},
-	"NebulousBlast": {
+	"ForceRipple": {
 		"NAME": "Force Ripple",
 		"DESCRIPTION": "Deal !D! damage. NL Shuffle all non-Ethereal cards into your draw pile."
 	},
 	"SiphonPower": {
 		"NAME": "Siphon Power",
-		"DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak. NL Gain 1 Strength."
+		"DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable. NL Gain 1 Strength."
 	},
 	"Syzygy": {
 		"NAME": "Syzygy",
@@ -177,7 +177,8 @@
 	},
 	"Brainstorm": {
 		"NAME": "Brainstorm",
-		"DESCRIPTION": "Shuffle your discard pile and a Dazed into your draw pile. NL Draw !M! cards."
+		"DESCRIPTION": "Shuffle your discard pile and a Dazed into your draw pile. NL Next turn, draw !M! card.",
+		"UPGRADE_DESCRIPTiON": "Shuffle your discard pile and a Dazed into your draw pile. NL Next turn, draw !M! cards."
 	},
 	"Brilliance": {
 		"NAME": "Brilliance",
@@ -199,23 +200,23 @@
 	},
 	"Flow": {
 		"NAME": "Flow",
-		"DESCRIPTION": "Ethereal. NL Retain all excess Energy at the end of turn."
+		"DESCRIPTION": "Ethereal. NL Retain all excess Energy at the end of turn. NL Draw 1 extra card next turn."
 	},
 	"Illuminate": {
 		"NAME": "Illuminate",
-		"DESCRIPTION": "Create !M! copy of an Ethereal card in your hand.",
-		"UPGRADE_DESCRIPTION": "Create !M! copies of an Ethereal card in your hand."
+		"DESCRIPTION": "Create !M! copy of an Ethereal card in your hand. NL Shuffle it into your draw pile.",
+		"UPGRADE_DESCRIPTION": "Create !M! copies of an Ethereal card in your hand. NL Shuffle it into your draw pile."
 	},
 	"MindOverMatter": {
 		"NAME": "Mind Over Matter",
-		"DESCRIPTION": "Gain !M! Block for each Frail you have. Remove all Frail.",
-		"EXTENDED_DESCRIPTION": [ "I am not Frail."]
+		"DESCRIPTION": "Remove all Frail, Weak, and Vulnerable. NL Gain !M! Block for each stack removed.",
+		"EXTENDED_DESCRIPTION": [ "I am not Frail, Weak or Vulnerable."]
 	},
-	"PowerSpike": {
+	"Overload": {
 		"NAME": "Overload",
 		"DESCRIPTION": "Gain [R] [R]. NL Gain !M! Frail."
 	},
-	"ProtectionWard": {
+	"Disperse": {
 		"NAME": "Disperse",
 		"DESCRIPTION": "Gain !B! Block. Gain !M! Artifact."
 	},
@@ -225,11 +226,11 @@
 	},
 	"Convergence": {
 		"NAME": "Convergence",
-		"DESCRIPTION": "Innate. Gain 1 Artifact. Transfer all Artifact from ALL enemies to you."
+		"DESCRIPTION": "Innate. NL Gain 1 Artifact. Transfer all Artifact from ALL enemies to you. NL Exhaust."
 	},
 	"SiphonSpeed": {
 		"NAME": "Siphon Speed",
-		"DESCRIPTION": "Gain !B! Block. NL Apply !M! Vulnerable. NL Gain 1 Dexterity."
+		"DESCRIPTION": "Gain !B! Block. NL Apply !M! Weak. NL Gain 1 Dexterity."
 	},
 	"StrokeOfGenius": {
 		"NAME": "Stroke of Genius",
@@ -247,8 +248,8 @@
 	},
 	"Feedback": {
 		"NAME": "Feedback",
-		"DESCRIPTION": "Remove all Weak and Vulnerable from an Enemy. NL Deal !M! damage per stack removed.",
-		"EXTENDED_DESCRIPTION": [ " NL (Deals !D! damage)"]		
+		"DESCRIPTION": "Remove all Weak and Vulnerable from an Enemy. NL That enemy loses !M! HP per stack removed.",
+		"EXTENDED_DESCRIPTION": [ " NL (Will lose !D! HP.)"]
 	},
 	"Implosion": {
 		"NAME": "Implosion",
@@ -294,8 +295,8 @@
 	},
 	"Echo": {
 		"NAME": "Echo",
-		"DESCRIPTION": "Play the next Ethereal card twice.",
-		"UPGRADE_DESCRIPTION": "Play the next 2 Ethereal cards twice."
+		"DESCRIPTION": "This turn, your next Ethereal card is played twice.",
+		"UPGRADE_DESCRIPTION": "This turn, your next 2 Ethereal cards are played twice."
 	},
 	"Eclipse": {
 		"NAME": "Eclipse",
@@ -309,13 +310,13 @@
 	},
 	"ReflectionWard": {
 		"NAME": "Reflection Ward",
-		"DESCRIPTION": "Gain !B! Block. Whenever you are attacked this turn, deal !M! damage to ALL enemies."
+		"DESCRIPTION": "Gain !B! Block and !M! Reflect per !M! cards in your draw pile."
 	},
 	"Zenith": {
 		"NAME": "Zenith",
 		"DESCRIPTION": "After paying this card's cost, double your remaining [R]. NL Exhaust.",
 		"UPGRADE_DESCRIPTION": "After paying this card's cost, double your remaining [R].",
-		"EXTENDED_DESCRIPTION": [ " NL (Will have !M! [R] after use)"]
+		"EXTENDED_DESCRIPTION": [ " NL (Will have !M! [R] after use.)"]
 	},
 	"Coalescence": {
 		"NAME": "Coalescence",

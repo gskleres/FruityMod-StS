@@ -3,6 +3,7 @@ package fruitymod.cards;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -16,6 +17,7 @@ import com.megacrit.cardcrawl.vfx.combat.VerticalAuraEffect;
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
 import fruitymod.patches.AbstractCardEnum;
+import fruitymod.powers.RetrogradePower;
 
 public class Retrograde extends CustomCard {
 	public static final String ID = "Retrograde";
@@ -39,7 +41,7 @@ public class Retrograde extends CustomCard {
 				new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
 		AbstractDungeon.actionManager
 				.addToBottom(new VFXAction(p, new VerticalAuraEffect(Color.FIREBRICK, p.hb.cX, p.hb.cY), 0.0f));
-		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(p, p, this, 1, true, false));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RetrogradePower(p, 1), 1));
 	}
 
 	@Override

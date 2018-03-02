@@ -2,7 +2,9 @@ package fruitymod.actions.unique;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
@@ -35,6 +37,7 @@ public class HypothesisAction extends AbstractGameAction implements PostDrawSubs
 			if (c.isEthereal) {
 				AbstractDungeon.actionManager.addToBottom(new DrawCardAction(
 						AbstractDungeon.player, this.amount));
+				AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new Dazed(), 1, true));
 			}
 			/*
 			 *  calling unsubscribeFromPostBattle inside the callback

@@ -10,7 +10,7 @@ public class AnomalyPower extends AbstractPower {
 	public static final String POWER_ID = "Anomaly";
 	public static final String NAME = "Anomaly";
 	public static final String[] DESCRIPTIONS = new String[] {
-			"Whenever Vulnerable or Weak to an enemy, apply ",
+			"Whenever you apply Vulnerable or Weak to an enemy, apply ",
 			" additional stacks."
 	};
 	

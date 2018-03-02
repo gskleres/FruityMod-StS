@@ -16,9 +16,9 @@ import fruitymod.FruityMod;
 import fruitymod.actions.common.ShuffleCardsToDrawPileAction;
 import fruitymod.patches.AbstractCardEnum;
 
-public class NebulousBlast
+public class ForceRipple
 extends CustomCard {
-    public static final String ID = "NebulousBlast";
+    public static final String ID = "ForceRipple";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
@@ -27,7 +27,7 @@ extends CustomCard {
     private static final int UPGRADE_PLUS_DMG = 5;
     private static final int POOL = 1;
 
-    public NebulousBlast() {
+    public ForceRipple() {
         super(ID, NAME, FruityMod.makePath(FruityMod.NEBULOUS_BLAST), COST, DESCRIPTION,
         		AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE,
         		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY, POOL);
@@ -56,7 +56,7 @@ extends CustomCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new NebulousBlast();
+        return new ForceRipple();
     }
 
     @Override

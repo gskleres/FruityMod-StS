@@ -2,6 +2,7 @@ package fruitymod;
 
 import java.nio.charset.StandardCharsets;
 
+import com.megacrit.cardcrawl.helpers.GameDictionary;
 import fruitymod.cards.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -38,8 +39,6 @@ import fruitymod.characters.TheSeeker;
 import fruitymod.patches.AbstractCardEnum;
 import fruitymod.patches.TheSeekerEnum;
 import fruitymod.relics.Arcanosphere;
-import fruitymod.relics.Homunculus;
-import fruitymod.relics.RabbitsFoot;
 
 @SpireInitializer
 public class FruityMod implements PostInitializeSubscriber,
@@ -83,7 +82,7 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String CORONA = "cards/corona.png";
     public static final String CREATIVITY = "cards/creativity.png";
     public static final String DEFEND_PURPLE = "cards/defend_purple.png";
-    public static final String DEFLECTION_WARD = "cards/arcane_armor.png";
+    public static final String ARCANE_ARMOR = "cards/arcane_armor.png";
     public static final String ECHO = "cards/echo.png";
     public static final String ECLIPSE = "cards/eclipse.png";
     public static final String ENIGMA = "cards/enigma.png";
@@ -93,7 +92,7 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String ESSENCE_MIRROR = "cards/flicker.png";
     public static final String ESSENCE_SHRED = "cards/plasma_wave.png";
     public static final String ESSENCE_SPIKE = "cards/pulse_barrier.png";
-    public static final String ETHER_BARRIER = "cards/nebula.png";
+    public static final String NEBULA = "cards/nebula.png";
     public static final String ETHER_BLAST = "cards/ether_blast.png";
     public static final String ETHER_BOLT = "cards/essence_dart.png";
     public static final String EUREKA = "cards/eureka.png";
@@ -137,7 +136,7 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String THOUGHT_RAZE = "cards/thought_raze.png";
     public static final String TRANSFERENCE = "cards/transference.png";
     public static final String UMBRAL_BOLT = "cards/umbral_bolt.png";
-    public static final String UMBRAL_WAVE = "cards/singularity.png";
+    public static final String SINGULARITY = "cards/singularity.png";
     public static final String VACUUM = "cards/vacuum.png";
     public static final String VOID_BARRIER = "cards/genesis.png";
     public static final String VOID_BOLT = "cards/prismatic_sphere.png";
@@ -251,7 +250,7 @@ public class FruityMod implements PostInitializeSubscriber,
     public static Texture getNexusPowerTexture() {
     	return new Texture(makePath(VIGOR_POWER));
     }
-    
+
     /**
      * Makes a full path for a resource path
      * @param resource the resource, must *NOT* have a leading "/"
@@ -339,8 +338,6 @@ public class FruityMod implements PostInitializeSubscriber,
 		logger.info("begin editting relics");
         
         // Add relics
-        RelicLibrary.add(new Homunculus());
-        RelicLibrary.add(new RabbitsFoot());
         RelicLibrary.add(new Arcanosphere());
         
         logger.info("done editting relics");
@@ -356,10 +353,10 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new Defend_Purple());
 		
 		BaseMod.addCard(new ArcaneBarrage());
-		BaseMod.addCard(new ArcaneVolley());
+		BaseMod.addCard(new Irradiate());
 		BaseMod.addCard(new AstralHaze());
 		BaseMod.addCard(new Brainstorm());
-		BaseMod.addCard(new DeflectionWard());
+		BaseMod.addCard(new ArcaneArmor());
 		BaseMod.addCard(new Entropy());
 		BaseMod.addCard(new EssenceDart());		
 		BaseMod.addCard(new Flicker());
@@ -371,18 +368,18 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new NullStorm());
 		BaseMod.addCard(new VoidRay());
 		BaseMod.addCard(new FluxShield());
-		BaseMod.addCard(new ForceSpike());
+		BaseMod.addCard(new UnstableOrb());
 		BaseMod.addCard(new Hypothesis());
 		BaseMod.addCard(new Comet());
-		BaseMod.addCard(new NebulousBlast());
+		BaseMod.addCard(new ForceRipple());
 		BaseMod.addCard(new PhaseCoil());
-		BaseMod.addCard(new PowerSpike());
+		BaseMod.addCard(new Overload());
 		BaseMod.addCard(new Syzygy());
 		BaseMod.addCard(new SiphonPower());
 		BaseMod.addCard(new Shimmer());
 		BaseMod.addCard(new ThoughtRaze());
 		BaseMod.addCard(new Retrograde());
-		BaseMod.addCard(new UmbralWave());
+		BaseMod.addCard(new Singularity());
 		BaseMod.addCard(new UmbralBolt());
 		BaseMod.addCard(new Genesis());
 		BaseMod.addCard(new PrismaticSphere());
@@ -412,7 +409,7 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new MeteorShower());
 		BaseMod.addCard(new PowerOverwhelming());
 		BaseMod.addCard(new MindOverMatter());
-		BaseMod.addCard(new ProtectionWard());
+		BaseMod.addCard(new Disperse());
 		BaseMod.addCard(new Magnetize());
 		BaseMod.addCard(new Illuminate());
 		BaseMod.addCard(new Flow());
@@ -427,7 +424,7 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new Nova());
 		BaseMod.addCard(new Vortex());
 		BaseMod.addCard(new Nexus());
-		
+
 		logger.info("done editting cards");
 	}
 
@@ -477,10 +474,10 @@ public class FruityMod implements PostInitializeSubscriber,
 		
 		// seeker unlock 4
 		BaseMod.addUnlockBundle(new CustomUnlockBundle(
-				"Zenith", "UmbralWave", "Flow"
+				"Zenith", "Singularity", "Flow"
 				), TheSeekerEnum.THE_SEEKER, 4);
 		UnlockTracker.addCard("Zenith");
-		UnlockTracker.addCard("UmbralWave");
+		UnlockTracker.addCard("Singularity");
 		UnlockTracker.addCard("Flow");
 	}
 	
