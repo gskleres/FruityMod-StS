@@ -38,7 +38,7 @@
 	},
 	"Retrograde": {
 		"NAME": "Retrograde",
-		"DESCRIPTION": "Deal !D! damage. Shuffle a copy of this card into your draw pile."
+		"DESCRIPTION": "Deal !D! damage. At the end of the turn, shuffle a copy of this card into your draw pile."
 	},
 	"MagicMissile": {
 		"NAME": "Magic Missile",
