@@ -26,8 +26,8 @@ public class Implosion extends CustomCard {
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 3;
 	private static final int ATTACK_DMG = 38;
-	private static final int UPGRADE_DMG_AMT = 12;
-	private static final int DAZED_AMT = 2;
+	private static final int UPGRADE_DMG_AMT = 10;
+	private static final int DAZED_AMT = 1;
 	private static final int POOL = 1;
 	
 	public Implosion() {

@@ -21,14 +21,14 @@ public class Nova extends CustomCard {
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final int COST = 3;
-    private static final int ATTACK_DMG = 20;
-    private static final int UPGRADE_DMG_AMT = 10;
+    private static final int UPGRADED_COST = 2;
+    private static final int ATTACK_DMG = 24;
     private static final int POOL = 1;
 
     public Nova() {
         super(ID, NAME, FruityMod.makePath(FruityMod.NOVA), COST, DESCRIPTION,
                 AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE,
-                AbstractCard.CardRarity.RARE, CardTarget.ALL_ENEMY, POOL);
+                CardRarity.UNCOMMON, CardTarget.ALL_ENEMY, POOL);
         this.baseDamage = ATTACK_DMG;
         this.isMultiDamage = true;
     }
@@ -48,7 +48,7 @@ public class Nova extends CustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(UPGRADE_DMG_AMT);
+            this.upgradeBaseCost(UPGRADED_COST);
         }
     }
 }

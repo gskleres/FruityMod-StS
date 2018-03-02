@@ -2,6 +2,7 @@ package fruitymod.actions.unique;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.GameActionManager;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -48,7 +49,7 @@ extends AbstractGameAction {
                 for (AbstractCard c : this.p.hand.group) {
                     if (!this.isEligible(c)) continue;
                     for (int i = 0; i < this.dupeAmount; ++i) {
-                        AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(c.makeStatEquivalentCopy()));
+                        AbstractDungeon.actionManager.addToTop(new MakeTempCardInDrawPileAction(p, p, c.makeStatEquivalentCopy(), 1, true, true));
                     }
                     this.isDone = true;
                     return;

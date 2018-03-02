@@ -26,7 +26,7 @@ public class Creativity extends CustomCard {
     public Creativity() {
     	super(ID, NAME, FruityMod.makePath(FruityMod.CREATIVITY), COST, DESCRIPTION,
     			AbstractCard.CardType.POWER, AbstractCardEnum.PURPLE,
-    			AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF, POOL);
+    			CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF, POOL);
     	this.magicNumber = this.baseMagicNumber = DRAW;
     }
     

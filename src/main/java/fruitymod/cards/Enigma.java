@@ -18,7 +18,7 @@ public class Enigma extends CustomCard {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-	private static final int COST = 2;
+	private static final int COST = 1;
 	private static final int AMT = 1;
 	private static final int UPGRADED_AMT = 1;
 	private static final int POOL = 1;
@@ -26,7 +26,7 @@ public class Enigma extends CustomCard {
 	public Enigma() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.ENIGMA), COST, DESCRIPTION,
 				AbstractCard.CardType.POWER, AbstractCardEnum.PURPLE,
-				AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF, POOL);
+				CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF, POOL);
 		this.magicNumber = this.baseMagicNumber = AMT;
 	}
 	

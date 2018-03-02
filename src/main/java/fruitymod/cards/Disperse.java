@@ -14,18 +14,18 @@ import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
 import fruitymod.patches.AbstractCardEnum;
 
-public class ProtectionWard extends CustomCard {
-	public static final String ID = "ProtectionWard";
+public class Disperse extends CustomCard {
+	public static final String ID = "Disperse";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 2;
-	private static final int BLOCK_AMT = 9;
-	private static final int BLOCK_UPGRADE = 3;
+	private static final int BLOCK_AMT = 12;
+	private static final int BLOCK_UPGRADE = 4;
 	private static final int ARTIFACT = 1;
 	private static final int POOL = 1;
 
-	public ProtectionWard() {
+	public Disperse() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.PROTECTION_WARD), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
 				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF, POOL);
 
@@ -41,7 +41,7 @@ public class ProtectionWard extends CustomCard {
 
 	@Override
 	public AbstractCard makeCopy() {
-		return new ProtectionWard();
+		return new Disperse();
 	}
 
 	@Override

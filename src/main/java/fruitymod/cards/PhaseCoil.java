@@ -18,7 +18,7 @@ public class PhaseCoil extends CustomCard {
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 4;
-	private static final int UPGRADE_COST = 1;
+	private static final int UPGRADE_COST = 3;
 	private static final int ATTACK_DMG = 15;
 	private static final int UPGRADE_PLUS_DMG = 3;
 	private static final int POOL = 1;

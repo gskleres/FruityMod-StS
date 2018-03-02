@@ -368,12 +368,12 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new NullStorm());
 		BaseMod.addCard(new VoidRay());
 		BaseMod.addCard(new FluxShield());
-		BaseMod.addCard(new ForceSpike());
+		BaseMod.addCard(new UnstableOrb());
 		BaseMod.addCard(new Hypothesis());
 		BaseMod.addCard(new Comet());
-		BaseMod.addCard(new NebulousBlast());
+		BaseMod.addCard(new ForceRipple());
 		BaseMod.addCard(new PhaseCoil());
-		BaseMod.addCard(new PowerSpike());
+		BaseMod.addCard(new Overload());
 		BaseMod.addCard(new Syzygy());
 		BaseMod.addCard(new SiphonPower());
 		BaseMod.addCard(new Shimmer());
@@ -409,7 +409,7 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new MeteorShower());
 		BaseMod.addCard(new PowerOverwhelming());
 		BaseMod.addCard(new MindOverMatter());
-		BaseMod.addCard(new ProtectionWard());
+		BaseMod.addCard(new Disperse());
 		BaseMod.addCard(new Magnetize());
 		BaseMod.addCard(new Illuminate());
 		BaseMod.addCard(new Flow());

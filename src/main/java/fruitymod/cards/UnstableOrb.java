@@ -14,11 +14,12 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.FrailPower;
 
 import basemod.abstracts.CustomCard;
+import com.megacrit.cardcrawl.powers.WeakPower;
 import fruitymod.FruityMod;
 import fruitymod.patches.AbstractCardEnum;
 
-public class ForceSpike extends CustomCard {
-	public static final String ID = "ForceSpike";
+public class UnstableOrb extends CustomCard {
+	public static final String ID = "UnstableOrb";
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
@@ -28,7 +29,7 @@ public class ForceSpike extends CustomCard {
 	private static final int FRAIL_AMT = 2;
 	private static final int POOL = 1;
 
-	public ForceSpike() {
+	public UnstableOrb() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.FORCE_SPIKE), COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
 				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY, POOL);
 		this.damage = this.baseDamage = ATTACK_DMG;
@@ -40,12 +41,12 @@ public class ForceSpike extends CustomCard {
 		AbstractDungeon.actionManager.addToBottom(new DamageAction((AbstractCreature) m,
 				new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
 		AbstractDungeon.actionManager.addToBottom(
-				new ApplyPowerAction(p, p, new FrailPower(p, this.magicNumber, false), this.magicNumber, true));
+				new ApplyPowerAction(p, p, new WeakPower(p, this.magicNumber, false), this.magicNumber, true));
 	}
 
 	@Override
 	public AbstractCard makeCopy() {
-		return new ForceSpike();
+		return new UnstableOrb();
 	}
 
 	@Override

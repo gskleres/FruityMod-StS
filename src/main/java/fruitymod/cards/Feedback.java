@@ -40,9 +40,8 @@ public class Feedback extends CustomCard {
 		AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(m, p, "Weakened"));
 		AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(m, p, "Vulnerable"));
 		this.baseDamage = this.magicNumber * debuffCount;
-		this.calculateCardDamage(m);
-		AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-
+		m.currentHealth -= this.baseDamage;
+		m.healthBarUpdatedEvent();
 	}
 	
     private int GetPowerCount(AbstractCreature c, String powerId) {

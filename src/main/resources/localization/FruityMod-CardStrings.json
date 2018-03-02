@@ -96,7 +96,7 @@
 	},
 	"Entropy": {
 		"NAME": "Entropy",
-		"DESCRIPTION": "Ethereal. NL Deal !D! damage. NL Enemy loses !M! Strength."
+		"DESCRIPTION": "Ethereal. NL Deal !D! damage. NL Enemy loses !M! Strength. NL Increase this cards values by 1 until the end of combat."
 	},
 	"PhaseCoil": {
 		"NAME": "Phase Coil",
@@ -115,17 +115,17 @@
 		"NAME": "Flare",
 		"DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable."
 	},
-	"ForceSpike": {
+	"UnstableOrb": {
 		"NAME": "Unstable Orb",
-		"DESCRIPTION": "Deal !D! damage. NL Gain !M! Frail."
+		"DESCRIPTION": "Deal !D! damage. NL Gain !M! Weak."
 	},
-	"NebulousBlast": {
+	"ForceRipple": {
 		"NAME": "Force Ripple",
 		"DESCRIPTION": "Deal !D! damage. NL Shuffle all non-Ethereal cards into your draw pile."
 	},
 	"SiphonPower": {
 		"NAME": "Siphon Power",
-		"DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak. NL Gain 1 Strength."
+		"DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable. NL Gain 1 Strength."
 	},
 	"Syzygy": {
 		"NAME": "Syzygy",
@@ -177,7 +177,8 @@
 	},
 	"Brainstorm": {
 		"NAME": "Brainstorm",
-		"DESCRIPTION": "Shuffle your discard pile and a Dazed into your draw pile. NL Draw !M! cards."
+		"DESCRIPTION": "Shuffle your discard pile and a Dazed into your draw pile. NL Next turn, draw !M! card.",
+		"UPGRADE_DESCRIPTiON": "Shuffle your discard pile and a Dazed into your draw pile. NL Next turn, draw !M! cards."
 	},
 	"Brilliance": {
 		"NAME": "Brilliance",
@@ -199,23 +200,23 @@
 	},
 	"Flow": {
 		"NAME": "Flow",
-		"DESCRIPTION": "Ethereal. NL Retain all excess Energy at the end of turn."
+		"DESCRIPTION": "Ethereal. NL Retain all excess Energy at the end of turn. NL Draw 1 extra card next turn."
 	},
 	"Illuminate": {
 		"NAME": "Illuminate",
-		"DESCRIPTION": "Create !M! copy of an Ethereal card in your hand.",
-		"UPGRADE_DESCRIPTION": "Create !M! copies of an Ethereal card in your hand."
+		"DESCRIPTION": "Create !M! copy of an Ethereal card in your hand. NL Shuffle it into your draw pile.",
+		"UPGRADE_DESCRIPTION": "Create !M! copies of an Ethereal card in your hand. NL Shuffle it into your draw pile."
 	},
 	"MindOverMatter": {
 		"NAME": "Mind Over Matter",
-		"DESCRIPTION": "Gain !M! Block for each Frail you have. Remove all Frail.",
-		"EXTENDED_DESCRIPTION": [ "I am not Frail."]
+		"DESCRIPTION": "Remove all Frail, Weak, and Vulnerable. NL Gain !M! Block for each stack removed.",
+		"EXTENDED_DESCRIPTION": [ "I am not Frail, Weak or Vulnerable."]
 	},
-	"PowerSpike": {
+	"Overload": {
 		"NAME": "Overload",
 		"DESCRIPTION": "Gain [R] [R]. NL Gain !M! Frail."
 	},
-	"ProtectionWard": {
+	"Disperse": {
 		"NAME": "Disperse",
 		"DESCRIPTION": "Gain !B! Block. Gain !M! Artifact."
 	},
@@ -229,7 +230,7 @@
 	},
 	"SiphonSpeed": {
 		"NAME": "Siphon Speed",
-		"DESCRIPTION": "Gain !B! Block. NL Apply !M! Vulnerable. NL Gain 1 Dexterity."
+		"DESCRIPTION": "Gain !B! Block. NL Apply !M! Weak. NL Gain 1 Dexterity."
 	},
 	"StrokeOfGenius": {
 		"NAME": "Stroke of Genius",
@@ -247,8 +248,8 @@
 	},
 	"Feedback": {
 		"NAME": "Feedback",
-		"DESCRIPTION": "Remove all Weak and Vulnerable from an Enemy. NL Deal !M! damage per stack removed.",
-		"EXTENDED_DESCRIPTION": [ " NL (Deals !D! damage)"]		
+		"DESCRIPTION": "Remove all Weak and Vulnerable from an Enemy. NL That enemy loses !M! HP per stack removed.",
+		"EXTENDED_DESCRIPTION": [ " NL (Will lose !D! HP.)"]
 	},
 	"Implosion": {
 		"NAME": "Implosion",
