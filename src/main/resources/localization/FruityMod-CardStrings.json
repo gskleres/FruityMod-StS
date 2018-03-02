@@ -294,8 +294,8 @@
 	},
 	"Echo": {
 		"NAME": "Echo",
-		"DESCRIPTION": "Play the next Ethereal card twice.",
-		"UPGRADE_DESCRIPTION": "Play the next 2 Ethereal cards twice."
+		"DESCRIPTION": "This turn, your next Ethereal card is played twice.",
+		"UPGRADE_DESCRIPTION": "This turn, your next 2 Ethereal cards are played twice."
 	},
 	"Eclipse": {
 		"NAME": "Eclipse",
