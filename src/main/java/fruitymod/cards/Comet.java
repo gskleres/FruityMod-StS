@@ -23,18 +23,46 @@ extends CustomCard {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    private static final int COST = 2;
-    private static final int ATTACK_DMG = 16;
-    private static final int UPGRADE_DMG_AMT = 6;
+    private static final int COST = 1;
+    private static final int ATTACK_DMG = 5;
+    private static final int UPGRADE_DMG_AMT = 3;
+    private static final int ETHERAL_DMG = 1;
+    private static final int UPGRADE_ETHEREAL_DMG_AMT = 1;
     private static final int POOL = 1;
 
     public Comet() {
         super(ID, NAME, FruityMod.makePath(FruityMod.COMET), COST, DESCRIPTION,
         		AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE,
-        		AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY, POOL);
-        this.damage = this.baseDamage = ATTACK_DMG;
+        		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY, POOL);
+        this.baseDamage = ATTACK_DMG;
+        this.magicNumber = this.baseMagicNumber = ETHERAL_DMG;
     }
-
+    
+    public static int countCards() {
+    	int count = 0;
+    	for (AbstractCard c : AbstractDungeon.player.hand.group) {
+    		if (c.isEthereal) {
+    			count++;
+    		}
+    	}
+    	for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
+    		if (c.isEthereal) {
+    			count++;
+    		}
+    	}
+    	for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
+    		if (c.isEthereal) {
+    			count++;
+    		}
+    	}
+    	return count;
+    }
+    
+    @Override
+    public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
+    	return tmp + this.magicNumber * countCards();
+    }
+    
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new VFXAction(new MindblastEffect(p.dialogX, p.dialogY)));
@@ -51,6 +79,7 @@ extends CustomCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeDamage(UPGRADE_DMG_AMT);
+            this.upgradeMagicNumber(UPGRADE_ETHEREAL_DMG_AMT);
         }
     }
 }
