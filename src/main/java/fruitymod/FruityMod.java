@@ -2,7 +2,6 @@ package fruitymod;
 
 import java.nio.charset.StandardCharsets;
 
-import com.megacrit.cardcrawl.helpers.GameDictionary;
 import fruitymod.cards.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -81,6 +80,7 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String COMET = "cards/comet.png";
     public static final String CORONA = "cards/corona.png";
     public static final String CREATIVITY = "cards/creativity.png";
+    public static final String DARK_MATTER = "cards/dark_matter.png";
     public static final String DEFEND_PURPLE = "cards/defend_purple.png";
     public static final String ARCANE_ARMOR = "cards/arcane_armor.png";
     public static final String ECHO = "cards/echo.png";
@@ -356,6 +356,7 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new Irradiate());
 		BaseMod.addCard(new AstralHaze());
 		BaseMod.addCard(new Brainstorm());
+		BaseMod.addCard(new DarkMatter());
 		BaseMod.addCard(new ArcaneArmor());
 		BaseMod.addCard(new Entropy());
 		BaseMod.addCard(new EssenceDart());		

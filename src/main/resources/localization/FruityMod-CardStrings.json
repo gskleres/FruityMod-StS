@@ -90,9 +90,9 @@
 		"NAME": "Genesis",
 		"DESCRIPTION": "Ethereal. NL Gain !B! Block. NL Draw !M! cards."
 	},
-	"ArcaneTempest": {
-		"NAME": "Arcane Tempest",
-		"DESCRIPTION": "Deal !D! damage and apply !M! Weak and !M! Vulnerable to ALL enemies."
+	"DarkMatter": {
+		"NAME": "Dark Matter",
+		"DESCRIPTION": "Deal !M! damage for each Ethereal card that has been Exhausted this combat."
 	},
 	"Entropy": {
 		"NAME": "Entropy",
