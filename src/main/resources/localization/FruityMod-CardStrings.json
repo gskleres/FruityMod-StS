@@ -11,9 +11,9 @@
 		"NAME": "Astral Haze",
 		"DESCRIPTION": "Ethereal. The first time each enemy attacks you this turn, apply !M! Weak and !M! Vulnerable to it."
 	},
-	"ArcaneBarrage": {
+	"Starburst": {
 		"NAME": "Starburst",
-		"DESCRIPTION": "Deal !D! damage and apply !M! Vulnerable to ALL enemies."
+		"DESCRIPTION": "Deal !D! damage to an enemy and then ALL other enemies lose !M! HP."
 	},
 	"Irradiate": {
 		"NAME": "Irradiate",
