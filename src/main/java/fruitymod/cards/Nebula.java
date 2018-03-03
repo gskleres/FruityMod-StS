@@ -4,7 +4,9 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.utility.ExhaustAllEtherealAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
@@ -13,8 +15,10 @@ import fruitymod.patches.AbstractCardEnum;
 
 public class Nebula extends CustomCard {
 	public static final String ID = "Nebula";
-	public static final String NAME = "Nebula";
-	public static final String DESCRIPTION = "Ethereal. NL Gain !B! Block for every Ethereal card in your hand.";
+	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+	public static final String NAME = cardStrings.NAME;
+	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+	public static final String EXTENDED_DESCRIPTION = " NL (You will gain !B! Block)";
 	private static final int COST = 1;
 	private static final int BLOCK_AMT = 4;
 	private static final int UPGRADE_BLOCK_AMT = 3;
@@ -24,19 +28,44 @@ public class Nebula extends CustomCard {
 		super(ID, NAME, FruityMod.makePath(FruityMod.NEBULA), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
 				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF, POOL);
 
-		this.baseBlock = BLOCK_AMT;
+		this.magicNumber = this.baseMagicNumber = BLOCK_AMT;
 		this.isEthereal = true;
 	}
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
+		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
+	}
+	
+	@Override
+	public void applyPowers() {
+		this.baseBlock = countEtherealInHand() * this.magicNumber;
+		super.applyPowers();
+		this.setDescription(true);
+	}
+	
+	public static int countEtherealInHand() {
 		int etherealCount = 0;
-		for (AbstractCard c : p.hand.group) {
+		for (AbstractCard c : AbstractDungeon.player.hand.group) {
 			if (!c.isEthereal)
 				continue;
 			etherealCount++;
 		}
-		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block * etherealCount));
+		return etherealCount;
+	}
+	
+	@Override
+	public void calculateCardDamage(AbstractMonster mo) {
+		super.calculateCardDamage(mo);
+		this.setDescription(true);
+	}
+	
+	private void setDescription(boolean addExtended) {
+		this.rawDescription = DESCRIPTION;
+		if (addExtended) {
+			this.rawDescription += EXTENDED_DESCRIPTION;
+		}
+		this.initializeDescription();
 	}
 
 	@Override
@@ -70,7 +99,7 @@ public class Nebula extends CustomCard {
 	public void upgrade() {
 		if (!this.upgraded) {
 			this.upgradeName();
-			this.upgradeBlock(UPGRADE_BLOCK_AMT);
+			this.upgradeMagicNumber(UPGRADE_BLOCK_AMT);
 		}
 	}
 }

@@ -44,7 +44,7 @@ public class MeteorShower extends CustomCard {
 	public void applyPowers() {
 		this.baseDamage = AbstractDungeon.player.drawPile.size() * ATTACK_DMG_PER_CARD;
 		super.applyPowers();		
-		this.setDescription(false);
+		this.setDescription(true);
 	}
 
 	@Override
@@ -54,7 +54,7 @@ public class MeteorShower extends CustomCard {
 	}
 	
 	private void setDescription(boolean addExtended) {
-		this.rawDescription = (this.isEthereal ? "Ethereal." : "") + (!this.upgraded ? DESCRIPTION : UPGRADE_DESCRIPTION);
+		this.rawDescription = (this.isEthereal ? "Ethereal. " : "") + (!this.upgraded ? DESCRIPTION : UPGRADE_DESCRIPTION);
 		if(addExtended) {
 			this.rawDescription += EXTENDED_DESCRIPTION;
 		}
