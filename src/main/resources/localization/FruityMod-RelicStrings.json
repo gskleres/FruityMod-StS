@@ -3,7 +3,24 @@
     "NAME": "Arcanosphere",
     "FLAVOR": "The Arcanosphere is a powerful relic brought by The Seeker from the Astral Plane.",
     "DESCRIPTIONS": [
-      "At the end of your turn, you may #yRecycle 1 card."
+      "At the end of your turn, you may #yRecycle #b1 card."
     ]
+  },
+  "PurpleSkull": {
+  	"NAME": "Purple Skull",
+  	"FLAVOR": "A small skull imbued with chaotic power.",
+  	"DESCRIPTIONS": [
+  		"While you have #b",
+  		" or more stacks of #yWeak, #yVulnerable, or #yFrail, gain #b",
+  		" #yDexterity"
+  	]
+  },
+  "GhostlyHand": {
+  	"NAME": "Ghostly Hand",
+  	"FLAVOR": "Phases in and out of existence. Cool to the touch.",
+  	"DESCRIPTIONS": [
+  		"Whenever an #yEthereal card enters your Exhaust Pile, gain #b",
+  		" HP."
+  	]
   }
 }

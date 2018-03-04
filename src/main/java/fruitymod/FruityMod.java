@@ -10,6 +10,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -22,6 +23,7 @@ import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
+import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import basemod.BaseMod;
@@ -33,19 +35,97 @@ import basemod.interfaces.EditKeywordsSubscriber;
 import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.OnCardUseSubscriber;
+import basemod.interfaces.OnPowersModifiedSubscriber;
+import basemod.interfaces.PostExhaustSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import basemod.interfaces.SetUnlocksSubscriber;
-import fruitymod.cards.*;
+import fruitymod.cards.Anomaly;
+import fruitymod.cards.ArcaneArmor;
+import fruitymod.cards.Archives;
+import fruitymod.cards.AstralHaze;
+import fruitymod.cards.AstralShift;
+import fruitymod.cards.Brainstorm;
+import fruitymod.cards.Brilliance;
+import fruitymod.cards.Channel;
+import fruitymod.cards.ChaosForm;
+import fruitymod.cards.Coalescence;
+import fruitymod.cards.Comet;
+import fruitymod.cards.Convergence;
+import fruitymod.cards.Corona;
+import fruitymod.cards.Creativity;
+import fruitymod.cards.DarkMatter;
+import fruitymod.cards.Defend_Purple;
+import fruitymod.cards.Disperse;
+import fruitymod.cards.Echo;
+import fruitymod.cards.Eclipse;
+import fruitymod.cards.Enigma;
+import fruitymod.cards.Entropy;
+import fruitymod.cards.Equinox;
+import fruitymod.cards.EssenceDart;
+import fruitymod.cards.EtherBlast;
+import fruitymod.cards.Eureka;
+import fruitymod.cards.EventHorizon;
+import fruitymod.cards.Feedback;
+import fruitymod.cards.Flare;
+import fruitymod.cards.Flicker;
+import fruitymod.cards.Flow;
+import fruitymod.cards.Flux;
+import fruitymod.cards.FluxShield;
+import fruitymod.cards.ForceRipple;
+import fruitymod.cards.Genesis;
+import fruitymod.cards.GravityWell;
+import fruitymod.cards.Hypothesis;
+import fruitymod.cards.Illuminate;
+import fruitymod.cards.Implosion;
+import fruitymod.cards.Irradiate;
+import fruitymod.cards.MagicMissile;
+import fruitymod.cards.Magnetize;
+import fruitymod.cards.MeteorShower;
+import fruitymod.cards.MindOverMatter;
+import fruitymod.cards.Nebula;
+import fruitymod.cards.Nexus;
+import fruitymod.cards.Nova;
+import fruitymod.cards.NullStorm;
+import fruitymod.cards.Overload;
+import fruitymod.cards.PeriaptOfCelerity;
+import fruitymod.cards.PeriaptOfPotency;
+import fruitymod.cards.PhaseCoil;
+import fruitymod.cards.PlasmaWave;
+import fruitymod.cards.PowerOverwhelming;
+import fruitymod.cards.PrismaticSphere;
+import fruitymod.cards.PulseBarrier;
+import fruitymod.cards.ReflectionWard;
+import fruitymod.cards.Retrograde;
+import fruitymod.cards.RunicBinding;
+import fruitymod.cards.Shimmer;
+import fruitymod.cards.Singularity;
+import fruitymod.cards.SiphonPower;
+import fruitymod.cards.SiphonSpeed;
+import fruitymod.cards.Starburst;
+import fruitymod.cards.Strike_Purple;
+import fruitymod.cards.StrokeOfGenius;
+import fruitymod.cards.Surge;
+import fruitymod.cards.Syzygy;
+import fruitymod.cards.ThoughtRaze;
+import fruitymod.cards.Transference;
+import fruitymod.cards.UmbralBolt;
+import fruitymod.cards.UnstableOrb;
+import fruitymod.cards.Vacuum;
+import fruitymod.cards.VoidRay;
+import fruitymod.cards.Vortex;
+import fruitymod.cards.Zenith;
 import fruitymod.characters.TheSeeker;
 import fruitymod.patches.AbstractCardEnum;
 import fruitymod.patches.TheSeekerEnum;
 import fruitymod.relics.Arcanosphere;
+import fruitymod.relics.GhostlyHand;
+import fruitymod.relics.PurpleSkull;
 
 @SpireInitializer
 public class FruityMod implements PostInitializeSubscriber,
 	EditCardsSubscriber, EditRelicsSubscriber, EditCharactersSubscriber,
 	EditStringsSubscriber, SetUnlocksSubscriber, OnCardUseSubscriber,
-	EditKeywordsSubscriber {
+	EditKeywordsSubscriber, OnPowersModifiedSubscriber, PostExhaustSubscriber {
 	public static final Logger logger = LogManager.getLogger(FruityMod.class.getName());
 	
     private static final String MODNAME = "FruityMod";
@@ -170,6 +250,8 @@ public class FruityMod implements PostInitializeSubscriber,
 
     // relic images
     public static final String ARCANOSPHERE_RELIC = "relics/arcanosphere.png";
+    public static final String PURPLE_SKULL_RELIC = "relics/purpleSkull.png";
+    public static final String GHOSTLY_HAND_RELIC = "relics/ghostlyHand.png";
     
     // seeker assets
     private static final String SEEKER_BUTTON = "charSelect/seekerButton.png";
@@ -240,18 +322,28 @@ public class FruityMod implements PostInitializeSubscriber,
     	return new Texture(makePath(ENIGMA_POWER));
     }
     
+    public static Texture getBrillancePowerTexture() {
+    	return new Texture(makePath(BRILLIANCE_POWER));
+    }
+    
+    public static Texture getAnomalyPowerTexture() {
+    	return new Texture(makePath(BRILLIANCE_POWER));
+    }
+    
+    public static Texture getNexusPowerTexture() {
+    	return new Texture(makePath(VIGOR_POWER));
+    }
+    
     public static Texture getArcanoSphereTexture() {
     	return new Texture(makePath(ARCANOSPHERE_RELIC));
     }
     
-    public static Texture getBrillancePowerTexture() {
-    	return new Texture(makePath(BRILLIANCE_POWER));
+    public static Texture getPurpleSkullTexture() {
+    	return new Texture(makePath(PURPLE_SKULL_RELIC));
     }
-    public static Texture getAnomalyPowerTexture() {
-    	return new Texture(makePath(BRILLIANCE_POWER));
-    }
-    public static Texture getNexusPowerTexture() {
-    	return new Texture(makePath(VIGOR_POWER));
+    
+    public static Texture getGhostlyHandTexture() {
+    	return new Texture(makePath(GHOSTLY_HAND_RELIC));
     }
 
     /**
@@ -288,6 +380,9 @@ public class FruityMod implements PostInitializeSubscriber,
         
         logger.info("subscribing to editKeywords event");
         BaseMod.subscribeToEditKeywords(this);
+        
+        BaseMod.subscribeToOnPowersModified(this);
+        BaseMod.subscribeToPostExhaust(this);
         
         /*
          * Note that for now when installing FruityMod, in the `mods/` folder another folder named
@@ -345,6 +440,8 @@ public class FruityMod implements PostInitializeSubscriber,
         
         // Add relics
         RelicLibrary.add(new Arcanosphere());
+        RelicLibrary.add(new PurpleSkull());
+        RelicLibrary.add(new GhostlyHand());
         
         logger.info("done editting relics");
 	}
@@ -539,5 +636,54 @@ public class FruityMod implements PostInitializeSubscriber,
         logger.info("setting up custom keywords");
         BaseMod.addKeyword(new String[] {"reflect", "Reflect"}, "Whenever you are attacked this turn, deal this amount of damage back back to the attacker.");
         BaseMod.addKeyword(new String[] {"recycle", "Recycle"}, "Place a card from your hand on the top of your draw pile.");
+	}
+
+	private boolean moreThanXStacks(AbstractPlayer player, String powerID, int stacksWanted) {
+		if (player != null && player.hasPower(powerID) && player.getPower(powerID).amount >= stacksWanted) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	private boolean isApplyingPurpleSkull = false;
+	
+	@Override
+	public void receivePowersModified() {
+		AbstractPlayer p = AbstractDungeon.player;
+		
+		if (p != null && p.hasRelic("PurpleSkull")) {
+			if (moreThanXStacks(p, "Weakened", PurpleSkull.MIN_STACKS) ||
+					moreThanXStacks(p, "Vulnerable", PurpleSkull.MIN_STACKS) ||
+					moreThanXStacks(p, "Frail", PurpleSkull.MIN_STACKS)) {
+				if (!isApplyingPurpleSkull) {
+					AbstractDungeon.actionManager.addToTop(
+							new ApplyPowerAction(p, p, new DexterityPower(p, PurpleSkull.DEX_GAIN), PurpleSkull.DEX_GAIN));
+					isApplyingPurpleSkull = true;
+					p.getRelic("PurpleSkull").flash();
+					((PurpleSkull) p.getRelic("PurpleSkull")).setPulse(true);
+				}
+			} else {
+				if (isApplyingPurpleSkull) {
+					AbstractDungeon.actionManager.addToTop(
+							new ApplyPowerAction(p, p, new DexterityPower(p, -1 * PurpleSkull.DEX_GAIN), -1 * PurpleSkull.DEX_GAIN));
+					isApplyingPurpleSkull = false;
+					((PurpleSkull) p.getRelic("PurpleSkull")).setPulse(false);
+				}
+			}
+		}
+	}
+
+	@Override
+	public void receivePostExhaust(AbstractCard c) {
+		AbstractPlayer p = AbstractDungeon.player;
+		
+		if (p != null && p.hasRelic("GhostlyHand")) {
+			if (c.isEthereal) {
+				p.heal(GhostlyHand.HP_PER_CARD);
+				p.getRelic("GhostlyHand").flash();
+			}
+		}
+		
 	}
 }
