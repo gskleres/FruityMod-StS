@@ -118,6 +118,7 @@ import fruitymod.characters.TheSeeker;
 import fruitymod.patches.AbstractCardEnum;
 import fruitymod.patches.TheSeekerEnum;
 import fruitymod.relics.Arcanosphere;
+import fruitymod.relics.AstralEgg;
 import fruitymod.relics.GhostlyHand;
 import fruitymod.relics.PurpleSkull;
 
@@ -252,6 +253,7 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String ARCANOSPHERE_RELIC = "relics/arcanosphere.png";
     public static final String PURPLE_SKULL_RELIC = "relics/purpleSkull.png";
     public static final String GHOSTLY_HAND_RELIC = "relics/ghostlyHand.png";
+    public static final String ASTRAL_EGG_RELIC = "relics/astralEgg.png";
     
     // seeker assets
     private static final String SEEKER_BUTTON = "charSelect/seekerButton.png";
@@ -344,6 +346,10 @@ public class FruityMod implements PostInitializeSubscriber,
     
     public static Texture getGhostlyHandTexture() {
     	return new Texture(makePath(GHOSTLY_HAND_RELIC));
+    }
+    
+    public static Texture getAstralEggTexture() {
+    	return new Texture(makePath(ASTRAL_EGG_RELIC));
     }
 
     /**
@@ -442,6 +448,7 @@ public class FruityMod implements PostInitializeSubscriber,
         RelicLibrary.add(new Arcanosphere());
         RelicLibrary.add(new PurpleSkull());
         RelicLibrary.add(new GhostlyHand());
+        RelicLibrary.add(new AstralEgg());
         
         logger.info("done editting relics");
 	}

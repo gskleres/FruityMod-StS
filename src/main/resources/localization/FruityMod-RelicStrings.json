@@ -22,5 +22,12 @@
   		"Whenever an #yEthereal card enters your Exhaust Pile, gain #b",
   		" HP."
   	]
+  },
+  "AstralEgg": {
+  	"NAME": "Astral Egg",
+  	"FLAVOR": "The egg of an interdimensional leviathan. Best to not let it hatch.",
+  	"DESCRIPTIONS": [
+  		"Whenever you add an #yEthereal card to your deck, it is #yUpgraded"
+  	]
   }
 }
