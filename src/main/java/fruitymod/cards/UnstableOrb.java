@@ -11,10 +11,9 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.FrailPower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 
 import basemod.abstracts.CustomCard;
-import com.megacrit.cardcrawl.powers.WeakPower;
 import fruitymod.FruityMod;
 import fruitymod.patches.AbstractCardEnum;
 
@@ -26,14 +25,14 @@ public class UnstableOrb extends CustomCard {
 	private static final int COST = 1;
 	private static final int ATTACK_DMG = 12;
 	private static final int UPGRADE_DMG_AMT = 5;
-	private static final int FRAIL_AMT = 2;
+	private static final int WEAK_AMT = 2;
 	private static final int POOL = 1;
 
 	public UnstableOrb() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.FORCE_SPIKE), COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
 				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY, POOL);
 		this.damage = this.baseDamage = ATTACK_DMG;
-		this.magicNumber = this.baseMagicNumber = FRAIL_AMT;
+		this.magicNumber = this.baseMagicNumber = WEAK_AMT;
 	}
 
 	@Override
