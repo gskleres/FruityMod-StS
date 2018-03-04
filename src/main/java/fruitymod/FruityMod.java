@@ -2,7 +2,6 @@ package fruitymod;
 
 import java.nio.charset.StandardCharsets;
 
-import fruitymod.cards.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -15,6 +14,7 @@ import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -34,6 +34,81 @@ import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.OnCardUseSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import basemod.interfaces.SetUnlocksSubscriber;
+import fruitymod.cards.Anomaly;
+import fruitymod.cards.ArcaneArmor;
+import fruitymod.cards.Archives;
+import fruitymod.cards.AstralHaze;
+import fruitymod.cards.AstralShift;
+import fruitymod.cards.Brainstorm;
+import fruitymod.cards.Brilliance;
+import fruitymod.cards.Channel;
+import fruitymod.cards.ChaosForm;
+import fruitymod.cards.Coalescence;
+import fruitymod.cards.Comet;
+import fruitymod.cards.Convergence;
+import fruitymod.cards.Corona;
+import fruitymod.cards.Creativity;
+import fruitymod.cards.DarkMatter;
+import fruitymod.cards.Defend_Purple;
+import fruitymod.cards.Disperse;
+import fruitymod.cards.Echo;
+import fruitymod.cards.Eclipse;
+import fruitymod.cards.Enigma;
+import fruitymod.cards.Entropy;
+import fruitymod.cards.Equinox;
+import fruitymod.cards.EssenceDart;
+import fruitymod.cards.EtherBlast;
+import fruitymod.cards.Eureka;
+import fruitymod.cards.EventHorizon;
+import fruitymod.cards.Feedback;
+import fruitymod.cards.Flare;
+import fruitymod.cards.Flicker;
+import fruitymod.cards.Flow;
+import fruitymod.cards.Flux;
+import fruitymod.cards.FluxShield;
+import fruitymod.cards.ForceRipple;
+import fruitymod.cards.Genesis;
+import fruitymod.cards.GravityWell;
+import fruitymod.cards.Hypothesis;
+import fruitymod.cards.Illuminate;
+import fruitymod.cards.Implosion;
+import fruitymod.cards.Irradiate;
+import fruitymod.cards.MagicMissile;
+import fruitymod.cards.Magnetize;
+import fruitymod.cards.MeteorShower;
+import fruitymod.cards.MindOverMatter;
+import fruitymod.cards.Nebula;
+import fruitymod.cards.Nexus;
+import fruitymod.cards.Nova;
+import fruitymod.cards.NullStorm;
+import fruitymod.cards.Overload;
+import fruitymod.cards.PeriaptOfCelerity;
+import fruitymod.cards.PeriaptOfPotency;
+import fruitymod.cards.PhaseCoil;
+import fruitymod.cards.PlasmaWave;
+import fruitymod.cards.PowerOverwhelming;
+import fruitymod.cards.PrismaticSphere;
+import fruitymod.cards.PulseBarrier;
+import fruitymod.cards.ReflectionWard;
+import fruitymod.cards.Retrograde;
+import fruitymod.cards.RunicBinding;
+import fruitymod.cards.Shimmer;
+import fruitymod.cards.Singularity;
+import fruitymod.cards.SiphonPower;
+import fruitymod.cards.SiphonSpeed;
+import fruitymod.cards.Starburst;
+import fruitymod.cards.Strike_Purple;
+import fruitymod.cards.StrokeOfGenius;
+import fruitymod.cards.Surge;
+import fruitymod.cards.Syzygy;
+import fruitymod.cards.ThoughtRaze;
+import fruitymod.cards.Transference;
+import fruitymod.cards.UmbralBolt;
+import fruitymod.cards.UnstableOrb;
+import fruitymod.cards.Vacuum;
+import fruitymod.cards.VoidRay;
+import fruitymod.cards.Vortex;
+import fruitymod.cards.Zenith;
 import fruitymod.characters.TheSeeker;
 import fruitymod.patches.AbstractCardEnum;
 import fruitymod.patches.TheSeekerEnum;
@@ -482,7 +557,7 @@ public class FruityMod implements PostInitializeSubscriber,
 		UnlockTracker.addCard("Flow");
 	}
 	
-	// used by fruitymod.patches.com.megacrit.cards.AbstractCard.CanUsedDazed
+	// used by fruitymod.patches.com.megacrit.cardcrawl.cards.AbstractCard.CanUsedDazed
 	public static boolean hasRelicCustom(String relicID, AbstractCard card) {
 		System.out.println("I was checked!");
 		// if it's checking for relicID.equals("Medical Kit") then we know we're in the block where
@@ -495,6 +570,17 @@ public class FruityMod implements PostInitializeSubscriber,
 		}
 	}
 
+	// used by fruitmod.patches.com.megacrit.cardcrawl.cards.status.Dazed.UseDazed
+	public static void maybeUseDazed(Dazed dazed) {
+		System.out.println("maybe use dazed");
+		if (!AbstractDungeon.player.hasPower("EnigmaPower")) {
+			System.out.println("do use dazed");
+			AbstractDungeon.actionManager.addToTop(new com.megacrit.cardcrawl.actions.utility.UseCardAction(dazed));
+		} else {
+			System.out.println("don't use dazed");
+		}
+	}
+	
 	@Override
 	public void receiveCardUsed(AbstractCard c) {
 		AbstractPlayer p = AbstractDungeon.player;
@@ -507,6 +593,10 @@ public class FruityMod implements PostInitializeSubscriber,
 					DamageInfo.createDamageMatrix(stacks + strength, true),
 					DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
 			c.exhaustOnUseOnce = true;
+			c.dontTriggerOnUseCard = true;
+			if (p.hasPower("Hex")) {
+				p.getPower("Hex").onUseCard(c, null);
+			}
 		}
 	}
 }
