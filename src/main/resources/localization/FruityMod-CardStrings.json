@@ -182,7 +182,7 @@
 	"Brainstorm": {
 		"NAME": "Brainstorm",
 		"DESCRIPTION": "Shuffle your discard pile and a Dazed into your draw pile. NL Next turn, draw !M! card.",
-		"UPGRADE_DESCRIPTiON": "Shuffle your discard pile and a Dazed into your draw pile. NL Next turn, draw !M! cards."
+		"UPGRADE_DESCRIPTION": "Shuffle your discard pile and a Dazed into your draw pile. NL Next turn, draw !M! cards."
 	},
 	"Brilliance": {
 		"NAME": "Brilliance",
