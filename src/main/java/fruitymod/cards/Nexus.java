@@ -18,24 +18,21 @@ public class Nexus extends CustomCard {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    private static final int COST = 3;
-    private static final int COST_UPGRADED = 3;
-    private static final int BLOCK = 1;
-    private static final int BLOCK_UPGRADE = 1;
+    private static final int COST = 2;
+    private static final int COST_UPGRADED = 1;
     private static final int POOL = 1;
     
     public Nexus() {
     	super(ID, NAME, FruityMod.makePath(FruityMod.CREATIVITY), COST, DESCRIPTION,
     			AbstractCard.CardType.POWER, AbstractCardEnum.PURPLE,
     			AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF, POOL);
-    	this.magicNumber = this.baseMagicNumber = BLOCK;
     }
     
     
     
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {  
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new NexusPower(p, this.magicNumber), this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new NexusPower(p, 1), 1));
     }    
     
     @Override
@@ -48,7 +45,6 @@ public class Nexus extends CustomCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeBaseCost(COST_UPGRADED);
-            this.upgradeMagicNumber(BLOCK_UPGRADE);
         }
     }
 }

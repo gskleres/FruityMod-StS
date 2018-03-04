@@ -1,6 +1,5 @@
 package fruitymod.powers;
 
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -12,14 +11,15 @@ import basemod.interfaces.PostBattleSubscriber;
 import basemod.interfaces.PostDrawSubscriber;
 import basemod.interfaces.PostDungeonInitializeSubscriber;
 import fruitymod.FruityMod;
+import fruitymod.actions.common.MakeTempCardInDrawPileEtherealAction;
 
 public class NexusPower extends AbstractPower implements PostDrawSubscriber, PostBattleSubscriber,
 	PostDungeonInitializeSubscriber {
 	public static final String POWER_ID = "Nexus";
 	public static final String NAME = "Nexus";
 	public static final String[] DESCRIPTIONS = new String[] {
-			"Whenever you draw an Ethereal card, gain ",
-			" Block."
+			"Whenever you draw a non-Ethereal card, shuffle ", 
+			" Ethereal copy of it into your draw pile."
 	};
 	
 	public NexusPower(AbstractCreature owner, int amount) {
@@ -47,8 +47,10 @@ public class NexusPower extends AbstractPower implements PostDrawSubscriber, Pos
 	
 	@Override
 	public void receivePostDraw(AbstractCard c) {
-		if(c.isEthereal) {
-			AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.owner, this.owner, this.amount));
+		if(!c.isEthereal) {
+			AbstractDungeon.actionManager.addToBottom(
+					new MakeTempCardInDrawPileEtherealAction(this.owner, this.owner, c, this.amount,
+							true, true));
 		}
 	}
 	
