@@ -587,6 +587,18 @@ public class FruityMod implements PostInitializeSubscriber,
 		UnlockTracker.addCard("Flicker");
 	}
 	
+
+	@Override
+	public void receiveEditKeywords() {
+        logger.info("setting up custom keywords");
+        BaseMod.addKeyword(new String[] {"reflect", "Reflect"}, "Whenever you are attacked this turn, deal this amount of damage back back to the attacker.");
+        BaseMod.addKeyword(new String[] {"recycle", "Recycle"}, "Place a card from your hand on the top of your draw pile.");
+	}
+	
+	//
+	// Enigma hooks and functionality 	
+	//
+	
 	// used by fruitymod.patches.com.megacrit.cardcrawl.cards.AbstractCard.CanUsedDazed
 	public static boolean hasRelicCustom(String relicID, AbstractCard card) {
 		System.out.println("I was checked!");
@@ -631,13 +643,6 @@ public class FruityMod implements PostInitializeSubscriber,
 				p.getPower("Hex").onUseCard(c, null);
 			}
 		}
-	}
-
-	@Override
-	public void receiveEditKeywords() {
-        logger.info("setting up custom keywords");
-        BaseMod.addKeyword(new String[] {"reflect", "Reflect"}, "Whenever you are attacked this turn, deal this amount of damage back back to the attacker.");
-        BaseMod.addKeyword(new String[] {"recycle", "Recycle"}, "Place a card from your hand on the top of your draw pile.");
 	}
 
 	//
