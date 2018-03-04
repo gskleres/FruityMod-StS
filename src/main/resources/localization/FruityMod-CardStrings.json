@@ -286,7 +286,7 @@
 	},
 	"RunicBinding": {
 		"NAME": "Runic Binding",
-		"DESCRIPTION": "At the start of your turn, gain !M! Artifact."
+		"DESCRIPTION": "Whenever you draw an Ethereal card, deal !M! damage to a random enemy."
 	},
 	"PeriaptOfVigor": {
 		"NAME": "Periapt of Vigor",
