@@ -34,13 +34,13 @@ public class PhaseCoil extends CustomCard {
 	
     @Override
     public void triggerWhenDrawn() {
-        super.triggerWhenDrawn();        
+        super.triggerWhenDrawn();
         this.setCostForTurn(this.cost - getEtherealCount());
     }
     
     @Override
     public void applyPowers() {
-    	super.applyPowers();        
+    	super.applyPowers();
     	this.setCostForTurn(this.cost - getEtherealCount());
     }
     

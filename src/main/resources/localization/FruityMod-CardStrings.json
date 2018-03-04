@@ -102,10 +102,9 @@
 		"NAME": "Phase Coil",
 		"DESCRIPTION": "Costs 1 less [R] for each Ethereal card in hand. NL Deal !D! damage."
 	},
-	"EssenceShred": {
+	"PlasmaWave": {
 		"NAME": "Plasma Wave",
-		"DESCRIPTION": "Spend all [R]. NL Deal !D! damage to ALL Weak or Vulnerable enemies X times.",
-		"EXTENDED_DESCRIPTION": ["There are no Weak or Vulnerable enemies."]
+		"DESCRIPTION": "Spend all [R]. NL Deal !D! damage to ALL enemies X times. Vulnerable enemies are dealt double damage."
 	},
 	"EtherBlast": {
 		"NAME": "Ether Blast",

@@ -361,7 +361,7 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new Entropy());
 		BaseMod.addCard(new EssenceDart());		
 		BaseMod.addCard(new Flicker());
-		BaseMod.addCard(new EssenceShred());		
+		BaseMod.addCard(new PlasmaWave());		
 		BaseMod.addCard(new PulseBarrier());
 		BaseMod.addCard(new Nebula());
 		BaseMod.addCard(new EtherBlast());
