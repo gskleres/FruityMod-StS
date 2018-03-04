@@ -141,7 +141,7 @@
 	},
 	"UmbralBolt": {
 		"NAME": "Umbral Bolt",
-		"DESCRIPTION": "Deal !D! damage. NL If you are Frail, gain [R] and draw a card."
+		"DESCRIPTION": "Remove all Frail, Weak, and Vulnerable. NL Shuffle a Dazed into your draw pile for each stack removed."
 	},
 	"GravityWell": {
 		"NAME": "Gravity Well",
