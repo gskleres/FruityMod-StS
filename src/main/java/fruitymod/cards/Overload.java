@@ -8,10 +8,11 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.FrailPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
+import fruitymod.actions.common.ModifyMagicNumberAction;
 import fruitymod.patches.AbstractCardEnum;
 
 public class Overload extends CustomCard {
@@ -19,25 +20,25 @@ public class Overload extends CustomCard {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-	private static final int COST = 1;
-	private static final int COST_UPGRADED = 0;
+	private static final int COST = 0;
 	private static final int ENERGY_GAIN = 2;
-	private static final int UPGRADE_ENERGY_AMT = 0;
+	private static final int UPGRADE_ENERGY_AMT = 1;
+	private static final int ENERGY_PER_USE = -1;
 	private static final int POOL = 1;
-	private static final int FRAIL_AMT = 2;
+	private static final int VULNERABLE_AMT = 2;
 
 	public Overload() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.POWER_SPIKE), COST, DESCRIPTION,
 				AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE,
 				AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF, POOL);
-		this.baseMagicNumber = ENERGY_GAIN;
-		this.magicNumber = ENERGY_GAIN;
+		this.magicNumber = this.baseMagicNumber = ENERGY_GAIN;
 	}
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(this.magicNumber));
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FrailPower(p, FRAIL_AMT, true), FRAIL_AMT));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new VulnerablePower(p, VULNERABLE_AMT, true), VULNERABLE_AMT));
+		AbstractDungeon.actionManager.addToBottom(new ModifyMagicNumberAction(this, ENERGY_PER_USE));
 	}
 
 	@Override
@@ -49,7 +50,7 @@ public class Overload extends CustomCard {
 	public void upgrade() {
 		if (!this.upgraded) {
 			this.upgradeName();
-			this.upgradeBaseCost(COST_UPGRADED);
+			this.upgradeMagicNumber(UPGRADE_ENERGY_AMT);
 		}
 	}
 }

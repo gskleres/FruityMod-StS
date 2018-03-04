@@ -17,8 +17,8 @@ public class ModifyBlockAction
     @Override
     public void update() {
         this.cardToModify.baseBlock += this.amount;
-        if (this.cardToModify.baseDamage < 0) {
-            this.cardToModify.baseDamage = 0;
+        if (this.cardToModify.baseBlock < 0) {
+            this.cardToModify.baseBlock = 0;
         }
         this.isDone = true;
     }

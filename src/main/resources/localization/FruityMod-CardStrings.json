@@ -218,7 +218,7 @@
 	},
 	"Overload": {
 		"NAME": "Overload",
-		"DESCRIPTION": "Gain [R] [R]. NL Gain !M! Frail."
+		"DESCRIPTION": "Gain 2 Vulnerable. NL Gain !M! Energy. Gives 1 less Energy each time this card is used this combat."
 	},
 	"Disperse": {
 		"NAME": "Disperse",
