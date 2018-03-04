@@ -1,9 +1,9 @@
 {
   "Arcanosphere": {
     "NAME": "Arcanosphere",
-    "FLAVOR": "test447",
+    "FLAVOR": "The Arcanosphere is a powerful relic brought by The Seeker from the Astral Plane.",
     "DESCRIPTIONS": [
-      "At the end of your turn, you may put a card back on top of your draw pile."
+      "At the end of your turn, you may #yRecycle 1 card."
     ]
   }
 }

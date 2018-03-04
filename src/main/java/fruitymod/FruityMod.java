@@ -29,6 +29,7 @@ import basemod.ModPanel;
 import basemod.abstracts.CustomUnlockBundle;
 import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditCharactersSubscriber;
+import basemod.interfaces.EditKeywordsSubscriber;
 import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.OnCardUseSubscriber;
@@ -117,7 +118,8 @@ import fruitymod.relics.Arcanosphere;
 @SpireInitializer
 public class FruityMod implements PostInitializeSubscriber,
 	EditCardsSubscriber, EditRelicsSubscriber, EditCharactersSubscriber,
-	EditStringsSubscriber, SetUnlocksSubscriber, OnCardUseSubscriber {
+	EditStringsSubscriber, SetUnlocksSubscriber, OnCardUseSubscriber,
+	EditKeywordsSubscriber {
 	public static final Logger logger = LogManager.getLogger(FruityMod.class.getName());
 	
     private static final String MODNAME = "FruityMod";
@@ -357,6 +359,9 @@ public class FruityMod implements PostInitializeSubscriber,
         
         logger.info("subscribing to onCardUse event");
         BaseMod.subscribeToOnCardUse(this);
+        
+        logger.info("subscribing to editKeywords event");
+        BaseMod.subscribeToEditKeywords(this);
         
         /*
          * Note that for now when installing FruityMod, in the `mods/` folder another folder named
@@ -598,5 +603,12 @@ public class FruityMod implements PostInitializeSubscriber,
 				p.getPower("Hex").onUseCard(c, null);
 			}
 		}
+	}
+
+	@Override
+	public void receiveEditKeywords() {
+        logger.info("setting up custom keywords");
+        BaseMod.addKeyword(new String[] {"reflect"}, "Whenever you are attacked this turn, deal damage back back to the attacker.");
+        BaseMod.addKeyword(new String[] {"recycle", "Recycle"}, "Place a card from your hand on the top of your draw pile.");
 	}
 }
