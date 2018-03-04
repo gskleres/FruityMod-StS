@@ -1,22 +1,31 @@
 package fruitymod.powers;
 
+import basemod.BaseMod;
+import basemod.interfaces.PostBattleSubscriber;
+import basemod.interfaces.PostDrawSubscriber;
+import basemod.interfaces.PostDungeonInitializeSubscriber;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import fruitymod.FruityMod;
 
-public class BrilliancePower extends AbstractPower {
+public class BrilliancePower extends AbstractPower implements PostBattleSubscriber,
+		PostDungeonInitializeSubscriber, PostDrawSubscriber {
 	public static final String POWER_ID = "Brilliance";
 	public static final String NAME = "Brilliance";
-	public static final String[] DESCRIPTIONS = new String[] {
-			"Adds ", " bonus damage based on dexterity."};
-	private boolean justApplied = false;
+	public static final String DESCRIPTION = "Whenever you Draw a Dazed, draw 1 card.";
+
 
 	public BrilliancePower(AbstractCreature owner, int amount) {
 		this.name = NAME;
@@ -31,32 +40,78 @@ public class BrilliancePower extends AbstractPower {
 	}
 
 	@Override
-    public void updateDescription() {
-		this.description = DESCRIPTIONS[0] + GetDexterityCount() + DESCRIPTIONS[1];
-    }
-	
+	public void onInitialApplication() {
+		BaseMod.subscribeToPostDraw(this);
+		BaseMod.subscribeToPostBattle(this);
+		BaseMod.subscribeToPostDungeonInitialize(this);
+		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(AbstractDungeon.player, AbstractDungeon.player, new Dazed(), 3, true, true));
+	}
+
 	@Override
-	public void atEndOfRound() {
-		if (this.justApplied) {
-			this.justApplied = false;
-			return;
-		}
-		if (this.amount == 0) {
-			AbstractDungeon.actionManager
-					.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
-		} else {
-			AbstractDungeon.actionManager
-					.addToBottom(new ReducePowerAction(this.owner, this.owner, POWER_ID, 1));
+	public void receivePostDraw(AbstractCard c){
+		if(c.cardID.equals("Dazed")){
+			AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, this.amount));
 		}
 	}
 
 	@Override
-	public float atDamageGive(float damage, DamageInfo.DamageType type) {
-		return damage + GetDexterityCount();
+	public void updateDescription() {
+		this.description = DESCRIPTION;
 	}
-	
-	private int GetDexterityCount() {
-		AbstractPower power = this.owner.getPower("Dexterity");
-		return power == null ? 0 : power.amount;
-	}	
+
+
+	@Override
+	public void receivePostBattle(AbstractRoom arg0) {
+		System.out.println("should be removed now!");
+		BaseMod.unsubscribeFromPostDungeonInitialize(this);
+		/*
+		 *  calling unsubscribeFromPostBattle inside the callback
+		 *  for receivePostBattle means that when we're calling it
+		 *  there is currently an iterator going over the list
+		 *  of subscribers and calling receivePostBattle on each of
+		 *  them therefore if we immediately try to remove the this
+		 *  callback from the post battle subscriber list it will
+		 *  throw a concurrent modification exception in the iterator
+		 *
+		 *  for now we just add a delay - yes this is an atrocious solution
+		 *  PLEASE someone with a better idea replace it
+		 */
+		Thread delayed = new Thread(() -> {
+			try {
+				Thread.sleep(200);
+			} catch (Exception e) {
+				System.out.println("could not delay unsubscribe to avoid ConcurrentModificationException");
+				e.printStackTrace();
+			}
+			BaseMod.unsubscribeFromPostBattle(this);
+		});
+		delayed.start();
+	}
+
+	@Override
+	public void receivePostDungeonInitialize() {
+		BaseMod.unsubscribeFromPostBattle(this);
+		/*
+		 *  calling unsubscribeFromPostDungeonInitialize inside the callback
+		 *  for receivePostDungeonInitialize means that when we're calling it
+		 *  there is currently an iterator going over the list
+		 *  of subscribers and calling receivePostDungeonInitialize on each of
+		 *  them therefore if we immediately try to remove the this
+		 *  callback from the post battle subscriber list it will
+		 *  throw a concurrent modification exception in the iterator
+		 *
+		 *  for now we just add a delay - yes this is an atrocious solution
+		 *  PLEASE someone with a better idea replace it
+		 */
+		Thread delayed = new Thread(() -> {
+			try {
+				Thread.sleep(200);
+			} catch (Exception e) {
+				System.out.println("could not delay unsubscribe to avoid ConcurrentModificationException");
+				e.printStackTrace();
+			}
+			BaseMod.unsubscribeFromPostDungeonInitialize(this);
+		});
+		delayed.start();
+	}
 }

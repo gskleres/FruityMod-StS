@@ -186,7 +186,8 @@
 	},
 	"Brilliance": {
 		"NAME": "Brilliance",
-		"DESCRIPTION": "Ethereal. NL Add your Dexterity as bonus damage to each attack this turn."
+		"DESCRIPTION": "Shuffle 3 Dazed into your draw pile. NL Whenever you draw a Dazed, draw 1 card.",
+		"UPGRADE_DESCRIPTION": "Shuffle 3 Dazed into your draw pile. Whenever you draw a Dazed, draw 2cards."
 	},
 	"Corona": {
 		"NAME": "Corona",
