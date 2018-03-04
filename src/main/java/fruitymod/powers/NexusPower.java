@@ -10,9 +10,11 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import basemod.BaseMod;
 import basemod.interfaces.PostBattleSubscriber;
 import basemod.interfaces.PostDrawSubscriber;
+import basemod.interfaces.PostDungeonInitializeSubscriber;
 import fruitymod.FruityMod;
 
-public class NexusPower extends AbstractPower implements PostDrawSubscriber, PostBattleSubscriber {
+public class NexusPower extends AbstractPower implements PostDrawSubscriber, PostBattleSubscriber,
+	PostDungeonInitializeSubscriber {
 	public static final String POWER_ID = "Nexus";
 	public static final String NAME = "Nexus";
 	public static final String[] DESCRIPTIONS = new String[] {
@@ -40,6 +42,7 @@ public class NexusPower extends AbstractPower implements PostDrawSubscriber, Pos
 	public void onInitialApplication() {
 		BaseMod.subscribeToPostDraw(this);
 		BaseMod.subscribeToPostBattle(this);
+		BaseMod.subscribeToPostDungeonInitialize(this);
 	}
 	
 	@Override
@@ -52,6 +55,7 @@ public class NexusPower extends AbstractPower implements PostDrawSubscriber, Pos
 	@Override
 	public void receivePostBattle(AbstractRoom arg0) {
 		BaseMod.unsubscribeFromPostDraw(this);
+		BaseMod.unsubscribeFromPostDungeonInitialize(this);
 		/*
 		 *  calling unsubscribeFromPostBattle inside the callback
 		 *  for receivePostBattle means that when we're calling it
@@ -72,6 +76,34 @@ public class NexusPower extends AbstractPower implements PostDrawSubscriber, Pos
 				e.printStackTrace();
 			}
 			BaseMod.unsubscribeFromPostBattle(this);
+		});
+		delayed.start();
+	}
+	
+	@Override
+	public void receivePostDungeonInitialize() {
+		BaseMod.unsubscribeFromPostDraw(this);
+		BaseMod.unsubscribeFromPostBattle(this);
+		/*
+		 *  calling unsubscribeFromPostDungeonInitialize inside the callback
+		 *  for receivePostDungeonInitialize means that when we're calling it
+		 *  there is currently an iterator going over the list
+		 *  of subscribers and calling receivePostDungeonInitialize on each of
+		 *  them therefore if we immediately try to remove the this
+		 *  callback from the post battle subscriber list it will
+		 *  throw a concurrent modification exception in the iterator
+		 *  
+		 *  for now we just add a delay - yes this is an atrocious solution
+		 *  PLEASE someone with a better idea replace it
+		 */
+		Thread delayed = new Thread(() -> {
+			try {
+				Thread.sleep(200);
+			} catch (Exception e) {
+				System.out.println("could not delay unsubscribe to avoid ConcurrentModificationException");
+				e.printStackTrace();
+			}
+			BaseMod.unsubscribeFromPostDungeonInitialize(this);
 		});
 		delayed.start();
 	}
