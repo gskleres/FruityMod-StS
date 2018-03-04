@@ -38,6 +38,7 @@ import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.OnCardUseSubscriber;
 import basemod.interfaces.OnPowersModifiedSubscriber;
 import basemod.interfaces.PostBattleSubscriber;
+import basemod.interfaces.PostDungeonInitializeSubscriber;
 import basemod.interfaces.PostExhaustSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import basemod.interfaces.SetUnlocksSubscriber;
@@ -129,7 +130,7 @@ public class FruityMod implements PostInitializeSubscriber,
 	EditCardsSubscriber, EditRelicsSubscriber, EditCharactersSubscriber,
 	EditStringsSubscriber, SetUnlocksSubscriber, OnCardUseSubscriber,
 	EditKeywordsSubscriber, OnPowersModifiedSubscriber, PostExhaustSubscriber,
-	PostBattleSubscriber {
+	PostBattleSubscriber, PostDungeonInitializeSubscriber {
 	public static final Logger logger = LogManager.getLogger(FruityMod.class.getName());
 	
     private static final String MODNAME = "FruityMod";
@@ -655,6 +656,13 @@ public class FruityMod implements PostInitializeSubscriber,
 	
 	private boolean isApplyingPurpleSkull = false;
 	
+	private void resetPurpleSkull() {
+		isApplyingPurpleSkull = false;
+		if (AbstractDungeon.player.hasRelic("PurpleSkull")) {
+			((PurpleSkull) AbstractDungeon.player.getRelic("PurpleSkull")).setPulse(false);
+		}
+	}
+	
 	@Override
 	public void receivePowersModified() {
 		AbstractPlayer p = AbstractDungeon.player;
@@ -696,9 +704,11 @@ public class FruityMod implements PostInitializeSubscriber,
 
 	@Override
 	public void receivePostBattle(AbstractRoom arg0) {
-		isApplyingPurpleSkull = false;
-		if (AbstractDungeon.player.hasRelic("PurpleSkull")) {
-			((PurpleSkull) AbstractDungeon.player.getRelic("PurpleSkull")).setPulse(false);
-		}
+		resetPurpleSkull();
+	}
+
+	@Override
+	public void receivePostDungeonInitialize() {
+		resetPurpleSkull();
 	}
 }
