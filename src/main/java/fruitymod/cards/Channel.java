@@ -25,16 +25,15 @@ public class Channel extends CustomCard {
 	public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	private static final int COST = 1;
 	private static final int ATTACK_DMG = 7;
-	private static final int UPGRADED_DMG_AMT = 6;
+	private static final int UPGRADED_DMG_AMT = 3;
 	private static final int DISCARD_AMT = 1;
 	private static final int POOL = 1;
 	
 	public Channel() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.CHANNEL), COST, DESCRIPTION,
 				AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE,
-				CardRarity.RARE, AbstractCard.CardTarget.ENEMY, POOL);
+				CardRarity.COMMON, AbstractCard.CardTarget.ENEMY, POOL);
 		this.baseDamage = ATTACK_DMG;
-		this.magicNumber = this.baseMagicNumber = ATTACK_DMG;
 	}
 	
 	@Override
@@ -48,7 +47,7 @@ public class Channel extends CustomCard {
 					public void processCard(AbstractCard c) {
 						if (c.isEthereal) {
 							AbstractDungeon.actionManager.addToBottom(new DamageAction((AbstractCreature) m,
-									new DamageInfo(p, that.magicNumber, that.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
+									new DamageInfo(p, that.damage, that.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
 						}
 					}
 				}));
@@ -63,7 +62,7 @@ public class Channel extends CustomCard {
 	public void upgrade() {
 		if (!this.upgraded) {
 			this.upgradeName();
-			this.upgradeMagicNumber(UPGRADED_DMG_AMT);
+			this.upgradeDamage(UPGRADED_DMG_AMT);
 		}
 	}
 }
