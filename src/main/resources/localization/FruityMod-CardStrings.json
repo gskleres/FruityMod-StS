@@ -270,7 +270,8 @@
 	},
 	"ChaosForm": {
 		"NAME": "Chaos Form",
-		"DESCRIPTION": "Whenever you draw an Ethereal card, deal !M! damage to a random enemy."
+		"DESCRIPTION": "At the start of your turn, shuffle a random Ethereal card into your draw pile.",
+		"UPGRADE_DESCRIPTION": "At the start of your turn, shuffle a random Ethereal card into your draw pile. NL It costs 0 until played."
 	},
 	"Creativity": {
 		"NAME": "Creativity",

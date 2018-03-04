@@ -12,27 +12,32 @@ import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
 import fruitymod.patches.AbstractCardEnum;
 import fruitymod.powers.ChaosFormPower;
+import fruitymod.powers.ChaosFormUpgradePower;
 
 public class ChaosForm extends CustomCard {
 	public static final String ID = "ChaosForm";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String UPGRADED_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	private static final int COST = 3;
-	private static final int DMG = 3;
-	private static final int UPGRADE_DMG_AMT = 2;
 	private static final int POOL = 1;
 	
 	public ChaosForm() {
 		super (ID, NAME, FruityMod.makePath(FruityMod.ASTRAL_FORM), COST, DESCRIPTION,
 				AbstractCard.CardType.POWER, AbstractCardEnum.PURPLE,
 				AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF, POOL);
-		this.magicNumber = this.baseMagicNumber = DMG;
+		this.magicNumber = this.baseMagicNumber = 1;
 	}
 	
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ChaosFormPower(p, this.magicNumber), this.magicNumber));
+		if (this.upgraded){
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ChaosFormUpgradePower(p, this.magicNumber), this.magicNumber));
+		}
+		else {
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ChaosFormPower(p, this.magicNumber), this.magicNumber));
+		}
 	}
 	
 	@Override
@@ -44,7 +49,8 @@ public class ChaosForm extends CustomCard {
 	public void upgrade() {
 		if (!this.upgraded) {
 			this.upgradeName();
-			this.upgradeMagicNumber(UPGRADE_DMG_AMT);
+			this.rawDescription = UPGRADED_DESCRIPTION;
+			this.initializeDescription();
 		}
 	}
 	
