@@ -598,6 +598,9 @@ public class FruityMod implements PostInitializeSubscriber,
 					DamageInfo.createDamageMatrix(stacks + strength, true),
 					DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
 			c.exhaustOnUseOnce = true;
+			
+			// this bit here is question - it fixes a bug that the base game has where dazes are played double
+			// for hex or dead branch, or etc...
 			c.dontTriggerOnUseCard = true;
 			if (p.hasPower("Hex")) {
 				p.getPower("Hex").onUseCard(c, null);
@@ -608,7 +611,7 @@ public class FruityMod implements PostInitializeSubscriber,
 	@Override
 	public void receiveEditKeywords() {
         logger.info("setting up custom keywords");
-        BaseMod.addKeyword(new String[] {"reflect"}, "Whenever you are attacked this turn, deal damage back back to the attacker.");
+        BaseMod.addKeyword(new String[] {"reflect", "Reflect"}, "Whenever you are attacked this turn, deal this amount of damage back back to the attacker.");
         BaseMod.addKeyword(new String[] {"recycle", "Recycle"}, "Place a card from your hand on the top of your draw pile.");
 	}
 }
