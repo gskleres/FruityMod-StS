@@ -104,6 +104,7 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String FLUX_BLAST = "cards/null_storm.png";
     public static final String FLUX_BOLT = "cards/void_ray.png";
     public static final String FLUX_SHIELD = "cards/disruption_field.png";
+    public static final String FORCE_RIPPLE = "cards/force_ripple.png";
     public static final String FORCE_SPIKE = "cards/unstable_orb.png";
     public static final String GRAVITY_WELL = "cards/gravity_well.png";
     public static final String HYPOTHESIS = "cards/hypothesis.png";
@@ -113,7 +114,6 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String MAGNETIZE = "cards/magnetize.png";
     public static final String METEOR_SHOWER = "cards/meteor_shower.png";
     public static final String MIND_OVER_MATTER = "cards/mind_over_matter.png";
-    public static final String NEBULOUS_BLAST = "cards/force_ripple.png";
     public static final String NEXUS = "cards/nexus.png";
     public static final String NOVA = "cards/nova.png";
     public static final String PERIAPT_OF_CELERITY = "cards/periapt_of_celerity.png";

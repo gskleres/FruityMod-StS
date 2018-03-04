@@ -125,7 +125,7 @@
 	},
 	"ForceRipple": {
 		"NAME": "Force Ripple",
-		"DESCRIPTION": "Deal !D! damage. NL Shuffle all non-Ethereal cards into your draw pile."
+		"DESCRIPTION": "Deal !D! damage X times. NL Gain X Weak, X Frail, and X Vulnerable."
 	},
 	"SiphonPower": {
 		"NAME": "Siphon Power",

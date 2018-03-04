@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 
-public class EssenceShredAction
+public class PlasmaWaveAction
 extends AbstractGameAction {
     public int[] multiDamage;
     private boolean freeToPlayOnce = false;
@@ -19,7 +19,7 @@ extends AbstractGameAction {
     private AbstractPlayer p;
     private int energyOnUse = -1;
 
-    public EssenceShredAction(AbstractPlayer p, int[] multiDamage, DamageInfo.DamageType damageType, boolean freeToPlayOnce, int energyOnUse) {
+    public PlasmaWaveAction(AbstractPlayer p, int[] multiDamage, DamageInfo.DamageType damageType, boolean freeToPlayOnce, int energyOnUse) {
         this.multiDamage = multiDamage;
         this.damageType = damageType;
         this.p = p;

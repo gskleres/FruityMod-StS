@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
-import fruitymod.actions.unique.EssenceShredAction;
+import fruitymod.actions.unique.PlasmaWaveAction;
 import fruitymod.patches.AbstractCardEnum;
 
 public class PlasmaWave extends CustomCard {
@@ -25,13 +25,13 @@ public class PlasmaWave extends CustomCard {
 	public PlasmaWave() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.ESSENCE_SHRED), COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
 				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL_ENEMY, POOL);
-		this.damage = this.baseDamage = ATTACK_DMG;
+		this.baseDamage = ATTACK_DMG;
 		this.isMultiDamage = true;
 	}
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new EssenceShredAction(p, this.multiDamage, this.damageTypeForTurn,
+		AbstractDungeon.actionManager.addToBottom(new PlasmaWaveAction(p, this.multiDamage, this.damageTypeForTurn,
 				this.freeToPlayOnce, this.energyOnUse));
 	}
 
