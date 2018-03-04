@@ -56,13 +56,13 @@ public class ForceRippleAction extends AbstractGameAction {
             	AbstractDungeon.actionManager.addToBottom(new DamageAction(this.m,
         				new DamageInfo(p, this.damage, this.damageType),
         				AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-            	AbstractDungeon.actionManager.addToBottom(
-            			new ApplyPowerAction(p, p, new VulnerablePower(p, this.energyOnUse, false), this.energyOnUse, true, AbstractGameAction.AttackEffect.NONE));
-            	AbstractDungeon.actionManager.addToBottom(
-            			new ApplyPowerAction(p, p, new WeakPower(p, this.energyOnUse, false), this.energyOnUse, true, AbstractGameAction.AttackEffect.NONE));
-            	AbstractDungeon.actionManager.addToBottom(
-            			new ApplyPowerAction(p, p, new FrailPower(p, this.energyOnUse, false), this.energyOnUse, true, AbstractGameAction.AttackEffect.NONE));
 			}
+        	AbstractDungeon.actionManager.addToBottom(
+        			new ApplyPowerAction(p, p, new VulnerablePower(p, this.energyOnUse, false), this.energyOnUse, true, AbstractGameAction.AttackEffect.NONE));
+        	AbstractDungeon.actionManager.addToBottom(
+        			new ApplyPowerAction(p, p, new WeakPower(p, this.energyOnUse, false), this.energyOnUse, true, AbstractGameAction.AttackEffect.NONE));
+        	AbstractDungeon.actionManager.addToBottom(
+        			new ApplyPowerAction(p, p, new FrailPower(p, this.energyOnUse, false), this.energyOnUse, true, AbstractGameAction.AttackEffect.NONE));
 			if (!this.freeToPlayOnce) {
 				this.p.energy.use(EnergyPanel.totalCount);
 			}
