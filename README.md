@@ -67,6 +67,11 @@ Card list: [click here](https://drive.google.com/file/d/1aojRAKPQCbDW7mSW6Co6XTK
 3. Thanks to kiooeht and contributors (https://github.com/kiooeht) for ModTheSpire!!
 4. Thanks to all the people who have contributed bug reports or feedback on Discord or through the Github tracker. Without your help we couldn't make **The Seeker** as well-polished!
 
+## Art Assets ##
+Creative Commons and other licenses are great and helped make some of this mod happen.
+1. Power Cells relic art - (https://www.goodfreephotos.com/) (https://www.goodfreephotos.com/vector-images/simple-battery-vector-clipart.png.php)
+2. Mechanical Core relic art - (https://pixabay.com/en/spiral-circle-swirl-whorl-design-33987/)
+
 ## Notes For Contributors ##
 
 #### Development ####

@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.status.Dazed;
@@ -20,7 +21,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
-import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.powers.DexterityPower;
@@ -123,6 +123,8 @@ import fruitymod.patches.TheSeekerEnum;
 import fruitymod.relics.Arcanosphere;
 import fruitymod.relics.AstralEgg;
 import fruitymod.relics.GhostlyHand;
+import fruitymod.relics.MechanicalCore;
+import fruitymod.relics.PowerCells;
 import fruitymod.relics.PurpleSkull;
 
 @SpireInitializer
@@ -259,6 +261,8 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String PURPLE_SKULL_RELIC = "relics/purpleSkull.png";
     public static final String GHOSTLY_HAND_RELIC = "relics/ghostlyHand.png";
     public static final String ASTRAL_EGG_RELIC = "relics/astralEgg.png";
+    public static final String MECHANICAL_CORE_RELIC = "relics/mechanicalCore.png";
+    public static final String POWER_CELLS_RELIC = "relics/powerCells.png";
     
     // seeker assets
     private static final String SEEKER_BUTTON = "charSelect/seeker_select_button.png";
@@ -360,6 +364,14 @@ public class FruityMod implements PostInitializeSubscriber,
     public static Texture getAstralEggTexture() {
     	return new Texture(makePath(ASTRAL_EGG_RELIC));
     }
+    
+    public static Texture getMechanicalCoreTexture() {
+    	return new Texture(makePath(MECHANICAL_CORE_RELIC));
+    }
+    
+    public static Texture getPowerCellsTexture() {
+    	return new Texture(makePath(POWER_CELLS_RELIC));
+    }
 
     /**
      * Makes a full path for a resource path
@@ -455,10 +467,12 @@ public class FruityMod implements PostInitializeSubscriber,
 		logger.info("begin editting relics");
         
         // Add relics
-        RelicLibrary.add(new Arcanosphere());
-        RelicLibrary.add(new PurpleSkull());
-        RelicLibrary.add(new GhostlyHand());
-        RelicLibrary.add(new AstralEgg());
+		BaseMod.addRelicToCustomPool(new Arcanosphere(), AbstractCardEnum.PURPLE.toString());
+		BaseMod.addRelicToCustomPool(new PurpleSkull(), AbstractCardEnum.PURPLE.toString());
+		BaseMod.addRelicToCustomPool(new GhostlyHand(), AbstractCardEnum.PURPLE.toString());
+		BaseMod.addRelicToCustomPool(new AstralEgg(), AbstractCardEnum.PURPLE.toString());
+		BaseMod.addRelicToCustomPool(new MechanicalCore(), AbstractCardEnum.PURPLE.toString());
+		BaseMod.addRelicToCustomPool(new PowerCells(), AbstractCardEnum.PURPLE.toString());
         
         logger.info("done editting relics");
 	}
@@ -707,6 +721,8 @@ public class FruityMod implements PostInitializeSubscriber,
 			if (c.isEthereal) {
 				p.heal(GhostlyHand.HP_PER_CARD);
 				p.getRelic("GhostlyHand").flash();
+				AbstractDungeon.actionManager.addToBottom(
+						new RelicAboveCreatureAction(AbstractDungeon.player, p.getRelic("GhostlyHand")));
 			}
 		}
 		

@@ -29,5 +29,21 @@
   	"DESCRIPTIONS": [
   		"Whenever you add an #yEthereal card to your deck, it is #yUpgraded"
   	]
+  },
+  "MechanicalCore": {
+  	"NAME": "Mechanical Core",
+  	"FLAVOR": "The still powered core of a destroyed mechanical beast. Its shields still are somewhat working.",
+  	"DESCRIPTIONS": [
+  		"At the start of each combat, gain 1 #yArtifact."
+  	]
+  },
+  "PowerCells": {
+  	"NAME": "Power Cells",
+  	"FLAVOR": "It's always good to keep some spare charge around. You'll never know when you may need it.",
+  	"DESCRIPTIONS": [
+  		"On the first turn of each combat, gain #b",
+  		" energy and draw #b",
+  		" additional cards. The cards in your hand at the beginning of combat are #yEthereal"
+  	]
   }
 }
