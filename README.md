@@ -18,11 +18,15 @@ Currently **The Seeker** is completely playable. We have art for all the cards b
 
 ## The Seeker
 
-![The Seeker Image](github_resources/char_select.png)
+![The Seeker Image](github_resources/character_select.png)
 
-![The Seeker Game Begin](github_resources/start_screen.png)
+![The Seeker Game Begin](github_resources/sample_fight.png)
 
-![The Seeker Starting Deck](github_resources/starting_deck.png)
+![The Seeker Starting Deck](github_resources/starting_deck_new.png)
+
+![The Seeker Relics](github_resources/relics.png)
+
+![The Seeker Card Library](github_resources/card_library.png)
 
 Card list: [click here](https://drive.google.com/file/d/1aojRAKPQCbDW7mSW6Co6XTKwbB8IlexQ/view)
 
@@ -43,13 +47,6 @@ Card list: [click here](https://drive.google.com/file/d/1aojRAKPQCbDW7mSW6Co6XTK
 8. Move `FruityMod.jar` into the `mods` folder you created in step 4
 9. Your modded version of **Slay The Spire** can now be launched by double-clicking on `ModTheSpire.jar`
 10. This will open a mod select menu where you need to make sure that both `BaseMod` and `FruityMod` are checked before clicking **play**
-
-## Known Issues ##
-1. Pandora's box won't work
-2. The Vampirism event and Scaling the City event do not remove/upgrade the strikes or defends
-3. Inspecting cards in the card library does not show correct visuals
-4. Some powers **may** not properly wear off at the end of fights (if you encounter this one please make an issue with as much information as you can about what happened - we're having trouble tracking this one down)
-5. Character select is off-center
 
 ## Credits / Acknowledgements ##
 1. Fruitstrike (https://github.com/gskleres) for game design, project management, and being a hype train
