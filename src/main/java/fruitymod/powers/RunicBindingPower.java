@@ -34,7 +34,7 @@ public class RunicBindingPower extends AbstractPower implements PostDrawSubscrib
 		this.type = AbstractPower.PowerType.BUFF;
 		this.isTurnBased = false;
 		this.priority = 90;
-		this.img = FruityMod.getAstralFormPowerTexture();
+		this.img = FruityMod.getRunicBindingPowerTexture();
 	}
 	
 	@Override

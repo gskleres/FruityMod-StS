@@ -1,12 +1,9 @@
 package fruitymod.powers;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
+import java.util.ArrayList;
+
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -14,11 +11,8 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import basemod.BaseMod;
 import basemod.interfaces.PostBattleSubscriber;
-import basemod.interfaces.PostDrawSubscriber;
 import basemod.interfaces.PostDungeonInitializeSubscriber;
 import fruitymod.FruityMod;
-
-import java.util.ArrayList;
 
 public class ChaosFormPower extends AbstractPower implements PostBattleSubscriber,
 	PostDungeonInitializeSubscriber {
@@ -35,7 +29,7 @@ public class ChaosFormPower extends AbstractPower implements PostBattleSubscribe
 		this.type = AbstractPower.PowerType.BUFF;
 		this.isTurnBased = false;
 		this.priority = 90;
-		this.img = FruityMod.getAstralFormPowerTexture();
+		this.img = FruityMod.getChaosFormPowerTexture();
 	}
 
 	@Override

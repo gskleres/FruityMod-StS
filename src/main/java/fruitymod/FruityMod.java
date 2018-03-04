@@ -236,9 +236,10 @@ public class FruityMod implements PostInitializeSubscriber,
     
     // power images
     public static final String ASTRAL_HAZE_POWER = "powers/astral_haze.png";
+    public static final String CHAOS_FORM_POWER = "powers/chaos_form.png";
     public static final String ESSENCE_MIRROR_POWER = "powers/essence_mirror.png";
     public static final String ETHEREALIZE_POWER = "powers/essence_mirror.png";
-    public static final String ASTRAL_FORM_POWER = "powers/astral_form.png";
+    public static final String RUNIC_BINDING_POWER = "powers/runic_binding.png";
     public static final String VIGOR_POWER = "powers/vigor.png";
     public static final String ASTRAL_SHIFT_POWER = "powers/astral_shift.png";
     public static final String TENACITY_POWER = "powers/tenacity.png";
@@ -276,6 +277,10 @@ public class FruityMod implements PostInitializeSubscriber,
     	return new Texture(makePath(ASTRAL_HAZE_POWER));
     }
     
+    public static Texture getChaosFormPowerTexture() {
+    	return new Texture(makePath(CHAOS_FORM_POWER));
+    }
+    
     public static Texture getEssenceMirrorPowerTexture() {
     	return new Texture(makePath(ESSENCE_MIRROR_POWER));
     }
@@ -284,8 +289,8 @@ public class FruityMod implements PostInitializeSubscriber,
     	return new Texture(makePath(ETHEREALIZE_POWER));
     }
     
-    public static Texture getAstralFormPowerTexture() {
-    	return new Texture(makePath(ASTRAL_FORM_POWER));
+    public static Texture getRunicBindingPowerTexture() {
+    	return new Texture(makePath(RUNIC_BINDING_POWER));
     }
     
     public static Texture getVigorPowerTexture() {
@@ -333,7 +338,7 @@ public class FruityMod implements PostInitializeSubscriber,
     }
     
     public static Texture getAnomalyPowerTexture() {
-    	return new Texture(makePath(BRILLIANCE_POWER));
+    	return new Texture(makePath(ANOMALY_POWER));
     }
     
     public static Texture getNexusPowerTexture() {
