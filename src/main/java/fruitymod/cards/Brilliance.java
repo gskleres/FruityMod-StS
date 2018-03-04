@@ -19,25 +19,22 @@ public class Brilliance extends CustomCard {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-	private static final int COST = 1;
-	private static final int UPGRADE_COST = 0;
+	public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+	private static final int COST = 2;
+	private static final int DRAW = 1;
+	private static final int DRAW_UPGRADED = 2;
 	private static final int POOL = 1;
 
 	public Brilliance() {
-		super(ID, NAME, FruityMod.makePath(FruityMod.BRILLIANCE), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
-				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF, POOL);
-		this.isEthereal = true;		
+		super(ID, NAME, FruityMod.makePath(FruityMod.BRILLIANCE), COST, DESCRIPTION, CardType.POWER,
+				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF, POOL);
+		this.magicNumber = this.baseMagicNumber = DRAW;
 	}
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BrilliancePower(p, 1), 1));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BrilliancePower(p, this.magicNumber), this.magicNumber));
 	}
-	
-	@Override
-    public void triggerOnEndOfPlayerTurn() {
-    	AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
-    }
 
 	@Override
 	public AbstractCard makeCopy() {
@@ -48,7 +45,9 @@ public class Brilliance extends CustomCard {
 	public void upgrade() {
 		if (!this.upgraded) {
 			this.upgradeName();
-			this.upgradeBaseCost(UPGRADE_COST);
+			this.upgradeMagicNumber(DRAW_UPGRADED);
+			this.rawDescription = UPGRADE_DESCRIPTION;
+			this.initializeDescription();
 		}
 	}
 }
