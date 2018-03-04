@@ -500,9 +500,11 @@ public class FruityMod implements PostInitializeSubscriber,
 		AbstractPlayer p = AbstractDungeon.player;
 		if (p.hasPower("EnigmaPower") && c.cardID.equals("Dazed")) {
 			int stacks = p.getPower("EnigmaPower").amount;
-			AbstractDungeon.actionManager.addToTop(new GainBlockAction(p, p, stacks));
+			int strength = p.hasPower("Strength") ? p.getPower("Strength").amount : 0;
+			int dex = p.hasPower("Dexterity") ? p.getPower("Dexterity").amount : 0;
+			AbstractDungeon.actionManager.addToTop(new GainBlockAction(p, p, stacks + dex));
 			AbstractDungeon.actionManager.addToTop(new DamageAllEnemiesAction(null, 
-					DamageInfo.createDamageMatrix(stacks, true),
+					DamageInfo.createDamageMatrix(stacks + strength, true),
 					DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
 			c.exhaustOnUseOnce = true;
 		}
