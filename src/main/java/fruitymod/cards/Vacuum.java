@@ -25,17 +25,15 @@ extends CustomCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final int COST = 2;
-    private static final int UPGRADED_COST = 1;
-    private static final int ATTACK_DMG = 0;
-    private static final int STACK_BONUS = 4;
+    private static final int ATTACK_DMG = 4;
+    private static final int UPGRADED_DMG_AMT = 2;
     private static final int POOL = 1;
 
     public Vacuum() {
         super(ID, NAME, FruityMod.makePath(FruityMod.VACUUM), COST, DESCRIPTION, 
         		AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE, 
-        		AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ENEMY, POOL);
-        this.damage = this.baseDamage = ATTACK_DMG;
-        this.magicNumber = this.baseMagicNumber = STACK_BONUS;
+        		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY, POOL);
+        this.baseDamage = ATTACK_DMG;
     }
 
     @Override
@@ -51,8 +49,10 @@ extends CustomCard {
     	if (m != null) {
             AbstractDungeon.actionManager.addToBottom(new VFXAction(new VerticalImpactEffect(m.hb.cX + m.hb.width / 4.0f, m.hb.cY - m.hb.height / 4.0f)));
         }
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage + (this.magicNumber*debuffCount), this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        
+    	for (int i = 0; i < debuffCount; i++) {
+    		AbstractDungeon.actionManager.addToBottom(
+    				new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+    	}
     }
     
     @Override
@@ -87,7 +87,7 @@ extends CustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBaseCost(UPGRADED_COST);
+            this.upgradeDamage(UPGRADED_DMG_AMT);
         }
     }
 }
