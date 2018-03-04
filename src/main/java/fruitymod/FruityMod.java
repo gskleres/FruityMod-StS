@@ -24,6 +24,7 @@ import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import basemod.BaseMod;
@@ -36,6 +37,7 @@ import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.OnCardUseSubscriber;
 import basemod.interfaces.OnPowersModifiedSubscriber;
+import basemod.interfaces.PostBattleSubscriber;
 import basemod.interfaces.PostExhaustSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import basemod.interfaces.SetUnlocksSubscriber;
@@ -126,7 +128,8 @@ import fruitymod.relics.PurpleSkull;
 public class FruityMod implements PostInitializeSubscriber,
 	EditCardsSubscriber, EditRelicsSubscriber, EditCharactersSubscriber,
 	EditStringsSubscriber, SetUnlocksSubscriber, OnCardUseSubscriber,
-	EditKeywordsSubscriber, OnPowersModifiedSubscriber, PostExhaustSubscriber {
+	EditKeywordsSubscriber, OnPowersModifiedSubscriber, PostExhaustSubscriber,
+	PostBattleSubscriber {
 	public static final Logger logger = LogManager.getLogger(FruityMod.class.getName());
 	
     private static final String MODNAME = "FruityMod";
@@ -389,6 +392,7 @@ public class FruityMod implements PostInitializeSubscriber,
         
         BaseMod.subscribeToOnPowersModified(this);
         BaseMod.subscribeToPostExhaust(this);
+        BaseMod.subscribeToPostBattle(this);
         
         /*
          * Note that for now when installing FruityMod, in the `mods/` folder another folder named
@@ -567,29 +571,19 @@ public class FruityMod implements PostInitializeSubscriber,
 		
 		// seeker unlock 2
 		BaseMod.addUnlockBundle(new CustomUnlockBundle(
-				"Shimmer", "EtherBolt", "ChaosForm"
+				"Shimmer", "EtherBlast", "ChaosForm"
 				), TheSeekerEnum.THE_SEEKER, 2);
 		UnlockTracker.addCard("Shimmer");
-		UnlockTracker.addCard("VoidRay");
-		UnlockTracker.addCard("Creativity");
+		UnlockTracker.addCard("EtherBlast");
+		UnlockTracker.addCard("ChaosForm");
 		
 		// seeker unlock 3 (Vacuum tmp in place of Feedback)
 		BaseMod.addUnlockBundle(new CustomUnlockBundle(
-				"Transference", /*"Feedback", */
-				"Vacuum", "Flicker"
+				"Transference", "Feedback", "Flicker"
 				), TheSeekerEnum.THE_SEEKER, 3);
 		UnlockTracker.addCard("Transference");
-		/*UnlockTracker.addCard("Feedback");*/
-		UnlockTracker.addCard("Vacuum");
+		UnlockTracker.addCard("Feedback");
 		UnlockTracker.addCard("Flicker");
-		
-		// seeker unlock 4
-		BaseMod.addUnlockBundle(new CustomUnlockBundle(
-				"Zenith", "Singularity", "Flow"
-				), TheSeekerEnum.THE_SEEKER, 4);
-		UnlockTracker.addCard("Zenith");
-		UnlockTracker.addCard("Singularity");
-		UnlockTracker.addCard("Flow");
 	}
 	
 	// used by fruitymod.patches.com.megacrit.cardcrawl.cards.AbstractCard.CanUsedDazed
@@ -645,6 +639,12 @@ public class FruityMod implements PostInitializeSubscriber,
         BaseMod.addKeyword(new String[] {"recycle", "Recycle"}, "Place a card from your hand on the top of your draw pile.");
 	}
 
+	//
+	// Relic code
+	// (yes we're doing the exact same things the devs did where relic code
+	// isn't in the actual relics - oh well)
+	//
+	
 	private boolean moreThanXStacks(AbstractPlayer player, String powerID, int stacksWanted) {
 		if (player != null && player.hasPower(powerID) && player.getPower(powerID).amount >= stacksWanted) {
 			return true;
@@ -692,5 +692,13 @@ public class FruityMod implements PostInitializeSubscriber,
 			}
 		}
 		
+	}
+
+	@Override
+	public void receivePostBattle(AbstractRoom arg0) {
+		isApplyingPurpleSkull = false;
+		if (AbstractDungeon.player.hasRelic("PurpleSkull")) {
+			((PurpleSkull) AbstractDungeon.player.getRelic("PurpleSkull")).setPulse(false);
+		}
 	}
 }
