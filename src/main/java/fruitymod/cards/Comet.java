@@ -55,6 +55,11 @@ extends CustomCard {
     			count++;
     		}
     	}
+        for (AbstractCard c : AbstractDungeon.player.exhaustPile.group) {
+            if (c.isEthereal) {
+                count++;
+            }
+        }
     	return count;
     }
     
