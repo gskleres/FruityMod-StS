@@ -2,6 +2,7 @@ package fruitymod.powers;
 
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -9,16 +10,16 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import fruitymod.FruityMod;
 import fruitymod.cards.Retrograde;
 
-public class RetrogradePower
+public class RetrogradeUpgradedPower
         extends AbstractPower {
-    public static final String POWER_ID = "RetrogradePower";
+    public static final String POWER_ID = "RetrogradeUpgradedPower";
     public static final String NAME = "Retrograde";
     public static final String[] DESCRIPTIONS = new String[] {
             "At the end of your turn, shuffle ",
-            " Retrograde into your draw pile."
+            " Retrograde+ into your draw pile."
     };
 
-    public RetrogradePower(AbstractCreature owner, int amount) {
+    public RetrogradeUpgradedPower(AbstractCreature owner, int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
@@ -36,8 +37,10 @@ public class RetrogradePower
     public void atEndOfTurn(boolean isPlayer) {
         if (isPlayer)
         this.flash();
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(this.owner, this.owner, new Retrograde(), this.amount, true, true));
-        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, "RetrogradePower"));
+        AbstractCard toAdd = new Retrograde();
+        toAdd.upgrade();
+        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(this.owner, this.owner, toAdd, this.amount, true, true));
+        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, "RetrogradeUpgradedPower"));
     }
 }
 
