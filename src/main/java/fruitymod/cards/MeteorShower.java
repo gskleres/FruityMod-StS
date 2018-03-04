@@ -39,6 +39,11 @@ public class MeteorShower extends CustomCard {
 		AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
 		this.setDescription(false);
 	}
+	
+	@Override
+	public void onMoveToDiscard() {
+		this.setDescription(false);
+	}
 
 	@Override
 	public void applyPowers() {

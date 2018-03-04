@@ -39,6 +39,11 @@ public class Nebula extends CustomCard {
 	}
 	
 	@Override
+	public void onMoveToDiscard() {
+		this.setDescription(false);
+	}
+	
+	@Override
 	public void applyPowers() {
 		this.baseBlock = countEtherealInHand() * this.magicNumber;
 		super.applyPowers();

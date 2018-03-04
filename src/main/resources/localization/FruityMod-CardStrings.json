@@ -108,7 +108,12 @@
 	},
 	"EtherBlast": {
 		"NAME": "Ether Blast",
-		"DESCRIPTION": "Deal !M! damage for each Ethereal card in your hand."
+		"DESCRIPTION": "Ethereal. Deal !D! damage for each Ethereal card in your hand.",
+		"EXTENDED_DESCRIPTION": [
+			" NL (You have ",
+			" Ethereal card in hand).",
+			" Ethereal cards in hand)."
+		]
 	},
 	"Flare": {
 		"NAME": "Flare",

@@ -41,6 +41,11 @@ public class DarkMatter extends CustomCard {
 	}
 	
 	@Override
+	public void onMoveToDiscard() {
+		this.setDescription(false);
+	}
+	
+	@Override
 	public void applyPowers() {
 		this.baseDamage = countEtherealInExhaustPile() * this.magicNumber;
 		super.applyPowers();
