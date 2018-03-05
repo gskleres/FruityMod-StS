@@ -219,7 +219,7 @@
 	},
 	"Overload": {
 		"NAME": "Overload",
-		"DESCRIPTION": "Gain 2 Vulnerable. NL Gain !M! Energy. Gives 1 less Energy each time this card is used this combat."
+		"DESCRIPTION": "Gain 2 Vulnerable. NL Gain !M! Energy. NL Gives 1 less Energy each time this card is used this combat."
 	},
 	"Disperse": {
 		"NAME": "Disperse",
