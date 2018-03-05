@@ -92,7 +92,7 @@
 	},
 	"DarkMatter": {
 		"NAME": "Dark Matter",
-		"DESCRIPTION": "Deal !M! damage for each Ethereal card that has been Exhausted this combat."
+		"DESCRIPTION": "Deal !M! damage for each Exhausted Ethereal card this combat."
 	},
 	"Entropy": {
 		"NAME": "Entropy",
