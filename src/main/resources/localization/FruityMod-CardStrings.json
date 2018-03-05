@@ -253,7 +253,7 @@
 	},
 	"Feedback": {
 		"NAME": "Feedback",
-		"DESCRIPTION": "Remove all Weak and Vulnerable from an Enemy. NL That enemy loses !M! HP per stack removed.",
+		"DESCRIPTION": "Remove all Weak and Vulnerable from an Enemy. It loses !M! HP per stack removed.",
 		"EXTENDED_DESCRIPTION": [ " NL (Will lose !D! HP.)"]
 	},
 	"Implosion": {
