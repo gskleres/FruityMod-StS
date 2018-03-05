@@ -1,6 +1,5 @@
 package fruitymod.cards;
 
-import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -26,16 +25,13 @@ public class Starburst extends CustomCard {
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 2;
-	private static final int ATTACK_DMG = 14;
-	private static final int UPGRADE_PLUS_DMG = 4;
-	private static final int ALL_ATTACK_DMG = 8;
-	private static final int UPGRADE_PLUS_ALL_DMG = 2;
+	private static final int ATTACK_DMG = 8;
+	private static final int UPGRADE_PLUS_DMG = 3;
 	private static final int POOL = 1;
 
 	public Starburst() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.ARCANE_BARRAGE), COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
 				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY, POOL);
-		this.magicNumber = this.baseMagicNumber = ALL_ATTACK_DMG;
 		this.baseDamage = ATTACK_DMG;
 	}
 
@@ -47,20 +43,10 @@ public class Starburst extends CustomCard {
 
 		MonsterRoom room = ((MonsterRoom) AbstractDungeon.currMapNode.room);
 		int numMonsters = room.monsters.monsters.size();
-
-		float[] tmp = new float[numMonsters];
-		for (int i = 0; i < tmp.length; i++) {
-			// don't hit the main target twice
-			if (room.monsters.monsters.get(i) == m) {
-				tmp[i] = 0.0f;
-			} else {
-				tmp[i] = this.magicNumber;
-			}
-		}
 		
 		this.multiDamage = new int[numMonsters];
-		for (int i = 0; i < tmp.length; i++) {
-			this.multiDamage[i] = MathUtils.floor(tmp[i]);
+		for (int i = 0; i < multiDamage.length; i++) {
+			this.multiDamage[i] = this.damage;
 		}
 		
 		AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn,
@@ -77,7 +63,6 @@ public class Starburst extends CustomCard {
 		if (!this.upgraded) {
 			this.upgradeName();
 			this.upgradeDamage(UPGRADE_PLUS_DMG);
-			this.upgradeMagicNumber(UPGRADE_PLUS_ALL_DMG);
 		}
 	}
 }
