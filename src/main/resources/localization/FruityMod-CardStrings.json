@@ -70,7 +70,10 @@
 	},
 	"Nebula": {
 		"NAME": "Nebula",
-		"DESCRIPTION": "Ethereal. NL Gain !M! Block for each Ethereal card in your hand."
+		"DESCRIPTION": "Ethereal. NL Gain !M! Block for each Ethereal card in your hand.",
+		"EXTENDED_DESCRIPTION": [
+			" (You will gain !B! Block)"
+		]
 	},
 	"FluxShield": {
 		"NAME": "Disruption Field",
@@ -92,7 +95,10 @@
 	},
 	"DarkMatter": {
 		"NAME": "Dark Matter",
-		"DESCRIPTION": "Deal !M! damage for each Exhausted Ethereal card this combat."
+		"DESCRIPTION": "Deal !M! damage for each Exhausted Ethereal card this combat.",
+		"EXTENDED_DESCRIPTION": [
+			" NL (Deals !D! damage)."
+		]
 	},
 	"Entropy": {
 		"NAME": "Entropy",

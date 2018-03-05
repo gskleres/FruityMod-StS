@@ -18,7 +18,7 @@ public class Nebula extends CustomCard {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-	public static final String EXTENDED_DESCRIPTION = " (You will gain !B! Block)";
+	public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
 	private static final int COST = 1;
 	private static final int BLOCK_AMT = 4;
 	private static final int UPGRADE_BLOCK_AMT = 3;
@@ -69,7 +69,7 @@ public class Nebula extends CustomCard {
 	private void setDescription(boolean addExtended) {
 		this.rawDescription = DESCRIPTION;
 		if (addExtended) {
-			this.rawDescription += EXTENDED_DESCRIPTION;
+			this.rawDescription += EXTENDED_DESCRIPTION[0];
 		}
 		this.initializeDescription();
 	}
