@@ -48,6 +48,8 @@ Card list: [click here](https://drive.google.com/file/d/1aojRAKPQCbDW7mSW6Co6XTK
 9. Your modded version of **Slay The Spire** can now be launched by double-clicking on `ModTheSpire.jar`
 10. This will open a mod select menu where you need to make sure that both `BaseMod` and `FruityMod` are checked before clicking **play**
 
+Here is a great video showing how to install mods, by Xterminator: https://www.youtube.com/watch?v=r2m2aL1eEjw
+
 ## Credits / Acknowledgements ##
 1. Fruitstrike (https://github.com/gskleres) for game design, project management, and being a hype train
 2. ColdRain451 (https://github.com/dvalldejuli) for a ton of card implementations and getting the code base started
