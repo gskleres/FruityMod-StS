@@ -205,7 +205,7 @@
 	},
 	"Flow": {
 		"NAME": "Flow",
-		"DESCRIPTION": "Ethereal. NL Retain all excess Energy at the end of turn. NL Draw 1 extra card next turn."
+		"DESCRIPTION": "Ethereal. NL Retain all excess Energy at the end of turn. Draw 1 extra card next turn."
 	},
 	"Illuminate": {
 		"NAME": "Illuminate",
