@@ -238,7 +238,8 @@
 	},
 	"Convergence": {
 		"NAME": "Convergence",
-		"DESCRIPTION": "Innate. NL Gain 1 Artifact. Transfer all Artifact from ALL enemies to you. NL Exhaust."
+		"DESCRIPTION": "Unplayable. NL Ethereal. NL When you draw this card upgrade a random card in your hand.",
+		"UPGRADE_DESCRIPTION": "Unplayable. NL Ethereal. NL When you draw this card, upgrade a card in your hand."
 	},
 	"SiphonSpeed": {
 		"NAME": "Siphon Speed",

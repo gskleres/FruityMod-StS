@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.status.Dazed;
@@ -38,10 +39,12 @@ import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.OnCardUseSubscriber;
 import basemod.interfaces.OnPowersModifiedSubscriber;
 import basemod.interfaces.PostBattleSubscriber;
+import basemod.interfaces.PostDrawSubscriber;
 import basemod.interfaces.PostDungeonInitializeSubscriber;
 import basemod.interfaces.PostExhaustSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import basemod.interfaces.SetUnlocksSubscriber;
+import fruitymod.actions.unique.ConvergenceAction;
 import fruitymod.cards.Anomaly;
 import fruitymod.cards.ArcaneArmor;
 import fruitymod.cards.Archives;
@@ -132,7 +135,7 @@ public class FruityMod implements PostInitializeSubscriber,
 	EditCardsSubscriber, EditRelicsSubscriber, EditCharactersSubscriber,
 	EditStringsSubscriber, SetUnlocksSubscriber, OnCardUseSubscriber,
 	EditKeywordsSubscriber, OnPowersModifiedSubscriber, PostExhaustSubscriber,
-	PostBattleSubscriber, PostDungeonInitializeSubscriber {
+	PostBattleSubscriber, PostDungeonInitializeSubscriber, PostDrawSubscriber {
 	public static final Logger logger = LogManager.getLogger(FruityMod.class.getName());
 	
     private static final String MODNAME = "FruityMod";
@@ -168,6 +171,7 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String CHANNEL = "cards/channel.png";
     public static final String COALESCENCE = "cards/coalescence.png";
     public static final String COMET = "cards/comet.png";
+    public static final String CONVERGENCE = "cards/convergence.png";
     public static final String CORONA = "cards/corona.png";
     public static final String CREATIVITY = "cards/creativity.png";
     public static final String DARK_MATTER = "cards/dark_matter.png";
@@ -193,7 +197,7 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String FLOW = "cards/flow.png";
     public static final String FLUX_BLAST = "cards/null_storm.png";
     public static final String FLUX_BOLT = "cards/void_ray.png";
-    public static final String FLUX_SHIELD = "cards/disruption_field.png";
+    public static final String FLUX_SHIELD = "cards/flux_shield.png";
     public static final String FORCE_RIPPLE = "cards/force_ripple.png";
     public static final String FORCE_SPIKE = "cards/unstable_orb.png";
     public static final String GRAVITY_WELL = "cards/gravity_well.png";
@@ -411,6 +415,7 @@ public class FruityMod implements PostInitializeSubscriber,
         BaseMod.subscribeToOnPowersModified(this);
         BaseMod.subscribeToPostExhaust(this);
         BaseMod.subscribeToPostBattle(this);
+        BaseMod.subscribeToPostDraw(this);
         
         /*
          * Note that for now when installing FruityMod, in the `mods/` folder another folder named
@@ -736,5 +741,14 @@ public class FruityMod implements PostInitializeSubscriber,
 	@Override
 	public void receivePostDungeonInitialize() {
 		resetPurpleSkull();
+	}
+
+	@Override
+	public void receivePostDraw(AbstractCard c) {
+		if (c instanceof Convergence) {
+			c.superFlash();
+			AbstractDungeon.actionManager.addToBottom(new WaitAction(Settings.ACTION_DUR_FAST));
+			AbstractDungeon.actionManager.addToBottom(new ConvergenceAction(c.upgraded));
+		}
 	}
 }

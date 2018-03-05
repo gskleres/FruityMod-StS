@@ -23,7 +23,7 @@ public class Nexus extends CustomCard {
     private static final int POOL = 1;
     
     public Nexus() {
-    	super(ID, NAME, FruityMod.makePath(FruityMod.CREATIVITY), COST, DESCRIPTION,
+    	super(ID, NAME, FruityMod.makePath(FruityMod.NEXUS), COST, DESCRIPTION,
     			AbstractCard.CardType.POWER, AbstractCardEnum.PURPLE,
     			AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF, POOL);
     }
