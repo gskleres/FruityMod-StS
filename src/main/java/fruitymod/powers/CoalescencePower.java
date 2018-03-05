@@ -39,14 +39,5 @@ public class CoalescencePower extends AbstractPower {
 					new GainBlockAction(this.owner, this.owner, this.amount));
 		}
 	}
-	
-	@Override
-	public void atEndOfTurn(boolean isPlayer) {
-		if (isPlayer) {
-			this.flash();
-			AbstractDungeon.actionManager.addToBottom(
-					new GainBlockAction(this.owner, this.owner, this.amount));
-		}
-	}
-	
+
 }
