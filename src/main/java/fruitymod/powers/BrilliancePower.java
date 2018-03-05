@@ -23,7 +23,6 @@ public class BrilliancePower extends AbstractPower implements PostBattleSubscrib
 		"Whenever you Draw a Dazed, draw ",
 		" card."
 	};
-	private static final int DAZED_AMT = 3;
 
 	public BrilliancePower(AbstractCreature owner, int amount) {
 		this.name = NAME;
@@ -42,7 +41,6 @@ public class BrilliancePower extends AbstractPower implements PostBattleSubscrib
 		BaseMod.subscribeToPostDraw(this);
 		BaseMod.subscribeToPostBattle(this);
 		BaseMod.subscribeToPostDungeonInitialize(this);
-		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(AbstractDungeon.player, AbstractDungeon.player, new Dazed(), DAZED_AMT, true, true));
 	}
 
 	@Override
