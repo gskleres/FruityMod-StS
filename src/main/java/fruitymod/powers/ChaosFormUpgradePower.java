@@ -32,7 +32,7 @@ public class ChaosFormUpgradePower extends AbstractPower {
     }
 
     @Override
-    public void atStartOfTurnPostDraw(){
+    public void atStartOfTurn(){
     	for (int i = 0; i < this.amount; i++) {
     		addRandomFreeEtherealCard();
     	}
