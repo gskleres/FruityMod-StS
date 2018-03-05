@@ -1,9 +1,11 @@
-package fruitymod.powers;
+package fruitymod.powers.deprecated;
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 
 import fruitymod.FruityMod;
 
@@ -11,11 +13,14 @@ public class CoalescencePower extends AbstractPower {
 	public static final String POWER_ID = "CoalescencePower";
 	public static final String NAME = "Coalescence";
 	public static final String[] DESCRIPTIONS = new String[] {
-			"Whenever you gain Frail, Weak, or Vulnerable, gain ",
+			"At the start of your turn gain ",
+			" Weak. At the end of your turn gain ",
 			" Block."
 	};
 	
-	public CoalescencePower(AbstractCreature owner, int amount) {
+	private int weakAmount;
+	
+	public CoalescencePower(AbstractCreature owner, int weakAmount, int amount) {
 		this.name = NAME;
 		this.ID = POWER_ID;
 		this.owner = owner;
@@ -23,21 +28,30 @@ public class CoalescencePower extends AbstractPower {
 		this.type = AbstractPower.PowerType.BUFF;
 		this.isTurnBased = false;
 		this.priority = 90;
+		this.weakAmount = weakAmount;
 		updateDescription();
 		this.img = FruityMod.getCoalescencePowerTexture();
 	}
 	
 	@Override
 	public void updateDescription() {
-		this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+		this.description = DESCRIPTIONS[0] + this.weakAmount +
+				DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2];
 	}
 	
 	@Override
-	public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-		if (power.ID.equals("Weakened") || power.ID.equals("Vulnerable") || power.ID.equals("Frail")) {
-			AbstractDungeon.actionManager.addToBottom(
-					new GainBlockAction(this.owner, this.owner, this.amount));
-		}
+	public void stackPower(int stackAmount) {
+		this.fontScale = 8.0f;
+		this.amount += stackAmount;
+		this.weakAmount += 1;
+	}
+	
+	@Override
+	public void atStartOfTurn() {
+		this.flash();
+		AbstractDungeon.actionManager.addToBottom(
+				new ApplyPowerAction(this.owner, this.owner,
+						new WeakPower(this.owner, this.weakAmount, false), this.weakAmount));
 	}
 	
 	@Override

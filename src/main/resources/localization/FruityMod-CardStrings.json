@@ -339,7 +339,7 @@
 	},
 	"Coalescence": {
 		"NAME": "Coalescence",
-		"DESCRIPTION": "At the start of your turn gain 1 Weak. NL At the end of your turn gain !M! Block."
+		"DESCRIPTION": "Whenever you gain Frail, Weak, or Vulnerable, gain !M! Block."
 	},
 	"Magnetize": {
 		"NAME": "Magnetize",

@@ -1,4 +1,4 @@
-package fruitymod.cards;
+package fruitymod.cards.deprecated;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
 import fruitymod.patches.AbstractCardEnum;
-import fruitymod.powers.CoalescencePower;
+import fruitymod.powers.deprecated.CoalescencePower;
 
 public class Coalescence extends CustomCard {
 	public static final String ID = "Coalescence";
@@ -19,8 +19,9 @@ public class Coalescence extends CustomCard {
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 1;
-	private static final int BLOCK_AMT = 3;
+	private static final int BLOCK_AMT = 4;
 	private static final int UPGRADED_BLOCK_AMT = 2;
+	private static final int STARTING_WEAK_AMT = 1;
 	private static final int POOL = 1;
 	
 	public Coalescence() {
@@ -34,7 +35,7 @@ public class Coalescence extends CustomCard {
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		AbstractDungeon.actionManager.addToBottom(
 				new ApplyPowerAction(p, p,
-						new CoalescencePower(p, this.magicNumber), this.magicNumber));
+						new CoalescencePower(p, STARTING_WEAK_AMT, this.magicNumber), this.magicNumber));
 	}
 	
 	@Override
