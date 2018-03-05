@@ -1,31 +1,29 @@
 package fruitymod.powers;
 
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.status.Dazed;
+import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
+
 import basemod.BaseMod;
 import basemod.interfaces.PostBattleSubscriber;
 import basemod.interfaces.PostDrawSubscriber;
 import basemod.interfaces.PostDungeonInitializeSubscriber;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.status.Dazed;
-import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import fruitymod.FruityMod;
 
 public class BrilliancePower extends AbstractPower implements PostBattleSubscriber,
 		PostDungeonInitializeSubscriber, PostDrawSubscriber {
 	public static final String POWER_ID = "Brilliance";
 	public static final String NAME = "Brilliance";
-	public static final String DESCRIPTION = "Whenever you Draw a Dazed, draw 1 card.";
-
+	public static final String[] DESCRIPTIONS = new String[] {
+		"Whenever you Draw a Dazed, draw ",
+		" card."
+	};
+	private static final int DAZED_AMT = 3;
 
 	public BrilliancePower(AbstractCreature owner, int amount) {
 		this.name = NAME;
@@ -44,7 +42,7 @@ public class BrilliancePower extends AbstractPower implements PostBattleSubscrib
 		BaseMod.subscribeToPostDraw(this);
 		BaseMod.subscribeToPostBattle(this);
 		BaseMod.subscribeToPostDungeonInitialize(this);
-		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(AbstractDungeon.player, AbstractDungeon.player, new Dazed(), 3, true, true));
+		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(AbstractDungeon.player, AbstractDungeon.player, new Dazed(), DAZED_AMT, true, true));
 	}
 
 	@Override
@@ -56,7 +54,7 @@ public class BrilliancePower extends AbstractPower implements PostBattleSubscrib
 
 	@Override
 	public void updateDescription() {
-		this.description = DESCRIPTION;
+		this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
 	}
 
 

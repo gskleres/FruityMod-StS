@@ -186,8 +186,8 @@
 	},
 	"Brilliance": {
 		"NAME": "Brilliance",
-		"DESCRIPTION": "Shuffle 3 Dazed into your draw pile. NL Whenever you draw a Dazed, draw 1 card.",
-		"UPGRADE_DESCRIPTION": "Shuffle 3 Dazed into your draw pile. Whenever you draw a Dazed, draw 2cards."
+		"DESCRIPTION": "Shuffle 3 Dazed into your draw pile. NL Whenever you draw a Dazed, draw !M! card.",
+		"UPGRADE_DESCRIPTION": "Shuffle 3 Dazed into your draw pile. Whenever you draw a Dazed, draw !M! cards."
 	},
 	"Corona": {
 		"NAME": "Corona",
