@@ -71,7 +71,8 @@ extends CustomCard {
     		this.isDamageModified = false;
     	}
     	
-    	this.rawDescription = (this.isEthereal ? "Ethereal. NL " : "") + DESCRIPTION + EXTENDED_DESCRIPTION[0];
+    	this.rawDescription = (this.isEthereal ? "Ethereal. NL " : "") + DESCRIPTION + 
+    			(count > 0 ? EXTENDED_DESCRIPTION[0] : "");
     	initializeDescription();
     }
     
