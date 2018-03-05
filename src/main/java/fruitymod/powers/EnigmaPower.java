@@ -54,10 +54,10 @@ public class EnigmaPower extends AbstractPower {
 		if (AbstractDungeon.player.hasPower("Dexterity")) {
 			block += AbstractDungeon.player.getPower("Dexterity").amount;
 		}
-		if (applied.ID.equals("Strength")) {
+		if (applied != null && applied.ID.equals("Strength")) {
 			damage += applied.amount;
 		}
-		if (applied.ID.equals("Dexterity")) {
+		if (applied != null && applied.ID.equals("Dexterity")) {
 			block += applied.amount;
 		}
 		
