@@ -156,7 +156,7 @@
 	},
 	"Nexus": {
 		"NAME": "Nexus",
-		"DESCRIPTION": "Whenever you draw a non-Ethereal card, shuffle an Ethereal copy of it into your draw pile."
+		"DESCRIPTION": "Whenever you draw a non-Ethereal Attack or Skill, shuffle an Ethereal copy of it into your draw pile."
 	},
 	"PeriaptOfCelerity": {
 		"NAME": "Periapt of Celerity",

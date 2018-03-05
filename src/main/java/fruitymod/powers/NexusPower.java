@@ -18,8 +18,9 @@ public class NexusPower extends AbstractPower implements PostDrawSubscriber, Pos
 	public static final String POWER_ID = "Nexus";
 	public static final String NAME = "Nexus";
 	public static final String[] DESCRIPTIONS = new String[] {
-			"Whenever you draw a non-Ethereal card, shuffle ", 
-			" Ethereal copy of it into your draw pile."
+			"Whenever you draw a non-Ethereal Attack or Skill, shuffle ", 
+			" Ethereal copy of it into your draw pile.",
+			" Ethereal copies of it into your draw pile."
 	};
 	
 	public NexusPower(AbstractCreature owner, int amount) {
@@ -35,7 +36,8 @@ public class NexusPower extends AbstractPower implements PostDrawSubscriber, Pos
 	
 	@Override
 	public void updateDescription() {
-		this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+		this.description = DESCRIPTIONS[0] + 
+				(this.amount == 1 ? DESCRIPTIONS[1] : DESCRIPTIONS[2]);
 	}
 	
 	@Override
@@ -47,7 +49,7 @@ public class NexusPower extends AbstractPower implements PostDrawSubscriber, Pos
 	
 	@Override
 	public void receivePostDraw(AbstractCard c) {
-		if(!c.isEthereal) {
+		if(!c.isEthereal && (c.type == AbstractCard.CardType.ATTACK) || c.type == AbstractCard.CardType.SKILL) {
 			AbstractDungeon.actionManager.addToBottom(
 					new MakeTempCardInDrawPileEtherealAction(this.owner, this.owner, c, this.amount,
 							true, true));
