@@ -273,7 +273,10 @@
 	},
 	"Vacuum": {
 		"NAME": "Vacuum",
-		"DESCRIPTION": "Remove all of your Weak, Frail, and Vulnerable. NL Deal !D! damage for each stack removed."
+		"DESCRIPTION": "Remove all of your Weak, Frail, and Vulnerable. NL Deal !M! damage for each stack removed.",
+		"EXTENDED_DESCRIPTION": [
+			" (Will deal !D! damage)."
+		]
 	},
 	"ChaosForm": {
 		"NAME": "Chaos Form",
@@ -324,9 +327,8 @@
 		"NAME": "Reflection Ward",
 		"DESCRIPTION": "Gain 4 Block and 2 Reflect per !M! cards in your draw pile.",
 		"EXTENDED_DESCRIPTION": [
-			" NL (Will gain ",
-			" Block and ",
-			" Reflect)."
+			" (Will gain !B! Block and ",
+			" Reflect when played)."
 		]
 	},
 	"Zenith": {

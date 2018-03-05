@@ -1,9 +1,7 @@
 package fruitymod.powers;
 
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -21,7 +19,8 @@ public class BrilliancePower extends AbstractPower implements PostBattleSubscrib
 	public static final String NAME = "Brilliance";
 	public static final String[] DESCRIPTIONS = new String[] {
 		"Whenever you Draw a Dazed, draw ",
-		" card."
+		" card.",
+		" cards."
 	};
 
 	public BrilliancePower(AbstractCreature owner, int amount) {
@@ -52,7 +51,8 @@ public class BrilliancePower extends AbstractPower implements PostBattleSubscrib
 
 	@Override
 	public void updateDescription() {
-		this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+		this.description = DESCRIPTIONS[0] + 
+				(this.amount == 1 ? DESCRIPTIONS[1] : DESCRIPTIONS[2]);
 	}
 
 

@@ -51,9 +51,8 @@ public class ReflectionWard extends CustomCard {
 		
 		super.applyPowers();
 		
-		this.rawDescription =  DESCRIPTION + EXTENDED_DESCRIPTION[0] +
-				this.block + EXTENDED_DESCRIPTION[1] + (REFLECT_PER_STACK * count) +
-				EXTENDED_DESCRIPTION[2];
+		this.rawDescription =  DESCRIPTION + EXTENDED_DESCRIPTION[0] + (REFLECT_PER_STACK * count) +
+				EXTENDED_DESCRIPTION[1];
 		initializeDescription();
 	}
 	

@@ -24,6 +24,7 @@ extends CustomCard {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
     private static final int COST = 2;
     private static final int ATTACK_DMG = 4;
     private static final int UPGRADED_DMG_AMT = 2;
@@ -33,7 +34,7 @@ extends CustomCard {
         super(ID, NAME, FruityMod.makePath(FruityMod.VACUUM), COST, DESCRIPTION, 
         		AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE, 
         		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY, POOL);
-        this.baseDamage = ATTACK_DMG;
+        this.magicNumber = this.baseMagicNumber = ATTACK_DMG;
     }
 
     @Override
@@ -52,6 +53,46 @@ extends CustomCard {
     	for (int i = 0; i < debuffCount; i++) {
     		AbstractDungeon.actionManager.addToBottom(
     				new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+    	}
+    	
+    	this.rawDescription = DESCRIPTION;
+    	initializeDescription();
+    }
+    
+    @Override
+    public void applyPowers() {
+    	int count = GetAllDebuffCount(AbstractDungeon.player);
+    	this.baseDamage = count * this.magicNumber;
+    	
+    	super.applyPowers();
+    	
+    	if (AbstractDungeon.player.hasPower("Weakened")) {
+    		// cancel out effect of weak b/c we are going
+    		// to remove it before dealing damage
+    		this.damage *= 1.34f;
+    	}
+    	
+    	if (this.damage == count * this.magicNumber) {
+    		this.isDamageModified = false;
+    	}
+    	
+    	this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
+    	initializeDescription();
+    }
+    
+    @Override
+    public void calculateCardDamage(AbstractMonster mo) {
+    	int count = GetAllDebuffCount(AbstractDungeon.player);
+    	super.calculateCardDamage(mo);
+    	
+    	if (AbstractDungeon.player.hasPower("Weakened")) {
+    		// cancel out effect of weak b/c we are going
+    		// to remove it before dealing damage
+    		this.damage *= 1.34f;
+    	}
+    	
+    	if (this.damage == count * this.magicNumber) {
+    		this.isDamageModified = false;
     	}
     }
     
@@ -77,6 +118,11 @@ extends CustomCard {
     	return debuffCount;    	
     }    
     
+    @Override
+    public void onMoveToDiscard() {
+    	this.rawDescription = DESCRIPTION;
+    	initializeDescription();
+    }
 
     @Override
     public AbstractCard makeCopy() {
@@ -87,7 +133,7 @@ extends CustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(UPGRADED_DMG_AMT);
+            this.upgradeMagicNumber(UPGRADED_DMG_AMT);
         }
     }
 }
