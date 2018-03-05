@@ -7,18 +7,17 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
-import basemod.BaseMod;
-import basemod.interfaces.PostBattleSubscriber;
-import basemod.interfaces.PostDungeonInitializeSubscriber;
 import fruitymod.FruityMod;
 
-public class ChaosFormPower extends AbstractPower implements PostBattleSubscriber,
-	PostDungeonInitializeSubscriber {
+public class ChaosFormPower extends AbstractPower {
 	public static final String POWER_ID = "ChaosFormPower";
 	public static final String NAME = "Chaos Form";
-	public static final String DESCRIPTION = "At the start of your turn, shuffle a random Ethereal card into your draw pile.";
+	public static final String[] DESCRIPTIONS = new String[] {
+			"At the start of your turn, shuffle ",
+			"a random Ethereal card into your draw pile.",
+			" random Ethereal cards into your draw pile."
+	};
 	
 	public ChaosFormPower(AbstractCreature owner, int amount) {
 		this.name = NAME;
@@ -33,7 +32,13 @@ public class ChaosFormPower extends AbstractPower implements PostBattleSubscribe
 	}
 
 	@Override
-	public void atStartOfTurnPostDraw(){
+	public void atStartOfTurn(){
+		for (int i = 0; i < this.amount; i++) {
+			addRandomEtherealCard();
+		}
+	}
+	
+	private void addRandomEtherealCard() {
 		ArrayList<AbstractCard> list = new ArrayList<AbstractCard>();
 		for (AbstractCard c : AbstractDungeon.srcCommonCardPool.group) {
 			if (c.isEthereal) list.add(c);
@@ -50,69 +55,11 @@ public class ChaosFormPower extends AbstractPower implements PostBattleSubscribe
 	}
 	
 	@Override
-	public void onInitialApplication() {
-		BaseMod.subscribeToPostBattle(this);
-		BaseMod.subscribeToPostDungeonInitialize(this);
-	}
-	
-	@Override
 	public void updateDescription() {
-		this.description = DESCRIPTION;
-	}
-
-	@Override
-	public void receivePostBattle(AbstractRoom arg0) {
-		System.out.println("should be removed now!");
-		BaseMod.unsubscribeFromPostDungeonInitialize(this);
-		/*
-		 *  calling unsubscribeFromPostBattle inside the callback
-		 *  for receivePostBattle means that when we're calling it
-		 *  there is currently an iterator going over the list
-		 *  of subscribers and calling receivePostBattle on each of
-		 *  them therefore if we immediately try to remove the this
-		 *  callback from the post battle subscriber list it will
-		 *  throw a concurrent modification exception in the iterator
-		 *  
-		 *  for now we just add a delay - yes this is an atrocious solution
-		 *  PLEASE someone with a better idea replace it
-		 */
-		Thread delayed = new Thread(() -> {
-			try {
-				Thread.sleep(200);
-			} catch (Exception e) {
-				System.out.println("could not delay unsubscribe to avoid ConcurrentModificationException");
-				e.printStackTrace();
-			}
-			BaseMod.unsubscribeFromPostBattle(this);
-		});
-		delayed.start();
-	}
-	
-	@Override
-	public void receivePostDungeonInitialize() {
-		BaseMod.unsubscribeFromPostBattle(this);
-		/*
-		 *  calling unsubscribeFromPostDungeonInitialize inside the callback
-		 *  for receivePostDungeonInitialize means that when we're calling it
-		 *  there is currently an iterator going over the list
-		 *  of subscribers and calling receivePostDungeonInitialize on each of
-		 *  them therefore if we immediately try to remove the this
-		 *  callback from the post battle subscriber list it will
-		 *  throw a concurrent modification exception in the iterator
-		 *  
-		 *  for now we just add a delay - yes this is an atrocious solution
-		 *  PLEASE someone with a better idea replace it
-		 */
-		Thread delayed = new Thread(() -> {
-			try {
-				Thread.sleep(200);
-			} catch (Exception e) {
-				System.out.println("could not delay unsubscribe to avoid ConcurrentModificationException");
-				e.printStackTrace();
-			}
-			BaseMod.unsubscribeFromPostDungeonInitialize(this);
-		});
-		delayed.start();
+		this.description = DESCRIPTIONS[0] +
+				((this.amount == 1) ?
+						DESCRIPTIONS[1] :
+						(this.amount + DESCRIPTIONS[2]));
 	}
 	
 }
