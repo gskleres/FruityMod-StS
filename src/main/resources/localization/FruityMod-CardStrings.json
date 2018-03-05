@@ -178,9 +178,7 @@
 	},
 	"Vortex": {
 		"NAME": "Vortex",
-		"DESCRIPTION": "If the enemy is Weak or Vulnerable, reduce its Block to 0. NL Exhaust.",
-		"UPGRADE_DESCRIPTION": "If the enemy is Weak or Vulnerable, reduce its Block and Strength to 0. NL Exhaust.",
-		"EXTENDED_DESCRIPTION": [ "Enemy must be Weak or Vulnerable."]
+		"DESCRIPTION": "Gain !B! Block. Exhaust your hand. Shuffle 1 Dazed into your draw pile for each card that was Exahusted."
 	},
 	"Archives": {
 		"NAME": "Archives",
