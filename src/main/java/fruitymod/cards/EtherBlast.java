@@ -30,18 +30,15 @@ public class EtherBlast extends CustomCard {
 		super(ID, NAME, FruityMod.makePath(FruityMod.ETHER_BLAST), COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
 				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY, POOL);
 		this.isEthereal = true;
-		this.baseDamage = ATTACK_DMG;
+		this.magicNumber = this.baseMagicNumber = ATTACK_DMG;
 	}
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		int count = countEtherealCardsInHand();
-		for (int i = 0; i < count; i++) {
 			AbstractDungeon.actionManager.addToTop(
 					new DamageAction(m,
 							new DamageInfo(p, this.damage, this.damageTypeForTurn), true));
 			AbstractDungeon.actionManager.addToTop(new VFXAction(new ThrowDaggerEffect(m.hb.cX, m.hb.cY)));
-		}
 		
 		this.rawDescription = DESCRIPTION;
 		initializeDescription();
@@ -59,9 +56,10 @@ public class EtherBlast extends CustomCard {
 	
 	@Override
 	public void applyPowers() {
-		super.applyPowers();
-		
 		int count = countEtherealCardsInHand();
+		this.baseDamage = count * this.magicNumber;
+		
+		super.applyPowers();
 
 		this.rawDescription =  DESCRIPTION + 
 				(EXTENDED_DESCRIPTION[0] + count);
@@ -88,7 +86,7 @@ public class EtherBlast extends CustomCard {
 	public void upgrade() {
 		if (!this.upgraded) {
 			this.upgradeName();
-			this.upgradeDamage(ATTACK_UPGRADE);
+			this.upgradeMagicNumber(ATTACK_UPGRADE);
 		}
 	}
 }
