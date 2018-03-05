@@ -39,10 +39,6 @@ extends CustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-    	
-    	int debuffCount = GetAllDebuffCount(p);
-    	
-
         AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "Weakened"));
         AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "Frail"));
         AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "Vulnerable"));
@@ -50,10 +46,9 @@ extends CustomCard {
     	if (m != null) {
             AbstractDungeon.actionManager.addToBottom(new VFXAction(new VerticalImpactEffect(m.hb.cX + m.hb.width / 4.0f, m.hb.cY - m.hb.height / 4.0f)));
         }
-    	for (int i = 0; i < debuffCount; i++) {
-    		AbstractDungeon.actionManager.addToBottom(
-    				new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-    	}
+
+		AbstractDungeon.actionManager.addToBottom(
+				new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
     	
     	this.rawDescription = (this.isEthereal ? "Ethereal. NL " : "") + DESCRIPTION;
     	initializeDescription();
