@@ -55,7 +55,7 @@ extends CustomCard {
     				new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
     	}
     	
-    	this.rawDescription = DESCRIPTION;
+    	this.rawDescription = (this.isEthereal ? "Ethereal. NL " : "") + DESCRIPTION;
     	initializeDescription();
     }
     
@@ -76,7 +76,7 @@ extends CustomCard {
     		this.isDamageModified = false;
     	}
     	
-    	this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
+    	this.rawDescription = (this.isEthereal ? "Ethereal. NL " : "") + DESCRIPTION + EXTENDED_DESCRIPTION[0];
     	initializeDescription();
     }
     
@@ -120,7 +120,7 @@ extends CustomCard {
     
     @Override
     public void onMoveToDiscard() {
-    	this.rawDescription = DESCRIPTION;
+    	this.rawDescription = (this.isEthereal ? "Ethereal. NL " : "") + DESCRIPTION;
     	initializeDescription();
     }
 
