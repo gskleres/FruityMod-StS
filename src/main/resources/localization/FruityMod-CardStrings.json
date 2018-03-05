@@ -144,7 +144,7 @@
 	},
 	"ThoughtRaze": {
 		"NAME": "Thought Raze",
-		"DESCRIPTION": "Deal !D! damage to ALL enemies. NL Shuffle a card from your hand into your draw pile."
+		"DESCRIPTION": "Exhaust all Ethereal cards in your draw pile. Deal !D! damage for each card that is Exhausted."
 	},
 	"UmbralBolt": {
 		"NAME": "Umbral Bolt",
