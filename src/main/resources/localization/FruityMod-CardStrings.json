@@ -209,8 +209,8 @@
 	},
 	"Illuminate": {
 		"NAME": "Illuminate",
-		"DESCRIPTION": "Create !M! copy of an Ethereal card in your hand. NL Shuffle it into your draw pile.",
-		"UPGRADE_DESCRIPTION": "Create !M! copies of an Ethereal card in your hand. NL Shuffle it into your draw pile."
+		"DESCRIPTION": "Create !M! copy of an Ethereal card in your hand. NL Put the copy on the top of your draw pile.",
+		"UPGRADE_DESCRIPTION": "Create !M! copies of an Ethereal card in your hand. NL Put the copies on the top of your draw pile."
 	},
 	"MindOverMatter": {
 		"NAME": "Mind Over Matter",

@@ -1,30 +1,25 @@
 package fruitymod.actions.unique;
 
+import java.util.ArrayList;
+
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.LocalizedStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
-import com.megacrit.cardcrawl.screens.select.HandCardSelectScreen;
-import java.util.ArrayList;
-import java.util.Collection;
 
 public class IlluminateAction
 extends AbstractGameAction {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("DualWieldAction");
     public static final String[] TEXT = IlluminateAction.uiStrings.TEXT;
-    private static final float DURATION_PER_CARD = 0.25f;
     private AbstractPlayer p;
     private int dupeAmount = 1;
-    private ArrayList<AbstractCard> cannotDuplicate = new ArrayList();
+    private ArrayList<AbstractCard> cannotDuplicate = new ArrayList<>();
 
     public IlluminateAction(AbstractCreature source, int amount) {
         this.setValues(AbstractDungeon.player, source, amount);
@@ -48,9 +43,7 @@ extends AbstractGameAction {
             if (this.p.hand.group.size() - this.cannotDuplicate.size() == 1) {
                 for (AbstractCard c : this.p.hand.group) {
                     if (!this.isEligible(c)) continue;
-                    for (int i = 0; i < this.dupeAmount; ++i) {
-                        AbstractDungeon.actionManager.addToTop(new MakeTempCardInDrawPileAction(p, p, c.makeStatEquivalentCopy(), 1, true, true));
-                    }
+                    AbstractDungeon.actionManager.addToTop(new MakeTempCardInDrawPileAction(p, p, c.makeStatEquivalentCopy(), this.dupeAmount, false, true));
                     this.isDone = true;
                     return;
                 }
@@ -62,9 +55,7 @@ extends AbstractGameAction {
                 return;
             }
             if (this.p.hand.group.size() == 1) {
-                for (int i = 0; i < this.dupeAmount; ++i) {
-                    AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(this.p.hand.getTopCard().makeStatEquivalentCopy()));
-                }
+            	AbstractDungeon.actionManager.addToTop(new MakeTempCardInDrawPileAction(p, p, p.hand.getTopCard().makeStatEquivalentCopy(), this.dupeAmount, false, true));
                 this.returnCards();
                 this.isDone = true;
             }
@@ -72,9 +63,7 @@ extends AbstractGameAction {
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
             for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
                 AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(c.makeStatEquivalentCopy()));
-                for (int i = 0; i < this.dupeAmount; ++i) {
-                    AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(c.makeStatEquivalentCopy()));
-                }
+                AbstractDungeon.actionManager.addToTop(new MakeTempCardInDrawPileAction(p, p, c.makeStatEquivalentCopy(), this.dupeAmount, false, true));
             }
             this.returnCards();
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
