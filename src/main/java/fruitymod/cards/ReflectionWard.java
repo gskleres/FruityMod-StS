@@ -31,17 +31,14 @@ public class ReflectionWard extends CustomCard {
 		super(ID, NAME, FruityMod.makePath(FruityMod.REFLECTION_WARD), COST, DESCRIPTION,
     			AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE,
     			AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF, POOL);
-		this.baseBlock = BLOCK_PER_STACK;
 		this.magicNumber = this.baseMagicNumber = BASE_CARDS_PER_STACK;
 	}
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		int count = calculateStacks();
-        for (int i = 0; i < count; i++) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ReflectionWardPower(p, REFLECT_PER_STACK), REFLECT_PER_STACK));
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
-        }
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ReflectionWardPower(p, count * REFLECT_PER_STACK), count * REFLECT_PER_STACK));
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
         
         this.rawDescription = DESCRIPTION;
         initializeDescription();
@@ -49,17 +46,14 @@ public class ReflectionWard extends CustomCard {
 	
 	@Override
 	public void applyPowers() {
+		int count = calculateStacks();
+		this.baseBlock = BLOCK_PER_STACK * count;
+		
 		super.applyPowers();
 		
-		int count = calculateStacks();
-		
-		this.rawDescription =  DESCRIPTION + 
-				(EXTENDED_DESCRIPTION[0] + count);
-		if (count == 1) {
-			this.rawDescription += EXTENDED_DESCRIPTION[1];
-		} else {
-			this.rawDescription += EXTENDED_DESCRIPTION[2];
-		}
+		this.rawDescription =  DESCRIPTION + EXTENDED_DESCRIPTION[0] +
+				this.block + EXTENDED_DESCRIPTION[1] + (REFLECT_PER_STACK * count) +
+				EXTENDED_DESCRIPTION[2];
 		initializeDescription();
 	}
 	

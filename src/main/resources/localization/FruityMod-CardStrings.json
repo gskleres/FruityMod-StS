@@ -316,11 +316,11 @@
 	},
 	"ReflectionWard": {
 		"NAME": "Reflection Ward",
-		"DESCRIPTION": "Gain !B! Block and 2 Reflect per !M! cards in your draw pile.",
+		"DESCRIPTION": "Gain 4 Block and 2 Reflect per !M! cards in your draw pile.",
 		"EXTENDED_DESCRIPTION": [
-			" NL (Will apply ",
-			" time).",
-			" times)."
+			" NL (Will gain ",
+			" Block and ",
+			" Reflect)."
 		]
 	},
 	"Zenith": {
