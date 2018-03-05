@@ -43,7 +43,7 @@ public class UmbralBolt extends CustomCard {
 			int debuffCount = GetAllDebuffCount(p);
 
 			AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(p, p, new Dazed(), debuffCount, true, true));
-			AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "Fail"));
+			AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "Frail"));
 			AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "Weakened"));
 			AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "Vulnerable"));
 	    }

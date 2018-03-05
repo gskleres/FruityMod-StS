@@ -70,7 +70,7 @@
 	},
 	"Nebula": {
 		"NAME": "Nebula",
-		"DESCRIPTION": "Ethereal. Gain !M! Block for every Ethereal card in your hand."
+		"DESCRIPTION": "Ethereal. NL Gain !M! Block for each Ethereal card in your hand."
 	},
 	"FluxShield": {
 		"NAME": "Disruption Field",
@@ -92,7 +92,7 @@
 	},
 	"DarkMatter": {
 		"NAME": "Dark Matter",
-		"DESCRIPTION": "Deal !M! damage for each Ethereal card that has been Exhausted this combat."
+		"DESCRIPTION": "Deal !M! damage for each Exhausted Ethereal card this combat."
 	},
 	"Entropy": {
 		"NAME": "Entropy",
@@ -205,12 +205,12 @@
 	},
 	"Flow": {
 		"NAME": "Flow",
-		"DESCRIPTION": "Ethereal. NL Retain all excess Energy at the end of turn. NL Draw 1 extra card next turn."
+		"DESCRIPTION": "Ethereal. NL Retain all excess Energy at the end of turn. Draw 1 extra card next turn."
 	},
 	"Illuminate": {
 		"NAME": "Illuminate",
-		"DESCRIPTION": "Create !M! copy of an Ethereal card in your hand. NL Put the copy on the top of your draw pile.",
-		"UPGRADE_DESCRIPTION": "Create !M! copies of an Ethereal card in your hand. NL Put the copies on the top of your draw pile."
+		"DESCRIPTION": "Create and Recycle !M! copy of an Ethereal card in your hand.",
+		"UPGRADE_DESCRIPTION": "Create and Recycle !M! copies of an Ethereal card in your hand."
 	},
 	"MindOverMatter": {
 		"NAME": "Mind Over Matter",
@@ -219,7 +219,7 @@
 	},
 	"Overload": {
 		"NAME": "Overload",
-		"DESCRIPTION": "Gain 2 Vulnerable. NL Gain !M! Energy. Gives 1 less Energy each time this card is used this combat."
+		"DESCRIPTION": "Gain 2 Vulnerable. NL Gain !M! Energy. NL Gives 1 less Energy each time this card is used this combat."
 	},
 	"Disperse": {
 		"NAME": "Disperse",
@@ -253,7 +253,7 @@
 	},
 	"Feedback": {
 		"NAME": "Feedback",
-		"DESCRIPTION": "Remove all Weak and Vulnerable from an Enemy. NL That enemy loses !M! HP per stack removed.",
+		"DESCRIPTION": "Remove all Weak and Vulnerable from an Enemy. It loses !M! HP per stack removed.",
 		"EXTENDED_DESCRIPTION": [ " NL (Will lose !D! HP.)"]
 	},
 	"Implosion": {
