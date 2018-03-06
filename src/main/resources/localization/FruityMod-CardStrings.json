@@ -116,7 +116,7 @@
 		"NAME": "Ether Blast",
 		"DESCRIPTION": "Ethereal. Deal !M! damage for each Ethereal card in your hand.",
 		"EXTENDED_DESCRIPTION": [
-			" NL (You have ",
+			" (You have ",
 			" Ethereal card in hand).",
 			" Ethereal cards in hand).",
 			" NL (Will deal !D! damage)."
@@ -236,7 +236,7 @@
 	},
 	"Convergence": {
 		"NAME": "Convergence",
-		"DESCRIPTION": "Unplayable. NL Ethereal. NL When you draw this card upgrade a random card in your hand.",
+		"DESCRIPTION": "Unplayable. Ethereal. NL When you draw this card upgrade a random card in your hand.",
 		"UPGRADE_DESCRIPTION": "Unplayable. NL Ethereal. NL When you draw this card, upgrade a card in your hand."
 	},
 	"SiphonSpeed": {
