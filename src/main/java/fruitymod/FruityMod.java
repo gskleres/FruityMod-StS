@@ -403,8 +403,8 @@ public class FruityMod implements PostInitializeSubscriber,
         BaseMod.subscribeToEditStrings(this);
         
         /* Disable this during playtesting for being counterproductive */
-        logger.info("subscribing to setUnlocks event");
-        BaseMod.subscribeToSetUnlocks(this);
+        // logger.info("subscribing to setUnlocks event");
+        // BaseMod.subscribeToSetUnlocks(this);
         
         logger.info("subscribing to onCardUse event");
         BaseMod.subscribeToOnCardUse(this);
@@ -564,7 +564,85 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new Nova());
 		BaseMod.addCard(new Vortex());
 		BaseMod.addCard(new Nexus());
-
+		
+		// make sure everything is always unlocked
+		UnlockTracker.unlockCard("Strike_P");
+		UnlockTracker.unlockCard("Defend_P");
+		
+		UnlockTracker.unlockCard("Starburst");
+		UnlockTracker.unlockCard("Irradiate");
+		UnlockTracker.unlockCard("AstralHaze");
+		UnlockTracker.unlockCard("Brainstorm");
+		UnlockTracker.unlockCard("DarkMatter");
+		UnlockTracker.unlockCard("ArcaneArmor");
+		UnlockTracker.unlockCard("Entropy");
+		UnlockTracker.unlockCard("EssenceDart");		
+		UnlockTracker.unlockCard("Flicker");
+		UnlockTracker.unlockCard("PlasmaWave");		
+		UnlockTracker.unlockCard("PulseBarrier");
+		UnlockTracker.unlockCard("Nebula");
+		UnlockTracker.unlockCard("EtherBlast");
+		UnlockTracker.unlockCard("Flare");		
+		UnlockTracker.unlockCard("NullStorm");
+		UnlockTracker.unlockCard("VoidRay");
+		UnlockTracker.unlockCard("DisruptionField");
+		UnlockTracker.unlockCard("UnstableOrb");
+		UnlockTracker.unlockCard("Hypothesis");
+		UnlockTracker.unlockCard("Comet");
+		UnlockTracker.unlockCard("ForceRipple");
+		UnlockTracker.unlockCard("PhaseCoil");
+		UnlockTracker.unlockCard("Overload");
+		UnlockTracker.unlockCard("Syzygy");
+		UnlockTracker.unlockCard("SiphonPower");
+		UnlockTracker.unlockCard("Shimmer");
+		UnlockTracker.unlockCard("ThoughtRaze");
+		UnlockTracker.unlockCard("Retrograde");
+		UnlockTracker.unlockCard("Singularity");
+		UnlockTracker.unlockCard("UmbralBolt");
+		UnlockTracker.unlockCard("Genesis");
+		UnlockTracker.unlockCard("PrismaticSphere");
+		UnlockTracker.unlockCard("Flux");
+		UnlockTracker.unlockCard("Channel");
+		UnlockTracker.unlockCard("Implosion");
+		UnlockTracker.unlockCard("ChaosForm");
+		UnlockTracker.unlockCard("Vacuum");
+		UnlockTracker.unlockCard("AstralShift");
+		UnlockTracker.unlockCard("RunicBinding");
+		UnlockTracker.unlockCard("Eureka");
+		UnlockTracker.unlockCard("Eclipse");
+		UnlockTracker.unlockCard("Echo");
+		UnlockTracker.unlockCard("EventHorizon");
+		UnlockTracker.unlockCard("Zenith");
+		UnlockTracker.unlockCard("ReflectionWard");
+		UnlockTracker.unlockCard("Creativity");
+		UnlockTracker.unlockCard("Transference");
+		UnlockTracker.unlockCard("Surge");
+		UnlockTracker.unlockCard("StrokeOfGenius");
+		UnlockTracker.unlockCard("SiphonSpeed");
+		UnlockTracker.unlockCard("Convergence");
+		UnlockTracker.unlockCard("GravityWell");
+		UnlockTracker.unlockCard("Coalescence");
+		UnlockTracker.unlockCard("PeriaptOfCelerity");
+		UnlockTracker.unlockCard("PeriaptOfPotency");
+		UnlockTracker.unlockCard("MeteorShower");
+		UnlockTracker.unlockCard("PowerOverwhelming");
+		UnlockTracker.unlockCard("MindOverMatter");
+		UnlockTracker.unlockCard("Disperse");
+		UnlockTracker.unlockCard("Magnetize");
+		UnlockTracker.unlockCard("Illuminate");
+		UnlockTracker.unlockCard("Flow");
+		UnlockTracker.unlockCard("Equinox");
+		UnlockTracker.unlockCard("Corona");
+		UnlockTracker.unlockCard("Archives");
+		UnlockTracker.unlockCard("MagicMissile");
+		UnlockTracker.unlockCard("Enigma");
+		UnlockTracker.unlockCard("Feedback");
+		UnlockTracker.unlockCard("Brilliance");
+		UnlockTracker.unlockCard("Anomaly");
+		UnlockTracker.unlockCard("Nova");
+		UnlockTracker.unlockCard("Vortex");
+		UnlockTracker.unlockCard("Nexus");
+		
 		logger.info("done editting cards");
 	}
 
