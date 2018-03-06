@@ -30,6 +30,11 @@ public class EnigmaPower extends AbstractPower {
 	}
 	
 	@Override
+	public void onInitialApplication() {
+		updateDazedDescriptions(null);
+	}
+	
+	@Override
 	public void updateDescription() {
 		this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1] +
 				this.amount + DESCRIPTIONS[2];
@@ -48,22 +53,15 @@ public class EnigmaPower extends AbstractPower {
 	private void updateDazedDescriptions(AbstractPower applied) {
 		int damage = this.amount;
 		int block = this.amount;
-		if (AbstractDungeon.player.hasPower("Strength")) {
-			damage += AbstractDungeon.player.getPower("Strength").amount;
-		}
-		if (AbstractDungeon.player.hasPower("Dexterity")) {
-			block += AbstractDungeon.player.getPower("Dexterity").amount;
-		}
-		if (applied != null && applied.ID.equals("Strength")) {
+		if (applied != null && applied.ID.equals("EnigmaPower")) {
 			damage += applied.amount;
-		}
-		if (applied != null && applied.ID.equals("Dexterity")) {
 			block += applied.amount;
 		}
-		
 		for (AbstractCard c : AbstractDungeon.player.hand.group) {
 			if (c instanceof Dazed) {
-				c.rawDescription = "Ethereal. Gain " + block + " Block. Deal " + damage + " damage to all enemies.";
+				c.baseBlock = block;
+				c.baseDamage = damage;
+				c.rawDescription = "Ethereal. Gain !B! Block. Deal !D! damage to all enemies.";
 				c.initializeDescription();
 			}
 		}
