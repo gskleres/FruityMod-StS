@@ -75,7 +75,7 @@
 			" (You will gain !B! Block)"
 		]
 	},
-	"FluxShield": {
+	"DisruptionField": {
 		"NAME": "Disruption Field",
 		"DESCRIPTION": "Gain !B! Block. NL Shuffle a Dazed into your draw pile."
 	},

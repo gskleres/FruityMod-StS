@@ -14,9 +14,9 @@ import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
 import fruitymod.patches.AbstractCardEnum;
 
-public class FluxShield
+public class DisruptionField
 extends CustomCard {
-    public static final String ID = "FluxShield";
+    public static final String ID = "DisruptionField";
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
@@ -26,7 +26,7 @@ extends CustomCard {
     private static final int DAZED_COUNT = 1;
     private static final int POOL = 1;
 
-    public FluxShield() {
+    public DisruptionField() {
         super(ID, NAME, FruityMod.makePath(FruityMod.FLUX_SHIELD), COST, DESCRIPTION, 
         		AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE, 
         		AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF, POOL);
@@ -42,7 +42,7 @@ extends CustomCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new FluxShield();
+        return new DisruptionField();
     }
     
     @Override

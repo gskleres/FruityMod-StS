@@ -76,7 +76,7 @@ import fruitymod.cards.Flare;
 import fruitymod.cards.Flicker;
 import fruitymod.cards.Flow;
 import fruitymod.cards.Flux;
-import fruitymod.cards.FluxShield;
+import fruitymod.cards.DisruptionField;
 import fruitymod.cards.ForceRipple;
 import fruitymod.cards.Genesis;
 import fruitymod.cards.GravityWell;
@@ -507,7 +507,7 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new Flare());		
 		BaseMod.addCard(new NullStorm());
 		BaseMod.addCard(new VoidRay());
-		BaseMod.addCard(new FluxShield());
+		BaseMod.addCard(new DisruptionField());
 		BaseMod.addCard(new UnstableOrb());
 		BaseMod.addCard(new Hypothesis());
 		BaseMod.addCard(new Comet());
