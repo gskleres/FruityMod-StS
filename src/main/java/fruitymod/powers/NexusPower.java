@@ -49,7 +49,7 @@ public class NexusPower extends AbstractPower implements PostDrawSubscriber, Pos
 	
 	@Override
 	public void receivePostDraw(AbstractCard c) {
-		if(!c.isEthereal && (c.type == AbstractCard.CardType.ATTACK) || c.type == AbstractCard.CardType.SKILL) {
+		if(!c.isEthereal && (c.type == AbstractCard.CardType.ATTACK || c.type == AbstractCard.CardType.SKILL)) {
 			AbstractDungeon.actionManager.addToBottom(
 					new MakeTempCardInDrawPileEtherealAction(this.owner, this.owner, c, this.amount,
 							true, true));
