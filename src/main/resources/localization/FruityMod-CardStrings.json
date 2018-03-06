@@ -336,7 +336,7 @@
 	},
 	"Coalescence": {
 		"NAME": "Coalescence",
-		"DESCRIPTION": "Whenever you gain Frail, Weak, or Vulnerable, gain !M! Block."
+		"DESCRIPTION": "Whenever you gain Frail, Weak, or Vulnerable during your turn, gain !M! Block."
 	},
 	"Magnetize": {
 		"NAME": "Magnetize",
