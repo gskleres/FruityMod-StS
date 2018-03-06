@@ -116,9 +116,6 @@
 		"NAME": "Ether Blast",
 		"DESCRIPTION": "Ethereal. Deal !M! damage for each Ethereal card in your hand.",
 		"EXTENDED_DESCRIPTION": [
-			" (You have ",
-			" Ethereal card in hand).",
-			" Ethereal cards in hand).",
 			" NL (Will deal !D! damage)."
 		]
 	},

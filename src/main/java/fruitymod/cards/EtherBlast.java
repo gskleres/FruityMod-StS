@@ -61,15 +61,9 @@ public class EtherBlast extends CustomCard {
 		
 		super.applyPowers();
 
-		this.rawDescription =  DESCRIPTION + 
-				(EXTENDED_DESCRIPTION[0] + count);
-		if (count == 1) {
-			this.rawDescription += EXTENDED_DESCRIPTION[1];
-		} else {
-			this.rawDescription += EXTENDED_DESCRIPTION[2];
-		}
+		this.rawDescription =  DESCRIPTION;
 		if (count > 0) {
-			this.rawDescription += EXTENDED_DESCRIPTION[3];
+			this.rawDescription += EXTENDED_DESCRIPTION[0];
 		}
 		initializeDescription();
 	}
