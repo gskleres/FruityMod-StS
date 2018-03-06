@@ -236,7 +236,7 @@
 	},
 	"Convergence": {
 		"NAME": "Convergence",
-		"DESCRIPTION": "Unplayable. NL Ethereal. NL When you draw this card upgrade a random card in your hand.",
+		"DESCRIPTION": "Unplayable. Ethereal. NL When you draw this card upgrade a random card in your hand.",
 		"UPGRADE_DESCRIPTION": "Unplayable. NL Ethereal. NL When you draw this card, upgrade a card in your hand."
 	},
 	"SiphonSpeed": {
