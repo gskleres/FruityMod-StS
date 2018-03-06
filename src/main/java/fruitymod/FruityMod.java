@@ -163,12 +163,12 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String ARCANE_TEMPEST = "cards/arcane_tempest.png";
     public static final String ARCANE_VOLLEY = "cards/irradiate.png";
     public static final String ARCHIVES = "cards/archives.png";
-    public static final String ASTRAL_FORM = "cards/chaos_form.png";
     public static final String ASTRAL_HAZE = "cards/astral_haze.png";
     public static final String ASTRAL_SHIFT = "cards/dimension_door.png";
     public static final String BRAINSTORM = "cards/brainstorm.png";
     public static final String BRILLIANCE = "cards/brilliance.png";
     public static final String CHANNEL = "cards/channel.png";
+    public static final String CHAOS_FORM = "cards/chaos_form.png";
     public static final String COALESCENCE = "cards/coalescence.png";
     public static final String COMET = "cards/comet.png";
     public static final String CONVERGENCE = "cards/convergence.png";
@@ -219,6 +219,7 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String PROTECTION_WARD = "cards/disperse.png";
     public static final String REFLECTION_WARD = "cards/reflection_ward.png";
     public static final String RETROGRADE = "cards/retrograde.png";
+    public static final String RUNIC_BINDING = "cards/runic_binding.png";
     public static final String SHIMMER = "cards/shimmer.png";
     public static final String SIPHON_MAGIC = "cards/convergence.png";
     public static final String SIPHON_POWER = "cards/siphon_power.png";

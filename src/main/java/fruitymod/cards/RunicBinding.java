@@ -24,7 +24,7 @@ public class RunicBinding extends CustomCard {
 	private static final int POOL = 1;
 	
 	public RunicBinding() {
-		super (ID, NAME, FruityMod.makePath(FruityMod.ASTRAL_FORM), COST, DESCRIPTION,
+		super (ID, NAME, FruityMod.makePath(FruityMod.RUNIC_BINDING), COST, DESCRIPTION,
 				AbstractCard.CardType.POWER, AbstractCardEnum.PURPLE,
 				AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF, POOL);
 		this.magicNumber = this.baseMagicNumber = DMG;

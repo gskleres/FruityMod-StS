@@ -24,7 +24,7 @@ public class ChaosForm extends CustomCard {
 	private static final int POOL = 1;
 	
 	public ChaosForm() {
-		super (ID, NAME, FruityMod.makePath(FruityMod.ASTRAL_FORM), COST, DESCRIPTION,
+		super (ID, NAME, FruityMod.makePath(FruityMod.CHAOS_FORM), COST, DESCRIPTION,
 				AbstractCard.CardType.POWER, AbstractCardEnum.PURPLE,
 				AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF, POOL);
 		this.magicNumber = this.baseMagicNumber = 1;
