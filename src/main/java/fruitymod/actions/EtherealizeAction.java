@@ -28,6 +28,10 @@ extends AbstractGameAction {
             c.initializeDescription();
             c.superFlash();
         }
+        // let cards update themselves with the new information
+        for (AbstractCard c : this.p.hand.group) {
+        	c.applyPowers();
+        }
         this.isDone = true;
     }
 }
