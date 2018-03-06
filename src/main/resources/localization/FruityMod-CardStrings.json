@@ -102,7 +102,7 @@
 	},
 	"Entropy": {
 		"NAME": "Entropy",
-		"DESCRIPTION": "Ethereal. NL Deal !D! damage. NL Enemy loses !M! Strength. NL Increase this cards values by 1 until the end of combat."
+		"DESCRIPTION": "Ethereal. NL Enemy loses !M! Strength this turn, increasing by 1 each time this card is played this combat."
 	},
 	"PhaseCoil": {
 		"NAME": "Phase Coil",
