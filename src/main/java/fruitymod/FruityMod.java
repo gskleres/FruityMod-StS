@@ -269,7 +269,7 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String POWER_CELLS_RELIC = "relics/powerCells.png";
     
     // seeker assets
-    private static final String SEEKER_BUTTON = "charSelect/seeker_select_button.png";
+    private static final String SEEKER_BUTTON = "charSelect/seekerButton.png";
     private static final String SEEKER_PORTRAIT = "charSelect/SeekerPortraitBG.jpg";
     public static final String SEEKER_SHOULDER_1 = "char/seeker/shoulder.png";
     public static final String SEEKER_SHOULDER_2 = "char/seeker/shoulder2.png";
