@@ -586,29 +586,29 @@ public class FruityMod implements PostInitializeSubscriber,
 
 	@Override
 	public void receiveSetUnlocks() {
-		UnlockTracker.addCard("Brainstorm");
-		UnlockTracker.addCard("VoidRay");
-		UnlockTracker.addCard("Creativity");
+		UnlockTracker.addCard("Flicker");
+		UnlockTracker.addCard("Transference");
+		UnlockTracker.addCard("ForceRipple");
 		// seeker unlock 1
 		BaseMod.addUnlockBundle(new CustomUnlockBundle(
-				"Brainstorm", "VoidRay", "Creativity"
+				"Flicker", "Transference", "ForceRipple"
 				), TheSeekerEnum.THE_SEEKER, 1);
 		
 		// seeker unlock 2
 		BaseMod.addUnlockBundle(new CustomUnlockBundle(
-				"Shimmer", "EtherBlast", "ChaosForm"
+				"Channel", "Shimmer", "ThoughtRaze"
 				), TheSeekerEnum.THE_SEEKER, 2);
+		UnlockTracker.addCard("Channel");
 		UnlockTracker.addCard("Shimmer");
-		UnlockTracker.addCard("EtherBlast");
-		UnlockTracker.addCard("ChaosForm");
+		UnlockTracker.addCard("ThoughtRaze");
 		
 		// seeker unlock 3 (Vacuum tmp in place of Feedback)
 		BaseMod.addUnlockBundle(new CustomUnlockBundle(
-				"Transference", "Feedback", "Flicker"
+				"Convergence", "Hypothesis", "Nexus"
 				), TheSeekerEnum.THE_SEEKER, 3);
-		UnlockTracker.addCard("Transference");
-		UnlockTracker.addCard("Feedback");
-		UnlockTracker.addCard("Flicker");
+		UnlockTracker.addCard("Convergence");
+		UnlockTracker.addCard("Hypothesis");
+		UnlockTracker.addCard("Nexus");
 	}
 	
 
