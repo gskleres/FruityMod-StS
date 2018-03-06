@@ -30,6 +30,7 @@ extends CustomCard {
         		AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE,
         		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF, POOL);
         this.baseBlock = BLOCK;
+        this.exhaust = true;
     }
 
     @Override
