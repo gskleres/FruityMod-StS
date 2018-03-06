@@ -269,7 +269,7 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String POWER_CELLS_RELIC = "relics/powerCells.png";
     
     // seeker assets
-    private static final String SEEKER_BUTTON = "charSelect/seeker_select_button.png";
+    private static final String SEEKER_BUTTON = "charSelect/seekerButton.png";
     private static final String SEEKER_PORTRAIT = "charSelect/SeekerPortraitBG.jpg";
     public static final String SEEKER_SHOULDER_1 = "char/seeker/shoulder.png";
     public static final String SEEKER_SHOULDER_2 = "char/seeker/shoulder2.png";
@@ -586,29 +586,29 @@ public class FruityMod implements PostInitializeSubscriber,
 
 	@Override
 	public void receiveSetUnlocks() {
-		UnlockTracker.addCard("Flicker");
-		UnlockTracker.addCard("Transference");
-		UnlockTracker.addCard("ForceRipple");
-		// seeker unlock 1
-		BaseMod.addUnlockBundle(new CustomUnlockBundle(
-				"Flicker", "Transference", "ForceRipple"
-				), TheSeekerEnum.THE_SEEKER, 1);
-		
-		// seeker unlock 2
-		BaseMod.addUnlockBundle(new CustomUnlockBundle(
-				"Channel", "Shimmer", "ThoughtRaze"
-				), TheSeekerEnum.THE_SEEKER, 2);
-		UnlockTracker.addCard("Channel");
-		UnlockTracker.addCard("Shimmer");
-		UnlockTracker.addCard("ThoughtRaze");
-		
-		// seeker unlock 3 (Vacuum tmp in place of Feedback)
-		BaseMod.addUnlockBundle(new CustomUnlockBundle(
-				"Convergence", "Hypothesis", "Nexus"
-				), TheSeekerEnum.THE_SEEKER, 3);
-		UnlockTracker.addCard("Convergence");
-		UnlockTracker.addCard("Hypothesis");
-		UnlockTracker.addCard("Nexus");
+//		UnlockTracker.addCard("Flicker");
+//		UnlockTracker.addCard("Transference");
+//		UnlockTracker.addCard("ForceRipple");
+//		// seeker unlock 1
+//		BaseMod.addUnlockBundle(new CustomUnlockBundle(
+//				"Flicker", "Transference", "ForceRipple"
+//				), TheSeekerEnum.THE_SEEKER, 1);
+//		
+//		// seeker unlock 2
+//		BaseMod.addUnlockBundle(new CustomUnlockBundle(
+//				"Channel", "Shimmer", "ThoughtRaze"
+//				), TheSeekerEnum.THE_SEEKER, 2);
+//		UnlockTracker.addCard("Channel");
+//		UnlockTracker.addCard("Shimmer");
+//		UnlockTracker.addCard("ThoughtRaze");
+//		
+//		// seeker unlock 3 (Vacuum tmp in place of Feedback)
+//		BaseMod.addUnlockBundle(new CustomUnlockBundle(
+//				"Convergence", "Hypothesis", "Nexus"
+//				), TheSeekerEnum.THE_SEEKER, 3);
+//		UnlockTracker.addCard("Convergence");
+//		UnlockTracker.addCard("Hypothesis");
+//		UnlockTracker.addCard("Nexus");
 	}
 	
 
