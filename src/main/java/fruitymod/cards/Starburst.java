@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.rooms.MonsterRoom;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.combat.MindblastEffect;
 
 import basemod.abstracts.CustomCard;
@@ -41,7 +41,7 @@ public class Starburst extends CustomCard {
 		AbstractDungeon.actionManager.addToBottom(new DamageAction((AbstractCreature) m,
 				new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));
 
-		MonsterRoom room = ((MonsterRoom) AbstractDungeon.currMapNode.room);
+		AbstractRoom room = AbstractDungeon.currMapNode.room;
 		int numMonsters = room.monsters.monsters.size();
 		
 		this.multiDamage = new int[numMonsters];

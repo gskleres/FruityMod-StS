@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>fruitymod</groupId>
+  <artifactId>FruityMod</artifactId>
+  <name>Fruity Mod</name>
+  <version>0.1.0</version>
+  <description>Currently, adds a few new relics.</description>
+  <build>
+    <finalName>FruityMod</finalName>
+    <plugins>
+      <plugin>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>2.4.2</version>
+        <executions>
+          <execution>
+            <id>FruityMod</id>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <filters>
+                <filter>
+                  <artifact>fruitymod:FruityMod</artifact>
+                  <excludes>
+                    <exclude>img/cards/gimp/***</exclude>
+                  </excludes>
+                </filter>
+              </filters>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>1.8</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <target>
+                <copy />
+              </target>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+    <dependency>
+      <groupId>com.megacrit.cardcrawl</groupId>
+      <artifactId>slaythespire</artifactId>
+      <version>014</version>
+      <scope>system</scope>
+      <systemPath>${basedir}/../_lib/desktop-1.0.jar</systemPath>
+    </dependency>
+    <dependency>
+      <groupId>basemod</groupId>
+      <artifactId>basemod</artifactId>
+      <version>1.5.2</version>
+      <scope>system</scope>
+      <systemPath>${basedir}/../_lib/BaseMod.jar</systemPath>
+    </dependency>
+    <dependency>
+      <groupId>modthespire</groupId>
+      <artifactId>modthespire</artifactId>
+      <version>1.5.2</version>
+      <scope>system</scope>
+      <systemPath>${basedir}/../_lib/ModTheSpire.jar</systemPath>
+    </dependency>
+  </dependencies>
+  <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+</project>
+
