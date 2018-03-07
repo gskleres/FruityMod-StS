@@ -26,7 +26,7 @@
 	},
 	"NullStorm": {
 		"NAME": "Null Storm",
-		"DESCRIPTION": "Shuffle a Dazed into your draw pile. NL Deal !D! damage to ALL enemies."
+		"DESCRIPTION": "Shuffle a Dazed into your draw pile. Deal !D! damage to ALL enemies."
 	},
 	"VoidRay": {
 		"NAME": "Void Ray",
