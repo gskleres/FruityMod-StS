@@ -106,7 +106,7 @@
 	},
 	"PhaseCoil": {
 		"NAME": "Phase Coil",
-		"DESCRIPTION": "Costs 1 less [R] for each Ethereal card in hand. NL Deal !D! damage."
+		"DESCRIPTION": "Costs 1 less [R] for each Ethereal card in hand. Deal !D! damage."
 	},
 	"PlasmaWave": {
 		"NAME": "Plasma Wave",
