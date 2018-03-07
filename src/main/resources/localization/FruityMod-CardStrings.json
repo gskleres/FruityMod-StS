@@ -42,7 +42,7 @@
 	},
 	"MagicMissile": {
 		"NAME": "Magic Missile",
-		"DESCRIPTION": "Ethereal. NL Deal !D! damage !M! times. NL Exhaust."
+		"DESCRIPTION": "Ethereal. NL Deal !D! damage !M! times. Exhaust."
 	},
 	"Surge": {
 		"NAME": "Surge",
