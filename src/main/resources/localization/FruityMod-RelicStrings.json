@@ -45,5 +45,51 @@
   		" energy and draw #b",
   		" additional cards. The cards in your hand at the beginning of combat are #yEthereal"
   	]
+  },
+  "PaperPengwin": {
+  	"NAME": "Paper Pengwin",
+  	"FLAVOR": "Squaaawk!",
+  	"DESCRIPTIONS": [
+  		"When you are #yFrail, #yWeak, or #yVulnerable, gain #b",
+  		" #yStrength and #b",
+  		" #yDexterity."
+  	]
+  },
+  "SolarEgg": {
+  	"NAME": "Solar Egg",
+  	"FLAVOR": "An egg-shaped meteorite that fell from the sun. It glows warmly.",
+  	"DESCRIPTIONS": [
+  		"Whenever you add an #yEthereal card to your deck, it is #yUpgraded"
+  	]
+  },
+  "RodOfNegation": {
+  	"NAME": "Rod of Negation",
+  	"FLAVOR": "Imbued with chaotic power, this rod emits a ghastly purple glow on those around it.",
+  	"DESCRIPTIONS": [
+  		"You may discard #b1 card from your starting hand to gain #b1 #yArtifact."
+  	]
+  },
+  "Blueberries": {
+  	"NAME": "Blueberries",
+  	"FLAVOR": "Delicious. Very blue.",
+  	"DESCRIPTIONS": [
+  		"Gain #b",
+  		" max HP for each #yEthereal card in your deck."
+  	]
+  },
+  "CosmicSieve": {
+  	"NAME": "Cosmic Sieve",
+  	"FLAVOR": "Phases in and out of existence. Cool to the touch.",
+  	"DESCRIPTIONS": [
+  		"Whenever an #yEthereal card enters your Exhaust Pile, gain #b",
+  		" HP."
+  	]
+  },
+  "Telescope": {
+  	"NAME": "Telescope",
+  	"FLAVOR": "With this telescope, one can see further than ever before.",
+  	"DESCRIPTIONS": [
+  		"Choose any number of cards in your starting hand to gain #yEthereal."
+  	]
   }
 }

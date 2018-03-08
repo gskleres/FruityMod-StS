@@ -25,6 +25,7 @@ import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
@@ -48,7 +49,6 @@ import fruitymod.cards.Anomaly;
 import fruitymod.cards.ArcaneArmor;
 import fruitymod.cards.Archives;
 import fruitymod.cards.AstralHaze;
-import fruitymod.cards.DimensionDoor;
 import fruitymod.cards.Brainstorm;
 import fruitymod.cards.Brilliance;
 import fruitymod.cards.Channel;
@@ -60,7 +60,9 @@ import fruitymod.cards.Corona;
 import fruitymod.cards.Creativity;
 import fruitymod.cards.DarkMatter;
 import fruitymod.cards.Defend_Purple;
+import fruitymod.cards.DimensionDoor;
 import fruitymod.cards.Disperse;
+import fruitymod.cards.DisruptionField;
 import fruitymod.cards.Echo;
 import fruitymod.cards.Eclipse;
 import fruitymod.cards.Enigma;
@@ -75,7 +77,6 @@ import fruitymod.cards.Flare;
 import fruitymod.cards.Flicker;
 import fruitymod.cards.Flow;
 import fruitymod.cards.Flux;
-import fruitymod.cards.DisruptionField;
 import fruitymod.cards.ForceRipple;
 import fruitymod.cards.Genesis;
 import fruitymod.cards.GravityWell;
@@ -123,11 +124,12 @@ import fruitymod.characters.TheSeeker;
 import fruitymod.patches.AbstractCardEnum;
 import fruitymod.patches.TheSeekerEnum;
 import fruitymod.relics.Arcanosphere;
-import fruitymod.relics.AstralEgg;
-import fruitymod.relics.GhostlyHand;
-import fruitymod.relics.MechanicalCore;
-import fruitymod.relics.PowerCells;
-import fruitymod.relics.PurpleSkull;
+import fruitymod.relics.Blueberries;
+import fruitymod.relics.CosmicSieve;
+import fruitymod.relics.PaperPengwin;
+import fruitymod.relics.RodOfNegation;
+import fruitymod.relics.SolarEgg;
+import fruitymod.relics.Telescope;
 
 @SpireInitializer
 public class FruityMod implements PostInitializeSubscriber,
@@ -263,10 +265,16 @@ public class FruityMod implements PostInitializeSubscriber,
     // relic images
     public static final String ARCANOSPHERE_RELIC = "relics/arcanosphere.png";
     public static final String PURPLE_SKULL_RELIC = "relics/purpleSkull.png";
+    public static final String PAPER_PENGWIN_RELIC = "relics/paperPengwin.png";
     public static final String GHOSTLY_HAND_RELIC = "relics/ghostlyHand.png";
+    public static final String COSMIC_SIEVE_RELIC = "relics/cosmicSieve.png";
     public static final String ASTRAL_EGG_RELIC = "relics/astralEgg.png";
+    public static final String SOLAR_EGG_RELIC = "relics/solarEgg.png";
     public static final String MECHANICAL_CORE_RELIC = "relics/mechanicalCore.png";
+    public static final String ROD_OF_NEGATION_RELIC = "relics/rodOfNegation.png";
     public static final String POWER_CELLS_RELIC = "relics/powerCells.png";
+    public static final String TELESCOPE_RELIC = "relics/telescope.png";
+    public static final String BLUEBERRIES_RELIC = "relics/blueberries.png";
     
     // seeker assets
     private static final String SEEKER_BUTTON = "charSelect/seekerButton.png";
@@ -361,20 +369,44 @@ public class FruityMod implements PostInitializeSubscriber,
     	return new Texture(makePath(PURPLE_SKULL_RELIC));
     }
     
+    public static Texture getPaperPengwinTexture() {
+    	return new Texture(makePath(PAPER_PENGWIN_RELIC));
+    }
+    
     public static Texture getGhostlyHandTexture() {
     	return new Texture(makePath(GHOSTLY_HAND_RELIC));
+    }
+    
+    public static Texture getCosmicSieveTexture() {
+    	return new Texture(makePath(COSMIC_SIEVE_RELIC));
     }
     
     public static Texture getAstralEggTexture() {
     	return new Texture(makePath(ASTRAL_EGG_RELIC));
     }
     
+    public static Texture getSolarEggTexture() {
+    	return new Texture(makePath(SOLAR_EGG_RELIC));
+    }
+    
     public static Texture getMechanicalCoreTexture() {
     	return new Texture(makePath(MECHANICAL_CORE_RELIC));
     }
     
+    public static Texture getRodOfNegationTexture() {
+    	return new Texture(makePath(ROD_OF_NEGATION_RELIC));
+    }
+    
     public static Texture getPowerCellsTexture() {
     	return new Texture(makePath(POWER_CELLS_RELIC));
+    }
+    
+    public static Texture getTelescopeTexture() {
+    	return new Texture(makePath(TELESCOPE_RELIC));
+    }
+    
+    public static Texture getBlueberriesTexture() {
+    	return new Texture(makePath(BLUEBERRIES_RELIC));
     }
 
     /**
@@ -473,11 +505,12 @@ public class FruityMod implements PostInitializeSubscriber,
         
         // Add relics
 		BaseMod.addRelicToCustomPool(new Arcanosphere(), AbstractCardEnum.PURPLE.toString());
-		BaseMod.addRelicToCustomPool(new PurpleSkull(), AbstractCardEnum.PURPLE.toString());
-		BaseMod.addRelicToCustomPool(new GhostlyHand(), AbstractCardEnum.PURPLE.toString());
-		BaseMod.addRelicToCustomPool(new AstralEgg(), AbstractCardEnum.PURPLE.toString());
-		BaseMod.addRelicToCustomPool(new MechanicalCore(), AbstractCardEnum.PURPLE.toString());
-		BaseMod.addRelicToCustomPool(new PowerCells(), AbstractCardEnum.PURPLE.toString());
+		BaseMod.addRelicToCustomPool(new Blueberries(), AbstractCardEnum.PURPLE.toString());
+		BaseMod.addRelicToCustomPool(new PaperPengwin(), AbstractCardEnum.PURPLE.toString());
+		BaseMod.addRelicToCustomPool(new CosmicSieve(), AbstractCardEnum.PURPLE.toString());
+		BaseMod.addRelicToCustomPool(new SolarEgg(), AbstractCardEnum.PURPLE.toString());
+		BaseMod.addRelicToCustomPool(new RodOfNegation(), AbstractCardEnum.PURPLE.toString());
+		BaseMod.addRelicToCustomPool(new Telescope(), AbstractCardEnum.PURPLE.toString());
         
         logger.info("done editting relics");
 	}
@@ -759,12 +792,12 @@ public class FruityMod implements PostInitializeSubscriber,
 		}
 	}
 	
-	private boolean isApplyingPurpleSkull = false;
+	private boolean isApplyingPaperPengwin = false;
 	
-	private void resetPurpleSkull() {
-		isApplyingPurpleSkull = false;
-		if (AbstractDungeon.player.hasRelic("PurpleSkull")) {
-			((PurpleSkull) AbstractDungeon.player.getRelic("PurpleSkull")).setPulse(false);
+	private void resetPaperPengwin() {
+		isApplyingPaperPengwin = false;
+		if (AbstractDungeon.player.hasRelic("PaperPengwin")) {
+			((PaperPengwin) AbstractDungeon.player.getRelic("PaperPengwin")).setPulse(false);
 		}
 	}
 	
@@ -772,23 +805,27 @@ public class FruityMod implements PostInitializeSubscriber,
 	public void receivePowersModified() {
 		AbstractPlayer p = AbstractDungeon.player;
 		
-		if (p != null && p.hasRelic("PurpleSkull")) {
-			if (moreThanXStacks(p, "Weakened", PurpleSkull.MIN_STACKS) ||
-					moreThanXStacks(p, "Vulnerable", PurpleSkull.MIN_STACKS) ||
-					moreThanXStacks(p, "Frail", PurpleSkull.MIN_STACKS)) {
-				if (!isApplyingPurpleSkull) {
+		if (p != null && p.hasRelic("PaperPengwin")) {
+			if (moreThanXStacks(p, "Weakened", PaperPengwin.MIN_STACKS) ||
+					moreThanXStacks(p, "Vulnerable", PaperPengwin.MIN_STACKS) ||
+					moreThanXStacks(p, "Frail", PaperPengwin.MIN_STACKS)) {
+				if (!isApplyingPaperPengwin) {
 					AbstractDungeon.actionManager.addToTop(
-							new ApplyPowerAction(p, p, new DexterityPower(p, PurpleSkull.DEX_GAIN), PurpleSkull.DEX_GAIN));
-					isApplyingPurpleSkull = true;
-					p.getRelic("PurpleSkull").flash();
-					((PurpleSkull) p.getRelic("PurpleSkull")).setPulse(true);
+							new ApplyPowerAction(p, p, new DexterityPower(p, PaperPengwin.MIN_STACKS), PaperPengwin.MIN_STACKS));
+					AbstractDungeon.actionManager.addToTop(
+							new ApplyPowerAction(p, p, new StrengthPower(p, PaperPengwin.MIN_STACKS), PaperPengwin.MIN_STACKS));
+					isApplyingPaperPengwin = true;
+					p.getRelic("PaperPengwin").flash();
+					((PaperPengwin) p.getRelic("PaperPengwin")).setPulse(true);
 				}
 			} else {
-				if (isApplyingPurpleSkull) {
+				if (isApplyingPaperPengwin) {
 					AbstractDungeon.actionManager.addToTop(
-							new ApplyPowerAction(p, p, new DexterityPower(p, -1 * PurpleSkull.DEX_GAIN), -1 * PurpleSkull.DEX_GAIN));
-					isApplyingPurpleSkull = false;
-					((PurpleSkull) p.getRelic("PurpleSkull")).setPulse(false);
+							new ApplyPowerAction(p, p, new DexterityPower(p, -1 * PaperPengwin.MIN_STACKS), -1 * PaperPengwin.MIN_STACKS));
+					AbstractDungeon.actionManager.addToTop(
+							new ApplyPowerAction(p, p, new StrengthPower(p, -1 * PaperPengwin.MIN_STACKS), -1 * PaperPengwin.MIN_STACKS));
+					isApplyingPaperPengwin = false;
+					((PaperPengwin) p.getRelic("PaperPengwin")).setPulse(false);
 				}
 			}
 		}
@@ -798,12 +835,12 @@ public class FruityMod implements PostInitializeSubscriber,
 	public void receivePostExhaust(AbstractCard c) {
 		AbstractPlayer p = AbstractDungeon.player;
 		
-		if (p != null && p.hasRelic("GhostlyHand")) {
+		if (p != null && p.hasRelic("CosmicSieve")) {
 			if (c.isEthereal) {
-				p.heal(GhostlyHand.HP_PER_CARD);
-				p.getRelic("GhostlyHand").flash();
+				p.heal(CosmicSieve.HP_PER_CARD);
+				p.getRelic("CosmicSieve").flash();
 				AbstractDungeon.actionManager.addToBottom(
-						new RelicAboveCreatureAction(AbstractDungeon.player, p.getRelic("GhostlyHand")));
+						new RelicAboveCreatureAction(AbstractDungeon.player, p.getRelic("CosmicSieve")));
 			}
 		}
 		
@@ -811,12 +848,12 @@ public class FruityMod implements PostInitializeSubscriber,
 
 	@Override
 	public void receivePostBattle(AbstractRoom arg0) {
-		resetPurpleSkull();
+		resetPaperPengwin();
 	}
 
 	@Override
 	public void receivePostDungeonInitialize() {
-		resetPurpleSkull();
+		resetPaperPengwin();
 	}
 
 	@Override

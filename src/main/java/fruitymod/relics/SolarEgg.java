@@ -6,11 +6,11 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import basemod.abstracts.CustomRelic;
 import fruitymod.FruityMod;
 
-public class AstralEgg extends CustomRelic {
-	private static final String ID = "AstralEgg";
+public class SolarEgg extends CustomRelic {
+	private static final String ID = "SolarEgg";
 	
-	public AstralEgg() {
-		super(ID, FruityMod.getAstralEggTexture(),
+	public SolarEgg() {
+		super(ID, FruityMod.getSolarEggTexture(),
 				RelicTier.UNCOMMON, LandingSound.MAGICAL);
 	}
 	
@@ -28,7 +28,7 @@ public class AstralEgg extends CustomRelic {
 	
 	@Override
 	public AbstractRelic makeCopy() {
-		return new AstralEgg();
+		return new SolarEgg();
 	}
 	
 }

@@ -5,12 +5,12 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import basemod.abstracts.CustomRelic;
 import fruitymod.FruityMod;
 
-public class GhostlyHand extends CustomRelic {
-	private static final String ID = "GhostlyHand";
+public class CosmicSieve extends CustomRelic {
+	private static final String ID = "CosmicSieve";
 	public static final int HP_PER_CARD = 1;
 	
-	public GhostlyHand() {
-		super(ID, FruityMod.getGhostlyHandTexture(),
+	public CosmicSieve() {
+		super(ID, FruityMod.getCosmicSieveTexture(),
 				RelicTier.BOSS, LandingSound.MAGICAL);
 	}
 	
@@ -21,7 +21,7 @@ public class GhostlyHand extends CustomRelic {
 	
 	@Override
 	public AbstractRelic makeCopy() {
-		return new GhostlyHand();
+		return new CosmicSieve();
 	}
 	
 }

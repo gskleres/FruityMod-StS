@@ -5,13 +5,13 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import basemod.abstracts.CustomRelic;
 import fruitymod.FruityMod;
 
-public class PurpleSkull extends CustomRelic {
-	private static final String ID = "PurpleSkull";
-	public static final int MIN_STACKS = 2;
-	public static final int DEX_GAIN = 3;
+public class PaperPengwin extends CustomRelic {
+	private static final String ID = "PaperPengwin";
+	public static final int MIN_STACKS = 1;
+	public static final int STAT_GAIN = 1;
 	
-	public PurpleSkull() {
-		super(ID, FruityMod.getPurpleSkullTexture(),
+	public PaperPengwin() {
+		super(ID, FruityMod.getPaperPengwinTexture(),
 				RelicTier.UNCOMMON, LandingSound.MAGICAL);
 	}
 	
@@ -21,13 +21,13 @@ public class PurpleSkull extends CustomRelic {
 	
 	@Override
 	public String getUpdatedDescription() {
-		return DESCRIPTIONS[0] + MIN_STACKS + DESCRIPTIONS[1] +
-				DEX_GAIN + DESCRIPTIONS[2];
+		return DESCRIPTIONS[0] + STAT_GAIN + DESCRIPTIONS[1] +
+				STAT_GAIN + DESCRIPTIONS[2];
 	}
 	
 	@Override
 	public AbstractRelic makeCopy() {
-		return new PurpleSkull();
+		return new PaperPengwin();
 	}
 	
 }
