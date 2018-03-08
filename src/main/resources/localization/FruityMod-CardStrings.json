@@ -102,7 +102,7 @@
 	},
 	"Entropy": {
 		"NAME": "Entropy",
-		"DESCRIPTION": "Ethereal. NL Enemy loses !M! Strength this turn, increasing by 1 each time this card is played this combat."
+		"DESCRIPTION": "Ethereal. Enemy loses !M! Strength this turn, increasing by 1 each time this card is played this combat."
 	},
 	"PhaseCoil": {
 		"NAME": "Phase Coil",
