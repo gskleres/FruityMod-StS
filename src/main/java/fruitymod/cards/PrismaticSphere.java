@@ -9,7 +9,9 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
@@ -19,7 +21,8 @@ import fruitymod.patches.AbstractCardEnum;
 public class PrismaticSphere extends CustomCard {
 	public static final String ID = "PrismaticSphere";
     public static final String NAME = "Prismatic Sphere";
-    public static final String DESCRIPTION = "Ethereal. NL Deal !D! damage. NL Draw !M! cards.";
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final int COST = 1;
     private static final int ATTACK_DMG = 7;
     private static final int UPGRADE_DMG_AMT = 4;

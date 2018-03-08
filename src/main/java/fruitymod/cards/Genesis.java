@@ -6,7 +6,9 @@ import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
@@ -16,7 +18,8 @@ import fruitymod.patches.AbstractCardEnum;
 public class Genesis extends CustomCard {
 	public static final String ID = "Genesis";
     public static final String NAME = "Genesis";
-    public static final String DESCRIPTION = "Ethereal. NL Gain !B! Block. NL Draw !M! cards.";
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final int COST = 1;
     private static final int BLOCK_AMT = 6;
     private static final int UPGRADE_BLOCK_AMT = 3;
