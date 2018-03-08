@@ -14,8 +14,8 @@ import fruitymod.FruityMod;
 import fruitymod.patches.AbstractCardEnum;
 import fruitymod.powers.AstralShiftPower;
 
-public class AstralShift extends CustomCard {
-	public static final String ID = "AstralShift";
+public class DimensionDoor extends CustomCard {
+	public static final String ID = "DimensionDoor";
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
@@ -23,8 +23,8 @@ public class AstralShift extends CustomCard {
 	private static final int INTANGIBLE_AMT = 1;
 	private static final int POOL = 1;
 	
-	public AstralShift() {
-		super(ID, NAME, FruityMod.makePath(FruityMod.ASTRAL_SHIFT), COST, DESCRIPTION,
+	public DimensionDoor() {
+		super(ID, NAME, FruityMod.makePath(FruityMod.DIMENSION_DOOR), COST, DESCRIPTION,
 				AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE,
 				AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF, POOL);
 		this.exhaust = true;
@@ -40,7 +40,7 @@ public class AstralShift extends CustomCard {
 	
 	@Override
 	public AbstractCard makeCopy() {
-		return new AstralShift();
+		return new DimensionDoor();
 	}
 	
     @Override

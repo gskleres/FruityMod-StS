@@ -30,7 +30,6 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import basemod.BaseMod;
 import basemod.ModPanel;
-import basemod.abstracts.CustomUnlockBundle;
 import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditCharactersSubscriber;
 import basemod.interfaces.EditKeywordsSubscriber;
@@ -49,7 +48,7 @@ import fruitymod.cards.Anomaly;
 import fruitymod.cards.ArcaneArmor;
 import fruitymod.cards.Archives;
 import fruitymod.cards.AstralHaze;
-import fruitymod.cards.AstralShift;
+import fruitymod.cards.DimensionDoor;
 import fruitymod.cards.Brainstorm;
 import fruitymod.cards.Brilliance;
 import fruitymod.cards.Channel;
@@ -164,7 +163,7 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String ARCANE_VOLLEY = "cards/irradiate.png";
     public static final String ARCHIVES = "cards/archives.png";
     public static final String ASTRAL_HAZE = "cards/astral_haze.png";
-    public static final String ASTRAL_SHIFT = "cards/dimension_door.png";
+    public static final String DIMENSION_DOOR = "cards/dimension_door.png";
     public static final String BRAINSTORM = "cards/brainstorm.png";
     public static final String BRILLIANCE = "cards/brilliance.png";
     public static final String CHANNEL = "cards/channel.png";
@@ -529,7 +528,7 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new Implosion());
 		BaseMod.addCard(new ChaosForm());
 		BaseMod.addCard(new Vacuum());
-		BaseMod.addCard(new AstralShift());
+		BaseMod.addCard(new DimensionDoor());
 		BaseMod.addCard(new RunicBinding());
 		BaseMod.addCard(new Eureka());
 		BaseMod.addCard(new Eclipse());
@@ -607,7 +606,7 @@ public class FruityMod implements PostInitializeSubscriber,
 		UnlockTracker.unlockCard("Implosion");
 		UnlockTracker.unlockCard("ChaosForm");
 		UnlockTracker.unlockCard("Vacuum");
-		UnlockTracker.unlockCard("AstralShift");
+		UnlockTracker.unlockCard("DimensionDoor");
 		UnlockTracker.unlockCard("RunicBinding");
 		UnlockTracker.unlockCard("Eureka");
 		UnlockTracker.unlockCard("Eclipse");

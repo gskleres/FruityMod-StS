@@ -300,7 +300,7 @@
 		"NAME": "Periapt of Vigor",
 		"DESCRIPTION": "Ethereal cards cost !M! less [R]."
 	},
-	"AstralShift": {
+	"DimensionDoor": {
 		"NAME": "Dimension Door",
 		"DESCRIPTION": "Ethereal. NL Gain !M! Intangible. NL Exhaust.",
 		"UPGRADE_DESCRIPTION": "Ethereal. NL Gain !M! Intangible."
