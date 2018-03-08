@@ -312,7 +312,7 @@
 	},
 	"Eclipse": {
 		"NAME": "Eclipse",
-		"DESCRIPTION": "Choose an Exhausted Ethereal card. NL Put it on top of your draw pile. NL Exhaust.",
+		"DESCRIPTION": "Recycle an Exhausted Ethereal card. NL Exhaust.",
 		"EXTENDED_DESCRIPTION": [ "I don't have any Exhausted Ethereal cards."]
 	},
 	"Eureka": {
