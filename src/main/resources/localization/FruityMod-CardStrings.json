@@ -175,7 +175,7 @@
 	},
 	"Vortex": {
 		"NAME": "Vortex",
-		"DESCRIPTION": "Gain !B! Block. Exhaust your hand. Shuffle 1 Dazed into your draw pile for each card that was Exhausted. Exhaust."
+		"DESCRIPTION": "Gain !B! Block. Exhaust your hand. Top-Cycle 1 Dazed into your draw pile for each card that was Exhausted. Exhaust."
 	},
 	"Archives": {
 		"NAME": "Archives",
