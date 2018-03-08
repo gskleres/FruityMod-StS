@@ -325,7 +325,7 @@
 		"DESCRIPTION": "Gain 4 Block and 2 Reflect per !M! cards in your draw pile.",
 		"EXTENDED_DESCRIPTION": [
 			" (Will gain !B! Block and ",
-			" Reflect when played)."
+			" Reflect)."
 		]
 	},
 	"Zenith": {
