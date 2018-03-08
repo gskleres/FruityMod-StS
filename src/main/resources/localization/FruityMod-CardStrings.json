@@ -317,8 +317,8 @@
 	},
 	"Eureka": {
 		"NAME": "Eureka!",
-		"DESCRIPTION": "Shuffle 2 Dazed into your draw pile. NL Draw !M! cards. NL Gain [R] [R]. NL Exhaust.",
-		"UPGRADE_DESCRIPTION": "Shuffle 2 Dazed into your draw pile. NL Draw !M! cards. NL Gain [R] [R] [R]. NL Exhaust."
+		"DESCRIPTION": "Shuffle 2 Dazed into your draw pile. Draw !M! cards. Gain [R] [R]. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Shuffle 2 Dazed into your draw pile. Draw !M! cards. Gain [R] [R] [R]. NL Exhaust."
 	},
 	"ReflectionWard": {
 		"NAME": "Reflection Ward",
