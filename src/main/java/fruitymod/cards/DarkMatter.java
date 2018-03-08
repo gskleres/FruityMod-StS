@@ -86,7 +86,7 @@ public class DarkMatter extends CustomCard {
 		if (!this.upgraded) {
 			this.upgradeName();
 			this.upgradeMagicNumber(UPGRADE_DAMAGE_AMT);
-			this.setDescription(false);
+			this.setDescription(true);
 		}
 	}
 }
