@@ -694,7 +694,8 @@ public class FruityMod implements PostInitializeSubscriber,
 	public void receiveEditKeywords() {
         logger.info("setting up custom keywords");
         BaseMod.addKeyword(new String[] {"reflect", "Reflect"}, "Whenever you are attacked this turn, deal this amount of damage back back to the attacker.");
-        BaseMod.addKeyword(new String[] {"recycle", "Recycle"}, "When you Recycle a card, place it on top of your draw pile.");
+        BaseMod.addKeyword(new String[] {"top-cycle", "Top-Cycle"}, "When you Top-Cycle a card, place it on top of your draw pile.");
+        BaseMod.addKeyword(new String[] {"shuffle-cycle", "Shuffle-Cycle"}, "When you Shuffle-Cycle a card, shuffle it randomly into your draw pile.");
 	}
 	
 	//

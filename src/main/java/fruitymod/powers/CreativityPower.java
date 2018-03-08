@@ -14,7 +14,7 @@ extends AbstractPower {
     public static final String POWER_ID = "Creativity";
     public static final String NAME = "Creativity";
 	public static final String[] DESCRIPTIONS = new String[] {
-			"At the start of your turn, shuffle ",
+			"At the start of your turn, Shuffle-Cycle ",
 			" Dazed into your draw pile, then draw ",
 			"a card.",
 			" cards."

@@ -3,7 +3,7 @@
     "NAME": "Arcanosphere",
     "FLAVOR": "The Arcanosphere is a powerful relic brought by The Seeker from the Astral Plane.",
     "DESCRIPTIONS": [
-      "At the end of your turn, you may #yRecycle #b1 card."
+      "At the end of your turn, you may #yTop-Cycle #b1 card."
     ]
   },
   "PurpleSkull": {

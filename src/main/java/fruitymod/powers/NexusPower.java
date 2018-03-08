@@ -18,7 +18,7 @@ public class NexusPower extends AbstractPower implements PostDrawSubscriber, Pos
 	public static final String POWER_ID = "Nexus";
 	public static final String NAME = "Nexus";
 	public static final String[] DESCRIPTIONS = new String[] {
-			"Whenever you draw a non-Ethereal Attack or Skill, shuffle ", 
+			"Whenever you draw a non-Ethereal Attack or Skill, Shuffle-Cycle ",
 			" Ethereal copy of it into your draw pile.",
 			" Ethereal copies of it into your draw pile."
 	};

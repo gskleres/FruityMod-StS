@@ -15,7 +15,7 @@ public class RetrogradeUpgradedPower
     public static final String POWER_ID = "RetrogradeUpgradedPower";
     public static final String NAME = "Retrograde";
     public static final String[] DESCRIPTIONS = new String[] {
-            "At the end of your turn, shuffle ",
+            "At the end of your turn, Shuffle-Cycle ",
             " Retrograde+ into your draw pile."
     };
 

@@ -18,7 +18,7 @@ import fruitymod.FruityMod;
 public class PowerOverwhelmingPower extends AbstractPower {
 	public static final String POWER_ID = "PowerOverwhelmingPower";
 	public static final String NAME = "Power Overwhelming";
-	public static final String DESCRIPTION = "Whenever you play an attack, shuffle a Dazed into your draw pile.";
+	public static final String DESCRIPTION = "Whenever you play an attack, Shuffle-Cycle a Dazed into your draw pile.";
 
 	
 	public PowerOverwhelmingPower(AbstractCreature owner, int amount) {
