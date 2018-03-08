@@ -270,9 +270,9 @@
 	},
 	"Vacuum": {
 		"NAME": "Vacuum",
-		"DESCRIPTION": "Remove all of your Weak, Frail, and Vulnerable. NL Deal !M! damage for each stack removed.",
+		"DESCRIPTION": "Remove all of your Weak, Frail, and Vulnerable. Deal !M! damage per stack removed.",
 		"EXTENDED_DESCRIPTION": [
-			" (Will deal !D! damage)."
+			" (Total: !D! damage)."
 		]
 	},
 	"ChaosForm": {
