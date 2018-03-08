@@ -86,8 +86,8 @@
 	},
 	"Singularity": {
 		"NAME": "Singularity",
-		"DESCRIPTION": "Ethereal. Gain !B! Block. Deal !D! damage. Next turn gain [R].",
-		"UPGRADE_DESCRIPTION": "Ethereal. Gain !B! Block. Deal !D! damage. Next turn gain [R]."
+		"DESCRIPTION": "Ethereal. NL Gain !B! Block. NL Deal !D! damage. NL Next turn gain [R].",
+		"UPGRADE_DESCRIPTION": "Ethereal. NL Gain !B! Block. NL Deal !D! damage. NL Next turn gain [R]."
 	},
 	"Genesis": {
 		"NAME": "Genesis",
