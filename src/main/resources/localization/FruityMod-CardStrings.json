@@ -13,7 +13,7 @@
 	},
 	"Starburst": {
 		"NAME": "Starburst",
-		"DESCRIPTION": "Deal !D! damage twice to an enemy and then deal !D! damage to ALL other enemies."
+		"DESCRIPTION": "Deal !D! damage twice to one enemy and once to ALL other enemies."
 	},
 	"Irradiate": {
 		"NAME": "Irradiate",
