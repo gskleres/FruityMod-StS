@@ -43,7 +43,7 @@ public class Zenith extends CustomCard {
 	}
 	
 	private void setDescription(boolean addExtended) {
-		this.rawDescription = (this.isEthereal ? "Ethereal." : "") + (!this.upgraded? DESCRIPTION : UPGRADE_DESCRIPTION);
+		this.rawDescription = (this.isEthereal ? "Ethereal. " : "") + (!this.upgraded? DESCRIPTION : UPGRADE_DESCRIPTION);
 		if(addExtended) {
 			this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[0];
 		}

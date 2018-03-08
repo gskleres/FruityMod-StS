@@ -16,9 +16,10 @@ import fruitymod.powers.ReflectionWardPower;
 
 public class ReflectionWard extends CustomCard {
 	public static final String ID = "ReflectionWard";
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+	public static final	String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
 	private static final int COST = 2;
 	private static final int REFLECT_PER_STACK = 3;
@@ -29,41 +30,51 @@ public class ReflectionWard extends CustomCard {
 
 	public ReflectionWard() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.REFLECTION_WARD), COST, DESCRIPTION,
-    			AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE,
-    			AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF, POOL);
+				AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE,
+				AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF, POOL);
 		this.magicNumber = this.baseMagicNumber = BASE_CARDS_PER_STACK;
 	}
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		int count = calculateStacks();
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ReflectionWardPower(p, count * REFLECT_PER_STACK), count * REFLECT_PER_STACK));
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
-        
-        this.rawDescription = DESCRIPTION;
-        initializeDescription();
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ReflectionWardPower(p, count * REFLECT_PER_STACK), count * REFLECT_PER_STACK));
+		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
+
+		this.rawDescription = DESCRIPTION;
+		initializeDescription();
 	}
-	
+
 	@Override
 	public void applyPowers() {
 		int count = calculateStacks();
 		this.baseBlock = BLOCK_PER_STACK * count;
-		
+
 		super.applyPowers();
-		
+
 		this.rawDescription =  DESCRIPTION + EXTENDED_DESCRIPTION[0] + (REFLECT_PER_STACK * count) +
 				EXTENDED_DESCRIPTION[1];
+		this.setDescription(true);
 		initializeDescription();
 	}
-	
+
 	@Override
 	public void onMoveToDiscard() {
 		this.rawDescription = DESCRIPTION;
 		initializeDescription();
 	}
-	
+
 	public int calculateStacks() {
 		return AbstractDungeon.player.drawPile.size() / this.magicNumber;
+	}
+
+	private void setDescription(boolean addExtended) {
+		int count = calculateStacks();
+		this.rawDescription = (this.isEthereal ? "Ethereal. " : "") + (!this.upgraded? DESCRIPTION : UPGRADE_DESCRIPTION);
+		if(addExtended) {
+			this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[0] + (REFLECT_PER_STACK * count) + cardStrings.EXTENDED_DESCRIPTION[1];
+		}
+		this.initializeDescription();
 	}
 
 	@Override
