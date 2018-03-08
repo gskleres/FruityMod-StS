@@ -21,8 +21,8 @@ public class ReflectionWard extends CustomCard {
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
 	private static final int COST = 2;
-	private static final int REFLECT_PER_STACK = 2;
-	private static final int BLOCK_PER_STACK = 4;
+	private static final int REFLECT_PER_STACK = 3;
+	private static final int BLOCK_PER_STACK = 5;
 	private static final int BASE_CARDS_PER_STACK = 4;
 	private static final int UPGRADED_CARDS_PER_STACK = -1;
 	private static final int POOL = 1;
