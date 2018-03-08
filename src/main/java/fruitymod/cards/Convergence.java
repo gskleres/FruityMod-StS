@@ -26,6 +26,7 @@ public class Convergence extends CustomCard {
 				 AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE,
 				 AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF, POOL);
         	this.exhaust = true;
+        	this.isEthereal = true;
 	    }
 	 
 	    @Override
