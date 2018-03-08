@@ -81,8 +81,8 @@
 	},
 	"Hypothesis": {
 		"NAME": "Hypothesis",
-		"DESCRIPTION": "Draw a card. NL If it is Ethereal, add a Dazed to your hand and draw another card.",
-		"UPGRADE_DESCRIPTION": "Draw a card. NL If it is Ethereal, add a Dazed to your hand and draw !M! more cards."
+		"DESCRIPTION": "Draw a card. If it is Ethereal, add a Dazed to your hand and draw another card.",
+		"UPGRADE_DESCRIPTION": "Draw a card. If it is Ethereal, add a Dazed to your hand and draw !M! more cards."
 	},
 	"Singularity": {
 		"NAME": "Singularity",
