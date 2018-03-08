@@ -198,7 +198,7 @@
 	},
 	"Equinox": {
 		"NAME": "Equinox",
-		"DESCRIPTION": "Can only be played if your discard pile is empty or your draw pile is empty. NL Deal !D! damage.",
+		"DESCRIPTION": "Can only be played if your discard pile is empty or your draw pile is empty. Deal !D! damage.",
 		"EXTENDED_DESCRIPTION": [ "My discard pile or my draw pile must be empty."]
 	},
 	"Experiment": {
