@@ -110,7 +110,7 @@
 	},
 	"PlasmaWave": {
 		"NAME": "Plasma Wave",
-		"DESCRIPTION": "Spend all [R]. NL Deal !D! damage to ALL enemies X times. Vulnerable enemies are dealt double damage."
+		"DESCRIPTION": "Spend all [R]. Deal !D! damage to ALL enemies X times. Vulnerable enemies take double damage."
 	},
 	"EtherBlast": {
 		"NAME": "Ether Blast",
