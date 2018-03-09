@@ -26,11 +26,11 @@
 	},
 	"NullStorm": {
 		"NAME": "Null Storm",
-		"DESCRIPTION": "Recycle a Dazed into your draw pile. Deal !D! damage to ALL enemies."
+		"DESCRIPTION": "Recycle a Dazed. Deal !D! damage to ALL enemies."
 	},
 	"VoidRay": {
 		"NAME": "Void Ray",
-		"DESCRIPTION": "Recycle a Dazed into your draw pile. Deal !D! damage."
+		"DESCRIPTION": "Recycle a Dazed. Deal !D! damage."
 	},
 	"Comet": {
 		"NAME": "Comet",
@@ -38,7 +38,7 @@
 	},
 	"Retrograde": {
 		"NAME": "Retrograde",
-		"DESCRIPTION": "Deal !D! damage. At the end of the turn, Recycle a copy of this card into your draw pile."
+		"DESCRIPTION": "Deal !D! damage. At the end of the turn, Recycle a copy of this card."
 	},
 	"MagicMissile": {
 		"NAME": "Magic Missile",
@@ -77,7 +77,7 @@
 	},
 	"DisruptionField": {
 		"NAME": "Disruption Field",
-		"DESCRIPTION": "Gain !B! Block. NL Recycle a Dazed into your draw pile."
+		"DESCRIPTION": "Gain !B! Block. NL Recycle a Dazed."
 	},
 	"Hypothesis": {
 		"NAME": "Hypothesis",
@@ -137,7 +137,7 @@
 	},
 	"Syzygy": {
 		"NAME": "Syzygy",
-		"DESCRIPTION": "Ethereal. Deal !D! damage to a random enemy !M! times. Recycle a Dazed into your draw pile. Exhaust."
+		"DESCRIPTION": "Ethereal. Deal !D! damage to a random enemy !M! times. Recycle a Dazed. Exhaust."
 	},
 	"ThoughtRaze": {
 		"NAME": "Thought Raze",
@@ -145,7 +145,7 @@
 	},
 	"UmbralBolt": {
 		"NAME": "Umbral Bolt",
-		"DESCRIPTION": "Remove all Frail, Weak, and Vulnerable. NL Recycle a Dazed into your draw pile for each stack removed."
+		"DESCRIPTION": "Remove all Frail, Weak, and Vulnerable. Recycle a Dazed for each stack removed."
 	},
 	"GravityWell": {
 		"NAME": "Gravity Well",
@@ -154,7 +154,7 @@
 	},
 	"Nexus": {
 		"NAME": "Nexus",
-		"DESCRIPTION": "Whenever you draw a non-Ethereal Attack or Skill, Recycle an Ethereal copy of it into your draw pile."
+		"DESCRIPTION": "Whenever you draw a non-Ethereal Attack or Skill, Recycle an Ethereal copy of it."
 	},
 	"PeriaptOfCelerity": {
 		"NAME": "Periapt of Celerity",
@@ -166,7 +166,7 @@
 	},
 	"PowerOverwhelming": {
 		"NAME": "Power Overwhelming",
-		"DESCRIPTION": "Gain !M! Strength. NL Whenever you play an attack, Recycle a Dazed into your draw pile."
+		"DESCRIPTION": "Gain !M! Strength. NL Whenever you play an attack, Recycle a Dazed."
 	},
 	"Anomaly": {
 		"NAME": "Anomaly",
@@ -184,12 +184,12 @@
 	"Brainstorm": {
 		"NAME": "Brainstorm",
 		"DESCRIPTION": "Recycle this card, your discard pile and a Dazed into your draw pile. Next turn, draw !M! card.",
-		"UPGRADE_DESCRIPTION": "Recycle this card, your discard pile and a Dazed into your draw pile. Next turn, draw !M! cards."
+		"UPGRADE_DESCRIPTION": "Recycle this card, your discard pile and a Dazed. Next turn, draw !M! cards."
 	},
 	"Brilliance": {
 		"NAME": "Brilliance",
-		"DESCRIPTION": "Recycle 3 Dazed into your draw pile. NL Whenever you draw a Dazed, draw !M! card.",
-		"UPGRADE_DESCRIPTION": "Recycle 3 Dazed into your draw pile. Whenever you draw a Dazed, draw !M! cards."
+		"DESCRIPTION": "Recycle 3 Dazed. NL Whenever you draw a Dazed, draw !M! card.",
+		"UPGRADE_DESCRIPTION": "Recycle 3 Dazed. Whenever you draw a Dazed, draw !M! cards."
 	},
 	"Corona": {
 		"NAME": "Corona",
@@ -261,7 +261,7 @@
 	},
 	"Implosion": {
 		"NAME": "Implosion",
-		"DESCRIPTION": "Deal !D! damage. Recycle !M! Dazed into your draw pile."
+		"DESCRIPTION": "Deal !D! damage. Recycle !M! Dazed."
 	},
 	"MeteorShower": {
 		"NAME": "Meteor Shower",
@@ -277,12 +277,12 @@
 	},
 	"ChaosForm": {
 		"NAME": "Chaos Form",
-		"DESCRIPTION": "At the start of your turn, Recycle a random Ethereal card into your draw pile.",
-		"UPGRADE_DESCRIPTION": "At the start of your turn, Recycle a random Ethereal card into your draw pile. NL It costs 0 until played."
+		"DESCRIPTION": "At the start of your turn, Recycle a random Ethereal card.",
+		"UPGRADE_DESCRIPTION": "At the start of your turn, Recycle a random Ethereal card. It costs 0 until played."
 	},
 	"Creativity": {
 		"NAME": "Creativity",
-		"DESCRIPTION": "At the start of your turn, Recycle a Dazed into your draw pile, then draw a card."
+		"DESCRIPTION": "At the start of your turn, Recycle a Dazed, then draw a card."
 	},
 	"Enigma": {
 		"NAME": "Enigma",
@@ -317,8 +317,8 @@
 	},
 	"Eureka": {
 		"NAME": "Eureka!",
-		"DESCRIPTION": "Recycle 2 Dazed into your draw pile. Draw !M! cards. Gain [R] [R]. NL Exhaust.",
-		"UPGRADE_DESCRIPTION": "Recycle 2 Dazed into your draw pile. Draw !M! cards. Gain [R] [R] [R]. NL Exhaust."
+		"DESCRIPTION": "Recycle 2 Dazed. Draw !M! cards. Gain [R] [R]. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Recycle 2 Dazed. Draw !M! cards. Gain [R] [R] [R]. NL Exhaust."
 	},
 	"ReflectionWard": {
 		"NAME": "Reflection Ward",
@@ -345,6 +345,6 @@
 	},
 	"Nova": {
 		"NAME": "Nova",
-		"DESCRIPTION": "Deal !D! damage to ALL enemies. Recycle 2 Dazed into your Draw pile."
+		"DESCRIPTION": "Deal !D! damage to ALL enemies. Recycle 2 Dazed."
 	}
 }
