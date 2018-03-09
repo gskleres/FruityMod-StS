@@ -42,6 +42,8 @@ public class ConvergenceAction extends AbstractGameAction {
 				selected.upgrade();
 				selected.superFlash();
 				
+				reapplyPowers();
+				
 				this.isDone = true;
 				return;
 			}
@@ -95,11 +97,21 @@ public class ConvergenceAction extends AbstractGameAction {
 
 		tickDuration();
 	}
+	
+	private void reapplyPowers() {
+		// apply powers
+		for (AbstractCard c : this.p.hand.group) {
+			c.applyPowers();
+		}
+	}
 
 	private void returnCards() {
 		for (AbstractCard c : this.cannotUpgrade) {
 			this.p.hand.addToTop(c);
 		}
+		
+		reapplyPowers();
+		
 		this.p.hand.refreshHandLayout();
 	}
 }
