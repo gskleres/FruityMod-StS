@@ -59,6 +59,7 @@ public class BrilliancePower extends AbstractPower implements PostBattleSubscrib
 	@Override
 	public void receivePostBattle(AbstractRoom arg0) {
 		System.out.println("should be removed now!");
+		BaseMod.unsubscribeFromPostDraw(this);
 		BaseMod.unsubscribeFromPostDungeonInitialize(this);
 		/*
 		 *  calling unsubscribeFromPostBattle inside the callback
@@ -87,6 +88,7 @@ public class BrilliancePower extends AbstractPower implements PostBattleSubscrib
 	@Override
 	public void receivePostDungeonInitialize() {
 		BaseMod.unsubscribeFromPostBattle(this);
+		BaseMod.unsubscribeFromPostDraw(this);
 		/*
 		 *  calling unsubscribeFromPostDungeonInitialize inside the callback
 		 *  for receivePostDungeonInitialize means that when we're calling it

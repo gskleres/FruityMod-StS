@@ -767,7 +767,7 @@ public class FruityMod implements PostInitializeSubscriber,
 			AbstractDungeon.actionManager.addToTop(new DamageAllEnemiesAction(null, 
 					DamageInfo.createDamageMatrix(c.damage, true),
 					DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
-			c.exhaustOnUseOnce = true;
+			c.exhaustOnUseOnce = false;
 			
 			// this bit here is question - it fixes a bug that the base game has where dazes are played double
 			// for hex or dead branch, or etc...
