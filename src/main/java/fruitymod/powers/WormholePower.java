@@ -16,16 +16,16 @@ import basemod.interfaces.PostDrawSubscriber;
 import basemod.interfaces.PostDungeonInitializeSubscriber;
 import fruitymod.FruityMod;
 
-public class RunicBindingPower extends AbstractPower implements PostDrawSubscriber, PostBattleSubscriber,
+public class WormholePower extends AbstractPower implements PostDrawSubscriber, PostBattleSubscriber,
 		PostDungeonInitializeSubscriber {
-	public static final String POWER_ID = "RunicBindingPower";
-	public static final String NAME = "Runic Binding";
+	public static final String POWER_ID = "WormholePower";
+	public static final String NAME = "Wormhole";
 	public static final String[] DESCRIPTIONS = new String[] {
 			"Whenever you draw an Ethereal card deal ",
 			" damage to a random enemy."
 	};
 	
-	public RunicBindingPower(AbstractCreature owner, int amount) {
+	public WormholePower(AbstractCreature owner, int amount) {
 		this.name = NAME;
 		this.ID = POWER_ID;
 		this.owner = owner;
@@ -34,7 +34,7 @@ public class RunicBindingPower extends AbstractPower implements PostDrawSubscrib
 		this.type = AbstractPower.PowerType.BUFF;
 		this.isTurnBased = false;
 		this.priority = 90;
-		this.img = FruityMod.getRunicBindingPowerTexture();
+		this.img = FruityMod.getWormholePowerTexture();
 	}
 	
 	@Override

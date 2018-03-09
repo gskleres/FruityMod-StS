@@ -2,6 +2,7 @@ package fruitymod;
 
 import java.nio.charset.StandardCharsets;
 
+import fruitymod.cards.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -45,81 +46,7 @@ import basemod.interfaces.PostExhaustSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import basemod.interfaces.SetUnlocksSubscriber;
 import fruitymod.actions.unique.ConvergenceAction;
-import fruitymod.cards.Anomaly;
-import fruitymod.cards.ArcaneArmor;
-import fruitymod.cards.Archives;
-import fruitymod.cards.AstralHaze;
-import fruitymod.cards.Brainstorm;
-import fruitymod.cards.Brilliance;
-import fruitymod.cards.Channel;
-import fruitymod.cards.ChaosForm;
-import fruitymod.cards.Coalescence;
-import fruitymod.cards.Comet;
-import fruitymod.cards.Convergence;
-import fruitymod.cards.Corona;
-import fruitymod.cards.Creativity;
-import fruitymod.cards.DarkMatter;
-import fruitymod.cards.Defend_Purple;
-import fruitymod.cards.DimensionDoor;
-import fruitymod.cards.Disperse;
-import fruitymod.cards.DisruptionField;
-import fruitymod.cards.Echo;
-import fruitymod.cards.Eclipse;
-import fruitymod.cards.Enigma;
-import fruitymod.cards.Entropy;
-import fruitymod.cards.Equinox;
-import fruitymod.cards.EssenceDart;
-import fruitymod.cards.EtherBlast;
-import fruitymod.cards.Eureka;
-import fruitymod.cards.EventHorizon;
-import fruitymod.cards.Feedback;
-import fruitymod.cards.Flare;
-import fruitymod.cards.Flicker;
-import fruitymod.cards.Flow;
-import fruitymod.cards.Flux;
-import fruitymod.cards.ForceRipple;
-import fruitymod.cards.Genesis;
-import fruitymod.cards.GravityWell;
-import fruitymod.cards.Hypothesis;
-import fruitymod.cards.Illuminate;
-import fruitymod.cards.Implosion;
-import fruitymod.cards.Irradiate;
-import fruitymod.cards.MagicMissile;
-import fruitymod.cards.Magnetize;
-import fruitymod.cards.MeteorShower;
-import fruitymod.cards.MindOverMatter;
-import fruitymod.cards.Nebula;
-import fruitymod.cards.Nexus;
-import fruitymod.cards.Nova;
-import fruitymod.cards.NullStorm;
-import fruitymod.cards.Overload;
-import fruitymod.cards.PeriaptOfCelerity;
-import fruitymod.cards.PeriaptOfPotency;
-import fruitymod.cards.PhaseCoil;
-import fruitymod.cards.PlasmaWave;
-import fruitymod.cards.PowerOverwhelming;
-import fruitymod.cards.PrismaticSphere;
-import fruitymod.cards.PulseBarrier;
-import fruitymod.cards.ReflectionWard;
-import fruitymod.cards.Retrograde;
-import fruitymod.cards.RunicBinding;
-import fruitymod.cards.Shimmer;
-import fruitymod.cards.Singularity;
-import fruitymod.cards.SiphonPower;
-import fruitymod.cards.SiphonSpeed;
-import fruitymod.cards.Starburst;
-import fruitymod.cards.Strike_Purple;
-import fruitymod.cards.StrokeOfGenius;
-import fruitymod.cards.Surge;
-import fruitymod.cards.Syzygy;
-import fruitymod.cards.ThoughtRaze;
-import fruitymod.cards.Transference;
-import fruitymod.cards.UmbralBolt;
-import fruitymod.cards.UnstableOrb;
-import fruitymod.cards.Vacuum;
-import fruitymod.cards.VoidRay;
-import fruitymod.cards.Vortex;
-import fruitymod.cards.Zenith;
+import fruitymod.cards.Umbra;
 import fruitymod.characters.TheSeeker;
 import fruitymod.patches.AbstractCardEnum;
 import fruitymod.patches.TheSeekerEnum;
@@ -213,14 +140,14 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String NOVA = "cards/nova.png";
     public static final String PERIAPT_OF_CELERITY = "cards/periapt_of_celerity.png";
     public static final String PERIAPT_OF_POTENCY = "cards/periapt_of_potency.png";
-    public static final String PERIAPT_OF_TENACITY = "cards/runic_binding.png";
+    public static final String PERIAPT_OF_TENACITY = "cards/wormhole.png";
     public static final String PERIAPT_OF_VIGOR = "cards/periapt_of_vigor.png";
     public static final String POWER_OVERWHELMING = "cards/power_overwhelming.png";
     public static final String POWER_SPIKE = "cards/overload.png";
     public static final String PROTECTION_WARD = "cards/disperse.png";
     public static final String REFLECTION_WARD = "cards/reflection_ward.png";
     public static final String RETROGRADE = "cards/retrograde.png";
-    public static final String RUNIC_BINDING = "cards/runic_binding.png";
+    public static final String WORMHOLE = "cards/runic_binding.png";
     public static final String SHIMMER = "cards/shimmer.png";
     public static final String SIPHON_MAGIC = "cards/convergence.png";
     public static final String SIPHON_POWER = "cards/siphon_power.png";
@@ -247,7 +174,7 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String CHAOS_FORM_POWER = "powers/chaos_form.png";
     public static final String ESSENCE_MIRROR_POWER = "powers/essence_mirror.png";
     public static final String ETHEREALIZE_POWER = "powers/essence_mirror.png";
-    public static final String RUNIC_BINDING_POWER = "powers/runic_binding.png";
+    public static final String WORMHOLE_POWER = "powers/wormhole.png";
     public static final String VIGOR_POWER = "powers/vigor.png";
     public static final String ASTRAL_SHIFT_POWER = "powers/astral_shift.png";
     public static final String TENACITY_POWER = "powers/tenacity.png";
@@ -305,8 +232,12 @@ public class FruityMod implements PostInitializeSubscriber,
     	return new Texture(makePath(ETHEREALIZE_POWER));
     }
     
-    public static Texture getRunicBindingPowerTexture() {
-    	return new Texture(makePath(RUNIC_BINDING_POWER));
+    public static Texture getWormholePowerTexture() {
+    	return new Texture(makePath(WORMHOLE_POWER));
+    }
+
+    public static Texture getWormholeTexture(){
+        return new Texture(makePath(WORMHOLE));
     }
     
     public static Texture getVigorPowerTexture() {
@@ -553,7 +484,7 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new ThoughtRaze());
 		BaseMod.addCard(new Retrograde());
 		BaseMod.addCard(new Singularity());
-		BaseMod.addCard(new UmbralBolt());
+		BaseMod.addCard(new Umbra());
 		BaseMod.addCard(new Genesis());
 		BaseMod.addCard(new PrismaticSphere());
 		BaseMod.addCard(new Flux());
@@ -562,7 +493,7 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new ChaosForm());
 		BaseMod.addCard(new Vacuum());
 		BaseMod.addCard(new DimensionDoor());
-		BaseMod.addCard(new RunicBinding());
+		BaseMod.addCard(new Wormhole());
 		BaseMod.addCard(new Eureka());
 		BaseMod.addCard(new Eclipse());
 		BaseMod.addCard(new Echo());
@@ -631,7 +562,7 @@ public class FruityMod implements PostInitializeSubscriber,
 		UnlockTracker.unlockCard("ThoughtRaze");
 		UnlockTracker.unlockCard("Retrograde");
 		UnlockTracker.unlockCard("Singularity");
-		UnlockTracker.unlockCard("UmbralBolt");
+		UnlockTracker.unlockCard("Umbra");
 		UnlockTracker.unlockCard("Genesis");
 		UnlockTracker.unlockCard("PrismaticSphere");
 		UnlockTracker.unlockCard("Flux");
@@ -640,7 +571,7 @@ public class FruityMod implements PostInitializeSubscriber,
 		UnlockTracker.unlockCard("ChaosForm");
 		UnlockTracker.unlockCard("Vacuum");
 		UnlockTracker.unlockCard("DimensionDoor");
-		UnlockTracker.unlockCard("RunicBinding");
+		UnlockTracker.unlockCard("Wormhole");
 		UnlockTracker.unlockCard("Eureka");
 		UnlockTracker.unlockCard("Eclipse");
 		UnlockTracker.unlockCard("Echo");

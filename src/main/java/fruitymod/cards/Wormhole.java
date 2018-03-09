@@ -11,10 +11,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
 import fruitymod.patches.AbstractCardEnum;
-import fruitymod.powers.RunicBindingPower;
+import fruitymod.powers.WormholePower;
 
-public class RunicBinding extends CustomCard {
-	public static final String ID = "RunicBinding";
+public class Wormhole extends CustomCard {
+	public static final String ID = "Wormhole";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
@@ -23,8 +23,8 @@ public class RunicBinding extends CustomCard {
 	private static final int UPGRADE_DMG_AMT = 2;
 	private static final int POOL = 1;
 	
-	public RunicBinding() {
-		super (ID, NAME, FruityMod.makePath(FruityMod.RUNIC_BINDING), COST, DESCRIPTION,
+	public Wormhole() {
+		super (ID, NAME, FruityMod.makePath(FruityMod.WORMHOLE), COST, DESCRIPTION,
 				AbstractCard.CardType.POWER, AbstractCardEnum.PURPLE,
 				AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF, POOL);
 		this.magicNumber = this.baseMagicNumber = DMG;
@@ -32,12 +32,12 @@ public class RunicBinding extends CustomCard {
 	
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RunicBindingPower(p, this.magicNumber), this.magicNumber));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new WormholePower(p, this.magicNumber), this.magicNumber));
 	}
 	
 	@Override
 	public AbstractCard makeCopy() {
-		return new RunicBinding();
+		return new Wormhole();
 	}
 	
 	@Override

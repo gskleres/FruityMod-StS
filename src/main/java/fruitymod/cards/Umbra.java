@@ -1,10 +1,8 @@
 package fruitymod.cards;
 
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -18,8 +16,8 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import fruitymod.FruityMod;
 import fruitymod.patches.AbstractCardEnum;
 
-public class UmbralBolt extends CustomCard {
-	 	public static final String ID = "UmbralBolt";
+public class Umbra extends CustomCard {
+	 	public static final String ID = "Umbra";
 	    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 		public static final String NAME = cardStrings.NAME;
 		public static final String DESCRIPTION = cardStrings.DESCRIPTION;
@@ -31,7 +29,7 @@ public class UmbralBolt extends CustomCard {
 	    private static final int DRAW = 1;
 	    private static final int POOL = 1;
 	    
-	 public UmbralBolt() {
+	 public Umbra() {
 		 super(ID, NAME, FruityMod.makePath(FruityMod.UMBRAL_BOLT), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
 				 AbstractCardEnum.PURPLE, AbstractCard.CardRarity.UNCOMMON, CardTarget.SELF, POOL);
 	        this.damage = this.baseDamage = ATTACK_DMG;
@@ -59,7 +57,7 @@ public class UmbralBolt extends CustomCard {
 
 	    @Override
 	    public AbstractCard makeCopy() {
-	        return new UmbralBolt();
+	        return new Umbra();
 	    }
 
 	    @Override

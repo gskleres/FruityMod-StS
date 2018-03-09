@@ -14,7 +14,7 @@ import fruitymod.patches.AbstractCardEnum;
 import fruitymod.powers.deprecated.RunicBindingPower;
 
 public class RunicBinding extends CustomCard {
-	public static final String ID = "RunicBinding";
+	public static final String ID = "Wormhole";
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
