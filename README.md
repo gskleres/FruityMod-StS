@@ -51,14 +51,15 @@ Card list: [click here](https://drive.google.com/file/d/1aojRAKPQCbDW7mSW6Co6XTK
 Here is a great video showing how to install mods, by Xterminator: https://www.youtube.com/watch?v=r2m2aL1eEjw
 
 ## Credits / Acknowledgements ##
-1. Fruitstrike (https://github.com/gskleres) for game design, project management, and being a hype train
-2. ColdRain451 (https://github.com/dvalldejuli) for a ton of card implementations and getting the code base started
-3. test447 (https://github.com/daviscook477) for card implementations and adding lots of needed API hooks to BaseMod 
-4. fiiiiilth (https://github.com/fiiiiilth) for testing, bug fixes and card updates/implementations
-5. Pal (https://github.com/Paltorz) for testing and feedback
-6. Grumpai (@Grumpai on Discord) for the current character model
-7. Jrawly (@Jrawly on Discord) for character concept art
-8. Butcherberries (@Butcherberries on Discord) for card art
+* Fruitstrike (https://github.com/gskleres) for game design, project management, and being a hype train
+* ColdRain451 (https://github.com/dvalldejuli) for a ton of card implementations and getting the code base started
+* test447 (https://github.com/daviscook477) for card implementations and adding lots of needed API hooks to BaseMod 
+* fiiiiilth (https://github.com/fiiiiilth) for testing, bug fixes and card updates/implementations
+* Pal (https://github.com/Paltorz) for testing and feedback
+* Grumpai (@Grumpai on Discord) for the current character model
+* Jrawly (@Jrawly on Discord) for character concept art
+* Butcherberries (@Butcherberries on Discord) for card art
+* LikeAWass, Celerity, JohnDruitt, Zoochz, SirJesterful, and Jimquisitive for playtesting and feedback
 
 ## Special Thanks ##
 1. Thanks to the [devs](https://www.megacrit.com/) of **SlayTheSpire** for making such and awesome game, allowing us to mod it, and allowing us to use recolored versions of their art assets in our mod

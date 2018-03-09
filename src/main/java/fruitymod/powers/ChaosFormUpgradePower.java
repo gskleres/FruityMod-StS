@@ -14,7 +14,7 @@ public class ChaosFormUpgradePower extends AbstractPower {
     public static final String POWER_ID = "ChaosFormUpgradePower";
     public static final String NAME = "Chaos Form+";
 	public static final String[] DESCRIPTIONS = new String[] {
-			"At the start of your turn, shuffle ",
+			"At the start of your turn, Recycle ",
 			"a random Ethereal card into your draw pile. It costs 0 until played.",
 			" random Ethereal cards into your draw pile. They cost 0 until played."
 	};
