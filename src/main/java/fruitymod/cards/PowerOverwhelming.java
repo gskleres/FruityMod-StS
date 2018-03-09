@@ -27,7 +27,7 @@ public class PowerOverwhelming extends CustomCard {
 	public PowerOverwhelming() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.POWER_OVERWHELMING), COST, DESCRIPTION,
 				AbstractCard.CardType.POWER, AbstractCardEnum.PURPLE,
-				AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF, POOL);
+				AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF, POOL);
 		this.magicNumber = this.baseMagicNumber = STRENGTH;
 	}
 	
