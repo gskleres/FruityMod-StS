@@ -183,13 +183,13 @@
 	},
 	"Brainstorm": {
 		"NAME": "Brainstorm",
-		"DESCRIPTION": "Shuffle-Cycle this card, your discard pile and a Dazed into your draw pile. Next turn, draw !M! card.",
-		"UPGRADE_DESCRIPTION": "Shuffle-Cycle this card, your discard pile and a Dazed into your draw pile. Next turn, draw !M! cards."
+		"DESCRIPTION": "Recycle this card, your discard pile and a Dazed into your draw pile. Next turn, draw !M! card.",
+		"UPGRADE_DESCRIPTION": "Recycle this card, your discard pile and a Dazed into your draw pile. Next turn, draw !M! cards."
 	},
 	"Brilliance": {
 		"NAME": "Brilliance",
-		"DESCRIPTION": "Shuffle-Cycle 3 Dazed into your draw pile. NL Whenever you draw a Dazed, draw !M! card.",
-		"UPGRADE_DESCRIPTION": "Shuffle-Cycle 3 Dazed into your draw pile. Whenever you draw a Dazed, draw !M! cards."
+		"DESCRIPTION": "Recycle 3 Dazed into your draw pile. NL Whenever you draw a Dazed, draw !M! card.",
+		"UPGRADE_DESCRIPTION": "Recycle 3 Dazed into your draw pile. Whenever you draw a Dazed, draw !M! cards."
 	},
 	"Corona": {
 		"NAME": "Corona",
@@ -261,7 +261,7 @@
 	},
 	"Implosion": {
 		"NAME": "Implosion",
-		"DESCRIPTION": "Deal !D! damage. Shuffle-Cycle !M! Dazed into your draw pile."
+		"DESCRIPTION": "Deal !D! damage. Recycle !M! Dazed into your draw pile."
 	},
 	"MeteorShower": {
 		"NAME": "Meteor Shower",
@@ -277,12 +277,12 @@
 	},
 	"ChaosForm": {
 		"NAME": "Chaos Form",
-		"DESCRIPTION": "At the start of your turn, Shuffle-Cycle a random Ethereal card into your draw pile.",
-		"UPGRADE_DESCRIPTION": "At the start of your turn, Shuffle-Cycle a random Ethereal card into your draw pile. NL It costs 0 until played."
+		"DESCRIPTION": "At the start of your turn, Recycle a random Ethereal card into your draw pile.",
+		"UPGRADE_DESCRIPTION": "At the start of your turn, Recycle a random Ethereal card into your draw pile. NL It costs 0 until played."
 	},
 	"Creativity": {
 		"NAME": "Creativity",
-		"DESCRIPTION": "At the start of your turn, Shuffle-Cycle a Dazed into your draw pile, then draw a card."
+		"DESCRIPTION": "At the start of your turn, Recycle a Dazed into your draw pile, then draw a card."
 	},
 	"Enigma": {
 		"NAME": "Enigma",
@@ -317,8 +317,8 @@
 	},
 	"Eureka": {
 		"NAME": "Eureka!",
-		"DESCRIPTION": "Shuffle-Cycle 2 Dazed into your draw pile. Draw !M! cards. Gain [R] [R]. NL Exhaust.",
-		"UPGRADE_DESCRIPTION": "Shuffle-Cycle 2 Dazed into your draw pile. Draw !M! cards. Gain [R] [R] [R]. NL Exhaust."
+		"DESCRIPTION": "Recycle 2 Dazed into your draw pile. Draw !M! cards. Gain [R] [R]. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Recycle 2 Dazed into your draw pile. Draw !M! cards. Gain [R] [R] [R]. NL Exhaust."
 	},
 	"ReflectionWard": {
 		"NAME": "Reflection Ward",
@@ -345,6 +345,6 @@
 	},
 	"Nova": {
 		"NAME": "Nova",
-		"DESCRIPTION": "Deal !D! damage to ALL enemies. Shuffle-Cycle 2 Dazed into your Draw pile."
+		"DESCRIPTION": "Deal !D! damage to ALL enemies. Recycle 2 Dazed into your Draw pile."
 	}
 }
