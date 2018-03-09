@@ -20,7 +20,7 @@ public class ArcanosphereAction extends AbstractGameAction {
 	@Override
 	public void update() {
 		if (this.duration == 0.5f) {
-			AbstractDungeon.handCardSelectScreen.open("Recycle.", this.amount, true, true);
+			AbstractDungeon.handCardSelectScreen.open("Top-Cycle.", this.amount, true, true);
 			AbstractDungeon.actionManager.addToBottom(new WaitAction(0.25F));
 			tickDuration();
 			return;
