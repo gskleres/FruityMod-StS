@@ -183,8 +183,8 @@
 	},
 	"Brainstorm": {
 		"NAME": "Brainstorm",
-		"DESCRIPTION": "Recycle this card, your discard pile and a Dazed. Next turn, draw !M! card.",
-		"UPGRADE_DESCRIPTION": "Recycle this card, your discard pile and a Dazed. Next turn, draw !M! cards."
+		"DESCRIPTION": "Recycle this card, your discard pile and a Dazed. Next turn, draw !M! more card.",
+		"UPGRADE_DESCRIPTION": "Recycle this card, your discard pile and a Dazed. Next turn, draw !M! more cards."
 	},
 	"Brilliance": {
 		"NAME": "Brilliance",
