@@ -26,11 +26,11 @@
 	},
 	"NullStorm": {
 		"NAME": "Null Storm",
-		"DESCRIPTION": "Shuffle-Cycle a Dazed into your draw pile. Deal !D! damage to ALL enemies."
+		"DESCRIPTION": "Recycle a Dazed into your draw pile. Deal !D! damage to ALL enemies."
 	},
 	"VoidRay": {
 		"NAME": "Void Ray",
-		"DESCRIPTION": "Shuffle-Cycle a Dazed into your draw pile. Deal !D! damage."
+		"DESCRIPTION": "Recycle a Dazed into your draw pile. Deal !D! damage."
 	},
 	"Comet": {
 		"NAME": "Comet",
@@ -38,7 +38,7 @@
 	},
 	"Retrograde": {
 		"NAME": "Retrograde",
-		"DESCRIPTION": "Deal !D! damage. At the end of the turn, Shuffle-Cycle a copy of this card into your draw pile."
+		"DESCRIPTION": "Deal !D! damage. At the end of the turn, Recycle a copy of this card into your draw pile."
 	},
 	"MagicMissile": {
 		"NAME": "Magic Missile",
@@ -77,7 +77,7 @@
 	},
 	"DisruptionField": {
 		"NAME": "Disruption Field",
-		"DESCRIPTION": "Gain !B! Block. NL Shuffle-Cycle a Dazed into your draw pile."
+		"DESCRIPTION": "Gain !B! Block. NL Recycle a Dazed into your draw pile."
 	},
 	"Hypothesis": {
 		"NAME": "Hypothesis",
@@ -137,7 +137,7 @@
 	},
 	"Syzygy": {
 		"NAME": "Syzygy",
-		"DESCRIPTION": "Ethereal. Deal !D! damage to a random enemy !M! times. Shuffle-Cycle a Dazed into your draw pile. Exhaust."
+		"DESCRIPTION": "Ethereal. Deal !D! damage to a random enemy !M! times. Recycle a Dazed into your draw pile. Exhaust."
 	},
 	"ThoughtRaze": {
 		"NAME": "Thought Raze",
@@ -145,7 +145,7 @@
 	},
 	"UmbralBolt": {
 		"NAME": "Umbral Bolt",
-		"DESCRIPTION": "Remove all Frail, Weak, and Vulnerable. NL Shuffle-Cycle a Dazed into your draw pile for each stack removed."
+		"DESCRIPTION": "Remove all Frail, Weak, and Vulnerable. NL Recycle a Dazed into your draw pile for each stack removed."
 	},
 	"GravityWell": {
 		"NAME": "Gravity Well",
@@ -154,7 +154,7 @@
 	},
 	"Nexus": {
 		"NAME": "Nexus",
-		"DESCRIPTION": "Whenever you draw a non-Ethereal Attack or Skill, Shuffle-Cycle an Ethereal copy of it into your draw pile."
+		"DESCRIPTION": "Whenever you draw a non-Ethereal Attack or Skill, Recycle an Ethereal copy of it into your draw pile."
 	},
 	"PeriaptOfCelerity": {
 		"NAME": "Periapt of Celerity",
@@ -166,7 +166,7 @@
 	},
 	"PowerOverwhelming": {
 		"NAME": "Power Overwhelming",
-		"DESCRIPTION": "Gain !M! Strength. NL Whenever you play an attack, Shuffle-Cycle a Dazed into your draw pile."
+		"DESCRIPTION": "Gain !M! Strength. NL Whenever you play an attack, Recycle a Dazed into your draw pile."
 	},
 	"Anomaly": {
 		"NAME": "Anomaly",
