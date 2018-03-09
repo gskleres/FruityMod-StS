@@ -34,7 +34,7 @@ public class CoalescencePower extends AbstractPower {
 	
 	@Override
 	public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-		if (target == AbstractDungeon.player && power.ID.equals("Weakened") || power.ID.equals("Vulnerable") || power.ID.equals("Frail")) {
+		if (target == AbstractDungeon.player && power.ID.equals("Weakened") || target == AbstractDungeon.player && power.ID.equals("Vulnerable") || target == AbstractDungeon.player && power.ID.equals("Frail")) {
 			AbstractDungeon.actionManager.addToBottom(
 					new GainBlockAction(this.owner, this.owner, this.amount));
 		}
