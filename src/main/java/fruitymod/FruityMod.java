@@ -696,7 +696,7 @@ public class FruityMod implements PostInitializeSubscriber,
 		if (p.hasPower("EnigmaPower") && c.cardID.equals("Dazed")) {
 			AbstractDungeon.actionManager.addToTop(new GainBlockAction(p, p, c.block));
 			AbstractDungeon.actionManager.addToTop(new DamageAllEnemiesAction(null, 
-					DamageInfo.createDamageMatrix(c.damage, true),
+					c.multiDamage,
 					DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
 			c.exhaustOnUseOnce = false;
 		}

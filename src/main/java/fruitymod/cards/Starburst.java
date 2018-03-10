@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import com.megacrit.cardcrawl.vfx.combat.MindblastEffect;
+import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
@@ -37,9 +37,8 @@ public class Starburst extends CustomCard {
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new VFXAction(new MindblastEffect(p.dialogX, p.dialogY)));
 		AbstractDungeon.actionManager.addToBottom(new DamageAction((AbstractCreature) m,
-				new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));
+				new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
 
 		AbstractRoom room = AbstractDungeon.currMapNode.room;
 		int numMonsters = room.monsters.monsters.size();
@@ -49,6 +48,7 @@ public class Starburst extends CustomCard {
 			this.multiDamage[i] = this.damage;
 		}
 		
+		AbstractDungeon.actionManager.addToBottom(new VFXAction(AbstractDungeon.player, new CleaveEffect(), 0.0F));
 		AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn,
 				AbstractGameAction.AttackEffect.NONE));
 	}
