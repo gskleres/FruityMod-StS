@@ -72,6 +72,7 @@ public class EnigmaPower extends AbstractPower {
 					System.out.println("couldn't set multidamage on dazed");
 					e.printStackTrace();
 				}
+				c.type = AbstractCard.CardType.ATTACK;
 				c.rawDescription = "Ethereal. Gain !B! Block. Deal !D! damage to all enemies.";
 				c.initializeDescription();
 			}
