@@ -35,8 +35,10 @@ public class Entropy extends CustomCard {
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p,
 				new com.megacrit.cardcrawl.powers.StrengthPower(m, -1 * this.magicNumber), -1 * this.magicNumber));
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p,
-				new com.megacrit.cardcrawl.powers.LoseStrengthPower(m, -1 * this.magicNumber), -1 * this.magicNumber));
+		if (!m.hasPower("Artifact")) {
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p,
+					new com.megacrit.cardcrawl.powers.LoseStrengthPower(m, -1 * this.magicNumber), -1 * this.magicNumber));
+		}
 		this.baseMagicNumber++;
 		this.magicNumber = this.baseMagicNumber;
 	}
