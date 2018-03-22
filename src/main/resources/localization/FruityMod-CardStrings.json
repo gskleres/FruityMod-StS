@@ -222,7 +222,7 @@
 	},
 	"Overload": {
 		"NAME": "Overload",
-		"DESCRIPTION": "Gain 2 Vulnerable. Gain !M! Energy, decaying by 1 each time this card is played this combat."
+		"DESCRIPTION": "Gain 1 Vulnerable. Gain !M! Energy, decaying by 1 each time this card is played this combat."
 	},
 	"Disperse": {
 		"NAME": "Disperse",
