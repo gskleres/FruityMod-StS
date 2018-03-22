@@ -62,7 +62,8 @@
 	},
 	"Flicker": {
 		"NAME": "Flicker",
-		"DESCRIPTION": "Reverse the effects of Frail, Weak, and Vulnerable on you for !M! turn."
+		"DESCRIPTION": "Reverse the effects of Frail, Weak, and Vulnerable on you for !M! turn.",
+		"UPGRADE_DESCRIPTION": "Reverse the effects of Frail, Weak, and Vulnerable on you for !M! turns."
 	},
 	"PulseBarrier": {
 		"NAME": "Pulse Barrier",
