@@ -346,6 +346,6 @@
 	},
 	"Nova": {
 		"NAME": "Nova",
-		"DESCRIPTION": "Deal !D! damage to ALL enemies. Recycle 2 Dazed."
+		"DESCRIPTION": "Deal !D! damage to ALL enemies."
 	}
 }
