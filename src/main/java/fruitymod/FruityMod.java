@@ -490,7 +490,7 @@ public class FruityMod implements PostInitializeSubscriber,
 		logger.info("begin editting characters");
 		
 		logger.info("add " + TheSeekerEnum.THE_SEEKER.toString());
-		BaseMod.addCharacter(TheSeeker.class, "The Seeker", "Seeker class string",
+		BaseMod.addCharacter(TheSeeker.class, "#pThe #pSeeker", "Seeker class string",
 				AbstractCardEnum.PURPLE.toString(), "The Seeker",
 				makePath(SEEKER_BUTTON), makePath(SEEKER_PORTRAIT),
 				TheSeekerEnum.THE_SEEKER.toString());
