@@ -62,7 +62,8 @@
 	},
 	"Flicker": {
 		"NAME": "Flicker",
-		"DESCRIPTION": "Reverse the effects of Frail, Weak, and Vulnerable on you for !M! turn."
+		"DESCRIPTION": "Reverse the effects of Frail, Weak, and Vulnerable on you for !M! turn.",
+		"UPGRADE_DESCRIPTION": "Reverse the effects of Frail, Weak, and Vulnerable on you for !M! turns."
 	},
 	"PulseBarrier": {
 		"NAME": "Pulse Barrier",
@@ -143,8 +144,8 @@
 		"NAME": "Thought Raze",
 		"DESCRIPTION": "Exhaust all Ethereal cards in your draw pile. Deal !D! damage for each card that is Exhausted."
 	},
-	"UmbralBolt": {
-		"NAME": "Umbral Bolt",
+	"Umbra": {
+		"NAME": "Umbra",
 		"DESCRIPTION": "Remove all Frail, Weak, and Vulnerable. Recycle a Dazed for each stack removed."
 	},
 	"GravityWell": {
@@ -183,8 +184,8 @@
 	},
 	"Brainstorm": {
 		"NAME": "Brainstorm",
-		"DESCRIPTION": "Recycle this card, your discard pile and a Dazed into your draw pile. Next turn, draw !M! card.",
-		"UPGRADE_DESCRIPTION": "Recycle this card, your discard pile and a Dazed. Next turn, draw !M! cards."
+		"DESCRIPTION": "Recycle this card, your discard pile and a Dazed. Next turn, draw !M! more card.",
+		"UPGRADE_DESCRIPTION": "Recycle this card, your discard pile and a Dazed. Next turn, draw !M! more cards."
 	},
 	"Brilliance": {
 		"NAME": "Brilliance",
@@ -221,7 +222,7 @@
 	},
 	"Overload": {
 		"NAME": "Overload",
-		"DESCRIPTION": "Gain 2 Vulnerable. Gain !M! Energy, decaying by 1 each time this card is played this combat."
+		"DESCRIPTION": "Gain 1 Vulnerable. Gain !M! Energy, decaying by 1 each time this card is played this combat."
 	},
 	"Disperse": {
 		"NAME": "Disperse",
@@ -292,8 +293,8 @@
 		"NAME": "Event Horizon",
 		"DESCRIPTION": "Each enemy loses HP equal to the amount of Weak and Vulnerable it has at the start of its turn."
 	},
-	"RunicBinding": {
-		"NAME": "Runic Binding",
+	"Wormhole": {
+		"NAME": "Wormhole",
 		"DESCRIPTION": "Whenever you draw an Ethereal card, deal !M! damage to a random enemy."
 	},
 	"PeriaptOfVigor": {
@@ -345,6 +346,6 @@
 	},
 	"Nova": {
 		"NAME": "Nova",
-		"DESCRIPTION": "Deal !D! damage to ALL enemies. Recycle 2 Dazed."
+		"DESCRIPTION": "Deal !D! damage to ALL enemies."
 	}
 }

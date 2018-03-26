@@ -25,7 +25,7 @@ public class Overload extends CustomCard {
 	private static final int UPGRADE_ENERGY_AMT = 1;
 	private static final int ENERGY_PER_USE = -1;
 	private static final int POOL = 1;
-	private static final int VULNERABLE_AMT = 2;
+	private static final int VULNERABLE_AMT = 1;
 
 	public Overload() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.POWER_SPIKE), COST, DESCRIPTION,

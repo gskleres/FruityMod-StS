@@ -81,7 +81,7 @@
   	"NAME": "Cosmic Sieve",
   	"FLAVOR": "Phases in and out of existence. Cool to the touch.",
   	"DESCRIPTIONS": [
-  		"Whenever an #yEthereal card enters your Exhaust Pile, gain #b",
+  		"Whenever an #yEthereal card enters your Exhaust Pile, heal #b",
   		" HP."
   	]
   },

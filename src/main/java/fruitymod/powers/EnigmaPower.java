@@ -1,11 +1,14 @@
 package fruitymod.powers;
 
+import java.lang.reflect.Field;
+
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
+import basemod.helpers.SuperclassFinder;
 import fruitymod.FruityMod;
 
 public class EnigmaPower extends AbstractPower {
@@ -61,6 +64,15 @@ public class EnigmaPower extends AbstractPower {
 			if (c instanceof Dazed) {
 				c.baseBlock = block;
 				c.baseDamage = damage;
+				try {
+					Field isMultiDamageField = SuperclassFinder.getSuperclassField(c.getClass(), "isMultiDamage");
+					isMultiDamageField.setAccessible(true);
+					isMultiDamageField.set(c, true);
+				} catch (NoSuchFieldException | IllegalArgumentException | IllegalAccessException e) {
+					System.out.println("couldn't set multidamage on dazed");
+					e.printStackTrace();
+				}
+				c.type = AbstractCard.CardType.ATTACK;
 				c.rawDescription = "Ethereal. Gain !B! Block. Deal !D! damage to all enemies.";
 				c.initializeDescription();
 			}

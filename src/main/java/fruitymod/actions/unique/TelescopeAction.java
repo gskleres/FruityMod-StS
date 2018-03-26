@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class TelescopeAction extends AbstractGameAction {
 
-	private static final String SELECT_TEXT = "Select any number of cards to make Ethereal";
+	private static final String SELECT_TEXT = "make Ethereal.";
 	
 	private AbstractPlayer p;
 	private ArrayList<AbstractCard> cannotEtherealize = new ArrayList<>();

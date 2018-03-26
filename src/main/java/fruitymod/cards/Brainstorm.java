@@ -25,7 +25,9 @@ public class Brainstorm extends CustomCard {
     private static final int DRAW_UPGRADE = 1;
     private static final int DAZED_COUNT = 1;
     private static final int POOL = 1;
-    
+
+    private boolean triggerOnMoveToDiscard = false;
+
     public Brainstorm() {
     	super(ID, NAME, FruityMod.makePath(FruityMod.BRAINSTORM), COST, DESCRIPTION,
     			AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE,
@@ -35,16 +37,20 @@ public class Brainstorm extends CustomCard {
     }
     
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {  
-
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        this.triggerOnMoveToDiscard = true;
     }
 
     @Override
     public void onMoveToDiscard(){
-        AbstractDungeon.actionManager.addToBottom(new EmptyDeckShuffleAction());
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(AbstractDungeon.player, AbstractDungeon.player, new Dazed(), DAZED_COUNT, true, true));
-        AbstractDungeon.actionManager.addToBottom(new ShuffleAction(AbstractDungeon.player.drawPile));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DrawCardNextTurnPower(AbstractDungeon.player, this.magicNumber), this.magicNumber));
+        if (this.triggerOnMoveToDiscard) {
+            this.triggerOnMoveToDiscard = false;
+
+            AbstractDungeon.actionManager.addToBottom(new EmptyDeckShuffleAction());
+            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(AbstractDungeon.player, AbstractDungeon.player, new Dazed(), DAZED_COUNT, true, true));
+            AbstractDungeon.actionManager.addToBottom(new ShuffleAction(AbstractDungeon.player.drawPile));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DrawCardNextTurnPower(AbstractDungeon.player, this.magicNumber), this.magicNumber));
+        }
     }
     
     @Override
