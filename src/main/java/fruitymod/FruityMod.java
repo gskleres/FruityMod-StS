@@ -660,6 +660,7 @@ public class FruityMod implements PostInitializeSubscriber,
         BaseMod.addKeyword(new String[] {"reflect", "Reflect"}, "Whenever you are attacked this turn, deal this amount of damage back back to the attacker.");
         BaseMod.addKeyword(new String[] {"top-cycle", "Top-Cycle"}, "When you Top-Cycle a card, place it on top of your draw pile.");
         BaseMod.addKeyword(new String[] {"recycle", "Recycle"}, "When you Recycle a card, shuffle it randomly into your draw pile.");
+        BaseMod.addKeyword(new String[] {"intangible", "Intangible"}, "All damage and HP loss you suffer is reduced to 1.");
 	}
 	
 	//
