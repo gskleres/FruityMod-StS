@@ -37,17 +37,14 @@ public class PlasmaWave extends CustomCard {
 
 	@Override
 	public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster monster, float tmp) {
-		if (monster == null) {
-			return tmp;
+		if (monster != null) {
+			if (monster.hasPower("Vulnerable")) {
+				return tmp * 2;
+			}
 		}
-		
-		if (monster.hasPower("Vulnerable")) {
-			return tmp * 2;
-		} else {
-			return tmp;
-		}
+		return tmp;
 	}
-	
+
 	@Override
 	public AbstractCard makeCopy() {
 		return new PlasmaWave();
