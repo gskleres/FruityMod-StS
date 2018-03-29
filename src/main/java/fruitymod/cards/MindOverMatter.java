@@ -43,6 +43,7 @@ public class MindOverMatter extends CustomCard {
 		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, (frailCount + weakCount + vulnCount) * this.magicNumber));
 	}
 	
+	/*
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
     	if(GetPowerCount(p, "Frail") > 0 || GetPowerCount(p, "Weakened") > 0 || GetPowerCount(p, "Vulnerable") > 0) {
@@ -51,7 +52,8 @@ public class MindOverMatter extends CustomCard {
     	this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
         return false;
     }
-    
+    */
+	
     private int GetPowerCount(AbstractCreature c, String powerId) {
     	AbstractPower power =  c.getPower(powerId);    	
     	return power != null ? power.amount : 0;
