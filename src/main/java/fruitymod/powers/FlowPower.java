@@ -45,7 +45,9 @@ public class FlowPower extends AbstractPower {
     
     @Override
     public void atStartOfTurn() {
-    	AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(energyRetained));
+    	if (((AbstractPlayer)this.owner).getRelic("Ice Cream") == null) {
+    		AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(energyRetained));
+    	}
         --this.amount;
         this.energyRetained=0;
         if(this.amount == 0 && ((AbstractPlayer)this.owner).getRelic("Ice Cream") == null) {
