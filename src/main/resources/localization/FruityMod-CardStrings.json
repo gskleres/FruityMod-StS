@@ -9,7 +9,7 @@
 	},
 	"AstralHaze": {
 		"NAME": "Astral Haze",
-		"DESCRIPTION": "Ethereal. The first time each enemy attacks you this turn, apply !M! Weak and !M! Vulnerable to it."
+		"DESCRIPTION": "Ethereal. The first time each enemy attacks you this turn, apply !M! Vulnerable and !M! Weak to it."
 	},
 	"Starburst": {
 		"NAME": "Starburst",
