@@ -248,7 +248,7 @@
 	},
 	"Transference": {
 		"NAME": "Transference",
-		"DESCRIPTION": "Transfer all of your Weak and Vulnerable to an enemy.",
+		"DESCRIPTION": "Transfer all of your Weak and Vulnerable to an enemy. Draw a card.",
 		"EXTENDED_DESCRIPTION": [ "I am not Weak or Vulnerable."]
 	},
 	"Channel": {
