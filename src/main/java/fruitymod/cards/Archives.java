@@ -23,7 +23,7 @@ public class Archives extends CustomCard {
 		public static final String NAME = cardStrings.NAME;
 		public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	    private static final int COST = 0;
-	    private static final int PER_DRAW = 12;
+	    private static final int PER_DRAW = 10;
 	    private static final int PER_DRAW_UPGRADE = -3;
 	    private static final int POOL = 1;
 	    
