@@ -25,7 +25,7 @@ extends CustomCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
-    private static final int COST = 2;
+    private static final int COST = 1;
     private static final int ATTACK_DMG = 4;
     private static final int UPGRADED_DMG_AMT = 2;
     private static final int POOL = 1;
