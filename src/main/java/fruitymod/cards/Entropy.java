@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
+import fruitymod.actions.common.ModifyBlockAction;
 import fruitymod.patches.AbstractCardEnum;
 
 public class Entropy extends CustomCard {
@@ -28,7 +29,6 @@ public class Entropy extends CustomCard {
 		super(ID, NAME, FruityMod.makePath(FruityMod.ENTROPY), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
 				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY, POOL);
 		this.magicNumber = this.baseMagicNumber = STR_LOSS;
-		this.isEthereal = true;
 	}
 
 	@Override
@@ -39,10 +39,14 @@ public class Entropy extends CustomCard {
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p,
 					new com.megacrit.cardcrawl.powers.LoseStrengthPower(m, -1 * this.magicNumber), -1 * this.magicNumber));
 		}
+	}
+
+	@Override
+	public void triggerWhenDrawn(){
 		this.baseMagicNumber++;
 		this.magicNumber = this.baseMagicNumber;
 	}
-
+	
 	@Override
 	public void triggerOnEndOfPlayerTurn() {
 		AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
