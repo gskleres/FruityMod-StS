@@ -13,6 +13,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
@@ -785,6 +786,9 @@ public class FruityMod implements PostInitializeSubscriber,
 	public void receivePostDraw(AbstractCard c) {
 		if (c instanceof Convergence) {
 			c.superFlash();
+			if (c.upgraded) {
+				AbstractDungeon.actionManager.addToTop(new DrawCardAction(AbstractDungeon.player, 1));
+			}
 			AbstractDungeon.actionManager.addToBottom(new WaitAction(Settings.ACTION_DUR_FAST));
 			AbstractDungeon.actionManager.addToBottom(new ConvergenceAction(c.upgraded));
 		}
