@@ -217,7 +217,7 @@
 	},
 	"MindOverMatter": {
 		"NAME": "Mind Over Matter",
-		"DESCRIPTION": "Remove all Frail, Weak, and Vulnerable. NL Gain !M! Block for each stack removed.",
+		"DESCRIPTION": "Remove all Frail, Weak, and Vulnerable. Gain 5 Block, plus !M! Block for each stack removed.",
 		"EXTENDED_DESCRIPTION": [ "I am not Frail, Weak or Vulnerable."]
 	},
 	"Overload": {

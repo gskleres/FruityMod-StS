@@ -21,15 +21,16 @@ public class MindOverMatter extends CustomCard {
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 1;
-	private static final int BLOCK_AMT = 3;
-	private static final int UPGRADE_BLOCK_AMT = 2;
+	private static final int BONUS_BLOCK_AMT = 3;
+	private static final int BONUS_UPGRADE_BLOCK_AMT = 5;
+	private static final int BASE_BLOCK_AMT = 5;
 	private static final int POOL = 1;
 
 	public MindOverMatter() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.MIND_OVER_MATTER), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
 				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF, POOL);
 
-		this.magicNumber = this.baseMagicNumber = BLOCK_AMT;
+		this.magicNumber = this.baseMagicNumber = BONUS_BLOCK_AMT;
 	}
 
 	@Override
@@ -40,7 +41,7 @@ public class MindOverMatter extends CustomCard {
 		AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "Frail"));
 		AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "Weakened"));
 		AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "Vulnerable"));
-		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, (frailCount + weakCount + vulnCount) * this.magicNumber));
+		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, ((frailCount + weakCount + vulnCount) * this.magicNumber) + BASE_BLOCK_AMT));
 	}
 	
 	/*
@@ -69,7 +70,7 @@ public class MindOverMatter extends CustomCard {
 	public void upgrade() {
 		if (!this.upgraded) {
 			this.upgradeName();
-			this.upgradeMagicNumber(UPGRADE_BLOCK_AMT);
+			this.upgradeMagicNumber(BONUS_UPGRADE_BLOCK_AMT);
 		}
 	}
 }
