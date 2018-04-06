@@ -58,7 +58,7 @@
 	},
 	"ArcaneArmor": {
 		"NAME": "Arcane Armor",
-		"DESCRIPTION": "Gain !B! Block. NL Every time you draw this card, increase its Block by !M! for this combat."
+		"DESCRIPTION": "Gain !B! Block. Every time you draw this card, increase its Block by !M! for this combat."
 	},
 	"Flicker": {
 		"NAME": "Flicker",
@@ -107,7 +107,7 @@
 	},
 	"PhaseCoil": {
 		"NAME": "Phase Coil",
-		"DESCRIPTION": "Costs 1 less [R] for each Ethereal card in hand. Deal !D! damage."
+		"DESCRIPTION": "Deal !D! damage. Every time you draw this card, increase its damage by !M! for this combat."
 	},
 	"PlasmaWave": {
 		"NAME": "Plasma Wave",
