@@ -338,7 +338,7 @@
 	},
 	"Coalescence": {
 		"NAME": "Coalescence",
-		"DESCRIPTION": "Whenever you gain Frail, Weak, or Vulnerable during your turn, gain !M! Block."
+		"DESCRIPTION": "At the end of turn, gain !M! Block for each stack of Frail, Weak, or Vulnerable you have."
 	},
 	"Magnetize": {
 		"NAME": "Magnetize",
