@@ -146,7 +146,7 @@
 	},
 	"Umbra": {
 		"NAME": "Umbra",
-		"DESCRIPTION": "Remove all Frail, Weak, and Vulnerable. Recycle a Dazed for each stack removed."
+		"DESCRIPTION": "If you are Frail or Vulnerable, gain !B! Block. If you are Weak, deal !D! damage to ALL enemies."
 	},
 	"GravityWell": {
 		"NAME": "Gravity Well",
