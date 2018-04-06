@@ -28,6 +28,7 @@ public class Entropy extends CustomCard {
 	public Entropy() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.ENTROPY), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
 				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY, POOL);
+		this.isEthereal = true;
 		this.magicNumber = this.baseMagicNumber = STR_LOSS;
 	}
 
