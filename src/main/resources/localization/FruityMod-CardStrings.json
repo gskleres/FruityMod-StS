@@ -262,7 +262,7 @@
 	},
 	"Implosion": {
 		"NAME": "Implosion",
-		"DESCRIPTION": "Deal !D! damage. Recycle !M! Dazed."
+		"DESCRIPTION": "Deal !D! damage. Top-Cycle !M! card from your hand."
 	},
 	"MeteorShower": {
 		"NAME": "Meteor Shower",
