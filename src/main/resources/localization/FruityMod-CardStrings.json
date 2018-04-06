@@ -71,9 +71,9 @@
 	},
 	"Nebula": {
 		"NAME": "Nebula",
-		"DESCRIPTION": "Ethereal. Gain !M! Block for each Ethereal card in your hand.",
+		"DESCRIPTION": "Gain !M! Block for each other card in your hand.",
 		"EXTENDED_DESCRIPTION": [
-			" (You will gain !B! Block)"
+			" (Gain !B! Block.)"
 		]
 	},
 	"DisruptionField": {
