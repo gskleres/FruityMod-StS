@@ -34,7 +34,10 @@
 	},
 	"Comet": {
 		"NAME": "Comet",
-		"DESCRIPTION": "Deal !D! damage. Deals an additional !M! damage for ALL of your Ethereal cards."
+		"DESCRIPTION": "Deal !M! damage for each other card in your hand.",
+		"EXTENDED_DESCRIPTION": [
+			" NL (Deals !D! damage.)"
+		]
 	},
 	"Retrograde": {
 		"NAME": "Retrograde",
