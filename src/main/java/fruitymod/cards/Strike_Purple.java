@@ -31,24 +31,9 @@ public class Strike_Purple extends CustomCard {
 	}
 
 	public void use(com.megacrit.cardcrawl.characters.AbstractPlayer p, AbstractMonster m) {
-		if (com.megacrit.cardcrawl.core.Settings.isDebug) {
-			if (com.megacrit.cardcrawl.core.Settings.isInfo) {
-				this.multiDamage = new int[AbstractDungeon.getCurrRoom().monsters.monsters.size()];
-				for (int i = 0; i < AbstractDungeon.getCurrRoom().monsters.monsters.size(); i++) {
-					this.multiDamage[i] = 150;
-				}
-				AbstractDungeon.actionManager.addToBottom(
-						new com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction(p, this.multiDamage,
-								this.damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-			} else {
-				AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-						new DamageInfo(p, 150, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-			}
-		} else {
-			AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-					new DamageInfo(p, this.damage, this.damageTypeForTurn),
-					AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-		}
+		AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
+				new DamageInfo(p, this.damage, this.damageTypeForTurn),
+				AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 	}
 
 	public AbstractCard makeCopy() {
