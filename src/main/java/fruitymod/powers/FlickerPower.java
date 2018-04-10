@@ -24,7 +24,7 @@ public class FlickerPower extends AbstractPower {
 		this.description = DESCRIPTIONS[0];
 		this.type = AbstractPower.PowerType.BUFF;
 		this.isTurnBased = true;
-		this.priority = 8;
+		this.priority = 4;
 		this.img = FruityMod.getEssenceMirrorPowerTexture();
 	}
 
