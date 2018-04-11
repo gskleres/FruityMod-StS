@@ -453,6 +453,8 @@ public class FruityMod implements PostInitializeSubscriber,
 		
 		logger.info("add cards for " + TheSeekerEnum.THE_SEEKER.toString());
 		
+		BaseMod.addCard(new Dazed_P());
+		
 		BaseMod.addCard(new Strike_Purple());
 		BaseMod.addCard(new Defend_Purple());
 		
@@ -531,6 +533,8 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new Nexus());
 		
 		// make sure everything is always unlocked
+		UnlockTracker.unlockCard("Dazed_P");
+		
 		UnlockTracker.unlockCard("Strike_P");
 		UnlockTracker.unlockCard("Defend_P");
 		

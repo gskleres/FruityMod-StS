@@ -44,7 +44,7 @@ public class BrilliancePower extends AbstractPower implements PostBattleSubscrib
 
 	@Override
 	public void receivePostDraw(AbstractCard c){
-		if(c.cardID.equals("Dazed")){
+		if(c.cardID.equals("Dazed") || c.cardID.equals("Dazed_P")){
 			AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, this.amount));
 		}
 	}

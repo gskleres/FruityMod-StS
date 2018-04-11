@@ -1,15 +1,17 @@
 package fruitymod.powers;
 
-import java.lang.reflect.Field;
+import java.util.ArrayList;
 
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import basemod.helpers.SuperclassFinder;
 import fruitymod.FruityMod;
+import fruitymod.cards.Dazed_P;
+import fruitymod.cards.Flux;
 
 public class EnigmaPower extends AbstractPower {
 	public static final String POWER_ID = "EnigmaPower";
@@ -33,49 +35,37 @@ public class EnigmaPower extends AbstractPower {
 	}
 	
 	@Override
-	public void onInitialApplication() {
-		updateDazedDescriptions(null);
+	public void updateDescription() {
+		this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2];
 	}
 	
 	@Override
-	public void updateDescription() {
-		this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1] +
-				this.amount + DESCRIPTIONS[2];
+	public void onInitialApplication() {
+		replaceDazedWithDazed_P();
 	}
 	
 	@Override
 	public void onDrawOrDiscard() {
-		updateDazedDescriptions(null);
+		replaceDazedWithDazed_P();
 	}
 	
 	@Override
 	public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-		updateDazedDescriptions(power);
+		replaceDazedWithDazed_P();
 	}
 	
-	private void updateDazedDescriptions(AbstractPower applied) {
-		int damage = this.amount;
-		int block = this.amount;
-		if (applied != null && applied.ID.equals("EnigmaPower")) {
-			damage += applied.amount;
-			block += applied.amount;
-		}
+	private void replaceDazedWithDazed_P() {
+		ArrayList<AbstractCard> temp = new ArrayList<AbstractCard>();
 		for (AbstractCard c : AbstractDungeon.player.hand.group) {
 			if (c instanceof Dazed) {
-				c.baseBlock = block;
-				c.baseDamage = damage;
-				try {
-					Field isMultiDamageField = SuperclassFinder.getSuperclassField(c.getClass(), "isMultiDamage");
-					isMultiDamageField.setAccessible(true);
-					isMultiDamageField.set(c, true);
-				} catch (NoSuchFieldException | IllegalArgumentException | IllegalAccessException e) {
-					System.out.println("couldn't set multidamage on dazed");
-					e.printStackTrace();
-				}
-				c.type = AbstractCard.CardType.ATTACK;
-				c.rawDescription = "Ethereal. Gain !B! Block. Deal !D! damage to all enemies.";
-				c.initializeDescription();
+				temp.add(c);
 			}
+		}
+		while (temp.size() > 0)
+		{
+			AbstractCard c = temp.remove(0);
+			AbstractDungeon.player.hand.removeCard(c);
+			AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction((AbstractCard)new Dazed_P(), 1));
 		}
 	}
 	

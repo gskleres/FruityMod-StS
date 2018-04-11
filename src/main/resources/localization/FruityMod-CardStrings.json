@@ -1,4 +1,8 @@
 {
+	"Dazed_P": {
+		"NAME": "Dazed",
+		"DESCRIPTION": "Ethereal. NL Gain !B! Block. NL Deal !D! damage."
+	},
 	"Strike_P": {
 		"NAME": "Strike",
 		"DESCRIPTION": "Deal !D! damage."
