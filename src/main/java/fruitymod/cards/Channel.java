@@ -13,8 +13,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
-import fruitymod.actions.common.DiscardWithCallbackAction;
-import fruitymod.actions.common.IDiscardCallback;
+import fruitymod.actions.common.ITopCycleCallback;
+import fruitymod.actions.unique.ChannelAction;
 import fruitymod.patches.AbstractCardEnum;
 
 public class Channel extends CustomCard {
@@ -38,19 +38,17 @@ public class Channel extends CustomCard {
 	
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom((new DamageAction((AbstractCreature) m,
-				new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY)));
+		AbstractDungeon.actionManager.addToBottom((new DamageAction((AbstractCreature) m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY)));
 		Channel that = this; // funny little naming convention for providing this to inner class
-		AbstractDungeon.actionManager.addToBottom(new DiscardWithCallbackAction(
-				p, p, DISCARD_AMT, false, false, false, false, new IDiscardCallback() {
-					@Override
-					public void processCard(AbstractCard c) {
-						if (c.isEthereal) {
-							AbstractDungeon.actionManager.addToBottom(new DamageAction((AbstractCreature) m,
-									new DamageInfo(p, that.damage, that.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
-						}
-					}
-				}));
+		ITopCycleCallback cb = new ITopCycleCallback() {
+			@Override
+			public void processCard(AbstractCard c) {
+				if (c.isEthereal) {
+					AbstractDungeon.actionManager.addToBottom(new DamageAction((AbstractCreature) m, new DamageInfo(p, that.damage, that.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
+				}
+			}
+		};
+		AbstractDungeon.actionManager.addToBottom(new ChannelAction(p, DISCARD_AMT, cb));
 	}
 	
 	@Override

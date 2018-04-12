@@ -261,7 +261,7 @@
 	},
 	"Channel": {
 		"NAME": "Channel",
-		"DESCRIPTION": "Deal !D! damage. NL Discard a card. NL If it is Ethereal, deal !D! more damage."
+		"DESCRIPTION": "Deal !D! damage. NL Top-Cycle a card. NL If it is Ethereal, deal !D! more damage."
 	},
 	"Feedback": {
 		"NAME": "Feedback",
