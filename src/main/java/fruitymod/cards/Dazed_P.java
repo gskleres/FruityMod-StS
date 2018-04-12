@@ -26,11 +26,11 @@ public class Dazed_P extends CustomCard {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = -2;
-	private static final int POOL = 1;
+	private static final int POOL = 4;
 
 	public Dazed_P() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.VOID_RIPPLE), COST, DESCRIPTION,
-				AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE,
+				AbstractCard.CardType.ATTACK, AbstractCard.CardColor.COLORLESS,
 				AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ALL_ENEMY, POOL);
 		this.baseDamage = 0;
 		this.baseBlock = 0;
@@ -61,6 +61,7 @@ public class Dazed_P extends CustomCard {
 	@Override
 	public void update() {
 		updateEnigmaValue();
+		super.update();
 	}
 	
 	@Override
