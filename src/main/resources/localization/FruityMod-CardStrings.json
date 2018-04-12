@@ -202,8 +202,8 @@
 	},
 	"Corona": {
 		"NAME": "Corona",
-		"DESCRIPTION": "A random Ethereal card in your hand costs 0 this turn.",
-		"EXTENDED_DESCRIPTION": ["There are no Ethereal cards in my hand."]
+		"DESCRIPTION": "Next turn, draw !M! card. Whenever you draw this card, increase that amount by 1 this combat.",
+		"EXTENDED_DESCRIPTION": ["Next turn, draw !M! cards. Whenever you draw this card, increase that amount by 1 this combat."]
 	},
 	"Equinox": {
 		"NAME": "Equinox",
