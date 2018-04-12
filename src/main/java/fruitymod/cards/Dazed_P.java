@@ -18,7 +18,6 @@ import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
-import fruitymod.patches.AbstractCardEnum;
 
 public class Dazed_P extends CustomCard {
 	public static final String ID = "Dazed_P";
@@ -43,6 +42,8 @@ public class Dazed_P extends CustomCard {
 		super.applyPowers();
 		updateEnigmaValue();
 	}
+	
+	
 	
 	private void updateEnigmaValue() {
 		AbstractPlayer p = AbstractDungeon.player;

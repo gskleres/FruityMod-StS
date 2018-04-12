@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import fruitymod.FruityMod;
 import fruitymod.cards.Dazed_P;
-import fruitymod.cards.Flux;
 
 public class EnigmaPower extends AbstractPower {
 	public static final String POWER_ID = "EnigmaPower";
