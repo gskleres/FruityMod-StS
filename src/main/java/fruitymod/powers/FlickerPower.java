@@ -71,18 +71,8 @@ public class FlickerPower extends AbstractPower {
 		return damage;
 	}
 
-	/* this will need to changed in the next weekly patch, where modifyBlock is updated to be a float instead of int
 	@Override
 	public float modifyBlock(float blockAmount) {
-		if (this.owner.hasPower("Frail")) {
-			return (int) (blockAmount * 1.67f);
-		}
-		return blockAmount;
-	}
-	*/
-	 
-	@Override
-	public int modifyBlock(int blockAmount) {
 		if (this.owner.hasPower("Frail")) {
 			return (int) (blockAmount * 1.67f);
 		}
