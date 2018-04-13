@@ -43,18 +43,8 @@ public class FlickerPower extends AbstractPower {
 		}
 	}
 
-	/*
-	 * @Override public void updateDescription() { this.description =
-	 * this.amount == 1 ? (this.owner != null && !this.owner.isPlayer &&
-	 * AbstractDungeon.player.hasRelic("Paper Crane") ? DESCRIPTIONS[0] + 50 +
-	 * DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2] : DESCRIPTIONS[0] + 25 +
-	 * DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2]) : (this.owner != null &&
-	 * !this.owner.isPlayer && AbstractDungeon.player.hasRelic("Paper Crane") ?
-	 * DESCRIPTIONS[0] + 50 + DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[3] :
-	 * DESCRIPTIONS[0] + 25 + DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[3]);
-	 * }
-	 */
-
+	// Need to fix the below to also work with the relics 
+	
 	@Override
 	public float atDamageGive(float damage, DamageInfo.DamageType type) {
 		if (type == DamageInfo.DamageType.NORMAL && this.owner.hasPower("Weakened")) {
@@ -66,7 +56,10 @@ public class FlickerPower extends AbstractPower {
 	@Override
 	public float atDamageReceive(float damage, DamageInfo.DamageType damageType) {
 		if (damageType == DamageInfo.DamageType.NORMAL && this.owner.hasPower("Vulnerable")) {
-			return damage * 0.34f;
+            if (AbstractDungeon.player.hasRelic("Odd Mushroom")) {
+                return damage * 0.6f; // -25% (3/4) instead of +25% (5/4) damage 
+            }
+			return damage * 0.34f; // -50% (1/2) instead of +50% (3/2) damage
 		}
 		return damage;
 	}
