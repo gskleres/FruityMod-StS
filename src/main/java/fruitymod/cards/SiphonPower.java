@@ -25,8 +25,8 @@ public class SiphonPower extends CustomCard {
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 2;
-	private static final int ATTACK_DMG = 8;
-	private static final int ATTACK_UPGRADE = 3;
+	private static final int ATTACK_DMG = 10;
+	private static final int ATTACK_UPGRADE = 4;
 	private static final int BUFF_DEBUFF_AMT = 1;
 	private static final int BUFF_DEBUFF_UPGRADE_AMT = 1;
 	private static final int STRENGTH_GAIN_AMT = 1;

@@ -6,15 +6,14 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-public class SelectCardsToShuffleToDrawPileAction
-extends AbstractGameAction {
-    public static final String[] TEXT = { "shuffle into your draw pile" };
+public class TopCycleCardsFromHandAction extends AbstractGameAction {
+    public static final String[] TEXT = { "Top-Cycle" };
     private AbstractPlayer p;
     private boolean isRandom;
     private boolean isOptional;
     public static int numPlaced;
-
-    public SelectCardsToShuffleToDrawPileAction(AbstractCreature target, AbstractCreature source, int amount, boolean isRandom, boolean isOptional) {
+	
+    public TopCycleCardsFromHandAction(AbstractCreature target, AbstractCreature source, int amount, boolean isRandom, boolean isOptional) {
         this.target = target;
         this.p = (AbstractPlayer)target;
         this.setValues(target, source, amount);
@@ -23,7 +22,7 @@ extends AbstractGameAction {
         this.isRandom = isRandom;
     }
     
-    public SelectCardsToShuffleToDrawPileAction(AbstractCreature target, AbstractCreature source, int amount) {
+    public TopCycleCardsFromHandAction(AbstractCreature target, AbstractCreature source, int amount) {
     	this(target, source, amount, false, false);
     }
 
@@ -36,7 +35,7 @@ extends AbstractGameAction {
             }
             if (this.isRandom) {
                 for (i = 0; i < this.amount; ++i) {
-                    this.p.hand.moveToDeck(this.p.hand.getRandomCard(false), true);
+                    this.p.hand.moveToDeck(this.p.hand.getRandomCard(false), false);
                 }
             } else {
                 if (this.p.hand.group.size() > this.amount) {
@@ -46,18 +45,18 @@ extends AbstractGameAction {
                     return;
                 }
                 for (i = 0; i < this.p.hand.size(); ++i) {
-                    this.p.hand.moveToDeck(this.p.hand.getRandomCard(false), true);
+                    this.p.hand.moveToDeck(this.p.hand.getRandomCard(false), false);
                 }
             }
         }
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
             for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
-                this.p.hand.moveToDeck(c, true);
+                this.p.hand.moveToDeck(c, false);
             }
             AbstractDungeon.player.hand.refreshHandLayout();
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
         }
         this.tickDuration();
     }
+    
 }
-

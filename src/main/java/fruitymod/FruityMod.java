@@ -13,6 +13,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
@@ -68,7 +69,7 @@ public class FruityMod implements PostInitializeSubscriber,
 	
     private static final String MODNAME = "FruityMod";
     private static final String AUTHOR = "Fruitstrike, ColdRain451, test447, fiiiiilth, & Pal";
-    private static final String DESCRIPTION = "v0.4.3\n Adds The Seeker as a playable third character";
+    private static final String DESCRIPTION = "v0.6.0\n Adds The Seeker as a playable third character";
     
     private static final Color PURPLE = CardHelper.getColor(139.0f, 0.0f, 139.0f);
     private static final String FRUITY_MOD_ASSETS_FOLDER = "img";
@@ -452,6 +453,8 @@ public class FruityMod implements PostInitializeSubscriber,
 		
 		logger.info("add cards for " + TheSeekerEnum.THE_SEEKER.toString());
 		
+		BaseMod.addCard(new Dazed_P());
+		
 		BaseMod.addCard(new Strike_Purple());
 		BaseMod.addCard(new Defend_Purple());
 		
@@ -530,6 +533,8 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new Nexus());
 		
 		// make sure everything is always unlocked
+		UnlockTracker.unlockCard("Dazed_P");
+		
 		UnlockTracker.unlockCard("Strike_P");
 		UnlockTracker.unlockCard("Defend_P");
 		
@@ -660,6 +665,7 @@ public class FruityMod implements PostInitializeSubscriber,
         BaseMod.addKeyword(new String[] {"reflect", "Reflect"}, "Whenever you are attacked this turn, deal this amount of damage back back to the attacker.");
         BaseMod.addKeyword(new String[] {"top-cycle", "Top-Cycle"}, "When you Top-Cycle a card, place it on top of your draw pile.");
         BaseMod.addKeyword(new String[] {"recycle", "Recycle"}, "When you Recycle a card, shuffle it randomly into your draw pile.");
+        BaseMod.addKeyword(new String[] {"intangible", "Intangible"}, "All damage and HP loss you suffer is reduced to 1.");
 	}
 	
 	//
@@ -784,6 +790,9 @@ public class FruityMod implements PostInitializeSubscriber,
 	public void receivePostDraw(AbstractCard c) {
 		if (c instanceof Convergence) {
 			c.superFlash();
+			if (c.upgraded) {
+				AbstractDungeon.actionManager.addToTop(new DrawCardAction(AbstractDungeon.player, 1));
+			}
 			AbstractDungeon.actionManager.addToBottom(new WaitAction(Settings.ACTION_DUR_FAST));
 			AbstractDungeon.actionManager.addToBottom(new ConvergenceAction(c.upgraded));
 		}

@@ -25,7 +25,8 @@ public class ConvergenceAction extends AbstractGameAction {
 
 	public void update() {
 		if (this.duration == Settings.ACTION_DUR_FAST) {
-
+			
+			/*
 			if (!this.upgraded) {
 				for (AbstractCard c : this.p.hand.group) {
 					if (c.canUpgrade()) {
@@ -47,6 +48,7 @@ public class ConvergenceAction extends AbstractGameAction {
 				this.isDone = true;
 				return;
 			}
+			*/
 
 			for (AbstractCard c : this.p.hand.group) {
 				if (!c.canUpgrade()) {

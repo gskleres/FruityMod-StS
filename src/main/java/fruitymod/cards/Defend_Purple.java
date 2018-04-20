@@ -30,11 +30,7 @@ public class Defend_Purple extends CustomCard {
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		if (com.megacrit.cardcrawl.core.Settings.isDebug) {
-			AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, 50));
-		} else {
-			AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
-		}
+		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
 	}
 
 	public AbstractCard makeCopy() {

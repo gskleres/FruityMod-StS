@@ -2,6 +2,7 @@ package fruitymod.cards;
 
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -21,59 +22,82 @@ public class EtherBlast extends CustomCard {
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
-	private static final int COST = 1;
-	private static final int ATTACK_DMG = 5;
-	private static final int ATTACK_UPGRADE = 3;
-	private static final int POOL = 1;
+    private static final int COST = 2;
+    private static final int BASE_ATTACK_DMG = 6;
+    private static final int BASE_ATTACK_DMG_UPGRADE = 4;
+    private static final int PER_ETHEREAL_DMG = 2;
+    private static final int PER_ETHEREAL_DMG_UPGRADE = 1;
+    private static final int POOL = 1;
 
 	public EtherBlast() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.ETHER_BLAST), COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
-				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY, POOL);
+				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY, POOL);
 		this.isEthereal = true;
-		this.magicNumber = this.baseMagicNumber = ATTACK_DMG;
+		this.damage = this.baseDamage = BASE_ATTACK_DMG;
+		this.magicNumber = this.baseMagicNumber = PER_ETHEREAL_DMG;
 	}
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
-			AbstractDungeon.actionManager.addToTop(
-					new DamageAction(m,
-							new DamageInfo(p, this.damage, this.damageTypeForTurn), true));
-			AbstractDungeon.actionManager.addToTop(new VFXAction(new ThrowDaggerEffect(m.hb.cX, m.hb.cY)));
+		AbstractDungeon.actionManager.addToTop(new DamageAction(m, new DamageInfo(p, calculateDamage(), this.damageTypeForTurn), true));
+		AbstractDungeon.actionManager.addToTop(new VFXAction(new ThrowDaggerEffect(m.hb.cX, m.hb.cY)));
 		
 		this.rawDescription = DESCRIPTION;
 		initializeDescription();
 	}
 	
-	public static int countEtherealCardsInHand() {
-		int count  = 0;
-		for (AbstractCard c : AbstractDungeon.player.hand.group) {
-			if (c.isEthereal) {
-				count++;
-			}
-		}
-		return count;
+	public int calculateDamage() {
+		int total = this.damage + (countAllEtherealCards() * this.magicNumber);
+		return total;
 	}
 	
+    public static int countAllEtherealCards() {
+    	int count = 0;
+    	for (AbstractCard c : AbstractDungeon.player.hand.group) {
+    		if (c.isEthereal) {
+    			count++;
+    		}
+    	}
+    	for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
+    		if (c.isEthereal) {
+    			count++;
+    		}
+    	}
+    	for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
+    		if (c.isEthereal) {
+    			count++;
+    		}
+    	}
+    	return count;
+    }
+    
 	@Override
 	public void applyPowers() {
-		int count = countEtherealCardsInHand();
-		this.baseDamage = count * this.magicNumber;
-		
 		super.applyPowers();
-
-		this.rawDescription =  DESCRIPTION;
-		if (count > 0) {
-			this.rawDescription += EXTENDED_DESCRIPTION[0];
-		}
-		initializeDescription();
+		this.setDescription(true);
 	}
 	
 	@Override
 	public void onMoveToDiscard() {
 		this.rawDescription = DESCRIPTION;
-		initializeDescription();
+		this.setDescription(false);
 	}
 
+    @Override
+    public void triggerOnEndOfPlayerTurn() {
+    	AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
+    }
+	
+	private void setDescription(boolean addExtended) {
+		this.rawDescription = DESCRIPTION;
+		if (addExtended) {
+			this.rawDescription += EXTENDED_DESCRIPTION[0];
+			this.rawDescription += Integer.toString(calculateDamage());
+			this.rawDescription += EXTENDED_DESCRIPTION[1];
+		}
+		this.initializeDescription();
+	}
+	
 	@Override
 	public AbstractCard makeCopy() {
 		return new EtherBlast();
@@ -83,7 +107,9 @@ public class EtherBlast extends CustomCard {
 	public void upgrade() {
 		if (!this.upgraded) {
 			this.upgradeName();
-			this.upgradeMagicNumber(ATTACK_UPGRADE);
+			this.upgradeDamage(BASE_ATTACK_DMG_UPGRADE);
+			this.upgradeMagicNumber(PER_ETHEREAL_DMG_UPGRADE);
+			this.setDescription(false);
 		}
 	}
 }

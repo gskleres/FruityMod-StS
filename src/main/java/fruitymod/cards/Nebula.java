@@ -20,8 +20,8 @@ public class Nebula extends CustomCard {
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
 	private static final int COST = 1;
-	private static final int BLOCK_AMT = 4;
-	private static final int UPGRADE_BLOCK_AMT = 3;
+	private static final int COST_UPGRADED = 0;
+	private static final int BLOCK_AMT = 2;
 	private static final int POOL = 1;
 
 	public Nebula() {
@@ -29,7 +29,6 @@ public class Nebula extends CustomCard {
 				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF, POOL);
 
 		this.magicNumber = this.baseMagicNumber = BLOCK_AMT;
-		this.isEthereal = true;
 	}
 
 	@Override
@@ -45,19 +44,9 @@ public class Nebula extends CustomCard {
 	
 	@Override
 	public void applyPowers() {
-		this.baseBlock = countEtherealInHand() * this.magicNumber;
+		this.baseBlock = (AbstractDungeon.player.hand.size() - 1) * this.magicNumber;
 		super.applyPowers();
 		this.setDescription(true);
-	}
-	
-	public static int countEtherealInHand() {
-		int etherealCount = 0;
-		for (AbstractCard c : AbstractDungeon.player.hand.group) {
-			if (!c.isEthereal)
-				continue;
-			etherealCount++;
-		}
-		return etherealCount;
 	}
 	
 	@Override
@@ -75,28 +64,6 @@ public class Nebula extends CustomCard {
 	}
 
 	@Override
-	public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-		boolean canUse = super.canUse(p, m);
-		if (!canUse) {
-			return false;
-		}
-		canUse = false;
-		for (AbstractCard c : p.hand.group) {
-			if (!c.isEthereal)
-				continue;
-			canUse = true;
-			break;
-		}
-		this.cantUseMessage = "No Ethereal cards in hand.";
-		return canUse;
-	}
-
-	@Override
-	public void triggerOnEndOfPlayerTurn() {
-		AbstractDungeon.actionManager.addToTop(new ExhaustAllEtherealAction());
-	}
-
-	@Override
 	public AbstractCard makeCopy() {
 		return new Nebula();
 	}
@@ -105,7 +72,7 @@ public class Nebula extends CustomCard {
 	public void upgrade() {
 		if (!this.upgraded) {
 			this.upgradeName();
-			this.upgradeMagicNumber(UPGRADE_BLOCK_AMT);
+			this.upgradeBaseCost(COST_UPGRADED);
 		}
 	}
 }

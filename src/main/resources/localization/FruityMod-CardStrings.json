@@ -1,4 +1,8 @@
 {
+	"Dazed_P": {
+		"NAME": "Dazed (Enigma)",
+		"DESCRIPTION": "Ethereal. NL Gain !B! Block. NL Deal !D! damage."
+	},
 	"Strike_P": {
 		"NAME": "Strike",
 		"DESCRIPTION": "Deal !D! damage."
@@ -9,7 +13,7 @@
 	},
 	"AstralHaze": {
 		"NAME": "Astral Haze",
-		"DESCRIPTION": "Ethereal. The first time each enemy attacks you this turn, apply !M! Weak and !M! Vulnerable to it."
+		"DESCRIPTION": "Ethereal. The first time each enemy attacks you this turn, apply !M! Vulnerable and !M! Weak to it."
 	},
 	"Starburst": {
 		"NAME": "Starburst",
@@ -34,7 +38,10 @@
 	},
 	"Comet": {
 		"NAME": "Comet",
-		"DESCRIPTION": "Deal !D! damage. Deals an additional !M! damage for ALL of your Ethereal cards."
+		"DESCRIPTION": "Deal !M! damage for each other card in your hand.",
+		"EXTENDED_DESCRIPTION": [
+			" NL (Deals !D! damage.)"
+		]
 	},
 	"Retrograde": {
 		"NAME": "Retrograde",
@@ -58,7 +65,7 @@
 	},
 	"ArcaneArmor": {
 		"NAME": "Arcane Armor",
-		"DESCRIPTION": "Gain !B! Block. NL Every time you draw this card, increase its Block by !M! for this combat."
+		"DESCRIPTION": "Gain !B! Block. Every time you draw this card, increase its Block by !M! for this combat."
 	},
 	"Flicker": {
 		"NAME": "Flicker",
@@ -71,9 +78,9 @@
 	},
 	"Nebula": {
 		"NAME": "Nebula",
-		"DESCRIPTION": "Ethereal. Gain !M! Block for each Ethereal card in your hand.",
+		"DESCRIPTION": "Gain !M! Block for each other card in your hand.",
 		"EXTENDED_DESCRIPTION": [
-			" (You will gain !B! Block)"
+			" (Gain !B! Block.)"
 		]
 	},
 	"DisruptionField": {
@@ -103,11 +110,11 @@
 	},
 	"Entropy": {
 		"NAME": "Entropy",
-		"DESCRIPTION": "Ethereal. Enemy loses !M! Strength this turn, increasing by 1 each time this card is played this combat."
+		"DESCRIPTION": "Ethereal. Enemy loses !M! Strength this turn, increasing by 1 each time you draw this card this combat."
 	},
 	"PhaseCoil": {
 		"NAME": "Phase Coil",
-		"DESCRIPTION": "Costs 1 less [R] for each Ethereal card in hand. Deal !D! damage."
+		"DESCRIPTION": "Deal !D! damage. Every time you draw this card, increase its damage by !M! for this combat."
 	},
 	"PlasmaWave": {
 		"NAME": "Plasma Wave",
@@ -115,9 +122,10 @@
 	},
 	"EtherBlast": {
 		"NAME": "Ether Blast",
-		"DESCRIPTION": "Ethereal. NL Deal !M! damage for each Ethereal card in your hand.",
+		"DESCRIPTION": "Ethereal. Deal !D! damage, plus !M! damage for ALL of your Ethereal cards.",
 		"EXTENDED_DESCRIPTION": [
-			" NL (Will deal !D! damage)."
+			" NL (Deals ",
+			" damage)."
 		]
 	},
 	"Flare": {
@@ -146,7 +154,7 @@
 	},
 	"Umbra": {
 		"NAME": "Umbra",
-		"DESCRIPTION": "Remove all Frail, Weak, and Vulnerable. Recycle a Dazed for each stack removed."
+		"DESCRIPTION": "If you are Frail or Vulnerable, gain !B! Block. If you are Weak, deal !D! damage to ALL enemies."
 	},
 	"GravityWell": {
 		"NAME": "Gravity Well",
@@ -194,8 +202,8 @@
 	},
 	"Corona": {
 		"NAME": "Corona",
-		"DESCRIPTION": "A random Ethereal card in your hand costs 0 this turn.",
-		"EXTENDED_DESCRIPTION": ["There are no Ethereal cards in my hand."]
+		"DESCRIPTION": "Next turn, draw !M! card. Whenever you draw this card, increase that amount by 1 this combat.",
+		"EXTENDED_DESCRIPTION": ["Next turn, draw !M! cards. Whenever you draw this card, increase that amount by 1 this combat."]
 	},
 	"Equinox": {
 		"NAME": "Equinox",
@@ -217,7 +225,7 @@
 	},
 	"MindOverMatter": {
 		"NAME": "Mind Over Matter",
-		"DESCRIPTION": "Remove all Frail, Weak, and Vulnerable. NL Gain !M! Block for each stack removed.",
+		"DESCRIPTION": "Remove all Frail, Weak, and Vulnerable. Gain 5 Block, plus !M! Block for each stack removed.",
 		"EXTENDED_DESCRIPTION": [ "I am not Frail, Weak or Vulnerable."]
 	},
 	"Overload": {
@@ -234,8 +242,8 @@
 	},
 	"Convergence": {
 		"NAME": "Convergence",
-		"DESCRIPTION": "Unplayable. Ethereal. NL When you draw this card, upgrade a random card in your hand.",
-		"UPGRADE_DESCRIPTION": "Unplayable. Ethereal. NL When you draw this card, upgrade a card in your hand."
+		"DESCRIPTION": "Unplayable. When you draw this card, upgrade a card in your hand.",
+		"UPGRADE_DESCRIPTION": "Unplayable. When you draw this card, draw another card and upgrade a card in your hand."
 	},
 	"SiphonSpeed": {
 		"NAME": "Siphon Speed",
@@ -248,12 +256,12 @@
 	},
 	"Transference": {
 		"NAME": "Transference",
-		"DESCRIPTION": "Transfer all of your Weak and Vulnerable to an enemy.",
+		"DESCRIPTION": "Transfer all of your Weak and Vulnerable to an enemy. Draw a card.",
 		"EXTENDED_DESCRIPTION": [ "I am not Weak or Vulnerable."]
 	},
 	"Channel": {
 		"NAME": "Channel",
-		"DESCRIPTION": "Deal !D! damage. NL Discard a card. NL If it is Ethereal, deal !D! more damage."
+		"DESCRIPTION": "Deal !D! damage. NL Top-Cycle a card. NL If it is Ethereal, deal !D! more damage."
 	},
 	"Feedback": {
 		"NAME": "Feedback",
@@ -262,7 +270,7 @@
 	},
 	"Implosion": {
 		"NAME": "Implosion",
-		"DESCRIPTION": "Deal !D! damage. Recycle !M! Dazed."
+		"DESCRIPTION": "Deal !D! damage. Top-Cycle !M! card from your hand."
 	},
 	"MeteorShower": {
 		"NAME": "Meteor Shower",
@@ -338,7 +346,7 @@
 	},
 	"Coalescence": {
 		"NAME": "Coalescence",
-		"DESCRIPTION": "Whenever you gain Frail, Weak, or Vulnerable during your turn, gain !M! Block."
+		"DESCRIPTION": "At the end of turn, gain !M! Block for each stack of Frail, Weak, or Vulnerable you have."
 	},
 	"Magnetize": {
 		"NAME": "Magnetize",

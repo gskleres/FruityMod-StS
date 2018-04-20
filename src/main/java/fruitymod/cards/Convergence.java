@@ -25,8 +25,6 @@ public class Convergence extends CustomCard {
 		 super(ID, NAME,  FruityMod.makePath(FruityMod.CONVERGENCE), COST, DESCRIPTION,
 				 AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE,
 				 AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF, POOL);
-        	this.exhaust = true;
-        	this.isEthereal = true;
 	    }
 	 
 	    @Override
@@ -40,11 +38,6 @@ public class Convergence extends CustomCard {
 	    	return false;
 	    }
 	    
-		@Override
-	    public void triggerOnEndOfPlayerTurn() {
-	    	AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
-	    }
-
 	    @Override
 	    public AbstractCard makeCopy() {
 	        return new Convergence();
