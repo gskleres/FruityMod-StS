@@ -72,7 +72,7 @@ public class TheSeeker extends CustomPlayer {
 	
 	public static CharSelectInfo getLoadout() {
 		return new CharSelectInfo("The Seeker", "A brilliant mage and astronomer. Channels power from the astral plane.",
-				75, 75, 99, 5,
+				75, 75, 0, 99, 5,
 			TheSeekerEnum.THE_SEEKER, getStartingRelics(), getStartingDeck(), false);
 	}
 	
