@@ -24,14 +24,13 @@ public class Brainstorm extends CustomCard {
     private static final int DRAW = 1;
     private static final int DRAW_UPGRADE = 1;
     private static final int DAZED_COUNT = 1;
-    private static final int POOL = 1;
 
     private boolean triggerOnMoveToDiscard = false;
 
     public Brainstorm() {
     	super(ID, NAME, FruityMod.makePath(FruityMod.BRAINSTORM), COST, DESCRIPTION,
-    			AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE,
-    			AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF, POOL);
+    			AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
+    			AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
     	this.magicNumber = this.baseMagicNumber = DRAW;
     	
     }

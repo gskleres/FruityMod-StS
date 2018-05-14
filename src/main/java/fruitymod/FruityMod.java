@@ -386,8 +386,8 @@ public class FruityMod implements PostInitializeSubscriber,
          * the value of FRUITY_MOD_ASSETS_FOLDER must be created into which all the contents of the
          * `images/` folder must be relocated
          */
-        logger.info("creating the color " + AbstractCardEnum.PURPLE.toString());
-        BaseMod.addColor(AbstractCardEnum.PURPLE.toString(),
+        logger.info("creating the color " + AbstractCardEnum.SEEKER_PURPLE.toString());
+        BaseMod.addColor(AbstractCardEnum.SEEKER_PURPLE.toString(),
         		PURPLE, PURPLE, PURPLE, PURPLE, PURPLE, PURPLE, PURPLE,
         		makePath(ATTACK_PURPLE), makePath(SKILL_PURPLE),
         		makePath(POWER_PURPLE), makePath(ENERGY_ORB_PURPLE),
@@ -422,8 +422,8 @@ public class FruityMod implements PostInitializeSubscriber,
 		logger.info("begin editting characters");
 		
 		logger.info("add " + TheSeekerEnum.THE_SEEKER.toString());
-		BaseMod.addCharacter(TheSeeker.class, "#pThe #pSeeker", "Seeker class string",
-				AbstractCardEnum.PURPLE.toString(), "The Seeker",
+		BaseMod.addCharacter(TheSeeker.class, "The Seeker", "Seeker class string",
+				AbstractCardEnum.SEEKER_PURPLE.toString(), "#pThe #pSeeker",
 				makePath(SEEKER_BUTTON), makePath(SEEKER_PORTRAIT),
 				TheSeekerEnum.THE_SEEKER.toString());
 		
@@ -436,13 +436,13 @@ public class FruityMod implements PostInitializeSubscriber,
 		logger.info("begin editting relics");
         
         // Add relics
-		BaseMod.addRelicToCustomPool(new Arcanosphere(), AbstractCardEnum.PURPLE.toString());
-		BaseMod.addRelicToCustomPool(new Blueberries(), AbstractCardEnum.PURPLE.toString());
-		BaseMod.addRelicToCustomPool(new PaperPengwin(), AbstractCardEnum.PURPLE.toString());
-		BaseMod.addRelicToCustomPool(new CosmicSieve(), AbstractCardEnum.PURPLE.toString());
-		BaseMod.addRelicToCustomPool(new SolarEgg(), AbstractCardEnum.PURPLE.toString());
-		BaseMod.addRelicToCustomPool(new RodOfNegation(), AbstractCardEnum.PURPLE.toString());
-		BaseMod.addRelicToCustomPool(new Telescope(), AbstractCardEnum.PURPLE.toString());
+		BaseMod.addRelicToCustomPool(new Arcanosphere(), AbstractCardEnum.SEEKER_PURPLE.toString());
+		BaseMod.addRelicToCustomPool(new Blueberries(), AbstractCardEnum.SEEKER_PURPLE.toString());
+		BaseMod.addRelicToCustomPool(new PaperPengwin(), AbstractCardEnum.SEEKER_PURPLE.toString());
+		BaseMod.addRelicToCustomPool(new CosmicSieve(), AbstractCardEnum.SEEKER_PURPLE.toString());
+		BaseMod.addRelicToCustomPool(new SolarEgg(), AbstractCardEnum.SEEKER_PURPLE.toString());
+		BaseMod.addRelicToCustomPool(new RodOfNegation(), AbstractCardEnum.SEEKER_PURPLE.toString());
+		BaseMod.addRelicToCustomPool(new Telescope(), AbstractCardEnum.SEEKER_PURPLE.toString());
         
         logger.info("done editting relics");
 	}

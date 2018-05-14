@@ -30,12 +30,11 @@ public class Flux extends CustomCard {
 	private static final int UPGRADE_DMG_AMT = 2;
 	private static final int BLOCK_AMT = 6;
 	private static final int UPGRADE_BLOCK_AMT = 2;
-	private static final int POOL = 1;
 
 	public Flux() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.VOID_RIPPLE), COST, DESCRIPTION,
-				AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE,
-				AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY, POOL);
+				AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
+				AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY);
 		this.baseDamage = ATTACK_DMG;
 		this.baseBlock = BLOCK_AMT;
 		this.isEthereal = true;

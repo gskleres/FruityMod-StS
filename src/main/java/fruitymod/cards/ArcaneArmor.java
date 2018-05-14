@@ -21,12 +21,11 @@ public class ArcaneArmor extends CustomCard {
 	private static final int COST = 2;
 	private static final int BLOCK = 8;
 	private static final int UPGRADE_PLUS_BLOCK = 6;
-	private static final int POOL = 1;
 
 	public ArcaneArmor() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.ARCANE_ARMOR), COST, DESCRIPTION,
-				AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE, 
-				AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF, POOL);
+				AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
+				AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF);
 		this.block = this.baseBlock = BLOCK;
 		this.magicNumber = this.baseMagicNumber = 2;
 

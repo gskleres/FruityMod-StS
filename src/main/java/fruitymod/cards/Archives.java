@@ -25,11 +25,10 @@ public class Archives extends CustomCard {
 	    private static final int COST = 0;
 	    private static final int PER_DRAW = 10;
 	    private static final int PER_DRAW_UPGRADE = -3;
-	    private static final int POOL = 1;
 	    
 	 public Archives() {
 		 super(ID, NAME, FruityMod.makePath(FruityMod.ARCHIVES), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
-				 AbstractCardEnum.PURPLE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF, POOL);
+				 AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
 	        this.magicNumber = this.baseMagicNumber = PER_DRAW;
 	        
 	    }

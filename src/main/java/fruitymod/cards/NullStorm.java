@@ -26,12 +26,11 @@ public class NullStorm extends CustomCard {
 	private static final int COST = 1;
 	private static final int ATTACK_DMG = 8;
 	private static final int UPGRADE_DMG_AMT = 3;
-	private static final int POOL = 1;
 
 	public NullStorm() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.FLUX_BLAST), COST, DESCRIPTION,
-				AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE,
-				AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ALL_ENEMY, POOL);
+				AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
+				AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ALL_ENEMY);
 		this.isMultiDamage = true;
 		this.baseDamage = ATTACK_DMG;
 	}

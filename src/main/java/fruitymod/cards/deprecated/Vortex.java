@@ -20,12 +20,11 @@ extends CustomCard {
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final int COST = 1;
     private static final int UPGRADED_COST = 0;
-    private static final int POOL = 1;
 
     public Vortex() {
         super(ID, NAME, FruityMod.makePath(FruityMod.VORTEX), COST, DESCRIPTION,
-        		AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE,
-        		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY, POOL);
+        		AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
+        		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
         this.exhaust = true;
     }
 

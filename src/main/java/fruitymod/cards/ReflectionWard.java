@@ -26,12 +26,11 @@ public class ReflectionWard extends CustomCard {
 	private static final int BLOCK_PER_STACK = 5;
 	private static final int BASE_CARDS_PER_STACK = 4;
 	private static final int UPGRADED_CARDS_PER_STACK = -1;
-	private static final int POOL = 1;
 
 	public ReflectionWard() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.REFLECTION_WARD), COST, DESCRIPTION,
-				AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE,
-				AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF, POOL);
+				AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
+				AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF);
 		this.magicNumber = this.baseMagicNumber = BASE_CARDS_PER_STACK;
 	}
 

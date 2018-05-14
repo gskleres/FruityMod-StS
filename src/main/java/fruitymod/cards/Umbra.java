@@ -32,11 +32,10 @@ public class Umbra extends CustomCard {
 	    private static final int ATTACK_UPGRADE = 4;
 	    private static final int BLOCK = 8;
 	    private static final int BLOCK_UPGRADE = 4;
-	    private static final int POOL = 1;
-	    
+
 	 public Umbra() {
 		 super(ID, NAME, FruityMod.makePath(FruityMod.UMBRAL_BOLT), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
-				 AbstractCardEnum.PURPLE, AbstractCard.CardRarity.UNCOMMON, CardTarget.SELF, POOL);
+				 AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.UNCOMMON, CardTarget.SELF);
 	        this.damage = this.baseDamage = ATTACK_DMG;
 	        this.block = this.baseBlock = BLOCK;
 	        this.isMultiDamage = true;

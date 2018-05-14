@@ -25,12 +25,11 @@ public class Implosion extends CustomCard {
 	private static final int ATTACK_DMG = 38;
 	private static final int UPGRADE_DMG_AMT = 10;
 	private static final int TOP_CYCLE_AMT = 1;
-	private static final int POOL = 1;
 	
 	public Implosion() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.IMPLOSION), COST, DESCRIPTION,
-        		AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE,
-        		AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ENEMY, POOL);
+        		AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
+        		AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ENEMY);
         this.baseDamage = ATTACK_DMG;
         this.magicNumber = this.baseMagicNumber = TOP_CYCLE_AMT;
     }

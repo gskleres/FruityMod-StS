@@ -6,6 +6,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 public class AbstractCardEnum {
 
 	@SpireEnum
-	public static AbstractCard.CardColor PURPLE;
+	public static AbstractCard.CardColor SEEKER_PURPLE;
 	
 }

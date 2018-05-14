@@ -27,11 +27,10 @@ public class EtherBlast extends CustomCard {
     private static final int BASE_ATTACK_DMG_UPGRADE = 4;
     private static final int PER_ETHEREAL_DMG = 2;
     private static final int PER_ETHEREAL_DMG_UPGRADE = 1;
-    private static final int POOL = 1;
 
 	public EtherBlast() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.ETHER_BLAST), COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
-				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY, POOL);
+				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
 		this.isEthereal = true;
 		this.damage = this.baseDamage = BASE_ATTACK_DMG;
 		this.magicNumber = this.baseMagicNumber = PER_ETHEREAL_DMG;

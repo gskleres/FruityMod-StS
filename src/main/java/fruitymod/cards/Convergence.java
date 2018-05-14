@@ -19,12 +19,11 @@ public class Convergence extends CustomCard {
 	    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	    private static final int COST = -2;
-	    private static final int POOL = 1;
-	    
+
 	 public Convergence() {
 		 super(ID, NAME,  FruityMod.makePath(FruityMod.CONVERGENCE), COST, DESCRIPTION,
-				 AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE,
-				 AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF, POOL);
+				 AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
+				 AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF);
 	    }
 	 
 	    @Override

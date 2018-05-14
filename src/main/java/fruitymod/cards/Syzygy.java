@@ -27,12 +27,11 @@ extends CustomCard {
     private static final int ATTACK_UPGRADE = 2;
     private static final int NUM_ATTACKS = 3;
     private static final int NUM_ATTACKS_UPGRADE = 0;
-    private static final int POOL = 1;
 
     public Syzygy() {
         super(ID, NAME, FruityMod.makePath(FruityMod.SYZYGY), COST, DESCRIPTION,
-        		AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE,
-        		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL_ENEMY, POOL);
+        		AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
+        		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL_ENEMY);
         this.damage = this.baseDamage = ATTACK_DMG;
         this.magicNumber = this.baseMagicNumber = NUM_ATTACKS;
         this.isEthereal = true;

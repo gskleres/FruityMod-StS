@@ -21,12 +21,11 @@ public class ChaosForm extends CustomCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADED_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	private static final int COST = 3;
-	private static final int POOL = 1;
-	
+
 	public ChaosForm() {
 		super (ID, NAME, FruityMod.makePath(FruityMod.CHAOS_FORM), COST, DESCRIPTION,
-				AbstractCard.CardType.POWER, AbstractCardEnum.PURPLE,
-				AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF, POOL);
+				AbstractCard.CardType.POWER, AbstractCardEnum.SEEKER_PURPLE,
+				AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF);
 		this.magicNumber = this.baseMagicNumber = 1;
 	}
 	

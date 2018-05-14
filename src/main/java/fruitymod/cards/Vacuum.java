@@ -28,12 +28,11 @@ extends CustomCard {
     private static final int COST = 1;
     private static final int ATTACK_DMG = 4;
     private static final int UPGRADED_DMG_AMT = 2;
-    private static final int POOL = 1;
 
     public Vacuum() {
         super(ID, NAME, FruityMod.makePath(FruityMod.VACUUM), COST, DESCRIPTION, 
-        		AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE, 
-        		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY, POOL);
+        		AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
+        		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
         this.magicNumber = this.baseMagicNumber = ATTACK_DMG;
     }
 

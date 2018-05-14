@@ -26,11 +26,10 @@ public class UnstableOrb extends CustomCard {
 	private static final int ATTACK_DMG = 12;
 	private static final int UPGRADE_DMG_AMT = 5;
 	private static final int WEAK_AMT = 2;
-	private static final int POOL = 1;
 
 	public UnstableOrb() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.FORCE_SPIKE), COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
-				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY, POOL);
+				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY);
 		this.damage = this.baseDamage = ATTACK_DMG;
 		this.magicNumber = this.baseMagicNumber = WEAK_AMT;
 	}

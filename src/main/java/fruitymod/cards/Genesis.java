@@ -24,12 +24,11 @@ public class Genesis extends CustomCard {
     private static final int BLOCK_AMT = 6;
     private static final int UPGRADE_BLOCK_AMT = 3;
     private static final int DRAW = 2;
-    private static final int POOL = 1;
     
     public Genesis() {
     	super(ID, NAME, FruityMod.makePath(FruityMod.VOID_BARRIER), COST, DESCRIPTION,
-    			AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE,
-    			AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF, POOL);
+    			AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
+    			AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF);
     	this.baseBlock = BLOCK_AMT;
     	this.baseMagicNumber = DRAW;
     	this.magicNumber = DRAW;

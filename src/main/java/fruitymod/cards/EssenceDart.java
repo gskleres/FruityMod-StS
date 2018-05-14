@@ -23,11 +23,10 @@ public class EssenceDart extends CustomCard {
 	private static final int COST = 0;
 	private static final int ATTACK_DMG = 11;
 	private static final int UPGRADE_DMG_AMT = 4;
-	private static final int POOL = 1;
 
 	public EssenceDart() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.ESSENCE_DART), COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
-				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY, POOL);
+				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY);
 		this.baseDamage = ATTACK_DMG;
 	}
 

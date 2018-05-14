@@ -24,13 +24,12 @@ public class Overload extends CustomCard {
 	private static final int ENERGY_GAIN = 2;
 	private static final int UPGRADE_ENERGY_AMT = 1;
 	private static final int ENERGY_PER_USE = -1;
-	private static final int POOL = 1;
 	private static final int VULNERABLE_AMT = 1;
 
 	public Overload() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.POWER_SPIKE), COST, DESCRIPTION,
-				AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE,
-				AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF, POOL);
+				AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
+				AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
 		this.magicNumber = this.baseMagicNumber = ENERGY_GAIN;
 	}
 

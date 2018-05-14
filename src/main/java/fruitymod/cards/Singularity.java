@@ -33,12 +33,11 @@ public class Singularity extends CustomCard {
     private static final int BLOCK_AMT = 12;
     private static final int UPGRADE_BLOCK_AMT = 3;
     private static final int ENERGY_GAIN = 1;
-    private static final int POOL = 1;
     
     public Singularity() {
     	super(ID, NAME, FruityMod.makePath(FruityMod.SINGULARITY), COST, DESCRIPTION,
-    			AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE,
-    			CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY, POOL);
+    			AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
+    			CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
     	this.baseDamage = ATTACK_DMG;
     	this.baseBlock = BLOCK_AMT;
     	this.baseMagicNumber = this.magicNumber = ENERGY_GAIN;

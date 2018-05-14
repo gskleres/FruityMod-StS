@@ -20,11 +20,10 @@ public class Defend_Purple extends CustomCard {
 	private static final int COST = 1;
 	private static final int BLOCK_AMT = 5;
 	private static final int UPGRADE_PLUS_BLOCK = 3;
-	private static final int POOL = 0;
 
 	public Defend_Purple() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.DEFEND_PURPLE), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
-				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.BASIC, AbstractCard.CardTarget.SELF, POOL);
+				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.BASIC, AbstractCard.CardTarget.SELF);
 
 		this.baseBlock = BLOCK_AMT;
 	}

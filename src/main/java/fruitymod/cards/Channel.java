@@ -27,12 +27,11 @@ public class Channel extends CustomCard {
 	private static final int ATTACK_DMG = 7;
 	private static final int UPGRADED_DMG_AMT = 3;
 	private static final int DISCARD_AMT = 1;
-	private static final int POOL = 1;
 	
 	public Channel() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.CHANNEL), COST, DESCRIPTION,
-				AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE,
-				CardRarity.COMMON, AbstractCard.CardTarget.ENEMY, POOL);
+				AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
+				CardRarity.COMMON, AbstractCard.CardTarget.ENEMY);
 		this.baseDamage = ATTACK_DMG;
 	}
 	

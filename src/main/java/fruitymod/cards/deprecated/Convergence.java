@@ -25,12 +25,11 @@ public class Convergence extends CustomCard {
 	    private static final int COST = 2;
 	    private static final int UPGRADED_COST = 1;
 	    private static final int ARTIFACT_AMT = 1;
-	    private static final int POOL = 1;
 	    
 	 public Convergence() {
 		 super(ID, NAME,  FruityMod.makePath(FruityMod.TRANSFERENCE), COST, DESCRIPTION,
-				 AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE,
-				 AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL_ENEMY, POOL);
+				 AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
+				 AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL_ENEMY);
         	this.isInnate = true;
         	this.exhaust = true;
 	    }

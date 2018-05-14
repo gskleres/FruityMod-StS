@@ -25,11 +25,10 @@ public class Equinox extends CustomCard {
 	private static final int COST = 1;
 	private static final int ATTACK_DMG = 20;
 	private static final int UPGRADE_DMG_AMT = 10;
-	private static final int POOL = 1;
 
 	public Equinox() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.EQUINOX), COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
-				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY, POOL);
+				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
 		this.damage = this.baseDamage = ATTACK_DMG;
 	}
 

@@ -25,12 +25,11 @@ public class MagicMissile extends CustomCard {
 	private static final int ATTACK_DMG = 3;
 	private static final int TIMES = 4;
 	private static final int UPGRADE_TIMES_AMT = 1;
-	private static final int POOL = 1;
 	
 	public MagicMissile() {
 		super (ID, NAME, FruityMod.makePath(FruityMod.MAGIC_MISSILE), COST, DESCRIPTION,
-				AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE,
-				AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY, POOL);
+				AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
+				AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY);
 		this.baseDamage = ATTACK_DMG;
 		this.baseMagicNumber = UPGRADE_TIMES_AMT;
 		this.magicNumber = this.baseMagicNumber = TIMES;

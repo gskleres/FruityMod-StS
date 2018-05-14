@@ -23,12 +23,11 @@ extends CustomCard {
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final int COST = 1;
     private static final int COST_UPGRADED = 0;
-    private static final int POOL = 1;
 
     public Flow() {
         super(ID, NAME, FruityMod.makePath(FruityMod.FLOW), COST, DESCRIPTION,
-        		AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE,
-        		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF, POOL);
+        		AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
+        		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
         this.isEthereal = true;
     }
 

@@ -20,12 +20,11 @@ public class Strike_Purple extends CustomCard {
 	private static final int COST = 1;
 	private static final int ATTACK_DMG = 6;
 	private static final int UPGRADE_PLUS_DMG = 3;
-	private static final int POOL = 0;
 
 	public Strike_Purple() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.STRIKE_PURPLE), COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
-				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.BASIC,
-				AbstractCard.CardTarget.ENEMY, POOL);
+				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.BASIC,
+				AbstractCard.CardTarget.ENEMY);
 
 		this.baseDamage = ATTACK_DMG;
 	}

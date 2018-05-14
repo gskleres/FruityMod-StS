@@ -21,12 +21,11 @@ public class DimensionDoor extends CustomCard {
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 2;
 	private static final int INTANGIBLE_AMT = 1;
-	private static final int POOL = 1;
 	
 	public DimensionDoor() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.DIMENSION_DOOR), COST, DESCRIPTION,
-				AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE,
-				AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF, POOL);
+				AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
+				AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF);
 		this.exhaust = true;
 		this.isEthereal = true;
 		this.magicNumber = this.baseMagicNumber = INTANGIBLE_AMT;

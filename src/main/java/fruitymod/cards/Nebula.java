@@ -22,11 +22,10 @@ public class Nebula extends CustomCard {
 	private static final int COST = 1;
 	private static final int COST_UPGRADED = 0;
 	private static final int BLOCK_AMT = 2;
-	private static final int POOL = 1;
 
 	public Nebula() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.NEBULA), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
-				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF, POOL);
+				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF);
 
 		this.magicNumber = this.baseMagicNumber = BLOCK_AMT;
 	}

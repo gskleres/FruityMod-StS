@@ -21,12 +21,10 @@ public class Anomaly extends CustomCard {
 	private static final int COST = 0;
 	private static final int STACK_BONUS = 1;
 	private static final int STACK_UPGRADE = 1;
-	
-	private static final int POOL = 1;
 
 	public Anomaly() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.ANOMALY), COST, DESCRIPTION, AbstractCard.CardType.POWER,
-				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF, POOL);
+				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
 		this.magicNumber = this.baseMagicNumber = STACK_BONUS;
 	}
 

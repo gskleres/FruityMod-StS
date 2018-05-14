@@ -27,12 +27,11 @@ public class Comet extends CustomCard {
     private static final int COST = 1;
     private static final int PER_CARD_DAMAGE = 2;
     private static final int PER_CARD_DAMAGE_UPGRADED = 1;
-    private static final int POOL = 1;
 
     public Comet() {
         super(ID, NAME, FruityMod.makePath(FruityMod.COMET), COST, DESCRIPTION,
-        		AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE,
-        		AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY, POOL);
+        		AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
+        		AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY);
         this.magicNumber = this.baseMagicNumber = PER_CARD_DAMAGE;
     }
     

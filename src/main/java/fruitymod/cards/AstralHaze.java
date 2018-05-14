@@ -23,12 +23,11 @@ extends CustomCard {
     private static final int COST = 1;
     private static final int WEAK_VUL_AMT = 2;
     private static final int UPGRADE_PLUS_WEAK_VUL = 1;
-    private static final int POOL = 1;
 
     public AstralHaze() {
         super(ID, NAME, FruityMod.makePath(FruityMod.ASTRAL_HAZE), COST, DESCRIPTION,
-        		AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE,
-        		AbstractCard.CardRarity.BASIC, AbstractCard.CardTarget.SELF, POOL);
+        		AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
+        		AbstractCard.CardRarity.BASIC, AbstractCard.CardTarget.SELF);
         this.isEthereal = true;
         this.magicNumber = this.baseMagicNumber = WEAK_VUL_AMT;
         this.isEthereal = true;

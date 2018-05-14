@@ -28,13 +28,12 @@ public class ArcaneTempest extends CustomCard {
 	private static final int ATTACK_DMG = 3;
 	private static final int DEBUFF_AMT = 1;
 	private static final int DEBUFF_AMT_UPGRADE = 1;
-	private static final int POOL = 1;
 
 	public ArcaneTempest() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.ARCANE_TEMPEST), COST, DESCRIPTION,
 				AbstractCard.CardType.ATTACK,
-				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.UNCOMMON,
-				AbstractCard.CardTarget.ALL_ENEMY, POOL);
+				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.UNCOMMON,
+				AbstractCard.CardTarget.ALL_ENEMY);
 		this.damage = this.baseDamage = ATTACK_DMG;
 		this.magicNumber = this.baseMagicNumber = DEBUFF_AMT;
 		this.isMultiDamage = true;

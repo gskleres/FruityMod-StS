@@ -21,13 +21,12 @@ public class GravityWell extends CustomCard {
 	private static final int COST = 1;
 	private static final int LOST_STRENGTH = 3;
 	private static final int UPGRADE_LOST_STRENGTH_AMT = 1;
-	private static final int POOL = 1;
 	
 	public GravityWell() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.GRAVITY_WELL), COST, DESCRIPTION,
-				AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE,
+				AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
 				AbstractCard.CardRarity.UNCOMMON
-				, AbstractCard.CardTarget.ENEMY, POOL);
+				, AbstractCard.CardTarget.ENEMY);
 		this.magicNumber = this.baseMagicNumber = LOST_STRENGTH;
 		this.exhaust = true;
 	}

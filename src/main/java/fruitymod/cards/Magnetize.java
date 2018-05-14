@@ -24,11 +24,10 @@ public class Magnetize extends CustomCard {
 	private static final int BLOCK_UPGRADE = 2;
 	private static final int WEAK = 1;
 	private static final int WEAK_UPGRADE = 1;
-	private static final int POOL = 1;
 
 	public Magnetize() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.MAGNETIZE), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
-				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY, POOL);
+				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
 
 		this.baseBlock = BLOCK_AMT;
 		this.magicNumber = this.baseMagicNumber = WEAK;

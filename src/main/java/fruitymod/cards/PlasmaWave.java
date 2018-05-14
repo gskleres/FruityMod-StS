@@ -20,11 +20,10 @@ public class PlasmaWave extends CustomCard {
 	private static final int COST = -1;
 	private static final int ATTACK_DMG = 3;
 	private static final int ATTACK_UPGRADE = 2;
-	private static final int POOL = 1;
 
 	public PlasmaWave() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.ESSENCE_SHRED), COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
-				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL_ENEMY, POOL);
+				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL_ENEMY);
 		this.baseDamage = ATTACK_DMG;
 		this.isMultiDamage = true;
 	}

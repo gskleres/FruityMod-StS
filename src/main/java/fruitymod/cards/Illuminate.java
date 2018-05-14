@@ -21,11 +21,10 @@ public class Illuminate extends CustomCard {
 	private static final int COST = 0;
 	private static final int DUPLICATE_AMT = 1;
 	private static final int DUPLICATE_UPGRADE = 1;
-	private static final int POOL = 1;
 
 	public Illuminate() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.ILLUMINATE), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
-				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF, POOL);
+				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
 
 		this.magicNumber = this.baseMagicNumber = DUPLICATE_AMT;
 	}

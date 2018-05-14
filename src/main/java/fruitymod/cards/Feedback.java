@@ -26,11 +26,10 @@ public class Feedback extends CustomCard {
 	private static final int COST = 1;
 	private static final int STACK_DMG = 6;
 	private static final int STACK_UPGRADE = 3;
-	private static final int POOL = 1;
 
 	public Feedback() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.FEEDBACK), COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
-				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ENEMY, POOL);
+				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ENEMY);
 
 		this.magicNumber = this.baseMagicNumber = STACK_DMG;
 	}

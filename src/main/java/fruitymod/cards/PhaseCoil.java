@@ -23,13 +23,12 @@ public class PhaseCoil extends CustomCard {
 	private static final int ATTACK_DMG = 9;
 	private static final int ATTACK_DMG_UPGRADE = 6;
 	private static final int DMG_BONUS_WHEN_DRAWN = 3;
-	private static final int POOL = 1;
 
 	public PhaseCoil() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.PHASE_COIL), COST, DESCRIPTION,
-				AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE,
+				AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
 				AbstractCard.CardRarity.COMMON,
-				AbstractCard.CardTarget.ENEMY, POOL);
+				AbstractCard.CardTarget.ENEMY);
 
 		this.damage = this.baseDamage = ATTACK_DMG;
 		this.magicNumber = this.baseMagicNumber = DMG_BONUS_WHEN_DRAWN;

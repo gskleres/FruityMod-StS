@@ -23,12 +23,11 @@ extends CustomCard {
     private static final int INITIAL_DRAW = 1;
     private static final int BONUS_DRAW = 1;
     private static final int BONUS_DRAW_UPGRADE = 1;
-    private static final int POOL = 1;
 
     public Hypothesis() {
         super(ID, NAME, FruityMod.makePath(FruityMod.HYPOTHESIS), COST, DESCRIPTION,
-        		AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE,
-        		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF, POOL);
+        		AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
+        		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
         this.magicNumber = this.baseMagicNumber = BONUS_DRAW;
     }
 

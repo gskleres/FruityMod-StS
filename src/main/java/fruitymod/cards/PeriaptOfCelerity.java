@@ -21,12 +21,11 @@ public class PeriaptOfCelerity extends CustomCard {
 	private static final int DEX_GAIN = 1;
 	private static final int COST = 2;
 	private static final int UPGRADED_COST = 1;
-	private static final int POOL = 1;
 	
 	public PeriaptOfCelerity() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.PERIAPT_OF_CELERITY), COST, DESCRIPTION,
-				AbstractCard.CardType.POWER, AbstractCardEnum.PURPLE,
-				AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF, POOL);
+				AbstractCard.CardType.POWER, AbstractCardEnum.SEEKER_PURPLE,
+				AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF);
 		this.magicNumber = this.baseMagicNumber = DEX_GAIN;
 	}
 	

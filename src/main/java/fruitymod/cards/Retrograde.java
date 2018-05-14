@@ -29,13 +29,12 @@ public class Retrograde extends CustomCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 0;
 	private static final int ATTACK_DMG = 4;
-	private static final int POOL = 1;
 
 	public Retrograde() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.RETROGRADE) , COST, DESCRIPTION,
 				AbstractCard.CardType.ATTACK,
-				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.COMMON,
-				AbstractCard.CardTarget.ENEMY, POOL);
+				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.COMMON,
+				AbstractCard.CardTarget.ENEMY);
 		this.damage = this.baseDamage = ATTACK_DMG;
 	}
 

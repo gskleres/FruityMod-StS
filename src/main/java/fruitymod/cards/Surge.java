@@ -23,12 +23,11 @@ public class Surge extends CustomCard {
 	private static final int COST = 1;
 	private static final int ATTACK_DMG = 7;
 	private static final int UPGRADE_DMG_AMT = 3;
-	private static final int POOL = 1;
 	
 	public Surge() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.SURGE), COST, DESCRIPTION,
-				AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE,
-				AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY, POOL);
+				AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
+				AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY);
 		this.baseDamage = ATTACK_DMG;
 	}
 	

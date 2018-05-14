@@ -25,12 +25,11 @@ extends CustomCard {
     private static final int COST = 2;
     private static final int ATTACK_DMG = 7;
     private static final int UPGRADE_PLUS_DMG = 3;
-    private static final int POOL = 1;
 
     public ThoughtRaze() {
         super(ID, NAME, FruityMod.makePath(FruityMod.THOUGHT_RAZE), COST, DESCRIPTION,
-        		AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE,
-        		AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ENEMY, POOL);
+        		AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
+        		AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ENEMY);
         this.baseDamage = ATTACK_DMG;
     }
 

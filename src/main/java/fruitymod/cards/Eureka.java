@@ -22,14 +22,13 @@ public class Eureka extends CustomCard {
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 0;
 	private static final int DRAW = 2;
-	private static final int DRAW_UPDRAGE = 1;
+	private static final int DRAW_UPGRADE = 1;
 	private static final int DAZED_COUNT = 2;
-	private static final int POOL = 1;
 
 	public Eureka() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.EUREKA), COST, DESCRIPTION,
-    			AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE,
-    			AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF, POOL);
+    			AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
+    			AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF);
 		this.baseMagicNumber = this.magicNumber = DRAW;
 		this.exhaust = true;
 	}
@@ -50,7 +49,7 @@ public class Eureka extends CustomCard {
 	public void upgrade() {
 		if (!this.upgraded) {
 			this.upgradeName();
-			this.upgradeMagicNumber(DRAW_UPDRAGE);
+			this.upgradeMagicNumber(DRAW_UPGRADE);
 			this.rawDescription = (this.isEthereal ? "Ethereal." : "") + cardStrings.UPGRADE_DESCRIPTION;
 			this.initializeDescription();
 		}

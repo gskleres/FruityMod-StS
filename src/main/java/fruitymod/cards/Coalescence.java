@@ -21,12 +21,11 @@ public class Coalescence extends CustomCard {
 	private static final int COST = 2;
 	private static final int BLOCK_AMT = 2;
 	private static final int UPGRADED_BLOCK_AMT = 1;
-	private static final int POOL = 1;
 	
 	public Coalescence() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.COALESCENCE), COST, DESCRIPTION,
-				AbstractCard.CardType.POWER, AbstractCardEnum.PURPLE,
-				AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF, POOL);
+				AbstractCard.CardType.POWER, AbstractCardEnum.SEEKER_PURPLE,
+				AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
 		this.magicNumber = this.baseMagicNumber = BLOCK_AMT;
 	}
 	

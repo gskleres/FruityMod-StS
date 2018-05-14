@@ -24,12 +24,11 @@ public class Brilliance extends CustomCard {
 	private static final int COST = 2;
 	private static final int DRAW = 1;
 	private static final int DRAW_UPGRADED = 1;
-	private static final int POOL = 1;
 	private static final int DAZED_AMT = 3;
 
 	public Brilliance() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.BRILLIANCE), COST, DESCRIPTION, CardType.POWER,
-				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF, POOL);
+				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF);
 		this.magicNumber = this.baseMagicNumber = DRAW;
 	}
 

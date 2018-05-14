@@ -24,12 +24,11 @@ extends CustomCard {
     private static final int BLOCK = 9;
     private static final int BLOCK_UPGRADE = 3;
     private static final int DAZED_COUNT = 1;
-    private static final int POOL = 1;
 
     public DisruptionField() {
         super(ID, NAME, FruityMod.makePath(FruityMod.FLUX_SHIELD), COST, DESCRIPTION, 
-        		AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE, 
-        		AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF, POOL);
+        		AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
+        		AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF);
         this.block = this.baseBlock = BLOCK;
         
     }

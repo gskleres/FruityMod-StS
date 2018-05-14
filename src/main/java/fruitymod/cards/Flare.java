@@ -27,12 +27,11 @@ extends CustomCard {
     private static final int UPGRADE_PLUS_DMG = 3;
     private static final int VULNERABLE_AMT = 1;
     private static final int UPGRADE_PLUS_VULNERABLE = 1;
-    private static final int POOL = 1;
 
     public Flare() {
         super(ID, NAME, FruityMod.makePath(FruityMod.FLARE), COST, DESCRIPTION,
-        		AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE,
-        		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY, POOL);
+        		AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
+        		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
         this.magicNumber = this.baseMagicNumber = VULNERABLE_AMT;
         this.damage=this.baseDamage = ATTACK_DMG;
     }

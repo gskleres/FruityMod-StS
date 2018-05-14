@@ -28,12 +28,11 @@ extends CustomCard {
     private static final int COST = 1;
     private static final int ATTACK_DMG = 10;
     private static final int UPGRADE_DMG_AMT = 4;
-    private static final int POOL = 1;
 
     public VoidRay() {
         super(ID, NAME, FruityMod.makePath(FruityMod.FLUX_BOLT), COST, DESCRIPTION,
-        		AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE,
-        		AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY, POOL);
+        		AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
+        		AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY);
         this.baseDamage = ATTACK_DMG;
     }
 

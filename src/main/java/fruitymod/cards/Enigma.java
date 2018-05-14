@@ -21,12 +21,11 @@ public class Enigma extends CustomCard {
 	private static final int COST = 1;
 	private static final int AMT = 1;
 	private static final int UPGRADED_AMT = 1;
-	private static final int POOL = 1;
 	
 	public Enigma() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.ENIGMA), COST, DESCRIPTION,
-				AbstractCard.CardType.POWER, AbstractCardEnum.PURPLE,
-				CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF, POOL);
+				AbstractCard.CardType.POWER, AbstractCardEnum.SEEKER_PURPLE,
+				CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
 		this.magicNumber = this.baseMagicNumber = AMT;
 	}
 	

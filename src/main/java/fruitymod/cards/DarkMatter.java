@@ -24,13 +24,12 @@ public class DarkMatter extends CustomCard {
 	private static final int COST = 1;
 	private static final int DAMAGE_AMT = 3;
 	private static final int UPGRADE_DAMAGE_AMT = 2;
-	private static final int POOL = 1;
 	
 	public DarkMatter() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.DARK_MATTER), COST, DESCRIPTION,
 				AbstractCard.CardType.ATTACK,
-				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.UNCOMMON,
-				AbstractCard.CardTarget.ENEMY, POOL);
+				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.UNCOMMON,
+				AbstractCard.CardTarget.ENEMY);
 		this.magicNumber = this.baseMagicNumber = DAMAGE_AMT;
 	}
 	

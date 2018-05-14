@@ -27,12 +27,11 @@ public class PrismaticSphere extends CustomCard {
     private static final int ATTACK_DMG = 7;
     private static final int UPGRADE_DMG_AMT = 4;
     private static final int DRAW = 2;
-    private static final int POOL = 1;
     
     public PrismaticSphere() {
     	super(ID, NAME, FruityMod.makePath(FruityMod.VOID_BOLT), COST, DESCRIPTION,
-    			AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE,
-    			AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY, POOL);
+    			AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
+    			AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY);
     	this.baseDamage = ATTACK_DMG;
     	this.baseMagicNumber = DRAW;
     	this.magicNumber = DRAW;

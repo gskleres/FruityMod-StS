@@ -24,11 +24,10 @@ public class MindOverMatter extends CustomCard {
 	private static final int BONUS_BLOCK_AMT = 3;
 	private static final int BONUS_UPGRADE_BLOCK_AMT = 5;
 	private static final int BASE_BLOCK_AMT = 5;
-	private static final int POOL = 1;
 
 	public MindOverMatter() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.MIND_OVER_MATTER), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
-				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF, POOL);
+				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF);
 
 		this.magicNumber = this.baseMagicNumber = BONUS_BLOCK_AMT;
 	}

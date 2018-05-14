@@ -21,12 +21,11 @@ public class RunicBinding extends CustomCard {
 	private static final int POWER_UP_AMT = 1;
 	private static final int COST = 2;
 	private static final int UPGRADED_COST = 1;
-	private static final int POOL = 1;
 
 	public RunicBinding() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.PERIAPT_OF_TENACITY), COST, DESCRIPTION,
-				AbstractCard.CardType.POWER, AbstractCardEnum.PURPLE, AbstractCard.CardRarity.UNCOMMON,
-				AbstractCard.CardTarget.SELF, POOL);
+				AbstractCard.CardType.POWER, AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.UNCOMMON,
+				AbstractCard.CardTarget.SELF);
 		this.magicNumber = this.baseMagicNumber = POWER_UP_AMT;
 	}
 

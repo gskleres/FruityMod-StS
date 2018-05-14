@@ -30,12 +30,11 @@ extends CustomCard {
     private static final int UPGRADE_PLUS_DMG = 1;
     private static final int WEAK_AMT = 1;
     private static final int UPGRADE_PLUS_WEAK = 1;
-    private static final int POOL = 1;
 
     public Irradiate() {
         super(ID, NAME, FruityMod.makePath(FruityMod.ARCANE_VOLLEY), COST, DESCRIPTION,
-        		AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE,
-        		AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ALL_ENEMY, POOL);
+        		AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
+        		AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ALL_ENEMY);
         this.isMultiDamage = true;
         this.magicNumber = this.baseMagicNumber = WEAK_AMT;
         this.damage=this.baseDamage = ATTACK_DMG;

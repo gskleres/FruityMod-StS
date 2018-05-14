@@ -21,12 +21,11 @@ public class Wormhole extends CustomCard {
 	private static final int COST = 3;
 	private static final int DMG = 3;
 	private static final int UPGRADE_DMG_AMT = 2;
-	private static final int POOL = 1;
 	
 	public Wormhole() {
 		super (ID, NAME, FruityMod.makePath(FruityMod.WORMHOLE), COST, DESCRIPTION,
-				AbstractCard.CardType.POWER, AbstractCardEnum.PURPLE,
-				AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF, POOL);
+				AbstractCard.CardType.POWER, AbstractCardEnum.SEEKER_PURPLE,
+				AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
 		this.magicNumber = this.baseMagicNumber = DMG;
 	}
 	

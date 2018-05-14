@@ -23,14 +23,13 @@ extends CustomCard {
 	public static final String DESCRIPTION_PLURAL = cardStrings.EXTENDED_DESCRIPTION[0];
     private static final int COST = 2;
     private static final int COST_UPGRADED = 1;
-    private static final int POOL = 1;
     private static final int BASE_CARD_DRAW = 1;
     private static final int CARD_DRAW_INCREASE_PER_DRAW = 1;
 
     public Corona() {
         super(ID, NAME, FruityMod.makePath(FruityMod.CORONA), COST, DESCRIPTION,
-        		AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE,
-        		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF, POOL);
+        		AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
+        		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
         this.magicNumber = this.baseMagicNumber = BASE_CARD_DRAW;
         updateDescription(this.magicNumber);
     }

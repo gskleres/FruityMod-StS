@@ -23,11 +23,10 @@ public class PulseBarrier extends CustomCard {
 	private static final int BLOCK_AMT = 11;
 	private static final int UPGRADE_BLOCK_AMT = 4;
 	private static final int FRAIL_AMT = 2;
-	private static final int POOL = 1;
 
 	public PulseBarrier() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.ESSENCE_SPIKE), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
-				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF, POOL);
+				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF);
 
 		this.baseBlock = BLOCK_AMT;
 		this.baseMagicNumber = FRAIL_AMT;

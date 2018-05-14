@@ -24,11 +24,10 @@ public class MeteorShower extends CustomCard {
 	public static final String EXTENDED_DESCRIPTION = " NL (Deals !D! damage)";
 	private static final int COST = 1;
 	private static final int ATTACK_DMG_PER_CARD = 1;
-	private static final int POOL = 1;
 
 	public MeteorShower() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.METEOR_SHOWER), COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
-				AbstractCardEnum.PURPLE, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ALL_ENEMY, POOL);
+				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ALL_ENEMY);
 		this.baseDamage = 0;
 		this.exhaust = true;
 	}

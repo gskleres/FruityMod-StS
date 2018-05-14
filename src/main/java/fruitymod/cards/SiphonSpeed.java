@@ -27,12 +27,11 @@ public class SiphonSpeed extends CustomCard {
 	private static final int BUFF_DEBUFF_AMT = 1;
 	private static final int BUFF_DEBUFF_UPGRADE_AMT = 1;
 	private static final int DEX_GAIN_AMT = 1;
-	private static final int POOL = 1;
 	
 	public SiphonSpeed() {
 		super (ID, NAME, FruityMod.makePath(FruityMod.SIPHON_SPEED), COST, DESCRIPTION,
-				AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE,
-				AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY, POOL);
+				AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
+				AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
 		this.baseBlock = BLOCK;
 		this.magicNumber = this.baseMagicNumber = BUFF_DEBUFF_AMT;
 	}

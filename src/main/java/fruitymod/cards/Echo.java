@@ -23,12 +23,11 @@ extends CustomCard {
     private static final int COST = 1;
     private static final int DOUBLE_AMT = 1;
     private static final int DOUBLE_UPGRADE = 1;
-    private static final int POOL = 1;
 
     public Echo() {
         super(ID, NAME, FruityMod.makePath(FruityMod.ECHO), COST, DESCRIPTION,
-        		AbstractCard.CardType.SKILL, AbstractCardEnum.PURPLE,
-        		AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF, POOL);
+        		AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
+        		AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF);
 				this.baseMagicNumber = this.magicNumber = DOUBLE_AMT;
         }
 
