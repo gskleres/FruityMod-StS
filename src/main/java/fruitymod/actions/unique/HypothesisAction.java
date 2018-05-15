@@ -17,7 +17,7 @@ public class HypothesisAction extends AbstractGameAction implements PostDrawSubs
 	
 	public HypothesisAction(AbstractCreature target, AbstractCreature source, int amount, int initialDraw) {
 		this.setValues(target, source, amount);
-		this.actionType = AbstractGameAction.ActionType.WAIT;
+		this.actionType = ActionType.WAIT;
 		this.initialDraw = initialDraw;
 		BaseMod.subscribeToPostDraw(this);
 	}
@@ -25,7 +25,7 @@ public class HypothesisAction extends AbstractGameAction implements PostDrawSubs
 	@Override
 	public void update() {
 		this.listening = true;
-		AbstractDungeon.actionManager.addToBottom(new DrawCardAction(
+		AbstractDungeon.actionManager.addToTop(new DrawCardAction(
 				AbstractDungeon.player, this.initialDraw));
 		this.isDone = true;
 	}
@@ -35,9 +35,8 @@ public class HypothesisAction extends AbstractGameAction implements PostDrawSubs
 		if (listening) {
 			this.listening = false;
 			if (c.isEthereal) {
-				AbstractDungeon.actionManager.addToBottom(new DrawCardAction(
-						AbstractDungeon.player, this.amount));
-				AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new Dazed(), 1, true));
+				AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(new Dazed(), 1, true));
+				AbstractDungeon.actionManager.addToTop(new DrawCardAction(AbstractDungeon.player, this.amount));
 			}
 			/*
 			 *  calling unsubscribeFromPostBattle inside the callback
