@@ -83,7 +83,7 @@ extends CustomCard {
     	if (AbstractDungeon.player.hasPower("Weakened")) {
     		// cancel out effect of weak b/c we are going
     		// to remove it before dealing damage
-    		this.damage *= 1.34f;
+    		this.damage *= 1.4f;
     	}
     	
     	if (this.damage == count * this.magicNumber) {
