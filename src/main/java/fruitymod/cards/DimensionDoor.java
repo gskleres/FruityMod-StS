@@ -10,9 +10,9 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
+import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import fruitymod.FruityMod;
 import fruitymod.patches.AbstractCardEnum;
-import fruitymod.powers.AstralShiftPower;
 
 public class DimensionDoor extends CustomCard {
 	public static final String ID = "DimensionDoor";
@@ -34,7 +34,7 @@ public class DimensionDoor extends CustomCard {
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, 
-				new AstralShiftPower(p, this.magicNumber), this.magicNumber));
+				new IntangiblePlayerPower(p, this.magicNumber), this.magicNumber));
 	}
 	
 	@Override

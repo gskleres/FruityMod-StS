@@ -1,4 +1,4 @@
-package fruitymod.powers;
+package fruitymod.powers.deprecated;
 
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
