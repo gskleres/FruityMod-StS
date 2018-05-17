@@ -18,6 +18,7 @@ import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
+import fruitymod.patches.AbstractCardEnum;
 
 public class Dazed_P extends CustomCard {
 	public static final String ID = "Dazed_P";
@@ -28,8 +29,11 @@ public class Dazed_P extends CustomCard {
 
 	public Dazed_P() {
 		super(ID, NAME, FruityMod.makePath(FruityMod.VOID_RIPPLE), COST, DESCRIPTION,
-				AbstractCard.CardType.ATTACK, AbstractCard.CardColor.COLORLESS,
+				AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
 				AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ALL_ENEMY);
+
+		this.setBackgroundTexture("img/512/DazedP_BG_small.png", "img/1024/DazedP_BG_large.png");
+
 		this.baseDamage = 0;
 		this.baseBlock = 0;
 		this.isMultiDamage = true;
