@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import basemod.abstracts.CustomCard;
+import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 import fruitymod.FruityMod;
 import fruitymod.patches.AbstractCardEnum;
 
@@ -37,9 +38,12 @@ public class GravityWell extends CustomCard {
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
 					m, p, new StrengthPower(m, -1 * this.magicNumber), -1 * this.magicNumber, true));
 		}
+		else {
+			AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 3.0f, cardStrings.EXTENDED_DESCRIPTION[0], true));
+		}
 	}
 	
-	@Override
+	/*@Override
 	public boolean canUse(AbstractPlayer p, AbstractMonster m) {
 		boolean canUse = super.canUse(p, m);
 		if (!canUse) {
@@ -51,7 +55,7 @@ public class GravityWell extends CustomCard {
 			this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
 			return false;
 		}
-	}
+	}*/
 	
 	@Override
 	public AbstractCard makeCopy() {
