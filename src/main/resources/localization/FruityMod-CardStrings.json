@@ -251,8 +251,7 @@
 	},
 	"StrokeOfGenius": {
 		"NAME": "Stroke of Genius",
-		"DESCRIPTION": "Add a random Power to your hand. NL Exhaust.",
-		"UPGRADE_DESCRIPTION": "Add a random Power to your hand. NL It costs 0 this turn. NL Exhaust."
+		"DESCRIPTION": "Choose to add a random Attack, Skill or Power to your hand. NL It costs 0 this turn. NL Exhaust."
 	},
 	"Transference": {
 		"NAME": "Transference",
