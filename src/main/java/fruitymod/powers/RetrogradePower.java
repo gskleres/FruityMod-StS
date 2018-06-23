@@ -36,7 +36,7 @@ public class RetrogradePower
     public void atEndOfTurn(boolean isPlayer) {
         if (isPlayer)
         this.flash();
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(this.owner, this.owner, new Retrograde(), this.amount, true, true));
+        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Retrograde(), this.amount, true, true));
         AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, "RetrogradePower"));
     }
 }

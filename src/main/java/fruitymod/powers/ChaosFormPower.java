@@ -51,7 +51,7 @@ public class ChaosFormPower extends AbstractPower {
 		}
 		AbstractCard card = ((AbstractCard)list.get(AbstractDungeon.cardRandomRng.random(list.size() - 1))).makeCopy();
 
-		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(AbstractDungeon.player, AbstractDungeon.player, card, 1, true, true));
+		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(card, 1, true, true));
 	}
 	
 	@Override

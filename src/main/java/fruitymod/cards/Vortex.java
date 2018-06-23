@@ -35,7 +35,7 @@ extends CustomCard {
         int draw = 10 - AbstractDungeon.player.hand.size();
         if(draw > 0) {
             AbstractDungeon.actionManager.addToTop(new DrawCardAction(p, draw));
-            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(p, p, new Dazed(), 4, false, false));
+            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Dazed(), 4, false, false));
         }
     }
 

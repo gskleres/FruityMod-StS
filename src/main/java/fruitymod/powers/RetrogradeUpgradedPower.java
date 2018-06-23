@@ -39,7 +39,7 @@ public class RetrogradeUpgradedPower
         this.flash();
         AbstractCard toAdd = new Retrograde();
         toAdd.upgrade();
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(this.owner, this.owner, toAdd, this.amount, true, true));
+        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(toAdd, this.amount, true, true));
         AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, "RetrogradeUpgradedPower"));
     }
 }

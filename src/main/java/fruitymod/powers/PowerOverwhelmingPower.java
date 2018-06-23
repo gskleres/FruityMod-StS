@@ -36,7 +36,7 @@ public class PowerOverwhelmingPower extends AbstractPower {
 	@Override
 	public void onUseCard(AbstractCard card, UseCardAction action){
 		if(card.type == AbstractCard.CardType.ATTACK){
-			AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(AbstractDungeon.player, AbstractDungeon.player, new Dazed(), this.amount, true, true));
+			AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Dazed(), this.amount, true, true));
 		}
 	}
 	

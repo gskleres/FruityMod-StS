@@ -43,7 +43,7 @@ extends AbstractGameAction {
             if (this.p.hand.group.size() - this.cannotDuplicate.size() == 1) {
                 for (AbstractCard c : this.p.hand.group) {
                     if (!this.isEligible(c)) continue;
-                    AbstractDungeon.actionManager.addToTop(new MakeTempCardInDrawPileAction(p, p, c.makeStatEquivalentCopy(), this.dupeAmount, false, true));
+                    AbstractDungeon.actionManager.addToTop(new MakeTempCardInDrawPileAction(c.makeStatEquivalentCopy(), this.dupeAmount, false, true));
                     this.isDone = true;
                     return;
                 }
@@ -55,7 +55,7 @@ extends AbstractGameAction {
                 return;
             }
             if (this.p.hand.group.size() == 1) {
-            	AbstractDungeon.actionManager.addToTop(new MakeTempCardInDrawPileAction(p, p, p.hand.getTopCard().makeStatEquivalentCopy(), this.dupeAmount, false, true));
+            	AbstractDungeon.actionManager.addToTop(new MakeTempCardInDrawPileAction(p.hand.getTopCard().makeStatEquivalentCopy(), this.dupeAmount, false, true));
                 this.returnCards();
                 this.isDone = true;
             }
@@ -63,7 +63,7 @@ extends AbstractGameAction {
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
             for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
                 AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(c.makeStatEquivalentCopy()));
-                AbstractDungeon.actionManager.addToTop(new MakeTempCardInDrawPileAction(p, p, c.makeStatEquivalentCopy(), this.dupeAmount, false, true));
+                AbstractDungeon.actionManager.addToTop(new MakeTempCardInDrawPileAction(c.makeStatEquivalentCopy(), this.dupeAmount, false, true));
             }
             this.returnCards();
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;

@@ -36,7 +36,7 @@ extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
     	 AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
-         AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(p, p, new Dazed(), DAZED_COUNT, true, true));
+         AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Dazed(), DAZED_COUNT, true, true));
     }
 
     @Override

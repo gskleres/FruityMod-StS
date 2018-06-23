@@ -46,7 +46,7 @@ public class Brainstorm extends CustomCard {
             this.triggerOnMoveToDiscard = false;
 
             AbstractDungeon.actionManager.addToBottom(new EmptyDeckShuffleAction());
-            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(AbstractDungeon.player, AbstractDungeon.player, new Dazed(), DAZED_COUNT, true, true));
+            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Dazed(), DAZED_COUNT, true, true));
             AbstractDungeon.actionManager.addToBottom(new ShuffleAction(AbstractDungeon.player.drawPile));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DrawCardNextTurnPower(AbstractDungeon.player, this.magicNumber), this.magicNumber));
         }

@@ -34,7 +34,7 @@ public class Brilliance extends CustomCard {
 
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(AbstractDungeon.player, AbstractDungeon.player, new Dazed(), DAZED_AMT, true, true));
+		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Dazed(), DAZED_AMT, true, true));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BrilliancePower(p, this.magicNumber), this.magicNumber));
 	}
 

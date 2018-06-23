@@ -45,7 +45,7 @@ public class NullStorm extends CustomCard {
 		}
 		AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, this.multiDamage,
 				this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
-		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(p, p, new Dazed(), 1, true, true));
+		AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Dazed(), 1, true, true));
 	}
 
 	@Override
