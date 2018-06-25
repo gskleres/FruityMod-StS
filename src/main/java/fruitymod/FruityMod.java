@@ -171,6 +171,7 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String PHASE_COIL = "cards/phase_coil.png";
     
     // power images
+    public static final String ARCANOSPHERE_POWER = "powers/arcanosphere.png";
     public static final String ASTRAL_HAZE_POWER = "powers/astral_haze.png";
     public static final String CHAOS_FORM_POWER = "powers/chaos_form.png";
     public static final String ESSENCE_MIRROR_POWER = "powers/essence_mirror.png";
@@ -339,6 +340,10 @@ public class FruityMod implements PostInitializeSubscriber,
     
     public static Texture getBlueberriesTexture() {
     	return new Texture(makePath(BLUEBERRIES_RELIC));
+    }
+
+    public static Texture getArcanospherePowerTexture() {
+        return new Texture(makePath(ARCANOSPHERE_POWER));
     }
 
     /**
