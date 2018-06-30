@@ -73,9 +73,9 @@ public class Dazed_P extends CustomCard {
 		this.updateEnigmaValue();
 		if (p != null) {
 			AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
-			AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1f));
-			AbstractDungeon.actionManager.addToBottom(new VFXAction(new ShockWaveEffect(p.hb.cX, p.hb.cY, Settings.BLUE_TEXT_COLOR, ShockWaveEffect.ShockWaveType.CHAOTIC), 0.75f));
-	        AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, this.multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.NONE, false));
+			//AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1f));
+			AbstractDungeon.actionManager.addToBottom(new VFXAction(new ShockWaveEffect(p.hb.cX, p.hb.cY, Settings.BLUE_TEXT_COLOR, ShockWaveEffect.ShockWaveType.CHAOTIC), 0.50f));
+	        AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, this.multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.NONE, true));
 		}
 	}
 
