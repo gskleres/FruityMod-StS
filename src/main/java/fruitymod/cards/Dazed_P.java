@@ -50,8 +50,7 @@ public class Dazed_P extends CustomCard {
 	
 	private void updateEnigmaValue() {
 		AbstractPlayer p = AbstractDungeon.player;
-		if (p != null)
-		{
+		if (p != null) {
 			int enigmaAmount = p.getPower("EnigmaPower").amount;
 			if (this.baseBlock != enigmaAmount || this.baseDamage != enigmaAmount)
 			{
@@ -60,12 +59,6 @@ public class Dazed_P extends CustomCard {
 				this.initializeDescription();
 			}
 		}
-	}
-	
-	@Override
-	public void update() {
-		updateEnigmaValue();
-		super.update();
 	}
 	
 	@Override
