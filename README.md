@@ -28,7 +28,7 @@ Currently **The Seeker** is completely playable. We have art for all the cards b
 
 ![The Seeker Card Library](github_resources/card_library.png)
 
-Card list: [click here](https://drive.google.com/file/d/1aojRAKPQCbDW7mSW6Co6XTKwbB8IlexQ/view)
+Card list: [click here](https://fiiiiilth.github.io/seeker/cardlist.html). Generated using [twanvl's Exporter](https://github.com/twanvl/sts-exporter).
 
 ## Requirements ##
 #### General Use ####
