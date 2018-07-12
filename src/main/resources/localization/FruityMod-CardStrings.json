@@ -94,8 +94,8 @@
 	},
 	"Singularity": {
 		"NAME": "Singularity",
-		"DESCRIPTION": "Ethereal. NL Gain !B! Block. NL Deal !D! damage. NL Next turn gain [R].",
-		"UPGRADE_DESCRIPTION": "Ethereal. NL Gain !B! Block. NL Deal !D! damage. NL Next turn gain [R]."
+		"DESCRIPTION": "Ethereal. NL Gain !B! Block. NL Deal !D! damage. NL Next turn gain [E].",
+		"UPGRADE_DESCRIPTION": "Ethereal. NL Gain !B! Block. NL Deal !D! damage. NL Next turn gain [E]."
 	},
 	"Genesis": {
 		"NAME": "Genesis",
@@ -118,7 +118,7 @@
 	},
 	"PlasmaWave": {
 		"NAME": "Plasma Wave",
-		"DESCRIPTION": "Spend all [R]. Deal !D! damage to ALL enemies X times. Vulnerable enemies take double damage."
+		"DESCRIPTION": "Spend all [E]. Deal !D! damage to ALL enemies X times. Vulnerable enemies take double damage."
 	},
 	"EtherBlast": {
 		"NAME": "Ether Blast",
@@ -150,11 +150,18 @@
 	},
 	"ThoughtRaze": {
 		"NAME": "Thought Raze",
-		"DESCRIPTION": "Exhaust all Ethereal cards in your draw pile. Deal !D! damage for each card that is Exhausted."
+		"DESCRIPTION": "Exhaust all Ethereal cards in your draw pile. Deal !D! damage for each.",
+		"EXTENDED_DESCRIPTION": [
+			" NL (",
+			" Ethereal ",
+			"card",
+			"cards",
+			" in draw pile.)"
+		]
 	},
 	"Umbra": {
 		"NAME": "Umbra",
-		"DESCRIPTION": "If you are Frail or Vulnerable, gain !B! Block. If you are Weak, deal !D! damage to ALL enemies."
+		"DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. NL If you are Weak, Frail, or Vulnerable, repeat these effects."
 	},
 	"GravityWell": {
 		"NAME": "Gravity Well",
@@ -188,7 +195,7 @@
 	},
 	"Archives": {
 		"NAME": "Archives",
-		"DESCRIPTION": "Gain [R] for every !M! cards in your draw pile."
+		"DESCRIPTION": "Gain [E] for every !M! cards in your draw pile."
 	},
 	"Brainstorm": {
 		"NAME": "Brainstorm",
@@ -306,7 +313,7 @@
 	},
 	"PeriaptOfVigor": {
 		"NAME": "Periapt of Vigor",
-		"DESCRIPTION": "Ethereal cards cost !M! less [R]."
+		"DESCRIPTION": "Ethereal cards cost !M! less [E]."
 	},
 	"DimensionDoor": {
 		"NAME": "Dimension Door",
@@ -318,15 +325,15 @@
 		"DESCRIPTION": "This turn, your next Ethereal card is played twice.",
 		"UPGRADE_DESCRIPTION": "This turn, your next 2 Ethereal cards are played twice."
 	},
-	"Eclipse": {
+	"Eclipse_S": {
 		"NAME": "Eclipse",
 		"DESCRIPTION": "Top-Cycle an Exhausted Ethereal card. NL Exhaust.",
 		"EXTENDED_DESCRIPTION": [ "I don't have any Exhausted Ethereal cards."]
 	},
 	"Eureka": {
 		"NAME": "Eureka!",
-		"DESCRIPTION": "Recycle 2 Dazed. Draw !M! cards. Gain [R] [R]. NL Exhaust.",
-		"UPGRADE_DESCRIPTION": "Recycle 2 Dazed. Draw !M! cards. Gain [R] [R] [R]. NL Exhaust."
+		"DESCRIPTION": "Recycle 2 Dazed. Draw !M! cards. Gain [E] [E]. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Recycle 2 Dazed. Draw !M! cards. Gain [E] [E] [E]. NL Exhaust."
 	},
 	"ReflectionWard": {
 		"NAME": "Reflection Ward",
@@ -339,9 +346,9 @@
 	},
 	"Zenith": {
 		"NAME": "Zenith",
-		"DESCRIPTION": "After paying this card's cost, double your remaining [R]. Exhaust.",
-		"UPGRADE_DESCRIPTION": "After paying this card's cost, double your remaining [R].",
-		"EXTENDED_DESCRIPTION": [ " (Will have !M! [R] after use.)"]
+		"DESCRIPTION": "After paying this card's cost, double your remaining [E]. Exhaust.",
+		"UPGRADE_DESCRIPTION": "After paying this card's cost, double your remaining [E].",
+		"EXTENDED_DESCRIPTION": [ " (Will have !M! [E] after use.)"]
 	},
 	"Coalescence": {
 		"NAME": "Coalescence",
