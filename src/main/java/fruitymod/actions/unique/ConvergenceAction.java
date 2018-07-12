@@ -14,7 +14,7 @@ public class ConvergenceAction extends AbstractGameAction {
 	private ArrayList<AbstractCard> canUpgrade = new ArrayList<>();
 	private boolean upgraded = false;
 	
-	public static final String TEXT = "Select a card to upgrade.";
+	public static final String TEXT = "upgrade.";
 
 	public ConvergenceAction(boolean upgraded) {
 		this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
