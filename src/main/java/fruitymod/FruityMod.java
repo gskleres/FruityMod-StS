@@ -69,7 +69,7 @@ public class FruityMod implements PostInitializeSubscriber,
 	
     private static final String MODNAME = "FruityMod";
     private static final String AUTHOR = "Fruitstrike, ColdRain451, test447, fiiiiilth, & Pal";
-    private static final String DESCRIPTION = "v0.6.8\n Adds The Seeker as a playable third character";
+    private static final String DESCRIPTION = "v0.7\n Adds The Seeker as a playable third character";
     
     private static final Color PURPLE = CardHelper.getColor(139.0f, 0.0f, 139.0f);
     private static final String FRUITY_MOD_ASSETS_FOLDER = "img";
@@ -79,7 +79,8 @@ public class FruityMod implements PostInitializeSubscriber,
     private static final String SKILL_PURPLE = "512/bg_attack_purple.png";
     private static final String POWER_PURPLE = "512/bg_attack_purple.png";
     private static final String ENERGY_ORB_PURPLE = "512/card_purple_orb.png";
-    
+    private static final String CARD_ENERGY_ORB = "512/card_small_orb.png";
+
     private static final String ATTACK_PURPLE_PORTRAIT = "1024/bg_attack_purple.png";
     private static final String SKILL_PURPLE_PORTRAIT = "1024/bg_attack_purple.png";
     private static final String POWER_PURPLE_PORTRAIT = "1024/bg_attack_purple.png";
@@ -211,8 +212,6 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String SEEKER_SHOULDER_1 = "char/seeker/shoulder.png";
     public static final String SEEKER_SHOULDER_2 = "char/seeker/shoulder2.png";
     public static final String SEEKER_CORPSE = "char/seeker/corpse.png";
-    public static final String SEEKER_SKELETON_ATLAS = "char/seeker/skeleton.atlas";
-    public static final String SEEKER_SKELETON_JSON = "char/seeker/skeleton.json";
     
     // badge
     public static final String BADGE_IMG = "FRelicBadge.png";
@@ -397,7 +396,7 @@ public class FruityMod implements PostInitializeSubscriber,
         		makePath(ATTACK_PURPLE), makePath(SKILL_PURPLE),
         		makePath(POWER_PURPLE), makePath(ENERGY_ORB_PURPLE),
         		makePath(ATTACK_PURPLE_PORTRAIT), makePath(SKILL_PURPLE_PORTRAIT),
-        		makePath(POWER_PURPLE_PORTRAIT), makePath(ENERGY_ORB_PURPLE_PORTRAIT));
+        		makePath(POWER_PURPLE_PORTRAIT), makePath(ENERGY_ORB_PURPLE_PORTRAIT), makePath(CARD_ENERGY_ORB));
     }
 
     public static void initialize() {
