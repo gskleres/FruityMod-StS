@@ -42,11 +42,13 @@ public class Dazed_P extends CustomCard {
 
 	@Override
 	public void applyPowers() {
-		super.applyPowers();
-		updateEnigmaValue();
+		AbstractPlayer p = AbstractDungeon.player;
+		if (p.hasPower("EnigmaPower")) {
+			super.applyPowers();
+			updateEnigmaValue();
+		}
 	}
-	
-	
+
 	
 	private void updateEnigmaValue() {
 		AbstractPlayer p = AbstractDungeon.player;
@@ -73,6 +75,18 @@ public class Dazed_P extends CustomCard {
 	}
 
 	@Override
+	public boolean canUse(final AbstractPlayer p, AbstractMonster m) {
+		boolean canUse = super.canUse(p, m);
+		if (!canUse) {
+			return false;
+		}
+		if (!p.hasPower("EnigmaPower")) {
+			return false;
+		}
+		return canUse;
+	}
+
+	@Override
 	public void triggerOnEndOfPlayerTurn() {
 		AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
 	}
@@ -83,8 +97,12 @@ public class Dazed_P extends CustomCard {
 	}
 
 	@Override
+	public boolean canUpgrade(){
+		return false;
+	}
+
+	@Override
 	public void upgrade() {
-		return;
 	}
 }
 
