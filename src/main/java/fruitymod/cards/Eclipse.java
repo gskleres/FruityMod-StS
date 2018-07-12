@@ -13,7 +13,7 @@ import fruitymod.actions.unique.EclipseAction;
 import fruitymod.patches.AbstractCardEnum;
 
 public class Eclipse extends CustomCard {
-	public static final String ID = "Eclipse";
+	public static final String ID = "Eclipse_S";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
