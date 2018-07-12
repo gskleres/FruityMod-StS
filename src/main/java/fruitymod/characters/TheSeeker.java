@@ -2,6 +2,7 @@ package fruitymod.characters;
 
 import java.util.ArrayList;
 
+import basemod.animations.SpriterAnimation;
 import com.megacrit.cardcrawl.actions.utility.ExhaustAllEtherealAction;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
@@ -33,7 +34,7 @@ public class TheSeeker extends CustomPlayer {
 	};
 	
 	public TheSeeker(String name, PlayerClass setClass) {
-		super(name, setClass, orbTextures, "img/char/seeker/orb/vfx.png", "img/char/seeker/seeker2.g3dj", "sls_md|idle");
+		super(name, setClass, orbTextures, "img/char/seeker/orb/vfx.png", new SpriterAnimation("img/char/animation.scml"));
 		
 		initializeClass(null, FruityMod.makePath(FruityMod.SEEKER_SHOULDER_2),
 				FruityMod.makePath(FruityMod.SEEKER_SHOULDER_1),
