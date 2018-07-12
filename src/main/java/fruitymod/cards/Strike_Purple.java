@@ -29,6 +29,11 @@ public class Strike_Purple extends CustomCard {
 		this.baseDamage = ATTACK_DMG;
 	}
 
+	@Override
+	public boolean isStrike() {
+		return true;
+	}
+
 	public void use(com.megacrit.cardcrawl.characters.AbstractPlayer p, AbstractMonster m) {
 		AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
 				new DamageInfo(p, this.damage, this.damageTypeForTurn),

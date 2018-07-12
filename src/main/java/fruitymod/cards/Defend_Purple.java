@@ -28,6 +28,11 @@ public class Defend_Purple extends CustomCard {
 		this.baseBlock = BLOCK_AMT;
 	}
 
+	@Override
+	public boolean isDefend() {
+		return true;
+	}
+
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
 	}
