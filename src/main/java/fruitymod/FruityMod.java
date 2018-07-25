@@ -68,7 +68,7 @@ public class FruityMod implements PostInitializeSubscriber,
 	public static final Logger logger = LogManager.getLogger(FruityMod.class.getName());
 	
     private static final String MODNAME = "FruityMod";
-    private static final String AUTHOR = "Fruitstrike, ColdRain451, test447, fiiiiilth, & Pal";
+    private static final String AUTHOR = "Fruitstrike, ColdRain451, test447, fiiiiilth, Blank The Evil & Pal";
     private static final String DESCRIPTION = "v0.7\n Adds The Seeker as a playable third character";
     
     private static final Color PURPLE = CardHelper.getColor(139.0f, 0.0f, 139.0f);
@@ -76,14 +76,14 @@ public class FruityMod implements PostInitializeSubscriber,
     
     // card backgrounds
     private static final String ATTACK_PURPLE = "512/bg_attack_purple.png";
-    private static final String SKILL_PURPLE = "512/bg_attack_purple.png";
-    private static final String POWER_PURPLE = "512/bg_attack_purple.png";
+    private static final String SKILL_PURPLE = "512/bg_skill_purple.png";
+    private static final String POWER_PURPLE = "512/bg_power_purple.png";
     private static final String ENERGY_ORB_PURPLE = "512/card_purple_orb.png";
     private static final String CARD_ENERGY_ORB = "512/card_small_orb.png";
 
     private static final String ATTACK_PURPLE_PORTRAIT = "1024/bg_attack_purple.png";
-    private static final String SKILL_PURPLE_PORTRAIT = "1024/bg_attack_purple.png";
-    private static final String POWER_PURPLE_PORTRAIT = "1024/bg_attack_purple.png";
+    private static final String SKILL_PURPLE_PORTRAIT = "1024/bg_skill_purple.png";
+    private static final String POWER_PURPLE_PORTRAIT = "1024/bg_power_purple.png";
     private static final String ENERGY_ORB_PURPLE_PORTRAIT = "1024/card_purple_orb.png";
     
     // card images
