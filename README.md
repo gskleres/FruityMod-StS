@@ -37,16 +37,15 @@ Card list: [click here](https://fiiiiilth.github.io/seeker/cardlist.html). Gener
 * ModTheSpire v2.3.0+ (https://github.com/kiooeht/ModTheSpire/releases)
 
 ## Installation ##
-1. If you have `ModTheSpire` already installed you can skip to step 5. Otherwise continue with step 2:
-2. Download `ModTheSpire.jar` from the latest release (https://github.com/kiooeht/ModTheSpire/releases)
-3. Move `ModTheSpire.jar` into your **Slay The Spire** directory. This directory is likely to be found under `C:\Program Files (x86)\Steam\steamapps\common\SlayTheSpire`. Place `ModTheSpire.jar` in that directory so it looks like `C:\Program Files (x86)\Steam\steamapps\common\SlayTheSpire\ModTheSpire.jar`
-4. Create a `mods` folder in your **Slay The Spire** directory so it looks like `C:\Program Files (x86)\Steam\steamapps\common\SlayTheSpire\mods`
-5. Download `BaseMod.jar` from the latest release (https://github.com/daviscook477/BaseMod/releases)
-6. Move `BaseMod.jar` into the `mods` folder you created in step 4
-7. Download `FruityMod.jar` from the latest release (https://github.com/gskleres/FruityMod-StS/releases)
-8. Move `FruityMod.jar` into the `mods` folder you created in step 4
-9. Your modded version of **Slay The Spire** can now be launched by double-clicking on `ModTheSpire.jar`
-10. This will open a mod select menu where you need to make sure that both `BaseMod` and `FruityMod` are checked before clicking **play**
+1. Download `ModTheSpire.jar` from the latest release (https://github.com/kiooeht/ModTheSpire/releases) and save it in the base folder of this project (the base folder is the same folder containing this README).
+2. Copy `desktop-1.0.jar` from your Slay the Spire installation folder into the base folder of this project.
+3. Create a `mods` folder under the base folder of this project.
+4. Download `BaseMod.jar` from the latest release (https://github.com/daviscook477/BaseMod/releases) and save it in the `mods` folder you created in step 3.
+5. Get the `FruityMod.jar` and save it in the `mods` folder you created in step 3.  You have 2 options to do this:
+    1. Build this project (see below).  Each time you build the project successfully, it will automatically be moved into the `mods` folder.
+    2. Alternatively, you can download `FruityMod.jar` from the latest release (https://github.com/gskleres/FruityMod-StS/releases)
+6. Your modded version of **Slay The Spire** can now be launched by double-clicking on `ModTheSpire.jar`
+7. This will open a mod select menu where you need to make sure that both `BaseMod` and `FruityMod` are checked before clicking **play**
 
 Here is a great video showing how to install mods, by Xterminator: https://www.youtube.com/watch?v=r2m2aL1eEjw
 
@@ -83,10 +82,7 @@ Creative Commons and other licenses are great and helped make some of this mod h
 * ModTheSpireLib (whatever version is associated with your version of ModTheSpire)
 
 ### Building ##
-1. Modify `pom.xml` to point to the location you've placed the dependencies
-2. Copy `desktop-1.0.jar` from your Slay the Spire folder into `../_lib` relative to the repo.
-3. Decompile `desktop-1.0.jar` with `java -jar "cfr_0_124.jar" --comments false --showversion false --caseinsensitivefs true --outputdir "decompiled" --jarfilter com.megacrit.cardcrawl.* "desktop-1.0.jar"`
-4. Run `mvn package` to make the jar `FruityMod.jar` in the `targets` directory
+1. Run `mvn package` to make the jar `FruityMod.jar`.  Maven will automatically move this jar into your mod folder, so that you can test it out by playing a game.
 
 #### Building in Eclipse ###
 1. Right click on the project in eclipse then go to `configure` and `convert to maven project`

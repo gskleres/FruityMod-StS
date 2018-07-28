@@ -8,39 +8,44 @@
 	<name>Fruity Mod</name>
 	<description>Currently, adds a few new relics.</description>
 
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<modWorkingPath>${basedir}</modWorkingPath>
+		<modJarsPath>${basedir}/mods</modJarsPath>
+		<desktopJarPath>${modWorkingPath}/desktop-1.0.jar</desktopJarPath>
+		<modSpireJarPath>${modWorkingPath}/ModTheSpire.jar</modSpireJarPath>
+		<baseModJarPath>${modJarsPath}/BaseMod.jar</baseModJarPath>
+		<fruityModJarPath>${modJarsPath}/FruityMod.jar</fruityModJarPath>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>com.megacrit.cardcrawl</groupId>
 			<artifactId>slaythespire</artifactId>
 			<version>014</version>
 			<scope>system</scope>
-			<systemPath>${basedir}/../lib/desktop-1.0.jar</systemPath>
+			<systemPath>${desktopJarPath}</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>basemod</groupId>
 			<artifactId>basemod</artifactId>
 			<version>1.5.2</version>
 			<scope>system</scope>
-			<systemPath>${basedir}/../lib/BaseMod.jar</systemPath>
+			<systemPath>${baseModJarPath}</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>modthespire</groupId>
 			<artifactId>modthespire</artifactId>
 			<version>1.5.2</version>
 			<scope>system</scope>
-			<systemPath>${basedir}/../lib/ModTheSpire.jar</systemPath>
+			<systemPath>${modSpireJarPath}</systemPath>
 		</dependency>
 	</dependencies>
-
-	<properties>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
-	</properties>
 
 	<build>
 		<finalName>FruityMod</finalName>
 		<plugins>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-shade-plugin</artifactId>
@@ -76,7 +81,7 @@
 						<phase>package</phase>
 						<configuration>
 							<target>
-								<copy file="target/FruityMod.jar" tofile="../_ModTheSpire/mods/FruityMod.jar" />
+								<copy file="target/FruityMod.jar" tofile="${fruityModJarPath}" />
 							</target>
 						</configuration>
 						<goals>
