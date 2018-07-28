@@ -1,5 +1,9 @@
-
-.idea/dictionaries/fiiiiilth.xml
+.idea/*
+FruityMod.iml
 bin/
 target/**
 dependency-reduced-pom.xml
+
+ModTheSpire.jar
+desktop-1.0.jar
+mods
