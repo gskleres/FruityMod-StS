@@ -4,6 +4,14 @@ bin/
 target/**
 dependency-reduced-pom.xml
 
+# Downloaded dependencies
 ModTheSpire.jar
 desktop-1.0.jar
 mods
+
+# Files generated when playing the game
+info.displayconfig
+preferences/
+saves/
+sendToDevs/
+twitchconfig.txt
