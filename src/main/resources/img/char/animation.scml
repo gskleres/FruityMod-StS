@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="r11">
-    <folder id="0" name="seeker">
-        <file id="0" name="seeker/sls_md.png" width="489" height="489" pivot_x="0" pivot_y="1"/>
+    <folder id="0" name="tranquil">
+        <file id="0" name="tranquil/sls_md.png" width="489" height="489" pivot_x="0" pivot_y="1"/>
     </folder>
     <folder id="1">
         <file id="0" name="arcanosphere.png" width="128" height="128" pivot_x="0" pivot_y="1"/>
