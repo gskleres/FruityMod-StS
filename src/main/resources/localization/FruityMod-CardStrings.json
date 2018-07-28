@@ -11,6 +11,14 @@
 		"NAME": "Defend",
 		"DESCRIPTION": "Gain !B! Block."
 	},
+	"Strike_T": {
+		"NAME": "Strike",
+		"DESCRIPTION": "Deal !D! damage."
+	},
+	"Defend_T": {
+		"NAME": "Defend",
+		"DESCRIPTION": "Gain !B! Block."
+	},
 	"AstralHaze": {
 		"NAME": "Astral Haze",
 		"DESCRIPTION": "Ethereal. The first time each enemy attacks you this turn, apply !M! Vulnerable and !M! Weak to it."
