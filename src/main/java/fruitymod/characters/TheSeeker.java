@@ -34,7 +34,7 @@ public class TheSeeker extends CustomPlayer {
 	};
 	
 	public TheSeeker(String name, PlayerClass setClass) {
-		super(name, setClass, orbTextures, "img/char/seeker/orb/vfx.png", new SpriterAnimation("img/char/animation.scml"));
+		super(name, setClass, orbTextures, "img/char/seeker/orb/vfx.png", new SpriterAnimation("img/char/seeker/animation.scml"));
 		
 		initializeClass(null, FruityMod.makePath(FruityMod.SEEKER_SHOULDER_2),
 				FruityMod.makePath(FruityMod.SEEKER_SHOULDER_1),

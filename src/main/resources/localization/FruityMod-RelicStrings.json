@@ -91,5 +91,12 @@
   	"DESCRIPTIONS": [
   		"Choose any number of cards in your starting hand to gain #yEthereal."
   	]
+  },
+  "Bottlecap": {
+    "NAME": "Bottlecap",
+    "FLAVOR": "The Bottlecap is a powerful relic brought by The Tranquil from the SodaPop Plane.",
+    "DESCRIPTIONS": [
+         "Cap any bottle, no fizzy soda shall stand in your way."
+    ]
   }
 }

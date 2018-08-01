@@ -60,6 +60,7 @@ import fruitymod.relics.PaperPengwin;
 import fruitymod.relics.RodOfNegation;
 import fruitymod.relics.SolarEgg;
 import fruitymod.relics.Telescope;
+import fruitymod.relics.Bottlecap;
 
 @SpireInitializer
 public class FruityMod implements PostInitializeSubscriber,
@@ -208,6 +209,7 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String BRILLIANCE_POWER = "powers/brilliance.png";
     public static final String ANOMALY_POWER = "powers/anomaly.png";
     public static final String NEXUS_POWER = "powers/nexus.png";
+    public static final String BOTTLECAP_POWER = "powers/bottlecap.png";
 
     // relic images
     public static final String ARCANOSPHERE_RELIC = "relics/arcanosphere.png";
@@ -222,7 +224,8 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String POWER_CELLS_RELIC = "relics/powerCells.png";
     public static final String TELESCOPE_RELIC = "relics/telescope.png";
     public static final String BLUEBERRIES_RELIC = "relics/blueberries.png";
-    
+    public static final String BOTTLECAP_RELIC = "relics/bottlecap.png";
+
     // seeker assets
     private static final String SEEKER_BUTTON = "charSelect/seekerButton.png";
     private static final String SEEKER_PORTRAIT = "charSelect/SeekerPortraitBG.jpg";
@@ -316,7 +319,11 @@ public class FruityMod implements PostInitializeSubscriber,
     public static Texture getNexusPowerTexture() {
     	return new Texture(makePath(VIGOR_POWER));
     }
-    
+
+    public static Texture getBottlecapTexture() {
+        return new Texture(makePath(BOTTLECAP_RELIC));
+    }
+
     public static Texture getArcanoSphereTexture() {
     	return new Texture(makePath(ARCANOSPHERE_RELIC));
     }
@@ -367,6 +374,10 @@ public class FruityMod implements PostInitializeSubscriber,
 
     public static Texture getArcanospherePowerTexture() {
         return new Texture(makePath(ARCANOSPHERE_POWER));
+    }
+
+    public static Texture getBottlecapPowerTexture() {
+        return new Texture(makePath(BOTTLECAP_POWER));
     }
 
     /**
@@ -490,6 +501,8 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addRelicToCustomPool(new SolarEgg(), AbstractCardEnum.SEEKER_PURPLE.toString());
 		BaseMod.addRelicToCustomPool(new RodOfNegation(), AbstractCardEnum.SEEKER_PURPLE.toString());
 		BaseMod.addRelicToCustomPool(new Telescope(), AbstractCardEnum.SEEKER_PURPLE.toString());
+
+		BaseMod.addRelicToCustomPool(new Bottlecap(), AbstractCardEnum.TRANQUIL_TAN.toString());
         
         logger.info("done editting relics");
 	}
