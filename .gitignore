@@ -1,4 +1,3 @@
-.idea/*
 FruityMod.iml
 bin/
 target/**
@@ -15,3 +14,8 @@ preferences/
 saves/
 sendToDevs/
 twitchconfig.txt
+
+# Ignore editor files
+.swp
+.idea/*
+
