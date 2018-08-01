@@ -33,7 +33,7 @@ public class TheTranquil extends CustomPlayer {
 	};
 
 	public TheTranquil(String name, PlayerClass setClass) {
-		super(name, setClass, orbTextures, "img/char/tranquil/orb/vfx.png", new SpriterAnimation("img/char/animation.scml"));
+		super(name, setClass, orbTextures, "img/char/tranquil/orb/vfx.png", new SpriterAnimation("img/char/tranquil/animation.scml"));
 		
 		initializeClass(null, FruityMod.makePath(FruityMod.TRANQUIL_SHOULDER_2),
 				FruityMod.makePath(FruityMod.TRANQUIL_SHOULDER_1),
