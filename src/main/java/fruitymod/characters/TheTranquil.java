@@ -71,8 +71,8 @@ public class TheTranquil extends CustomPlayer {
 	
 	public static ArrayList<String> getStartingRelics() {
 		ArrayList<String> retVal = new ArrayList<>();
-		retVal.add("Arcanosphere");
-		UnlockTracker.markRelicAsSeen("Arcanosphere");
+		retVal.add("Bottlecap");
+		UnlockTracker.markRelicAsSeen("Bottlecap");
 		return retVal;
 	}
 	
