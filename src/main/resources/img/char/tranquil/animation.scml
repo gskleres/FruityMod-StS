@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="r11">
+    <folder id="0" name="tranquil">
+        <file id="0" name="sls_md.png" width="489" height="489" pivot_x="0" pivot_y="1"/>
+    </folder>
+    <folder id="1">
+        <file id="0" name="bottlecap.png" width="128" height="128" pivot_x="0" pivot_y="1"/>
+    </folder>
+    <entity id="0" name="entity_000">
+        <animation id="0" name="NewAnimation" length="3000" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="1" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="0" key="0" z_index="1"/>
+                </key>
+                <key id="1" time="1500">
+                    <object_ref id="0" timeline="1" key="1" z_index="0"/>
+                    <object_ref id="1" timeline="0" key="1" z_index="1"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="sls_md">
+                <key id="0" spin="0">
+                    <object folder="0" file="0" x="-134" y="268" angle="0" scale_x="0.55" scale_y="0.55"/>
+                </key>
+                <key id="1" time="1500" spin="0">
+                    <object folder="0" file="0" x="-134" y="280.068966" angle="0" scale_x="0.55" scale_y="0.55"/>
+                </key>
+            </timeline>
+            <timeline id="1" name="arcanosphere">
+                <key id="0" spin="0">
+                    <object folder="1" file="0" x="43.103448" y="270.689655" angle="0" scale_x="0.7" scale_y="0.7"/>
+                </key>
+                <key id="1" time="1500" spin="0">
+                    <object folder="1" file="0" x="43.103448" y="293.103448" angle="0" scale_x="0.7" scale_y="0.7"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+</spriter_data>

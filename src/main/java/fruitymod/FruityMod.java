@@ -470,7 +470,7 @@ public class FruityMod implements PostInitializeSubscriber,
 
         logger.info("add " + TheTranquilEnum.THE_TRANQUIL.toString());
         BaseMod.addCharacter(TheTranquil.class, "The Tranquil", "Tranquil class string",
-                AbstractCardEnum.TRANQUIL_TAN.toString(), "#pThe #pTranquil",
+                AbstractCardEnum.TRANQUIL_TAN.toString(), "The Tranquil",
                 makePath(TRANQUIL_BUTTON), makePath(TRANQUIL_PORTRAIT),
                 TheTranquilEnum.THE_TRANQUIL.toString());
 		
