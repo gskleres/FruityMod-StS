@@ -468,12 +468,14 @@ public class FruityMod implements PostInitializeSubscriber,
 				makePath(SEEKER_BUTTON), makePath(SEEKER_PORTRAIT),
 				TheSeekerEnum.THE_SEEKER.toString());
 
-        logger.info("add " + TheTranquilEnum.THE_TRANQUIL.toString());
-        BaseMod.addCharacter(TheTranquil.class, "The Tranquil", "Tranquil class string",
-                AbstractCardEnum.TRANQUIL_TAN.toString(), "The Tranquil",
-                makePath(TRANQUIL_BUTTON), makePath(TRANQUIL_PORTRAIT),
-                TheTranquilEnum.THE_TRANQUIL.toString());
-		
+		if (isTranquilEnabled()) {
+			logger.info("add " + TheTranquilEnum.THE_TRANQUIL.toString());
+			BaseMod.addCharacter(TheTranquil.class, "The Tranquil", "Tranquil class string",
+					AbstractCardEnum.TRANQUIL_TAN.toString(), "The Tranquil",
+					makePath(TRANQUIL_BUTTON), makePath(TRANQUIL_PORTRAIT),
+					TheTranquilEnum.THE_TRANQUIL.toString());
+		}
+
 		logger.info("done editting characters");
 	}
 
@@ -848,5 +850,9 @@ public class FruityMod implements PostInitializeSubscriber,
 			AbstractDungeon.actionManager.addToBottom(new WaitAction(Settings.ACTION_DUR_FAST));
 			AbstractDungeon.actionManager.addToBottom(new ConvergenceAction(c.upgraded));
 		}
+	}
+
+	private boolean isTranquilEnabled() {
+		return Boolean.parseBoolean(System.getProperty("tranquil_enabled","false"));
 	}
 }
