@@ -7,5 +7,8 @@ public class LibraryTypeEnum {
 
 	@SpireEnum
 	public static CardLibrary.LibraryType SEEKER_PURPLE;
+
+	@SpireEnum
+	public static CardLibrary.LibraryType TRANQUIL_TAN;
 	
 }

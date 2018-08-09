@@ -49,8 +49,10 @@ import basemod.interfaces.SetUnlocksSubscriber;
 import fruitymod.actions.unique.ConvergenceAction;
 import fruitymod.cards.Umbra;
 import fruitymod.characters.TheSeeker;
+import fruitymod.characters.TheTranquil;
 import fruitymod.patches.AbstractCardEnum;
 import fruitymod.patches.TheSeekerEnum;
+import fruitymod.patches.TheTranquilEnum;
 import fruitymod.relics.Arcanosphere;
 import fruitymod.relics.Blueberries;
 import fruitymod.relics.CosmicSieve;
@@ -72,6 +74,7 @@ public class FruityMod implements PostInitializeSubscriber,
     private static final String DESCRIPTION = "v0.7\n Adds The Seeker as a playable third character";
     
     private static final Color PURPLE = CardHelper.getColor(139.0f, 0.0f, 139.0f);
+    private static final Color TAN = CardHelper.getColor(210.0f, 180.0f, 140.0f);
     private static final String FRUITY_MOD_ASSETS_FOLDER = "img";
     
     // card backgrounds
@@ -79,13 +82,25 @@ public class FruityMod implements PostInitializeSubscriber,
     private static final String SKILL_PURPLE = "512/bg_skill_purple.png";
     private static final String POWER_PURPLE = "512/bg_power_purple.png";
     private static final String ENERGY_ORB_PURPLE = "512/card_purple_orb.png";
-    private static final String CARD_ENERGY_ORB = "512/card_small_orb.png";
+    private static final String CARD_ENERGY_ORB_PURPLE = "512/card_purple_small_orb.png";
 
     private static final String ATTACK_PURPLE_PORTRAIT = "1024/bg_attack_purple.png";
     private static final String SKILL_PURPLE_PORTRAIT = "1024/bg_skill_purple.png";
     private static final String POWER_PURPLE_PORTRAIT = "1024/bg_power_purple.png";
     private static final String ENERGY_ORB_PURPLE_PORTRAIT = "1024/card_purple_orb.png";
-    
+
+    private static final String ATTACK_TAN = "512/bg_attack_tan.png";
+    private static final String SKILL_TAN = "512/bg_skill_tan.png";
+    private static final String POWER_TAN = "512/bg_power_tan.png";
+    private static final String ENERGY_ORB_TAN = "512/card_tan_orb.png";
+    private static final String CARD_ENERGY_ORB_TAN = "512/card_tan_small_orb.png";
+
+    private static final String ATTACK_TAN_PORTRAIT = "1024/bg_attack_tan.png";
+    private static final String SKILL_TAN_PORTRAIT = "1024/bg_skill_tan.png";
+    private static final String POWER_TAN_PORTRAIT = "1024/bg_power_tan.png";
+    private static final String ENERGY_ORB_TAN_PORTRAIT = "1024/card_tan_orb.png";
+
+
     // card images
     
     public static final String ANOMALY = "cards/anomaly.png";
@@ -106,6 +121,7 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String CREATIVITY = "cards/creativity.png";
     public static final String DARK_MATTER = "cards/dark_matter.png";
     public static final String DEFEND_PURPLE = "cards/defend_purple.png";
+    public static final String DEFEND_TAN = "cards/defend_tan.png";
     public static final String ARCANE_ARMOR = "cards/arcane_armor.png";
     public static final String ECHO = "cards/echo.png";
     public static final String ECLIPSE = "cards/eclipse.png";
@@ -155,6 +171,7 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String SIPHON_POWER = "cards/siphon_power.png";
     public static final String SIPHON_SPEED = "cards/siphon_speed.png";
     public static final String STRIKE_PURPLE = "cards/strike_purple.png";
+    public static final String STRIKE_TAN = "cards/strike_tan.png";
     public static final String STROKE_OF_GENIUS = "cards/stroke_of_genius.png";
     public static final String SURGE = "cards/surge.png";
     public static final String SYZYGY = "cards/syzygy.png";
@@ -212,6 +229,13 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String SEEKER_SHOULDER_1 = "char/seeker/shoulder.png";
     public static final String SEEKER_SHOULDER_2 = "char/seeker/shoulder2.png";
     public static final String SEEKER_CORPSE = "char/seeker/corpse.png";
+
+    // tranquil assets
+    private static final String TRANQUIL_BUTTON = "charSelect/tranquilButton.png";
+    private static final String TRANQUIL_PORTRAIT = "charSelect/TranquilPortraitBG.jpg";
+    public static final String TRANQUIL_SHOULDER_1 = "char/tranquil/shoulder.png";
+    public static final String TRANQUIL_SHOULDER_2 = "char/tranquil/shoulder2.png";
+    public static final String TRANQUIL_CORPSE = "char/tranquil/corpse.png";
     
     // badge
     public static final String BADGE_IMG = "FRelicBadge.png";
@@ -396,7 +420,20 @@ public class FruityMod implements PostInitializeSubscriber,
         		makePath(ATTACK_PURPLE), makePath(SKILL_PURPLE),
         		makePath(POWER_PURPLE), makePath(ENERGY_ORB_PURPLE),
         		makePath(ATTACK_PURPLE_PORTRAIT), makePath(SKILL_PURPLE_PORTRAIT),
-        		makePath(POWER_PURPLE_PORTRAIT), makePath(ENERGY_ORB_PURPLE_PORTRAIT), makePath(CARD_ENERGY_ORB));
+        		makePath(POWER_PURPLE_PORTRAIT), makePath(ENERGY_ORB_PURPLE_PORTRAIT), makePath(CARD_ENERGY_ORB_PURPLE));
+
+        /*
+         * Note that for now when installing FruityMod, in the `mods/` folder another folder named
+         * the value of FRUITY_MOD_ASSETS_FOLDER must be created into which all the contents of the
+         * `images/` folder must be relocated
+         */
+        logger.info("creating the color " + AbstractCardEnum.TRANQUIL_TAN.toString());
+        BaseMod.addColor(AbstractCardEnum.TRANQUIL_TAN.toString(),
+                TAN, TAN, TAN, TAN, TAN, TAN, TAN,
+                makePath(ATTACK_TAN), makePath(SKILL_TAN),
+                makePath(POWER_TAN), makePath(ENERGY_ORB_TAN),
+                makePath(ATTACK_TAN_PORTRAIT), makePath(SKILL_TAN_PORTRAIT),
+                makePath(POWER_TAN_PORTRAIT), makePath(ENERGY_ORB_TAN_PORTRAIT), makePath(CARD_ENERGY_ORB_TAN));
     }
 
     public static void initialize() {
@@ -430,6 +467,12 @@ public class FruityMod implements PostInitializeSubscriber,
 				AbstractCardEnum.SEEKER_PURPLE.toString(), "#pThe #pSeeker",
 				makePath(SEEKER_BUTTON), makePath(SEEKER_PORTRAIT),
 				TheSeekerEnum.THE_SEEKER.toString());
+
+        logger.info("add " + TheTranquilEnum.THE_TRANQUIL.toString());
+        BaseMod.addCharacter(TheTranquil.class, "The Tranquil", "Tranquil class string",
+                AbstractCardEnum.TRANQUIL_TAN.toString(), "The Tranquil",
+                makePath(TRANQUIL_BUTTON), makePath(TRANQUIL_PORTRAIT),
+                TheTranquilEnum.THE_TRANQUIL.toString());
 		
 		logger.info("done editting characters");
 	}
@@ -461,7 +504,10 @@ public class FruityMod implements PostInitializeSubscriber,
 		
 		BaseMod.addCard(new Strike_Purple());
 		BaseMod.addCard(new Defend_Purple());
-		
+
+		BaseMod.addCard(new Strike_Tan());
+		BaseMod.addCard(new Defend_Tan());
+
 		BaseMod.addCard(new Starburst());
 		BaseMod.addCard(new Irradiate());
 		BaseMod.addCard(new AstralHaze());
@@ -541,7 +587,10 @@ public class FruityMod implements PostInitializeSubscriber,
 		
 		UnlockTracker.unlockCard("Strike_P");
 		UnlockTracker.unlockCard("Defend_P");
-		
+
+		UnlockTracker.unlockCard("Strike_T");
+		UnlockTracker.unlockCard("Defend_T");
+
 		UnlockTracker.unlockCard("Starburst");
 		UnlockTracker.unlockCard("Irradiate");
 		UnlockTracker.unlockCard("AstralHaze");

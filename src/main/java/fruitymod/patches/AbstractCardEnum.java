@@ -7,5 +7,8 @@ public class AbstractCardEnum {
 
 	@SpireEnum
 	public static AbstractCard.CardColor SEEKER_PURPLE;
-	
+
+	@SpireEnum
+	public static AbstractCard.CardColor TRANQUIL_TAN;
+
 }
