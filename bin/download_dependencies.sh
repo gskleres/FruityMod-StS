@@ -1,4 +1,5 @@
 MOD_THE_SPIRE_ZIP_URL=https://github.com/kiooeht/ModTheSpire/releases/download/v2.9.1/ModTheSpire.zip
+BASE_MOD_JAR_URL=https://github.com/daviscook477/BaseMod/releases/download/v2.18.0/BaseMod.jar
 
 getModTheSpireJar() {
   if [ -f ./ModTheSpire.jar ]; then
@@ -19,7 +20,22 @@ getDesktopJar() {
   fi
 }
 
+makeModDirectory() {
+  mkdir -p mods
+}
+
+getBaseModJar() {
+  if [ -f ./mods/BaseMod.jar ]; then
+    echo "./mods/BaseMod.jar found - skipping."
+  else
+    echo "Downloading BaseMod.jar"
+    curl -L $BASE_MOD_JAR_URL > ./mods/BaseMod.jar
+  fi
+}
+
 set -e
 
 getModTheSpireJar
 getDesktopJar
+makeModDirectory
+getBaseModJar
