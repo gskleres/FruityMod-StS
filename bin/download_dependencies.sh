@@ -1,5 +1,6 @@
 MOD_THE_SPIRE_ZIP_URL=https://github.com/kiooeht/ModTheSpire/releases/download/v2.9.1/ModTheSpire.zip
 BASE_MOD_JAR_URL=https://github.com/daviscook477/BaseMod/releases/download/v2.18.0/BaseMod.jar
+DESKTOP_JAR_LOCAL_PATH="$HOME/Library/Application Support/Steam/steamapps/common/SlayTheSpire/SlayTheSpire.app/Contents/Resources/desktop-1.0.jar"
 
 getModTheSpireJar() {
   if [ -f ./ModTheSpire.jar ]; then
@@ -15,6 +16,9 @@ getModTheSpireJar() {
 getDesktopJar() {
   if [ -f ./desktop-1.0.jar ]; then
     echo "desktop-1.0.jar already present - skipping."
+  elif [ -f "$DESKTOP_JAR_LOCAL_PATH" ]; then
+    echo "Found desktop-1.0.jar in $DESKTOP_JAR_LOCAL_PATH - making a copy"
+    cp "$DESKTOP_JAR_LOCAL_PATH" ./
   else
     echo "UNIMPLEMENTED!!!: Download desktop-1.0.jar"
   fi
