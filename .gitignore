@@ -13,11 +13,12 @@ mods
 # Files generated when playing the game
 info.displayconfig
 preferences/
+runs/
 saves/
 sendToDevs/
 twitchconfig.txt
 
 # Ignore editor files
-.swp
+*.swp
 .idea/*
 
