@@ -10,9 +10,9 @@ DESKTOP_JAR_LOCAL_PATH="$HOME/Library/Application Support/Steam/steamapps/common
 # For a CI environment where desktop-1.0.jar is not installed
 #   Create a passphrase to encrypt your jar, and save as GPG_PASSPHRASE
 #   Use ./bin/encrypt.sh to encrypt your copy of the jar using your GPG_PASSPHRASE.
-#   Create an application in DropBox, and provided that application with a BearerToken - save that token in DROPBOX_BEARER_TOKEN
+#   Create an Application in DropBox, and generate a Token for your Application - save that token in DROPBOX_BEARER_TOKEN
 #   Upload your encrypted jar in your DropBox Application's folder.  Save the path in DROPBOX_ENCRYPTED_DESKTOP_JAR_PATH
-#   Test this on your local machine by clearning out DESKTOP_JAR_LOCAL_PATH (ie: DESKTOP_JAR_LOCAL_PATH='')
+#   Test this on your local machine by clearing out DESKTOP_JAR_LOCAL_PATH (ie: DESKTOP_JAR_LOCAL_PATH='')
 if [ -f dependency_overrides.properties ]; then
   source dependency_overrides.properties
 fi
