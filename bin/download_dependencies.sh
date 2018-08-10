@@ -1,6 +1,6 @@
 MOD_THE_SPIRE_LATEST_RELEASE_URL=https://github.com/kiooeht/ModTheSpire/releases/latest
 BASE_MOD_LATEST_RELEASE_URL=https://github.com/daviscook477/BaseMod/releases/latest
-DESKTOP_JAR_LOCAL_PATH="$HOME/Library/Application Support/Steam/steamapps/common/SlayTheSpire/SlayTheSpire.app/Contents/Resources/desktop-1.0.jar"
+#DESKTOP_JAR_LOCAL_PATH="$HOME/Library/Application Support/Steam/steamapps/common/SlayTheSpire/SlayTheSpire.app/Contents/Resources/desktop-1.0.jar"
 
 # Add the lines below to dependency_overrides.properties, to override any of the dependency locations above
 #   MOD_THE_SPIRE_ZIP_URL=https://github.com/kiooeht/ModTheSpire/releases/download/<SOME VERSION>/ModTheSpire.zip
@@ -56,8 +56,9 @@ getDesktopJarFromDropBox() {
     --header "Authorization: Bearer ${DROPBOX_BEARER_TOKEN}" \
     --header "Dropbox-API-Arg: {\"path\":\"$DROPBOX_ENCRYPTED_DESKTOP_JAR_PATH\"}" > desktop-1.0.jar.gpg
   ls -l desktop-1.0.jar.gpg
+  more desktop-1.0.jar.gpg
   ./bin/decrypt.sh desktop-1.0.jar.gpg
-  rm desktop-1.0.jar.gpg
+  #rm desktop-1.0.jar.gpg
 }
 
 makeModDirectory() {
