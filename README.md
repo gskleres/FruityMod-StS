@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/boommies/FruityMod-StS.svg?branch=master)](https://travis-ci.com/boommies/FruityMod-StS)
+
 # FruityMod-StS
 **Fruity Mod** for **Slay The Spire**
 
