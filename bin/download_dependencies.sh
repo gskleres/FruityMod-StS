@@ -55,10 +55,8 @@ getDesktopJarFromDropBox() {
   curl -X POST https://content.dropboxapi.com/2/files/download \
     --header "Authorization: Bearer ${DROPBOX_BEARER_TOKEN}" \
     --header "Dropbox-API-Arg: {\"path\":\"$DROPBOX_ENCRYPTED_DESKTOP_JAR_PATH\"}" > desktop-1.0.jar.gpg
-  ls -l desktop-1.0.jar.gpg
-  more desktop-1.0.jar.gpg
   ./bin/decrypt.sh desktop-1.0.jar.gpg
-  #rm desktop-1.0.jar.gpg
+  rm desktop-1.0.jar.gpg
 }
 
 makeModDirectory() {
