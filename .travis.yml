@@ -1,0 +1,7 @@
+language: java
+install:
+  - mkdir mods
+  - touch mods/FruityMod.jar
+  - ./bin/download_dependencies.sh
+script: mvn package
+after_script: rm desktop-1.0.jar

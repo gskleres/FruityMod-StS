@@ -1,4 +1,6 @@
-source ./dependency_overrides.properties
+if [ -f dependency_overrides.properties ]; then
+  source dependency_overrides.properties
+fi
 
 DESTINATION=`echo $1 | sed -E 's/(.*).gpg/\1/g'`
 
