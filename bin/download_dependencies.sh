@@ -2,6 +2,10 @@ MOD_THE_SPIRE_ZIP_URL=https://github.com/kiooeht/ModTheSpire/releases/download/v
 BASE_MOD_JAR_URL=https://github.com/daviscook477/BaseMod/releases/download/v2.18.0/BaseMod.jar
 DESKTOP_JAR_LOCAL_PATH="$HOME/Library/Application Support/Steam/steamapps/common/SlayTheSpire/SlayTheSpire.app/Contents/Resources/desktop-1.0.jar"
 
+if [ -f dependency_overrides.properties ]; then
+  source dependency_overrides.properties
+fi
+
 getModTheSpireJar() {
   if [ -f ./ModTheSpire.jar ]; then
     echo "ModTheSpire.jar already present - skipping."
