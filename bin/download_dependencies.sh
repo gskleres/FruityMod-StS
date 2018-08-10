@@ -41,9 +41,19 @@ getBaseModJar() {
   fi
 }
 
+getFruityModJar() {
+  if [ -f ./mods/FruityMod.jar ]; then
+    echo "./mods/FruityMod.jar already present - skipping."
+  else
+    echo "Building FruityMod.jar"
+    mvn package
+  fi
+}
+
 set -e
 
 getModTheSpireJar
 getDesktopJar
 makeModDirectory
 getBaseModJar
+getFruityModJar
