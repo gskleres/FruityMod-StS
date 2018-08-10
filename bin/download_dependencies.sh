@@ -90,8 +90,6 @@ getFruityModJar() {
   fi
 }
 
-set -e
-
 getModTheSpireJar
 getDesktopJar
 makeModDirectory
