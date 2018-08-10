@@ -1,7 +1,9 @@
 FruityMod.iml
-bin/
 target/**
 dependency-reduced-pom.xml
+
+# Local dependency overrides
+dependency_overrides.properties
 
 # Downloaded dependencies
 ModTheSpire.jar
