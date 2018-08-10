@@ -6,6 +6,13 @@ DESKTOP_JAR_LOCAL_PATH="$HOME/Library/Application Support/Steam/steamapps/common
 #   MOD_THE_SPIRE_ZIP_URL=https://github.com/kiooeht/ModTheSpire/releases/download/<SOME VERSION>/ModTheSpire.zip
 #   BASE_MOD_JAR_URL=https://github.com/daviscook477/BaseMod/releases/download/<SOME VERSION>/BaseMod.jar
 #   DESKTOP_JAR_LOCAL_PATH=<SOME DIFFERENT LOCAL PATH>
+#
+# For a CI environment where desktop-1.0.jar is not installed
+#   Create a passphrase to encrypt your jar, and save as GPG_PASSPHRASE
+#   Use ./bin/encrypt.sh to encrypt your copy of the jar using your GPG_PASSPHRASE.
+#   Create an application in DropBox, and provided that application with a BearerToken - save that token in DROPBOX_BEARER_TOKEN
+#   Upload your encrypted jar in your DropBox Application's folder.  Save the path in DROPBOX_ENCRYPTED_DESKTOP_JAR_PATH
+#   Test this on your local machine by clearning out DESKTOP_JAR_LOCAL_PATH (ie: DESKTOP_JAR_LOCAL_PATH='')
 if [ -f dependency_overrides.properties ]; then
   source dependency_overrides.properties
 fi
@@ -36,9 +43,20 @@ getDesktopJar() {
   elif [ -f "$DESKTOP_JAR_LOCAL_PATH" ]; then
     echo "Found desktop-1.0.jar in $DESKTOP_JAR_LOCAL_PATH - making a copy"
     cp "$DESKTOP_JAR_LOCAL_PATH" ./
+  elif [ ! -z $DROPBOX_ENCRYPTED_DESKTOP_JAR_PATH ]; then
+    echo "Found DropBox URL to encrypted desktop-1.0.jar - downloading"
+    getDesktopJarFromDropBox
   else
-    echo "UNIMPLEMENTED!!!: Download desktop-1.0.jar"
+    echo "Unable to find a copy of desktop-1.0.jar. Is the game installed on your machine?"
   fi
+}
+
+getDesktopJarFromDropBox() {
+  curl -X POST https://content.dropboxapi.com/2/files/download \
+    --header "Authorization: Bearer ${DROPBOX_BEARER_TOKEN}" \
+    --header "Dropbox-API-Arg: {\"path\":\"$DROPBOX_ENCRYPTED_DESKTOP_JAR_PATH\"}" > desktop-1.0.jar.gpg
+  ./bin/decrypt.sh desktop-1.0.jar.gpg
+  rm desktop-1.0.jar.gpg
 }
 
 makeModDirectory() {
