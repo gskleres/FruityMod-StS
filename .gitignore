@@ -13,6 +13,7 @@ mods
 # Files generated when playing the game
 info.displayconfig
 preferences/
+runs/
 saves/
 sendToDevs/
 twitchconfig.txt
