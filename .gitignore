@@ -19,6 +19,6 @@ sendToDevs/
 twitchconfig.txt
 
 # Ignore editor files
-.swp
+*.swp
 .idea/*
 
