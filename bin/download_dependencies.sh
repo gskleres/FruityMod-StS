@@ -1,9 +1,11 @@
 MOD_THE_SPIRE_LATEST_RELEASE_URL=https://github.com/kiooeht/ModTheSpire/releases/latest
-#MOD_THE_SPIRE_ZIP_URL=https://github.com/kiooeht/ModTheSpire/releases/download/v2.9.1/ModTheSpire.zip
 BASE_MOD_LATEST_RELEASE_URL=https://github.com/daviscook477/BaseMod/releases/latest
-#BASE_MOD_JAR_URL=https://github.com/daviscook477/BaseMod/releases/download/v2.18.0/BaseMod.jar
 DESKTOP_JAR_LOCAL_PATH="$HOME/Library/Application Support/Steam/steamapps/common/SlayTheSpire/SlayTheSpire.app/Contents/Resources/desktop-1.0.jar"
 
+# Add the lines below to dependency_overrides.properties, to override any of the dependency locations above
+#   MOD_THE_SPIRE_ZIP_URL=https://github.com/kiooeht/ModTheSpire/releases/download/<SOME VERSION>/ModTheSpire.zip
+#   BASE_MOD_JAR_URL=https://github.com/daviscook477/BaseMod/releases/download/<SOME VERSION>/BaseMod.jar
+#   DESKTOP_JAR_LOCAL_PATH=<SOME DIFFERENT LOCAL PATH>
 if [ -f dependency_overrides.properties ]; then
   source dependency_overrides.properties
 fi
