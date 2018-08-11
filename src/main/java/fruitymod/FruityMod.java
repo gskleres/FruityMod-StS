@@ -3,6 +3,7 @@ package fruitymod;
 import java.nio.charset.StandardCharsets;
 
 import fruitymod.cards.*;
+import fruitymod.cards.tranquil.Tranquil_FlyingKick;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -101,7 +102,7 @@ public class FruityMod implements PostInitializeSubscriber,
     private static final String ENERGY_ORB_TAN_PORTRAIT = "1024/card_tan_orb.png";
 
 
-    // card images
+    // seeker card images
     
     public static final String ANOMALY = "cards/anomaly.png";
     public static final String ARCANE_BARRAGE = "cards/starburst.png";
@@ -121,7 +122,6 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String CREATIVITY = "cards/creativity.png";
     public static final String DARK_MATTER = "cards/dark_matter.png";
     public static final String DEFEND_PURPLE = "cards/defend_purple.png";
-    public static final String DEFEND_TAN = "cards/defend_tan.png";
     public static final String ARCANE_ARMOR = "cards/arcane_armor.png";
     public static final String ECHO = "cards/echo.png";
     public static final String ECLIPSE = "cards/eclipse.png";
@@ -171,7 +171,6 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String SIPHON_POWER = "cards/siphon_power.png";
     public static final String SIPHON_SPEED = "cards/siphon_speed.png";
     public static final String STRIKE_PURPLE = "cards/strike_purple.png";
-    public static final String STRIKE_TAN = "cards/strike_tan.png";
     public static final String STROKE_OF_GENIUS = "cards/stroke_of_genius.png";
     public static final String SURGE = "cards/surge.png";
     public static final String SYZYGY = "cards/syzygy.png";
@@ -187,7 +186,12 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String VORTEX = "cards/vortex.png";
     public static final String ZENITH = "cards/zenith.png";
     public static final String PHASE_COIL = "cards/phase_coil.png";
-    
+
+    // tranquil card images
+    public static final String STRIKE_TAN = "cards/strike_tan.png";
+    public static final String DEFEND_TAN = "cards/defend_tan.png";
+    public static final String TRANQUIL_FLYING_KICK = "cards/tranquil/flying_kick.png";
+
     // power images
     public static final String ARCANOSPHERE_POWER = "powers/arcanosphere.png";
     public static final String ASTRAL_HAZE_POWER = "powers/astral_haze.png";
@@ -503,13 +507,8 @@ public class FruityMod implements PostInitializeSubscriber,
 		logger.info("add cards for " + TheSeekerEnum.THE_SEEKER.toString());
 		
 		BaseMod.addCard(new Dazed_P());
-		
 		BaseMod.addCard(new Strike_Purple());
 		BaseMod.addCard(new Defend_Purple());
-
-		BaseMod.addCard(new Strike_Tan());
-		BaseMod.addCard(new Defend_Tan());
-
 		BaseMod.addCard(new Starburst());
 		BaseMod.addCard(new Irradiate());
 		BaseMod.addCard(new AstralHaze());
@@ -583,16 +582,15 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new Nova());
 		BaseMod.addCard(new Vortex());
 		BaseMod.addCard(new Nexus());
-		
-		// make sure everything is always unlocked
+
+        BaseMod.addCard(new Strike_Tan());
+        BaseMod.addCard(new Defend_Tan());
+        BaseMod.addCard(new Tranquil_FlyingKick());
+
+        // make sure everything is always unlocked
 		UnlockTracker.unlockCard("Dazed_P");
-		
 		UnlockTracker.unlockCard("Strike_P");
 		UnlockTracker.unlockCard("Defend_P");
-
-		UnlockTracker.unlockCard("Strike_T");
-		UnlockTracker.unlockCard("Defend_T");
-
 		UnlockTracker.unlockCard("Starburst");
 		UnlockTracker.unlockCard("Irradiate");
 		UnlockTracker.unlockCard("AstralHaze");
@@ -666,8 +664,12 @@ public class FruityMod implements PostInitializeSubscriber,
 		UnlockTracker.unlockCard("Nova");
 		UnlockTracker.unlockCard("Vortex");
 		UnlockTracker.unlockCard("Nexus");
-		
-		logger.info("done editting cards");
+
+        UnlockTracker.unlockCard("Strike_T");
+        UnlockTracker.unlockCard("Defend_T");
+        UnlockTracker.unlockCard("Tranquil_FlyingKick");
+
+        logger.info("done editting cards");
 	}
 
 	@Override

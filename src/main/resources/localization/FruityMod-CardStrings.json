@@ -11,14 +11,6 @@
 		"NAME": "Defend",
 		"DESCRIPTION": "Gain !B! Block."
 	},
-	"Strike_T": {
-		"NAME": "Strike",
-		"DESCRIPTION": "Deal !D! damage."
-	},
-	"Defend_T": {
-		"NAME": "Defend",
-		"DESCRIPTION": "Gain !B! Block."
-	},
 	"AstralHaze": {
 		"NAME": "Astral Haze",
 		"DESCRIPTION": "Ethereal. The first time each enemy attacks you this turn, apply !M! Vulnerable and !M! Weak to it."
@@ -369,5 +361,24 @@
 	"Nova": {
 		"NAME": "Nova",
 		"DESCRIPTION": "Deal !D! damage to ALL enemies."
-	}
+	},
+
+
+
+
+	"Strike_T": {
+		"NAME": "Strike",
+		"DESCRIPTION": "Deal !D! damage."
+	},
+	"Defend_T": {
+		"NAME": "Defend",
+		"DESCRIPTION": "Gain !B! Block."
+	},
+	"Tranquil_FlyingKick": {
+		"NAME": "Flying Kick",
+		"DESCRIPTION": "Flow. Deal !D! damage."
+	},
+
+
+	"DO_NOT_REMOVE_DummyLineForJSONEndOfFileSoYouDoNotHaveToRememberToDeleteTheLastComma": {}
 }

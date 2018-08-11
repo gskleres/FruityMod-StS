@@ -16,7 +16,7 @@ import fruitymod.patches.TheTranquilEnum;
 import java.util.ArrayList;
 
 public class TheTranquil extends CustomPlayer {
-	public static final int ENERGY_PER_TURN = 4;
+	public static final int ENERGY_PER_TURN = 3;
 
 	public static final String[] orbTextures = {
 			"img/char/tranquil/orb/layer1.png",
@@ -61,11 +61,12 @@ public class TheTranquil extends CustomPlayer {
 		retVal.add("Strike_T");
 		retVal.add("Strike_T");
 		retVal.add("Strike_T");
+		retVal.add("Strike_T");
 		retVal.add("Defend_T");
 		retVal.add("Defend_T");
 		retVal.add("Defend_T");
 		retVal.add("Defend_T");
-		retVal.add("Defend_T");
+		retVal.add("Tranquil_FlyingKick");
 		return retVal;
 	}
 	
