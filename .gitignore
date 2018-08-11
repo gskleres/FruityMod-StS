@@ -21,4 +21,5 @@ twitchconfig.txt
 # Ignore editor files
 *.swp
 .idea/*
+src/main/main.iml
 
