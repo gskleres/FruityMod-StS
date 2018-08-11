@@ -8,7 +8,7 @@ dependency_overrides.properties
 # Downloaded dependencies
 ModTheSpire.jar
 desktop-1.0.jar
-mods
+mods/
 
 # Files generated when playing the game
 info.displayconfig
