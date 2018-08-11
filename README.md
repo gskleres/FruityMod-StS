@@ -98,3 +98,4 @@ public void triggerOnEndOfPlayerTurn() {
 	AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
 }
 ```
+
