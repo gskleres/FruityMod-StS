@@ -191,6 +191,7 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String STRIKE_TAN = "cards/strike_tan.png";
     public static final String DEFEND_TAN = "cards/defend_tan.png";
     public static final String TRANQUIL_FLYING_KICK = "cards/tranquil/flying_kick.png";
+    public static final String FLURRY_OF_BLOWS = "cards/flurry_of_blows.png";
 
     // power images
     public static final String ARCANOSPHERE_POWER = "powers/arcanosphere.png";
@@ -509,6 +510,7 @@ public class FruityMod implements PostInitializeSubscriber,
 		BaseMod.addCard(new Dazed_P());
 		BaseMod.addCard(new Strike_Purple());
 		BaseMod.addCard(new Defend_Purple());
+
 		BaseMod.addCard(new Starburst());
 		BaseMod.addCard(new Irradiate());
 		BaseMod.addCard(new AstralHaze());
@@ -586,6 +588,7 @@ public class FruityMod implements PostInitializeSubscriber,
         BaseMod.addCard(new Strike_Tan());
         BaseMod.addCard(new Defend_Tan());
         BaseMod.addCard(new Tranquil_FlyingKick());
+        BaseMod.addCard(new FlurryOfBlows());
 
         // make sure everything is always unlocked
 		UnlockTracker.unlockCard("Dazed_P");
