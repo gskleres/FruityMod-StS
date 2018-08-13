@@ -1,6 +1,8 @@
 package fruitymod;
 
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
 
 import fruitymod.cards.*;
 import fruitymod.cards.tranquil.Tranquil_FlyingKick;
@@ -69,6 +71,7 @@ public class FruityMod implements PostInitializeSubscriber,
 	EditKeywordsSubscriber, OnPowersModifiedSubscriber, PostExhaustSubscriber,
 	PostBattleSubscriber, PostDungeonInitializeSubscriber, PostDrawSubscriber {
 	public static final Logger logger = LogManager.getLogger(FruityMod.class.getName());
+	private List<CharacterMod> mods;
 	
     private static final String MODNAME = "FruityMod";
     private static final String AUTHOR = "Fruitstrike, ColdRain451, test447, fiiiiilth, Blank The Evil & Pal";
@@ -346,6 +349,8 @@ public class FruityMod implements PostInitializeSubscriber,
     }
     
     public FruityMod() {
+        mods = new ArrayList<>();
+
     	logger.info("subscribing to postInitialize event");
         BaseMod.subscribeToPostInitialize(this);
         
