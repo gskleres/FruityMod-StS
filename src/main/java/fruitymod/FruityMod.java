@@ -14,11 +14,9 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.Dazed;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
@@ -46,7 +44,6 @@ import fruitymod.actions.unique.ConvergenceAction;
 import fruitymod.characters.TheTranquil;
 import fruitymod.patches.AbstractCardEnum;
 import fruitymod.patches.TheTranquilEnum;
-import fruitymod.relics.CosmicSieve;
 
 @SpireInitializer
 public class FruityMod implements PostInitializeSubscriber,
@@ -525,17 +522,9 @@ public class FruityMod implements PostInitializeSubscriber,
 
 	@Override
 	public void receivePostExhaust(AbstractCard c) {
-		AbstractPlayer p = AbstractDungeon.player;
-		
-		if (p != null && p.hasRelic("CosmicSieve")) {
-			if (c.isEthereal) {
-				p.heal(CosmicSieve.HP_PER_CARD);
-				p.getRelic("CosmicSieve").flash();
-				AbstractDungeon.actionManager.addToBottom(
-						new RelicAboveCreatureAction(AbstractDungeon.player, p.getRelic("CosmicSieve")));
-			}
+    	for (PostExhaustSubscriber mod : mods) {
+    		mod.receivePostExhaust(c);
 		}
-		
 	}
 
 	@Override
