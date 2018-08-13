@@ -55,13 +55,8 @@ import fruitymod.characters.TheTranquil;
 import fruitymod.patches.AbstractCardEnum;
 import fruitymod.patches.TheSeekerEnum;
 import fruitymod.patches.TheTranquilEnum;
-import fruitymod.relics.Arcanosphere;
-import fruitymod.relics.Blueberries;
 import fruitymod.relics.CosmicSieve;
 import fruitymod.relics.PaperPengwin;
-import fruitymod.relics.RodOfNegation;
-import fruitymod.relics.SolarEgg;
-import fruitymod.relics.Telescope;
 
 @SpireInitializer
 public class FruityMod implements PostInitializeSubscriber,
@@ -421,15 +416,10 @@ public class FruityMod implements PostInitializeSubscriber,
 	public void receiveEditRelics() {
 		logger.info("begin editting relics");
         
-        // Add relics
-		BaseMod.addRelicToCustomPool(new Arcanosphere(), AbstractCardEnum.SEEKER_PURPLE.toString());
-		BaseMod.addRelicToCustomPool(new Blueberries(), AbstractCardEnum.SEEKER_PURPLE.toString());
-		BaseMod.addRelicToCustomPool(new PaperPengwin(), AbstractCardEnum.SEEKER_PURPLE.toString());
-		BaseMod.addRelicToCustomPool(new CosmicSieve(), AbstractCardEnum.SEEKER_PURPLE.toString());
-		BaseMod.addRelicToCustomPool(new SolarEgg(), AbstractCardEnum.SEEKER_PURPLE.toString());
-		BaseMod.addRelicToCustomPool(new RodOfNegation(), AbstractCardEnum.SEEKER_PURPLE.toString());
-		BaseMod.addRelicToCustomPool(new Telescope(), AbstractCardEnum.SEEKER_PURPLE.toString());
-        
+		for(EditRelicsSubscriber mod : mods) {
+			mod.receiveEditRelics();
+		}
+
         logger.info("done editting relics");
 	}
 
