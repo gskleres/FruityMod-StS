@@ -6,13 +6,12 @@ import basemod.interfaces.PostExhaustSubscriber;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
+import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -21,6 +20,7 @@ import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import fruitymod.actions.unique.ConvergenceAction;
 import fruitymod.cards.*;
 import fruitymod.cards.tranquil.Tranquil_FlyingKick;
 import fruitymod.characters.TheSeeker;
@@ -366,6 +366,18 @@ public class SeekerMod implements CharacterMod {
 			}
 		}
 
+	}
+
+	@Override
+	public void receivePostDraw(AbstractCard c) {
+		if (c instanceof Convergence) {
+			c.superFlash();
+			if (c.upgraded) {
+				AbstractDungeon.actionManager.addToTop(new DrawCardAction(AbstractDungeon.player, 1));
+			}
+			AbstractDungeon.actionManager.addToBottom(new WaitAction(Settings.ACTION_DUR_FAST));
+			AbstractDungeon.actionManager.addToBottom(new ConvergenceAction(c.upgraded));
+		}
 	}
 
 	/**

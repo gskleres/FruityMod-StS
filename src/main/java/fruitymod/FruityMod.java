@@ -13,8 +13,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
+
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.core.Settings;
@@ -40,7 +39,6 @@ import basemod.interfaces.PostDungeonInitializeSubscriber;
 import basemod.interfaces.PostExhaustSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import basemod.interfaces.SetUnlocksSubscriber;
-import fruitymod.actions.unique.ConvergenceAction;
 import fruitymod.characters.TheTranquil;
 import fruitymod.patches.AbstractCardEnum;
 import fruitymod.patches.TheTranquilEnum;
@@ -529,13 +527,8 @@ public class FruityMod implements PostInitializeSubscriber,
 
 	@Override
 	public void receivePostDraw(AbstractCard c) {
-		if (c instanceof Convergence) {
-			c.superFlash();
-			if (c.upgraded) {
-				AbstractDungeon.actionManager.addToTop(new DrawCardAction(AbstractDungeon.player, 1));
-			}
-			AbstractDungeon.actionManager.addToBottom(new WaitAction(Settings.ACTION_DUR_FAST));
-			AbstractDungeon.actionManager.addToBottom(new ConvergenceAction(c.upgraded));
+    	for (PostDrawSubscriber mod : mods) {
+    		mod.receivePostDraw(c);
 		}
 	}
 
