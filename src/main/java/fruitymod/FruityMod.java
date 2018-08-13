@@ -13,15 +13,10 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
@@ -29,8 +24,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
-import com.megacrit.cardcrawl.powers.DexterityPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
@@ -54,7 +47,6 @@ import fruitymod.characters.TheTranquil;
 import fruitymod.patches.AbstractCardEnum;
 import fruitymod.patches.TheTranquilEnum;
 import fruitymod.relics.CosmicSieve;
-import fruitymod.relics.PaperPengwin;
 
 @SpireInitializer
 public class FruityMod implements PostInitializeSubscriber,
@@ -504,66 +496,30 @@ public class FruityMod implements PostInitializeSubscriber,
 	
 	@Override
 	public void receiveCardUsed(AbstractCard c) {
-		AbstractPlayer p = AbstractDungeon.player;
-		if (p.hasPower("EnigmaPower") && c.cardID.equals("Dazed")) {
-			AbstractDungeon.actionManager.addToTop(new GainBlockAction(p, p, c.block));
-			AbstractDungeon.actionManager.addToTop(new DamageAllEnemiesAction(AbstractDungeon.player, 
-					c.multiDamage,
-					DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE, true));
-			c.exhaustOnUseOnce = false;
+		for(OnCardUseSubscriber mod : mods) {
+			mod.receiveCardUsed(c);
 		}
 	}
 
-	//
-	// Relic code
-	// (yes we're doing the exact same things the devs did where relic code
-	// isn't in the actual relics - oh well)
-	//
-	
-	private boolean moreThanXStacks(AbstractPlayer player, String powerID, int stacksWanted) {
-		if (player != null && player.hasPower(powerID) && player.getPower(powerID).amount >= stacksWanted) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-	
-	private boolean isApplyingPaperPengwin = false;
-	
-	private void resetPaperPengwin() {
-		isApplyingPaperPengwin = false;
-		if (AbstractDungeon.player.hasRelic("PaperPengwin")) {
-			((PaperPengwin) AbstractDungeon.player.getRelic("PaperPengwin")).setPulse(false);
-		}
-	}
-	
+
 	@Override
 	public void receivePowersModified() {
-		AbstractPlayer p = AbstractDungeon.player;
-		
-		if (p != null && p.hasRelic("PaperPengwin")) {
-			if (moreThanXStacks(p, "Weakened", PaperPengwin.MIN_STACKS) ||
-					moreThanXStacks(p, "Vulnerable", PaperPengwin.MIN_STACKS) ||
-					moreThanXStacks(p, "Frail", PaperPengwin.MIN_STACKS)) {
-				if (!isApplyingPaperPengwin) {
-					AbstractDungeon.actionManager.addToTop(
-							new ApplyPowerAction(p, p, new DexterityPower(p, PaperPengwin.MIN_STACKS), PaperPengwin.MIN_STACKS));
-					AbstractDungeon.actionManager.addToTop(
-							new ApplyPowerAction(p, p, new StrengthPower(p, PaperPengwin.MIN_STACKS), PaperPengwin.MIN_STACKS));
-					isApplyingPaperPengwin = true;
-					p.getRelic("PaperPengwin").flash();
-					((PaperPengwin) p.getRelic("PaperPengwin")).setPulse(true);
-				}
-			} else {
-				if (isApplyingPaperPengwin) {
-					AbstractDungeon.actionManager.addToTop(
-							new ApplyPowerAction(p, p, new DexterityPower(p, -1 * PaperPengwin.MIN_STACKS), -1 * PaperPengwin.MIN_STACKS));
-					AbstractDungeon.actionManager.addToTop(
-							new ApplyPowerAction(p, p, new StrengthPower(p, -1 * PaperPengwin.MIN_STACKS), -1 * PaperPengwin.MIN_STACKS));
-					isApplyingPaperPengwin = false;
-					((PaperPengwin) p.getRelic("PaperPengwin")).setPulse(false);
-				}
-			}
+		for(OnPowersModifiedSubscriber mod : mods) {
+			mod.receivePowersModified();
+		}
+	}
+
+	@Override
+	public void receivePostBattle(AbstractRoom arg0) {
+		for(PostBattleSubscriber mod : mods) {
+			mod.receivePostBattle(arg0);
+		}
+	}
+
+	@Override
+	public void receivePostDungeonInitialize() {
+		for(PostDungeonInitializeSubscriber mod : mods) {
+			mod.receivePostDungeonInitialize();
 		}
 	}
 
@@ -580,16 +536,6 @@ public class FruityMod implements PostInitializeSubscriber,
 			}
 		}
 		
-	}
-
-	@Override
-	public void receivePostBattle(AbstractRoom arg0) {
-		resetPaperPengwin();
-	}
-
-	@Override
-	public void receivePostDungeonInitialize() {
-		resetPaperPengwin();
 	}
 
 	@Override
