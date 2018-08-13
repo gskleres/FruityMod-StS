@@ -15,9 +15,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
@@ -460,42 +458,13 @@ public class FruityMod implements PostInitializeSubscriber,
 			mod.receiveEditKeywords();
 		}
 	}
-	
-	//
-	// Enigma hooks and functionality 	
-	//
-	
-	// used by fruitymod.patches.com.megacrit.cardcrawl.cards.AbstractCard.CanUsedDazed
-	public static boolean hasRelicCustom(String relicID, AbstractCard card) {
-		System.out.println("I was checked!");
-		// if it's checking for relicID.equals("Medical Kit") then we know we're in the block where
-		// we are saying if we can use a status card so also check if we have enigma and the card is Dazed
-		if (relicID.equals("Medical Kit") && AbstractDungeon.player.hasPower("EnigmaPower") && card.cardID.equals("Dazed")) {
-			return true;
-		} else {
-			// otherwise leave normal behavior intact
-			return AbstractDungeon.player.hasRelic(relicID);
-		}
-	}
 
-	// used by fruitmod.patches.com.megacrit.cardcrawl.cards.status.Dazed.UseDazed
-	public static void maybeUseDazed(Dazed dazed) {
-		System.out.println("maybe use dazed");
-		if (!AbstractDungeon.player.hasPower("EnigmaPower")) {
-			System.out.println("do use dazed");
-			AbstractDungeon.actionManager.addToTop(new com.megacrit.cardcrawl.actions.utility.UseCardAction(dazed));
-		} else {
-			System.out.println("don't use dazed");
-		}
-	}
-	
 	@Override
 	public void receiveCardUsed(AbstractCard c) {
 		for(OnCardUseSubscriber mod : mods) {
 			mod.receiveCardUsed(c);
 		}
 	}
-
 
 	@Override
 	public void receivePowersModified() {

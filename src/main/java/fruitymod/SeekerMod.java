@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -277,19 +278,6 @@ public class SeekerMod implements CharacterMod {
 		BaseMod.addKeyword(new String[] {"recycle", "Recycle"}, "When you Recycle a card, shuffle it randomly into your draw pile.");
 	}
 
-
-	@Override
-	public void receiveCardUsed(AbstractCard c) {
-		AbstractPlayer p = AbstractDungeon.player;
-		if (p.hasPower("EnigmaPower") && c.cardID.equals("Dazed")) {
-			AbstractDungeon.actionManager.addToTop(new GainBlockAction(p, p, c.block));
-			AbstractDungeon.actionManager.addToTop(new DamageAllEnemiesAction(AbstractDungeon.player,
-					c.multiDamage,
-					DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE, true));
-			c.exhaustOnUseOnce = false;
-		}
-	}
-
 	//
 	// Relic code
 	// (yes we're doing the exact same things the devs did where relic code
@@ -379,6 +367,47 @@ public class SeekerMod implements CharacterMod {
 			AbstractDungeon.actionManager.addToBottom(new ConvergenceAction(c.upgraded));
 		}
 	}
+
+	//
+	// Enigma hooks and functionality
+	//
+
+	@Override
+	public void receiveCardUsed(AbstractCard c) {
+		AbstractPlayer p = AbstractDungeon.player;
+		if (p.hasPower("EnigmaPower") && c.cardID.equals("Dazed")) {
+			AbstractDungeon.actionManager.addToTop(new GainBlockAction(p, p, c.block));
+			AbstractDungeon.actionManager.addToTop(new DamageAllEnemiesAction(AbstractDungeon.player,
+					c.multiDamage,
+					DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE, true));
+			c.exhaustOnUseOnce = false;
+		}
+	}
+
+	// used by fruitymod.patches.com.megacrit.cardcrawl.cards.AbstractCard.CanUsedDazed
+	public static boolean hasRelicCustom(String relicID, AbstractCard card) {
+		System.out.println("I was checked!");
+		// if it's checking for relicID.equals("Medical Kit") then we know we're in the block where
+		// we are saying if we can use a status card so also check if we have enigma and the card is Dazed
+		if (relicID.equals("Medical Kit") && AbstractDungeon.player.hasPower("EnigmaPower") && card.cardID.equals("Dazed")) {
+			return true;
+		} else {
+			// otherwise leave normal behavior intact
+			return AbstractDungeon.player.hasRelic(relicID);
+		}
+	}
+
+	// used by fruitmod.patches.com.megacrit.cardcrawl.cards.status.Dazed.UseDazed
+	public static void maybeUseDazed(Dazed dazed) {
+		System.out.println("maybe use dazed");
+		if (!AbstractDungeon.player.hasPower("EnigmaPower")) {
+			System.out.println("do use dazed");
+			AbstractDungeon.actionManager.addToTop(new com.megacrit.cardcrawl.actions.utility.UseCardAction(dazed));
+		} else {
+			System.out.println("don't use dazed");
+		}
+	}
+
 
 	/**
 	 * Makes a full path for a resource path
