@@ -4,9 +4,20 @@ import basemod.BaseMod;
 import basemod.interfaces.EditStringsSubscriber;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
+import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import fruitymod.cards.*;
 import fruitymod.cards.tranquil.Tranquil_FlyingKick;
@@ -262,6 +273,82 @@ public class SeekerMod implements CharacterMod {
 		BaseMod.addKeyword(new String[] {"reflect", "Reflect"}, "Whenever you are attacked this turn, deal this amount of damage back to ALL enemies.");
 		BaseMod.addKeyword(new String[] {"top-cycle", "Top-Cycle"}, "When you Top-Cycle a card, place it on top of your draw pile.");
 		BaseMod.addKeyword(new String[] {"recycle", "Recycle"}, "When you Recycle a card, shuffle it randomly into your draw pile.");
+	}
+
+
+	@Override
+	public void receiveCardUsed(AbstractCard c) {
+		AbstractPlayer p = AbstractDungeon.player;
+		if (p.hasPower("EnigmaPower") && c.cardID.equals("Dazed")) {
+			AbstractDungeon.actionManager.addToTop(new GainBlockAction(p, p, c.block));
+			AbstractDungeon.actionManager.addToTop(new DamageAllEnemiesAction(AbstractDungeon.player,
+					c.multiDamage,
+					DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE, true));
+			c.exhaustOnUseOnce = false;
+		}
+	}
+
+	//
+	// Relic code
+	// (yes we're doing the exact same things the devs did where relic code
+	// isn't in the actual relics - oh well)
+	//
+
+	private boolean moreThanXStacks(AbstractPlayer player, String powerID, int stacksWanted) {
+		if (player != null && player.hasPower(powerID) && player.getPower(powerID).amount >= stacksWanted) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	private boolean isApplyingPaperPengwin = false;
+
+	private void resetPaperPengwin() {
+		isApplyingPaperPengwin = false;
+		if (AbstractDungeon.player.hasRelic("PaperPengwin")) {
+			((PaperPengwin) AbstractDungeon.player.getRelic("PaperPengwin")).setPulse(false);
+		}
+	}
+
+	@Override
+	public void receivePowersModified() {
+		AbstractPlayer p = AbstractDungeon.player;
+
+		if (p != null && p.hasRelic("PaperPengwin")) {
+			if (moreThanXStacks(p, "Weakened", PaperPengwin.MIN_STACKS) ||
+					moreThanXStacks(p, "Vulnerable", PaperPengwin.MIN_STACKS) ||
+					moreThanXStacks(p, "Frail", PaperPengwin.MIN_STACKS)) {
+				if (!isApplyingPaperPengwin) {
+					AbstractDungeon.actionManager.addToTop(
+							new ApplyPowerAction(p, p, new DexterityPower(p, PaperPengwin.MIN_STACKS), PaperPengwin.MIN_STACKS));
+					AbstractDungeon.actionManager.addToTop(
+							new ApplyPowerAction(p, p, new StrengthPower(p, PaperPengwin.MIN_STACKS), PaperPengwin.MIN_STACKS));
+					isApplyingPaperPengwin = true;
+					p.getRelic("PaperPengwin").flash();
+					((PaperPengwin) p.getRelic("PaperPengwin")).setPulse(true);
+				}
+			} else {
+				if (isApplyingPaperPengwin) {
+					AbstractDungeon.actionManager.addToTop(
+							new ApplyPowerAction(p, p, new DexterityPower(p, -1 * PaperPengwin.MIN_STACKS), -1 * PaperPengwin.MIN_STACKS));
+					AbstractDungeon.actionManager.addToTop(
+							new ApplyPowerAction(p, p, new StrengthPower(p, -1 * PaperPengwin.MIN_STACKS), -1 * PaperPengwin.MIN_STACKS));
+					isApplyingPaperPengwin = false;
+					((PaperPengwin) p.getRelic("PaperPengwin")).setPulse(false);
+				}
+			}
+		}
+	}
+
+	@Override
+	public void receivePostBattle(AbstractRoom arg0) {
+		resetPaperPengwin();
+	}
+
+	@Override
+	public void receivePostDungeonInitialize() {
+		resetPaperPengwin();
 	}
 
 	/**
