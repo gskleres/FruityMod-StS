@@ -1,8 +1,12 @@
 package fruitymod;
 
 import basemod.BaseMod;
+import basemod.interfaces.EditStringsSubscriber;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.helpers.CardHelper;
+import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import fruitymod.cards.*;
 import fruitymod.cards.tranquil.Tranquil_FlyingKick;
@@ -12,6 +16,8 @@ import fruitymod.patches.TheSeekerEnum;
 import fruitymod.relics.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.nio.charset.StandardCharsets;
 
 public class SeekerMod implements CharacterMod {
 	public static final Logger logger = LogManager.getLogger(FruityMod.class.getName());
@@ -234,6 +240,20 @@ public class SeekerMod implements CharacterMod {
 		UnlockTracker.unlockCard("Nova");
 		UnlockTracker.unlockCard("Vortex");
 		UnlockTracker.unlockCard("Nexus");
+	}
+
+	@Override
+	public void receiveEditStrings() {
+		// RelicStrings
+		String relicStrings = Gdx.files.internal("localization/Seeker-RelicStrings.json").readString(
+				String.valueOf(StandardCharsets.UTF_8));
+		BaseMod.loadCustomStrings(RelicStrings.class, relicStrings);
+		// CardStrings
+		String cardStrings = Gdx.files.internal("localization/Seeker-CardStrings.json").readString(
+				String.valueOf(StandardCharsets.UTF_8));
+		BaseMod.loadCustomStrings(CardStrings.class, cardStrings);
+
+		logger.info("done editting strings");
 	}
 
 	/**

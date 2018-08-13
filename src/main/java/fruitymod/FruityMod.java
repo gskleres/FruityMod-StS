@@ -444,6 +444,10 @@ public class FruityMod implements PostInitializeSubscriber,
 	@Override
 	public void receiveEditStrings() {
 		logger.info("begin editting strings");
+
+		for(EditStringsSubscriber mod : mods) {
+			mod.receiveEditStrings();
+		}
 		
         // RelicStrings
         String relicStrings = Gdx.files.internal("localization/FruityMod-RelicStrings.json").readString(
