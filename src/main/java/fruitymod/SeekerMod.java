@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.helpers.CardHelper;
 import fruitymod.characters.TheSeeker;
 import fruitymod.patches.AbstractCardEnum;
 import fruitymod.patches.TheSeekerEnum;
+import fruitymod.relics.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -58,6 +59,18 @@ public class SeekerMod implements CharacterMod {
 				AbstractCardEnum.SEEKER_PURPLE.toString(), "#pThe #pSeeker",
 				makePath(SEEKER_BUTTON), makePath(SEEKER_PORTRAIT),
 				TheSeekerEnum.THE_SEEKER.toString());
+	}
+
+	@Override
+	public void receiveEditRelics() {
+		// Add relics
+		BaseMod.addRelicToCustomPool(new Arcanosphere(), AbstractCardEnum.SEEKER_PURPLE.toString());
+		BaseMod.addRelicToCustomPool(new Blueberries(), AbstractCardEnum.SEEKER_PURPLE.toString());
+		BaseMod.addRelicToCustomPool(new PaperPengwin(), AbstractCardEnum.SEEKER_PURPLE.toString());
+		BaseMod.addRelicToCustomPool(new CosmicSieve(), AbstractCardEnum.SEEKER_PURPLE.toString());
+		BaseMod.addRelicToCustomPool(new SolarEgg(), AbstractCardEnum.SEEKER_PURPLE.toString());
+		BaseMod.addRelicToCustomPool(new RodOfNegation(), AbstractCardEnum.SEEKER_PURPLE.toString());
+		BaseMod.addRelicToCustomPool(new Telescope(), AbstractCardEnum.SEEKER_PURPLE.toString());
 	}
 
 	/**
