@@ -76,22 +76,9 @@ public class FruityMod implements PostInitializeSubscriber,
     private static final String MODNAME = "FruityMod";
     private static final String AUTHOR = "Fruitstrike, ColdRain451, test447, fiiiiilth, Blank The Evil & Pal";
     private static final String DESCRIPTION = "v0.7\n Adds The Seeker as a playable third character";
-    
-    private static final Color PURPLE = CardHelper.getColor(139.0f, 0.0f, 139.0f);
+
     private static final Color TAN = CardHelper.getColor(210.0f, 180.0f, 140.0f);
     private static final String FRUITY_MOD_ASSETS_FOLDER = "img";
-    
-    // card backgrounds
-    private static final String ATTACK_PURPLE = "512/bg_attack_purple.png";
-    private static final String SKILL_PURPLE = "512/bg_skill_purple.png";
-    private static final String POWER_PURPLE = "512/bg_power_purple.png";
-    private static final String ENERGY_ORB_PURPLE = "512/card_purple_orb.png";
-    private static final String CARD_ENERGY_ORB_PURPLE = "512/card_purple_small_orb.png";
-
-    private static final String ATTACK_PURPLE_PORTRAIT = "1024/bg_attack_purple.png";
-    private static final String SKILL_PURPLE_PORTRAIT = "1024/bg_skill_purple.png";
-    private static final String POWER_PURPLE_PORTRAIT = "1024/bg_power_purple.png";
-    private static final String ENERGY_ORB_PURPLE_PORTRAIT = "1024/card_purple_orb.png";
 
     private static final String ATTACK_TAN = "512/bg_attack_tan.png";
     private static final String SKILL_TAN = "512/bg_skill_tan.png";
@@ -349,8 +336,6 @@ public class FruityMod implements PostInitializeSubscriber,
     }
     
     public FruityMod() {
-        mods = new ArrayList<>();
-
     	logger.info("subscribing to postInitialize event");
         BaseMod.subscribeToPostInitialize(this);
         
@@ -380,19 +365,9 @@ public class FruityMod implements PostInitializeSubscriber,
         BaseMod.subscribeToPostExhaust(this);
         BaseMod.subscribeToPostBattle(this);
         BaseMod.subscribeToPostDraw(this);
-        
-        /*
-         * Note that for now when installing FruityMod, in the `mods/` folder another folder named
-         * the value of FRUITY_MOD_ASSETS_FOLDER must be created into which all the contents of the
-         * `images/` folder must be relocated
-         */
-        logger.info("creating the color " + AbstractCardEnum.SEEKER_PURPLE.toString());
-        BaseMod.addColor(AbstractCardEnum.SEEKER_PURPLE.toString(),
-        		PURPLE, PURPLE, PURPLE, PURPLE, PURPLE, PURPLE, PURPLE,
-        		makePath(ATTACK_PURPLE), makePath(SKILL_PURPLE),
-        		makePath(POWER_PURPLE), makePath(ENERGY_ORB_PURPLE),
-        		makePath(ATTACK_PURPLE_PORTRAIT), makePath(SKILL_PURPLE_PORTRAIT),
-        		makePath(POWER_PURPLE_PORTRAIT), makePath(ENERGY_ORB_PURPLE_PORTRAIT), makePath(CARD_ENERGY_ORB_PURPLE));
+
+        mods = new ArrayList<>();
+        mods.add(new SeekerMod());
 
         /*
          * Note that for now when installing FruityMod, in the `mods/` folder another folder named
