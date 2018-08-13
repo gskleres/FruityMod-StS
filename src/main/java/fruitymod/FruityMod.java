@@ -51,7 +51,6 @@ import basemod.interfaces.PostInitializeSubscriber;
 import basemod.interfaces.SetUnlocksSubscriber;
 import fruitymod.actions.unique.ConvergenceAction;
 import fruitymod.cards.Umbra;
-import fruitymod.characters.TheSeeker;
 import fruitymod.characters.TheTranquil;
 import fruitymod.patches.AbstractCardEnum;
 import fruitymod.patches.TheSeekerEnum;
@@ -206,13 +205,6 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String ROD_OF_NEGATION_RELIC = "relics/rodOfNegation.png";
     public static final String TELESCOPE_RELIC = "relics/telescope.png";
     public static final String BLUEBERRIES_RELIC = "relics/blueberries.png";
-    
-    // seeker assets
-    private static final String SEEKER_BUTTON = "charSelect/seekerButton.png";
-    private static final String SEEKER_PORTRAIT = "charSelect/SeekerPortraitBG.jpg";
-    public static final String SEEKER_SHOULDER_1 = "char/seeker/shoulder.png";
-    public static final String SEEKER_SHOULDER_2 = "char/seeker/shoulder2.png";
-    public static final String SEEKER_CORPSE = "char/seeker/corpse.png";
 
     // tranquil assets
     private static final String TRANQUIL_BUTTON = "charSelect/tranquilButton.png";
@@ -408,12 +400,10 @@ public class FruityMod implements PostInitializeSubscriber,
 	@Override
 	public void receiveEditCharacters() {
 		logger.info("begin editting characters");
-		
-		logger.info("add " + TheSeekerEnum.THE_SEEKER.toString());
-		BaseMod.addCharacter(TheSeeker.class, "The Seeker", "Seeker class string",
-				AbstractCardEnum.SEEKER_PURPLE.toString(), "#pThe #pSeeker",
-				makePath(SEEKER_BUTTON), makePath(SEEKER_PORTRAIT),
-				TheSeekerEnum.THE_SEEKER.toString());
+
+		for(EditCharactersSubscriber mod : mods) {
+			mod.receiveEditCharacters();
+		}
 
 		if (isTranquilEnabled()) {
 			logger.info("add " + TheTranquilEnum.THE_TRANQUIL.toString());

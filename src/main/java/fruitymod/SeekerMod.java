@@ -3,7 +3,9 @@ package fruitymod;
 import basemod.BaseMod;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.helpers.CardHelper;
+import fruitymod.characters.TheSeeker;
 import fruitymod.patches.AbstractCardEnum;
+import fruitymod.patches.TheSeekerEnum;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -26,6 +28,13 @@ public class SeekerMod implements CharacterMod {
 	private static final String POWER_PURPLE_PORTRAIT = "1024/bg_power_purple.png";
 	private static final String ENERGY_ORB_PURPLE_PORTRAIT = "1024/card_purple_orb.png";
 
+	// seeker assets
+	private static final String SEEKER_BUTTON = "charSelect/seekerButton.png";
+	private static final String SEEKER_PORTRAIT = "charSelect/SeekerPortraitBG.jpg";
+	public static final String SEEKER_SHOULDER_1 = "char/seeker/shoulder.png";
+	public static final String SEEKER_SHOULDER_2 = "char/seeker/shoulder2.png";
+	public static final String SEEKER_CORPSE = "char/seeker/corpse.png";
+
 	public SeekerMod() {
 		/*
 		 * Note that for now when installing FruityMod, in the `mods/` folder another folder named
@@ -40,6 +49,15 @@ public class SeekerMod implements CharacterMod {
 				makePath(ATTACK_PURPLE_PORTRAIT), makePath(SKILL_PURPLE_PORTRAIT),
 				makePath(POWER_PURPLE_PORTRAIT), makePath(ENERGY_ORB_PURPLE_PORTRAIT), makePath(CARD_ENERGY_ORB_PURPLE));
 
+	}
+
+	@Override
+	public void receiveEditCharacters() {
+		logger.info("add " + TheSeekerEnum.THE_SEEKER.toString());
+		BaseMod.addCharacter(TheSeeker.class, "The Seeker", "Seeker class string",
+				AbstractCardEnum.SEEKER_PURPLE.toString(), "#pThe #pSeeker",
+				makePath(SEEKER_BUTTON), makePath(SEEKER_PORTRAIT),
+				TheSeekerEnum.THE_SEEKER.toString());
 	}
 
 	/**

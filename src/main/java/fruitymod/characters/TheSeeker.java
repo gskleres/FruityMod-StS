@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import basemod.abstracts.CustomPlayer;
 import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.patches.TheSeekerEnum;
 
 public class TheSeeker extends CustomPlayer {
@@ -36,9 +37,9 @@ public class TheSeeker extends CustomPlayer {
 	public TheSeeker(String name, PlayerClass setClass) {
 		super(name, setClass, orbTextures, "img/char/seeker/orb/vfx.png", new SpriterAnimation("img/char/seeker/animation.scml"));
 		
-		initializeClass(null, FruityMod.makePath(FruityMod.SEEKER_SHOULDER_2),
-				FruityMod.makePath(FruityMod.SEEKER_SHOULDER_1),
-				FruityMod.makePath(FruityMod.SEEKER_CORPSE), 
+		initializeClass(null, FruityMod.makePath(SeekerMod.SEEKER_SHOULDER_2),
+				FruityMod.makePath(SeekerMod.SEEKER_SHOULDER_1),
+				FruityMod.makePath(SeekerMod.SEEKER_CORPSE),
 				getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN));
 
 		if (Settings.dailyModsEnabled() && DailyMods.cardMods.get("Diverse")) {
