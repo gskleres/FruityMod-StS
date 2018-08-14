@@ -134,10 +134,8 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String ESSENCE_SPIKE = "cards/pulse_barrier.png";
     public static final String NEBULA = "cards/nebula.png";
     public static final String ETHER_BLAST = "cards/ether_blast.png";
-    public static final String ETHER_BOLT = "cards/essence_dart.png";
     public static final String EUREKA = "cards/eureka.png";
     public static final String EVENT_HORIZON = "cards/event_horizon.png";
-    public static final String EXPERIMENT = "cards/experiment.png";
     public static final String FEEDBACK = "cards/feedback.png";
     public static final String FLARE = "cards/flare.png";
     public static final String FLOW = "cards/flow.png";
@@ -157,7 +155,6 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String NEXUS = "cards/nexus.png";
     public static final String NOVA = "cards/nova.png";
     public static final String PERIAPT_OF_CELERITY = "cards/periapt_of_celerity.png";
-    public static final String PERIAPT_OF_POTENCY = "cards/periapt_of_potency.png";
     public static final String PERIAPT_OF_TENACITY = "cards/wormhole.png";
     public static final String PERIAPT_OF_VIGOR = "cards/periapt_of_vigor.png";
     public static final String POWER_OVERWHELMING = "cards/power_overwhelming.png";
@@ -167,7 +164,6 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String RETROGRADE = "cards/retrograde.png";
     public static final String WORMHOLE = "cards/runic_binding.png";
     public static final String SHIMMER = "cards/shimmer.png";
-    public static final String SIPHON_MAGIC = "cards/convergence.png";
     public static final String SIPHON_POWER = "cards/siphon_power.png";
     public static final String SIPHON_SPEED = "cards/siphon_speed.png";
     public static final String STRIKE_PURPLE = "cards/strike_purple.png";
@@ -182,7 +178,6 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String VOID_BARRIER = "cards/genesis.png";
     public static final String VOID_BOLT = "cards/prismatic_sphere.png";
     public static final String VOID_RIPPLE = "cards/flux.png";
-    public static final String VOID_SHACKLES = "cards/void_shackles.png";
     public static final String VORTEX = "cards/vortex.png";
     public static final String ZENITH = "cards/zenith.png";
     public static final String PHASE_COIL = "cards/phase_coil.png";
@@ -212,19 +207,13 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String ENIGMA_POWER = "powers/enigma.png";
     public static final String BRILLIANCE_POWER = "powers/brilliance.png";
     public static final String ANOMALY_POWER = "powers/anomaly.png";
-    public static final String NEXUS_POWER = "powers/nexus.png";
 
     // relic images
     public static final String ARCANOSPHERE_RELIC = "relics/arcanosphere.png";
-    public static final String PURPLE_SKULL_RELIC = "relics/purpleSkull.png";
     public static final String PAPER_PENGWIN_RELIC = "relics/paperPengwin.png";
-    public static final String GHOSTLY_HAND_RELIC = "relics/ghostlyHand.png";
     public static final String COSMIC_SIEVE_RELIC = "relics/cosmicSieve.png";
-    public static final String ASTRAL_EGG_RELIC = "relics/astralEgg.png";
     public static final String SOLAR_EGG_RELIC = "relics/solarEgg.png";
-    public static final String MECHANICAL_CORE_RELIC = "relics/mechanicalCore.png";
     public static final String ROD_OF_NEGATION_RELIC = "relics/rodOfNegation.png";
-    public static final String POWER_CELLS_RELIC = "relics/powerCells.png";
     public static final String TELESCOPE_RELIC = "relics/telescope.png";
     public static final String BLUEBERRIES_RELIC = "relics/blueberries.png";
     
@@ -266,10 +255,6 @@ public class FruityMod implements PostInitializeSubscriber,
     	return new Texture(makePath(WORMHOLE_POWER));
     }
 
-    public static Texture getWormholeTexture(){
-        return new Texture(makePath(WORMHOLE));
-    }
-    
     public static Texture getVigorPowerTexture() {
     	return new Texture(makePath(VIGOR_POWER));
     }
@@ -325,43 +310,20 @@ public class FruityMod implements PostInitializeSubscriber,
     public static Texture getArcanoSphereTexture() {
     	return new Texture(makePath(ARCANOSPHERE_RELIC));
     }
-    
-    public static Texture getPurpleSkullTexture() {
-    	return new Texture(makePath(PURPLE_SKULL_RELIC));
-    }
-    
+
     public static Texture getPaperPengwinTexture() {
     	return new Texture(makePath(PAPER_PENGWIN_RELIC));
-    }
-    
-    public static Texture getGhostlyHandTexture() {
-    	return new Texture(makePath(GHOSTLY_HAND_RELIC));
     }
     
     public static Texture getCosmicSieveTexture() {
     	return new Texture(makePath(COSMIC_SIEVE_RELIC));
     }
-    
-    public static Texture getAstralEggTexture() {
-    	return new Texture(makePath(ASTRAL_EGG_RELIC));
-    }
-    
     public static Texture getSolarEggTexture() {
     	return new Texture(makePath(SOLAR_EGG_RELIC));
     }
-    
-    public static Texture getMechanicalCoreTexture() {
-    	return new Texture(makePath(MECHANICAL_CORE_RELIC));
-    }
-    
     public static Texture getRodOfNegationTexture() {
     	return new Texture(makePath(ROD_OF_NEGATION_RELIC));
     }
-    
-    public static Texture getPowerCellsTexture() {
-    	return new Texture(makePath(POWER_CELLS_RELIC));
-    }
-    
     public static Texture getTelescopeTexture() {
     	return new Texture(makePath(TELESCOPE_RELIC));
     }
@@ -692,29 +654,6 @@ public class FruityMod implements PostInitializeSubscriber,
 
 	@Override
 	public void receiveSetUnlocks() {
-//		UnlockTracker.addCard("Flicker");
-//		UnlockTracker.addCard("Transference");
-//		UnlockTracker.addCard("ForceRipple");
-//		// seeker unlock 1
-//		BaseMod.addUnlockBundle(new CustomUnlockBundle(
-//				"Flicker", "Transference", "ForceRipple"
-//				), TheSeekerEnum.THE_SEEKER, 1);
-//		
-//		// seeker unlock 2
-//		BaseMod.addUnlockBundle(new CustomUnlockBundle(
-//				"Channel", "Shimmer", "ThoughtRaze"
-//				), TheSeekerEnum.THE_SEEKER, 2);
-//		UnlockTracker.addCard("Channel");
-//		UnlockTracker.addCard("Shimmer");
-//		UnlockTracker.addCard("ThoughtRaze");
-//		
-//		// seeker unlock 3 (Vacuum tmp in place of Feedback)
-//		BaseMod.addUnlockBundle(new CustomUnlockBundle(
-//				"Convergence", "Hypothesis", "Nexus"
-//				), TheSeekerEnum.THE_SEEKER, 3);
-//		UnlockTracker.addCard("Convergence");
-//		UnlockTracker.addCard("Hypothesis");
-//		UnlockTracker.addCard("Nexus");
 	}
 	
 
