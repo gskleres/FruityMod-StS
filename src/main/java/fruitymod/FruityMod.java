@@ -4,8 +4,6 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
-import fruitymod.cards.*;
-import fruitymod.cards.tranquil.Tranquil_FlyingKick;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -18,7 +16,6 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import basemod.BaseMod;
 import basemod.ModPanel;
@@ -368,15 +365,6 @@ public class FruityMod implements PostInitializeSubscriber,
 		for(EditCardsSubscriber mod : mods) {
 			mod.receiveEditCards();
 		}
-
-        BaseMod.addCard(new Strike_Tan());
-        BaseMod.addCard(new Defend_Tan());
-        BaseMod.addCard(new Tranquil_FlyingKick());
-        BaseMod.addCard(new FlurryOfBlows());
-
-        UnlockTracker.unlockCard("Strike_T");
-        UnlockTracker.unlockCard("Defend_T");
-        UnlockTracker.unlockCard("Tranquil_FlyingKick");
 
         logger.info("done editting cards");
 	}
