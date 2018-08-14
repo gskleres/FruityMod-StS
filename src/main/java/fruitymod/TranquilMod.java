@@ -5,6 +5,11 @@ import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import fruitymod.cards.Defend_Tan;
+import fruitymod.cards.FlurryOfBlows;
+import fruitymod.cards.Strike_Tan;
+import fruitymod.cards.tranquil.Tranquil_FlyingKick;
 import fruitymod.characters.TheTranquil;
 import fruitymod.patches.AbstractCardEnum;
 import fruitymod.patches.TheTranquilEnum;
@@ -54,7 +59,15 @@ public class TranquilMod implements CharacterMod {
 
 	@Override
 	public void receiveEditCards() {
+		BaseMod.addCard(new Strike_Tan());
+		BaseMod.addCard(new Defend_Tan());
+		BaseMod.addCard(new Tranquil_FlyingKick());
+		BaseMod.addCard(new FlurryOfBlows());
 
+		UnlockTracker.unlockCard("Strike_T");
+		UnlockTracker.unlockCard("Defend_T");
+		UnlockTracker.unlockCard("Tranquil_FlyingKick");
+		UnlockTracker.unlockCard("FlurryOfBlows");
 	}
 
 	@Override
