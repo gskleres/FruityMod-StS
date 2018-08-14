@@ -378,11 +378,11 @@ public class FruityMod implements PostInitializeSubscriber,
 		}
 		
         // RelicStrings
-        String relicStrings = Gdx.files.internal("localization/FruityMod-RelicStrings.json").readString(
+        String relicStrings = Gdx.files.internal("localization/Tranquil-RelicStrings.json").readString(
         		String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(RelicStrings.class, relicStrings);
         // CardStrings
-        String cardStrings = Gdx.files.internal("localization/FruityMod-CardStrings.json").readString(
+        String cardStrings = Gdx.files.internal("localization/Tranquil-CardStrings.json").readString(
         		String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(CardStrings.class, cardStrings);
 		
