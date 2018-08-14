@@ -1,20 +1,16 @@
 package fruitymod;
 
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.localization.CardStrings;
-import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import basemod.BaseMod;
@@ -376,16 +372,7 @@ public class FruityMod implements PostInitializeSubscriber,
 		for(EditStringsSubscriber mod : mods) {
 			mod.receiveEditStrings();
 		}
-		
-        // RelicStrings
-        String relicStrings = Gdx.files.internal("localization/Tranquil-RelicStrings.json").readString(
-        		String.valueOf(StandardCharsets.UTF_8));
-        BaseMod.loadCustomStrings(RelicStrings.class, relicStrings);
-        // CardStrings
-        String cardStrings = Gdx.files.internal("localization/Tranquil-CardStrings.json").readString(
-        		String.valueOf(StandardCharsets.UTF_8));
-        BaseMod.loadCustomStrings(CardStrings.class, cardStrings);
-		
+
 		logger.info("done editting strings");
 	}
 

@@ -1,9 +1,12 @@
 package fruitymod;
 
 import basemod.BaseMod;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.helpers.CardHelper;
+import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import fruitymod.cards.Defend_Tan;
@@ -15,6 +18,8 @@ import fruitymod.patches.AbstractCardEnum;
 import fruitymod.patches.TheTranquilEnum;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.nio.charset.StandardCharsets;
 
 public class TranquilMod implements CharacterMod {
 
@@ -91,7 +96,14 @@ public class TranquilMod implements CharacterMod {
 
 	@Override
 	public void receiveEditStrings() {
-
+		// RelicStrings
+		String relicStrings = Gdx.files.internal("localization/Tranquil-RelicStrings.json").readString(
+				String.valueOf(StandardCharsets.UTF_8));
+		BaseMod.loadCustomStrings(RelicStrings.class, relicStrings);
+		// CardStrings
+		String cardStrings = Gdx.files.internal("localization/Tranquil-CardStrings.json").readString(
+				String.valueOf(StandardCharsets.UTF_8));
+		BaseMod.loadCustomStrings(CardStrings.class, cardStrings);
 	}
 
 	@Override
