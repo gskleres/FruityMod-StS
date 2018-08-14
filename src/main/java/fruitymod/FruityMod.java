@@ -338,6 +338,7 @@ public class FruityMod implements PostInitializeSubscriber,
 
         mods = new ArrayList<>();
         mods.add(new SeekerMod());
+        mods.add(new TranquilMod());
 
         /*
          * Note that for now when installing FruityMod, in the `mods/` folder another folder named
