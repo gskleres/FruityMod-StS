@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import basemod.abstracts.CustomRelic;
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.actions.common.DiscardWithCallbackAction;
 import fruitymod.actions.common.IDiscardCallback;
 
@@ -20,7 +20,7 @@ public class RodOfNegation extends CustomRelic {
 	
 	
 	public RodOfNegation() {
-		super(ID, FruityMod.getRodOfNegationTexture(),
+		super(ID, SeekerMod.getRodOfNegationTexture(),
 				RelicTier.COMMON, LandingSound.MAGICAL);
 	}
 	

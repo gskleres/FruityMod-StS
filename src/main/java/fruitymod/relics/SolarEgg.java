@@ -4,13 +4,13 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import basemod.abstracts.CustomRelic;
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 
 public class SolarEgg extends CustomRelic {
 	private static final String ID = "SolarEgg";
 	
 	public SolarEgg() {
-		super(ID, FruityMod.getSolarEggTexture(),
+		super(ID, SeekerMod.getSolarEggTexture(),
 				RelicTier.UNCOMMON, LandingSound.MAGICAL);
 	}
 	

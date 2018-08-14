@@ -5,6 +5,7 @@ import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.PostExhaustSubscriber;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
@@ -58,6 +59,15 @@ public class SeekerMod implements CharacterMod {
 	public static final String SEEKER_SHOULDER_1 = "char/seeker/shoulder.png";
 	public static final String SEEKER_SHOULDER_2 = "char/seeker/shoulder2.png";
 	public static final String SEEKER_CORPSE = "char/seeker/corpse.png";
+
+	// relic images
+	public static final String ARCANOSPHERE_RELIC = "relics/arcanosphere.png";
+	public static final String PAPER_PENGWIN_RELIC = "relics/paperPengwin.png";
+	public static final String COSMIC_SIEVE_RELIC = "relics/cosmicSieve.png";
+	public static final String SOLAR_EGG_RELIC = "relics/solarEgg.png";
+	public static final String ROD_OF_NEGATION_RELIC = "relics/rodOfNegation.png";
+	public static final String TELESCOPE_RELIC = "relics/telescope.png";
+	public static final String BLUEBERRIES_RELIC = "relics/blueberries.png";
 
 	public SeekerMod() {
 		/*
@@ -408,6 +418,30 @@ public class SeekerMod implements CharacterMod {
 		}
 	}
 
+	public static Texture getArcanoSphereTexture() {
+		return new Texture(makePath(ARCANOSPHERE_RELIC));
+	}
+
+	public static Texture getPaperPengwinTexture() {
+		return new Texture(makePath(PAPER_PENGWIN_RELIC));
+	}
+
+	public static Texture getCosmicSieveTexture() {
+		return new Texture(makePath(COSMIC_SIEVE_RELIC));
+	}
+	public static Texture getSolarEggTexture() {
+		return new Texture(makePath(SOLAR_EGG_RELIC));
+	}
+	public static Texture getRodOfNegationTexture() {
+		return new Texture(makePath(ROD_OF_NEGATION_RELIC));
+	}
+	public static Texture getTelescopeTexture() {
+		return new Texture(makePath(TELESCOPE_RELIC));
+	}
+
+	public static Texture getBlueberriesTexture() {
+		return new Texture(makePath(BLUEBERRIES_RELIC));
+	}
 
 	/**
 	 * Makes a full path for a resource path
