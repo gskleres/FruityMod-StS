@@ -59,13 +59,11 @@ public class TranquilMod implements CharacterMod {
 
 	@Override
 	public void receiveEditCharacters() {
-		if (isEnabled()) {
-			logger.info("add " + TheTranquilEnum.THE_TRANQUIL.toString());
-			BaseMod.addCharacter(TheTranquil.class, "The Tranquil", "Tranquil class string",
-					AbstractCardEnum.TRANQUIL_TAN.toString(), "The Tranquil",
-					makePath(TRANQUIL_BUTTON), makePath(TRANQUIL_PORTRAIT),
-					TheTranquilEnum.THE_TRANQUIL.toString());
-		}
+		logger.info("add " + TheTranquilEnum.THE_TRANQUIL.toString());
+		BaseMod.addCharacter(TheTranquil.class, "The Tranquil", "Tranquil class string",
+				AbstractCardEnum.TRANQUIL_TAN.toString(), "The Tranquil",
+				makePath(TRANQUIL_BUTTON), makePath(TRANQUIL_PORTRAIT),
+				TheTranquilEnum.THE_TRANQUIL.toString());
 	}
 
 	@Override

@@ -311,7 +311,9 @@ public class FruityMod implements PostInitializeSubscriber,
 
         mods = new ArrayList<>();
         mods.add(new SeekerMod());
-        mods.add(new TranquilMod());
+        if (TranquilMod.isEnabled()) {
+			mods.add(new TranquilMod());
+		}
     }
 
     public static void initialize() {
