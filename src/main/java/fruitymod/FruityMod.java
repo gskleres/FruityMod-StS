@@ -10,13 +10,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
@@ -53,24 +51,9 @@ public class FruityMod implements PostInitializeSubscriber,
     private static final String MODNAME = "FruityMod";
     private static final String AUTHOR = "Fruitstrike, ColdRain451, test447, fiiiiilth, Blank The Evil & Pal";
     private static final String DESCRIPTION = "v0.7\n Adds The Seeker as a playable third character";
-
-    private static final Color TAN = CardHelper.getColor(210.0f, 180.0f, 140.0f);
     private static final String FRUITY_MOD_ASSETS_FOLDER = "img";
 
-    private static final String ATTACK_TAN = "512/bg_attack_tan.png";
-    private static final String SKILL_TAN = "512/bg_skill_tan.png";
-    private static final String POWER_TAN = "512/bg_power_tan.png";
-    private static final String ENERGY_ORB_TAN = "512/card_tan_orb.png";
-    private static final String CARD_ENERGY_ORB_TAN = "512/card_tan_small_orb.png";
-
-    private static final String ATTACK_TAN_PORTRAIT = "1024/bg_attack_tan.png";
-    private static final String SKILL_TAN_PORTRAIT = "1024/bg_skill_tan.png";
-    private static final String POWER_TAN_PORTRAIT = "1024/bg_power_tan.png";
-    private static final String ENERGY_ORB_TAN_PORTRAIT = "1024/card_tan_orb.png";
-
-
     // seeker card images
-    
     public static final String ANOMALY = "cards/anomaly.png";
     public static final String ARCANE_BARRAGE = "cards/starburst.png";
     public static final String ARCANE_TEMPEST = "cards/arcane_tempest.png";
@@ -339,19 +322,6 @@ public class FruityMod implements PostInitializeSubscriber,
         mods = new ArrayList<>();
         mods.add(new SeekerMod());
         mods.add(new TranquilMod());
-
-        /*
-         * Note that for now when installing FruityMod, in the `mods/` folder another folder named
-         * the value of FRUITY_MOD_ASSETS_FOLDER must be created into which all the contents of the
-         * `images/` folder must be relocated
-         */
-        logger.info("creating the color " + AbstractCardEnum.TRANQUIL_TAN.toString());
-        BaseMod.addColor(AbstractCardEnum.TRANQUIL_TAN.toString(),
-                TAN, TAN, TAN, TAN, TAN, TAN, TAN,
-                makePath(ATTACK_TAN), makePath(SKILL_TAN),
-                makePath(POWER_TAN), makePath(ENERGY_ORB_TAN),
-                makePath(ATTACK_TAN_PORTRAIT), makePath(SKILL_TAN_PORTRAIT),
-                makePath(POWER_TAN_PORTRAIT), makePath(ENERGY_ORB_TAN_PORTRAIT), makePath(CARD_ENERGY_ORB_TAN));
     }
 
     public static void initialize() {
