@@ -106,4 +106,8 @@ public class TranquilMod implements CharacterMod {
 	private static final String makePath(String resource) {
 		return FRUITY_MOD_ASSETS_FOLDER + "/" + resource;
 	}
+
+	public static boolean isEnabled() {
+		return Boolean.parseBoolean(System.getProperty("tranquil_enabled","false"));
+	}
 }
