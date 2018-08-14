@@ -5,14 +5,14 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import basemod.abstracts.CustomRelic;
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 
 public class Blueberries extends CustomRelic {
 	public static final String ID = "Blueberries";
 	private static final int HP_PER_CARD = 1;
 	
 	public Blueberries() {
-		super(ID, FruityMod.getBlueberriesTexture(),
+		super(ID, SeekerMod.getBlueberriesTexture(),
 				RelicTier.UNCOMMON, LandingSound.MAGICAL);
 	}
 	

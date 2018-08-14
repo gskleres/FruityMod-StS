@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import basemod.abstracts.CustomRelic;
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.powers.ArcanospherePower;
 
 public class Arcanosphere extends CustomRelic {
@@ -13,7 +13,7 @@ public class Arcanosphere extends CustomRelic {
 	private static final int CARDS_TO_RETAIN = 1;
 	
 	public Arcanosphere() {
-		super(ID, FruityMod.getArcanoSphereTexture(),
+		super(ID, SeekerMod.getArcanoSphereTexture(),
 				RelicTier.STARTER, LandingSound.MAGICAL);
 	}
 	

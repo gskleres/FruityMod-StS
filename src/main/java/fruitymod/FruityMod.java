@@ -148,15 +148,6 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String BRILLIANCE_POWER = "powers/brilliance.png";
     public static final String ANOMALY_POWER = "powers/anomaly.png";
 
-    // relic images
-    public static final String ARCANOSPHERE_RELIC = "relics/arcanosphere.png";
-    public static final String PAPER_PENGWIN_RELIC = "relics/paperPengwin.png";
-    public static final String COSMIC_SIEVE_RELIC = "relics/cosmicSieve.png";
-    public static final String SOLAR_EGG_RELIC = "relics/solarEgg.png";
-    public static final String ROD_OF_NEGATION_RELIC = "relics/rodOfNegation.png";
-    public static final String TELESCOPE_RELIC = "relics/telescope.png";
-    public static final String BLUEBERRIES_RELIC = "relics/blueberries.png";
-
     // badge
     public static final String BADGE_IMG = "FRelicBadge.png";
     
@@ -231,31 +222,6 @@ public class FruityMod implements PostInitializeSubscriber,
     
     public static Texture getNexusPowerTexture() {
     	return new Texture(makePath(VIGOR_POWER));
-    }
-    
-    public static Texture getArcanoSphereTexture() {
-    	return new Texture(makePath(ARCANOSPHERE_RELIC));
-    }
-
-    public static Texture getPaperPengwinTexture() {
-    	return new Texture(makePath(PAPER_PENGWIN_RELIC));
-    }
-    
-    public static Texture getCosmicSieveTexture() {
-    	return new Texture(makePath(COSMIC_SIEVE_RELIC));
-    }
-    public static Texture getSolarEggTexture() {
-    	return new Texture(makePath(SOLAR_EGG_RELIC));
-    }
-    public static Texture getRodOfNegationTexture() {
-    	return new Texture(makePath(ROD_OF_NEGATION_RELIC));
-    }
-    public static Texture getTelescopeTexture() {
-    	return new Texture(makePath(TELESCOPE_RELIC));
-    }
-    
-    public static Texture getBlueberriesTexture() {
-    	return new Texture(makePath(BLUEBERRIES_RELIC));
     }
 
     public static Texture getArcanospherePowerTexture() {

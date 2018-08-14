@@ -3,14 +3,15 @@ package fruitymod.relics;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import basemod.abstracts.CustomRelic;
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
+
 
 public class CosmicSieve extends CustomRelic {
 	private static final String ID = "CosmicSieve";
 	public static final int HP_PER_CARD = 1;
 	
 	public CosmicSieve() {
-		super(ID, FruityMod.getCosmicSieveTexture(),
+		super(ID, SeekerMod.getCosmicSieveTexture(),
 				RelicTier.BOSS, LandingSound.MAGICAL);
 	}
 	

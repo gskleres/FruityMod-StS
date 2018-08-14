@@ -3,7 +3,7 @@ package fruitymod.relics;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import basemod.abstracts.CustomRelic;
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 
 public class PaperPengwin extends CustomRelic {
 	private static final String ID = "PaperPengwin";
@@ -11,7 +11,7 @@ public class PaperPengwin extends CustomRelic {
 	public static final int STAT_GAIN = 1;
 	
 	public PaperPengwin() {
-		super(ID, FruityMod.getPaperPengwinTexture(),
+		super(ID, SeekerMod.getPaperPengwinTexture(),
 				RelicTier.UNCOMMON, LandingSound.MAGICAL);
 	}
 	
