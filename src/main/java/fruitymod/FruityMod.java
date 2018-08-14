@@ -354,7 +354,7 @@ public class FruityMod implements PostInitializeSubscriber,
 			mod.receiveEditCharacters();
 		}
 
-		if (isTranquilEnabled()) {
+		if (TranquilMod.isEnabled()) {
 			logger.info("add " + TheTranquilEnum.THE_TRANQUIL.toString());
 			BaseMod.addCharacter(TheTranquil.class, "The Tranquil", "Tranquil class string",
 					AbstractCardEnum.TRANQUIL_TAN.toString(), "The Tranquil",
@@ -470,9 +470,5 @@ public class FruityMod implements PostInitializeSubscriber,
     	for (PostDrawSubscriber mod : mods) {
     		mod.receivePostDraw(c);
 		}
-	}
-
-	private boolean isTranquilEnabled() {
-		return Boolean.parseBoolean(System.getProperty("tranquil_enabled","false"));
 	}
 }
