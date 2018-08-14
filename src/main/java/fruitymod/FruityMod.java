@@ -35,9 +35,6 @@ import basemod.interfaces.PostDungeonInitializeSubscriber;
 import basemod.interfaces.PostExhaustSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import basemod.interfaces.SetUnlocksSubscriber;
-import fruitymod.characters.TheTranquil;
-import fruitymod.patches.AbstractCardEnum;
-import fruitymod.patches.TheTranquilEnum;
 
 @SpireInitializer
 public class FruityMod implements PostInitializeSubscriber,
@@ -167,13 +164,6 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String TELESCOPE_RELIC = "relics/telescope.png";
     public static final String BLUEBERRIES_RELIC = "relics/blueberries.png";
 
-    // tranquil assets
-    private static final String TRANQUIL_BUTTON = "charSelect/tranquilButton.png";
-    private static final String TRANQUIL_PORTRAIT = "charSelect/TranquilPortraitBG.jpg";
-    public static final String TRANQUIL_SHOULDER_1 = "char/tranquil/shoulder.png";
-    public static final String TRANQUIL_SHOULDER_2 = "char/tranquil/shoulder2.png";
-    public static final String TRANQUIL_CORPSE = "char/tranquil/corpse.png";
-    
     // badge
     public static final String BADGE_IMG = "FRelicBadge.png";
     
@@ -352,14 +342,6 @@ public class FruityMod implements PostInitializeSubscriber,
 
 		for(EditCharactersSubscriber mod : mods) {
 			mod.receiveEditCharacters();
-		}
-
-		if (TranquilMod.isEnabled()) {
-			logger.info("add " + TheTranquilEnum.THE_TRANQUIL.toString());
-			BaseMod.addCharacter(TheTranquil.class, "The Tranquil", "Tranquil class string",
-					AbstractCardEnum.TRANQUIL_TAN.toString(), "The Tranquil",
-					makePath(TRANQUIL_BUTTON), makePath(TRANQUIL_PORTRAIT),
-					TheTranquilEnum.THE_TRANQUIL.toString());
 		}
 
 		logger.info("done editting characters");
