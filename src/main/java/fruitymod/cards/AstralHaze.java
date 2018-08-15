@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 import fruitymod.powers.AstralHazePower;
 
@@ -25,7 +26,7 @@ extends CustomCard {
     private static final int UPGRADE_PLUS_WEAK_VUL = 1;
 
     public AstralHaze() {
-        super(ID, NAME, FruityMod.makePath(FruityMod.ASTRAL_HAZE), COST, DESCRIPTION,
+        super(ID, NAME, FruityMod.makePath(SeekerMod.ASTRAL_HAZE), COST, DESCRIPTION,
         		AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
         		AbstractCard.CardRarity.BASIC, AbstractCard.CardTarget.SELF);
         this.isEthereal = true;

@@ -1,10 +1,8 @@
 package fruitymod.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -13,10 +11,10 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
-import com.megacrit.cardcrawl.vfx.combat.LightningEffect;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
 public class Irradiate
@@ -32,7 +30,7 @@ extends CustomCard {
     private static final int UPGRADE_PLUS_WEAK = 1;
 
     public Irradiate() {
-        super(ID, NAME, FruityMod.makePath(FruityMod.ARCANE_VOLLEY), COST, DESCRIPTION,
+        super(ID, NAME, FruityMod.makePath(SeekerMod.ARCANE_VOLLEY), COST, DESCRIPTION,
         		AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
         		AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ALL_ENEMY);
         this.isMultiDamage = true;

@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 import fruitymod.powers.EnigmaPower;
 
@@ -23,7 +24,7 @@ public class Enigma extends CustomCard {
 	private static final int UPGRADED_AMT = 1;
 	
 	public Enigma() {
-		super(ID, NAME, FruityMod.makePath(FruityMod.ENIGMA), COST, DESCRIPTION,
+		super(ID, NAME, FruityMod.makePath(SeekerMod.ENIGMA), COST, DESCRIPTION,
 				AbstractCard.CardType.POWER, AbstractCardEnum.SEEKER_PURPLE,
 				CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
 		this.magicNumber = this.baseMagicNumber = AMT;

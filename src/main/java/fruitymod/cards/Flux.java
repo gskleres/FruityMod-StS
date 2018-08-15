@@ -18,6 +18,7 @@ import com.megacrit.cardcrawl.vfx.combat.IronWaveEffect;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
 public class Flux extends CustomCard {
@@ -32,7 +33,7 @@ public class Flux extends CustomCard {
 	private static final int UPGRADE_BLOCK_AMT = 2;
 
 	public Flux() {
-		super(ID, NAME, FruityMod.makePath(FruityMod.VOID_RIPPLE), COST, DESCRIPTION,
+		super(ID, NAME, FruityMod.makePath(SeekerMod.VOID_RIPPLE), COST, DESCRIPTION,
 				AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
 				AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY);
 		this.baseDamage = ATTACK_DMG;

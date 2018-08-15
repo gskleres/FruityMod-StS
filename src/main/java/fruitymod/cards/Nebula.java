@@ -1,7 +1,6 @@
 package fruitymod.cards;
 
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.utility.ExhaustAllEtherealAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -11,6 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
 public class Nebula extends CustomCard {
@@ -24,7 +24,7 @@ public class Nebula extends CustomCard {
 	private static final int BLOCK_AMT = 2;
 
 	public Nebula() {
-		super(ID, NAME, FruityMod.makePath(FruityMod.NEBULA), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
+		super(ID, NAME, FruityMod.makePath(SeekerMod.NEBULA), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
 				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF);
 
 		this.magicNumber = this.baseMagicNumber = BLOCK_AMT;

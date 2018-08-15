@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -18,6 +17,7 @@ import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
 public class Dazed_P extends CustomCard {
@@ -28,7 +28,7 @@ public class Dazed_P extends CustomCard {
 	private static final int COST = -2;
 
 	public Dazed_P() {
-		super(ID, NAME, FruityMod.makePath(FruityMod.VOID_RIPPLE), COST, DESCRIPTION,
+		super(ID, NAME, FruityMod.makePath(SeekerMod.VOID_RIPPLE), COST, DESCRIPTION,
 				AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
 				CardRarity.SPECIAL, AbstractCard.CardTarget.ALL_ENEMY);
 

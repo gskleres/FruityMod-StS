@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 import fruitymod.powers.ChaosFormPower;
 import fruitymod.powers.ChaosFormUpgradePower;
@@ -23,7 +24,7 @@ public class ChaosForm extends CustomCard {
 	private static final int COST = 3;
 
 	public ChaosForm() {
-		super (ID, NAME, FruityMod.makePath(FruityMod.CHAOS_FORM), COST, DESCRIPTION,
+		super (ID, NAME, FruityMod.makePath(SeekerMod.CHAOS_FORM), COST, DESCRIPTION,
 				AbstractCard.CardType.POWER, AbstractCardEnum.SEEKER_PURPLE,
 				AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF);
 		this.magicNumber = this.baseMagicNumber = 1;

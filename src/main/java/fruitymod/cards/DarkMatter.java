@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
 public class DarkMatter extends CustomCard {
@@ -26,7 +27,7 @@ public class DarkMatter extends CustomCard {
 	private static final int UPGRADE_DAMAGE_AMT = 2;
 	
 	public DarkMatter() {
-		super(ID, NAME, FruityMod.makePath(FruityMod.DARK_MATTER), COST, DESCRIPTION,
+		super(ID, NAME, FruityMod.makePath(SeekerMod.DARK_MATTER), COST, DESCRIPTION,
 				AbstractCard.CardType.ATTACK,
 				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.UNCOMMON,
 				AbstractCard.CardTarget.ENEMY);

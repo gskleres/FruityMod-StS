@@ -1,15 +1,14 @@
 package fruitymod.cards;
 
-import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
 public class Convergence extends CustomCard {
@@ -21,7 +20,7 @@ public class Convergence extends CustomCard {
 	    private static final int COST = -2;
 
 	 public Convergence() {
-		 super(ID, NAME,  FruityMod.makePath(FruityMod.CONVERGENCE), COST, DESCRIPTION,
+		 super(ID, NAME,  FruityMod.makePath(SeekerMod.CONVERGENCE), COST, DESCRIPTION,
 				 AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
 				 AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF);
 	    }

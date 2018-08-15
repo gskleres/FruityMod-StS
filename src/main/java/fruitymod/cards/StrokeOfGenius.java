@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
 import java.util.List;
@@ -28,7 +29,7 @@ public class StrokeOfGenius extends CustomCard implements ModalChoice.Callback
 
     public StrokeOfGenius()
     {
-        super(ID, NAME, FruityMod.makePath(FruityMod.STROKE_OF_GENIUS), COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE, CardRarity.UNCOMMON, CardTarget.NONE);
+        super(ID, NAME, FruityMod.makePath(SeekerMod.STROKE_OF_GENIUS), COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE, CardRarity.UNCOMMON, CardTarget.NONE);
 
         modal = new ModalChoiceBuilder()
                 .setCallback(this) // Sets callback of all the below options to this

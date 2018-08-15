@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.actions.unique.EclipseAction;
 import fruitymod.patches.AbstractCardEnum;
 
@@ -21,7 +22,7 @@ public class Eclipse extends CustomCard {
 	private static final int UPGRADE_COST = 0;
 
 	public Eclipse() {
-		super(ID, NAME, FruityMod.makePath(FruityMod.ECLIPSE), COST, DESCRIPTION,
+		super(ID, NAME, FruityMod.makePath(SeekerMod.ECLIPSE), COST, DESCRIPTION,
     			AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
     			AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF);
 		this.exhaust = true;

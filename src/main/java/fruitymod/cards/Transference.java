@@ -4,7 +4,6 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -18,7 +17,7 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
-import fruitymod.actions.unique.HypothesisAction;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
 public class Transference extends CustomCard {
@@ -31,7 +30,7 @@ public class Transference extends CustomCard {
 	    private static final int DRAW = 1;
 	    
 	 public Transference() {
-		 super(ID, NAME,  FruityMod.makePath(FruityMod.TRANSFERENCE), COST, DESCRIPTION,
+		 super(ID, NAME,  FruityMod.makePath(SeekerMod.TRANSFERENCE), COST, DESCRIPTION,
 				 AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
 				 AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
 		 this.baseMagicNumber = DRAW;

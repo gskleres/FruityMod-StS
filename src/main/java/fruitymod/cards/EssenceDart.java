@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
 public class EssenceDart extends CustomCard {
@@ -25,7 +26,7 @@ public class EssenceDart extends CustomCard {
 	private static final int UPGRADE_DMG_AMT = 4;
 
 	public EssenceDart() {
-		super(ID, NAME, FruityMod.makePath(FruityMod.ESSENCE_DART), COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
+		super(ID, NAME, FruityMod.makePath(SeekerMod.ESSENCE_DART), COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
 				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY);
 		this.baseDamage = ATTACK_DMG;
 	}

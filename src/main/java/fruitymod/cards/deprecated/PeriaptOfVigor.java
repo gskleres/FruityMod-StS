@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 import fruitymod.powers.VigorPower;
 
@@ -23,7 +24,7 @@ public class PeriaptOfVigor extends CustomCard {
 	private static final int UPGRADED_COST = 2;
 	
 	public PeriaptOfVigor() {
-		super(ID, NAME, FruityMod.makePath(FruityMod.PERIAPT_OF_VIGOR), COST, DESCRIPTION,
+		super(ID, NAME, FruityMod.makePath(SeekerMod.PERIAPT_OF_VIGOR), COST, DESCRIPTION,
 				AbstractCard.CardType.POWER, AbstractCardEnum.SEEKER_PURPLE,
 				AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF);
 		this.magicNumber = this.baseMagicNumber = ENERGY_REDUCTION;

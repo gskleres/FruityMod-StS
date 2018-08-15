@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
 public class Zenith extends CustomCard {
@@ -22,7 +23,7 @@ public class Zenith extends CustomCard {
 	private static final int COST = 1;
 
 	public Zenith() {
-		super(ID, NAME, FruityMod.makePath(FruityMod.ZENITH), COST, DESCRIPTION,
+		super(ID, NAME, FruityMod.makePath(SeekerMod.ZENITH), COST, DESCRIPTION,
     			AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
     			AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF);
 		this.exhaust = true;
