@@ -1,5 +1,6 @@
 package fruitymod.powers;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -22,7 +23,7 @@ extends AbstractPower {
         this.owner = owner;
         this.amount = amount;
         this.description = DESCRIPTION;
-        this.img = SeekerMod.getEventHorizonPowerTexture();
+        this.img = new Texture(SeekerMod.makePowerImagePath(POWER_ID));
     }
 
     @Override

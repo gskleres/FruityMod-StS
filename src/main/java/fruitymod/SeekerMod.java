@@ -139,26 +139,6 @@ public class SeekerMod implements CharacterMod {
 	public static final String ZENITH = "cards/zenith.png";
 	public static final String PHASE_COIL = "cards/phase_coil.png";
 
-	// power images
-	public static final String ARCANOSPHERE_POWER = "powers/arcanosphere.png";
-	public static final String ASTRAL_HAZE_POWER = "powers/astral_haze.png";
-	public static final String CHAOS_FORM_POWER = "powers/chaos_form.png";
-	public static final String ESSENCE_MIRROR_POWER = "powers/essence_mirror.png";
-	public static final String ETHEREALIZE_POWER = "powers/essence_mirror.png";
-	public static final String WORMHOLE_POWER = "powers/wormhole.png";
-	public static final String VIGOR_POWER = "powers/vigor.png";
-	public static final String ASTRAL_SHIFT_POWER = "powers/astral_shift.png";
-	public static final String TENACITY_POWER = "powers/tenacity.png";
-	public static final String CELERITY_POWER = "powers/celerity.png";
-	public static final String POTENCY_POWER = "powers/potency.png";
-	public static final String COALESCENCE_POWER = "powers/coalescence.png";
-	public static final String CREATIVITY_POWER = "powers/creativity.png";
-	public static final String POWER_OVERWHELMING_POWER = "powers/power_overwhelming.png";
-	public static final String EVENT_HORIZON_POWER = "powers/event_horizon.png";
-	public static final String ENIGMA_POWER = "powers/enigma.png";
-	public static final String BRILLIANCE_POWER = "powers/brilliance.png";
-	public static final String ANOMALY_POWER = "powers/anomaly.png";
-
 	// relic images
 	public static final String ARCANOSPHERE_RELIC = "relics/arcanosphere.png";
 	public static final String PAPER_PENGWIN_RELIC = "relics/paperPengwin.png";
@@ -470,84 +450,6 @@ public class SeekerMod implements CharacterMod {
 		return new Texture(makePath(BLUEBERRIES_RELIC));
 	}
 
-	// texture loaders
-	public static Texture getAstralHazePowerTexture() {
-		return new Texture(FruityMod.makePath(ASTRAL_HAZE_POWER));
-	}
-
-	public static Texture getChaosFormPowerTexture() {
-		return new Texture(FruityMod.makePath(CHAOS_FORM_POWER));
-	}
-
-	public static Texture getEssenceMirrorPowerTexture() {
-		return new Texture(FruityMod.makePath(ESSENCE_MIRROR_POWER));
-	}
-
-	public static Texture getEtherealizePowerTexture() {
-		return new Texture(FruityMod.makePath(ETHEREALIZE_POWER));
-	}
-
-	public static Texture getWormholePowerTexture() {
-		return new Texture(FruityMod.makePath(WORMHOLE_POWER));
-	}
-
-	public static Texture getVigorPowerTexture() {
-		return new Texture(FruityMod.makePath(VIGOR_POWER));
-	}
-
-	public static Texture getAstralShiftTexture() {
-		return new Texture(FruityMod.makePath(ASTRAL_SHIFT_POWER));
-	}
-
-	public static Texture getTenacityPowerTexture() {
-		return new Texture(FruityMod.makePath(TENACITY_POWER));
-	}
-
-	public static Texture getCelerityPowerTexture() {
-		return new Texture(FruityMod.makePath(CELERITY_POWER));
-	}
-
-	public static Texture getPotencyPowerTexture() {
-		return new Texture(FruityMod.makePath(POTENCY_POWER));
-	}
-
-	public static Texture getCoalescencePowerTexture() {
-		return new Texture(FruityMod.makePath(COALESCENCE_POWER));
-	}
-
-	public static Texture getCreativityPowerTexture() {
-		return new Texture(FruityMod.makePath(CREATIVITY_POWER));
-	}
-
-	public static Texture getPowerOverwhelmingPowerTexture() {
-		return new Texture(FruityMod.makePath(POWER_OVERWHELMING_POWER));
-	}
-
-	public static Texture getEventHorizonPowerTexture() {
-		return new Texture(FruityMod.makePath(EVENT_HORIZON_POWER));
-	}
-
-	public static Texture getEnigmaPowerTexture() {
-		return new Texture(FruityMod.makePath(ENIGMA_POWER));
-	}
-
-	public static Texture getBrillancePowerTexture() {
-		return new Texture(FruityMod.makePath(BRILLIANCE_POWER));
-	}
-
-	public static Texture getAnomalyPowerTexture() {
-		return new Texture(FruityMod.makePath(ANOMALY_POWER));
-	}
-
-	public static Texture getNexusPowerTexture() {
-		return new Texture(FruityMod.makePath(VIGOR_POWER));
-	}
-
-	public static Texture getArcanospherePowerTexture() {
-		return new Texture(FruityMod.makePath(ARCANOSPHERE_POWER));
-	}
-
-
 	/**
 	 * Makes a full path for a resource path
 	 * @param resource the resource, must *NOT* have a leading "/"
@@ -555,5 +457,28 @@ public class SeekerMod implements CharacterMod {
 	 */
 	private static final String makePath(String resource) {
 		return FRUITY_MOD_ASSETS_FOLDER + "/" + resource;
+	}
+
+	public static final String makePowerImagePath(String power) {
+		return makeCustomPath("powers/" + power);
+	}
+
+	/**
+	 * Makes a full path for a resource path
+	 * @param resource the resource, must *NOT* have a leading "/"
+	 * @return the full path
+	 */
+	private static final String makeCustomPath(String resource) {
+		String result = "img/seeker/" + resource;
+
+		if (! hasExtension(resource)) {
+			result += ".png";
+		}
+
+		return result;
+	}
+
+	private static boolean hasExtension(String filename) {
+		return filename.lastIndexOf('.') > 0;
 	}
 }

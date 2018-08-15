@@ -1,5 +1,6 @@
 package fruitymod.powers.deprecated;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -22,7 +23,7 @@ public class RunicBindingPower extends AbstractPower {
 		this.amount = amount;
 		this.upgraded = upgraded;
 		updateDescription();
-		this.img = SeekerMod.getTenacityPowerTexture();
+		this.img = new Texture(SeekerMod.makePowerImagePath(POWER_ID));
 	}
 	
 	@Override

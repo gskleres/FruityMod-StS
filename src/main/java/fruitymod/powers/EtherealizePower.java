@@ -2,6 +2,7 @@
 package fruitymod.powers;
 
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.ExhaustAllEtherealAction;
@@ -31,7 +32,7 @@ public class EtherealizePower extends AbstractPower {
         //this.loadRegion("anger");
         this.type = AbstractPower.PowerType.BUFF;
         this.priority = 90;
-        this.img = SeekerMod.getEtherealizePowerTexture();
+        this.img = new Texture(SeekerMod.makePowerImagePath(POWER_ID));
     }
 
     @Override

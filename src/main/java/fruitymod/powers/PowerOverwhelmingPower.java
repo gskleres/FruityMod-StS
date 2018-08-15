@@ -1,5 +1,6 @@
 package fruitymod.powers;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -25,7 +26,7 @@ public class PowerOverwhelmingPower extends AbstractPower {
 		this.isTurnBased = false;
 		this.priority = 90;
 		updateDescription();
-		this.img = SeekerMod.getPowerOverwhelmingPowerTexture();
+		this.img = new Texture(SeekerMod.makePowerImagePath(POWER_ID));
 	}
 
 	@Override

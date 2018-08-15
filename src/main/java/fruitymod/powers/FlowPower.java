@@ -1,5 +1,6 @@
 package fruitymod.powers;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -26,7 +27,7 @@ public class FlowPower extends AbstractPower {
 		this.description = DESCRIPTIONS[0];
 		this.type = AbstractPower.PowerType.BUFF;
 		this.isTurnBased = true;
-		this.img = SeekerMod.getAstralHazePowerTexture(); // Replace with a different image
+		this.img = new Texture(SeekerMod.makePowerImagePath(AstralHazePower.POWER_ID)); // Replace with a different image
 	}
 
     @Override
