@@ -1,5 +1,6 @@
 package fruitymod.powers;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -31,7 +32,7 @@ public class NexusPower extends AbstractPower implements PostDrawSubscriber, Pos
 		updateDescription();
 		this.type = AbstractPower.PowerType.BUFF;
 		this.isTurnBased = false;
-		this.img = SeekerMod.getNexusPowerTexture();
+		this.img = new Texture(SeekerMod.makePowerImagePath(NAME));
 	}
 	
 	@Override

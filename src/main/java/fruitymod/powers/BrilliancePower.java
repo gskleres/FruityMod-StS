@@ -1,5 +1,6 @@
 package fruitymod.powers;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -32,7 +33,7 @@ public class BrilliancePower extends AbstractPower implements PostBattleSubscrib
 		this.type = AbstractPower.PowerType.BUFF;
 		this.isTurnBased = true;
 		this.priority = 2;
-		this.img = SeekerMod.getBrillancePowerTexture();
+		this.img = new Texture(SeekerMod.makePowerImagePath(NAME));
 	}
 
 	@Override

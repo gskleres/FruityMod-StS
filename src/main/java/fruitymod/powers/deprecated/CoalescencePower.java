@@ -1,5 +1,6 @@
 package fruitymod.powers.deprecated;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -30,7 +31,7 @@ public class CoalescencePower extends AbstractPower {
 		this.priority = 90;
 		this.weakAmount = weakAmount;
 		updateDescription();
-		this.img = SeekerMod.getCoalescencePowerTexture();
+		this.img = new Texture(SeekerMod.makePowerImagePath(POWER_ID));
 	}
 	
 	@Override

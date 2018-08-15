@@ -2,6 +2,7 @@ package fruitymod.powers;
 
 import java.util.ArrayList;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -34,7 +35,7 @@ public class AstralHazePower extends AbstractPower {
 		this.type = AbstractPower.PowerType.BUFF;
 		this.isTurnBased = true;
 		this.priority = 90;
-		this.img = SeekerMod.getAstralHazePowerTexture();
+		this.img = new Texture(SeekerMod.makePowerImagePath(POWER_ID));
 		this.attackers = new ArrayList<AbstractCreature>();
 	}
 
