@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
 public class MagicMissile extends CustomCard {
@@ -27,7 +28,7 @@ public class MagicMissile extends CustomCard {
 	private static final int UPGRADE_TIMES_AMT = 1;
 	
 	public MagicMissile() {
-		super (ID, NAME, FruityMod.makePath(FruityMod.MAGIC_MISSILE), COST, DESCRIPTION,
+		super (ID, NAME, FruityMod.makePath(SeekerMod.MAGIC_MISSILE), COST, DESCRIPTION,
 				AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
 				AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY);
 		this.baseDamage = ATTACK_DMG;

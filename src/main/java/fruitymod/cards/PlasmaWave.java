@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.actions.unique.PlasmaWaveAction;
 import fruitymod.patches.AbstractCardEnum;
 
@@ -22,7 +23,7 @@ public class PlasmaWave extends CustomCard {
 	private static final int ATTACK_UPGRADE = 2;
 
 	public PlasmaWave() {
-		super(ID, NAME, FruityMod.makePath(FruityMod.ESSENCE_SHRED), COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
+		super(ID, NAME, FruityMod.makePath(SeekerMod.ESSENCE_SHRED), COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
 				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL_ENEMY);
 		this.baseDamage = ATTACK_DMG;
 		this.isMultiDamage = true;

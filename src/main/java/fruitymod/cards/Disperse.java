@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.powers.ArtifactPower;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
 public class Disperse extends CustomCard {
@@ -25,7 +26,7 @@ public class Disperse extends CustomCard {
 	private static final int ARTIFACT = 1;
 
 	public Disperse() {
-		super(ID, NAME, FruityMod.makePath(FruityMod.PROTECTION_WARD), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
+		super(ID, NAME, FruityMod.makePath(SeekerMod.PROTECTION_WARD), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
 				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
 
 		this.baseBlock = BLOCK_AMT;

@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.vfx.combat.MindblastEffect;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
 public class MeteorShower extends CustomCard {
@@ -26,7 +27,7 @@ public class MeteorShower extends CustomCard {
 	private static final int ATTACK_DMG_PER_CARD = 1;
 
 	public MeteorShower() {
-		super(ID, NAME, FruityMod.makePath(FruityMod.METEOR_SHOWER), COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
+		super(ID, NAME, FruityMod.makePath(SeekerMod.METEOR_SHOWER), COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
 				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ALL_ENEMY);
 		this.baseDamage = 0;
 		this.exhaust = true;

@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 import fruitymod.powers.AnomalyPower;
 
@@ -23,7 +24,7 @@ public class Anomaly extends CustomCard {
 	private static final int STACK_UPGRADE = 1;
 
 	public Anomaly() {
-		super(ID, NAME, FruityMod.makePath(FruityMod.ANOMALY), COST, DESCRIPTION, AbstractCard.CardType.POWER,
+		super(ID, NAME, FruityMod.makePath(SeekerMod.ANOMALY), COST, DESCRIPTION, AbstractCard.CardType.POWER,
 				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
 		this.magicNumber = this.baseMagicNumber = STACK_BONUS;
 	}

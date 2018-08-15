@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.powers.ArtifactPower;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
 public class Convergence extends CustomCard {
@@ -27,7 +28,7 @@ public class Convergence extends CustomCard {
 	    private static final int ARTIFACT_AMT = 1;
 	    
 	 public Convergence() {
-		 super(ID, NAME,  FruityMod.makePath(FruityMod.TRANSFERENCE), COST, DESCRIPTION,
+		 super(ID, NAME,  FruityMod.makePath(SeekerMod.TRANSFERENCE), COST, DESCRIPTION,
 				 AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
 				 AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL_ENEMY);
         	this.isInnate = true;

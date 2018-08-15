@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
 public class PrismaticSphere extends CustomCard {
@@ -29,7 +30,7 @@ public class PrismaticSphere extends CustomCard {
     private static final int DRAW = 2;
     
     public PrismaticSphere() {
-    	super(ID, NAME, FruityMod.makePath(FruityMod.VOID_BOLT), COST, DESCRIPTION,
+    	super(ID, NAME, FruityMod.makePath(SeekerMod.VOID_BOLT), COST, DESCRIPTION,
     			AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
     			AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY);
     	this.baseDamage = ATTACK_DMG;

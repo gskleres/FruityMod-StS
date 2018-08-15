@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
 public class Vortex
@@ -22,7 +23,7 @@ extends CustomCard {
     private static final int UPGRADED_COST = 0;
 
     public Vortex() {
-        super(ID, NAME, FruityMod.makePath(FruityMod.VORTEX), COST, DESCRIPTION,
+        super(ID, NAME, FruityMod.makePath(SeekerMod.VORTEX), COST, DESCRIPTION,
         		AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
         		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
         this.exhaust = true;

@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.vfx.combat.ThrowDaggerEffect;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
 public class EtherBlast extends CustomCard {
@@ -29,7 +30,7 @@ public class EtherBlast extends CustomCard {
     private static final int PER_ETHEREAL_DMG_UPGRADE = 1;
 
 	public EtherBlast() {
-		super(ID, NAME, FruityMod.makePath(FruityMod.ETHER_BLAST), COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
+		super(ID, NAME, FruityMod.makePath(SeekerMod.ETHER_BLAST), COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
 				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
 		this.isEthereal = true;
 		this.damage = this.baseDamage = BASE_ATTACK_DMG;

@@ -17,6 +17,7 @@ import com.megacrit.cardcrawl.vfx.combat.LightningEffect;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
 public class ArcaneTempest extends CustomCard {
@@ -30,7 +31,7 @@ public class ArcaneTempest extends CustomCard {
 	private static final int DEBUFF_AMT_UPGRADE = 1;
 
 	public ArcaneTempest() {
-		super(ID, NAME, FruityMod.makePath(FruityMod.ARCANE_TEMPEST), COST, DESCRIPTION,
+		super(ID, NAME, FruityMod.makePath(SeekerMod.ARCANE_TEMPEST), COST, DESCRIPTION,
 				AbstractCard.CardType.ATTACK,
 				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.UNCOMMON,
 				AbstractCard.CardTarget.ALL_ENEMY);

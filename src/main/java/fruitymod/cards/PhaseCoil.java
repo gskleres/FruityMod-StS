@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
 public class PhaseCoil extends CustomCard {
@@ -25,7 +26,7 @@ public class PhaseCoil extends CustomCard {
 	private static final int DMG_BONUS_WHEN_DRAWN = 3;
 
 	public PhaseCoil() {
-		super(ID, NAME, FruityMod.makePath(FruityMod.PHASE_COIL), COST, DESCRIPTION,
+		super(ID, NAME, FruityMod.makePath(SeekerMod.PHASE_COIL), COST, DESCRIPTION,
 				AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
 				AbstractCard.CardRarity.COMMON,
 				AbstractCard.CardTarget.ENEMY);

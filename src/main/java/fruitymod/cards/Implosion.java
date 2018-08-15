@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.actions.common.TopCycleCardsFromHandAction;
 import fruitymod.patches.AbstractCardEnum;
 
@@ -27,7 +28,7 @@ public class Implosion extends CustomCard {
 	private static final int TOP_CYCLE_AMT = 1;
 	
 	public Implosion() {
-		super(ID, NAME, FruityMod.makePath(FruityMod.IMPLOSION), COST, DESCRIPTION,
+		super(ID, NAME, FruityMod.makePath(SeekerMod.IMPLOSION), COST, DESCRIPTION,
         		AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
         		AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ENEMY);
         this.baseDamage = ATTACK_DMG;

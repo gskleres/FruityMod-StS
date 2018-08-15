@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 import fruitymod.powers.deprecated.RunicBindingPower;
 
@@ -23,7 +24,7 @@ public class RunicBinding extends CustomCard {
 	private static final int UPGRADED_COST = 1;
 
 	public RunicBinding() {
-		super(ID, NAME, FruityMod.makePath(FruityMod.PERIAPT_OF_TENACITY), COST, DESCRIPTION,
+		super(ID, NAME, FruityMod.makePath(SeekerMod.PERIAPT_OF_TENACITY), COST, DESCRIPTION,
 				AbstractCard.CardType.POWER, AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.UNCOMMON,
 				AbstractCard.CardTarget.SELF);
 		this.magicNumber = this.baseMagicNumber = POWER_UP_AMT;

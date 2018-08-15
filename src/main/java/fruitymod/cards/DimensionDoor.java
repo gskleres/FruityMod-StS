@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
 public class DimensionDoor extends CustomCard {
@@ -23,7 +24,7 @@ public class DimensionDoor extends CustomCard {
 	private static final int INTANGIBLE_AMT = 1;
 	
 	public DimensionDoor() {
-		super(ID, NAME, FruityMod.makePath(FruityMod.DIMENSION_DOOR), COST, DESCRIPTION,
+		super(ID, NAME, FruityMod.makePath(SeekerMod.DIMENSION_DOOR), COST, DESCRIPTION,
 				AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
 				AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF);
 		this.exhaust = true;

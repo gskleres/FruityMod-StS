@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
 public class Brainstorm extends CustomCard {
@@ -28,7 +29,7 @@ public class Brainstorm extends CustomCard {
     private boolean triggerOnMoveToDiscard = false;
 
     public Brainstorm() {
-    	super(ID, NAME, FruityMod.makePath(FruityMod.BRAINSTORM), COST, DESCRIPTION,
+    	super(ID, NAME, FruityMod.makePath(SeekerMod.BRAINSTORM), COST, DESCRIPTION,
     			AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
     			AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
     	this.magicNumber = this.baseMagicNumber = DRAW;

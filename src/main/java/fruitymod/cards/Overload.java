@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.actions.common.ModifyMagicNumberAction;
 import fruitymod.patches.AbstractCardEnum;
 
@@ -27,7 +28,7 @@ public class Overload extends CustomCard {
 	private static final int VULNERABLE_AMT = 1;
 
 	public Overload() {
-		super(ID, NAME, FruityMod.makePath(FruityMod.POWER_SPIKE), COST, DESCRIPTION,
+		super(ID, NAME, FruityMod.makePath(SeekerMod.POWER_SPIKE), COST, DESCRIPTION,
 				AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
 				AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
 		this.magicNumber = this.baseMagicNumber = ENERGY_GAIN;

@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 
 import basemod.abstracts.CustomCard;
 import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
 public class Magnetize extends CustomCard {
@@ -26,7 +27,7 @@ public class Magnetize extends CustomCard {
 	private static final int WEAK_UPGRADE = 1;
 
 	public Magnetize() {
-		super(ID, NAME, FruityMod.makePath(FruityMod.MAGNETIZE), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
+		super(ID, NAME, FruityMod.makePath(SeekerMod.MAGNETIZE), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
 				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
 
 		this.baseBlock = BLOCK_AMT;
