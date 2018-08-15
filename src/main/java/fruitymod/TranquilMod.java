@@ -39,8 +39,6 @@ public class TranquilMod implements CharacterMod {
 	private static final String TRANQUIL_BUTTON = "charSelect/tranquilButton.png";
 	private static final String TRANQUIL_PORTRAIT = "charSelect/TranquilPortraitBG.jpg";
 
-	private static final String FRUITY_MOD_ASSETS_FOLDER = "img";
-
 	public TranquilMod() {
 		/*
 		 * Note that for now when installing FruityMod, in the `mods/` folder another folder named
@@ -137,7 +135,7 @@ public class TranquilMod implements CharacterMod {
 	 * @return the full path to the card background
 	 */
 	public static final String makeCardBgSmallPath(String cardType) {
-		return makePath("512/" + cardType + ".png");
+		return makePath("512/" + cardType);
 	}
 
 	/**
@@ -146,7 +144,7 @@ public class TranquilMod implements CharacterMod {
 	 * @return the full path to the card background
 	 */
 	public static final String makeCardBgLargePath(String cardType) {
-		return makePath("1024/" + cardType + ".png");
+		return makePath("1024/" + cardType);
 	}
 
 	/**
@@ -155,7 +153,7 @@ public class TranquilMod implements CharacterMod {
 	 * @return the full path to the card image
 	 */
 	public static final String makeCardImagePath(String cardName) {
-		return makePath("cards/" + cardName + ".png");
+		return makePath("cards/" + cardName);
 	}
 
 	/**
@@ -164,14 +162,8 @@ public class TranquilMod implements CharacterMod {
 	 * @return the full path to the character image
 	 */
 	public static final String makeCharacterImagePath(String image) {
-		String result = makePath("char/" + image);
-		if (! hasExtension(image)) {
-			result += ".png";
-		}
-
-		return result;
+		return makePath("char/" + image);
 	}
-
 
 	/**
 	 * Makes a full path for a resource path
@@ -179,7 +171,13 @@ public class TranquilMod implements CharacterMod {
 	 * @return the full path
 	 */
 	private static final String makePath(String resource) {
-		return FRUITY_MOD_ASSETS_FOLDER + "/tranquil/" + resource;
+		String result = "img/tranquil/" + resource;
+
+		if (! hasExtension(resource)) {
+			result += ".png";
+		}
+
+		return result;
 	}
 
 	public static boolean isEnabled() {
