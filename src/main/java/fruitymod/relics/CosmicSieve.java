@@ -1,5 +1,6 @@
 package fruitymod.relics;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import basemod.abstracts.CustomRelic;
@@ -11,7 +12,7 @@ public class CosmicSieve extends CustomRelic {
 	public static final int HP_PER_CARD = 1;
 	
 	public CosmicSieve() {
-		super(ID, SeekerMod.getCosmicSieveTexture(),
+		super(ID, new Texture(SeekerMod.makeRelicImagePath(ID)),
 				RelicTier.BOSS, LandingSound.MAGICAL);
 	}
 	
