@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fruitymod.FruityMod;
+import fruitymod.TranquilMod;
 import fruitymod.patches.AbstractCardEnum;
 
 public class FlurryOfBlows extends CustomCard {
@@ -21,7 +22,7 @@ public class FlurryOfBlows extends CustomCard {
 	private static final int COST = 0;
 	private static final int ATTACK_DMG = 1;
 	private static final int TIMES = 6;
-	private static final String IMAGE = FruityMod.makePath(FruityMod.FLURRY_OF_BLOWS);
+	private static final String IMAGE = FruityMod.makePath(TranquilMod.FLURRY_OF_BLOWS);
 
 	public FlurryOfBlows() {
 		super(ID, NAME, IMAGE, COST, DESCRIPTION, CardType.ATTACK,

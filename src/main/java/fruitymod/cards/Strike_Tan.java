@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fruitymod.FruityMod;
+import fruitymod.TranquilMod;
 import fruitymod.patches.AbstractCardEnum;
 
 public class Strike_Tan extends CustomCard {
@@ -21,7 +22,7 @@ public class Strike_Tan extends CustomCard {
 	private static final int UPGRADE_PLUS_DMG = 3;
 
 	public Strike_Tan() {
-		super(ID, NAME, FruityMod.makePath(FruityMod.STRIKE_TAN), COST, DESCRIPTION, CardType.ATTACK,
+		super(ID, NAME, FruityMod.makePath(TranquilMod.STRIKE_TAN), COST, DESCRIPTION, CardType.ATTACK,
 				AbstractCardEnum.TRANQUIL_TAN, CardRarity.BASIC,
 				CardTarget.ENEMY);
 
