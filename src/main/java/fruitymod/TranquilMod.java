@@ -47,12 +47,6 @@ public class TranquilMod implements CharacterMod {
 	public static final String TRANQUIL_SHOULDER_2 = "char/tranquil/shoulder2.png";
 	public static final String TRANQUIL_CORPSE = "char/tranquil/corpse.png";
 
-	// tranquil card images
-	public static final String STRIKE_TAN = "cards/strike_tan.png";
-	public static final String DEFEND_TAN = "cards/defend_tan.png";
-	public static final String TRANQUIL_FLYING_KICK = "cards/tranquil/flying_kick.png";
-	public static final String FLURRY_OF_BLOWS = "cards/flurry_of_blows.png";
-
 	private static final String FRUITY_MOD_ASSETS_FOLDER = "img";
 
 	public TranquilMod() {
@@ -143,6 +137,15 @@ public class TranquilMod implements CharacterMod {
 	@Override
 	public void receivePostExhaust(AbstractCard abstractCard) {
 
+	}
+
+	/**
+	 * Makes a full path for a card image
+	 * @param cardName the resource, must *NOT* have a leading "/"
+	 * @return the full path to the card image
+	 */
+	public static final String makeCardImagePath(String cardName) {
+		return "img/tranquil/cards/" + cardName + ".png";
 	}
 
 	/**
