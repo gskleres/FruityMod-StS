@@ -1,5 +1,6 @@
 package fruitymod.relics;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -13,7 +14,7 @@ public class Arcanosphere extends CustomRelic {
 	private static final int CARDS_TO_RETAIN = 1;
 	
 	public Arcanosphere() {
-		super(ID, SeekerMod.getArcanoSphereTexture(),
+		super(ID, new Texture(SeekerMod.makeRelicImagePath(ID)),
 				RelicTier.STARTER, LandingSound.MAGICAL);
 	}
 	

@@ -1,5 +1,6 @@
 package fruitymod.relics;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -20,7 +21,7 @@ public class RodOfNegation extends CustomRelic {
 	
 	
 	public RodOfNegation() {
-		super(ID, SeekerMod.getRodOfNegationTexture(),
+		super(ID, new Texture(SeekerMod.makeRelicImagePath(ID)),
 				RelicTier.COMMON, LandingSound.MAGICAL);
 	}
 	

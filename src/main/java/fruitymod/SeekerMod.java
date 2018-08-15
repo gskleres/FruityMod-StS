@@ -139,15 +139,6 @@ public class SeekerMod implements CharacterMod {
 	public static final String ZENITH = "cards/zenith.png";
 	public static final String PHASE_COIL = "cards/phase_coil.png";
 
-	// relic images
-	public static final String ARCANOSPHERE_RELIC = "relics/arcanosphere.png";
-	public static final String PAPER_PENGWIN_RELIC = "relics/paperPengwin.png";
-	public static final String COSMIC_SIEVE_RELIC = "relics/cosmicSieve.png";
-	public static final String SOLAR_EGG_RELIC = "relics/solarEgg.png";
-	public static final String ROD_OF_NEGATION_RELIC = "relics/rodOfNegation.png";
-	public static final String TELESCOPE_RELIC = "relics/telescope.png";
-	public static final String BLUEBERRIES_RELIC = "relics/blueberries.png";
-
 	public SeekerMod() {
 		/*
 		 * Note that for now when installing FruityMod, in the `mods/` folder another folder named
@@ -425,31 +416,6 @@ public class SeekerMod implements CharacterMod {
 		}
 	}
 
-	public static Texture getArcanoSphereTexture() {
-		return new Texture(makePath(ARCANOSPHERE_RELIC));
-	}
-
-	public static Texture getPaperPengwinTexture() {
-		return new Texture(makePath(PAPER_PENGWIN_RELIC));
-	}
-
-	public static Texture getCosmicSieveTexture() {
-		return new Texture(makePath(COSMIC_SIEVE_RELIC));
-	}
-	public static Texture getSolarEggTexture() {
-		return new Texture(makePath(SOLAR_EGG_RELIC));
-	}
-	public static Texture getRodOfNegationTexture() {
-		return new Texture(makePath(ROD_OF_NEGATION_RELIC));
-	}
-	public static Texture getTelescopeTexture() {
-		return new Texture(makePath(TELESCOPE_RELIC));
-	}
-
-	public static Texture getBlueberriesTexture() {
-		return new Texture(makePath(BLUEBERRIES_RELIC));
-	}
-
 	/**
 	 * Makes a full path for a resource path
 	 * @param resource the resource, must *NOT* have a leading "/"
@@ -458,6 +424,11 @@ public class SeekerMod implements CharacterMod {
 	private static final String makePath(String resource) {
 		return FRUITY_MOD_ASSETS_FOLDER + "/" + resource;
 	}
+
+	public static final String makeRelicImagePath(String power) {
+		return makeCustomPath("relics/" + power);
+	}
+
 
 	public static final String makePowerImagePath(String power) {
 		return makeCustomPath("powers/" + power);

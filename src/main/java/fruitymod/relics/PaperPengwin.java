@@ -1,5 +1,6 @@
 package fruitymod.relics;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import basemod.abstracts.CustomRelic;
@@ -11,7 +12,7 @@ public class PaperPengwin extends CustomRelic {
 	public static final int STAT_GAIN = 1;
 	
 	public PaperPengwin() {
-		super(ID, SeekerMod.getPaperPengwinTexture(),
+		super(ID, new Texture(SeekerMod.makeRelicImagePath(ID)),
 				RelicTier.UNCOMMON, LandingSound.MAGICAL);
 	}
 	
