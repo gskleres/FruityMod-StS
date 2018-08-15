@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.cards.Dazed_P;
 
 public class EnigmaPower extends AbstractPower {
@@ -30,7 +30,7 @@ public class EnigmaPower extends AbstractPower {
 		this.isTurnBased = false;
 		this.priority = 90;
 		updateDescription();
-		this.img = FruityMod.getEnigmaPowerTexture();
+		this.img = SeekerMod.getEnigmaPowerTexture();
 	}
 	
 	@Override

@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 
 public class EventHorizonPower
 extends AbstractPower {
@@ -22,7 +22,7 @@ extends AbstractPower {
         this.owner = owner;
         this.amount = amount;
         this.description = DESCRIPTION;
-        this.img = FruityMod.getEventHorizonPowerTexture();
+        this.img = SeekerMod.getEventHorizonPowerTexture();
     }
 
     @Override

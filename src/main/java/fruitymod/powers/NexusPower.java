@@ -10,7 +10,7 @@ import basemod.BaseMod;
 import basemod.interfaces.PostBattleSubscriber;
 import basemod.interfaces.PostDrawSubscriber;
 import basemod.interfaces.PostDungeonInitializeSubscriber;
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.actions.common.MakeTempCardInDrawPileEtherealAction;
 
 public class NexusPower extends AbstractPower implements PostDrawSubscriber, PostBattleSubscriber,
@@ -31,7 +31,7 @@ public class NexusPower extends AbstractPower implements PostDrawSubscriber, Pos
 		updateDescription();
 		this.type = AbstractPower.PowerType.BUFF;
 		this.isTurnBased = false;
-		this.img = FruityMod.getNexusPowerTexture();
+		this.img = SeekerMod.getNexusPowerTexture();
 	}
 	
 	@Override

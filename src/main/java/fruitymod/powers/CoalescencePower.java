@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 
 public class CoalescencePower extends AbstractPower {
 	public static final String POWER_ID = "CoalescencePower";
@@ -24,7 +24,7 @@ public class CoalescencePower extends AbstractPower {
 		this.isTurnBased = false;
 		this.priority = 90;
 		updateDescription();
-		this.img = FruityMod.getCoalescencePowerTexture();
+		this.img = SeekerMod.getCoalescencePowerTexture();
 	}
 	
 	@Override

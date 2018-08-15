@@ -11,7 +11,7 @@ import basemod.BaseMod;
 import basemod.interfaces.PostBattleSubscriber;
 import basemod.interfaces.PostDrawSubscriber;
 import basemod.interfaces.PostDungeonInitializeSubscriber;
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 
 public class BrilliancePower extends AbstractPower implements PostBattleSubscriber,
 		PostDungeonInitializeSubscriber, PostDrawSubscriber {
@@ -32,7 +32,7 @@ public class BrilliancePower extends AbstractPower implements PostBattleSubscrib
 		this.type = AbstractPower.PowerType.BUFF;
 		this.isTurnBased = true;
 		this.priority = 2;
-		this.img = FruityMod.getBrillancePowerTexture();
+		this.img = SeekerMod.getBrillancePowerTexture();
 	}
 
 	@Override

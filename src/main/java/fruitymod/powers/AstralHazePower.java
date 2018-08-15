@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 
 public class AstralHazePower extends AbstractPower {
 	public static final String POWER_ID = "AstralHazePower";
@@ -34,7 +34,7 @@ public class AstralHazePower extends AbstractPower {
 		this.type = AbstractPower.PowerType.BUFF;
 		this.isTurnBased = true;
 		this.priority = 90;
-		this.img = FruityMod.getAstralHazePowerTexture();
+		this.img = SeekerMod.getAstralHazePowerTexture();
 		this.attackers = new ArrayList<AbstractCreature>();
 	}
 

@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.cards.Retrograde;
 
 public class RetrogradeUpgradedPower
@@ -25,7 +25,7 @@ public class RetrogradeUpgradedPower
         this.owner = owner;
         this.amount = amount;
         this.updateDescription();
-        this.img = FruityMod.getCreativityPowerTexture();
+        this.img = SeekerMod.getCreativityPowerTexture();
     }
 
     @Override
