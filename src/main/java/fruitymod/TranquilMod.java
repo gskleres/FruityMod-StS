@@ -1,6 +1,7 @@
 package fruitymod;
 
 import basemod.BaseMod;
+import basemod.abstracts.CustomCard;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -20,6 +21,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TranquilMod implements CharacterMod {
 
@@ -69,15 +72,16 @@ public class TranquilMod implements CharacterMod {
 
 	@Override
 	public void receiveEditCards() {
-		BaseMod.addCard(new Strike_Tan());
-		BaseMod.addCard(new Defend_Tan());
-		BaseMod.addCard(new Tranquil_FlyingKick());
-		BaseMod.addCard(new FlurryOfBlows());
+		List<CustomCard> cards = new ArrayList<CustomCard>();
+		cards.add(new Strike_Tan());
+		cards.add(new Defend_Tan());
+		cards.add(new Tranquil_FlyingKick());
+		cards.add(new FlurryOfBlows());
 
-		UnlockTracker.unlockCard("Strike_T");
-		UnlockTracker.unlockCard("Defend_T");
-		UnlockTracker.unlockCard("Tranquil_FlyingKick");
-		UnlockTracker.unlockCard("FlurryOfBlows");
+		for(CustomCard card : cards) {
+			BaseMod.addCard(card);
+			UnlockTracker.unlockCard(card.cardID);
+		}
 	}
 
 	@Override
