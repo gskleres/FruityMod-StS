@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
-import fruitymod.FruityMod;
 import fruitymod.TranquilMod;
 import fruitymod.patches.TheTranquilEnum;
 
@@ -20,25 +19,25 @@ public class TheTranquil extends CustomPlayer {
 	public static final int ENERGY_PER_TURN = 3;
 
 	public static final String[] orbTextures = {
-			"img/char/tranquil/orb/layer1.png",
-			"img/char/tranquil/orb/layer2.png",
-			"img/char/tranquil/orb/layer3.png",
-			"img/char/tranquil/orb/layer4.png",
-			"img/char/tranquil/orb/layer5.png",
-			"img/char/tranquil/orb/layer6.png",
-			"img/char/tranquil/orb/layer1d.png",
-			"img/char/tranquil/orb/layer2d.png",
-			"img/char/tranquil/orb/layer3d.png",
-			"img/char/tranquil/orb/layer4d.png",
-			"img/char/tranquil/orb/layer5d.png",
+			TranquilMod.makeCharacterImagePath("orb/layer1"),
+			TranquilMod.makeCharacterImagePath("orb/layer2"),
+			TranquilMod.makeCharacterImagePath("orb/layer3"),
+			TranquilMod.makeCharacterImagePath("orb/layer4"),
+			TranquilMod.makeCharacterImagePath("orb/layer5"),
+			TranquilMod.makeCharacterImagePath("orb/layer6"),
+			TranquilMod.makeCharacterImagePath("orb/layer1d"),
+			TranquilMod.makeCharacterImagePath("orb/layer2d"),
+			TranquilMod.makeCharacterImagePath("orb/layer3d"),
+			TranquilMod.makeCharacterImagePath("orb/layer4d"),
+			TranquilMod.makeCharacterImagePath("orb/layer5d"),
 	};
 
 	public TheTranquil(String name, PlayerClass setClass) {
-		super(name, setClass, orbTextures, "img/char/tranquil/orb/vfx.png", new SpriterAnimation("img/char/tranquil/animation.scml"));
+		super(name, setClass, orbTextures, TranquilMod.makeCharacterImagePath("orb/vfx"), new SpriterAnimation(TranquilMod.makeCharacterImagePath("animation/animation.scml")));
 		
-		initializeClass(null, FruityMod.makePath(TranquilMod.TRANQUIL_SHOULDER_2),
-				FruityMod.makePath(TranquilMod.TRANQUIL_SHOULDER_1),
-				FruityMod.makePath(TranquilMod.TRANQUIL_CORPSE),
+		initializeClass(null, TranquilMod.makeCharacterImagePath("shoulder2"),
+				TranquilMod.makeCharacterImagePath("shoulder"),
+				TranquilMod.makeCharacterImagePath("corpse"),
 				getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN));
 
 		if (Settings.dailyModsEnabled() && DailyMods.cardMods.get("Diverse")) {

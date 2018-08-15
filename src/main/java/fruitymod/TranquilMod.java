@@ -43,9 +43,6 @@ public class TranquilMod implements CharacterMod {
 
 	private static final String TRANQUIL_BUTTON = "charSelect/tranquilButton.png";
 	private static final String TRANQUIL_PORTRAIT = "charSelect/TranquilPortraitBG.jpg";
-	public static final String TRANQUIL_SHOULDER_1 = "char/tranquil/shoulder.png";
-	public static final String TRANQUIL_SHOULDER_2 = "char/tranquil/shoulder2.png";
-	public static final String TRANQUIL_CORPSE = "char/tranquil/corpse.png";
 
 	private static final String FRUITY_MOD_ASSETS_FOLDER = "img";
 
@@ -149,6 +146,21 @@ public class TranquilMod implements CharacterMod {
 	}
 
 	/**
+	 * Makes a full path for a character image
+	 * @param image the image, must *NOT* have a leading "/"
+	 * @return the full path to the character image
+	 */
+	public static final String makeCharacterImagePath(String image) {
+		String result = "img/tranquil/char/" + image;
+		if (! hasExtension(image)) {
+			result += ".png";
+		}
+
+		return result;
+	}
+
+
+	/**
 	 * Makes a full path for a resource path
 	 * @param resource the resource, must *NOT* have a leading "/"
 	 * @return the full path
@@ -159,5 +171,9 @@ public class TranquilMod implements CharacterMod {
 
 	public static boolean isEnabled() {
 		return Boolean.parseBoolean(System.getProperty("tranquil_enabled","false"));
+	}
+
+	private static boolean hasExtension(String filename) {
+		return filename.lastIndexOf('.') > 0;
 	}
 }
