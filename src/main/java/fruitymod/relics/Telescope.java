@@ -10,7 +10,7 @@ import fruitymod.SeekerMod;
 import fruitymod.actions.unique.TelescopeAction;
 
 public class Telescope extends CustomRelic {
-	private static final String ID = "Telescope";
+	public static final String ID = "Telescope";
 
 	public Telescope() {
 		super(ID, new Texture(SeekerMod.makeRelicImagePath(ID)),

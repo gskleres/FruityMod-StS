@@ -8,7 +8,7 @@ import fruitymod.SeekerMod;
 
 
 public class CosmicSieve extends CustomRelic {
-	private static final String ID = "CosmicSieve";
+	public static final String ID = "CosmicSieve";
 	public static final int HP_PER_CARD = 1;
 	
 	public CosmicSieve() {
