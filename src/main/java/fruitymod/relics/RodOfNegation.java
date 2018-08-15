@@ -15,7 +15,7 @@ import fruitymod.actions.common.DiscardWithCallbackAction;
 import fruitymod.actions.common.IDiscardCallback;
 
 public class RodOfNegation extends CustomRelic {
-	private static final String ID = "RodOfNegation";
+	public static final String ID = "RodOfNegation";
 	private static final int DISCARD_AMT = 1;
 	private static final int ARTIFACT_PER_DISCARD = 1;
 	

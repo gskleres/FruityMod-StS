@@ -7,7 +7,7 @@ import basemod.abstracts.CustomRelic;
 import fruitymod.SeekerMod;
 
 public class PaperPengwin extends CustomRelic {
-	private static final String ID = "PaperPengwin";
+	public static final String ID = "PaperPengwin";
 	public static final int MIN_STACKS = 1;
 	public static final int STAT_GAIN = 1;
 	

@@ -10,7 +10,7 @@ import fruitymod.SeekerMod;
 import fruitymod.powers.ArcanospherePower;
 
 public class Arcanosphere extends CustomRelic {
-	private static final String ID = "Arcanosphere";
+	public static final String ID = "Arcanosphere";
 	private static final int CARDS_TO_RETAIN = 1;
 	
 	public Arcanosphere() {

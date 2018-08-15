@@ -8,7 +8,7 @@ import basemod.abstracts.CustomRelic;
 import fruitymod.SeekerMod;
 
 public class SolarEgg extends CustomRelic {
-	private static final String ID = "SolarEgg";
+	public static final String ID = "SolarEgg";
 	
 	public SolarEgg() {
 		super(ID, new Texture(SeekerMod.makeRelicImagePath(ID)),

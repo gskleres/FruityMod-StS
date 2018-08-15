@@ -16,6 +16,7 @@ import basemod.abstracts.CustomPlayer;
 import fruitymod.FruityMod;
 import fruitymod.SeekerMod;
 import fruitymod.patches.TheSeekerEnum;
+import fruitymod.relics.*;
 
 public class TheSeeker extends CustomPlayer {
 	public static final int ENERGY_PER_TURN = 3;
@@ -73,8 +74,8 @@ public class TheSeeker extends CustomPlayer {
 	
 	public static ArrayList<String> getStartingRelics() {
 		ArrayList<String> retVal = new ArrayList<>();
-		retVal.add("Arcanosphere");
-		UnlockTracker.markRelicAsSeen("Arcanosphere");
+		retVal.add(Arcanosphere.ID);
+		UnlockTracker.markRelicAsSeen(Arcanosphere.ID);
 		return retVal;
 	}
 	
