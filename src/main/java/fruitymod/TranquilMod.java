@@ -40,11 +40,6 @@ public class TranquilMod implements CharacterMod {
 	private static final String TRANQUIL_PORTRAIT = "charSelect/TranquilPortraitBG.jpg";
 
 	public TranquilMod() {
-		/*
-		 * Note that for now when installing FruityMod, in the `mods/` folder another folder named
-		 * the value of FRUITY_MOD_ASSETS_FOLDER must be created into which all the contents of the
-		 * `images/` folder must be relocated
-		 */
 		logger.info("creating the color " + AbstractCardEnum.TRANQUIL_TAN.toString());
 		BaseMod.addColor(AbstractCardEnum.TRANQUIL_TAN.toString(),
 				TAN, TAN, TAN, TAN, TAN, TAN, TAN,
