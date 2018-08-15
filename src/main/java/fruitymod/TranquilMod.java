@@ -30,16 +30,11 @@ public class TranquilMod implements CharacterMod {
 
 	private static final Color TAN = CardHelper.getColor(210.0f, 180.0f, 140.0f);
 
-	private static final String ATTACK_TAN = "512/bg_attack_tan.png";
-	private static final String SKILL_TAN = "512/bg_skill_tan.png";
-	private static final String POWER_TAN = "512/bg_power_tan.png";
-	private static final String ENERGY_ORB_TAN = "512/card_tan_orb.png";
-	private static final String CARD_ENERGY_ORB_TAN = "512/card_tan_small_orb.png";
-
-	private static final String ATTACK_TAN_PORTRAIT = "1024/bg_attack_tan.png";
-	private static final String SKILL_TAN_PORTRAIT = "1024/bg_skill_tan.png";
-	private static final String POWER_TAN_PORTRAIT = "1024/bg_power_tan.png";
-	private static final String ENERGY_ORB_TAN_PORTRAIT = "1024/card_tan_orb.png";
+	private static final String ATTACK = "attack";
+	private static final String SKILL = "skill";
+	private static final String POWER = "power";
+	private static final String ENERGY_ORB = "orb";
+	private static final String SMALL_ENERGY_ORB = "small_orb";
 
 	private static final String TRANQUIL_BUTTON = "charSelect/tranquilButton.png";
 	private static final String TRANQUIL_PORTRAIT = "charSelect/TranquilPortraitBG.jpg";
@@ -55,10 +50,10 @@ public class TranquilMod implements CharacterMod {
 		logger.info("creating the color " + AbstractCardEnum.TRANQUIL_TAN.toString());
 		BaseMod.addColor(AbstractCardEnum.TRANQUIL_TAN.toString(),
 				TAN, TAN, TAN, TAN, TAN, TAN, TAN,
-				makePath(ATTACK_TAN), makePath(SKILL_TAN),
-				makePath(POWER_TAN), makePath(ENERGY_ORB_TAN),
-				makePath(ATTACK_TAN_PORTRAIT), makePath(SKILL_TAN_PORTRAIT),
-				makePath(POWER_TAN_PORTRAIT), makePath(ENERGY_ORB_TAN_PORTRAIT), makePath(CARD_ENERGY_ORB_TAN));
+				makeCardBgSmallPath(ATTACK), makeCardBgSmallPath(SKILL),
+				makeCardBgSmallPath(POWER), makeCardBgSmallPath(ENERGY_ORB),
+				makeCardBgLargePath(ATTACK), makeCardBgLargePath(SKILL),
+				makeCardBgLargePath(POWER), makeCardBgLargePath(ENERGY_ORB), makeCardBgSmallPath(SMALL_ENERGY_ORB));
 	}
 
 	@Override
@@ -137,12 +132,30 @@ public class TranquilMod implements CharacterMod {
 	}
 
 	/**
+	 * Makes a full path for a small card background
+	 * @param cardType the card type, must *NOT* have a leading "/"
+	 * @return the full path to the card background
+	 */
+	public static final String makeCardBgSmallPath(String cardType) {
+		return makePath("512/" + cardType + ".png");
+	}
+
+	/**
+	 * Makes a full path for a large card background
+	 * @param cardType the card type, must *NOT* have a leading "/"
+	 * @return the full path to the card background
+	 */
+	public static final String makeCardBgLargePath(String cardType) {
+		return makePath("1024/" + cardType + ".png");
+	}
+
+	/**
 	 * Makes a full path for a card image
 	 * @param cardName the resource, must *NOT* have a leading "/"
 	 * @return the full path to the card image
 	 */
 	public static final String makeCardImagePath(String cardName) {
-		return "img/tranquil/cards/" + cardName + ".png";
+		return makePath("cards/" + cardName + ".png");
 	}
 
 	/**
@@ -151,7 +164,7 @@ public class TranquilMod implements CharacterMod {
 	 * @return the full path to the character image
 	 */
 	public static final String makeCharacterImagePath(String image) {
-		String result = "img/tranquil/char/" + image;
+		String result = makePath("char/" + image);
 		if (! hasExtension(image)) {
 			result += ".png";
 		}
@@ -166,7 +179,7 @@ public class TranquilMod implements CharacterMod {
 	 * @return the full path
 	 */
 	private static final String makePath(String resource) {
-		return FRUITY_MOD_ASSETS_FOLDER + "/" + resource;
+		return FRUITY_MOD_ASSETS_FOLDER + "/tranquil/" + resource;
 	}
 
 	public static boolean isEnabled() {
