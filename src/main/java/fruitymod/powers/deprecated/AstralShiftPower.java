@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 
 public class AstralShiftPower extends AbstractPower {
 	public static final String POWER_ID = "AstralShiftPower";
@@ -18,7 +18,7 @@ public class AstralShiftPower extends AbstractPower {
 		this.owner = owner;
 		this.amount = turns;
 		updateDescription();
-		this.img = FruityMod.getAstralShiftTexture();
+		this.img = SeekerMod.getAstralShiftTexture();
 		this.priority = 99;
 	}
 

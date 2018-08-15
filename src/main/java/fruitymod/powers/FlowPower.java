@@ -1,21 +1,14 @@
 package fruitymod.powers;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
-import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 
 public class FlowPower extends AbstractPower {
 	public static final String POWER_ID = "Flow";
@@ -33,7 +26,7 @@ public class FlowPower extends AbstractPower {
 		this.description = DESCRIPTIONS[0];
 		this.type = AbstractPower.PowerType.BUFF;
 		this.isTurnBased = true;
-		this.img = FruityMod.getAstralHazePowerTexture(); // Replace with a different image
+		this.img = SeekerMod.getAstralHazePowerTexture(); // Replace with a different image
 	}
 
     @Override

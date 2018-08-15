@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 
 // This is an invisible power than triggers ethereal cards should be exhausted at the end of the turn
 public class EtherealizePower extends AbstractPower {
@@ -31,7 +31,7 @@ public class EtherealizePower extends AbstractPower {
         //this.loadRegion("anger");
         this.type = AbstractPower.PowerType.BUFF;
         this.priority = 90;
-        this.img = FruityMod.getEtherealizePowerTexture();
+        this.img = SeekerMod.getEtherealizePowerTexture();
     }
 
     @Override

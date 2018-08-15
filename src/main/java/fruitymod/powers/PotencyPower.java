@@ -12,7 +12,7 @@ import basemod.BaseMod;
 import basemod.interfaces.PostBattleSubscriber;
 import basemod.interfaces.PostDungeonInitializeSubscriber;
 import basemod.interfaces.PostExhaustSubscriber;
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 
 public class PotencyPower extends AbstractPower implements PostExhaustSubscriber, PostBattleSubscriber,
 		PostDungeonInitializeSubscriber {
@@ -32,7 +32,7 @@ public class PotencyPower extends AbstractPower implements PostExhaustSubscriber
 		this.type = AbstractPower.PowerType.BUFF;
 		this.isTurnBased = false;
 		this.priority = 90;
-		this.img = FruityMod.getPotencyPowerTexture();
+		this.img = SeekerMod.getPotencyPowerTexture();
 	}
 	
 	@Override

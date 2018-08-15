@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 
 public class RunicBindingPower extends AbstractPower {
 	public static final String POWER_ID = "RunicBindingPower";
@@ -22,7 +22,7 @@ public class RunicBindingPower extends AbstractPower {
 		this.amount = amount;
 		this.upgraded = upgraded;
 		updateDescription();
-		this.img = FruityMod.getTenacityPowerTexture();
+		this.img = SeekerMod.getTenacityPowerTexture();
 	}
 	
 	@Override

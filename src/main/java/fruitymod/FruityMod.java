@@ -128,107 +128,10 @@ public class FruityMod implements PostInitializeSubscriber,
     public static final String TRANQUIL_FLYING_KICK = "cards/tranquil/flying_kick.png";
     public static final String FLURRY_OF_BLOWS = "cards/flurry_of_blows.png";
 
-    // power images
-    public static final String ARCANOSPHERE_POWER = "powers/arcanosphere.png";
-    public static final String ASTRAL_HAZE_POWER = "powers/astral_haze.png";
-    public static final String CHAOS_FORM_POWER = "powers/chaos_form.png";
-    public static final String ESSENCE_MIRROR_POWER = "powers/essence_mirror.png";
-    public static final String ETHEREALIZE_POWER = "powers/essence_mirror.png";
-    public static final String WORMHOLE_POWER = "powers/wormhole.png";
-    public static final String VIGOR_POWER = "powers/vigor.png";
-    public static final String ASTRAL_SHIFT_POWER = "powers/astral_shift.png";
-    public static final String TENACITY_POWER = "powers/tenacity.png";
-    public static final String CELERITY_POWER = "powers/celerity.png";
-    public static final String POTENCY_POWER = "powers/potency.png";
-    public static final String COALESCENCE_POWER = "powers/coalescence.png";
-    public static final String CREATIVITY_POWER = "powers/creativity.png";
-    public static final String POWER_OVERWHELMING_POWER = "powers/power_overwhelming.png";
-    public static final String EVENT_HORIZON_POWER = "powers/event_horizon.png";
-    public static final String ENIGMA_POWER = "powers/enigma.png";
-    public static final String BRILLIANCE_POWER = "powers/brilliance.png";
-    public static final String ANOMALY_POWER = "powers/anomaly.png";
-
-    // badge
+	// badge
     public static final String BADGE_IMG = "FRelicBadge.png";
-    
-    // texture loaders
-    public static Texture getAstralHazePowerTexture() {
-    	return new Texture(makePath(ASTRAL_HAZE_POWER));
-    }
-    
-    public static Texture getChaosFormPowerTexture() {
-    	return new Texture(makePath(CHAOS_FORM_POWER));
-    }
-    
-    public static Texture getEssenceMirrorPowerTexture() {
-    	return new Texture(makePath(ESSENCE_MIRROR_POWER));
-    }
-    
-    public static Texture getEtherealizePowerTexture() {
-    	return new Texture(makePath(ETHEREALIZE_POWER));
-    }
-    
-    public static Texture getWormholePowerTexture() {
-    	return new Texture(makePath(WORMHOLE_POWER));
-    }
 
-    public static Texture getVigorPowerTexture() {
-    	return new Texture(makePath(VIGOR_POWER));
-    }
-    
-    public static Texture getAstralShiftTexture() {
-    	return new Texture(makePath(ASTRAL_SHIFT_POWER));
-    }
-    
-    public static Texture getTenacityPowerTexture() {
-    	return new Texture(makePath(TENACITY_POWER));
-    }
-    
-    public static Texture getCelerityPowerTexture() {
-    	return new Texture(makePath(CELERITY_POWER));
-    }
-    
-    public static Texture getPotencyPowerTexture() {
-    	return new Texture(makePath(POTENCY_POWER));
-    }
-    
-    public static Texture getCoalescencePowerTexture() {
-    	return new Texture(makePath(COALESCENCE_POWER));
-    }
-    
-    public static Texture getCreativityPowerTexture() {
-    	return new Texture(makePath(CREATIVITY_POWER));
-    }
-    
-    public static Texture getPowerOverwhelmingPowerTexture() {
-    	return new Texture(makePath(POWER_OVERWHELMING_POWER));
-    }
-    
-    public static Texture getEventHorizonPowerTexture() {
-    	return new Texture(makePath(EVENT_HORIZON_POWER));
-    }
-    
-    public static Texture getEnigmaPowerTexture() {
-    	return new Texture(makePath(ENIGMA_POWER));
-    }
-    
-    public static Texture getBrillancePowerTexture() {
-    	return new Texture(makePath(BRILLIANCE_POWER));
-    }
-    
-    public static Texture getAnomalyPowerTexture() {
-    	return new Texture(makePath(ANOMALY_POWER));
-    }
-    
-    public static Texture getNexusPowerTexture() {
-    	return new Texture(makePath(VIGOR_POWER));
-    }
-
-    public static Texture getArcanospherePowerTexture() {
-        return new Texture(makePath(ARCANOSPHERE_POWER));
-    }
-
-    /**
+	/**
      * Makes a full path for a resource path
      * @param resource the resource, must *NOT* have a leading "/"
      * @return the full path
