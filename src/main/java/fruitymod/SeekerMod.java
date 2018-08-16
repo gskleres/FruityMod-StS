@@ -86,7 +86,7 @@ public class SeekerMod implements CharacterMod {
 		logger.info("add " + TheSeekerEnum.THE_SEEKER.toString());
 		BaseMod.addCharacter(TheSeeker.class, "The Seeker", "Seeker class string",
 				AbstractCardEnum.SEEKER_PURPLE.toString(), "#pThe #pSeeker",
-				makePath(SEEKER_BUTTON), makePath(SEEKER_PORTRAIT),
+				makeCustomPath(SEEKER_BUTTON), makeCustomPath(SEEKER_PORTRAIT),
 				TheSeekerEnum.THE_SEEKER.toString());
 	}
 
@@ -340,15 +340,6 @@ public class SeekerMod implements CharacterMod {
 		} else {
 			System.out.println("don't use dazed");
 		}
-	}
-
-	/**
-	 * Makes a full path for a resource path
-	 * @param resource the resource, must *NOT* have a leading "/"
-	 * @return the full path
-	 */
-	private static final String makePath(String resource) {
-		return FRUITY_MOD_ASSETS_FOLDER + "/" + resource;
 	}
 
 	public static final String makeCardImagePath(String cardName) {
