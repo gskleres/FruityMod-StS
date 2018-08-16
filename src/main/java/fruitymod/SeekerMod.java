@@ -74,10 +74,10 @@ public class SeekerMod implements CharacterMod {
 		logger.info("creating the color " + AbstractCardEnum.SEEKER_PURPLE.toString());
 		BaseMod.addColor(AbstractCardEnum.SEEKER_PURPLE.toString(),
 				PURPLE, PURPLE, PURPLE, PURPLE, PURPLE, PURPLE, PURPLE,
-				makePath(ATTACK_PURPLE), makePath(SKILL_PURPLE),
-				makePath(POWER_PURPLE), makePath(ENERGY_ORB_PURPLE),
+				makeCustomPath(ATTACK_PURPLE), makeCustomPath(SKILL_PURPLE),
+				makeCustomPath(POWER_PURPLE), makeCustomPath(ENERGY_ORB_PURPLE),
 				makePath(ATTACK_PURPLE_PORTRAIT), makePath(SKILL_PURPLE_PORTRAIT),
-				makePath(POWER_PURPLE_PORTRAIT), makePath(ENERGY_ORB_PURPLE_PORTRAIT), makePath(CARD_ENERGY_ORB_PURPLE));
+				makePath(POWER_PURPLE_PORTRAIT), makePath(ENERGY_ORB_PURPLE_PORTRAIT), makeCustomPath(CARD_ENERGY_ORB_PURPLE));
 
 	}
 
