@@ -4,7 +4,6 @@ import basemod.BaseMod;
 import basemod.abstracts.CustomCard;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
@@ -69,10 +68,10 @@ public class SeekerMod implements CharacterMod {
 		logger.info("creating the color " + AbstractCardEnum.SEEKER_PURPLE.toString());
 		BaseMod.addColor(AbstractCardEnum.SEEKER_PURPLE.toString(),
 				PURPLE, PURPLE, PURPLE, PURPLE, PURPLE, PURPLE, PURPLE,
-				makeCustomPath(ATTACK_PURPLE), makeCustomPath(SKILL_PURPLE),
-				makeCustomPath(POWER_PURPLE), makeCustomPath(ENERGY_ORB_PURPLE),
-				makeCustomPath(ATTACK_PURPLE_PORTRAIT), makeCustomPath(SKILL_PURPLE_PORTRAIT),
-				makeCustomPath(POWER_PURPLE_PORTRAIT), makeCustomPath(ENERGY_ORB_PURPLE_PORTRAIT), makeCustomPath(CARD_ENERGY_ORB_PURPLE));
+				makePath(ATTACK_PURPLE), makePath(SKILL_PURPLE),
+				makePath(POWER_PURPLE), makePath(ENERGY_ORB_PURPLE),
+				makePath(ATTACK_PURPLE_PORTRAIT), makePath(SKILL_PURPLE_PORTRAIT),
+				makePath(POWER_PURPLE_PORTRAIT), makePath(ENERGY_ORB_PURPLE_PORTRAIT), makePath(CARD_ENERGY_ORB_PURPLE));
 
 	}
 
@@ -81,7 +80,7 @@ public class SeekerMod implements CharacterMod {
 		logger.info("add " + TheSeekerEnum.THE_SEEKER.toString());
 		BaseMod.addCharacter(TheSeeker.class, "The Seeker", "Seeker class string",
 				AbstractCardEnum.SEEKER_PURPLE.toString(), "#pThe #pSeeker",
-				makeCustomPath(SEEKER_BUTTON), makeCustomPath(SEEKER_PORTRAIT),
+				makePath(SEEKER_BUTTON), makePath(SEEKER_PORTRAIT),
 				TheSeekerEnum.THE_SEEKER.toString());
 	}
 
@@ -338,15 +337,15 @@ public class SeekerMod implements CharacterMod {
 	}
 
 	public static final String makeCardImagePath(String cardName) {
-		return makeCustomPath("cards/" + cardName);
+		return makePath("cards/" + cardName);
 	}
 
 	public static final String makeRelicImagePath(String power) {
-		return makeCustomPath("relics/" + power);
+		return makePath("relics/" + power);
 	}
 
 	public static final String makePowerImagePath(String power) {
-		return makeCustomPath("powers/" + power);
+		return makePath("powers/" + power);
 	}
 
 	/**
@@ -354,7 +353,7 @@ public class SeekerMod implements CharacterMod {
 	 * @param resource the resource, must *NOT* have a leading "/"
 	 * @return the full path
 	 */
-	public static final String makeCustomPath(String resource) {
+	public static final String makePath(String resource) {
 		String result = FRUITY_MOD_ASSETS_FOLDER + "/seeker/" + resource;
 
 		if (! hasExtension(resource)) {
