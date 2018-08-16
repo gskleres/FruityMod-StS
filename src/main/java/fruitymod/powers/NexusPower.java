@@ -32,7 +32,7 @@ public class NexusPower extends AbstractPower implements PostDrawSubscriber, Pos
 		updateDescription();
 		this.type = AbstractPower.PowerType.BUFF;
 		this.isTurnBased = false;
-		this.img = new Texture(SeekerMod.makePowerImagePath(NAME));
+		this.img = new Texture(SeekerMod.makePowerImagePath(POWER_ID));
 	}
 	
 	@Override

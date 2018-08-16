@@ -19,7 +19,7 @@ public class ArcanospherePower
         this.owner = owner;
         this.amount = amount;
         this.updateDescription();
-        this.img = new Texture(SeekerMod.makePowerImagePath(NAME));
+        this.img = new Texture(SeekerMod.makePowerImagePath(POWER_ID));
     }
 
     @Override

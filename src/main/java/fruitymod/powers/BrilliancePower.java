@@ -33,7 +33,7 @@ public class BrilliancePower extends AbstractPower implements PostBattleSubscrib
 		this.type = AbstractPower.PowerType.BUFF;
 		this.isTurnBased = true;
 		this.priority = 2;
-		this.img = new Texture(SeekerMod.makePowerImagePath(NAME));
+		this.img = new Texture(SeekerMod.makePowerImagePath(POWER_ID));
 	}
 
 	@Override

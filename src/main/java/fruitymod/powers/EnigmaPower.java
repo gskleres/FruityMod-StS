@@ -31,7 +31,7 @@ public class EnigmaPower extends AbstractPower {
 		this.isTurnBased = false;
 		this.priority = 90;
 		updateDescription();
-		this.img = new Texture(SeekerMod.makePowerImagePath(NAME));
+		this.img = new Texture(SeekerMod.makePowerImagePath(POWER_ID));
 	}
 	
 	@Override
