@@ -31,7 +31,7 @@ public class Dazed_P extends CustomCard {
 				AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
 				CardRarity.SPECIAL, AbstractCard.CardTarget.ALL_ENEMY);
 
-		this.setBackgroundTexture("img/seeker/512/DazedP_BG_small.png", "img/1024/DazedP_BG_large.png");
+		this.setBackgroundTexture("img/seeker/512/DazedP_BG_small.png", "img/seeker/1024/DazedP_BG_large.png");
 
 		this.baseDamage = 0;
 		this.baseBlock = 0;

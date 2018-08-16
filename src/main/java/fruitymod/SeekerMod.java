@@ -76,8 +76,8 @@ public class SeekerMod implements CharacterMod {
 				PURPLE, PURPLE, PURPLE, PURPLE, PURPLE, PURPLE, PURPLE,
 				makeCustomPath(ATTACK_PURPLE), makeCustomPath(SKILL_PURPLE),
 				makeCustomPath(POWER_PURPLE), makeCustomPath(ENERGY_ORB_PURPLE),
-				makePath(ATTACK_PURPLE_PORTRAIT), makePath(SKILL_PURPLE_PORTRAIT),
-				makePath(POWER_PURPLE_PORTRAIT), makePath(ENERGY_ORB_PURPLE_PORTRAIT), makeCustomPath(CARD_ENERGY_ORB_PURPLE));
+				makeCustomPath(ATTACK_PURPLE_PORTRAIT), makeCustomPath(SKILL_PURPLE_PORTRAIT),
+				makeCustomPath(POWER_PURPLE_PORTRAIT), makeCustomPath(ENERGY_ORB_PURPLE_PORTRAIT), makeCustomPath(CARD_ENERGY_ORB_PURPLE));
 
 	}
 
