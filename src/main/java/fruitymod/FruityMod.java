@@ -51,7 +51,7 @@ public class FruityMod implements PostInitializeSubscriber,
      * @param resource the resource, must *NOT* have a leading "/"
      * @return the full path
      */
-    public static final String makePath(String resource) {
+    private static final String makePath(String resource) {
     	return FRUITY_MOD_ASSETS_FOLDER + "/" + resource;
     }
     
