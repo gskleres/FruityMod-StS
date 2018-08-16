@@ -1,4 +1,4 @@
-package fruitymod.cards;
+package fruitymod.tranquil.cards;
 
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -11,20 +11,24 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fruitymod.TranquilMod;
 import fruitymod.patches.AbstractCardEnum;
 
-public class Defend_Tan extends CustomCard {
-	public static final String ID = "Defend_T";
+public class Blockpocalypse extends CustomCard {
+	public static final String ID = "Blockpocalypse";
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-	private static final int COST = 1;
-	private static final int BLOCK_AMT = 5;
-	private static final int UPGRADE_PLUS_BLOCK = 3;
+	private static final int COST = 0;
+	private static final int BLOCK_AMT = 1;
+	private static final int TIMES = 5;
+	private static final String IMAGE = TranquilMod.makeCardImagePath(ID);
 
-	public Defend_Tan() {
-		super(ID, NAME, TranquilMod.makeCardImagePath(ID), COST, DESCRIPTION, CardType.SKILL,
-				AbstractCardEnum.TRANQUIL_TAN, CardRarity.BASIC, CardTarget.SELF);
+	public Blockpocalypse() {
+		super(ID, NAME, IMAGE, COST, DESCRIPTION, CardType.SKILL,
+				AbstractCardEnum.TRANQUIL_TAN, CardRarity.RARE,
+				CardTarget.SELF);
 
 		this.baseBlock = BLOCK_AMT;
+		this.magicNumber = this.baseMagicNumber = TIMES;
+		this.exhaust = true;
 	}
 
 	@Override
@@ -32,18 +36,22 @@ public class Defend_Tan extends CustomCard {
 		return true;
 	}
 
-	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
+	public void use(AbstractPlayer player, AbstractMonster monster) {
+		for (int i = 0; i < magicNumber; i++) {
+			AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, this.baseBlock));
+		}
 	}
 
 	public AbstractCard makeCopy() {
-		return new Defend_Tan();
+		return new Blockpocalypse();
 	}
 
 	public void upgrade() {
 		if (!this.upgraded) {
 			upgradeName();
-			upgradeBlock(UPGRADE_PLUS_BLOCK);
+			this.exhaust = false;
+			this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+			this.initializeDescription();
 		}
 	}
 }

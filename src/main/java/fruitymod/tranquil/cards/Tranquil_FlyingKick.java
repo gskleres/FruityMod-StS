@@ -1,4 +1,4 @@
-package fruitymod.cards.tranquil;
+package fruitymod.tranquil.cards;
 
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
