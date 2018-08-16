@@ -16,6 +16,11 @@
 		"DESCRIPTION": "Deal !D! damage !M! times.  NL Exhaust.",
 		"UPGRADE_DESCRIPTION": "Deal !D! damage !M! times."
 	},
+	"Blockpocalypse": {
+		"NAME": "Blockpocalypse",
+		"DESCRIPTION": "Gain !B! Block !M! times.  NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Gain !B! Block !M! times."
+	},
 
 	"DO_NOT_REMOVE_DummyLineForJSONEndOfFileSoYouDoNotHaveToRememberToDeleteTheLastComma": {}
 }

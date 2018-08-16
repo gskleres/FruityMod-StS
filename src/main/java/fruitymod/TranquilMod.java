@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import fruitymod.cards.Defend_Tan;
 import fruitymod.cards.FlurryOfBlows;
 import fruitymod.cards.Strike_Tan;
+import fruitymod.cards.tranquil.Blockpocalypse;
 import fruitymod.cards.tranquil.Tranquil_FlyingKick;
 import fruitymod.characters.TheTranquil;
 import fruitymod.patches.AbstractCardEnum;
@@ -56,6 +57,7 @@ public class TranquilMod implements CharacterMod {
 		cards.add(new Defend_Tan());
 		cards.add(new Tranquil_FlyingKick());
 		cards.add(new FlurryOfBlows());
+		cards.add(new Blockpocalypse());
 
 		for(CustomCard card : cards) {
 			BaseMod.addCard(card);
