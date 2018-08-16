@@ -19,7 +19,6 @@ import com.megacrit.cardcrawl.powers.EnergizedPower;
 import com.megacrit.cardcrawl.vfx.combat.IronWaveEffect;
 
 import basemod.abstracts.CustomCard;
-import fruitymod.FruityMod;
 import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
@@ -36,7 +35,7 @@ public class Singularity extends CustomCard {
     private static final int ENERGY_GAIN = 1;
     
     public Singularity() {
-    	super(ID, NAME, FruityMod.makePath(SeekerMod.SINGULARITY), COST, DESCRIPTION,
+    	super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION,
     			AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
     			CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
     	this.baseDamage = ATTACK_DMG;

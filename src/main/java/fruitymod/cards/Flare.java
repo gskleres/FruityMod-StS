@@ -13,7 +13,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 import basemod.abstracts.CustomCard;
-import fruitymod.FruityMod;
 import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
@@ -30,7 +29,7 @@ extends CustomCard {
     private static final int UPGRADE_PLUS_VULNERABLE = 1;
 
     public Flare() {
-        super(ID, NAME, FruityMod.makePath(SeekerMod.FLARE), COST, DESCRIPTION,
+        super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION,
         		AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
         		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
         this.magicNumber = this.baseMagicNumber = VULNERABLE_AMT;

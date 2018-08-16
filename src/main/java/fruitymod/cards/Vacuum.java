@@ -15,7 +15,6 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.combat.VerticalImpactEffect;
 
 import basemod.abstracts.CustomCard;
-import fruitymod.FruityMod;
 import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
@@ -31,7 +30,7 @@ extends CustomCard {
     private static final int UPGRADED_DMG_AMT = 2;
 
     public Vacuum() {
-        super(ID, NAME, FruityMod.makePath(SeekerMod.VACUUM), COST, DESCRIPTION,
+        super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION,
         		AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
         		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
         this.magicNumber = this.baseMagicNumber = ATTACK_DMG;

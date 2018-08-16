@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
-import fruitymod.FruityMod;
 import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 import fruitymod.powers.EchoPower;
@@ -25,7 +24,7 @@ extends CustomCard {
     private static final int DOUBLE_UPGRADE = 1;
 
     public Echo() {
-        super(ID, NAME, FruityMod.makePath(SeekerMod.ECHO), COST, DESCRIPTION,
+        super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION,
         		AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
         		AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF);
 				this.baseMagicNumber = this.magicNumber = DOUBLE_AMT;

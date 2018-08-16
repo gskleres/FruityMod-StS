@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.powers.StrengthPower;
-import fruitymod.FruityMod;
 import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 import fruitymod.powers.PowerOverwhelmingPower;
@@ -25,7 +24,7 @@ public class PowerOverwhelming extends CustomCard {
 	private static final int STRENGTH_UPGRADED = 2;
 	
 	public PowerOverwhelming() {
-		super(ID, NAME, FruityMod.makePath(SeekerMod.POWER_OVERWHELMING), COST, DESCRIPTION,
+		super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION,
 				AbstractCard.CardType.POWER, AbstractCardEnum.SEEKER_PURPLE,
 				AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF);
 		this.magicNumber = this.baseMagicNumber = STRENGTH;

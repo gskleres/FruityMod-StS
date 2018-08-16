@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import basemod.abstracts.CustomCard;
-import fruitymod.FruityMod;
 import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
@@ -27,7 +26,7 @@ public class MindOverMatter extends CustomCard {
 	private static final int BASE_BLOCK_AMT = 5;
 
 	public MindOverMatter() {
-		super(ID, NAME, FruityMod.makePath(SeekerMod.MIND_OVER_MATTER), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
+		super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
 				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF);
 
 		this.magicNumber = this.baseMagicNumber = BONUS_BLOCK_AMT;

@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
-import fruitymod.FruityMod;
 import fruitymod.SeekerMod;
 import fruitymod.actions.unique.HypothesisAction;
 import fruitymod.patches.AbstractCardEnum;
@@ -26,7 +25,7 @@ extends CustomCard {
     private static final int BONUS_DRAW_UPGRADE = 1;
 
     public Hypothesis() {
-        super(ID, NAME, FruityMod.makePath(SeekerMod.HYPOTHESIS), COST, DESCRIPTION,
+        super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION,
         		AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
         		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
         this.magicNumber = this.baseMagicNumber = BONUS_DRAW;

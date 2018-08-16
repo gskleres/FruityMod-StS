@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
-import fruitymod.FruityMod;
 import fruitymod.SeekerMod;
 import fruitymod.actions.common.ModifyBlockAction;
 import fruitymod.patches.AbstractCardEnum;
@@ -24,7 +23,7 @@ public class ArcaneArmor extends CustomCard {
 	private static final int UPGRADE_PLUS_BLOCK = 6;
 
 	public ArcaneArmor() {
-		super(ID, NAME, FruityMod.makePath(SeekerMod.ARCANE_ARMOR), COST, DESCRIPTION,
+		super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION,
 				AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
 				AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF);
 		this.block = this.baseBlock = BLOCK;

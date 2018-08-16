@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
-import fruitymod.FruityMod;
 import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
@@ -23,7 +22,7 @@ public class Defend_Purple extends CustomCard {
 	private static final int UPGRADE_PLUS_BLOCK = 3;
 
 	public Defend_Purple() {
-		super(ID, NAME, FruityMod.makePath(SeekerMod.DEFEND_PURPLE), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
+		super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
 				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.BASIC, AbstractCard.CardTarget.SELF);
 
 		this.baseBlock = BLOCK_AMT;

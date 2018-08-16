@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.powers.DexterityPower;
 
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.powers.WeakPower;
-import fruitymod.FruityMod;
 import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
@@ -29,7 +28,7 @@ public class SiphonSpeed extends CustomCard {
 	private static final int DEX_GAIN_AMT = 1;
 	
 	public SiphonSpeed() {
-		super (ID, NAME, FruityMod.makePath(SeekerMod.SIPHON_SPEED), COST, DESCRIPTION,
+		super (ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION,
 				AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
 				AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
 		this.baseBlock = BLOCK;

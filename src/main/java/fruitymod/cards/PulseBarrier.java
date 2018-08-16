@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.FrailPower;
 
 import basemod.abstracts.CustomCard;
-import fruitymod.FruityMod;
 import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
@@ -26,7 +25,7 @@ public class PulseBarrier extends CustomCard {
 	private static final int FRAIL_AMT = 2;
 
 	public PulseBarrier() {
-		super(ID, NAME, FruityMod.makePath(SeekerMod.ESSENCE_SPIKE), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
+		super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
 				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF);
 
 		this.baseBlock = BLOCK_AMT;

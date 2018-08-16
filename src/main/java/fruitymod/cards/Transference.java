@@ -30,7 +30,7 @@ public class Transference extends CustomCard {
 	    private static final int DRAW = 1;
 	    
 	 public Transference() {
-		 super(ID, NAME,  FruityMod.makePath(SeekerMod.TRANSFERENCE), COST, DESCRIPTION,
+		 super(ID, NAME,  SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION,
 				 AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
 				 AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
 		 this.baseMagicNumber = DRAW;
