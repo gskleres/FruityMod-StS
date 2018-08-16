@@ -5,7 +5,7 @@
 	},
 	"Defend_T": {
 		"NAME": "Defend",
-		"DESCRIPTION": "Gain !B! Block."
+		"DESCRIPTION": "Gain !B! block."
 	},
 	"Tranquil_FlyingKick": {
 		"NAME": "Flying Kick",
@@ -15,6 +15,11 @@
 		"NAME": "Flurry Of Blows",
 		"DESCRIPTION": "Deal !D! damage !M! times.  NL Exhaust.",
 		"UPGRADE_DESCRIPTION": "Deal !D! damage !M! times."
+	},
+	"Blockpocalypse": {
+		"NAME": "Blockpocalypse",
+		"DESCRIPTION": "Gain !B! block !M! times.  NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Gain !B! block !M! times."
 	},
 
 	"DO_NOT_REMOVE_DummyLineForJSONEndOfFileSoYouDoNotHaveToRememberToDeleteTheLastComma": {}
