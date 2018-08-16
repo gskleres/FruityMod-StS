@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
-import fruitymod.FruityMod;
 import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
@@ -26,7 +25,7 @@ public class Equinox extends CustomCard {
 	private static final int UPGRADE_DMG_AMT = 10;
 
 	public Equinox() {
-		super(ID, NAME, FruityMod.makePath(SeekerMod.EQUINOX), COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
+		super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
 				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
 		this.damage = this.baseDamage = ATTACK_DMG;
 	}

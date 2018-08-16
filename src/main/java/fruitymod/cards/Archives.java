@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
-import fruitymod.FruityMod;
 import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
@@ -23,7 +22,7 @@ public class Archives extends CustomCard {
 	    private static final int PER_DRAW_UPGRADE = -3;
 	    
 	 public Archives() {
-		 super(ID, NAME, FruityMod.makePath(SeekerMod.ARCHIVES), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
+		 super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
 				 AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
 	        this.magicNumber = this.baseMagicNumber = PER_DRAW;
 	        

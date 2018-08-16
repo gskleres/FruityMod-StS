@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
-import fruitymod.FruityMod;
 import fruitymod.SeekerMod;
 import fruitymod.actions.EtherealizeAction;
 import fruitymod.patches.AbstractCardEnum;
@@ -24,7 +23,7 @@ public class Shimmer extends CustomCard {
 	private static final int UPGRADE_BLOCK_AMT = 4;
 
 	public Shimmer() {
-		super(ID, NAME, FruityMod.makePath(SeekerMod.SHIMMER), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
+		super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
 				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
 		this.baseBlock = BLOCK_AMT;
 		this.exhaust = true;

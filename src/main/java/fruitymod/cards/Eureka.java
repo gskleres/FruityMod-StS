@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
-import fruitymod.FruityMod;
 import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
@@ -27,7 +26,7 @@ public class Eureka extends CustomCard {
 	private static final int DAZED_COUNT = 2;
 
 	public Eureka() {
-		super(ID, NAME, FruityMod.makePath(SeekerMod.EUREKA), COST, DESCRIPTION,
+		super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION,
     			AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
     			AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF);
 		this.baseMagicNumber = this.magicNumber = DRAW;

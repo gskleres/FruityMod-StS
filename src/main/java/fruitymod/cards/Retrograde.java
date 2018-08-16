@@ -16,7 +16,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.VerticalAuraEffect;
 
 import basemod.abstracts.CustomCard;
-import fruitymod.FruityMod;
 import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 import fruitymod.powers.RetrogradePower;
@@ -31,7 +30,7 @@ public class Retrograde extends CustomCard {
 	private static final int ATTACK_DMG = 4;
 
 	public Retrograde() {
-		super(ID, NAME, FruityMod.makePath(SeekerMod.RETROGRADE) , COST, DESCRIPTION,
+		super(ID, NAME, SeekerMod.makeCardImagePath(ID) , COST, DESCRIPTION,
 				AbstractCard.CardType.ATTACK,
 				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.COMMON,
 				AbstractCard.CardTarget.ENEMY);

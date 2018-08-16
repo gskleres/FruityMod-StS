@@ -14,7 +14,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
 import basemod.abstracts.CustomCard;
-import fruitymod.FruityMod;
 import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
@@ -29,7 +28,7 @@ public class UnstableOrb extends CustomCard {
 	private static final int WEAK_AMT = 2;
 
 	public UnstableOrb() {
-		super(ID, NAME, FruityMod.makePath(SeekerMod.FORCE_SPIKE), COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
+		super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
 				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY);
 		this.damage = this.baseDamage = ATTACK_DMG;
 		this.magicNumber = this.baseMagicNumber = WEAK_AMT;

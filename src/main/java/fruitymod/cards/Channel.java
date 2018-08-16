@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
-import fruitymod.FruityMod;
 import fruitymod.SeekerMod;
 import fruitymod.actions.common.ITopCycleCallback;
 import fruitymod.actions.unique.ChannelAction;
@@ -30,7 +29,7 @@ public class Channel extends CustomCard {
 	private static final int DISCARD_AMT = 1;
 	
 	public Channel() {
-		super(ID, NAME, FruityMod.makePath(SeekerMod.CHANNEL), COST, DESCRIPTION,
+		super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION,
 				AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
 				CardRarity.COMMON, AbstractCard.CardTarget.ENEMY);
 		this.baseDamage = ATTACK_DMG;

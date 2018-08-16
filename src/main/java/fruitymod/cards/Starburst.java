@@ -16,7 +16,6 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 
 import basemod.abstracts.CustomCard;
-import fruitymod.FruityMod;
 import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
@@ -30,7 +29,7 @@ public class Starburst extends CustomCard {
 	private static final int UPGRADE_PLUS_DMG = 3;
 
 	public Starburst() {
-		super(ID, NAME, FruityMod.makePath(SeekerMod.ARCANE_BARRAGE), COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
+		super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
 				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
 		this.baseDamage = ATTACK_DMG;
 	}

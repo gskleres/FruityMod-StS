@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
-import fruitymod.FruityMod;
 import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 import fruitymod.powers.BrilliancePower;
@@ -28,7 +27,7 @@ public class Brilliance extends CustomCard {
 	private static final int DAZED_AMT = 3;
 
 	public Brilliance() {
-		super(ID, NAME, FruityMod.makePath(SeekerMod.BRILLIANCE), COST, DESCRIPTION, CardType.POWER,
+		super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION, CardType.POWER,
 				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF);
 		this.magicNumber = this.baseMagicNumber = DRAW;
 	}

@@ -16,7 +16,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.MindblastEffect;
 
 import basemod.abstracts.CustomCard;
-import fruitymod.FruityMod;
 import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
@@ -31,7 +30,7 @@ extends CustomCard {
     private static final int UPGRADE_DMG_AMT = 4;
 
     public VoidRay() {
-        super(ID, NAME, FruityMod.makePath(SeekerMod.FLUX_BOLT), COST, DESCRIPTION,
+        super(ID, NAME, SeekerMod.makeRelicImagePath(ID), COST, DESCRIPTION,
         		AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
         		AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY);
         this.baseDamage = ATTACK_DMG;

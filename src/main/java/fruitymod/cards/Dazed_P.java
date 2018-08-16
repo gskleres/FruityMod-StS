@@ -16,7 +16,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect;
 
 import basemod.abstracts.CustomCard;
-import fruitymod.FruityMod;
 import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
@@ -28,7 +27,7 @@ public class Dazed_P extends CustomCard {
 	private static final int COST = -2;
 
 	public Dazed_P() {
-		super(ID, NAME, FruityMod.makePath(SeekerMod.VOID_RIPPLE), COST, DESCRIPTION,
+		super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION,
 				AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
 				CardRarity.SPECIAL, AbstractCard.CardTarget.ALL_ENEMY);
 
