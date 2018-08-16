@@ -30,7 +30,7 @@ extends CustomCard {
     private static final int UPGRADE_DMG_AMT = 4;
 
     public VoidRay() {
-        super(ID, NAME, SeekerMod.makeRelicImagePath(ID), COST, DESCRIPTION,
+        super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION,
         		AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
         		AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY);
         this.baseDamage = ATTACK_DMG;
