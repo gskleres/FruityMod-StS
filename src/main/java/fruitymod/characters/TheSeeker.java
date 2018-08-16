@@ -22,25 +22,25 @@ public class TheSeeker extends CustomPlayer {
 	public static final int ENERGY_PER_TURN = 3;
 	
 	public static final String[] orbTextures = {
-			"img/char/seeker/orb/layer1.png",
-			"img/char/seeker/orb/layer2.png",
-			"img/char/seeker/orb/layer3.png",
-			"img/char/seeker/orb/layer4.png",
-			"img/char/seeker/orb/layer5.png",
-			"img/char/seeker/orb/layer6.png",
-			"img/char/seeker/orb/layer1d.png",
-			"img/char/seeker/orb/layer2d.png",
-			"img/char/seeker/orb/layer3d.png",
-			"img/char/seeker/orb/layer4d.png",
-			"img/char/seeker/orb/layer5d.png",
+			SeekerMod.makeCustomPath("char/orb/layer1.png"),
+			SeekerMod.makeCustomPath("char/orb/layer2.png"),
+			SeekerMod.makeCustomPath("char/orb/layer3.png"),
+			SeekerMod.makeCustomPath("char/orb/layer4.png"),
+			SeekerMod.makeCustomPath("char/orb/layer5.png"),
+			SeekerMod.makeCustomPath("char/orb/layer6.png"),
+			SeekerMod.makeCustomPath("char/orb/layer1d.png"),
+			SeekerMod.makeCustomPath("char/orb/layer2d.png"),
+			SeekerMod.makeCustomPath("char/orb/layer3d.png"),
+			SeekerMod.makeCustomPath("char/orb/layer4d.png"),
+			SeekerMod.makeCustomPath("char/orb/layer5d.png"),
 	};
 	
 	public TheSeeker(String name, PlayerClass setClass) {
-		super(name, setClass, orbTextures, "img/char/seeker/orb/vfx.png", new SpriterAnimation("img/char/seeker/animation.scml"));
+		super(name, setClass, orbTextures, SeekerMod.makeCustomPath("char/orb/vfx.png"), new SpriterAnimation(SeekerMod.makeCustomPath("char/animation.scml")));
 		
-		initializeClass(null, FruityMod.makePath(SeekerMod.SEEKER_SHOULDER_2),
-				FruityMod.makePath(SeekerMod.SEEKER_SHOULDER_1),
-				FruityMod.makePath(SeekerMod.SEEKER_CORPSE),
+		initializeClass(null, SeekerMod.makeCustomPath(SeekerMod.SEEKER_SHOULDER_2),
+				SeekerMod.makeCustomPath(SeekerMod.SEEKER_SHOULDER_1),
+				SeekerMod.makeCustomPath(SeekerMod.SEEKER_CORPSE),
 				getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN));
 
 		if (Settings.dailyModsEnabled() && DailyMods.cardMods.get("Diverse")) {

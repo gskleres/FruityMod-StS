@@ -56,14 +56,9 @@ public class SeekerMod implements CharacterMod {
 	// seeker assets
 	private static final String SEEKER_BUTTON = "charSelect/seekerButton.png";
 	private static final String SEEKER_PORTRAIT = "charSelect/SeekerPortraitBG.jpg";
-	public static final String SEEKER_SHOULDER_1 = "char/seeker/shoulder.png";
-	public static final String SEEKER_SHOULDER_2 = "char/seeker/shoulder2.png";
-	public static final String SEEKER_CORPSE = "char/seeker/corpse.png";
-
-	// seeker card images
-	public static final String ANOMALY = "cards/anomaly.png";
-
-
+	public static final String SEEKER_SHOULDER_1 = "char/shoulder.png";
+	public static final String SEEKER_SHOULDER_2 = "char/shoulder2.png";
+	public static final String SEEKER_CORPSE = "char/corpse.png";
 
 	public SeekerMod() {
 		/*
@@ -359,8 +354,8 @@ public class SeekerMod implements CharacterMod {
 	 * @param resource the resource, must *NOT* have a leading "/"
 	 * @return the full path
 	 */
-	private static final String makeCustomPath(String resource) {
-		String result = "img/seeker/" + resource;
+	public static final String makeCustomPath(String resource) {
+		String result = FRUITY_MOD_ASSETS_FOLDER + "/seeker/" + resource;
 
 		if (! hasExtension(resource)) {
 			result += ".png";
