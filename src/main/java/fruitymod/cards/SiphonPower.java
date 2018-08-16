@@ -13,10 +13,9 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
-import com.megacrit.cardcrawl.powers.WeakPower;
 
 import basemod.abstracts.CustomCard;
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
 public class SiphonPower extends CustomCard {
@@ -32,7 +31,7 @@ public class SiphonPower extends CustomCard {
 	private static final int STRENGTH_GAIN_AMT = 1;
 	
 	public SiphonPower() {
-		super (ID, NAME, FruityMod.makePath(FruityMod.SIPHON_POWER), COST, DESCRIPTION,
+		super (ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION,
 				AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
 				AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
 		this.baseDamage = ATTACK_DMG;

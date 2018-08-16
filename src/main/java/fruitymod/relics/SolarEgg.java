@@ -1,16 +1,17 @@
 package fruitymod.relics;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import basemod.abstracts.CustomRelic;
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 
 public class SolarEgg extends CustomRelic {
-	private static final String ID = "SolarEgg";
+	public static final String ID = "SolarEgg";
 	
 	public SolarEgg() {
-		super(ID, FruityMod.getSolarEggTexture(),
+		super(ID, new Texture(SeekerMod.makeRelicImagePath(ID)),
 				RelicTier.UNCOMMON, LandingSound.MAGICAL);
 	}
 	

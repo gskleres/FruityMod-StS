@@ -11,8 +11,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
-import fruitymod.FruityMod;
-import fruitymod.actions.common.ModifyBlockAction;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
 public class Entropy extends CustomCard {
@@ -25,7 +24,7 @@ public class Entropy extends CustomCard {
 	private static final int STR_LOSS_UPGRADE = 1;
 
 	public Entropy() {
-		super(ID, NAME, FruityMod.makePath(FruityMod.ENTROPY), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
+		super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
 				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
 		this.isEthereal = true;
 		this.magicNumber = this.baseMagicNumber = STR_LOSS;

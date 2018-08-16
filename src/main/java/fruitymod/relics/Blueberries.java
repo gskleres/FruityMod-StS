@@ -1,18 +1,19 @@
 package fruitymod.relics;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import basemod.abstracts.CustomRelic;
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 
 public class Blueberries extends CustomRelic {
 	public static final String ID = "Blueberries";
 	private static final int HP_PER_CARD = 1;
 	
 	public Blueberries() {
-		super(ID, FruityMod.getBlueberriesTexture(),
+		super(ID, new Texture(SeekerMod.makeRelicImagePath(ID)),
 				RelicTier.UNCOMMON, LandingSound.MAGICAL);
 	}
 	

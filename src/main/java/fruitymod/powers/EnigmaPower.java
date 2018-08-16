@@ -2,6 +2,7 @@ package fruitymod.powers;
 
 import java.util.ArrayList;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.Dazed;
@@ -9,7 +10,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.cards.Dazed_P;
 
 public class EnigmaPower extends AbstractPower {
@@ -30,7 +31,7 @@ public class EnigmaPower extends AbstractPower {
 		this.isTurnBased = false;
 		this.priority = 90;
 		updateDescription();
-		this.img = FruityMod.getEnigmaPowerTexture();
+		this.img = new Texture(SeekerMod.makePowerImagePath(POWER_ID));
 	}
 	
 	@Override

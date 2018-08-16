@@ -1,0 +1,21 @@
+{
+	"Strike_T": {
+		"NAME": "Strike",
+		"DESCRIPTION": "Deal !D! damage."
+	},
+	"Defend_T": {
+		"NAME": "Defend",
+		"DESCRIPTION": "Gain !B! Block."
+	},
+	"Tranquil_FlyingKick": {
+		"NAME": "Flying Kick",
+		"DESCRIPTION": "Flow. Deal !D! damage."
+	},
+	"FlurryOfBlows": {
+		"NAME": "Flurry Of Blows",
+		"DESCRIPTION": "Deal !D! damage !M! times.  NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Deal !D! damage !M! times."
+	},
+
+	"DO_NOT_REMOVE_DummyLineForJSONEndOfFileSoYouDoNotHaveToRememberToDeleteTheLastComma": {}
+}

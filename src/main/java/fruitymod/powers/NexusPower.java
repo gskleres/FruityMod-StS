@@ -1,5 +1,6 @@
 package fruitymod.powers;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -10,7 +11,7 @@ import basemod.BaseMod;
 import basemod.interfaces.PostBattleSubscriber;
 import basemod.interfaces.PostDrawSubscriber;
 import basemod.interfaces.PostDungeonInitializeSubscriber;
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.actions.common.MakeTempCardInDrawPileEtherealAction;
 
 public class NexusPower extends AbstractPower implements PostDrawSubscriber, PostBattleSubscriber,
@@ -31,7 +32,7 @@ public class NexusPower extends AbstractPower implements PostDrawSubscriber, Pos
 		updateDescription();
 		this.type = AbstractPower.PowerType.BUFF;
 		this.isTurnBased = false;
-		this.img = FruityMod.getNexusPowerTexture();
+		this.img = new Texture(SeekerMod.makePowerImagePath(POWER_ID));
 	}
 	
 	@Override

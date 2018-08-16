@@ -1,10 +1,11 @@
 package fruitymod.powers;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 
 public class AnomalyPower extends AbstractPower {
 	public static final String POWER_ID = "Anomaly";
@@ -22,7 +23,7 @@ public class AnomalyPower extends AbstractPower {
 		updateDescription();
 		this.type = AbstractPower.PowerType.BUFF;
 		this.isTurnBased = false;
-		this.img = FruityMod.getAnomalyPowerTexture();
+		this.img = new Texture(SeekerMod.makePowerImagePath(POWER_ID));
 	}
 	
 	@Override

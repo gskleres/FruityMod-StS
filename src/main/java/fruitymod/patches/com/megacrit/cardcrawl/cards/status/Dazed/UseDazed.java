@@ -13,7 +13,7 @@ public class UseDazed {
 			public void edit(MethodCall m) throws CannotCompileException {
 				if (m.getMethodName().equals("addToTop")) {
 					// pass the original argument (relicID) + this ($0 which is the AbstractCard)
-					m.replace("{ fruitymod.FruityMod.maybeUseDazed(this); }");
+					m.replace("{ fruitymod.SeekerMod.maybeUseDazed(this); }");
 				}
 			}
 		};

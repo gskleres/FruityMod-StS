@@ -9,11 +9,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.powers.WeakPower;
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
 public class SiphonSpeed extends CustomCard {
@@ -29,7 +28,7 @@ public class SiphonSpeed extends CustomCard {
 	private static final int DEX_GAIN_AMT = 1;
 	
 	public SiphonSpeed() {
-		super (ID, NAME, FruityMod.makePath(FruityMod.SIPHON_SPEED), COST, DESCRIPTION,
+		super (ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION,
 				AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
 				AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
 		this.baseBlock = BLOCK;

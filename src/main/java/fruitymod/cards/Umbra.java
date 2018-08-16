@@ -1,25 +1,21 @@
 package fruitymod.cards;
 
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
 public class Umbra extends CustomCard {
@@ -34,7 +30,7 @@ public class Umbra extends CustomCard {
     private static final int BLOCK_UPGRADE = 2;
 
     public Umbra() {
-        super(ID, NAME, FruityMod.makePath(FruityMod.UMBRAL_BOLT), COST, DESCRIPTION, CardType.ATTACK,
+        super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION, CardType.ATTACK,
                 AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.UNCOMMON, CardTarget.ENEMY);
         this.damage = this.baseDamage = ATTACK_DMG;
         this.block = this.baseBlock = BLOCK;

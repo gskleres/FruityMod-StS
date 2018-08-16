@@ -1,18 +1,19 @@
 package fruitymod.relics;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import basemod.abstracts.CustomRelic;
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.actions.unique.TelescopeAction;
 
 public class Telescope extends CustomRelic {
-	private static final String ID = "Telescope";
+	public static final String ID = "Telescope";
 
 	public Telescope() {
-		super(ID, FruityMod.getTelescopeTexture(),
+		super(ID, new Texture(SeekerMod.makeRelicImagePath(ID)),
 				RelicTier.RARE, LandingSound.MAGICAL);
 	}
 

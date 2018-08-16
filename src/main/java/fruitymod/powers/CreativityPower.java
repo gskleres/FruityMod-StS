@@ -1,5 +1,6 @@
 package fruitymod.powers;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.status.Dazed;
@@ -7,7 +8,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 
 public class CreativityPower
 extends AbstractPower {
@@ -26,7 +27,7 @@ extends AbstractPower {
         this.owner = owner;
         this.amount = amount;
         this.updateDescription();
-        this.img = FruityMod.getCreativityPowerTexture();
+        this.img = new Texture(SeekerMod.makePowerImagePath(POWER_ID));
     }
     
     @Override

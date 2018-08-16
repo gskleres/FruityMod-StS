@@ -1,20 +1,15 @@
 package fruitymod.cards;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
 public class Archives extends CustomCard {
@@ -27,7 +22,7 @@ public class Archives extends CustomCard {
 	    private static final int PER_DRAW_UPGRADE = -3;
 	    
 	 public Archives() {
-		 super(ID, NAME, FruityMod.makePath(FruityMod.ARCHIVES), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
+		 super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
 				 AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
 	        this.magicNumber = this.baseMagicNumber = PER_DRAW;
 	        

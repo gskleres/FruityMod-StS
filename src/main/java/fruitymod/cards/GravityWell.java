@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
 public class GravityWell extends CustomCard {
@@ -24,7 +24,7 @@ public class GravityWell extends CustomCard {
 	private static final int UPGRADE_LOST_STRENGTH_AMT = 1;
 	
 	public GravityWell() {
-		super(ID, NAME, FruityMod.makePath(FruityMod.GRAVITY_WELL), COST, DESCRIPTION,
+		super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION,
 				AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
 				AbstractCard.CardRarity.UNCOMMON
 				, AbstractCard.CardTarget.ENEMY);

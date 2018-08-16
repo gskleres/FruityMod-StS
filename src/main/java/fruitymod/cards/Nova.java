@@ -2,9 +2,7 @@ package fruitymod.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -12,7 +10,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
 public class Nova extends CustomCard {
@@ -25,7 +23,7 @@ public class Nova extends CustomCard {
     private static final int ATTACK_DMG = 24;
 
     public Nova() {
-        super(ID, NAME, FruityMod.makePath(FruityMod.NOVA), COST, DESCRIPTION,
+        super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION,
                 AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
                 CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
         this.baseDamage = ATTACK_DMG;

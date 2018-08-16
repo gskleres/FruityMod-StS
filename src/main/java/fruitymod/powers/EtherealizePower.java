@@ -2,6 +2,7 @@
 package fruitymod.powers;
 
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.ExhaustAllEtherealAction;
@@ -11,7 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 
 // This is an invisible power than triggers ethereal cards should be exhausted at the end of the turn
 public class EtherealizePower extends AbstractPower {
@@ -31,7 +32,7 @@ public class EtherealizePower extends AbstractPower {
         //this.loadRegion("anger");
         this.type = AbstractPower.PowerType.BUFF;
         this.priority = 90;
-        this.img = FruityMod.getEtherealizePowerTexture();
+        this.img = new Texture(SeekerMod.makePowerImagePath(POWER_ID));
     }
 
     @Override

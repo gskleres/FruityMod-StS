@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.WeightyImpactEffect;
 
 import basemod.abstracts.CustomCard;
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
 public class Comet extends CustomCard {
@@ -29,7 +29,7 @@ public class Comet extends CustomCard {
     private static final int PER_CARD_DAMAGE_UPGRADED = 1;
 
     public Comet() {
-        super(ID, NAME, FruityMod.makePath(FruityMod.COMET), COST, DESCRIPTION,
+        super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION,
         		AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
         		AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY);
         this.magicNumber = this.baseMagicNumber = PER_CARD_DAMAGE;

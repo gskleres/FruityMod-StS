@@ -1,10 +1,11 @@
 package fruitymod.powers;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.actions.unique.ArcanosphereAction;
 
 public class ArcanospherePower
@@ -18,7 +19,7 @@ public class ArcanospherePower
         this.owner = owner;
         this.amount = amount;
         this.updateDescription();
-        this.img = FruityMod.getArcanospherePowerTexture();
+        this.img = new Texture(SeekerMod.makePowerImagePath(POWER_ID));
     }
 
     @Override

@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import fruitymod.FruityMod;
+import fruitymod.TranquilMod;
 import fruitymod.patches.AbstractCardEnum;
 
 public class Defend_Tan extends CustomCard {
@@ -21,7 +21,7 @@ public class Defend_Tan extends CustomCard {
 	private static final int UPGRADE_PLUS_BLOCK = 3;
 
 	public Defend_Tan() {
-		super(ID, NAME, FruityMod.makePath(FruityMod.DEFEND_TAN), COST, DESCRIPTION, CardType.SKILL,
+		super(ID, NAME, TranquilMod.makeCardImagePath(ID), COST, DESCRIPTION, CardType.SKILL,
 				AbstractCardEnum.TRANQUIL_TAN, CardRarity.BASIC, CardTarget.SELF);
 
 		this.baseBlock = BLOCK_AMT;

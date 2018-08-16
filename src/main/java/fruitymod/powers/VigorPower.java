@@ -1,5 +1,6 @@
 package fruitymod.powers;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -10,7 +11,7 @@ import basemod.BaseMod;
 import basemod.interfaces.PostBattleSubscriber;
 import basemod.interfaces.PostDrawSubscriber;
 import basemod.interfaces.PostDungeonInitializeSubscriber;
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 
 public class VigorPower extends AbstractPower implements PostDrawSubscriber, PostBattleSubscriber,
 		PostDungeonInitializeSubscriber {
@@ -30,7 +31,7 @@ public class VigorPower extends AbstractPower implements PostDrawSubscriber, Pos
 		this.type = AbstractPower.PowerType.BUFF;
 		this.isTurnBased = false;
 		this.priority = 90;
-		this.img = FruityMod.getVigorPowerTexture();
+		this.img = new Texture(SeekerMod.makePowerImagePath(POWER_ID));
 	}
 	
 	@Override

@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 import fruitymod.powers.WormholePower;
 
@@ -23,7 +23,7 @@ public class Wormhole extends CustomCard {
 	private static final int UPGRADE_DMG_AMT = 2;
 	
 	public Wormhole() {
-		super (ID, NAME, FruityMod.makePath(FruityMod.WORMHOLE), COST, DESCRIPTION,
+		super (ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION,
 				AbstractCard.CardType.POWER, AbstractCardEnum.SEEKER_PURPLE,
 				AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
 		this.magicNumber = this.baseMagicNumber = DMG;

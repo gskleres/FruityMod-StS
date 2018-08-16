@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 import fruitymod.powers.CreativityPower;
 
@@ -23,7 +23,7 @@ public class Creativity extends CustomCard {
     private static final int DRAW = 1;
     
     public Creativity() {
-    	super(ID, NAME, FruityMod.makePath(FruityMod.CREATIVITY), COST, DESCRIPTION,
+    	super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION,
     			AbstractCard.CardType.POWER, AbstractCardEnum.SEEKER_PURPLE,
     			CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
     	this.magicNumber = this.baseMagicNumber = DRAW;

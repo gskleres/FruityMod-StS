@@ -2,12 +2,13 @@ package fruitymod.powers;
 
 import java.util.ArrayList;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.actions.common.MakeTempCardInDrawPileFreeAction;
 
 public class ChaosFormUpgradePower extends AbstractPower {
@@ -28,7 +29,7 @@ public class ChaosFormUpgradePower extends AbstractPower {
         this.type = AbstractPower.PowerType.BUFF;
         this.isTurnBased = false;
         this.priority = 90;
-        this.img = FruityMod.getChaosFormPowerTexture();
+        this.img = new Texture(SeekerMod.makePowerImagePath(ChaosFormPower.POWER_ID));
     }
 
     @Override

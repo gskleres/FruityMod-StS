@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
 public class Genesis extends CustomCard {
@@ -26,7 +26,7 @@ public class Genesis extends CustomCard {
     private static final int DRAW = 2;
     
     public Genesis() {
-    	super(ID, NAME, FruityMod.makePath(FruityMod.VOID_BARRIER), COST, DESCRIPTION,
+    	super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION,
     			AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
     			AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF);
     	this.baseBlock = BLOCK_AMT;

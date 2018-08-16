@@ -1,19 +1,20 @@
 package fruitymod.relics;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import basemod.abstracts.CustomRelic;
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.powers.ArcanospherePower;
 
 public class Arcanosphere extends CustomRelic {
-	private static final String ID = "Arcanosphere";
+	public static final String ID = "Arcanosphere";
 	private static final int CARDS_TO_RETAIN = 1;
 	
 	public Arcanosphere() {
-		super(ID, FruityMod.getArcanoSphereTexture(),
+		super(ID, new Texture(SeekerMod.makeRelicImagePath(ID)),
 				RelicTier.STARTER, LandingSound.MAGICAL);
 	}
 	

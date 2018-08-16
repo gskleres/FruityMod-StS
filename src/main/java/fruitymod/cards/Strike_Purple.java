@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.patches.AbstractCardEnum;
 
 public class Strike_Purple extends CustomCard {
@@ -22,7 +22,7 @@ public class Strike_Purple extends CustomCard {
 	private static final int UPGRADE_PLUS_DMG = 3;
 
 	public Strike_Purple() {
-		super(ID, NAME, FruityMod.makePath(FruityMod.STRIKE_PURPLE), COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
+		super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
 				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.BASIC,
 				AbstractCard.CardTarget.ENEMY);
 

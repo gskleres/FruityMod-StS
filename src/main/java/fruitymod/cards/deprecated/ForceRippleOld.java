@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.actions.common.ShuffleCardsToDrawPileAction;
 import fruitymod.patches.AbstractCardEnum;
 
@@ -27,7 +27,7 @@ extends CustomCard {
     private static final int UPGRADE_PLUS_DMG = 5;
 
     public ForceRippleOld() {
-        super(ID, NAME, FruityMod.makePath(FruityMod.FORCE_RIPPLE), COST, DESCRIPTION,
+        super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION,
         		AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
         		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
         this.baseDamage = ATTACK_DMG;

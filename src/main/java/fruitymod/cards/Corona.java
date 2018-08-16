@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 
 import basemod.abstracts.CustomCard;
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 import fruitymod.actions.common.ModifyMagicNumberAction;
 import fruitymod.patches.AbstractCardEnum;
 
@@ -27,7 +27,7 @@ extends CustomCard {
     private static final int CARD_DRAW_INCREASE_PER_DRAW = 1;
 
     public Corona() {
-        super(ID, NAME, FruityMod.makePath(FruityMod.CORONA), COST, DESCRIPTION,
+        super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION,
         		AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
         		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
         this.magicNumber = this.baseMagicNumber = BASE_CARD_DRAW;

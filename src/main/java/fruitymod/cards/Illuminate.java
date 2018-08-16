@@ -1,5 +1,6 @@
 package fruitymod.cards;
 
+import fruitymod.SeekerMod;
 import fruitymod.actions.unique.IlluminateAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -9,7 +10,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
-import fruitymod.FruityMod;
 import fruitymod.patches.AbstractCardEnum;
 
 public class Illuminate extends CustomCard {
@@ -23,7 +23,7 @@ public class Illuminate extends CustomCard {
 	private static final int DUPLICATE_UPGRADE = 1;
 
 	public Illuminate() {
-		super(ID, NAME, FruityMod.makePath(FruityMod.ILLUMINATE), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
+		super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
 				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
 
 		this.magicNumber = this.baseMagicNumber = DUPLICATE_AMT;

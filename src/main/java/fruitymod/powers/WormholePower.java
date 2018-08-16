@@ -1,5 +1,6 @@
 package fruitymod.powers;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -14,7 +15,7 @@ import basemod.BaseMod;
 import basemod.interfaces.PostBattleSubscriber;
 import basemod.interfaces.PostDrawSubscriber;
 import basemod.interfaces.PostDungeonInitializeSubscriber;
-import fruitymod.FruityMod;
+import fruitymod.SeekerMod;
 
 public class WormholePower extends AbstractPower implements PostDrawSubscriber, PostBattleSubscriber,
 		PostDungeonInitializeSubscriber {
@@ -34,7 +35,7 @@ public class WormholePower extends AbstractPower implements PostDrawSubscriber, 
 		this.type = AbstractPower.PowerType.BUFF;
 		this.isTurnBased = false;
 		this.priority = 90;
-		this.img = FruityMod.getWormholePowerTexture();
+		this.img = new Texture(SeekerMod.makePowerImagePath(POWER_ID));
 	}
 	
 	@Override
