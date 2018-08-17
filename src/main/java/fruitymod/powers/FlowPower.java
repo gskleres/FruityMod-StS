@@ -12,8 +12,8 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import fruitymod.SeekerMod;
 
 public class FlowPower extends AbstractPower {
-	public static final String POWER_ID = "Flow";
-	public static final String NAME = "Flow";
+	public static final String POWER_ID = "FlowPower";
+	public static final String NAME = "FlowPower";
 	public static final String[] DESCRIPTIONS = new String[] {
 			"Retain all excess Energy at the end of turn."
 	};
@@ -46,7 +46,7 @@ public class FlowPower extends AbstractPower {
         this.energyRetained=0;
         if(this.amount == 0 && ((AbstractPlayer)this.owner).getRelic("Ice Cream") == null) {
         	this.flash();
-        	AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, "Flow"));
+        	AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, "FlowPower"));
         }        
         
     }

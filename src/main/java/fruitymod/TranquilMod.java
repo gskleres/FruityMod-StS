@@ -10,11 +10,8 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
-import fruitymod.tranquil.cards.Defend_Tan;
-import fruitymod.tranquil.cards.FlurryOfBlows;
-import fruitymod.tranquil.cards.Strike_Tan;
-import fruitymod.tranquil.cards.Blockpocalypse;
-import fruitymod.tranquil.cards.Tranquil_FlyingKick;
+import fruitymod.tranquil.cards.*;
+import fruitymod.tranquil.cards.FlyingKick;
 import fruitymod.characters.TheTranquil;
 import fruitymod.patches.AbstractCardEnum;
 import fruitymod.patches.TheTranquilEnum;
@@ -55,7 +52,7 @@ public class TranquilMod implements CharacterMod {
 		List<CustomCard> cards = new ArrayList<CustomCard>();
 		cards.add(new Strike_Tan());
 		cards.add(new Defend_Tan());
-		cards.add(new Tranquil_FlyingKick());
+		cards.add(new FlyingKick());
 		cards.add(new FlurryOfBlows());
 		cards.add(new Blockpocalypse());
 
@@ -175,6 +172,15 @@ public class TranquilMod implements CharacterMod {
 		}
 
 		return result;
+	}
+
+	/**
+	 * Makes a full path for a power path
+	 * @param power the resource, must *NOT* have a leading "/"
+	 * @return the full path
+	 */
+	public static final String makePowerImagePath(String power) {
+		return makePath("powers/" + power.replaceFirst("Tranquil_", ""));
 	}
 
 	public static boolean isEnabled() {
