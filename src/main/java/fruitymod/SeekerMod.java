@@ -20,12 +20,12 @@ import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
-import fruitymod.actions.unique.ConvergenceAction;
-import fruitymod.cards.*;
-import fruitymod.characters.TheSeeker;
-import fruitymod.patches.AbstractCardEnum;
-import fruitymod.patches.TheSeekerEnum;
-import fruitymod.relics.*;
+import fruitymod.seeker.actions.unique.ConvergenceAction;
+import fruitymod.seeker.cards.*;
+import fruitymod.seeker.characters.TheSeeker;
+import fruitymod.seeker.patches.AbstractCardEnum;
+import fruitymod.seeker.patches.TheSeekerEnum;
+import fruitymod.seeker.relics.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -312,7 +312,7 @@ public class SeekerMod implements CharacterMod {
 		}
 	}
 
-	// used by fruitymod.patches.com.megacrit.cardcrawl.cards.AbstractCard.CanUsedDazed
+	// used by fruitymod.seeker.patches.com.megacrit.cardcrawl.cards.AbstractCard.CanUsedDazed
 	public static boolean hasRelicCustom(String relicID, AbstractCard card) {
 		System.out.println("I was checked!");
 		// if it's checking for relicID.equals("Medical Kit") then we know we're in the block where
