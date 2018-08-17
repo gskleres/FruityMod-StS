@@ -12,9 +12,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fruitymod.TranquilMod;
-import fruitymod.patches.AbstractCardEnum;
+import fruitymod.seeker.patches.AbstractCardEnum;
 import fruitymod.tranquil.powers.AttunedAttackPower;
-import fruitymod.tranquil.powers.FlowPower;
 
 public class FlyingKick extends CustomCard {
     public static final String ID = "Tranquil_FlyingKick";

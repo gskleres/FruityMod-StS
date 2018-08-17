@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fruitymod.TranquilMod;
-import fruitymod.patches.AbstractCardEnum;
+import fruitymod.seeker.patches.AbstractCardEnum;
 
 public class Blockpocalypse extends CustomCard {
 	public static final String ID = "Blockpocalypse";
