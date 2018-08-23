@@ -7,6 +7,10 @@
 		"NAME": "Defend",
 		"DESCRIPTION": "Gain !B! block."
 	},
+	"CraneKick": {
+		"NAME": "Crane Kick",
+		"DESCRIPTION": "Flow. Deal !D! damage."
+	},
 	"Tranquil_FlyingKick": {
 		"NAME": "Flying Kick",
 		"DESCRIPTION": "Flow. Deal !D! damage."

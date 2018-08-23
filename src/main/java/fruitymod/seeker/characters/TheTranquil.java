@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import fruitymod.TranquilMod;
 import fruitymod.seeker.patches.TheTranquilEnum;
+import fruitymod.tranquil.cards.CraneKick;
 
 import java.util.ArrayList;
 
@@ -67,6 +68,7 @@ public class TheTranquil extends CustomPlayer {
 		retVal.add("Defend_T");
 		retVal.add("Defend_T");
 		retVal.add("Tranquil_FlyingKick");
+		retVal.add(CraneKick.ID);
 		return retVal;
 	}
 	
