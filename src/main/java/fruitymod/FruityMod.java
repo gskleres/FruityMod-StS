@@ -3,6 +3,7 @@ package fruitymod;
 import java.util.ArrayList;
 import java.util.List;
 
+import basemod.ModLabel;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -78,7 +79,9 @@ public class FruityMod implements PostInitializeSubscriber,
         // Mod badge
         Texture badgeTexture = new Texture(makePath(BADGE_IMG));
         ModPanel settingsPanel = new ModPanel();
-        settingsPanel.addLabel("FruityMod does not have any settings (yet)!", 400.0f, 700.0f, (me) -> {});
+
+        ModLabel label = new ModLabel("FruityMod does not have any settings (yet)!", 400.0f, 700.0f, settingsPanel, (me) -> {});
+        settingsPanel.addUIElement(label);
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
         
         Settings.isDailyRun = false;
