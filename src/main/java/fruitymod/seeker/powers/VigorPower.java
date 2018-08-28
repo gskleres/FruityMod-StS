@@ -41,9 +41,7 @@ public class VigorPower extends AbstractPower implements PostDrawSubscriber, Pos
 	
 	@Override
 	public void onInitialApplication() {
-		BaseMod.subscribeToPostDraw(this);
-		BaseMod.subscribeToPostBattle(this);
-		BaseMod.subscribeToPostDungeonInitialize(this);
+		BaseMod.subscribe(this);
 		for (AbstractCard c: AbstractDungeon.player.hand.group) {
 			updateCardCost(c, true);
 		}
@@ -66,8 +64,8 @@ public class VigorPower extends AbstractPower implements PostDrawSubscriber, Pos
 	
 	@Override
 	public void receivePostBattle(AbstractRoom arg0) {
-		BaseMod.unsubscribeFromPostDraw(this);
-		BaseMod.unsubscribeFromPostDungeonInitialize(this);
+		BaseMod.unsubscribe(this, PostDrawSubscriber.class);
+		BaseMod.unsubscribe(this, PostDungeonInitializeSubscriber.class);
 		/*
 		 *  calling unsubscribeFromPostBattle inside the callback
 		 *  for receivePostBattle means that when we're calling it
@@ -87,15 +85,15 @@ public class VigorPower extends AbstractPower implements PostDrawSubscriber, Pos
 				System.out.println("could not delay unsubscribe to avoid ConcurrentModificationException");
 				e.printStackTrace();
 			}
-			BaseMod.unsubscribeFromPostBattle(this);
+			BaseMod.unsubscribe(this, PostBattleSubscriber.class);
 		});
 		delayed.start();
 	}
 	
 	@Override
 	public void receivePostDungeonInitialize() {
-		BaseMod.unsubscribeFromPostDraw(this);
-		BaseMod.unsubscribeFromPostBattle(this);
+		BaseMod.unsubscribe(this, PostDrawSubscriber.class);
+		BaseMod.unsubscribe(this, PostBattleSubscriber.class);
 		/*
 		 *  calling unsubscribeFromPostDungeonInitialize inside the callback
 		 *  for receivePostDungeonInitialize means that when we're calling it
@@ -115,7 +113,7 @@ public class VigorPower extends AbstractPower implements PostDrawSubscriber, Pos
 				System.out.println("could not delay unsubscribe to avoid ConcurrentModificationException");
 				e.printStackTrace();
 			}
-			BaseMod.unsubscribeFromPostDungeonInitialize(this);
+			BaseMod.unsubscribe(this, PostDungeonInitializeSubscriber.class);
 		});
 		delayed.start();
 	}

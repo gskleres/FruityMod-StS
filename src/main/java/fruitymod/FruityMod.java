@@ -56,36 +56,7 @@ public class FruityMod implements PostInitializeSubscriber,
     }
     
     public FruityMod() {
-    	logger.info("subscribing to postInitialize event");
-        BaseMod.subscribeToPostInitialize(this);
-        
-        logger.info("subscribing to editCharacters event");
-        BaseMod.subscribeToEditCharacters(this);
-        
-        logger.info("subscribing to editRelics event");
-        BaseMod.subscribeToEditRelics(this);
-        
-        logger.info("subscribing to editCards event");
-        BaseMod.subscribeToEditCards(this);
-
-        logger.info("subscribing to editStrings event");
-        BaseMod.subscribeToEditStrings(this);
-        
-        /* Disable this during playtesting for being counterproductive */
-        // logger.info("subscribing to setUnlocks event");
-        // BaseMod.subscribeToSetUnlocks(this);
-        
-        logger.info("subscribing to onCardUse event");
-        BaseMod.subscribeToOnCardUse(this);
-        
-        logger.info("subscribing to editKeywords event");
-        BaseMod.subscribeToEditKeywords(this);
-        
-        BaseMod.subscribeToOnPowersModified(this);
-        BaseMod.subscribeToPostExhaust(this);
-        BaseMod.subscribeToPostBattle(this);
-        BaseMod.subscribeToPostDraw(this);
-
+        BaseMod.subscribe(this);
         mods = new ArrayList<>();
         mods.add(new SeekerMod());
         if (TranquilMod.isEnabled()) {

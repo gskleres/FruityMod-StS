@@ -38,9 +38,7 @@ public class BrilliancePower extends AbstractPower implements PostBattleSubscrib
 
 	@Override
 	public void onInitialApplication() {
-		BaseMod.subscribeToPostDraw(this);
-		BaseMod.subscribeToPostBattle(this);
-		BaseMod.subscribeToPostDungeonInitialize(this);
+		BaseMod.subscribe(this);
 	}
 
 	@Override
@@ -60,8 +58,8 @@ public class BrilliancePower extends AbstractPower implements PostBattleSubscrib
 	@Override
 	public void receivePostBattle(AbstractRoom arg0) {
 		System.out.println("should be removed now!");
-		BaseMod.unsubscribeFromPostDraw(this);
-		BaseMod.unsubscribeFromPostDungeonInitialize(this);
+		BaseMod.unsubscribe(this, PostDrawSubscriber.class);
+		BaseMod.unsubscribe(this, PostDungeonInitializeSubscriber.class);
 		/*
 		 *  calling unsubscribeFromPostBattle inside the callback
 		 *  for receivePostBattle means that when we're calling it
@@ -81,15 +79,15 @@ public class BrilliancePower extends AbstractPower implements PostBattleSubscrib
 				System.out.println("could not delay unsubscribe to avoid ConcurrentModificationException");
 				e.printStackTrace();
 			}
-			BaseMod.unsubscribeFromPostBattle(this);
+			BaseMod.unsubscribe(this, PostBattleSubscriber.class);
 		});
 		delayed.start();
 	}
 
 	@Override
 	public void receivePostDungeonInitialize() {
-		BaseMod.unsubscribeFromPostBattle(this);
-		BaseMod.unsubscribeFromPostDraw(this);
+		BaseMod.unsubscribe(this, PostBattleSubscriber.class);
+		BaseMod.unsubscribe(this, PostDrawSubscriber.class);
 		/*
 		 *  calling unsubscribeFromPostDungeonInitialize inside the callback
 		 *  for receivePostDungeonInitialize means that when we're calling it
@@ -109,7 +107,7 @@ public class BrilliancePower extends AbstractPower implements PostBattleSubscrib
 				System.out.println("could not delay unsubscribe to avoid ConcurrentModificationException");
 				e.printStackTrace();
 			}
-			BaseMod.unsubscribeFromPostDungeonInitialize(this);
+			BaseMod.unsubscribe(this, PostDungeonInitializeSubscriber.class);
 		});
 		delayed.start();
 	}
