@@ -39,7 +39,7 @@ public class TranquilMod implements CharacterMod {
 
 	public TranquilMod() {
 		logger.info("creating the color " + AbstractCardEnum.TRANQUIL_TAN.toString());
-		BaseMod.addColor(AbstractCardEnum.TRANQUIL_TAN.toString(),
+		BaseMod.addColor(AbstractCardEnum.TRANQUIL_TAN,
 				TAN, TAN, TAN, TAN, TAN, TAN, TAN,
 				makeCardBgSmallPath(ATTACK), makeCardBgSmallPath(SKILL),
 				makeCardBgSmallPath(POWER), makeCardBgSmallPath(ENERGY_ORB),
@@ -66,9 +66,9 @@ public class TranquilMod implements CharacterMod {
 	public void receiveEditCharacters() {
 		logger.info("add " + TheTranquilEnum.THE_TRANQUIL.toString());
 		BaseMod.addCharacter(TheTranquil.class, "The Tranquil", "Tranquil class string",
-				AbstractCardEnum.TRANQUIL_TAN.toString(), "The Tranquil",
+				AbstractCardEnum.TRANQUIL_TAN, "The Tranquil",
 				makePath(TRANQUIL_BUTTON), makePath(TRANQUIL_PORTRAIT),
-				TheTranquilEnum.THE_TRANQUIL.toString());
+				TheTranquilEnum.THE_TRANQUIL);
 	}
 
 	@Override

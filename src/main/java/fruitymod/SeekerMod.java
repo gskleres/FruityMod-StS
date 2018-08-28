@@ -66,7 +66,7 @@ public class SeekerMod implements CharacterMod {
 		 * `images/` folder must be relocated
 		 */
 		logger.info("creating the color " + AbstractCardEnum.SEEKER_PURPLE.toString());
-		BaseMod.addColor(AbstractCardEnum.SEEKER_PURPLE.toString(),
+		BaseMod.addColor(AbstractCardEnum.SEEKER_PURPLE,
 				PURPLE, PURPLE, PURPLE, PURPLE, PURPLE, PURPLE, PURPLE,
 				makePath(ATTACK_PURPLE), makePath(SKILL_PURPLE),
 				makePath(POWER_PURPLE), makePath(ENERGY_ORB_PURPLE),
@@ -79,21 +79,21 @@ public class SeekerMod implements CharacterMod {
 	public void receiveEditCharacters() {
 		logger.info("add " + TheSeekerEnum.THE_SEEKER.toString());
 		BaseMod.addCharacter(TheSeeker.class, "The Seeker", "Seeker class string",
-				AbstractCardEnum.SEEKER_PURPLE.toString(), "#pThe #pSeeker",
+				AbstractCardEnum.SEEKER_PURPLE, "#pThe #pSeeker",
 				makePath(SEEKER_BUTTON), makePath(SEEKER_PORTRAIT),
-				TheSeekerEnum.THE_SEEKER.toString());
+				TheSeekerEnum.THE_SEEKER);
 	}
 
 	@Override
 	public void receiveEditRelics() {
 		// Add relics
-		BaseMod.addRelicToCustomPool(new Arcanosphere(), AbstractCardEnum.SEEKER_PURPLE.toString());
-		BaseMod.addRelicToCustomPool(new Blueberries(), AbstractCardEnum.SEEKER_PURPLE.toString());
-		BaseMod.addRelicToCustomPool(new PaperPengwin(), AbstractCardEnum.SEEKER_PURPLE.toString());
-		BaseMod.addRelicToCustomPool(new CosmicSieve(), AbstractCardEnum.SEEKER_PURPLE.toString());
-		BaseMod.addRelicToCustomPool(new SolarEgg(), AbstractCardEnum.SEEKER_PURPLE.toString());
-		BaseMod.addRelicToCustomPool(new RodOfNegation(), AbstractCardEnum.SEEKER_PURPLE.toString());
-		BaseMod.addRelicToCustomPool(new Telescope(), AbstractCardEnum.SEEKER_PURPLE.toString());
+		BaseMod.addRelicToCustomPool(new Arcanosphere(), AbstractCardEnum.SEEKER_PURPLE);
+		BaseMod.addRelicToCustomPool(new Blueberries(), AbstractCardEnum.SEEKER_PURPLE);
+		BaseMod.addRelicToCustomPool(new PaperPengwin(), AbstractCardEnum.SEEKER_PURPLE);
+		BaseMod.addRelicToCustomPool(new CosmicSieve(), AbstractCardEnum.SEEKER_PURPLE);
+		BaseMod.addRelicToCustomPool(new SolarEgg(), AbstractCardEnum.SEEKER_PURPLE);
+		BaseMod.addRelicToCustomPool(new RodOfNegation(), AbstractCardEnum.SEEKER_PURPLE);
+		BaseMod.addRelicToCustomPool(new Telescope(), AbstractCardEnum.SEEKER_PURPLE);
 	}
 
 	@Override
