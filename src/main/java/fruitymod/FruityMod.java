@@ -3,6 +3,7 @@ package fruitymod;
 import java.util.ArrayList;
 import java.util.List;
 
+import basemod.ModLabel;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -56,36 +57,7 @@ public class FruityMod implements PostInitializeSubscriber,
     }
     
     public FruityMod() {
-    	logger.info("subscribing to postInitialize event");
-        BaseMod.subscribeToPostInitialize(this);
-        
-        logger.info("subscribing to editCharacters event");
-        BaseMod.subscribeToEditCharacters(this);
-        
-        logger.info("subscribing to editRelics event");
-        BaseMod.subscribeToEditRelics(this);
-        
-        logger.info("subscribing to editCards event");
-        BaseMod.subscribeToEditCards(this);
-
-        logger.info("subscribing to editStrings event");
-        BaseMod.subscribeToEditStrings(this);
-        
-        /* Disable this during playtesting for being counterproductive */
-        // logger.info("subscribing to setUnlocks event");
-        // BaseMod.subscribeToSetUnlocks(this);
-        
-        logger.info("subscribing to onCardUse event");
-        BaseMod.subscribeToOnCardUse(this);
-        
-        logger.info("subscribing to editKeywords event");
-        BaseMod.subscribeToEditKeywords(this);
-        
-        BaseMod.subscribeToOnPowersModified(this);
-        BaseMod.subscribeToPostExhaust(this);
-        BaseMod.subscribeToPostBattle(this);
-        BaseMod.subscribeToPostDraw(this);
-
+        BaseMod.subscribe(this);
         mods = new ArrayList<>();
         mods.add(new SeekerMod());
         if (TranquilMod.isEnabled()) {
@@ -107,7 +79,9 @@ public class FruityMod implements PostInitializeSubscriber,
         // Mod badge
         Texture badgeTexture = new Texture(makePath(BADGE_IMG));
         ModPanel settingsPanel = new ModPanel();
-        settingsPanel.addLabel("FruityMod does not have any settings (yet)!", 400.0f, 700.0f, (me) -> {});
+
+        ModLabel label = new ModLabel("FruityMod does not have any settings (yet)!", 400.0f, 700.0f, settingsPanel, (me) -> {});
+        settingsPanel.addUIElement(label);
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
         
         Settings.isDailyRun = false;

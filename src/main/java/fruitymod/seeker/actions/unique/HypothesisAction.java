@@ -19,7 +19,7 @@ public class HypothesisAction extends AbstractGameAction implements PostDrawSubs
 		this.setValues(target, source, amount);
 		this.actionType = ActionType.WAIT;
 		this.initialDraw = initialDraw;
-		BaseMod.subscribeToPostDraw(this);
+		BaseMod.subscribe(this);
 	}
 	
 	@Override
@@ -57,7 +57,7 @@ public class HypothesisAction extends AbstractGameAction implements PostDrawSubs
 					System.out.println("could not delay unsubscribe to avoid ConcurrentModificationException");
 					e.printStackTrace();
 				}
-				BaseMod.unsubscribeFromPostDraw(this);
+				BaseMod.unsubscribe(this);
 			});
 			delayed.start();
 		}
