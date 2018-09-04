@@ -12,9 +12,9 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import fruitymod.tranquil.cards.*;
 import fruitymod.tranquil.cards.FlyingKick;
-import fruitymod.seeker.characters.TheTranquil;
-import fruitymod.seeker.patches.AbstractCardEnum;
-import fruitymod.seeker.patches.TheTranquilEnum;
+import fruitymod.tranquil.characters.TheTranquil;
+import fruitymod.tranquil.patches.AbstractCardEnum;
+import fruitymod.tranquil.patches.TheTranquilEnum;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -148,6 +148,10 @@ public class TranquilMod implements CharacterMod {
 	 */
 	public static final String makeCardImagePath(String cardName) {
 		return makePath("cards/" + cardName);
+	}
+
+	public static final String makeRelicImagePath(String relicName) {
+		return makePath("relics/" + relicName);
 	}
 
 	/**
