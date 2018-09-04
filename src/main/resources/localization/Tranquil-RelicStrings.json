@@ -1,3 +1,11 @@
 {
-
+  "FangedNecklace": {
+    "NAME": "Fanged Necklace",
+    "FLAVOR": "A necklace studded with rows of vicious, animal-like fangs.",
+    "DESCRIPTIONS": [
+      "Gain #b",
+      " energy at the start of each of your turns.  Whenever an enemy attacks you, it gains #b",
+      " #yBlock."
+    ]
+  }
 }
