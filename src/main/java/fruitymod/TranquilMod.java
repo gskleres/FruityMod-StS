@@ -150,6 +150,10 @@ public class TranquilMod implements CharacterMod {
 		return makePath("cards/" + cardName);
 	}
 
+	public static final String makeRelicImagePath(String relicName) {
+		return makePath("relics/" + relicName);
+	}
+
 	/**
 	 * Makes a full path for a character image
 	 * @param image the image, must *NOT* have a leading "/"
