@@ -52,6 +52,7 @@ public class TranquilMod implements CharacterMod {
 		List<CustomCard> cards = new ArrayList<CustomCard>();
 		cards.add(new Strike_Tan());
 		cards.add(new Defend_Tan());
+		cards.add(new CraneKick());
 		cards.add(new FlyingKick());
 		cards.add(new FlurryOfBlows());
 		cards.add(new Blockpocalypse());
