@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fruitymod.TranquilMod;
-import fruitymod.seeker.patches.AbstractCardEnum;
+import fruitymod.tranquil.patches.AbstractCardEnum;
 
 public class Defend_Tan extends CustomCard {
 	public static final String ID = "Defend_T";

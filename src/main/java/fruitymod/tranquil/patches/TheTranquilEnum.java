@@ -1,4 +1,4 @@
-package fruitymod.seeker.patches;
+package fruitymod.tranquil.patches;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

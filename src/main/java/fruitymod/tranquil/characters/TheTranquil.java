@@ -1,4 +1,4 @@
-package fruitymod.seeker.characters;
+package fruitymod.tranquil.characters;
 
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
@@ -11,7 +11,8 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import fruitymod.TranquilMod;
-import fruitymod.seeker.patches.TheTranquilEnum;
+import fruitymod.tranquil.patches.TheTranquilEnum;
+
 
 import java.util.ArrayList;
 
