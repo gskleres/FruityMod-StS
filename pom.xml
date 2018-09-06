@@ -3,7 +3,7 @@
 
 	<groupId>fruitymod</groupId>
 	<artifactId>FruityMod</artifactId>
-	<version>0.1.0</version>
+	<version>1.0.0</version>
 
 	<name>Fruity Mod</name>
 	<description>Currently, adds a few new relics.</description>

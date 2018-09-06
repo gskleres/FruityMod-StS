@@ -41,7 +41,7 @@ public class FruityMod implements PostInitializeSubscriber,
 	
     private static final String MODNAME = "FruityMod";
     private static final String AUTHOR = "Fruitstrike, ColdRain451, test447, fiiiiilth, Blank The Evil & Pal";
-    private static final String DESCRIPTION = "v0.7.1\n Adds The Seeker as a playable third character";
+    private static final String DESCRIPTION = "v1.0.0\n Adds The Seeker as a playable third character";
     private static final String FRUITY_MOD_ASSETS_FOLDER = "img";
 
 	// badge
