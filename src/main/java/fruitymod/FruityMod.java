@@ -60,9 +60,7 @@ public class FruityMod implements PostInitializeSubscriber,
         BaseMod.subscribe(this);
         mods = new ArrayList<>();
         mods.add(new SeekerMod());
-        if (TranquilMod.isEnabled()) {
-			mods.add(new TranquilMod());
-		}
+        mods.add(new TranquilMod());
     }
 
     public static void initialize() {

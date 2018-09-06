@@ -59,12 +59,18 @@ public class TranquilMod implements CharacterMod {
 
 		for(CustomCard card : cards) {
 			BaseMod.addCard(card);
-			UnlockTracker.unlockCard(card.cardID);
+			if (isEnabled()) {
+				UnlockTracker.unlockCard(card.cardID);
+			}
 		}
 	}
 
 	@Override
 	public void receiveEditCharacters() {
+		if (!isEnabled()) {
+			return;
+		}
+
 		logger.info("add " + TheTranquilEnum.THE_TRANQUIL.toString());
 		BaseMod.addCharacter(TheTranquil.class, "The Tranquil", "Tranquil class string",
 				AbstractCardEnum.TRANQUIL_TAN, "The Tranquil",
@@ -79,6 +85,10 @@ public class TranquilMod implements CharacterMod {
 
 	@Override
 	public void receiveEditRelics() {
+		if (!isEnabled()) {
+			return;
+		}
+
 		// Add relics
 		BaseMod.addRelicToCustomPool(new FangedNecklace(), AbstractCardEnum.TRANQUIL_TAN);
 	}
