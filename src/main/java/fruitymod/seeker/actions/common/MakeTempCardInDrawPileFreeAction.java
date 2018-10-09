@@ -38,7 +38,7 @@ public class MakeTempCardInDrawPileFreeAction extends com.megacrit.cardcrawl.act
 				for (int i = 0; i < this.amount; i++) {
 					AbstractCard c = this.cardToMake.makeStatEquivalentCopy();
 					c.freeToPlayOnce = true;
-					AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(c, this.randomSpot));
+					AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(c, 0, 0, this.randomSpot));
 				}
 			}
 			this.duration -= com.badlogic.gdx.Gdx.graphics.getDeltaTime();

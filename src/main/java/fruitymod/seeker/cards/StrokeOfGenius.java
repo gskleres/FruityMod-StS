@@ -80,13 +80,13 @@ public class StrokeOfGenius extends CustomCard implements ModalChoice.Callback
 
         AbstractCard c;
         if (type == CardType.ATTACK) {
-            c = AbstractDungeon.returnTrulyRandomCard(CardType.ATTACK, AbstractDungeon.cardRandomRng).makeCopy();
+            c = AbstractDungeon.returnTrulyRandomCardInCombat(CardType.ATTACK).makeCopy();
         }
         else if (type == CardType.SKILL) {
-            c = AbstractDungeon.returnTrulyRandomCard(CardType.SKILL, AbstractDungeon.cardRandomRng).makeCopy();
+            c = AbstractDungeon.returnTrulyRandomCardInCombat(CardType.SKILL).makeCopy();
         }
         else {
-            c = AbstractDungeon.returnTrulyRandomCard(CardType.POWER, AbstractDungeon.cardRandomRng).makeCopy();
+            c = AbstractDungeon.returnTrulyRandomCardInCombat(CardType.POWER).makeCopy();
         }
         AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(c, true));
         c.setCostForTurn(0);

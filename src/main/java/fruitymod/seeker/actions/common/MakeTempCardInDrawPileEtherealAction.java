@@ -46,7 +46,7 @@ public class MakeTempCardInDrawPileEtherealAction extends com.megacrit.cardcrawl
 			            c.rawDescription = "Ethereal. " + c.rawDescription;
 			            c.initializeDescription();
 					}
-					AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(c, this.randomSpot));
+					AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(c, 0, 0, this.randomSpot));
 				}
 			}
 			this.duration -= com.badlogic.gdx.Gdx.graphics.getDeltaTime();

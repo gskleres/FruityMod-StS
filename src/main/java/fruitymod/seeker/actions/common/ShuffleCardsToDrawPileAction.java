@@ -38,7 +38,7 @@ extends AbstractGameAction {
                 for (int i = 0; i < this.amount; ++i) {
                     AbstractCard c = cardsToShuffle.get(i);
                     AbstractDungeon.player.hand.removeCard(c);
-                    AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(c, this.randomSpot));
+                    AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(c, 0, 0 ,this.randomSpot));
                 }
             }
             this.duration -= Gdx.graphics.getDeltaTime();
