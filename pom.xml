@@ -23,25 +23,26 @@
 		<dependency>
 			<groupId>com.megacrit.cardcrawl</groupId>
 			<artifactId>slaythespire</artifactId>
-			<version>014</version>
+			<version>047</version>
 			<scope>system</scope>
-			<systemPath>${desktopJarPath}</systemPath>
+			<systemPath>${project.basedir}/../lib/desktop-1.0.jar</systemPath>
 		</dependency>
 		<dependency>
-			<groupId>basemod</groupId>
-			<artifactId>basemod</artifactId>
-			<version>1.5.2</version>
+			<groupId>com.evacipated.cardcrawl</groupId>
+			<artifactId>ModTheSpire</artifactId>
+			<version>3.5.0</version>
 			<scope>system</scope>
-			<systemPath>${baseModJarPath}</systemPath>
+			<systemPath>${project.basedir}/../lib/ModTheSpire.jar</systemPath>
 		</dependency>
 		<dependency>
-			<groupId>modthespire</groupId>
-			<artifactId>modthespire</artifactId>
-			<version>1.5.2</version>
+			<groupId>com.evacipated.cardcrawl</groupId>
+			<artifactId>BaseMod</artifactId>
+			<version>5.1.0</version>
 			<scope>system</scope>
-			<systemPath>${modSpireJarPath}</systemPath>
+			<systemPath>${project.basedir}/../lib/BaseMod.jar</systemPath>
 		</dependency>
 	</dependencies>
+
 
 	<build>
 		<finalName>FruityMod</finalName>
@@ -81,7 +82,7 @@
 						<phase>package</phase>
 						<configuration>
 							<target>
-								<copy file="target/FruityMod.jar" tofile="${fruityModJarPath}" />
+								<copy file="target/FruityMod.jar" tofile="../_ModTheSpire/mods/FruityMod.jar" />
 							</target>
 						</configuration>
 						<goals>

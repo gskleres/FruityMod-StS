@@ -78,10 +78,15 @@ public class SeekerMod implements CharacterMod {
 	@Override
 	public void receiveEditCharacters() {
 		logger.info("add " + TheSeekerEnum.THE_SEEKER.toString());
-		BaseMod.addCharacter(TheSeeker.class, "The Seeker", "Seeker class string",
-				AbstractCardEnum.SEEKER_PURPLE, "#pThe #pSeeker",
-				makePath(SEEKER_BUTTON), makePath(SEEKER_PORTRAIT),
-				TheSeekerEnum.THE_SEEKER);
+		BaseMod.addCharacter(
+			new TheSeeker(
+				TheSeeker.NAME
+				,TheSeekerEnum.THE_SEEKER
+			)
+			, makePath(SEEKER_BUTTON)
+			, makePath(SEEKER_PORTRAIT)
+			, TheSeekerEnum.THE_SEEKER
+		);
 	}
 
 	@Override

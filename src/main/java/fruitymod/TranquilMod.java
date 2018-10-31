@@ -72,10 +72,15 @@ public class TranquilMod implements CharacterMod {
 		}
 
 		logger.info("add " + TheTranquilEnum.THE_TRANQUIL.toString());
-		BaseMod.addCharacter(TheTranquil.class, "The Tranquil", "Tranquil class string",
-				AbstractCardEnum.TRANQUIL_TAN, "The Tranquil",
-				makePath(TRANQUIL_BUTTON), makePath(TRANQUIL_PORTRAIT),
-				TheTranquilEnum.THE_TRANQUIL);
+		BaseMod.addCharacter(
+			new TheTranquil(
+					TheTranquil.NAME
+					,TheTranquilEnum.THE_TRANQUIL
+			)
+			, makePath(TRANQUIL_BUTTON)
+			, makePath(TRANQUIL_PORTRAIT)
+			, TheTranquilEnum.THE_TRANQUIL
+		);
 	}
 
 	@Override

@@ -37,7 +37,7 @@ public class PhaseCoil extends CustomCard {
 	@Override
 	public void triggerWhenDrawn(){
         super.triggerWhenDrawn();
-		AbstractDungeon.actionManager.addToBottom(new ModifyDamageAction(this, this.magicNumber));
+		AbstractDungeon.actionManager.addToBottom(new ModifyDamageAction(this.uuid, this.magicNumber));
     }
     
 	public void use(com.megacrit.cardcrawl.characters.AbstractPlayer p, AbstractMonster m) {
