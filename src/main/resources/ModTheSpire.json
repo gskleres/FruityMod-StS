@@ -1,7 +1,7 @@
 {
 	"modid": "fruitymod-sts",
 	"name": "FruityMod",
-	"author_list": ["Fruitstrike", "ColdRain451", "test447", "fiiiiilth", "Blank The Evil", "Pal", "Grumpai", "Jrawly", "Butcherberries"],
+	"author_list": ["Fruitstrike", "DarkVexon","ColdRain451", "test447", "fiiiiilth", "Blank The Evil", "Pal", "Grumpai", "Jrawly", "Butcherberries"],
 	"description": "Adds The Seeker as a new playable character.",
 	"dependencies": ["basemod"],
 	"version": "1.0.0",
