@@ -26,6 +26,8 @@ import fruitymod.seeker.characters.TheSeeker;
 import fruitymod.seeker.patches.AbstractCardEnum;
 import fruitymod.seeker.patches.TheSeekerEnum;
 import fruitymod.seeker.relics.*;
+import fruitymod.tranquil.characters.TheTranquil;
+import fruitymod.tranquil.patches.TheTranquilEnum;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -36,7 +38,7 @@ import java.util.List;
 public class SeekerMod implements CharacterMod {
 	public static final Logger logger = LogManager.getLogger(FruityMod.class.getName());
 
-	private static final Color PURPLE = CardHelper.getColor(139.0f, 0.0f, 139.0f);
+	public static final Color PURPLE = CardHelper.getColor(139.0f, 0.0f, 139.0f);
 
 	private static final String FRUITY_MOD_ASSETS_FOLDER = "img";
 
@@ -53,7 +55,7 @@ public class SeekerMod implements CharacterMod {
 	private static final String ENERGY_ORB_PURPLE_PORTRAIT = "1024/card_purple_orb.png";
 
 	// seeker assets
-	private static final String SEEKER_BUTTON = "charSelect/seekerButton.png";
+	private static final String SEEKER_BUTTON = "charSelect/seeker_select_button.png";
 	private static final String SEEKER_PORTRAIT = "charSelect/SeekerPortraitBG.jpg";
 	public static final String SEEKER_SHOULDER_1 = "char/shoulder.png";
 	public static final String SEEKER_SHOULDER_2 = "char/shoulder2.png";
@@ -78,10 +80,7 @@ public class SeekerMod implements CharacterMod {
 	@Override
 	public void receiveEditCharacters() {
 		logger.info("add " + TheSeekerEnum.THE_SEEKER.toString());
-		BaseMod.addCharacter(TheSeeker.class, "The Seeker", "Seeker class string",
-				AbstractCardEnum.SEEKER_PURPLE, "#pThe #pSeeker",
-				makePath(SEEKER_BUTTON), makePath(SEEKER_PORTRAIT),
-				TheSeekerEnum.THE_SEEKER);
+		BaseMod.addCharacter(new TheSeeker("the Seeker", TheSeekerEnum.THE_SEEKER), makePath(SEEKER_BUTTON), makePath(SEEKER_PORTRAIT),TheSeekerEnum.THE_SEEKER);
 	}
 
 	@Override

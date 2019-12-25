@@ -27,7 +27,7 @@ public class TranquilMod implements CharacterMod {
 
 	public static final Logger logger = LogManager.getLogger(TranquilMod.class.getName());
 
-	private static final Color TAN = CardHelper.getColor(210.0f, 180.0f, 140.0f);
+	public static final Color TAN = CardHelper.getColor(210.0f, 180.0f, 140.0f);
 
 	private static final String ATTACK = "attack";
 	private static final String SKILL = "skill";
@@ -71,11 +71,7 @@ public class TranquilMod implements CharacterMod {
 			return;
 		}
 
-		logger.info("add " + TheTranquilEnum.THE_TRANQUIL.toString());
-		BaseMod.addCharacter(TheTranquil.class, "The Tranquil", "Tranquil class string",
-				AbstractCardEnum.TRANQUIL_TAN, "The Tranquil",
-				makePath(TRANQUIL_BUTTON), makePath(TRANQUIL_PORTRAIT),
-				TheTranquilEnum.THE_TRANQUIL);
+		BaseMod.addCharacter(new TheTranquil("the Tranquil", TheTranquilEnum.THE_TRANQUIL), makePath(TRANQUIL_BUTTON), makePath(TRANQUIL_PORTRAIT), TheTranquilEnum.THE_TRANQUIL);
 	}
 
 	@Override
