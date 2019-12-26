@@ -131,7 +131,7 @@ public class TheSeeker extends CustomPlayer {
 
     @Override
     public String getLocalizedCharacterName() {
-        return "the Seeker";
+        return "The Seeker";
     }
 
     @Override
