@@ -24,7 +24,7 @@ extends AbstractPower {
         this.amount = amount;
         this.thornsInfo = new DamageInfo(this.owner, this.amount, DamageInfo.DamageType.THORNS);
         this.updateDescription();
-        this.img = ImageMaster.loadImage("images/powers/32/doubleTap.png");
+        this.loadRegion("doubleTap");
     }
     
     @Override

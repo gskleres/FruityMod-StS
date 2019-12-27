@@ -25,7 +25,7 @@ extends AbstractPower {
         this.owner = owner;
         this.amount = amount;
         this.updateDescription();
-        this.img = ImageMaster.loadImage("images/powers/32/doubleTap.png");
+        this.loadRegion("doubleTap");
     }
 
     @Override
