@@ -339,10 +339,7 @@
   },
   "Eclipse_S": {
     "NAME": "Eclipse",
-    "DESCRIPTION": "Top-Cycle an Exhausted Ethereal card. NL Exhaust.",
-    "EXTENDED_DESCRIPTION": [
-      "I don't have any Exhausted Ethereal cards."
-    ]
+    "DESCRIPTION": "Whenever you draw an Ethereal card, draw another card."
   },
   "Eureka": {
     "NAME": "Eureka!",
@@ -350,12 +347,7 @@
   },
   "ReflectionWard": {
     "NAME": "Reflection Ward",
-    "DESCRIPTION": "Gain 5 Block and 3 Reflect per !M! cards in your draw pile.",
-    "UPGRADE_DESCRIPTION": "Gain 5 Block and 3 Reflect per !M! cards in your draw pile.",
-    "EXTENDED_DESCRIPTION": [
-      " (Will gain !B! Block and ",
-      " Reflect)."
-    ]
+    "DESCRIPTION": "Gain !B! Block. NL Whenever you are attacked this turn, deal !M! damage to ALL enemies."
   },
   "Zenith": {
     "NAME": "Zenith",
