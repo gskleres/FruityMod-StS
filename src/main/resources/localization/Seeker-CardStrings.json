@@ -292,8 +292,8 @@
   },
   "MeteorShower": {
     "NAME": "Meteor Shower",
-    "DESCRIPTION": "Deal 1 damage to ALL enemies for each card in your draw pile. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Innate. Deal 1 damage to ALL enemies for each card in your draw pile. Exhaust."
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage to ALL enemies. NL Repeat for each Ethereal card. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Ethereal. NL Deal !D! damage to ALL enemies. NL Repeat for each Ethereal card."
   },
   "Vacuum": {
     "NAME": "Vacuum",
