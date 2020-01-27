@@ -228,7 +228,7 @@ public class SeekerMod implements CharacterMod {
         cards.add(new MagicMissile());
         cards.add(new Enigma());
         cards.add(new Feedback());
-        cards.add(new Brilliance());
+        cards.add(new Premonitions());
         cards.add(new Anomaly());
         cards.add(new Nova());
         cards.add(new Vortex());

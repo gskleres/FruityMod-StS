@@ -1,11 +1,24 @@
 {
-	"modid": "fruitymod-sts",
-	"name": "FruityMod",
-	"author_list": ["Fruitstrike", "DarkVexon","ColdRain451", "test447", "fiiiiilth", "Blank The Evil", "Pal", "Grumpai", "Jrawly", "Butcherberries"],
-	"description": "Adds The Seeker as a new playable character.",
-	"dependencies": ["basemod"],
-	"version": "1.0.0",
-	"mts_version": "3.1.0",
-	"sts_version": "08-30-2018",
-	"update_json": "https://api.github.com/repos/gskleres/FruityMod-StS/releases/latest"
+  "modid": "fruitymod-sts",
+  "name": "FruityMod",
+  "author_list": [
+    "Fruitstrike",
+    "DarkVexon",
+    "ColdRain451",
+    "test447",
+    "fiiiiilth",
+    "Blank The Evil",
+    "Pal",
+    "Grumpai",
+    "Jrawly",
+    "Butcherberries"
+  ],
+  "description": "Adds The Seeker as a new playable character.",
+  "dependencies": [
+    "basemod"
+  ],
+  "version": "1.0.0",
+  "mts_version": "3.1.0",
+  "sts_version": "08-30-2018",
+  "update_json": "https://api.github.com/repos/gskleres/FruityMod-StS/releases/latest"
 }
