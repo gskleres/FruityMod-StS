@@ -224,7 +224,8 @@
 	},
 	"Flow": {
 		"NAME": "Flow",
-		"DESCRIPTION": "Ethereal. NL Retain all excess Energy at the end of turn. Draw 1 extra card next turn."
+		"DESCRIPTION": "Can only be played if you've played an Ethereal card this turn. NL Next turn, gain X+1 [E] .",
+		"UPGRADE_DESCRIPTION": "Can only be played if you've played an Ethereal card this turn. NL Next turn, gain X+2 [E] ."
 	},
 	"Illuminate": {
 		"NAME": "Illuminate",

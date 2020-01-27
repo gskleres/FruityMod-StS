@@ -1,45 +1,53 @@
 package fruitymod.seeker.cards;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
+import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
-import basemod.abstracts.CustomCard;
-import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import fruitymod.SeekerMod;
+import fruitymod.seeker.actions.common.PerformXAction;
+import fruitymod.seeker.actions.unique.FlowAction;
 import fruitymod.seeker.patches.AbstractCardEnum;
-import fruitymod.seeker.powers.FlowPower;
 
 public class Flow
-extends CustomCard {
+        extends CustomCard {
     public static final String ID = "Flow";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-	public static final String NAME = cardStrings.NAME;
-	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    private static final int COST = 1;
-    private static final int COST_UPGRADED = 0;
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+    private static final int COST = -1;
 
     public Flow() {
         super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION,
-        		AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
-        		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
+                AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
+                AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
         this.isEthereal = true;
+        baseMagicNumber = magicNumber = 1;
+    }
+
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        boolean bruh = false;
+        for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
+            if (c.isEthereal)
+                bruh = true;
+        }
+        cantUseMessage = "I haven't played an Ethereal card this turn ... yet.";
+        return bruh;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FlowPower(p, 1), 1));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DrawCardNextTurnPower(p, 1), 1));
-    }
-    
-    @Override
-    public void triggerOnEndOfPlayerTurn() {
-    	AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
+        if (energyOnUse < EnergyPanel.totalCount) {
+            energyOnUse = EnergyPanel.totalCount;
+        }
+        FlowAction r = new FlowAction(magicNumber);
+        addToBot(new PerformXAction(r, p, energyOnUse, freeToPlayOnce));
     }
 
     @Override
@@ -51,7 +59,9 @@ extends CustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBaseCost(COST_UPGRADED);
+            upgradeMagicNumber(1);
+            rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }
