@@ -164,7 +164,7 @@
   },
   "Umbra": {
     "NAME": "Umbra",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. NL If you are Weak, Frail, or Vulnerable, repeat these effects."
+    "DESCRIPTION": "If you are Vulnerable or Frail, gain !B! Block. NL If you are Weak, deal !D! damage."
   },
   "GravityWell": {
     "NAME": "Gravity Well",
