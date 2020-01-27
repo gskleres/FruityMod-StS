@@ -9,7 +9,7 @@ import fruitymod.SeekerMod;
 public class PaperPengwin extends CustomRelic {
 	public static final String ID = "PaperPengwin";
 	public static final int MIN_STACKS = 1;
-	public static final int STAT_GAIN = 1;
+	public static final int STAT_GAIN = 2;
 	
 	public PaperPengwin() {
 		super(ID, new Texture(SeekerMod.makeRelicImagePath(ID)),

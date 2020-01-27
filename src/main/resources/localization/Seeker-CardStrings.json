@@ -209,8 +209,8 @@
 	},
 	"Corona": {
 		"NAME": "Corona",
-		"DESCRIPTION": "Next turn, draw !M! card. Whenever you draw this card, increase that amount by 1 this combat.",
-		"EXTENDED_DESCRIPTION": ["Next turn, draw !M! cards. Whenever you draw this card, increase that amount by 1 this combat."]
+		"DESCRIPTION": "Draw !M! card. Whenever you draw this card, increase that amount by 1 this combat.",
+		"EXTENDED_DESCRIPTION": ["Draw !M! cards. Whenever you draw this card, increase that amount by 1 this combat."]
 	},
 	"Equinox": {
 		"NAME": "Equinox",
@@ -238,7 +238,7 @@
 	},
 	"Overload": {
 		"NAME": "Overload",
-		"DESCRIPTION": "Gain 1 Vulnerable. Gain !M! Energy, decaying by 1 each time this card is played this combat."
+		"DESCRIPTION": "Gain 1 Weak, 1 Frail, and 1 Vulnerable. Gain [E] [E] [E]. Draw !M! Cards."
 	},
 	"Disperse": {
 		"NAME": "Disperse",
