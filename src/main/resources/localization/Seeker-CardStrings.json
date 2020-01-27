@@ -45,7 +45,7 @@
 	},
 	"Retrograde": {
 		"NAME": "Retrograde",
-		"DESCRIPTION": "Deal !D! damage. At the end of the turn, Recycle a copy of this card."
+		"DESCRIPTION": "Deal !D! damage twice. NL Whenever you draw this card, reduce its cost by 1 this combat."
 	},
 	"MagicMissile": {
 		"NAME": "Magic Missile",
