@@ -170,7 +170,8 @@
 	},
 	"Nexus": {
 		"NAME": "Nexus",
-		"DESCRIPTION": "Whenever you draw a non-Ethereal Attack or Skill, Recycle an Ethereal copy of it."
+		"DESCRIPTION": "Shuffle an Ethereal copy of every non-Ethereal card in your hand into your draw pile.",
+		"UPGRADE_DESCRIPTION":"Shuffle an Ethereal copy of every card in your hand into your draw pile."
 	},
 	"PeriaptOfCelerity": {
 		"NAME": "Periapt of Celerity",

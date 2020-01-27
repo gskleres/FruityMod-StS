@@ -1,35 +1,44 @@
 package fruitymod.seeker.cards;
 
 import basemod.abstracts.CustomCard;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fruitymod.SeekerMod;
+import fruitymod.seeker.actions.common.MakeTempCardInDrawPileEtherealAction;
 import fruitymod.seeker.patches.AbstractCardEnum;
-import fruitymod.seeker.powers.NexusPower;
 
 public class Nexus extends CustomCard {
     public static final String ID = "Nexus";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    private static final int COST = 2;
-    private static final int COST_UPGRADED = 1;
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+    private static final int COST = 1;
 
     public Nexus() {
         super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION,
-                AbstractCard.CardType.POWER, AbstractCardEnum.SEEKER_PURPLE,
+                CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
                 AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF);
     }
 
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new NexusPower(p, 1), 1));
+        addToBot(new AbstractGameAction() {
+            @Override
+            public void update() {
+                isDone = true;
+                for (AbstractCard c : p.hand.group) {
+                    if (upgraded || !c.isEthereal) {
+                        addToTop(new MakeTempCardInDrawPileEtherealAction(p, p, c, 1, true, false));
+                    }
+                }
+            }
+        });
     }
 
     @Override
@@ -41,7 +50,8 @@ public class Nexus extends CustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBaseCost(COST_UPGRADED);
+            rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }
