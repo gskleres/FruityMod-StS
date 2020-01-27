@@ -20,9 +20,10 @@ public class PhaseCoil extends CustomCard {
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 2;
-	private static final int ATTACK_DMG = 9;
-	private static final int ATTACK_DMG_UPGRADE = 6;
-	private static final int DMG_BONUS_WHEN_DRAWN = 3;
+	private static final int ATTACK_DMG = 10;
+	private static final int ATTACK_DMG_UPGRADE = 4;
+	private static final int DMG_BONUS_WHEN_DRAWN = 2;
+	private static final int UPGRADE_PLUS_DMG_BONUS_WHEN_DRAWN = 1;
 
 	public PhaseCoil() {
 		super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION,
@@ -52,6 +53,7 @@ public class PhaseCoil extends CustomCard {
 		if (!this.upgraded) {
 			upgradeName();
 			upgradeDamage(ATTACK_DMG_UPGRADE);
+			this.upgradeMagicNumber(UPGRADE_PLUS_DMG_BONUS_WHEN_DRAWN);
 		}
 	}
 }

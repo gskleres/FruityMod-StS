@@ -17,7 +17,7 @@
 	},
 	"Starburst": {
 		"NAME": "Starburst",
-		"DESCRIPTION": "Deal !D! damage twice to one enemy and once to ALL other enemies."
+		"DESCRIPTION": "Deal !D! damage twice to the enemy and once to ALL other enemies."
 	},
 	"Irradiate": {
 		"NAME": "Irradiate",
@@ -89,8 +89,8 @@
 	},
 	"Hypothesis": {
 		"NAME": "Hypothesis",
-		"DESCRIPTION": "Draw a card. If it is Ethereal, add a Dazed to your hand and draw another card.",
-		"UPGRADE_DESCRIPTION": "Draw a card. If it is Ethereal, add a Dazed to your hand and draw !M! more cards."
+		"DESCRIPTION": "Draw a card. If it is Ethereal, draw another card.",
+		"UPGRADE_DESCRIPTION": "Draw a card. If it is Ethereal, draw !M! more cards."
 	},
 	"Singularity": {
 		"NAME": "Singularity",
@@ -195,7 +195,7 @@
 	},
 	"Archives": {
 		"NAME": "Archives",
-		"DESCRIPTION": "Gain [E] for every !M! cards in your draw pile."
+		"DESCRIPTION": "Gain [E] for every !M! Exhausted cards this combat."
 	},
 	"Brainstorm": {
 		"NAME": "Brainstorm",
@@ -276,7 +276,7 @@
 	},
 	"Implosion": {
 		"NAME": "Implosion",
-		"DESCRIPTION": "Deal !D! damage. Top-Cycle !M! card from your hand."
+		"DESCRIPTION": "Ethereal. Deal !D! damage."
 	},
 	"MeteorShower": {
 		"NAME": "Meteor Shower",
@@ -285,7 +285,7 @@
 	},
 	"Vacuum": {
 		"NAME": "Vacuum",
-		"DESCRIPTION": "Remove all of your Weak, Frail, and Vulnerable. Deal !M! damage per stack removed.",
+		"DESCRIPTION": "Remove all of your Weak, Frail, and Vulnerable. Deal !D! damage, plus !M! damage per stack removed.",
 		"EXTENDED_DESCRIPTION": [
 			" (Total: !D! damage)."
 		]
@@ -332,8 +332,7 @@
 	},
 	"Eureka": {
 		"NAME": "Eureka!",
-		"DESCRIPTION": "Recycle 2 Dazed. Draw !M! cards. Gain [E] [E]. NL Exhaust.",
-		"UPGRADE_DESCRIPTION": "Recycle 2 Dazed. Draw !M! cards. Gain [E] [E] [E]. NL Exhaust."
+		"DESCRIPTION": "Shuffle 3 Dazed into your draw pile. Draw !M! cards. Gain [E] [E] [E]. NL Exhaust."
 	},
 	"ReflectionWard": {
 		"NAME": "Reflection Ward",
@@ -360,7 +359,7 @@
 	},
 	"Nova": {
 		"NAME": "Nova",
-		"DESCRIPTION": "Deal !D! damage to ALL enemies."
+		"DESCRIPTION": "Deal !D! damage to ALL enemies. Recycle a Dazed."
 	},
 
 	"DO_NOT_REMOVE_DummyLineForJSONEndOfFileSoYouDoNotHaveToRememberToDeleteTheLastComma": {}

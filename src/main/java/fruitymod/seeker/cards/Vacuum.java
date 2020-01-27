@@ -26,14 +26,17 @@ extends CustomCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
     private static final int COST = 1;
-    private static final int ATTACK_DMG = 4;
-    private static final int UPGRADED_DMG_AMT = 2;
+    private static final int ATTACK_DMG = 5;
+    private static final int UPGRADE_PLUS_ATTACK_DMG = 3;
+    private static final int BONUS_DMG_PER_STACK = 3;
+    private static final int UPGRADE_PLUS_BONUS_DMG_PER_STACK = 2;
 
     public Vacuum() {
         super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION,
         		AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
         		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
-        this.magicNumber = this.baseMagicNumber = ATTACK_DMG;
+        this.magicNumber = this.baseMagicNumber = BONUS_DMG_PER_STACK;
+        this.damage = this.baseDamage = ATTACK_DMG;
     }
 
     @Override
@@ -128,7 +131,8 @@ extends CustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(UPGRADED_DMG_AMT);
+            this.upgradeMagicNumber(UPGRADE_PLUS_BONUS_DMG_PER_STACK);
+            this.upgradeDamage(UPGRADE_PLUS_ATTACK_DMG);
         }
     }
 }

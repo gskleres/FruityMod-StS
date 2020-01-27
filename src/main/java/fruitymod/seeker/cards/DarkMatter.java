@@ -11,11 +11,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import basemod.abstracts.CustomCard;
-import fruitymod.SeekerMod;
-import fruitymod.seeker.patches.AbstractCardEnum;
+import fruitymod.seeker.AbstractSeekerCard;
 
-public class DarkMatter extends CustomCard {
+public class DarkMatter extends AbstractSeekerCard {
 	public static final String ID = "DarkMatter";
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
@@ -24,11 +22,11 @@ public class DarkMatter extends CustomCard {
 	private static final int COST = 1;
 	private static final int DAMAGE_AMT = 3;
 	private static final int UPGRADE_DAMAGE_AMT = 2;
-	
+
 	public DarkMatter() {
-		super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION,
+		super(ID, NAME, COST, DESCRIPTION,
 				AbstractCard.CardType.ATTACK,
-				AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.UNCOMMON,
+				AbstractCard.CardRarity.UNCOMMON,
 				AbstractCard.CardTarget.ENEMY);
 		this.magicNumber = this.baseMagicNumber = DAMAGE_AMT;
 	}
@@ -49,16 +47,6 @@ public class DarkMatter extends CustomCard {
 		this.baseDamage = countEtherealInExhaustPile() * this.magicNumber;
 		super.applyPowers();
 		this.setDescription(true);
-	}
-	
-	public static int countEtherealInExhaustPile() {
-		int exhaustedEtherealCount = 0;
-		for (AbstractCard c : AbstractDungeon.player.exhaustPile.group) {
-			if (!c.isEthereal)
-				continue;
-			exhaustedEtherealCount++;
-		}
-		return exhaustedEtherealCount;
 	}
 	
 	@Override

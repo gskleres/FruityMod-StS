@@ -35,7 +35,7 @@ public class HypothesisAction extends AbstractGameAction implements PostDrawSubs
 		if (listening) {
 			this.listening = false;
 			if (c.isEthereal) {
-				AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(new Dazed(), 1, true));
+				//AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(new Dazed(), 1, true));
 				AbstractDungeon.actionManager.addToTop(new DrawCardAction(AbstractDungeon.player, this.amount));
 			}
 			/*

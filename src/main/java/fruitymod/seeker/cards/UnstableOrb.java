@@ -23,7 +23,7 @@ public class UnstableOrb extends CustomCard {
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 1;
-	private static final int ATTACK_DMG = 12;
+	private static final int ATTACK_DMG = 15;
 	private static final int UPGRADE_DMG_AMT = 5;
 	private static final int WEAK_AMT = 2;
 

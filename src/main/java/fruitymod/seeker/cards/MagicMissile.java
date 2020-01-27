@@ -22,8 +22,8 @@ public class MagicMissile extends CustomCard {
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 1;
-	private static final int ATTACK_DMG = 3;
-	private static final int TIMES = 4;
+	private static final int ATTACK_DMG = 4;
+	private static final int TIMES = 3;
 	private static final int UPGRADE_TIMES_AMT = 1;
 	
 	public MagicMissile() {

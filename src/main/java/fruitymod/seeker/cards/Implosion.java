@@ -22,9 +22,9 @@ public class Implosion extends CustomCard {
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 3;
-	private static final int ATTACK_DMG = 38;
-	private static final int UPGRADE_DMG_AMT = 10;
-	private static final int TOP_CYCLE_AMT = 1;
+	private static final int ATTACK_DMG = 36;
+	private static final int UPGRADE_DMG_AMT = 12;
+	private static final int TOP_CYCLE_AMT = 0;
 	
 	public Implosion() {
 		super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION,
@@ -37,7 +37,7 @@ public class Implosion extends CustomCard {
 	@Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction((AbstractCreature)m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HEAVY));
-        AbstractDungeon.actionManager.addToBottom(new TopCycleCardsFromHandAction(p, p, this.magicNumber));
+        //AbstractDungeon.actionManager.addToBottom(new TopCycleCardsFromHandAction(p, p, this.magicNumber));
     }
 
     @Override

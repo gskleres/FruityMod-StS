@@ -21,9 +21,10 @@ public class Genesis extends CustomCard {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final int COST = 1;
-    private static final int BLOCK_AMT = 6;
-    private static final int UPGRADE_BLOCK_AMT = 3;
-    private static final int DRAW = 2;
+    private static final int BLOCK_AMT = 7;
+    private static final int UPGRADE_BLOCK_AMT = 2;
+    private static final int DRAW = 1;
+    private static final int UPGRADE_DRAW = 1;
     
     public Genesis() {
     	super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION,
@@ -59,6 +60,7 @@ public class Genesis extends CustomCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeBlock(UPGRADE_BLOCK_AMT);
+            this.upgradeMagicNumber(UPGRADE_DRAW);
         }
     }
 }

@@ -19,15 +19,17 @@ public class ArcaneArmor extends CustomCard {
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 2;
-	private static final int BLOCK = 8;
-	private static final int UPGRADE_PLUS_BLOCK = 6;
+	private static final int BLOCK = 9;
+	private static final int UPGRADE_PLUS_BLOCK = 3;
+	private static final int DRAW_INCREASE = 1;
+	private static final int UPGRADE_PLUS_DRAW_INCREASE = 1;
 
 	public ArcaneArmor() {
 		super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION,
 				AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
 				AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF);
 		this.block = this.baseBlock = BLOCK;
-		this.magicNumber = this.baseMagicNumber = 2;
+		this.magicNumber = this.baseMagicNumber = DRAW_INCREASE;
 
 	}
 
@@ -52,6 +54,7 @@ public class ArcaneArmor extends CustomCard {
 		if (!this.upgraded) {
 			this.upgradeName();
 			this.upgradeBlock(UPGRADE_PLUS_BLOCK);
+			this.upgradeMagicNumber(UPGRADE_PLUS_DRAW_INCREASE);
 		}
 	}
 }
