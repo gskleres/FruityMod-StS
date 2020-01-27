@@ -38,7 +38,7 @@ public class Flow
                 bruh = true;
         }
         cantUseMessage = "I haven't played an Ethereal card this turn ... yet.";
-        return bruh;
+        return bruh && super.canUse(p, m);
     }
 
     @Override

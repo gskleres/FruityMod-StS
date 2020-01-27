@@ -166,8 +166,7 @@
 	},
 	"GravityWell": {
 		"NAME": "Gravity Well",
-		"DESCRIPTION": "If the enemy is Weak, it loses !M! Strength. Exhaust.",
-		"EXTENDED_DESCRIPTION": [ "This enemy is not Weak." ]
+		"DESCRIPTION": "Receive !M! less damage from attacks for each stack of Weak and Vulnerable the enemy has."
 	},
 	"Nexus": {
 		"NAME": "Nexus",
