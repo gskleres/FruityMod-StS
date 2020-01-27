@@ -20,8 +20,8 @@ public class Corona
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String DESCRIPTION_PLURAL = cardStrings.EXTENDED_DESCRIPTION[0];
-    private static final int COST = 2;
-    private static final int COST_UPGRADED = 1;
+    private static final int COST = 1;
+    private static final int COST_UPGRADED = 0;
     private static final int BASE_CARD_DRAW = 1;
     private static final int CARD_DRAW_INCREASE_PER_DRAW = 1;
 
