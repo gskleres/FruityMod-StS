@@ -21,6 +21,7 @@ public class DamageSomeEnemiesAction
     public boolean[] targets;
     public boolean targetsAll = false;
     private boolean firstFrame = true;
+
     public DamageSomeEnemiesAction(AbstractCreature source, boolean[] targets, int[] amount, DamageInfo.DamageType type, AbstractGameAction.AttackEffect effect, boolean isFast) {
         this.setValues(null, source, amount[0]);
         this.damage = amount;

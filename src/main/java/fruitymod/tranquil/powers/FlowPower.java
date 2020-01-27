@@ -16,6 +16,7 @@ public class FlowPower extends AbstractPower {
     public static final String POWER_ID = "Tranquil_FlowPower";
     public static final String NAME = "Flow";
     public static final String DESCRIPTION = "You gain 1 Strength and 1 Dexterity per stack of Flow.";
+
     public FlowPower(AbstractCreature owner, int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
@@ -35,17 +36,14 @@ public class FlowPower extends AbstractPower {
         super.onAfterUseCard(card, action);
         if (
                 (owner.hasPower("Tranquil_AttunedAttackPower") && card.type == AbstractCard.CardType.ATTACK)
-                //|| (owner.hasPower("Tranquil_AttunedSkillPower") && card.type == AbstractCard.CardType.SKILL)
-        )
-        {
+            //|| (owner.hasPower("Tranquil_AttunedSkillPower") && card.type == AbstractCard.CardType.SKILL)
+        ) {
             this.amount++;
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner,
                     new StrengthPower(owner, 1), 1));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner,
                     new DexterityPower(owner, 1), 1));
-        }
-        else
-        {
+        } else {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner,
                     new StrengthPower(owner, -1 * amount), -1 * amount));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner,

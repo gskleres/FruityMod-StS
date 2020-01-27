@@ -49,6 +49,84 @@ public class TranquilMod implements CharacterMod {
         }
     }
 
+    /**
+     * Makes a full path for a small card background
+     *
+     * @param cardType the card type, must *NOT* have a leading "/"
+     * @return the full path to the card background
+     */
+    public static final String makeCardBgSmallPath(String cardType) {
+        return makePath("512/" + cardType);
+    }
+
+    /**
+     * Makes a full path for a large card background
+     *
+     * @param cardType the card type, must *NOT* have a leading "/"
+     * @return the full path to the card background
+     */
+    public static final String makeCardBgLargePath(String cardType) {
+        return makePath("1024/" + cardType);
+    }
+
+    /**
+     * Makes a full path for a card image
+     *
+     * @param cardName the resource, must *NOT* have a leading "/"
+     * @return the full path to the card image
+     */
+    public static final String makeCardImagePath(String cardName) {
+        return makePath("cards/" + cardName);
+    }
+
+    public static final String makeRelicImagePath(String relicName) {
+        return makePath("relics/" + relicName);
+    }
+
+    /**
+     * Makes a full path for a character image
+     *
+     * @param image the image, must *NOT* have a leading "/"
+     * @return the full path to the character image
+     */
+    public static final String makeCharacterImagePath(String image) {
+        return makePath("char/" + image);
+    }
+
+    /**
+     * Makes a full path for a resource path
+     *
+     * @param resource the resource, must *NOT* have a leading "/"
+     * @return the full path
+     */
+    private static final String makePath(String resource) {
+        String result = "img/tranquil/" + resource;
+
+        if (!hasExtension(resource)) {
+            result += ".png";
+        }
+
+        return result;
+    }
+
+    /**
+     * Makes a full path for a power path
+     *
+     * @param power the resource, must *NOT* have a leading "/"
+     * @return the full path
+     */
+    public static final String makePowerImagePath(String power) {
+        return makePath("powers/" + power.replaceFirst("Tranquil_", ""));
+    }
+
+    public static boolean isEnabled() {
+        return Boolean.parseBoolean(System.getProperty("tranquil_enabled", "false"));
+    }
+
+    private static boolean hasExtension(String filename) {
+        return filename.lastIndexOf('.') > 0;
+    }
+
     @Override
     public void receiveEditCards() {
         if (isEnabled()) {
@@ -132,83 +210,5 @@ public class TranquilMod implements CharacterMod {
     @Override
     public void receivePostExhaust(AbstractCard abstractCard) {
 
-    }
-
-    /**
-     * Makes a full path for a small card background
-     *
-     * @param cardType the card type, must *NOT* have a leading "/"
-     * @return the full path to the card background
-     */
-    public static final String makeCardBgSmallPath(String cardType) {
-        return makePath("512/" + cardType);
-    }
-
-    /**
-     * Makes a full path for a large card background
-     *
-     * @param cardType the card type, must *NOT* have a leading "/"
-     * @return the full path to the card background
-     */
-    public static final String makeCardBgLargePath(String cardType) {
-        return makePath("1024/" + cardType);
-    }
-
-    /**
-     * Makes a full path for a card image
-     *
-     * @param cardName the resource, must *NOT* have a leading "/"
-     * @return the full path to the card image
-     */
-    public static final String makeCardImagePath(String cardName) {
-        return makePath("cards/" + cardName);
-    }
-
-    public static final String makeRelicImagePath(String relicName) {
-        return makePath("relics/" + relicName);
-    }
-
-    /**
-     * Makes a full path for a character image
-     *
-     * @param image the image, must *NOT* have a leading "/"
-     * @return the full path to the character image
-     */
-    public static final String makeCharacterImagePath(String image) {
-        return makePath("char/" + image);
-    }
-
-    /**
-     * Makes a full path for a resource path
-     *
-     * @param resource the resource, must *NOT* have a leading "/"
-     * @return the full path
-     */
-    private static final String makePath(String resource) {
-        String result = "img/tranquil/" + resource;
-
-        if (!hasExtension(resource)) {
-            result += ".png";
-        }
-
-        return result;
-    }
-
-    /**
-     * Makes a full path for a power path
-     *
-     * @param power the resource, must *NOT* have a leading "/"
-     * @return the full path
-     */
-    public static final String makePowerImagePath(String power) {
-        return makePath("powers/" + power.replaceFirst("Tranquil_", ""));
-    }
-
-    public static boolean isEnabled() {
-        return Boolean.parseBoolean(System.getProperty("tranquil_enabled", "false"));
-    }
-
-    private static boolean hasExtension(String filename) {
-        return filename.lastIndexOf('.') > 0;
     }
 }

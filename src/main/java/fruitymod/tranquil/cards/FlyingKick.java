@@ -24,8 +24,7 @@ public class FlyingKick extends CustomCard {
     private static final int ATTACK_DMG = 6;
     private static final int UPGRADE_PLUS_DMG = 3;
 
-    public FlyingKick()
-    {
+    public FlyingKick() {
         super(ID, NAME, TranquilMod.makeCardImagePath(ID), COST, DESCRIPTION,
                 CardType.ATTACK, AbstractCardEnum.TRANQUIL_TAN, CardRarity.BASIC, CardTarget.ENEMY);
 
@@ -33,8 +32,7 @@ public class FlyingKick extends CustomCard {
     }
 
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m)
-    {
+    public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
                 new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 
@@ -42,16 +40,13 @@ public class FlyingKick extends CustomCard {
     }
 
     @Override
-    public AbstractCard makeCopy()
-    {
+    public AbstractCard makeCopy() {
         return new FlyingKick();
     }
 
     @Override
-    public void upgrade()
-    {
-        if (!this.upgraded)
-        {
+    public void upgrade() {
+        if (!this.upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
         }

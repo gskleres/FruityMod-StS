@@ -317,8 +317,8 @@
 	},
 	"DimensionDoor": {
 		"NAME": "Dimension Door",
-		"DESCRIPTION": "Ethereal. NL Gain !M! Intangible. NL Exhaust.",
-		"UPGRADE_DESCRIPTION": "Ethereal. NL Gain !M! Intangible."
+		"DESCRIPTION": "Ethereal. NL Gain !M! Intangible. NL Gain 2 Vulnerable. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Ethereal. NL Gain !M! Intangible. NL Gain 2 Vulnerable."
 	},
 	"Echo": {
 		"NAME": "Echo",

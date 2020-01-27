@@ -2,7 +2,6 @@ package fruitymod.seeker.cards;
 
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -10,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 import fruitymod.SeekerMod;
 import fruitymod.seeker.patches.AbstractCardEnum;
 
@@ -18,7 +18,7 @@ public class DimensionDoor extends CustomCard {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    private static final int COST = 2;
+    private static final int COST = 1;
     private static final int INTANGIBLE_AMT = 1;
 
     public DimensionDoor() {
@@ -34,16 +34,12 @@ public class DimensionDoor extends CustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
                 new IntangiblePlayerPower(p, this.magicNumber), this.magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new VulnerablePower(p, 2, false), 2));
     }
 
     @Override
     public AbstractCard makeCopy() {
         return new DimensionDoor();
-    }
-
-    @Override
-    public void triggerOnEndOfPlayerTurn() {
-        AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
     }
 
     @Override

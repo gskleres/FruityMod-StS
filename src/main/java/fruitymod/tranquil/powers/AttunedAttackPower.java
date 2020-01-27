@@ -14,6 +14,7 @@ public class AttunedAttackPower extends AbstractPower {
     public static final String POWER_ID = "Tranquil_AttunedAttackPower";
     public static final String NAME = "Attuned (Attacks)";
     public static final String DESCRIPTION = "You are currently Attuned to Attacks.";
+
     public AttunedAttackPower(AbstractCreature owner) {
         this.name = NAME;
         this.ID = POWER_ID;
@@ -31,8 +32,7 @@ public class AttunedAttackPower extends AbstractPower {
     @Override
     public void onAfterUseCard(AbstractCard card, UseCardAction action) {
         super.onAfterUseCard(card, action);
-        if (card.type != AbstractCard.CardType.ATTACK)
-        {
+        if (card.type != AbstractCard.CardType.ATTACK) {
             // remove all FlowPower and this power
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this));
         }
@@ -41,8 +41,7 @@ public class AttunedAttackPower extends AbstractPower {
     @Override
     public void onInitialApplication() {
         super.onInitialApplication();
-        if (!owner.hasPower("Tranquil_FlowPower"))
-        {
+        if (!owner.hasPower("Tranquil_FlowPower")) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new FlowPower(owner, 0)));
         }
         // TODO: if they have AttunedSkillPower, remove that here

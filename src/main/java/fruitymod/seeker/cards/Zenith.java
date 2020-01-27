@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.BerserkPower;
-import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import fruitymod.SeekerMod;
 import fruitymod.seeker.patches.AbstractCardEnum;
 import fruitymod.seeker.powers.ZenithPower;

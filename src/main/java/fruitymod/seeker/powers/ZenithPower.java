@@ -2,7 +2,6 @@ package fruitymod.seeker.powers;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import fruitymod.SeekerMod;
 
