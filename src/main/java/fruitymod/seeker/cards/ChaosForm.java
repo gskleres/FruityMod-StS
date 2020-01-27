@@ -11,30 +11,24 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import fruitymod.SeekerMod;
 import fruitymod.seeker.patches.AbstractCardEnum;
 import fruitymod.seeker.powers.ChaosFormPower;
-import fruitymod.seeker.powers.ChaosFormUpgradePower;
 
 public class ChaosForm extends CustomCard {
     public static final String ID = "ChaosForm";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String UPGRADED_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     private static final int COST = 3;
 
     public ChaosForm() {
         super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION,
                 AbstractCard.CardType.POWER, AbstractCardEnum.SEEKER_PURPLE,
                 AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF);
-        this.magicNumber = this.baseMagicNumber = 1;
+        this.magicNumber = this.baseMagicNumber = 50;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (this.upgraded) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ChaosFormUpgradePower(p, this.magicNumber), this.magicNumber));
-        } else {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ChaosFormPower(p, this.magicNumber), this.magicNumber));
-        }
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ChaosFormPower(p, this.magicNumber), this.magicNumber));
     }
 
     @Override
@@ -46,8 +40,7 @@ public class ChaosForm extends CustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.rawDescription = UPGRADED_DESCRIPTION;
-            this.initializeDescription();
+            upgradeMagicNumber(25);
         }
     }
 

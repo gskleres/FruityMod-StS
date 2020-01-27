@@ -304,8 +304,7 @@
   },
   "ChaosForm": {
     "NAME": "Chaos Form",
-    "DESCRIPTION": "At the start of your turn, Recycle a random Ethereal card.",
-    "UPGRADE_DESCRIPTION": "At the start of your turn, Recycle a random Ethereal card. It costs 0 until played."
+    "DESCRIPTION": "Whenever you draw an Ethereal card, !M! % chance to play a temporary copy of it."
   },
   "Creativity": {
     "NAME": "Creativity",
