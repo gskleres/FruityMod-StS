@@ -233,8 +233,8 @@
   },
   "Illuminate": {
     "NAME": "Illuminate",
-    "DESCRIPTION": "Create !M! copy of an Ethereal card in your hand. Top-Cycle that copy.",
-    "UPGRADE_DESCRIPTION": "Create !M! copies of an Ethereal card in your hand. Top-Cycle those copies."
+    "DESCRIPTION": "Create a copy of an Ethereal card in your hand.",
+    "UPGRADE_DESCRIPTION": "Create a copy of an Ethereal card in your hand. NL It costs 0 this turn."
   },
   "MindOverMatter": {
     "NAME": "Mind Over Matter",

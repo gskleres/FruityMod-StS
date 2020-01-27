@@ -30,7 +30,7 @@ public class Illuminate extends CustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new IlluminateAction(p, this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new IlluminateAction(p, upgraded));
     }
 
     @Override
@@ -42,7 +42,6 @@ public class Illuminate extends CustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(DUPLICATE_UPGRADE);
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
