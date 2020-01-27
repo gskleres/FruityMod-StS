@@ -73,8 +73,8 @@
     "NAME": "Blueberries",
     "FLAVOR": "Delicious. Very blue.",
     "DESCRIPTIONS": [
-      "Gain #b",
-      " max HP for each #yEthereal card in your deck."
+      "You have #b",
+      " more max HP for each #yEthereal card in your deck."
     ]
   },
   "CosmicSieve": {
