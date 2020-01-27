@@ -5,7 +5,10 @@ import basemod.abstracts.CustomCard;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -128,6 +131,11 @@ public class SeekerMod implements CharacterMod {
         }
 
         return result;
+    }
+
+    @Override
+    public void receivePostExhaust(AbstractCard abstractCard) {
+
     }
 
     private static boolean hasExtension(String filename) {
@@ -319,21 +327,6 @@ public class SeekerMod implements CharacterMod {
     @Override
     public void receivePostDungeonInitialize() {
         resetPaperPengwin();
-    }
-
-    @Override
-    public void receivePostExhaust(AbstractCard c) {
-        AbstractPlayer p = AbstractDungeon.player;
-
-        if (p != null && p.hasRelic("CosmicSieve")) {
-            if (c.isEthereal) {
-                p.heal(CosmicSieve.HP_PER_CARD);
-                p.getRelic("CosmicSieve").flash();
-                AbstractDungeon.actionManager.addToBottom(
-                        new RelicAboveCreatureAction(AbstractDungeon.player, p.getRelic("CosmicSieve")));
-            }
-        }
-
     }
 
     @Override
