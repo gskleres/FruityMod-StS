@@ -1,5 +1,6 @@
 package fruitymod.seeker.cards;
 
+import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -11,17 +12,15 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
-
-import basemod.abstracts.CustomCard;
 import fruitymod.SeekerMod;
 import fruitymod.seeker.patches.AbstractCardEnum;
 
 public class Irradiate
-extends CustomCard {
+        extends CustomCard {
     public static final String ID = "Irradiate";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-	public static final String NAME = cardStrings.NAME;
-	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final int COST = 1;
     private static final int ATTACK_DMG = 1;
     private static final int UPGRADE_PLUS_DMG = 1;
@@ -30,11 +29,11 @@ extends CustomCard {
 
     public Irradiate() {
         super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION,
-        		AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
-        		AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ALL_ENEMY);
+                AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
+                AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ALL_ENEMY);
         this.isMultiDamage = true;
         this.magicNumber = this.baseMagicNumber = WEAK_AMT;
-        this.damage=this.baseDamage = ATTACK_DMG;
+        this.damage = this.baseDamage = ATTACK_DMG;
     }
 
     @Override

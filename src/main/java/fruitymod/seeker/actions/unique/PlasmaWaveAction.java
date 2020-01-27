@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 
 public class PlasmaWaveAction
-extends AbstractGameAction {
+        extends AbstractGameAction {
     public int[] multiDamage;
     private boolean freeToPlayOnce = false;
     private DamageInfo.DamageType damageType;
@@ -46,7 +46,7 @@ extends AbstractGameAction {
             for (int i = 0; i < effect; ++i) {
                 AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_HEAVY"));
                 AbstractDungeon.actionManager.addToBottom(new VFXAction(this.p, new CleaveEffect(), 0.0f));
-    	        AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, this.multiDamage, this.damageType, AbstractGameAction.AttackEffect.NONE,true));
+                AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, this.multiDamage, this.damageType, AbstractGameAction.AttackEffect.NONE, true));
             }
             if (!this.freeToPlayOnce) {
                 this.p.energy.use(EnergyPanel.totalCount);

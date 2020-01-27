@@ -1,7 +1,5 @@
 package fruitymod.seeker.patches;
 
-import java.lang.reflect.Field;
-
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -12,10 +10,12 @@ import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.screens.charSelect.CharacterOption;
 import com.megacrit.cardcrawl.screens.charSelect.CharacterSelectScreen;
 
-@SpirePatch(cls="com.megacrit.cardcrawl.screens.charSelect.CharacterOption", method="updateHitbox")
+import java.lang.reflect.Field;
+
+@SpirePatch(cls = "com.megacrit.cardcrawl.screens.charSelect.CharacterOption", method = "updateHitbox")
 public class CharSelectPatch {
 
-    @SpireInsertPatch(rloc=64)
+    @SpireInsertPatch(rloc = 64)
     public static void Insert(Object __obj_instance) {
         Field maxAscensionLevel;
         try {
@@ -44,8 +44,7 @@ public class CharSelectPatch {
                 }
                 if (ascensionLevel > 0) {
                     CardCrawlGame.mainMenuScreen.charSelectScreen.ascLevelInfoString = CharacterSelectScreen.A_TEXT[ascensionLevel - 1];
-                }
-                else {
+                } else {
                     CardCrawlGame.mainMenuScreen.charSelectScreen.ascLevelInfoString = "";
                 }
             }

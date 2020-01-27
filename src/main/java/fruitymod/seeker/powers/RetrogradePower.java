@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-
 import fruitymod.SeekerMod;
 import fruitymod.seeker.cards.Retrograde;
 
@@ -14,7 +13,7 @@ public class RetrogradePower
         extends AbstractPower {
     public static final String POWER_ID = "RetrogradePower";
     public static final String NAME = "Retrograde";
-    public static final String[] DESCRIPTIONS = new String[] {
+    public static final String[] DESCRIPTIONS = new String[]{
             "At the end of your turn, Shuffle-Cycle ",
             " Retrograde into your draw pile."
     };
@@ -36,7 +35,7 @@ public class RetrogradePower
     @Override
     public void atEndOfTurn(boolean isPlayer) {
         if (isPlayer)
-        this.flash();
+            this.flash();
         AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Retrograde(), this.amount, true, true));
         AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, "RetrogradePower"));
     }

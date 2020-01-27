@@ -1,4 +1,3 @@
-
 package fruitymod.seeker.cards;
 
 import basemod.abstracts.CustomCard;

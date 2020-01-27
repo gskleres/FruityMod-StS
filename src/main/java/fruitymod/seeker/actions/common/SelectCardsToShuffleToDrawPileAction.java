@@ -7,24 +7,24 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class SelectCardsToShuffleToDrawPileAction
-extends AbstractGameAction {
-    public static final String[] TEXT = { "shuffle into your draw pile" };
+        extends AbstractGameAction {
+    public static final String[] TEXT = {"shuffle into your draw pile"};
+    public static int numPlaced;
     private AbstractPlayer p;
     private boolean isRandom;
     private boolean isOptional;
-    public static int numPlaced;
 
     public SelectCardsToShuffleToDrawPileAction(AbstractCreature target, AbstractCreature source, int amount, boolean isRandom, boolean isOptional) {
         this.target = target;
-        this.p = (AbstractPlayer)target;
+        this.p = (AbstractPlayer) target;
         this.setValues(target, source, amount);
         this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
         this.isOptional = isOptional;
         this.isRandom = isRandom;
     }
-    
+
     public SelectCardsToShuffleToDrawPileAction(AbstractCreature target, AbstractCreature source, int amount) {
-    	this(target, source, amount, false, false);
+        this(target, source, amount, false, false);
     }
 
     @Override

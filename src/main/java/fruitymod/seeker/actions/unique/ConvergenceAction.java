@@ -1,30 +1,29 @@
 package fruitymod.seeker.actions.unique;
 
-import java.util.ArrayList;
-
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
+import java.util.ArrayList;
+
 public class ConvergenceAction extends AbstractGameAction {
-	private AbstractPlayer p;
-	private ArrayList<AbstractCard> cannotUpgrade = new ArrayList<>();
-	private ArrayList<AbstractCard> canUpgrade = new ArrayList<>();
-	private boolean upgraded = false;
-	
-	public static final String TEXT = "upgrade.";
+    public static final String TEXT = "upgrade.";
+    private AbstractPlayer p;
+    private ArrayList<AbstractCard> cannotUpgrade = new ArrayList<>();
+    private ArrayList<AbstractCard> canUpgrade = new ArrayList<>();
+    private boolean upgraded = false;
 
-	public ConvergenceAction(boolean upgraded) {
-		this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
-		this.p = AbstractDungeon.player;
-		this.duration = Settings.ACTION_DUR_FAST;
-		this.upgraded = upgraded;
-	}
+    public ConvergenceAction(boolean upgraded) {
+        this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
+        this.p = AbstractDungeon.player;
+        this.duration = Settings.ACTION_DUR_FAST;
+        this.upgraded = upgraded;
+    }
 
-	public void update() {
-		if (this.duration == Settings.ACTION_DUR_FAST) {
+    public void update() {
+        if (this.duration == Settings.ACTION_DUR_FAST) {
 			
 			/*
 			if (!this.upgraded) {
@@ -50,70 +49,70 @@ public class ConvergenceAction extends AbstractGameAction {
 			}
 			*/
 
-			for (AbstractCard c : this.p.hand.group) {
-				if (!c.canUpgrade()) {
-					this.cannotUpgrade.add(c);
-				}
-			}
+            for (AbstractCard c : this.p.hand.group) {
+                if (!c.canUpgrade()) {
+                    this.cannotUpgrade.add(c);
+                }
+            }
 
-			if (this.cannotUpgrade.size() == this.p.hand.group.size()) {
-				this.isDone = true;
-				return;
-			}
+            if (this.cannotUpgrade.size() == this.p.hand.group.size()) {
+                this.isDone = true;
+                return;
+            }
 
-			if (this.p.hand.group.size() - this.cannotUpgrade.size() == 1) {
-				for (AbstractCard c : this.p.hand.group) {
-					if (c.canUpgrade()) {
-						c.upgrade();
-						this.isDone = true;
-						return;
-					}
-				}
-			}
+            if (this.p.hand.group.size() - this.cannotUpgrade.size() == 1) {
+                for (AbstractCard c : this.p.hand.group) {
+                    if (c.canUpgrade()) {
+                        c.upgrade();
+                        this.isDone = true;
+                        return;
+                    }
+                }
+            }
 
-			this.p.hand.group.removeAll(this.cannotUpgrade);
+            this.p.hand.group.removeAll(this.cannotUpgrade);
 
-			if (this.p.hand.group.size() > 1) {
-				AbstractDungeon.handCardSelectScreen.open(TEXT, 1, false, false, false, true);
-				tickDuration();
-				return;
-			}
-			if (this.p.hand.group.size() == 1) {
-				this.p.hand.getTopCard().upgrade();
-				returnCards();
-				this.isDone = true;
-			}
-		}
+            if (this.p.hand.group.size() > 1) {
+                AbstractDungeon.handCardSelectScreen.open(TEXT, 1, false, false, false, true);
+                tickDuration();
+                return;
+            }
+            if (this.p.hand.group.size() == 1) {
+                this.p.hand.getTopCard().upgrade();
+                returnCards();
+                this.isDone = true;
+            }
+        }
 
-		if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
-			for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
-				c.upgrade();
-				this.p.hand.addToTop(c);
-			}
+        if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
+            for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
+                c.upgrade();
+                this.p.hand.addToTop(c);
+            }
 
-			returnCards();
-			AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
-			AbstractDungeon.handCardSelectScreen.selectedCards.group.clear();
-			this.isDone = true;
-		}
+            returnCards();
+            AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
+            AbstractDungeon.handCardSelectScreen.selectedCards.group.clear();
+            this.isDone = true;
+        }
 
-		tickDuration();
-	}
-	
-	private void reapplyPowers() {
-		// apply powers
-		for (AbstractCard c : this.p.hand.group) {
-			c.applyPowers();
-		}
-	}
+        tickDuration();
+    }
 
-	private void returnCards() {
-		for (AbstractCard c : this.cannotUpgrade) {
-			this.p.hand.addToTop(c);
-		}
-		
-		reapplyPowers();
-		
-		this.p.hand.refreshHandLayout();
-	}
+    private void reapplyPowers() {
+        // apply powers
+        for (AbstractCard c : this.p.hand.group) {
+            c.applyPowers();
+        }
+    }
+
+    private void returnCards() {
+        for (AbstractCard c : this.cannotUpgrade) {
+            this.p.hand.addToTop(c);
+        }
+
+        reapplyPowers();
+
+        this.p.hand.refreshHandLayout();
+    }
 }

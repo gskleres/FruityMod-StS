@@ -1,4 +1,3 @@
-
 package fruitymod.seeker.powers;
 
 import com.badlogic.gdx.graphics.Color;
@@ -11,17 +10,16 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-
 import fruitymod.SeekerMod;
 
 // This is an invisible power than triggers ethereal cards should be exhausted at the end of the turn
 public class EtherealizePower extends AbstractPower {
     public static final String POWER_ID = "EtherealizePower";
-    @SuppressWarnings("unused")
-	private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("Weakened");
     public static final String NAME = "Etherealize Power";
     @SuppressWarnings("unused")
-	private boolean justApplied = false;
+    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("Weakened");
+    @SuppressWarnings("unused")
+    private boolean justApplied = false;
 
     public EtherealizePower(AbstractCreature owner, int amount) {
         this.name = NAME;
@@ -37,15 +35,17 @@ public class EtherealizePower extends AbstractPower {
 
     @Override
     public void atEndOfTurn(boolean isPlayer) {
-    	if(isPlayer) {
-    		AbstractDungeon.actionManager.addToTop(new ExhaustAllEtherealAction());
-    	}
-    	AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, "EtherealizePower"));
+        if (isPlayer) {
+            AbstractDungeon.actionManager.addToTop(new ExhaustAllEtherealAction());
+        }
+        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, "EtherealizePower"));
     }
+
     @Override
     public void renderIcons(SpriteBatch sb, float x, float y, Color c) {
     }
+
     @Override
-    public void renderAmount(SpriteBatch sb, float x, float y, Color c) {        
+    public void renderAmount(SpriteBatch sb, float x, float y, Color c) {
     }
 }

@@ -5,10 +5,10 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 
 public class LibraryTypeEnum {
 
-	@SpireEnum
-	public static CardLibrary.LibraryType SEEKER_PURPLE;
+    @SpireEnum
+    public static CardLibrary.LibraryType SEEKER_PURPLE;
 
-	@SpireEnum
-	public static CardLibrary.LibraryType TRANQUIL_TAN;
-	
+    @SpireEnum
+    public static CardLibrary.LibraryType TRANQUIL_TAN;
+
 }

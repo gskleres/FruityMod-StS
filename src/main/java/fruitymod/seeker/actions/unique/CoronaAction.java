@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class CoronaAction
-extends AbstractGameAction {
+        extends AbstractGameAction {
     private AbstractPlayer p;
 
     public CoronaAction() {
@@ -40,14 +40,14 @@ extends AbstractGameAction {
     private void findAndModifyCard(boolean better) {
         AbstractCard c = this.p.hand.getRandomCard(false);
         if (better) {
-            if (c.costForTurn > 0  && c.isEthereal) {
+            if (c.costForTurn > 0 && c.isEthereal) {
                 c.costForTurn = 0;
                 c.isCostModified = true;
                 c.superFlash(Color.GOLD.cpy());
             } else {
                 this.findAndModifyCard(better);
             }
-        } else if (c.cost > 0  && c.isEthereal) {
+        } else if (c.cost > 0 && c.isEthereal) {
             c.costForTurn = 0;
             c.isCostModified = true;
             c.superFlash(Color.GOLD.cpy());

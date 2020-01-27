@@ -16,8 +16,7 @@ import fruitymod.seeker.patches.AbstractCardEnum;
 
 import java.util.List;
 
-public class StrokeOfGenius extends CustomCard implements ModalChoice.Callback
-{
+public class StrokeOfGenius extends CustomCard implements ModalChoice.Callback {
     public static final String ID = "StrokeOfGenius";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
@@ -26,21 +25,20 @@ public class StrokeOfGenius extends CustomCard implements ModalChoice.Callback
     private static final int UPGRADED_COST = 0;
     private ModalChoice modal;
 
-    public StrokeOfGenius()
-    {
+    public StrokeOfGenius() {
         super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE, CardRarity.UNCOMMON, CardTarget.NONE);
 
         modal = new ModalChoiceBuilder()
                 .setCallback(this) // Sets callback of all the below options to this
                 .setType(CardType.ATTACK)
                 .setColor(AbstractCardEnum.SEEKER_PURPLE)
-                .addOption("Attack","Add a random Attack to your hand. NL It costs 0 this turn.", CardTarget.NONE)
+                .addOption("Attack", "Add a random Attack to your hand. NL It costs 0 this turn.", CardTarget.NONE)
                 .setType(CardType.SKILL)
                 .setColor(AbstractCardEnum.SEEKER_PURPLE)
-                .addOption("Skill","Add a random Skill to your hand. NL It costs 0 this turn.", CardTarget.NONE)
+                .addOption("Skill", "Add a random Skill to your hand. NL It costs 0 this turn.", CardTarget.NONE)
                 .setType(CardType.POWER)
                 .setColor(AbstractCardEnum.SEEKER_PURPLE)
-                .addOption("Power","Add a random Power to your hand. NL It costs 0 this turn.", CardTarget.NONE)
+                .addOption("Power", "Add a random Power to your hand. NL It costs 0 this turn.", CardTarget.NONE)
                 .create();
 
         this.exhaust = true;
@@ -48,21 +46,18 @@ public class StrokeOfGenius extends CustomCard implements ModalChoice.Callback
 
     // Uses the titles and descriptions of the option cards as tooltips for this card
     @Override
-    public List<TooltipInfo> getCustomTooltips()
-    {
+    public List<TooltipInfo> getCustomTooltips() {
         return modal.generateTooltips();
     }
 
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m)
-    {
+    public void use(AbstractPlayer p, AbstractMonster m) {
         modal.open();
     }
 
     // This is called when one of the option cards is chosen
     @Override
-    public void optionSelected(AbstractPlayer p, AbstractMonster m, int i)
-    {
+    public void optionSelected(AbstractPlayer p, AbstractMonster m, int i) {
         CardType type;
         switch (i) {
             case 0:
@@ -81,11 +76,9 @@ public class StrokeOfGenius extends CustomCard implements ModalChoice.Callback
         AbstractCard c;
         if (type == CardType.ATTACK) {
             c = AbstractDungeon.returnTrulyRandomCardInCombat(CardType.ATTACK).makeCopy();
-        }
-        else if (type == CardType.SKILL) {
+        } else if (type == CardType.SKILL) {
             c = AbstractDungeon.returnTrulyRandomCardInCombat(CardType.SKILL).makeCopy();
-        }
-        else {
+        } else {
             c = AbstractDungeon.returnTrulyRandomCardInCombat(CardType.POWER).makeCopy();
         }
         AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(c, true));
@@ -93,8 +86,7 @@ public class StrokeOfGenius extends CustomCard implements ModalChoice.Callback
     }
 
     @Override
-    public void upgrade()
-    {
+    public void upgrade() {
         if (!upgraded) {
             upgradeName();
             upgradeBaseCost(UPGRADED_COST);
@@ -102,8 +94,7 @@ public class StrokeOfGenius extends CustomCard implements ModalChoice.Callback
     }
 
     @Override
-    public AbstractCard makeCopy()
-    {
+    public AbstractCard makeCopy() {
         return new StrokeOfGenius();
     }
 }

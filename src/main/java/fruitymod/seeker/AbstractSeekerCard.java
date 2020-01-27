@@ -9,8 +9,7 @@ import fruitymod.seeker.patches.AbstractCardEnum;
 public abstract class AbstractSeekerCard extends CustomCard {
 
     public AbstractSeekerCard(String ID, String NAME, int COST, String DESCRIPTION,
-                              CardType TYPE, CardRarity RARITY, CardTarget TARGET)
-    {
+                              CardType TYPE, CardRarity RARITY, CardTarget TARGET) {
         super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION,
                 TYPE, AbstractCardEnum.SEEKER_PURPLE, RARITY, TARGET);
     }

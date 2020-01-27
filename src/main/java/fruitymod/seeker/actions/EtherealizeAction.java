@@ -8,10 +8,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 
 public class EtherealizeAction
-extends AbstractGameAction {
-    @SuppressWarnings("unused")
-	private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("ArmamentsAction");
+        extends AbstractGameAction {
     public static final String[] TEXT = null;
+    @SuppressWarnings("unused")
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("ArmamentsAction");
     private AbstractPlayer p;
 
     public EtherealizeAction() {
@@ -30,7 +30,7 @@ extends AbstractGameAction {
         }
         // let cards update themselves with the new information
         for (AbstractCard c : this.p.hand.group) {
-        	c.applyPowers();
+            c.applyPowers();
         }
         this.isDone = true;
     }

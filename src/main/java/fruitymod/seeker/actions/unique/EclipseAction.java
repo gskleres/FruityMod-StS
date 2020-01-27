@@ -7,13 +7,14 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 
 public class EclipseAction
-extends AbstractGameAction {
+        extends AbstractGameAction {
     private AbstractPlayer p;
-	private ArrayList<AbstractCard> invalidCards = new ArrayList<>();
+    private ArrayList<AbstractCard> invalidCards = new ArrayList<>();
 
     public EclipseAction(AbstractMonster target) {
         this.p = AbstractDungeon.player;
@@ -39,7 +40,7 @@ extends AbstractGameAction {
                 AbstractCard c = this.p.exhaustPile.getTopCard();
                 c.unfadeOut();
                 this.p.hand.addToHand(c);
-                this.p.exhaustPile.removeCard(c);                
+                this.p.exhaustPile.removeCard(c);
                 c.unhover();
                 c.fadingOut = false;
                 this.isDone = true;
@@ -69,7 +70,7 @@ extends AbstractGameAction {
         }
         if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
             for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards) {
-                this.p.exhaustPile.moveToDeck(c, false);                
+                this.p.exhaustPile.moveToDeck(c, false);
             }
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
             this.p.hand.refreshHandLayout();
@@ -83,7 +84,7 @@ extends AbstractGameAction {
         }
         this.tickDuration();
     }
-    
+
 }
 
 

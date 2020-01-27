@@ -7,23 +7,23 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class TopCycleCardsFromHandAction extends AbstractGameAction {
-    public static final String[] TEXT = { "Top-Cycle" };
+    public static final String[] TEXT = {"Top-Cycle"};
+    public static int numPlaced;
     private AbstractPlayer p;
     private boolean isRandom;
     private boolean isOptional;
-    public static int numPlaced;
-	
+
     public TopCycleCardsFromHandAction(AbstractCreature target, AbstractCreature source, int amount, boolean isRandom, boolean isOptional) {
         this.target = target;
-        this.p = (AbstractPlayer)target;
+        this.p = (AbstractPlayer) target;
         this.setValues(target, source, amount);
         this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
         this.isOptional = isOptional;
         this.isRandom = isRandom;
     }
-    
+
     public TopCycleCardsFromHandAction(AbstractCreature target, AbstractCreature source, int amount) {
-    	this(target, source, amount, false, false);
+        this(target, source, amount, false, false);
     }
 
     @Override
@@ -58,5 +58,5 @@ public class TopCycleCardsFromHandAction extends AbstractGameAction {
         }
         this.tickDuration();
     }
-    
+
 }

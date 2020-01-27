@@ -1,24 +1,23 @@
 package fruitymod.seeker.powers;
 
-import java.util.ArrayList;
-
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-
 import fruitymod.SeekerMod;
 import fruitymod.seeker.actions.common.MakeTempCardInDrawPileFreeAction;
+
+import java.util.ArrayList;
 
 public class ChaosFormUpgradePower extends AbstractPower {
     public static final String POWER_ID = "ChaosFormUpgradePower";
     public static final String NAME = "Chaos Form+";
-	public static final String[] DESCRIPTIONS = new String[] {
-			"At the start of your turn, Recycle ",
-			"a random Ethereal card into your draw pile. It costs 0 until played.",
-			" random Ethereal cards into your draw pile. They cost 0 until played."
-	};
+    public static final String[] DESCRIPTIONS = new String[]{
+            "At the start of your turn, Recycle ",
+            "a random Ethereal card into your draw pile. It costs 0 until played.",
+            " random Ethereal cards into your draw pile. They cost 0 until played."
+    };
 
     public ChaosFormUpgradePower(AbstractCreature owner, int amount) {
         this.name = NAME;
@@ -33,12 +32,12 @@ public class ChaosFormUpgradePower extends AbstractPower {
     }
 
     @Override
-    public void atStartOfTurn(){
-    	for (int i = 0; i < this.amount; i++) {
-    		addRandomFreeEtherealCard();
-    	}
+    public void atStartOfTurn() {
+        for (int i = 0; i < this.amount; i++) {
+            addRandomFreeEtherealCard();
+        }
     }
-    
+
     private void addRandomFreeEtherealCard() {
         ArrayList<AbstractCard> list = new ArrayList<AbstractCard>();
         for (AbstractCard c : AbstractDungeon.srcCommonCardPool.group) {
@@ -50,17 +49,17 @@ public class ChaosFormUpgradePower extends AbstractPower {
         for (AbstractCard c : AbstractDungeon.srcRareCardPool.group) {
             if (c.isEthereal) list.add(c);
         }
-        AbstractCard card = ((AbstractCard)list.get(AbstractDungeon.cardRandomRng.random(list.size() - 1))).makeCopy();
+        AbstractCard card = ((AbstractCard) list.get(AbstractDungeon.cardRandomRng.random(list.size() - 1))).makeCopy();
 
         AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileFreeAction(AbstractDungeon.player, AbstractDungeon.player, card, 1, true, true));
     }
 
     @Override
     public void updateDescription() {
-		this.description = DESCRIPTIONS[0] +
-				((this.amount == 1) ?
-						DESCRIPTIONS[1] :
-						(this.amount + DESCRIPTIONS[2]));
+        this.description = DESCRIPTIONS[0] +
+                ((this.amount == 1) ?
+                        DESCRIPTIONS[1] :
+                        (this.amount + DESCRIPTIONS[2]));
     }
 
 }

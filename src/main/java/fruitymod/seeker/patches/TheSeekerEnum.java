@@ -5,8 +5,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 
 public class TheSeekerEnum {
 
-	@SpireEnum
-	public static AbstractPlayer.PlayerClass THE_SEEKER;
-	
-	
+    @SpireEnum
+    public static AbstractPlayer.PlayerClass THE_SEEKER;
+
+
 }

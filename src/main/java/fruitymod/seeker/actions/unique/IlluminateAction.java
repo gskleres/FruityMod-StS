@@ -1,7 +1,5 @@
 package fruitymod.seeker.actions.unique;
 
-import java.util.ArrayList;
-
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
@@ -13,8 +11,10 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 
+import java.util.ArrayList;
+
 public class IlluminateAction
-extends AbstractGameAction {
+        extends AbstractGameAction {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("DualWieldAction");
     public static final String[] TEXT = IlluminateAction.uiStrings.TEXT;
     private AbstractPlayer p;
@@ -55,7 +55,7 @@ extends AbstractGameAction {
                 return;
             }
             if (this.p.hand.group.size() == 1) {
-            	AbstractDungeon.actionManager.addToTop(new MakeTempCardInDrawPileAction(p.hand.getTopCard().makeStatEquivalentCopy(), this.dupeAmount, false, true));
+                AbstractDungeon.actionManager.addToTop(new MakeTempCardInDrawPileAction(p.hand.getTopCard().makeStatEquivalentCopy(), this.dupeAmount, false, true));
                 this.returnCards();
                 this.isDone = true;
             }

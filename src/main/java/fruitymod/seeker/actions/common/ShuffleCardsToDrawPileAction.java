@@ -7,10 +7,11 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
+
 import java.util.ArrayList;
 
 public class ShuffleCardsToDrawPileAction
-extends AbstractGameAction {
+        extends AbstractGameAction {
     private ArrayList<AbstractCard> cardsToShuffle;
     private boolean randomSpot = false;
     private boolean cardOffset = false;
@@ -32,13 +33,13 @@ extends AbstractGameAction {
                 for (int i = 0; i < this.amount; ++i) {
                     AbstractCard c = cardsToShuffle.get(i);
                     AbstractDungeon.player.hand.removeCard(c);
-                    AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(c, (float)Settings.WIDTH / 2.0f, (float)Settings.HEIGHT / 2.0f, this.randomSpot, this.cardOffset));
+                    AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(c, (float) Settings.WIDTH / 2.0f, (float) Settings.HEIGHT / 2.0f, this.randomSpot, this.cardOffset));
                 }
             } else {
                 for (int i = 0; i < this.amount; ++i) {
                     AbstractCard c = cardsToShuffle.get(i);
                     AbstractDungeon.player.hand.removeCard(c);
-                    AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(c, 0, 0 ,this.randomSpot));
+                    AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(c, 0, 0, this.randomSpot));
                 }
             }
             this.duration -= Gdx.graphics.getDeltaTime();

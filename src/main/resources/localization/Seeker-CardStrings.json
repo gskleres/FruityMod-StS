@@ -345,9 +345,7 @@
 	},
 	"Zenith": {
 		"NAME": "Zenith",
-		"DESCRIPTION": "After paying this card's cost, double your remaining [E]. Exhaust.",
-		"UPGRADE_DESCRIPTION": "After paying this card's cost, double your remaining [E].",
-		"EXTENDED_DESCRIPTION": [ " (Will have !M! [E] after use.)"]
+		"DESCRIPTION": "Gain [E] at the start of your turn. NL Whenever you shuffle your discard pile into your draw pile, gain 1 Vulnerable."
 	},
 	"Coalescence": {
 		"NAME": "Coalescence",

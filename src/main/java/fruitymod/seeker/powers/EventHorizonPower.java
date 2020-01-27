@@ -8,11 +8,10 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-
 import fruitymod.SeekerMod;
 
 public class EventHorizonPower
-extends AbstractPower {
+        extends AbstractPower {
     public static final String POWER_ID = "EventHorizon";
     public static final String NAME = "Event Horizon";
     public static final String DESCRIPTION = "Each enemy loses HP equal to the amount of Weak and Vulnerable it has at the start of its turn.";
@@ -29,19 +28,19 @@ extends AbstractPower {
     @Override
     public void atEndOfTurn(boolean isPlayer) {
         if (isPlayer) {
-        	for(AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
-        		int stackCount = GetPowerCount(m, "Weakened") + GetPowerCount(m, "Vulnerable");        		
-        		if(stackCount > 0) {
-        			AbstractDungeon.actionManager.addToBottom(
-        					new DamageAction(m, new DamageInfo(null, this.amount * stackCount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
-        		}
-        	}
+            for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
+                int stackCount = GetPowerCount(m, "Weakened") + GetPowerCount(m, "Vulnerable");
+                if (stackCount > 0) {
+                    AbstractDungeon.actionManager.addToBottom(
+                            new DamageAction(m, new DamageInfo(null, this.amount * stackCount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
+                }
+            }
         }
     }
-    
+
     private int GetPowerCount(AbstractMonster m, String powerId) {
-    	AbstractPower power =  m.getPower(powerId);    	
-    	return power != null ? power.amount : 0;
+        AbstractPower power = m.getPower(powerId);
+        return power != null ? power.amount : 0;
     }
 }
 

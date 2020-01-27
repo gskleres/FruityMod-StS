@@ -1,5 +1,6 @@
 package fruitymod.seeker.cards;
 
+import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.unique.SwordBoomerangAction;
 import com.megacrit.cardcrawl.actions.utility.ExhaustAllEtherealAction;
@@ -11,13 +12,11 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
-import basemod.abstracts.CustomCard;
 import fruitymod.SeekerMod;
 import fruitymod.seeker.patches.AbstractCardEnum;
 
 public class Syzygy
-extends CustomCard {
+        extends CustomCard {
     public static final String ID = "Syzygy";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
@@ -30,8 +29,8 @@ extends CustomCard {
 
     public Syzygy() {
         super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION,
-        		AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
-        		AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL_ENEMY);
+                AbstractCard.CardType.ATTACK, AbstractCardEnum.SEEKER_PURPLE,
+                AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL_ENEMY);
         this.damage = this.baseDamage = ATTACK_DMG;
         this.magicNumber = this.baseMagicNumber = NUM_ATTACKS;
         this.isEthereal = true;
@@ -43,7 +42,7 @@ extends CustomCard {
         AbstractDungeon.actionManager.addToBottom(new SwordBoomerangAction(AbstractDungeon.getMonsters().getRandomMonster(true), new DamageInfo(p, this.damage), this.magicNumber));
         AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Dazed(), 1, true, true));
     }
-    
+
     @Override
     public void triggerOnEndOfPlayerTurn() {
         AbstractDungeon.actionManager.addToTop(new ExhaustAllEtherealAction());
