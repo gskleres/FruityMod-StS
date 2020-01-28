@@ -43,7 +43,8 @@ public class ReflectionWardPower
         if (info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS && info.owner != null && info.owner != this.owner) {
             this.flash();
             for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
-                AbstractDungeon.actionManager.addToTop(new DamageAction(m, this.thornsInfo, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
+                if (!m.isDead && !m.isDying)
+                    AbstractDungeon.actionManager.addToTop(new DamageAction(m, this.thornsInfo, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
             }
         }
         return damageAmount;
