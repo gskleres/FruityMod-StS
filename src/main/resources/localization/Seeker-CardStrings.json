@@ -210,9 +210,9 @@
   },
   "Corona": {
     "NAME": "Corona",
-    "DESCRIPTION": "Draw !M! card. Whenever this card is drawn, increase that amount by 1 this combat.",
+    "DESCRIPTION": "Draw !M! card. Whenever this card is drawn, increase that amount by 1. Exhaust.",
     "EXTENDED_DESCRIPTION": [
-      "Draw !M! cards. Whenever this card is drawn, increase that amount by 1 this combat."
+      "Draw !M! cards. Whenever this card is drawn, increase that amount by 1. Exhaust."
     ]
   },
   "Equinox": {

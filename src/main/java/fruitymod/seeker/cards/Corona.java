@@ -2,6 +2,7 @@ package fruitymod.seeker.cards;
 
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -28,14 +29,15 @@ public class Corona
     public Corona() {
         super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION,
                 AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
-                AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
+                CardRarity.COMMON, AbstractCard.CardTarget.SELF);
         this.magicNumber = this.baseMagicNumber = BASE_CARD_DRAW;
+        this.exhaust = true;
         updateDescription(this.magicNumber);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DrawCardNextTurnPower(p, this.magicNumber), this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));
     }
 
     @Override
