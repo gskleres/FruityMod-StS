@@ -21,7 +21,7 @@ public class Nova extends CustomCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final int COST = 3;
     private static final int UPGRADED_COST = 2;
-    private static final int ATTACK_DMG = 24;
+    private static final int ATTACK_DMG = 25;
 
     public Nova() {
         super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION,

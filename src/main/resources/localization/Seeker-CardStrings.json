@@ -32,11 +32,11 @@
   },
   "NullStorm": {
     "NAME": "Null Storm",
-    "DESCRIPTION": "Recycle a Dazed. Deal !D! damage to ALL enemies."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. Recycle a Dazed."
   },
   "VoidRay": {
     "NAME": "Void Ray",
-    "DESCRIPTION": "Recycle a Dazed. Deal !D! damage."
+    "DESCRIPTION": "Deal !D! damage. NL Recycle a Dazed."
   },
   "Comet": {
     "NAME": "Comet",
@@ -47,7 +47,7 @@
   },
   "Retrograde": {
     "NAME": "Retrograde",
-    "DESCRIPTION": "Deal !D! damage twice. NL Whenever you draw this card, reduce its cost by 1 this combat."
+    "DESCRIPTION": "Deal !D! damage twice. NL Whenever this card is drawn, reduce its cost by 1 for this combat."
   },
   "MagicMissile": {
     "NAME": "Magic Missile",
@@ -67,7 +67,7 @@
   },
   "ArcaneArmor": {
     "NAME": "Arcane Armor",
-    "DESCRIPTION": "Gain !B! Block. Every time you draw this card, increase its Block by !M! for this combat."
+    "DESCRIPTION": "Gain !B! Block. Whenever this card is drawn, increase its Block by !M! for this combat."
   },
   "Flicker": {
     "NAME": "Flicker",
@@ -112,12 +112,12 @@
   },
   "Entropy": {
     "NAME": "Entropy",
-    "DESCRIPTION": "Ethereal. Enemy loses !M! Strength this turn, increasing by 1 each time you draw this card this combat.",
-    "UPGRADE_DESCRIPTION": "Ethereal. Enemy loses !M! Strength this turn, increasing by 2 each time you draw this card this combat."
+    "DESCRIPTION": "Ethereal. Enemy loses !M! Strength this turn, increasing by 1 each time this card is drawn this combat.",
+    "UPGRADE_DESCRIPTION": "Ethereal. Enemy loses !M! Strength this turn, increasing by 2 each time this card is drawn this combat."
   },
   "PhaseCoil": {
     "NAME": "Phase Coil",
-    "DESCRIPTION": "Deal !D! damage. Every time you draw this card, increase its damage by !M! for this combat."
+    "DESCRIPTION": "Deal !D! damage. Whenever this card is drawn, increase its damage by !M! for this combat."
   },
   "PlasmaWave": {
     "NAME": "Plasma Wave",
@@ -210,9 +210,9 @@
   },
   "Corona": {
     "NAME": "Corona",
-    "DESCRIPTION": "Draw !M! card. Whenever you draw this card, increase that amount by 1 this combat.",
+    "DESCRIPTION": "Draw !M! card. Whenever this card is drawn, increase that amount by 1 this combat.",
     "EXTENDED_DESCRIPTION": [
-      "Draw !M! cards. Whenever you draw this card, increase that amount by 1 this combat."
+      "Draw !M! cards. Whenever this card is drawn, increase that amount by 1 this combat."
     ]
   },
   "Equinox": {
@@ -362,7 +362,7 @@
   },
   "Nova": {
     "NAME": "Nova",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. Recycle a Dazed."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Recycle a Dazed."
   },
   "DO_NOT_REMOVE_DummyLineForJSONEndOfFileSoYouDoNotHaveToRememberToDeleteTheLastComma": {}
 }

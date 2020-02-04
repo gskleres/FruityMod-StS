@@ -17,6 +17,7 @@ public class Brainstorm extends CustomCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final int COST = 1;
+    private static final int COST_UPGRADED = 0;
 
     public Brainstorm() {
         super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION,
@@ -45,7 +46,7 @@ public class Brainstorm extends CustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBaseCost(0);
+            this.upgradeBaseCost(COST_UPGRADED);
         }
     }
 }
