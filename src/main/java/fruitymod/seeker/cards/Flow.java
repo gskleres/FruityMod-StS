@@ -26,19 +26,21 @@ public class Flow
         super(ID, NAME, SeekerMod.makeCardImagePath(ID), COST, DESCRIPTION,
                 AbstractCard.CardType.SKILL, AbstractCardEnum.SEEKER_PURPLE,
                 AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF);
-        this.isEthereal = true;
         baseMagicNumber = magicNumber = 1;
     }
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        boolean bruh = false;
+        boolean hasPlayedEthereal = false;
         for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
             if (c.isEthereal)
-                bruh = true;
+            {
+                hasPlayedEthereal = true;
+                break;
+            }
         }
         cantUseMessage = "I haven't played an Ethereal card this turn ... yet.";
-        return bruh && super.canUse(p, m);
+        return hasPlayedEthereal && super.canUse(p, m);
     }
 
     @Override
