@@ -26,6 +26,7 @@ public class Strike_Purple extends CustomCard {
                 AbstractCard.CardTarget.ENEMY);
 
         this.baseDamage = ATTACK_DMG;
+        tags.add(CardTags.STARTER_STRIKE);
     }
 
     @Override

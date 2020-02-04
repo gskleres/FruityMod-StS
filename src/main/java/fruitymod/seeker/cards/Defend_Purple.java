@@ -25,6 +25,7 @@ public class Defend_Purple extends CustomCard {
                 AbstractCardEnum.SEEKER_PURPLE, AbstractCard.CardRarity.BASIC, AbstractCard.CardTarget.SELF);
 
         this.baseBlock = BLOCK_AMT;
+        tags.add(CardTags.STARTER_DEFEND);
     }
 
     @Override
