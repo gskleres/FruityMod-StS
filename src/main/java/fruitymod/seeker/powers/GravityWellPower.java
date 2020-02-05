@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 import fruitymod.SeekerMod;
 
 public class GravityWellPower extends AbstractPower {
-    public static final String POWER_ID = "Gravity Well";
+    public static final String POWER_ID = "GravityWell";
     public static final String NAME = "Gravity Well";
     public static final String[] DESCRIPTIONS = new String[]{
             "Receive #b", " less damage from from attacks for each stack of Weak or Vulnerable the enemy has."
