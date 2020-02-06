@@ -30,6 +30,7 @@ public class Eureka extends CustomCard {
                 AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF);
         this.baseMagicNumber = this.magicNumber = DRAW_AND_ENERGY;
         this.exhaust = true;
+        this.isEthereal = true;
     }
 
     @Override
@@ -49,8 +50,6 @@ public class Eureka extends CustomCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeBaseCost(COST_UPGRADED);
-            this.rawDescription = (this.isEthereal ? "Ethereal." : "") + cardStrings.UPGRADE_DESCRIPTION;
-            this.initializeDescription();
         }
     }
 }
